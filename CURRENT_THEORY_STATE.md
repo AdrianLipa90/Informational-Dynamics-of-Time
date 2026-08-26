@@ -1,41 +1,39 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_ACTIVITY_NOW_V0_1`
+Status: `CAUSAL_BIFURCATION_V0_1_REFERENCE_PASS / FRONTIER_OPEN`
 
-The upstream temporal chain is now
+The canonical dependency frontier has been reset to the declared project order:
+
 \[
-(H_S,\psi)
-\to (\Delta H_e,G_e)
-\to \sigma_e
-\to (\rho_R,\eta_R,A_e)
-\to (W_+,W_-)
-\to (\mathfrak a_e,\mathfrak j_e)
-\to \mathcal A_T
-\to \mathcal N.
+\boxed{
+\text{Temporal Primitive}
+\rightarrow
+\text{Temporal Wave}
+\rightarrow
+\text{NOW}
+\rightarrow
+\textbf{Bifurcation}
+}
 \]
 
-The kinetic pair separates pace and direction:
+NOW is currently localized by the positive gauge-invariant event measure
 \[
-\mathfrak a_e=2M_e\cosh(A_e/2)>0,
+\mathcal K_T^+=\sum_n q_n\delta_{s_n},
 \qquad
-\mathfrak j_e=2M_e\sinh(A_e/2).
+\mathcal N=\operatorname{supp}_{\rm at}\mathcal K_T^+.
 \]
-The positive activity measure
-\[
-\mathcal A_T=\sum_e\mathfrak a_e\delta_{s_e}
-\]
-is now the active localization carrier for NOW. Positive atoms aggregate without cancellation, giving the stronger pushforward identity
-\[
-\operatorname{supp}_{\rm at}(f_*\mathcal A_T)
-=f(\operatorname{supp}_{\rm at}\mathcal A_T)
-\]
-without an injectivity requirement.
+Because the weights are non-negative, atomic support commutes with pushforward image without an injectivity requirement.
 
-The oriented memory coordinate supplies the first explicit non-exact drive candidate,
+The active bifurcation candidate reconstructs a directed phase parameter from the previously derived activity/current pair:
 \[
-A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)],
-\qquad
-\sum_C A^{(M)}_e=2\lambda_M\mathcal A_M(C).
+\beta_n
+=\kappa\sigma_n
+=\frac{1}{12\pi}
+\operatorname{artanh}\!\left(\frac{\mathfrak j_n}{\mathfrak a_n}\right).
+\]
+A fixed-generator reversible reference subclass is
+\[
+B_\phi(\beta_n)=e^{-i\beta_n G}.
 \]
 
-Immediate derivational target: define a system-internal elapsed-activity coordinate from realized positive activity, then determine how memory-orbit accumulation updates the memory state after each admitted NOW event.
+Existing memory-orbit and internal-elapsed-time work is retained with provenance as a `PROVISIONAL_DOWNSTREAM_BRANCH`; it cannot enter the proof basis of NOW or bifurcation. Temporal Transport opens only after the bifurcation receipt is complete.

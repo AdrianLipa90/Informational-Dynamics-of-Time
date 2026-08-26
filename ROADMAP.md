@@ -1,32 +1,51 @@
 # Roadmap
 
+The canonical dependency graph is maintained in `formalism/DEPENDENCY_GRAPH.md`.
+
+\[
+\boxed{
+\mathrm{TIR}
+\to \mathrm{Temporal\ Primitive}
+\to \mathrm{Temporal\ Wave}
+\to \mathrm{NOW}
+\to \mathrm{Bifurcation}
+\to \mathrm{Temporal\ Transport}
+\to \mathrm{Memory}
+\to \mathrm{Retrodiction}
+\to \mathrm{Retrocausal\ Tests}
+\to \mathrm{Einstein\ Closure}}
+\]
+
 ## Phase A — Temporal core
 
-Current status: `TEMPORAL_ACTIVITY_NOW_V0_1`.
+Current frontier: `CAUSAL_BIFURCATION_V0_1`.
 
-1. `PASS`: Shannon relational state and exact entropy differences.
-2. `PASS`: geometric phase link and directed transition affinity.
-3. `PASS`: relational density/viscosity mobility and antisymmetric edge drive.
-4. `PASS`: memory-orbit non-exact drive candidate with signed-area circulation.
-5. `PASS`: positive activity/current decomposition.
-6. `PASS`: NOW localization refined to positive temporal activity support.
-7. `PASS`: positive pushforward-support theorem; injectivity no longer required for support preservation.
-8. `OPEN`: bifurcation operator must consume the refined positive activity event together with signed phase/current data.
+1. `PASS`: Shannon relational information primitives;
+2. `PASS`: geometric phase-link primitives;
+3. `PASS`: directed transition affinity and relational kinetic decomposition;
+4. `PASS`: positive gauge-invariant NOW localization and pushforward-support identity;
+5. `ACTIVE`: classify and test bifurcation operator subclasses;
+6. `GATED`: open temporal transport only after a bifurcation receipt.
 
-## Phase B — Temporal transport, memory and internal elapsed time
+## Phase B — Temporal transport and memory
 
-Next dependency sequence:
+Existing exploratory memory-orbit and internal-elapsed work is preserved as `PROVISIONAL_DOWNSTREAM_BRANCH` and is not part of the admitted frontier until Phase A closes.
 
-1. construct a system-internal elapsed-activity coordinate from realized positive activity;
-2. define memory imprint at each admitted NOW event;
-3. define memory-orbit update and persistence;
-4. test whether the resulting internal elapsed coordinate is monotone and reparameterization-covariant;
-5. only then open retrodiction operators.
+After bifurcation closure:
+
+1. ordered multi-event temporal propagator;
+2. event-imprinted memory update;
+3. memory persistence and recall;
+4. only then internal elapsed-time interpretation and retrodiction.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Open only after memory operators have independent receipts.
+Required result stack for every retrocausal experiment:
 
-## Phase D — Spatial branch and Einstein closure
+`RAW_OBSERVATION -> STATISTICAL_EFFECT -> CLASSICAL_CHANNEL_AUDIT -> PHYSICAL_CLAIM_STATUS`.
 
-Introduce spatial structure only after the temporal formalism has an independent canonical state and internal clock-calibration bridge.
+`ANOMALY_DETECTED` and `RETROCAUSAL_CANDIDATE` remain distinct statuses.
+
+## Phase D — spatial branch and Einstein closure
+
+Spatial structure is introduced only after the temporal branch has an independently admitted state, transport law and clock-calibration bridge. Einstein closure is the final dependency gate.
