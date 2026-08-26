@@ -108,19 +108,27 @@ A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)].
 \Psi_{n+1}=e^{-i\Omega_n}\Psi_n.
 \]
 
+**EQ-T014 — system-internal elapsed activity**
+\[
+d\tau_{\rm int}=\frac{\mathfrak a(\lambda)}{\mathfrak a_\star}\,d\lambda.
+\]
+
+**EQ-T014B — discrete internal elapsed activity**
+\[
+\tau_{{\rm int},N}=\sum_{n=0}^{N-1}\frac{\mathfrak a_n}{\mathfrak a_\star}\,\Delta\lambda_n,
+\qquad \Delta\lambda_n>0.
+\]
+
+**EQ-T015 — activity one-density covariance**
+\[
+\mathfrak a'(\lambda')=\mathfrak a(\lambda)\frac{d\lambda}{d\lambda'},
+\qquad
+d\tau'_{\rm int}=d\tau_{\rm int}.
+\]
+
 **EQ-T020 — atomic temporal transition measure**
 \[
 \mathcal K_T=\sum_n q_n\,\delta_{s_n}.
-\]
-
-**EQ-T021 — NOW support candidate**
-\[
-\mathcal N=\operatorname{supp}_{\rm at}\mathcal K_T.
-\]
-
-**EQ-T022 — bifurcation transition law**
-\[
-\Psi_T(s_n^+)=B(q_n)\Psi_T(s_n^-).
 \]
 
 **EQ-T020A — positive temporal activity measure**
@@ -129,9 +137,19 @@ A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)].
 \qquad \mathfrak a_n>0.
 \]
 
+**EQ-T021 — signed NOW support lineage**
+\[
+\mathcal N=\operatorname{supp}_{\rm at}\mathcal K_T.
+\]
+
 **EQ-T021A — active NOW support**
 \[
 \mathcal N=\operatorname{supp}_{\rm at}\mathcal A_T.
+\]
+
+**EQ-T022 — bifurcation transition law**
+\[
+\Psi_T(s_n^+)=B(q_n)\Psi_T(s_n^-).
 \]
 
 **EQ-T023A — positive pushforward-support identity**
