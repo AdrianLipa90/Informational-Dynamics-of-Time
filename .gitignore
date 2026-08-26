@@ -1,0 +1,15 @@
+# Compiled monograph artifacts
+*.pdf
+*.aux
+*.log
+*.toc
+*.out
+monograph/build/
+
+# Local raster renders generated from code
+monograph/figures/*.png
+evidence/raw/visuals_v050/*.png
+
+# Python cache
+__pycache__/
+*.pyc
