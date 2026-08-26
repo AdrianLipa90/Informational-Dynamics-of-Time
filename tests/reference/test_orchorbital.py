@@ -84,6 +84,17 @@ def test_orchorbital_step_uses_one_active_center_and_tracks_winding():
     assert result.winding_increment > 0.0
 
 
+def test_segment_boundary_records_attractor_switch_candidate():
+    attractors = [
+        AttractorSpec("A", np.array([0.0, 0.0], dtype=float), 2.0),
+        AttractorSpec("B", np.array([4.0, 0.0], dtype=float), 2.0),
+    ]
+    result = orchorbital_step(_state(1.6, 0.4, 1.0, 0.0), attractors, 0.5)
+    assert result.active_attractor == "A"
+    assert result.field_after.active_attractor == "B"
+    assert result.switched_after_segment
+
+
 def test_leak_mode_fails_closed_before_orbital_propagation():
     with pytest.raises(ORCHORBITALError, match="LEAK_MODE"):
         orchorbital_step(_state(2.5, 8.0, 10.0, 10.0), _attractors(), 0.02)
