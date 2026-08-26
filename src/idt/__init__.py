@@ -159,6 +159,7 @@ from .orchorbital import (
     AttractorEvaluation,
     AttractorFieldState,
     ORCHORBITALStep,
+    AttractorResidence,
     relative_state,
     evaluate_attractor_field,
     active_attractor_spec,
@@ -166,5 +167,8 @@ from .orchorbital import (
     wrapped_angle_difference,
     winding_increment,
     orchorbital_step,
+    propagate_orchorbital,
+    attractor_residence_summary,
+    attractor_transition_counts,
     phase_space_closure_defect,
 )
