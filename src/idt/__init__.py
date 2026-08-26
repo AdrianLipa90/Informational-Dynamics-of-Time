@@ -26,3 +26,8 @@ from .shannon_phase import (
 )
 
 from .relational_kinetics import pair_mobility, directed_rates, exact_edge_drive, cycle_drive
+
+from .temporal_activity import (
+    ActivityCurrent, activity_current_from_rates, activity_current_from_fields,
+    positive_activity_measure, atomic_support, pushforward_positive_measure, image_support,
+)
