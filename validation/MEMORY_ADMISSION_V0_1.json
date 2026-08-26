@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_MEMORY_ADMISSION_V0_1",
+  "status": "PASS_INTEGRATION_REFERENCE_CANDIDATE_PENDING_FULL_SUITE",
+  "canon_allowed": false,
+  "epistemic": "FORMAL_REFERENCE_CLASS",
+  "branch": "feat/memory-admission-v0.1",
+  "dependency_parent": "TEMPORAL_TRANSPORT_STRUCTURAL_REFERENCE_GATE_PASS",
+  "integration_path": [
+    "CP1 temporal state geometry",
+    "Fubini-Study logarithm",
+    "Kahler memory displacement delta_m",
+    "NOW event magnitude q",
+    "derived kick q * delta_m",
+    "Kepler memory propagation",
+    "append-only event receipt",
+    "ledger-assisted recall"
+  ],
+  "targeted_integration": {
+    "test_functions": 6,
+    "passed": 6,
+    "failed": 0,
+    "execution_basis": "isolated exact-formula integration harness mirroring the current repository CP1 frame, derived event kick, velocity-Verlet Kepler cell and recall definitions",
+    "controls": [
+      "CP1 event displacements satisfy |delta_m| = d_FS for two consecutive non-collinear events",
+      "derived kick magnitude is q * d_FS with no additional gain",
+      "two-event CP1 -> kick -> Kepler -> receipt lineage reconstructs the initial memory state and every checkpoint",
+      "tampered event weight breaks reconstruction as a negative control",
+      "independent upstream global phase changes preserve the CP1 receipt geometry",
+      "zero event weight leaves a reversible smooth Kepler segment"
+    ],
+    "max_roundtrip_error_observed": 3.6e-16,
+    "tampered_receipt_mismatch_observed": 1.6e-3
+  },
+  "component_receipts": [
+    "validation/KEPLER_MEMORY_DYNAMICS_V0_1.json",
+    "validation/EVENT_MEMORY_KICK_V0_1.json",
+    "validation/MEMORY_MU_IDENTIFIABILITY_V0_1.json",
+    "validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json",
+    "validation/MEMORY_PERSISTENCE_RECALL_V0_1.json"
+  ],
+  "full_repository_suite": "NOT_RERUN_ON_INTEGRATED_TREE",
+  "memory_admission": "PENDING_FULL_REFERENCE_SUITE",
+  "retrodiction": "GATED_PENDING_MEMORY_ADMISSION",
+  "physical_claim_status": "NOT_EVALUATED"
+}
