@@ -1,0 +1,90 @@
+\chapter{Covariance-Weighted Retrodiction and Permutation Nulls}
+
+This chapter records a provisional downstream computational reference layer. The canonical admitted dependency frontier remains at Memory. The purpose of the present construction is to make the Retrodiction estimator sensitive to declared checkpoint uncertainty and to compare it against explicit same-capacity chronology nulls.
+
+\section{Weighted inverse problem}
+
+For retained checkpoint vector $Y_{\rm obs}$ and declared symmetric positive-definite covariance $\Sigma_Y$, define
+\[
+r(z)=Y_{\rm obs}-Y(z)
+\]
+and the weighted objective
+\[
+\boxed{
+Q(z)=r(z)^T\Sigma_Y^{-1}r(z).
+}
+\]
+With
+\[
+\Sigma_Y=LL^T,
+\]
+the whitened residual and sensitivity are
+\[
+r_W=L^{-1}r,
+\qquad
+J_W=L^{-1}J_R.
+\]
+The estimator is admitted only when
+\[
+\boxed{\operatorname{rank}J_W=\dim z.}
+\]
+
+The damped weighted Gauss--Newton proposal obeys
+\[
+\boxed{
+(J_W^TJ_W+\lambda I)\delta z=J_W^Tr_W,
+\qquad \lambda\ge0.
+}
+\]
+Only a step that strictly decreases $Q$ is accepted.
+
+\section{Checkpoint-permutation ensemble}
+
+Let $P_\pi$ permute complete four-component checkpoint blocks. Each chronology-null member jointly transforms the observation and its declared covariance,
+\[
+\boxed{
+Y_\pi=P_\pi Y_{\rm obs},
+\qquad
+\Sigma_\pi=P_\pi\Sigma_YP_\pi^T.
+}
+\]
+The forward model, latent dimension, rank gate, damping rule and estimator capacity are otherwise unchanged. Thus a null member is not made easier or harder merely by assigning it a different uncertainty model.
+
+For the finite non-identity ensemble define
+\[
+Q_{\rm null,min}=\min_{\pi\ne id}Q_\pi
+\]
+and
+\[
+\boxed{
+\Delta Q_{\rm null}=Q_{\rm null,min}-Q_{\rm obs}.
+}
+\]
+The finite reference rank diagnostic is
+\[
+\boxed{
+f_{\rm null}=\frac{\#\{\pi:Q_\pi\le Q_{\rm obs}\}}{N_{\rm null}}}.
+}
+This quantity is retained as a computational reference diagnostic; statistical calibration belongs to a later evidence layer.
+
+\section{Recorded reference control}
+
+For the three-event exact reference lineage with checkpoints $\{1,2,3\}$, the weighted sensitivity has rank six and condition number approximately $4.070$. The targeted weighted estimator reconstructs the exact latent kicks in two iterations at numerical precision. With all five non-identity checkpoint permutations fitted by the same model, the recorded reference values are
+\[
+Q_{\rm obs}\approx2.49\times10^{-24},
+\]
+\[
+Q_{\rm null,min}\approx1.80\times10^5,
+\qquad
+Q_{\rm null,med}\approx6.13\times10^5,
+\qquad
+Q_{\rm null,max}\approx8.19\times10^5.
+\]
+No null member in this finite reference ensemble reaches a residual at or below the retained chronology.
+
+The targeted test suite for this layer records five passing checks. The evidence receipt is
+\texttt{validation/RETRODICTION\_WEIGHTED\_NULLS\_V0\_1.json},
+and the append-only reference run is
+\texttt{experiments/E003\_retrodiction/runs/E003\_REFERENCE\_0002.json}.
+
+These values characterize the declared computational reference problem. Statistical-effect admission and physical-claim evaluation remain later gates.
