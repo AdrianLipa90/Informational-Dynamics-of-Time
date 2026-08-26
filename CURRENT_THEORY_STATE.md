@@ -1,14 +1,14 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_ACTIVE / MEMORY_CP1_KAHLER_FRAME_REFERENCE_CANDIDATE`
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_ACTIVE / RECALL_REFERENCE_CANDIDATE`
 
-The canonical admitted dependency frontier remains
+The canonical admitted dependency frontier is now
 
 \[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\mathbf{Temporal\ Transport}}
+\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
 \]
 
-The Memory node contains a provisional event-driven Kepler--Newton branch with
+Temporal Transport has passed its declared structural reference gate. The active Memory node contains an event-driven Kepler--Newton reference branch,
 \[
 \Delta\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
 \qquad
@@ -16,23 +16,13 @@ The Memory node contains a provisional event-driven Kepler--Newton branch with
 \qquad
 \Delta v_{M,n}=q_n\delta m_n.
 \]
-The central parameter \(\mu_M\) is conditionally identifiable from Kepler-orbit observables inside this reference class.
+The central parameter \(\mu_M\) is conditionally identifiable from orbit observables inside this reference class.
 
-The memory-plane frame now has a geometry-derived \(\mathbb{CP}^1\) reference subclass. For two non-antipodal pure-state Bloch vectors \(\mathbf n_a,\mathbf n_b\),
+For the pure-state \(\mathbb{CP}^1\) reference subclass, the memory displacement is derived from the Kähler/Fubini--Study state geometry. The half-angle tangent logarithm satisfies
 \[
-\xi^{FS}_{a\to b}
-=\frac12\frac{\theta_{ab}}{\sin\theta_{ab}}
-\left(\mathbf n_b-\cos\theta_{ab}\,\mathbf n_a\right),
-\qquad
-\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b).
+\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b),
 \]
-For a nonzero displacement,
-\[
-\mathbf e_Q=\frac{\xi^{FS}}{\|\xi^{FS}\|},
-\qquad
-\mathbf e_P=\mathbf n\times\mathbf e_Q,
-\]
-and
+and the Kähler-conjugate tangent dyad gives
 \[
 \boxed{
 \delta m
@@ -42,6 +32,26 @@ and
 |\delta m|=d_{FS}.
 }
 \]
-The dyad is transported between non-antipodal anchors by the minimal Bloch-sphere geodesic rotation, preserving tangency, orthonormality and Kähler orientation.
 
-The broad Hermitian-observable \((Q_M,P_M)\) family remains available; the CP1 construction supplies a geometry-derived reference frame and normalization. The next Memory-node targets are persistence/recall and extension of the frame construction beyond the CP1 reference subclass. A deeper upstream origin law for \(\mu_M\) remains open.
+Memory persistence is represented by the append-only event receipt
+\[
+\boxed{\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)}
+\]
+and the forward lineage cell
+\[
+\boxed{\mathcal C_n=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n}.}
+\]
+The declared reference cell has the explicit inverse
+\[
+\boxed{\mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M),}
+\]
+which yields the ledger-assisted recall candidate
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+}
+\]
+Within the complete recorded reference lineage, this reconstructs the initial memory state in the targeted controls.
+
+The current Memory-node gate is to combine the event-imprint, CP1 frame, Kepler dynamics, parameter identifiability and persistence/recall contracts into one admission receipt. Retrodiction remains the next dependency node and will be defined as inference of a prior state with part of the lineage withheld, distinct from exact replay of a persisted ledger.

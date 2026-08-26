@@ -36,6 +36,8 @@
 | T019J | For pure qubit states, the half-angle Bloch logarithm \(\xi^{FS}_{a\to b}\) has norm equal to the Fubini–Study distance \(d_{FS}(a,b)\) | T004 + CP1 state geometry | exact CP1 geometry + targeted reference checks | `PROVED_CP1_REFERENCE_IDENTITY` | Ch. 8 |
 | T019K | The CP1 memory dyad \(e_Q=\xi^{FS}/\|\xi^{FS}\|\), \(e_P=n\times e_Q\) gives \(\delta m=\xi^{FS}\cdot e_Q+i\xi^{FS}\cdot e_P\) with \(|\delta m|=d_{FS}\) | T019J | Kähler-frame construction + targeted reference checks | `MEMORY_FRAME_REFERENCE_SUBCLASS` | Ch. 8 |
 | T019L | Minimal non-antipodal Bloch geodesic rotation transports the CP1 memory dyad while preserving tangency, orthonormality and \(e_P=n\times e_Q\) orientation | T019K | CP1 Levi–Civita/Kähler reference transport + targeted checks | `PROVED_CP1_REFERENCE_TRANSPORT_IDENTITY` | Ch. 8 |
+| T019M | A persisted memory-event receipt \(\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)\) deterministically specifies the reference event kick and following smooth segment | T014–T019L | append-only lineage contract + targeted reference tests | `MEMORY_PERSISTENCE_REFERENCE_CONTRACT` | Ch. 8 |
+| T019N | The reference memory cell \(\mathcal C_n=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n}\) has the explicit inverse \(\mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}\) | T016 + T019D + T019M | algebraic inverse + targeted round-trip tests | `PROVED_REFERENCE_INVERTIBILITY` | Ch. 8 |
 | T020 | Phase-bearing transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) carries signed transition weights | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |
 | T020A | Positive temporal activity measure is \(\mathcal A_T=\sum_n\mathfrak a_n\delta_{s_n}\) with \(\mathfrak a_n>0\) | T012 | formal definition + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_POSITIVITY` | Ch. 5 |
 | T021 | Signed-measure NOW lineage based on \(\operatorname{supp}_{\rm at}\mathcal K_T\) | T020 | GREMLIN + formal candidate | `REFINED_BY_T021A` | Ch. 5 |
@@ -43,6 +45,7 @@
 | T022 | \(\Psi_T(s_n^+)=B(q_n)\Psi_T(s_n^-)\) | T021 | formal candidate | `CANDIDATE` | Ch. 6 |
 | T023 | Injective pushforward-support lineage for signed atoms | T021 | proved lemma | `REFINED_BY_T023A` | Ch. 5 |
 | T023A | Positive atomic activity support satisfies \(\operatorname{supp}_{\rm at}(f_*\mathcal A_T)=f(\operatorname{supp}_{\rm at}\mathcal A_T)\) for any map defined on the support | T020A–T021A | positive-measure theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
+| T034 | Ledger-assisted \(RECALL_{N\to0}=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}\) reconstructs the recorded initial memory state inside the declared reversible reference class | T019M–T019N | reverse-lineage reconstruction + targeted positive/negative controls | `MEMORY_RECALL_CANDIDATE_WITH_REFERENCE_RECONSTRUCTION` | Ch. 8 |
 | T050 | \(\Delta\phi_t=-E\Delta t/\hbar\) calibrates phase order to metric clock time | T011 | later physical bridge | `DEFERRED` | Ch. 11–12 |
 | T070 | Independently derived temporal and spatial branches admit spacetime closure | T050 | final closure | `DEFERRED` | Ch. 12 |
 

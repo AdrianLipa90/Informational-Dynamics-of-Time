@@ -234,4 +234,62 @@ we obtain
 \]
 Thus the central parameter is conditionally identifiable from memory-orbit observables inside the declared reference class. A deeper origin law predicting \(\mu_M\) from earlier relational primitives is retained as a later derivation target.
 
-The numerical reference records the Kepler--Newton controls in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json}, event-action jump controls in \texttt{validation/EVENT\_MEMORY\_KICK\_V0\_1.json}, central-parameter identifiability controls in \texttt{validation/MEMORY\_MU\_IDENTIFIABILITY\_V0\_1.json}, and CP1 frame controls in \texttt{validation/KAHLER\_MEMORY\_FRAME\_CP1\_V0\_1.json}. Physical-unit calibration is assigned to the later metric-time calibration stage. The next Memory-node derivation target is persistence/recall, with higher-dimensional K\"ahler-frame extension retained as a parallel formal target.
+\section{Persistence and ledger-assisted recall}
+
+Each admitted event persists an append-only receipt
+\[
+\boxed{
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+}
+\]
+The receipt determines the event kick
+\[
+K_{\mathcal E_n}:v_M\mapsto v_M+q_n\delta m_n
+\]
+and the following smooth segment. Define the forward memory-lineage cell
+\[
+\boxed{
+\mathcal C_n
+=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n}.
+}
+\]
+For the velocity--Verlet reference map, the inverse smooth step is explicit:
+\[
+\boxed{
+r_0=r_1-v_1\Delta\tau+\frac12a_1\Delta\tau^2,
+}
+\]
+\[
+\boxed{
+v_0=v_1-\frac12(a_0+a_1)\Delta\tau.
+}
+\]
+The full inverse cell is therefore
+\[
+\boxed{
+\mathcal C_n^{-1}
+=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
+}
+\]
+For a persisted lineage
+\[
+X_N=\mathcal C_{N-1}\cdots\mathcal C_1\mathcal C_0X_0,
+\]
+define
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+}
+\]
+Within the declared reversible reference class and with the complete ordered ledger,
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}(X_N;\{\mathcal E_n\},\mu_M)=X_0.
+}
+\]
+The chronological receipt order is structural. Reversing the ledger itself before the reverse traversal is used as a negative control and fails to reconstruct the initial state in the reference tests.
+
+This establishes recall as reconstruction of a persisted lineage. Retrodiction is kept as the next, distinct problem: inference of a prior state when part of the lineage is unobserved or withheld.
+
+The numerical reference records the Kepler--Newton controls in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json}, event-action jump controls in \texttt{validation/EVENT\_MEMORY\_KICK\_V0\_1.json}, central-parameter identifiability controls in \texttt{validation/MEMORY\_MU\_IDENTIFIABILITY\_V0\_1.json}, CP1 frame controls in \texttt{validation/KAHLER\_MEMORY\_FRAME\_CP1\_V0\_1.json}, and persistence/recall controls in \texttt{validation/MEMORY\_PERSISTENCE\_RECALL\_V0\_1.json}. Physical-unit calibration is assigned to the later metric-time calibration stage. The next dependency target is Retrodiction, with higher-dimensional K\"ahler-frame extension and a deeper upstream origin law for \(\mu_M\) retained as parallel formal targets.

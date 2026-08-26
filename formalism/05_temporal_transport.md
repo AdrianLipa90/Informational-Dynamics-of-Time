@@ -1,6 +1,6 @@
 # 05 — Temporal Transport Closure
 
-Status: `STRUCTURAL_REFERENCE_GATE_PASS_CANDIDATE`
+Status: `STRUCTURAL_REFERENCE_GATE_PASS`
 
 The ordered interrupted propagator is
 \[
@@ -27,7 +27,7 @@ For finite \(q_n\) and finite Hermitian generators, both exponential factors are
 \[
 \kappa_2(\mathcal U)=\|\mathcal U\|_2\|\mathcal U^{-1}\|_2.
 \]
-The reference tests include an invertible propagator with large \(\kappa_2\), establishing the distinction between existence of an inverse and stable reconstruction.
+The reference controls include an invertible propagator with large \(\kappa_2\), establishing the distinction between existence of an inverse and stable reconstruction.
 
 ## Exact cut identity
 
@@ -35,8 +35,15 @@ For any cut after the first \(c\) events,
 \[
 \boxed{\mathcal U_{f\leftarrow i}=\mathcal U_{f\leftarrow c}\,\mathcal U_{c\leftarrow i}.}
 \]
-The two factors preserve the same chronological order as the uncut propagator. Cuts at \(c=0\) and \(c=N\) are included in the reference test.
+The two factors preserve the same chronological order as the uncut propagator. Cuts at \(c=0\) and \(c=N\) are included in the reference controls.
 
-## Gate
+## Gate result
 
-The Transport gate is structurally closed when the existing order/noncommutation controls and the three controls above pass together. The next dependency node is Memory.
+The previously recorded order/noncommutation controls and the closure controls above have now been combined in `validation/TEMPORAL_TRANSPORT_CLOSURE_V0_2.json`.
+
+Therefore the declared structural reference gate is
+\[
+\boxed{\text{Temporal Transport}:\ \mathrm{PASS}_{\rm structural\ reference}.}
+\]
+
+The next dependency node is Memory. Physical generator selection and later metric-time calibration remain separate evidence/closure tasks.

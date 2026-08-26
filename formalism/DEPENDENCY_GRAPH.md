@@ -12,13 +12,13 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 |---|---|---|
 | TIR entry point | `AVAILABLE` | inherited source layer |
 | Temporal Primitive | `ACTIVE` | Shannon + relational phase primitives |
-| Temporal Wave | `ACTIVE_CANDIDATE` | ordered phase transport |
+| Temporal Wave | `ACTIVE_CANDIDATE` | ordered phase transport primitive |
 | NOW | `STRUCTURAL_PASS` | positive gauge-invariant atomic event support |
 | Bifurcation | `FORMAL_CONTRACT_PASS` | reversible/contractive operator class structurally closed |
-| Temporal Transport | `ACTIVE_DERIVATION_TARGET` | current admitted frontier: ordered interrupted propagation |
-| Memory | `PROVISIONAL_DOWNSTREAM_BRANCH / KEPLER_NEWTON_REFERENCE_IMPLEMENTED` | inverse-square internal-time candidate, areal law, conic invariants and typed event impulse interface |
-| Retrodiction | `GATED` | depends on admitted memory update/recall contract |
+| Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS` | ordered interrupted propagation, contraction bound, conditioning separation and exact cut factorization recorded |
+| Memory | `ACTIVE_DERIVATION_TARGET` | event-driven Kepler branch, CP1 Kähler frame, identifiable central parameter, append-only persistence and recall candidate |
+| Retrodiction | `GATED_PENDING_MEMORY_ADMISSION` | inference node opens after combined Memory admission receipt |
 | Retrocausal Tests | `GATED` | depends on admitted retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial structure enters last |
 
-Dependency enforcement is one-way. Memory coordinates, retrodictive operators and spacetime quantities enter only at their declared downstream nodes.
+Dependency enforcement is one-way. Memory coordinates and recall operators are admitted only inside the Memory node. Retrodictive estimators may consume admitted Memory outputs but may not redefine time, NOW, bifurcation or transport. Spacetime quantities enter only at their declared final downstream nodes.

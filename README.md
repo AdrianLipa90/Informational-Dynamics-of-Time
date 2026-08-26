@@ -20,7 +20,7 @@ Canonical dependency chain:
 
 `TIR -> Temporal Primitive -> Temporal Wave -> NOW -> Bifurcation -> Temporal Transport -> Memory -> Retrodiction -> Retrocausal Tests -> Einstein Closure`
 
-The current admitted frontier is **Temporal Transport**. Bifurcation has passed its formal operator-classification gate. Memory dynamics, including the Kepler–Newton and event-imprint/action-area constructions, remain downstream candidates until the transport and memory admission gates close through recorded validation.
+The current admitted frontier is **Memory**. Temporal Transport has passed its declared structural reference gate. The active Memory node contains the event-driven Kepler--Newton reference branch, Kähler-derived CP1 memory-frame subclass, conditional \(\mu_M\) identifiability, append-only event receipts and a ledger-assisted recall candidate. Retrodiction remains gated until the combined Memory admission receipt is recorded.
 
 Canonical current-state surfaces are `CURRENT_STATUS.md`, `CURRENT_THEORY_STATE.md`, `CURRENT_EVIDENCE_STATE.md`, `formalism/DEPENDENCY_GRAPH.md`, `CLAIM_REGISTRY.md`, and `EQUATION_REGISTRY.md`.
 

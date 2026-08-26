@@ -1,33 +1,42 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS / EVENT_MEMORY_KICK_V0_1_TARGETED_PASS / MEMORY_MU_IDENTIFIABILITY_V0_1_TARGETED_PASS / KAHLER_MEMORY_FRAME_CP1_V0_1_TARGETED_PASS`
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_COMPONENTS_TARGETED_PASS / RECALL_V0_1_TARGETED_PASS`
 
-Previously recorded full reference suite at the admitted Temporal Transport frontier: `83 passed in 0.12s`.
+Recorded transport evidence:
 
-Recorded targeted controls:
+- prior full reference suite: `83 passed in 0.12s`;
+- temporal-transport closure delta: `3/3 PASS` for the spectral norm bound, algebraic invertibility/conditioning separation and exact cut factorization;
+- closure receipt: `validation/TEMPORAL_TRANSPORT_CLOSURE_V0_2.json`.
+
+Recorded Memory-node targeted controls:
 
 - Kepler--Newton memory suite: `11 passed in 0.46s`;
 - event-imprint memory-kick suite: `7 passed in 0.08s`;
 - memory central-parameter identifiability: `6 targeted checks PASS`;
-- CP1 Kähler memory frame: `7 targeted checks PASS`.
+- CP1 Kähler memory frame: `7 targeted checks PASS`;
+- persistence / ledger-assisted recall: `8 passed in 0.13s` in the isolated targeted reference harness.
 
-The latest CP1 frame checks cover:
+The persistence/recall controls cover:
 
-- pure-qubit Bloch vector normalization and global-phase invariance: PASS;
-- half-angle CP1 logarithm norm equals Fubini--Study distance: PASS;
-- initial tangent dyad is orthonormal and Kähler-oriented: PASS;
-- projected local memory displacement satisfies \(|\delta m|=d_{FS}\): PASS;
-- minimal geodesic frame transport preserves tangency and orientation: PASS;
-- round-trip transport on one selected geodesic recovers the frame: PASS;
-- antipodal geodesic ambiguity fails closed: PASS.
+- explicit inverse of the velocity--Verlet reference step: PASS;
+- one complete event+Kepler lineage cell round-trip: PASS;
+- multi-event ledger reconstruction of the initial memory state: PASS;
+- reconstruction of every stored checkpoint in reverse order: PASS;
+- wrong ledger ordering as a negative control: PASS;
+- event energy/angular-momentum signature consistency: PASS;
+- empty ledger identity: PASS;
+- invalid receipt fields fail closed: PASS.
 
 Validation receipts:
 
+- `validation/TEMPORAL_TRANSPORT_CLOSURE_V0_2.json`;
 - `validation/KEPLER_MEMORY_DYNAMICS_V0_1.json`;
 - `validation/EVENT_MEMORY_KICK_V0_1.json`;
 - `validation/MEMORY_MU_IDENTIFIABILITY_V0_1.json`;
-- `validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json`.
+- `validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json`;
+- `validation/MEMORY_PERSISTENCE_RECALL_V0_1.json`.
 
-Full repository suite status for the latest execution: `NOT_RERUN_IN_THIS_EXECUTION`.
+Full repository suite status after the newest persistence/recall changes: `NOT_RERUN_IN_THIS_EXECUTION`.
+GitHub Actions status for the newest branch commits has not supplied a run at the recorded checks.
 
-The current evidence supports the declared structural reference implementations, conditional identifiability identities and the CP1 Kähler-frame reference subclass. Memory-node admission continues to follow the dependency graph; higher-dimensional frame extension, persistence/recall, deeper upstream prediction of \(\mu_M\), and physical-unit calibration remain later derivation/evidence targets.
+The evidence is sufficient to close the declared Temporal Transport structural reference gate and move the active derivation frontier to Memory. Memory itself still requires a combined admission receipt before Retrodiction is opened. Physical-unit calibration and empirical physical identification remain later evidence layers.
