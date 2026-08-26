@@ -86,3 +86,45 @@ followed by the actual full-column-rank check
 \[
 \boxed{\operatorname{rank}J_R=2N}.
 \]
+
+**EQ-T031 — gated damped Gauss--Newton Retrodiction estimator**
+\[
+\boxed{
+\widehat z
+=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2
+}
+\]
+with iteration
+\[
+\boxed{
+(J_k^TJ_k+\lambda I)\delta z_k=J_k^Tr_k,
+\qquad
+r_k=Y_{\rm obs}-Y(z_k),
+\qquad \lambda\ge0.
+}
+\]
+Only a line-search step satisfying
+\[
+\|Y_{\rm obs}-Y(z_k+\alpha\delta z_k)\|_2<\|r_k\|_2
+\]
+is admitted.
+
+**EQ-T032 — pre-truth estimate commitment**
+\[
+\boxed{
+C_{\rm est}
+=\operatorname{SHA256}(\widehat z\,\|\,\widehat Y\,\|\,r\,\|\,\mathrm{metadata}).
+}
+\]
+The scorer verifies \(C_{\rm est}\) before sealed truth enters the scoring stage.
+
+**EQ-T033 — reference-null residual reductions**
+For zero-kick and checkpoint-shuffle null residuals \(r_0\) and \(r_{\rm shuf}\),
+\[
+\boxed{
+R_0=1-\frac{r_{\rm est}}{r_0},
+\qquad
+R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
+}
+\]
+These are reference-model computational diagnostics rather than physical significance statistics.
