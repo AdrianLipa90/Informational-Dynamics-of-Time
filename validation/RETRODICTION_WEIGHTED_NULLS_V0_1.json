@@ -8,16 +8,16 @@
   "operator_declaration": "operators/retrodiction_weighted_nulls_v01.pnv",
   "test_execution": {
     "environment": "isolated local reconstruction of exact branch implementation dependencies",
-    "command_equivalent": "pytest -q tests/reference/test_retrodiction_weighted_nulls.py",
-    "result": "5 passed in 0.19s",
-    "combined_checkpoint_selection_plus_weighted_nulls": "10 passed in 0.21s",
+    "weighted_null_file_result": "5 passed in 0.19s",
+    "final_pre_merge_combined_checkpoint_selection_plus_weighted_nulls": "10 passed in 0.25s",
     "checks": [
       "exact three-kick covariance-weighted reconstruction",
       "all five non-identity three-checkpoint permutations evaluated",
       "observed chronology beats every permutation in reference case",
       "covariance-scale law for weighted residual quadratic",
       "non-positive-definite covariance fails closed",
-      "permutation safety limit fails closed before a partial ensemble"
+      "permutation safety limit fails closed before a partial ensemble",
+      "partial checkpoint cardinality/rank/conditioning controls rechecked in the same pre-merge run"
     ]
   },
   "reference_case": {
