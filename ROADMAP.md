@@ -29,7 +29,7 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
 8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
-9. `CI_RERUN_QUEUED`: the first attempt had no executed steps/logs and was classified `CI_RESULT_NOT_OBTAINED`; a failed-job rerun has been requested successfully;
+9. `CI_INFRASTRUCTURE_BLOCKED`: both the first workflow attempt and the explicit failed-job rerun ended with zero executed steps and unavailable logs; the observable result class is `CI_RESULT_NOT_OBTAINED`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
@@ -45,10 +45,13 @@ A provisional downstream Retrodiction branch is being developed without advancin
 4. `PROVED_REFERENCE_AMBIGUITY`: when both factors are withheld, only \(q_n\delta m_n\) is identifiable because positive reciprocal rescaling leaves the kick invariant;
 5. `PROVISIONAL_OBSERVABILITY_GATE`: for \(N\) latent 2D kicks, build \(J_R=\partial Y/\partial z\) and require \(\operatorname{rank}J_R=2N\) before any estimator is admitted;
 6. `PROVED_DIMENSIONAL_BOUND`: one final 4D memory checkpoint cannot locally identify more than two unknown 2D kicks, because \(\operatorname{rank}J_R\le4\);
-7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints can enlarge the measurement space and restore full column rank in the targeted reference cases; actual rank remains mandatory;
-8. `NEXT_AFTER_MEMORY_ADMISSION`: promote the single-receipt and observability contracts, then extend to noisy/missing checkpoints and multi-event latent-lineage estimation;
-9. `NEXT_ESTIMATION_GATE`: introduce explicit baseline/null estimators and conditioning thresholds before optimizing latent lineages;
-10. `LATER`: compare every retrodictive estimator against explicit null/baseline models without hidden-lineage leakage.
+7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in the targeted reference cases; actual rank remains mandatory;
+8. `PROVISIONAL_ESTIMATION_GATE_PASS`: gated damped Gauss--Newton reference estimation is implemented with strict residual-descent admission and fail-closed local-rank checks;
+9. `PROVISIONAL_INFORMATION_FIREWALL_PASS`: estimator input excludes sealed truth and the estimate is content-committed before truth scoring;
+10. `PROVISIONAL_REFERENCE_NULL_PASS`: zero-kick and capacity-matched checkpoint-order nulls are implemented and recorded in E003 reference run 0001;
+11. `NEXT`: introduce an explicit checkpoint-noise model, weighted sensitivity/Fisher geometry and uncertainty propagation for latent kicks;
+12. `NEXT`: extend to deliberately missing checkpoints and compare uncertainty-calibrated estimates against preregistered null ensembles;
+13. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
