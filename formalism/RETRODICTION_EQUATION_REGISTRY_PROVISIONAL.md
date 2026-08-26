@@ -172,3 +172,33 @@ For observation dimension \(m\) and latent dimension \(p\), when \(m>p\),
 }
 \]
 Registered evidence class: `NOISE_MODEL_REFERENCE_DIAGNOSTIC`; experiment-specific statistical calibration is a later gate.
+
+**EQ-T038 — partial-checkpoint cardinality lower bound**
+For \(N\) latent two-component event kicks and four real observed coordinates per retained checkpoint,
+\[
+4|\mathcal C|\ge2N,
+\]
+so
+\[
+\boxed{
+|\mathcal C|\ge\left\lceil\frac{N}{2}\right\rceil.
+}
+\]
+This is a necessary dimensional bound; the actual subset must still pass the sensitivity-rank gate.
+
+**EQ-T039 — minimal observable checkpoint selector**
+\[
+\boxed{
+\mathcal C_*
+=\arg\min_{\mathcal C\subseteq\mathcal C_{\rm avail}}
+|\mathcal C|
+\quad\text{subject to}\quad
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+With an explicitly declared stability threshold, admission additionally requires
+\[
+\boxed{
+\kappa\!\left(J_R(\mathcal C)\right)\le\kappa_{\max}.
+}
+\]
