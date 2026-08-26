@@ -9,7 +9,8 @@
   "test_execution": {
     "environment": "isolated local reconstruction of exact branch implementation dependencies",
     "command_equivalent": "pytest -q tests/reference/test_retrodiction_weighted_nulls.py",
-    "result": "5 passed in 0.24s",
+    "result": "5 passed in 0.19s",
+    "combined_checkpoint_selection_plus_weighted_nulls": "10 passed in 0.21s",
     "checks": [
       "exact three-kick covariance-weighted reconstruction",
       "all five non-identity three-checkpoint permutations evaluated",
