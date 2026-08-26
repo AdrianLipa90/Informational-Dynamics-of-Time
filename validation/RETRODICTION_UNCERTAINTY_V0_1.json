@@ -1,0 +1,63 @@
+{
+  "schema": "IDT_RETRODICTION_UNCERTAINTY_V0_1",
+  "status": "PASS_ISOLATED_REFERENCE_HARNESS_PROVISIONAL_DOWNSTREAM",
+  "canon_allowed": false,
+  "dependency_parent": "RETRODICTION_ESTIMATION_NULLS_PROVISIONAL_DOWNSTREAM",
+  "implementation": "src/idt/retrodiction_uncertainty.py",
+  "tests_declared": "tests/reference/test_retrodiction_uncertainty.py",
+  "execution_basis": "isolated exact-formula and seeded nonlinear reference harness mirroring the current velocity-Verlet forward model, finite-difference sensitivity, isotropic observation covariance and local Fisher-covariance equations",
+  "reference_noise_model": {
+    "type": "ISOTROPIC_GAUSSIAN_CHECKPOINT_REFERENCE",
+    "checkpoint_standard_deviation": 1e-5,
+    "observation_dimension": 12,
+    "latent_dimension": 6
+  },
+  "weighted_reference_geometry": {
+    "rank": 6,
+    "condition_number": 4.076001711235765,
+    "latent_standard_errors": [
+      9.981946975861415e-6,
+      9.988618841886904e-6,
+      1.4141235825368167e-5,
+      1.413691181148124e-5,
+      1.41415490177384e-5,
+      1.413378366360539e-5
+    ],
+    "weighted_residual_quadratic_on_exact_reference_estimate": 1.0720342368041557e-18,
+    "degrees_of_freedom": 6,
+    "reduced_weighted_residual_on_exact_reference_estimate": 1.7867237280069262e-19
+  },
+  "scaling_controls": [
+    "doubling isotropic checkpoint standard deviation multiplies latent covariance by four",
+    "doubling isotropic checkpoint standard deviation multiplies latent standard errors by two",
+    "Fisher information times latent covariance returns the six-dimensional identity within numerical tolerance",
+    "non-positive-definite observation covariance fails closed",
+    "an explicit maximum condition-number threshold can classify a full-rank reference geometry as WEIGHTED_ILL_CONDITIONED"
+  ],
+  "seeded_nonlinear_monte_carlo": {
+    "seed": 20260827,
+    "cases": 500,
+    "checkpoint_standard_deviation": 1e-5,
+    "fit_failures": 0,
+    "empirical_kick_coordinate_standard_deviations": [
+      9.54309555e-6,
+      1.03531267e-5,
+      1.35302604e-5,
+      1.45062084e-5,
+      1.35586143e-5,
+      1.41979329e-5
+    ],
+    "empirical_to_fisher_std_ratios": [
+      0.95603549,
+      1.03649232,
+      0.95679477,
+      1.02612286,
+      0.95877858,
+      1.00453872
+    ],
+    "maximum_absolute_fractional_std_ratio_deviation": 0.044
+  },
+  "evidence_class": "NOISE_MODEL_REFERENCE_DIAGNOSTIC",
+  "repository_pytest_for_new_uncertainty_layer": "NOT_OBTAINED",
+  "physical_claim_status": "NOT_EVALUATED"
+}
