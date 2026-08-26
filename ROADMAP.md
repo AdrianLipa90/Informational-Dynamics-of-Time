@@ -26,7 +26,7 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`
 3. `CONDITIONAL_IDENTIFIABILITY_PASS`: \(\mu_M\) recoverable from \((h_M,p_M)\), \((a_M,T_M)\), or memory-circulation rate plus conic geometry;
 4. `CP1_REFERENCE_PASS_CANDIDATE`: Kähler-derived local memory frame with \(|\delta m|=d_{FS}\) and geodesic frame transport;
 5. `TARGETED_PASS_CANDIDATE`: append-only memory receipt ledger and reversible lineage cell;
-6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
+6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
 8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
 9. `CI_INFRASTRUCTURE_BLOCKED`: the observed hosted workflow jobs terminate before executing test steps; result class remains `CI_RESULT_NOT_OBTAINED`;
@@ -44,11 +44,13 @@ Canonical status: `PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS`.
 5. `TARGETED_PASS`: propagate each admitted smooth segment by the existing Kepler law translated to the active attractor centre;
 6. `TARGETED_PASS`: accumulate branch-safe winding increments and re-evaluate the complete attractor field at every segment boundary;
 7. `TARGETED_PASS`: record an attractor-switch candidate when the post-segment maximizing basin differs from the completed segment centre;
-8. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
-9. `REFERENCE_RESULT`: `9 passed in 0.05s` in the isolated exact-dependency harness; receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
-10. `NEXT`: add multi-segment attractor residence statistics, dwell-time distributions in \(\tau_{\rm int}\), switching graphs and basin-transition receipts;
-11. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
-12. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before admitting them into this repository.
+8. `TARGETED_PASS`: promote the changed basin on the following segment in multi-segment propagation;
+9. `TARGETED_PASS`: accumulate per-attractor residence segment count, dwell time in \(\tau_{\rm int}\), winding and directed transition counts;
+10. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
+11. `REFERENCE_RESULT`: `11 passed in 0.07s` in the isolated exact-dependency harness; receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
+12. `NEXT`: generate append-only attractor-residence/switch receipts for long temporal trajectories and characterize dwell-time distributions;
+13. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
+14. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before admitting them into this repository.
 
 ## Phase C — Retrodiction and retrocausal tests
 
@@ -62,18 +64,15 @@ The tested Retrodiction implementation remains provisional downstream:
 4. `PROVED_REFERENCE_AMBIGUITY`: when both factors are withheld, only \(q_n\delta m_n\) is identifiable because positive reciprocal rescaling leaves the kick invariant;
 5. `PROVISIONAL_OBSERVABILITY_GATE`: for \(N\) latent 2D kicks, build \(J_R=\partial Y/\partial z\) and require \(\operatorname{rank}J_R=2N\) before any estimator is admitted;
 6. `PROVED_DIMENSIONAL_BOUND`: one final 4D memory checkpoint cannot locally identify more than two unknown 2D kicks, because \(\operatorname{rank}J_R\le4\);
-7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in the targeted reference cases; actual rank remains mandatory;
+7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in the targeted reference cases;
 8. `PROVISIONAL_ESTIMATION_GATE_PASS`: gated damped Gauss--Newton reference estimation is implemented with strict residual-descent admission and fail-closed local-rank checks;
 9. `PROVISIONAL_INFORMATION_FIREWALL_PASS`: estimator input excludes sealed truth and the estimate is content-committed before truth scoring;
-10. `PROVISIONAL_REFERENCE_NULL_PASS`: zero-kick and capacity-matched checkpoint-order nulls are implemented and recorded in E003 reference run 0001;
-11. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
-12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
-13. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: for \(N\) latent 2D kicks the dimensional lower bound is \(|\mathcal C|\ge\lceil N/2\rceil\), followed by actual rank and optional conditioning gates;
-14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned, while all three checkpoints give condition about `4.076`;
-15. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete five-member non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-16. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability without hidden-lineage leakage;
-17. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
-18. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
+11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
+12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
+13. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability without hidden-lineage leakage;
+14. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
