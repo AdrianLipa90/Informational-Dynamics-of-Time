@@ -72,7 +72,18 @@ Provisional partial-checkpoint evidence is recorded in `validation/RETRODICTION_
 - with an explicit maximum admitted condition number `10`, the selector retains all three checkpoints;
 - seeded 200-case three-event audit: every case had a full-rank two-checkpoint subset; the best two-checkpoint condition median was about `59.42`, while all-three-checkpoint condition median was about `4.067`.
 
-The registered evidence classes are `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`, `NOISE_MODEL_REFERENCE_DIAGNOSTIC` and `PARTIAL_OBSERVATION_REFERENCE_DIAGNOSTIC`. Statistical-effect evaluation, experiment-specific uncertainty calibration, leakage/channel audit and physical-claim evaluation remain later gates.
+Provisional covariance-weighted permutation-null evidence is recorded in `validation/RETRODICTION_WEIGHTED_NULLS_V0_1.json` and append-only run `experiments/E003_retrodiction/runs/E003_REFERENCE_0002.json`:
+
+- exact targeted test file: `5 passed in 0.19s` on the final weighted-null implementation in the isolated local reference reconstruction;
+- weighted three-kick estimator passes rank 6 and reconstructs the exact reference lineage in two iterations;
+- weighted condition number: about `4.070`;
+- retained chronology weighted residual quadratic: about `2.49e-24`;
+- all five non-identity permutations of three complete checkpoint blocks are evaluated with the same latent dimension and jointly permuted covariance;
+- permutation-null weighted residual quadratics range from about `1.80e5` to `8.19e5`, with median about `6.13e5`;
+- no null member reaches a residual at or below the retained chronology in this finite reference ensemble;
+- non-positive-definite covariance and a permutation count above the declared safety limit fail closed.
+
+The registered evidence classes are `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`, `NOISE_MODEL_REFERENCE_DIAGNOSTIC`, `PARTIAL_OBSERVATION_REFERENCE_DIAGNOSTIC` and `PERMUTATION_REFERENCE_DIAGNOSTIC`. Statistical-effect evaluation, experiment-specific uncertainty calibration, leakage/channel audit and physical-claim evaluation remain later gates.
 
 Validation receipts include:
 
@@ -87,10 +98,11 @@ Validation receipts include:
 - `validation/RETRODICTION_OBSERVABILITY_V0_1.json`;
 - `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json`;
 - `validation/RETRODICTION_UNCERTAINTY_V0_1.json`;
-- `validation/RETRODICTION_CHECKPOINT_SELECTION_V0_1.json`.
+- `validation/RETRODICTION_CHECKPOINT_SELECTION_V0_1.json`;
+- `validation/RETRODICTION_WEIGHTED_NULLS_V0_1.json`.
 
 GitHub Actions infrastructure status: the integrated Memory admission attempts and the latest Retrodiction-branch workflow job end with conclusion `failure`, zero executed steps and unavailable job logs. The observable result class is `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`; no repository-test outcome was produced by those runs.
 
 Full repository suite status on the integrated Memory tree: `NOT_OBTAINED`.
 
-The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation, null comparison, local uncertainty geometry and partial-checkpoint selection. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
+The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation, null comparison, local uncertainty geometry, partial-checkpoint selection and covariance-preserving permutation-null comparison. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction remains provisional until that dependency gate is explicitly promoted.
