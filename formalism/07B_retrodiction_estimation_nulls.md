@@ -58,7 +58,7 @@ The implementation accepts only a step length \(\alpha=2^{-j}\) for which
 \|Y_{\rm obs}-Y(z_k+\alpha\delta z_k)\|_2
 <\|r_k\|_2.
 \]
-If no declared line-search step decreases the residual, the reference estimator returns `STALLED_NO_DESCENT` rather than fabricating a solution. If the local sensitivity loses full column rank during iteration, estimation fails closed.
+If no declared line-search step decreases the residual, the reference estimator returns `STALLED_NO_DESCENT`. If the local sensitivity loses full column rank during iteration, estimation fails closed.
 
 ## 3. Information firewall and estimate commitment
 
@@ -103,7 +103,7 @@ The single-event factorization control remains
 \[
 (q,\delta m)\mapsto(cq,\delta m/c),\qquad c>0,
 \]
-which preserves \(q\delta m\). It is therefore a structural non-identifiability control rather than an optimizer baseline.
+which preserves \(q\delta m\). Its registered status is `STRUCTURAL_NON_IDENTIFIABILITY_CONTROL`, separate from the optimizer baselines.
 
 ## 5. Residual-reduction diagnostics
 
@@ -115,7 +115,7 @@ R_0=1-\frac{r_{\rm est}}{r_0},
 R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
 }
 \]
-These quantities are computational reference diagnostics. They are not p-values and do not establish a physical effect.
+Their registered evidence class is `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`. Physical significance evaluation belongs to the later statistical and physical-claim gates.
 
 ## 6. Evidence boundary
 
