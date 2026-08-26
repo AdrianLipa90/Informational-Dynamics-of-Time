@@ -330,6 +330,33 @@ where \(R_{b\leftarrow a}\in SO(3)\) is the minimal non-antipodal Bloch-geodesic
 \mathbf e_P^{(b)}=\mathbf n_b\times\mathbf e_Q^{(b)}.
 \]
 
+**EQ-T019M — persistent memory-event receipt and kick**
+\[
+\boxed{\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)},
+\qquad
+\boxed{K_{\mathcal E_n}:v_M\mapsto v_M+q_n\delta m_n}.
+\]
+
+**EQ-T019N — reversible memory-lineage cell**
+\[
+\boxed{
+\mathcal C_n
+=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n},
+}
+\]
+\[
+\boxed{
+\mathcal C_n^{-1}
+=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
+}
+\]
+For the velocity--Verlet reference step,
+\[
+\boxed{r_0=r_1-v_1\Delta\tau+\frac12a_1\Delta\tau^2},
+\qquad
+\boxed{v_0=v_1-\frac12(a_0+a_1)\Delta\tau}.
+\]
+
 **EQ-T020 — atomic temporal transition measure**
 \[
 \mathcal K_T=\sum_n q_n\,\delta_{s_n}.
@@ -361,6 +388,23 @@ where \(R_{b\leftarrow a}\in SO(3)\) is the minimal non-antipodal Bloch-geodesic
 \operatorname{supp}_{\rm at}(f_*\mathcal A_T)
 =f\!\left(\operatorname{supp}_{\rm at}\mathcal A_T\right).
 \]
+
+**EQ-T034 — ledger-assisted recall reconstruction**
+\[
+X_N=\mathcal C_{N-1}\cdots\mathcal C_1\mathcal C_0X_0,
+\]
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1},
+}
+\]
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}(X_N;\{\mathcal E_n\},\mu_M)=X_0
+}
+\]
+within the declared reversible reference class and complete persisted lineage.
 
 **EQ-T050 — energy/clock calibration**
 \[
