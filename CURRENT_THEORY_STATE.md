@@ -35,28 +35,26 @@ and the reversible reference cell
 \]
 The complete persisted ledger yields the ledger-assisted recall candidate.
 
-A provisional downstream Retrodiction contract treats one receipt factor as withheld rather than replayed. Reversing the known smooth segment reconstructs
+A provisional downstream Retrodiction contract treats one receipt factor as withheld. Reversing the known smooth segment reconstructs
 \[
 \boxed{\Delta v_{M,n}=\widetilde v_{M,n}-v_{M,n}}.
 \]
-If a nonzero imprint is independently known,
+Conditional factor identification obeys
 \[
 \boxed{
 \widehat q_n=
 \frac{\operatorname{Re}(\Delta v_{M,n}\delta m_n^*)}{|\delta m_n|^2}
-}
-\]
-with an explicit collinearity residual. If \(q_n>0\) is independently known,
-\[
+},
+\qquad
 \boxed{\widehat{\delta m}_n=\Delta v_{M,n}/q_n}.
 \]
-If both factors are withheld, only their product is identifiable because
+When both factors are withheld, the scale family
 \[
 (q_n,\delta m_n)\mapsto(cq_n,\delta m_n/c),\qquad c>0,
 \]
-leaves the kick unchanged.
+preserves the kick and gives the registered product-only ambiguity.
 
-The provisional multi-event extension now introduces the sensitivity matrix
+For multi-event Retrodiction,
 \[
 \boxed{
 J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0},
@@ -67,10 +65,46 @@ with first-order local-identifiability gate
 \[
 \boxed{\operatorname{rank}J_R=2N.}
 \]
-For one final memory phase-state checkpoint, \(Y_f\in\mathbb R^4\), so
-\[
-\operatorname{rank}J_R\le4.
-\]
-Hence more than two unknown two-component kicks are dimensionally underdetermined from a single final checkpoint. Additional retained checkpoints enlarge the measurement space, but the actual full-column-rank test remains mandatory.
+One final four-component memory checkpoint gives \(\operatorname{rank}J_R\le4\); retained intermediate checkpoints enlarge the observation space and are admitted only after the actual full-column-rank audit.
 
-This Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still pending a real full repository reference-suite result on the integrated tree, so the Retrodiction node is not yet promoted into the canonical admitted frontier.
+After this gate passes, the provisional reference estimator is
+\[
+\boxed{
+\widehat z=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2
+}
+\]
+with damped Gauss--Newton update
+\[
+\boxed{
+(J_k^TJ_k+\lambda I)\delta z_k=J_k^Tr_k
+}
+\]
+and strict residual-descent step admission. The estimate is content-committed before sealed truth enters scoring. Zero-kick and checkpoint-order nulls are carried as reference comparisons.
+
+The provisional uncertainty layer introduces a declared checkpoint covariance
+\[
+\boxed{\Sigma_Y=LL^T}
+\]
+and whitened sensitivity
+\[
+\boxed{J_W=L^{-1}J_R.}
+\]
+The local Fisher geometry is
+\[
+\boxed{
+F_z=J_R^T\Sigma_Y^{-1}J_R=J_W^TJ_W,
+\qquad
+C_z\approx F_z^{-1},
+}
+\]
+with local coordinate uncertainties
+\[
+\boxed{\sigma_{z_i}=\sqrt{(C_z)_{ii}}.}
+\]
+The committed residual carries weighted diagnostic
+\[
+\boxed{Q_W=r^T\Sigma_Y^{-1}r.}
+\]
+These objects are registered as provisional Retrodiction noise/uncertainty reference contracts.
+
+The Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is pending a real full repository reference-suite result on the integrated tree, so the canonical admitted frontier remains at Memory.
