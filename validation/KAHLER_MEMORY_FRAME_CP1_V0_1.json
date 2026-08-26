@@ -1,0 +1,27 @@
+{
+  "schema": "IDT_KAHLER_MEMORY_FRAME_CP1_V0_1",
+  "status": "PASS_TARGETED_REFERENCE_CHECKS",
+  "targeted_checks": "7 targeted CP1 frame checks PASS",
+  "controls": [
+    "qubit Bloch vector is unit and global-phase invariant",
+    "CP1 half-angle log-map norm equals Fubini-Study distance",
+    "initial tangent dyad is orthonormal and Kahler-oriented",
+    "projected local event displacement has modulus d_FS",
+    "minimal geodesic frame transport preserves tangency and orientation",
+    "round-trip transport on one geodesic recovers the frame",
+    "antipodal geodesic ambiguity fails closed"
+  ],
+  "reference_subclass": {
+    "state_space": "CP1 / pure qubit Bloch sphere",
+    "complex_structure": "e_P = n x e_Q",
+    "local_memory_displacement": "delta_m = xi_FS.e_Q + i xi_FS.e_P",
+    "normalization": "|delta_m| = d_FS",
+    "transport": "minimal SO(3) geodesic rotation / CP1 Levi-Civita reference transport"
+  },
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "epistemic_boundary": {
+    "status": "MEMORY_FRONTIER_CANDIDATE_KAHLER_FRAME_REFERENCE_SUBCLASS",
+    "higher_dimensional_CPn_extension": "OPEN_DERIVATION_TARGET",
+    "persistence_recall": "OPEN_DERIVATION_TARGET"
+  }
+}
