@@ -95,3 +95,14 @@ from .memory_recall import (
     recall_memory_lineage,
     event_invariant_signature,
 )
+
+from .retrodiction import (
+    RetrodictionError,
+    MissingKickInference,
+    RetrodictedReceipt,
+    infer_missing_kick,
+    infer_event_weight_from_known_imprint,
+    infer_imprint_from_known_event_weight,
+    retrodict_single_missing_receipt,
+    receipt_product_equivalent,
+)
