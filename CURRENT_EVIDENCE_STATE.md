@@ -21,11 +21,7 @@ Recorded targeted controls:
 - persistence / ledger-assisted recall: `8 passed in 0.13s`;
 - integrated Memory path: `6/6 targeted integration checks PASS`.
 
-The integrated Memory path verifies
-
-`CP1 geometry -> event kick -> Kepler propagation -> persisted receipt -> recall`,
-
-including a tampered-receipt negative control and upstream global-phase invariance. The isolated integrated round-trip error in the recorded reference case is below `3.6e-16`.
+The integrated Memory path verifies `CP1 geometry -> event kick -> Kepler propagation -> persisted receipt -> recall`, including a tampered-receipt negative control and upstream global-phase invariance. The isolated integrated round-trip error in the recorded reference case is below `3.6e-16`.
 
 ## ORCHORBITAL attractor extension
 
@@ -33,7 +29,7 @@ Receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
 
 Targeted exact-dependency reference result:
 
-- `9 passed in 0.05s`;
+- `11 passed in 0.07s`;
 - positive binding margins normalize to attractor weights;
 - deterministic maximum-binding active-attractor selection: PASS;
 - symmetric two-attractor state gives `H_A = 1 bit` and normalized attractor coherence `C_A = 0`: PASS;
@@ -42,6 +38,9 @@ Targeted exact-dependency reference result:
 - quarter-turn winding increment equals `1/4`: PASS;
 - ORCHORBITAL smooth step advances `tau_internal` and records winding: PASS;
 - a constructed boundary-crossing case records `A -> B` as an attractor-switch candidate: PASS;
+- multi-segment propagation uses `A` on the completed segment and `B` on the following segment: PASS;
+- directed transition graph counts the reference `A -> B` transition exactly once: PASS;
+- residence summary accumulates segment count, dwell time in `tau_internal` and winding: PASS;
 - `LEAK_MODE` fails closed before orbital propagation: PASS;
 - phase-space closure defect is zero for identical states: PASS.
 
@@ -62,9 +61,7 @@ Retrodiction remains `PROVISIONAL_DOWNSTREAM` in the dependency graph.
 
 ## Hosted full-suite status
 
-Observed GitHub Actions jobs for the integrated Memory/Retrodiction history terminate with conclusion `failure` but zero executed steps and unavailable logs. The recorded result class is therefore
-
-`CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`.
+Observed GitHub Actions jobs for the integrated Memory/Retrodiction history terminate with conclusion `failure` but zero executed steps and unavailable logs. The recorded result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`.
 
 No repository-test PASS or code/test FAIL is inferred from those hosted runs.
 
