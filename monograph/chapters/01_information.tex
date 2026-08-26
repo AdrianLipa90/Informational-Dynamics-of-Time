@@ -1,7 +1,116 @@
 \chapter{Information and Relational Order}
-The programme begins from informational relations and a declared ordering structure. The first open derivational debt is whether the ordering relation can itself be obtained from an informational asymmetry functional.
 
+The temporal programme begins from relational states rather than from a pre-existing time coordinate. Each state $s$ is assigned a probability distribution
+\[
+p(s)=(p_1,\ldots,p_m),
+\qquad
+p_i\geq0,
+\qquad
+\sum_i p_i=1,
+\]
+and its Shannon entropy in bits,
+\[
+\boxed{
+H_S(s)=-\sum_i p_i(s)\log_2p_i(s).
+}
+\]
 The inherited normalization is
 \[
 \kappa=\frac{\ln2}{24\pi}.
 \]
+
+For an admitted directed transition $e:a\to b$, the first informational quantity is the exact state-function difference
+\[
+\Delta H_e=H_S(b)-H_S(a).
+\]
+This quantity measures the change in the Shannon state entropy across that transition. Importantly, it is an exact difference. Therefore, for every closed directed cycle $C$,
+\[
+\boxed{
+\sum_{e\in C}\Delta H_e=0.
+}
+\]
+The identity follows by telescoping and has a direct methodological consequence: a state entropy difference can contribute to an open transition, but it cannot by itself generate a non-zero circulation around a closed cycle.
+
+\section{Complex relational state and phase transport}
+
+The same relational state is also represented by a normalized complex vector
+\[
+\psi(s)\in\mathbb C^m,
+\qquad
+\langle\psi|\psi\rangle=1.
+\]
+Whenever two consecutive states have non-zero overlap, define the normalized Pancharatnam link
+\[
+G_{a\to b}
+=
+\frac{\langle\psi_a|\psi_b\rangle}
+{|\langle\psi_a|\psi_b\rangle|}
+\in U(1).
+\]
+An open link is gauge-covariant under local rephasing of the state representatives. The ordered product of links around a closed cycle is gauge-invariant and defines the discrete geometric holonomy
+\[
+\gamma_B(C)
+=
+\operatorname{Arg}\!\left(\prod_{e\in C}G_e\right).
+\]
+
+\section{Shannon--phase transition link}
+
+To connect informational change and phase transport without identifying them prematurely, introduce a transition-associated non-exact information increment $\sigma_e$. The first microscopic candidate closure is obtained from forward/reverse transition asymmetry. For strictly positive admitted transition probabilities,
+\[
+\boxed{
+\sigma_{a\to b}
+=
+\log_2\frac{P(b\mid a)}{P(a\mid b)}.
+}
+\]
+This quantity is path-level rather than a state entropy. It obeys $\sigma_{b\to a}=-\sigma_{a\to b}$ and vanishes for a symmetric transition pair. The candidate temporal link is
+\[
+\boxed{
+L_e
+=
+G_e\exp\!\left[i\kappa\left(\Delta H_e+\sigma_e\right)\right].
+}
+\]
+The corresponding transition phase weight is
+\[
+q_e=\operatorname{Arg}L_e.
+\]
+It can therefore enter the atomic temporal transition measure used later in the construction,
+\[
+\mathcal K_T=\sum_e q_e\,\delta_{s_e}.
+\]
+
+For a closed cycle the exact Shannon contribution cancels. Defining the cycle affinity
+\[
+\mathcal A_C
+=
+\sum_{e\in C}\sigma_e
+=
+\log_2\prod_{e\in C}
+\frac{P_{e,+}}{P_{e,-}},
+\]
+gives
+\[
+\boxed{
+\operatorname{Arg}\!\left(\prod_{e\in C}L_e\right)
+=
+\gamma_B(C)
++
+\kappa\mathcal A_C
+\pmod{2\pi}.
+}
+\]
+This is the first structural separation in the derivation. The geometric part supplies phase holonomy. The exact Shannon state potential supplies open-transition information change. Directed path affinity supplies a non-exact information channel that can survive cycle closure.
+
+A useful control follows immediately. If a strictly positive relational weight $\pi_s$ satisfies pairwise detailed balance,
+\[
+\pi_aP(b\mid a)=\pi_bP(a\mid b),
+\]
+then
+\[
+\sigma_{a\to b}=\log_2\frac{\pi_b}{\pi_a}
+\]
+and the cycle affinity telescopes to zero. Non-zero $\mathcal A_C$ is therefore a precise obstruction to this detailed-balance representation on the declared cycle.
+
+The next derivational target is to determine how the relational density and viscosity fields modify the forward/reverse transition weights, rather than assigning those weights by hand.

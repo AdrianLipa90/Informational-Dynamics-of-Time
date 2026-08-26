@@ -1,2 +1,30 @@
 \chapter{TIR Entrypoint}
+
 The temporal branch imports only registry-declared TIR objects. Every downstream dependency is recorded explicitly so that the temporal derivation can be audited independently.
+
+The first imported structural constant is
+\[
+\kappa=\frac{\ln2}{24\pi}.
+\]
+The first local temporal construction then combines three typed objects rather than collapsing them into one: Shannon state entropy $H_S$, geometric phase transport $G_e$, and a transition-associated non-exact information-production increment $\sigma_e$.
+
+The dependency chain at this stage is therefore
+\[
+\text{relational state}
+\longrightarrow
+(H_S,\psi)
+\longrightarrow
+(\Delta H_e,G_e)
+\longrightarrow
+L_e
+\longrightarrow
+q_e
+\longrightarrow
+\mathcal K_T.
+\]
+
+The first explicit candidate closure of the edge quantity is
+\[
+\sigma_{a\to b}=\log_2\frac{P(b\mid a)}{P(a\mid b)}.
+\]
+This closes the free edge parameter at the information-theoretic level while preserving the distinction between state entropy and path affinity. The next upstream debt is to derive the forward/reverse transition weights from the relational density and viscosity fields rather than supplying them externally.
