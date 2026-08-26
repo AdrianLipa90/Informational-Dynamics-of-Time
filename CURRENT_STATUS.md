@@ -12,4 +12,8 @@ Current admitted frontier:
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\mathbf{Temporal\ Transport}}
 \]
 
-Bifurcation has passed the formal operator-classification gate with a typed reversible/contractive reference class. Temporal Transport is now the active derivation target. Memory remains a provisional downstream branch until transport closure.
+Memory now has a `PROVISIONAL_DOWNSTREAM_BRANCH` Kepler--Newton reference implementation coupled to the temporal activity clock by
+\[
+\Delta\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda.
+\]
+The implementation covers inverse-square propagation, Kepler invariants, signed swept area, orbital classification and an explicit bifurcation-to-memory impulse interface. Temporal Transport remains the admission frontier; memory promotion follows its closure receipt and the declared open Memory-node derivations.
