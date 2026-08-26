@@ -1,0 +1,47 @@
+{
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
+  "ci": {
+    "attempts": 2,
+    "conclusion": "INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33021160476,
+    "steps_per_attempt": [0, 0]
+  },
+  "derivation": {
+    "mobility_weight": "ZERO_DRIVE_DIRICHLET_EXACT",
+    "scalar_factorization": "nu_ab=eta_bar_ab/M_ab=eta_bar_ab^2/sqrt(rho_a rho_b)",
+    "stiffness": "K_M=D_L^dagger diag(M_ab) D_L",
+    "uniform_scalar": "nu=eta^2/rho",
+    "viscous_damping": "C_eta=D_L^dagger diag(eta_bar_ab) D_L"
+  },
+  "gremlin": {
+    "artifact_sha256": "d5f5423e9b32f68e02b9145648a8aa65477188e333a6c92eff7fcd30cbac7510",
+    "authority": "CANDIDATE_ONLY",
+    "comparisons_structurally_isomorphic": [true, true],
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "3/3", "3/3"]
+  },
+  "local_harness": {
+    "elapsed_s": 0.92,
+    "tests_passed": 18,
+    "tests_total": 18
+  },
+  "parent_commit": "2e16239b92f97af534d91156e5bca25e81ff0578",
+  "runtime_probe_sha256": "9f7e5913a2ca5d028ec4c1af57e4db4aa06c965bcfd361b3d9bb01726c9ed3e8",
+  "schema": "IDT_TEMPORAL_WAVE_MOBILITY_VISCOSITY_BASELINE_V0_1",
+  "status": "TARGETED_DERIVATION_AND_STRESS_PASS_CI_INFRA_BLOCKED",
+  "stress": {
+    "cases": 500,
+    "heterogeneous_min_ratio_spread": 0.08037424954165173,
+    "heterogeneous_scalar_factorable_count": 0,
+    "max_C_gauge_error": 1.0658141036401503e-14,
+    "max_K_gauge_error": 2.0791723739534308e-14,
+    "max_energy_identity_error": 1.4210854715202004e-13,
+    "max_zero_drive_dirichlet_error": 0.0,
+    "uniform_ratio_formula_max_error": 5.684341886080802e-14
+  }
+}
