@@ -12,6 +12,6 @@ Current included downstream reference chapters:
 
 Retrodiction chapters remain `PROVISIONAL_DOWNSTREAM` while the canonical admitted dependency frontier remains at Memory. Their presence in the monograph source records the tested reference branch; it does not promote physical or canonical claim status.
 
-Latest weighted-null targeted test: `5 passed`; combined checkpoint-selection plus weighted-null targeted run: `10 passed` in the isolated local reconstruction of the exact implementation dependencies.
+Latest weighted-null targeted test file: `5 passed in 0.19s`. Final pre-merge combined checkpoint-selection plus weighted-null targeted rerun: `10 passed in 0.25s` in the isolated local reconstruction of the exact implementation dependencies.
 
 GitHub Actions full-suite status remains `CI_RESULT_NOT_OBTAINED` because hosted jobs terminate before executing steps.
