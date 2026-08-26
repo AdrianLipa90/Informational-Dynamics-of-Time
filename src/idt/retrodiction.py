@@ -180,8 +180,8 @@ def retrodict_single_missing_receipt(
     return RetrodictedReceipt(receipt, missing.delta_velocity, residual, mode)
 
 
-def receipt_product_equivalent(event_weight: float, delta_m: complex, scale: float) -> MemoryEventReceipt:
-    """Return an equivalent factorization of the same kick, exposing the product-only ambiguity."""
+def equivalent_kick_factorization(event_weight: float, delta_m: complex, scale: float) -> tuple[float, complex]:
+    """Return a positive rescaling that preserves the kick product q * delta_m."""
     q = float(event_weight)
     dm = _finite_complex(delta_m, "delta_m")
     c = float(scale)
@@ -189,4 +189,4 @@ def receipt_product_equivalent(event_weight: float, delta_m: complex, scale: flo
         raise RetrodictionError("event_weight must be finite and non-negative")
     if not (math.isfinite(c) and c > 0.0):
         raise RetrodictionError("scale must be finite and strictly positive")
-    return MemoryEventReceipt(1.0, c * q, dm / c)
+    return c * q, dm / c
