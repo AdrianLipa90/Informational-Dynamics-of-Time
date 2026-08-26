@@ -9,7 +9,7 @@
   "test_execution": {
     "environment": "isolated local reconstruction of exact ORCHORBITAL implementation dependencies",
     "command_equivalent": "PYTHONPATH=. pytest -q tests/reference/test_orchorbital.py",
-    "result": "9 passed in 0.05s",
+    "result": "11 passed in 0.07s",
     "checks": [
       "binding margins normalize to attractor weights",
       "deterministic active-attractor selection",
@@ -19,6 +19,9 @@
       "quarter-turn winding increment equals one quarter",
       "ORCHORBITAL step advances internal elapsed activity and records winding",
       "segment-boundary field re-evaluation records an attractor-switch candidate",
+      "multi-segment propagation promotes a boundary switch on the following segment",
+      "attractor transition graph counts the A-to-B switch exactly once in the reference case",
+      "residence summary accumulates segment count, dwell time in tau_internal and winding",
       "LEAK_MODE fails closed before orbital propagation",
       "phase-space closure defect is zero for identical states"
     ]
@@ -32,9 +35,15 @@
     "d2m/dtau_int2 = -mu_a (m-c_a)/|m-c_a|^3",
     "Delta W_a = wrap(Delta theta_a)/(2 pi)"
   ],
+  "system_observables": [
+    "attractor residence segment count",
+    "attractor dwell time in tau_internal",
+    "attractor winding accumulation",
+    "directed attractor transition counts"
+  ],
   "evidence_class": "ORCHORBITAL_MEMORY_REFERENCE_DIAGNOSTIC",
   "native_pnv_execution": "NOT_ASSERTED",
   "physical_claim_status": "NOT_EVALUATED",
   "full_repository_suite": "NOT_OBTAINED_FROM_GITHUB_ACTIONS_INFRASTRUCTURE",
-  "notes": "The targeted reference implementation maps ORCHORBITAL attractor/orbit/weight/winding/leak/closure observables onto the temporal-memory state. The canonical admitted frontier remains at Memory pending its parent admission gate."
+  "notes": "The targeted reference implementation maps ORCHORBITAL attractor/orbit/weight/winding/leak/closure and multi-segment residence/transition observables onto the temporal-memory state. The canonical admitted frontier remains at Memory pending its parent admission gate."
 }
