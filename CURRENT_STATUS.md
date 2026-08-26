@@ -28,7 +28,9 @@ X_M
 \rightarrow
 \Delta W
 \rightarrow
-\text{field re-evaluation}.
+\text{field re-evaluation}
+\rightarrow
+\text{residence / transition graph}.
 }
 \]
 
@@ -40,9 +42,9 @@ b_i=[-E_i]_+,
 \qquad
 w_i=\frac{b_i}{\sum_j b_j}.
 \]
-The same weights define a Shannon basin entropy and normalized attractor coherence. Smooth admitted segments preserve the single-centre Kepler law in the selected attractor frame, and a post-segment field audit records a switch candidate when the maximizing basin changes.
+The same weights define a Shannon basin entropy and normalized attractor coherence. Smooth admitted segments preserve the single-centre Kepler law in the selected attractor frame. Multi-segment propagation accumulates attractor residence time in \(\tau_{\rm int}\), winding, and directed attractor-transition counts.
 
-Targeted ORCHORBITAL reference evidence: `9 passed in 0.05s` in an isolated local reconstruction of the exact implementation dependencies. The receipt is `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
+Targeted ORCHORBITAL reference evidence: `11 passed in 0.07s` in an isolated local reconstruction of the exact implementation dependencies. The receipt is `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
 
 The Retrodiction implementation remains downstream staging. The canonical dependency path is now
 
