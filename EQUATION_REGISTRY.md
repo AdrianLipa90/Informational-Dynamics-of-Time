@@ -285,6 +285,51 @@ p_M=\frac{2r_pr_a}{r_p+r_a}
 }
 \]
 
+**EQ-T019J — CP1 half-angle Fubini--Study logarithm**
+\[
+\theta_{ab}=\arccos(\mathbf n_a\cdot\mathbf n_b),
+\qquad
+d_{FS}(a,b)=\frac{\theta_{ab}}{2},
+\]
+\[
+\boxed{
+\xi^{FS}_{a\to b}
+=\frac12\frac{\theta_{ab}}{\sin\theta_{ab}}
+\left(\mathbf n_b-\cos\theta_{ab}\,\mathbf n_a\right),
+\qquad
+\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b).
+}
+\]
+
+**EQ-T019K — CP1 Kähler memory dyad and local displacement**
+\[
+\mathbf e_Q=\frac{\xi^{FS}}{\|\xi^{FS}\|},
+\qquad
+\mathbf e_P=\mathbf n\times\mathbf e_Q,
+\]
+\[
+\boxed{
+\delta m
+=\xi^{FS}\cdot\mathbf e_Q
++i\,\xi^{FS}\cdot\mathbf e_P,
+\qquad
+|\delta m|=d_{FS}.
+}
+\]
+
+**EQ-T019L — CP1 geodesic memory-frame transport**
+\[
+\boxed{
+\mathbf e_Q^{(b)}=R_{b\leftarrow a}\mathbf e_Q^{(a)},
+\qquad
+\mathbf e_P^{(b)}=R_{b\leftarrow a}\mathbf e_P^{(a)},
+}
+\]
+where \(R_{b\leftarrow a}\in SO(3)\) is the minimal non-antipodal Bloch-geodesic rotation, with
+\[
+\mathbf e_P^{(b)}=\mathbf n_b\times\mathbf e_Q^{(b)}.
+\]
+
 **EQ-T020 — atomic temporal transition measure**
 \[
 \mathcal K_T=\sum_n q_n\,\delta_{s_n}.
