@@ -1,6 +1,6 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_ACTIVE / MEMORY_EVENT_KICK_STRUCTURAL_CLOSURE_CANDIDATE`
+Status: `TEMPORAL_TRANSPORT_ACTIVE / MEMORY_EVENT_KICK_AND_MU_IDENTIFIABILITY_CANDIDATE`
 
 The canonical admitted dependency frontier remains
 
@@ -8,34 +8,34 @@ The canonical admitted dependency frontier remains
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\mathbf{Temporal\ Transport}}
 \]
 
-The active transport candidate is
-\[
-\mathcal U_{f\leftarrow i}=U_NB_N\cdots U_1B_1U_0.
-\]
-
-The Memory node contains a provisional executable Kepler--Newton branch. Its propagation parameter is inherited from internal elapsed activity,
+The Memory node contains a provisional event-driven Kepler--Newton branch with
 \[
 \Delta\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
-\]
-and the smooth memory state evolves through
-\[
-\frac{d^2m}{d\tau_{\rm int}^2}=-\mu_M\frac{m}{|m|^3}.
-\]
-
-The event-imprint projection is
-\[
-\Delta M_n=\bar\rho_n^+-\bar\rho_n^-,
 \qquad
-\delta m_n=\operatorname{tr}(\Delta M_nQ_M)+i\operatorname{tr}(\Delta M_nP_M).
+\frac{d^2m}{d\tau_{\rm int}^2}=-\mu_M\frac{m}{|m|^3},
 \]
-Using the upstream NOW event magnitude \(q_n\), the normalized reference event action
+and event update
 \[
-S_n^{(M)}=q_n\operatorname{Re}(\delta m_n^*m)
+\boxed{\Delta v_{M,n}=q_n\delta m_n}.
 \]
-yields the structural jump
-\[
-\boxed{\Delta v_{M,n}=q_n\delta m_n.}
-\]
-This closes the earlier free-gain placeholder at the structural reference level and fixes the event-driven changes of \(E_M\) and \(h_M\) algebraically.
 
-The current open Memory-node derivation targets are the origin or constraint of \(\mu_M\), the selection/normalization of \(Q_M,P_M\), and the persistence/recall law required for Retrodiction.
+Within this Kepler memory reference class, the central parameter is conditionally identifiable from orbit observables:
+\[
+\boxed{\mu_M=\frac{h_M^2}{p_M}},
+\qquad
+\boxed{\mu_M=\frac{4\pi^2a_M^3}{T_M^2}},
+\]
+and, using the memory-circulation law,
+\[
+\boxed{
+\mu_M
+=\frac{1}{p_M}
+\left(
+\frac{1}{\lambda_M}
+\frac{d\Gamma_M}{d\tau_{\rm int}}
+\right)^2.
+}
+\]
+This converts \(\mu_M\) into an inferable parameter once the corresponding memory-orbit observables are available.
+
+The next Memory-node derivation targets are the selection/normalization of \(Q_M,P_M\) from the preceding Kähler state geometry and the persistence/recall law required for Retrodiction. A deeper origin law predicting \(\mu_M\) directly from upstream relational primitives remains open.
