@@ -140,6 +140,26 @@ d\tau'_{\rm int}=d\tau_{\rm int}.
 -\frac{\mu_M}{r_M}.
 \]
 
+**EQ-T016B — event memory imprint decomposition**
+\[
+R_n^\pm=\Psi_n^\pm(\Psi_n^\pm)^\dagger,
+\qquad
+\Delta w_n=\operatorname{tr}R_n^+-\operatorname{tr}R_n^-,
+\]
+\[
+\bar\rho_n^\pm=\frac{R_n^\pm}{\operatorname{tr}R_n^\pm},
+\qquad
+\Delta M_n=\bar\rho_n^+-\bar\rho_n^-.
+\]
+
+**EQ-T016C — memory-plane projection**
+\[
+m=\operatorname{tr}(\rho Q_M)+i\operatorname{tr}(\rho P_M),
+\]
+\[
+\delta m_n=\operatorname{tr}(\Delta M_nQ_M)+i\operatorname{tr}(\Delta M_nP_M).
+\]
+
 **EQ-T017 — signed memory angular momentum and areal law**
 \[
 h_M=\operatorname{Im}\!\left[m^*\frac{dm}{d\tau_{\rm int}}\right],
@@ -176,6 +196,47 @@ T_M^2=\frac{4\pi^2}{\mu_M}a_M^3
 =\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
 \qquad
 (m,\dot m)_{n+1}=\Phi_{K}(\Delta\tau_{\rm int};\mu_M)(m,\dot m)_n.
+\]
+
+**EQ-T019B — memory action-area holonomy**
+\[
+\alpha_M=\lambda_Mr^2d\theta,
+\qquad
+P_A=\lambda_Mr^2,
+\qquad Q_A=\theta,
+\]
+\[
+\Gamma_M(C)=\oint_C P_A\,dQ_A=\int_S dP_A\wedge dQ_A.
+\]
+For constant \(\lambda_M\),
+\[
+\frac{d\Gamma_M}{d\tau_{\rm int}}=\lambda_Mh_M.
+\]
+
+**EQ-T019C — exact local Berry-memory pullback**
+\[
+P_B=|\lambda_M|r^2,
+\qquad
+\phi=\operatorname{sgn}(\lambda_M)\theta,
+\qquad
+R^2=\frac{|\lambda_M|r^2}{1-|\lambda_M|r^2},
+\]
+\[
+\Phi^*\mathcal A_B=\alpha_M,
+\qquad
+\Phi^*\mathcal F_B=d\alpha_M=2\lambda_M\,dx\wedge dy,
+\qquad
+|\lambda_M|r^2<1.
+\]
+
+**EQ-T019D — event-driven memory impulse**
+\[
+\Delta v_M=\chi_M\delta m_n,
+\]
+\[
+\Delta E_M=\operatorname{Re}(v_M^*\Delta v_M)+\frac12|\Delta v_M|^2,
+\qquad
+\Delta h_M=\operatorname{Im}(m^*\Delta v_M).
 \]
 
 **EQ-T020 — atomic temporal transition measure**
