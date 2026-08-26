@@ -1,34 +1,41 @@
 # CURRENT THEORY STATE
 
-Status: `MEMORY_ORBIT_DRIVE_V0_1`
+Status: `TEMPORAL_ACTIVITY_NOW_V0_1`
 
 The upstream temporal chain is now
-
 \[
 (H_S,\psi)
 \to (\Delta H_e,G_e)
-\to (\rho_R,\eta_R)
-\to M_{ab}
-\to m(s)
-\to A^{(M)}_{ab}
-\to \sigma_{ab}
-\to L_e
-\to q_e
-\to \mathcal K_T.
+\to \sigma_e
+\to (\rho_R,\eta_R,A_e)
+\to (W_+,W_-)
+\to (\mathfrak a_e,\mathfrak j_e)
+\to \mathcal A_T
+\to \mathcal N.
 \]
 
-The relational density/viscosity fields define the symmetric pair mobility
+The kinetic pair separates pace and direction:
 \[
-M_{ab}=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]},
+\mathfrak a_e=2M_e\cosh(A_e/2)>0,
+\qquad
+\mathfrak j_e=2M_e\sinh(A_e/2).
 \]
-while an oriented memory coordinate supplies the first explicit non-exact drive candidate
+The positive activity measure
 \[
-A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)].
+\mathcal A_T=\sum_e\mathfrak a_e\delta_{s_e}
 \]
-For a closed memory orbit,
+is now the active localization carrier for NOW. Positive atoms aggregate without cancellation, giving the stronger pushforward identity
 \[
-\sum_C A^{(M)}_e=2\lambda_M\mathcal A_M(C),
+\operatorname{supp}_{\rm at}(f_*\mathcal A_T)
+=f(\operatorname{supp}_{\rm at}\mathcal A_T)
 \]
-so a non-zero signed memory-orbit area gives non-zero cycle drive. Reversing orbit orientation flips its sign.
+without an injectivity requirement.
 
-Immediate derivational target: feed this admitted edge drive through the Shannon--phase link and derive the transition-event weight \(q_e\) and NOW localization without introducing metric time.
+The oriented memory coordinate supplies the first explicit non-exact drive candidate,
+\[
+A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)],
+\qquad
+\sum_C A^{(M)}_e=2\lambda_M\mathcal A_M(C).
+\]
+
+Immediate derivational target: define a system-internal elapsed-activity coordinate from realized positive activity, then determine how memory-orbit accumulation updates the memory state after each admitted NOW event.
