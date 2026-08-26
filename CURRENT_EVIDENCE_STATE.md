@@ -1,15 +1,16 @@
 # CURRENT EVIDENCE STATE
 
-Status: `v0.5.0-local`
+Status: `SHANNON_PHASE_CORE_V0_2_PASS`
 
-Added in this pass:
+Reference evidence in the current pass:
 
-- local algorithm package for Kähler/information/phase dynamics;
-- generated visualization set: 2D flow, 3D trajectory, nD slices, and event measure;
-- Figure 4.1 rebuilt on one shared numerical scale across all four slices;
-- compact SVG repository previews derived by code from the same sampled fields;
-- monograph compiled locally from LaTeX after figure integration.
+- Shannon/phase + harmonic-scheduler targeted suite: `16 passed in 0.05s`;
+- transition affinity antisymmetry: PASS;
+- symmetric-pair zero affinity: PASS;
+- cycle affinity/log-product identity: PASS;
+- detailed-balance cycle cancellation: PASS;
+- affinity-closed transition link: PASS;
+- validation receipt: `validation/SHANNON_PHASE_CORE_V0_2.json`;
+- receipt SHA-256: `f60cb253de69a50f28208d1eef42094f94b3c5122287e22b61812f7d76682a54`.
 
-Compilation status: **PASS** (two-pass local `pdflatex`).
-
-Repository publication rule for this milestone: compiled PDF and LaTeX auxiliary files remain local; GitHub tracks LaTeX source, code, formalism/evidence text, and generated graph previews.
+The evidence establishes the declared algebraic and gauge-closure properties of this reference construction. A physical arrow-of-time identification remains a downstream evidence target.

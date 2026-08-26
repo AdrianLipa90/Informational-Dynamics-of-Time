@@ -1,0 +1,35 @@
+{
+  "epistemic_boundary": {
+    "metric_time": "DEFERRED",
+    "physical_arrow_of_time": "NOT_PROMOTED",
+    "rho_eta_transition_law": "OPEN_DERIVATION_TARGET",
+    "sigma_e": "CANDIDATE_CLOSED_FROM_FORWARD_REVERSE_AFFINITY"
+  },
+  "files_sha256": {
+    "CLAIM_REGISTRY.md": "025c8646dc402ba92f49369a3af42ce862dd66c51687a52d7c97e7f979d90cad",
+    "EQUATION_REGISTRY.md": "106c28c17ed6ac4b8326e7aa6c4c1127ec99b6b66ea0caf80f8eb616fb4e3c62",
+    "formalism/00B_transition_affinity.md": "0312e1e8fb968b2a98f70f756c826c18a226c30d5a5effd50bf46b0cba9aae78",
+    "formalism/00_shannon_phase_transition.md": "93c9c2a384b0fcd944f79b415bafa9a23712414cc6647c0853d4ea346d7e6a50",
+    "monograph/chapters/01_information.tex": "e5cfce628271bb564f6e9dc6607c42109198d84bbc4f225dbf716238d195620f",
+    "monograph/chapters/02_tir_entrypoint.tex": "538f84b1663ff11df37303efaaed7adec9fcf7324bfec3c1473bcec8d17cc231",
+    "monograph/frontmatter/abstract.tex": "4d86e88b6bf3c22cd79c2c5b7c3a3c20a26dfb78bb451273a0f87e06d9da3157",
+    "monograph/frontmatter/methodology.tex": "5ea87fae87632d1787fbb21a3114f5f12377d47d529e77ced9f2a52344bef425",
+    "operators/shannon_phase_transition.pnv": "6ae1fe937b4fc2e296532721f9c022f5e17ac87afbd3425765cab8114f1a5993",
+    "operators/shannon_phase_transition_v02.pnv": "05e0f2f0af69848c188276a8c871842aeb0e134ccf36debbdac51de658df1309",
+    "src/idt/shannon_phase.py": "52a13e5bc3c4e064e43e87d136933be65ab0bcea5c5c9c9601f0c563d299dd04",
+    "tests/reference/test_shannon_phase_core.py": "0c228e9928431d78af26bdff086c79edb8c1853d8bdd58f1763778472f5eef7c"
+  },
+  "receipt_sha256": "f60cb253de69a50f28208d1eef42094f94b3c5122287e22b61812f7d76682a54",
+  "schema": "IDT_SHANNON_PHASE_CORE_V0_2",
+  "status": "PASS_STRUCTURAL_REFERENCE_TESTS",
+  "structural_results": [
+    "Exact Shannon state differences telescope on closed cycles.",
+    "Pancharatnam closed products are gauge-invariant.",
+    "Directed path affinity sigma_ab=log2(P(b|a)/P(a|b)) is antisymmetric.",
+    "Detailed-balance-form transition ratios give zero closed-cycle affinity.",
+    "Non-zero cycle affinity survives the exact Shannon telescoping channel and contributes kappa*A_C to the candidate composite cycle phase."
+  ],
+  "tests": {
+    "targeted_plus_scheduler": "16 passed in 0.05s"
+  }
+}
