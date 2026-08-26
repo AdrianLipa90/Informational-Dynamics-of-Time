@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_MEMORY_ACTION_AREA_V0_1",
+  "status": "PASS_DELTA_REFERENCE_FULL_SUITE_QUEUED",
+  "base_main": "6f0aa2b1817fc778eb1b65bf80d0f4fe0597254b",
+  "canon_allowed": false,
+  "epistemic": "CHYBA",
+  "delta_tests": {
+    "passed": 17,
+    "failed": 0,
+    "transport_closure": 3,
+    "memory_dynamics_and_bridge": 14,
+    "local_elapsed_seconds": 0.10
+  },
+  "transport_controls": [
+    "spectral contraction bound",
+    "finite exponential invertibility with conditioning separation",
+    "exact cut factorization"
+  ],
+  "memory_controls": [
+    "global-phase invariant raw/projective imprint",
+    "traceless projective imprint",
+    "scalar contraction/projective separation",
+    "projection increment identity",
+    "central zero torque and areal law",
+    "smooth energy derivative cancellation",
+    "constant and dynamic coupling circulation rate",
+    "action-area normal form",
+    "positive and negative Berry pullback orientation",
+    "pullback curvature",
+    "Berry patch fail-closed",
+    "event impulse energy/angular-momentum updates"
+  ],
+  "gremlin": {
+    "verdict": "SUPPORTED_BY_DECLARED_TESTS",
+    "tests_passed": 6,
+    "tests_total": 6,
+    "hypothesis_id": "gremlin:hypothesis:sha256:0961d73fe8c53992ecca7c7b9c9d00d329af39227652c2bcd1aef16448113449",
+    "receipt_sha256": "c178f3fce276788aab4ca3ebd87cfab341d2ab3dd1819a5b1c32464df017326a"
+  },
+  "frontier_candidate": {
+    "temporal_transport": "STRUCTURAL_GATE_PASS_CANDIDATE_PENDING_FULL_SUITE",
+    "memory": "ACTIVE_DERIVATION_TARGET_CANDIDATE",
+    "retrodiction": "GATED"
+  },
+  "full_suite": {
+    "workflow": "Reference suite",
+    "run_id": 32984035657,
+    "status_at_receipt": "QUEUED",
+    "head_sha": "55913f614f03127e09dff51323df331afddd5f64"
+  }
+}
