@@ -72,6 +72,32 @@ The winding increment around the active centre is
 \]
 After propagation the complete attractor field is evaluated again. A different maximizing basin is recorded as an attractor-switch candidate for the following segment.
 
+\section{Residence time and attractor transition graph}
+
+For a multi-segment trajectory, the active attractor of every completed segment is recorded. For attractor \(i\), define its internal residence time
+\[
+\boxed{
+T_i^{\rm res}
+=\sum_{n:a_n=i}\Delta\tau_{{\rm int},n}
+}
+\]
+and accumulated winding
+\[
+\boxed{
+W_i^{\rm tot}
+=\sum_{n:a_n=i}\Delta W_{i,n}.
+}
+\]
+
+Adjacent segment labels define a directed attractor-transition count
+\[
+\boxed{
+N_{i\to j}
+=\#\{n:a_n=i,\ a_{n+1}=j,\ i\neq j\}.
+}
+\]
+The resulting directed graph is an appendable summary of which memory basins the temporal trajectory occupies, for how much internal elapsed activity, and through which ordered switches it moves.
+
 \section{Closure observable}
 
 With declared position and velocity scales \(r_*>0\) and \(v_*>0\), the reference phase-space closure defect is
@@ -107,11 +133,13 @@ X_M
 \rightarrow
 \text{orbit and winding}
 \rightarrow
-\text{field re-evaluation}.
+\text{field re-evaluation}
+\rightarrow
+\text{residence / transition graph}.
 }
 \]
 Thus ORCHORBITAL is inserted after the memory state and before the downstream Retrodiction node. The broader ORCHORBITAL observables --- hierarchical sphere structure, truth scalar, semantic mass and reduction-readiness --- retain their upstream definitions and await a separate dependency-compatible typed mapping into this temporal repository.
 
 \section{Reference evidence}
 
-The implementation is \texttt{src/idt/orchorbital.py}. The targeted reference suite records nine passing controls covering weight normalization, Shannon basin entropy, leak mode, translation covariance, winding, switch detection and closure-defect consistency. The receipt is \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}. This evidence is classified as an ORCHORBITAL memory reference diagnostic; the canonical admitted frontier remains at Memory pending the parent full-suite admission gate.
+The implementation is \texttt{src/idt/orchorbital.py}. The targeted reference suite records eleven passing controls covering weight normalization, Shannon basin entropy, leak mode, translation covariance, winding, switch detection, multi-segment switch promotion, residence accumulation, transition counting and closure-defect consistency. The receipt is \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}. This evidence is classified as an ORCHORBITAL memory reference diagnostic; the canonical admitted frontier remains at Memory pending the parent full-suite admission gate.
