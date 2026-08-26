@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_RETRODICTION_OBSERVABILITY_V0_1",
+  "status": "PASS_TARGETED_ISOLATED_HARNESS / PROVISIONAL_DOWNSTREAM_CANDIDATE",
+  "canon_allowed": false,
+  "epistemic": "FORMAL_REFERENCE_CLASS",
+  "dependency_parent": "MEMORY_ADMISSION_PENDING_FULL_REFERENCE_SUITE",
+  "branch": "feat/retrodiction-single-missing-receipt-v0.1",
+  "latent_coordinates": "N two-component event kicks -> 2N unknown real coordinates",
+  "checkpoint_measurement": "each retained post-event memory phase state contributes (r_x,r_y,v_x,v_y)",
+  "rank_gate": "rank(dY/dz) = 2N for first-order local identifiability",
+  "targeted_controls": {
+    "authored_pytest_functions": 7,
+    "isolated_exact_formula_harness": {
+      "passed": 7,
+      "failed": 0,
+      "controls": [
+        "one unknown 2D kick is full-column-rank from one final 4D checkpoint in the reference case",
+        "two unknown 2D kicks are full-column-rank from one final 4D checkpoint in the generic reference case",
+        "three unknown 2D kicks are dimensionally underdetermined from one final 4D checkpoint",
+        "three retained post-event checkpoints restore rank six for three unknown kicks in the reference case",
+        "final-checkpoint dimensional capacity is exactly 4 observed coordinates before dynamics are considered",
+        "duplicate or pre-event checkpoint indices fail closed",
+        "invalid finite-difference and rank tolerances fail closed"
+      ]
+    },
+    "randomized_observability_audit": {
+      "two_kicks_final_checkpoint": {
+        "attempted": 200,
+        "full_rank": 200,
+        "condition_number_min": 33.82488446166906,
+        "condition_number_median": 56.803907320124104,
+        "condition_number_max": 132.5722528647684
+      },
+      "three_kicks_all_post_event_checkpoints": {
+        "attempted": 200,
+        "full_rank": 200,
+        "condition_number_min": 4.056132022652372,
+        "condition_number_median": 4.071048996838343,
+        "condition_number_max": 4.103266249105238
+      }
+    }
+  },
+  "structural_bound": {
+    "single_final_checkpoint_dimension": 4,
+    "unknown_dimension": "2N",
+    "consequence": "N > 2 implies rank <= 4 < 2N and therefore final-only local kick identification is impossible"
+  },
+  "repository_pytest_for_this_branch": "NOT_OBTAINED_YET",
+  "retrodiction_admission": "GATED_PENDING_MEMORY_ADMISSION",
+  "retrocausal_claim_status": "NOT_EVALUATED"
+}
