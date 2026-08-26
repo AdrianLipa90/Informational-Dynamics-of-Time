@@ -12,22 +12,19 @@ Current admitted frontier:
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
 \]
 
-Temporal Transport has passed its declared structural reference gate. The active Memory node now has:
+Temporal Transport has passed its declared structural reference gate. The active Memory node contains the event-driven Kepler--Newton branch, the upstream event kick \(\Delta v_{M,n}=q_n\delta m_n\), conditional \(\mu_M\) identifiability, the \(\mathbb{CP}^1\) Kähler memory-frame reference subclass, append-only event receipts and ledger-assisted recall.
 
-- event-driven Kepler--Newton propagation in \(\tau_{\rm int}\);
-- the upstream-derived event kick \(\Delta v_{M,n}=q_n\delta m_n\);
-- conditional identification of \(\mu_M\) from memory-orbit observables;
-- a geometry-derived \(\mathbb{CP}^1\) Kähler memory-frame reference subclass with \(|\delta m|=d_{FS}\);
-- append-only event receipts \(\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)\);
-- a reversible reference lineage cell and ledger-assisted recall operator.
-
-The current recall candidate is
+The integrated Memory path is now explicitly tested as
 \[
 \boxed{
-\operatorname{RECALL}_{N\to0}
-=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1},
+\mathbb{CP}^1\ \text{state geometry}
+\rightarrow\delta m_n
+\rightarrow q_n\delta m_n
+\rightarrow\mathcal C_n
+\rightarrow\mathcal E_n
+\rightarrow\operatorname{RECALL}.
 }
 \]
-and targeted controls reconstruct the recorded initial memory state for the declared reference lineage.
+The targeted integration controls pass and are recorded in `validation/MEMORY_ADMISSION_V0_1.json`.
 
-The next gate is a combined Memory admission receipt. Retrodiction remains gated until that receipt is recorded; it will be treated as inference with withheld or unobserved lineage information, distinct from exact recall of an append-only ledger.
+Memory admission is still `PENDING_FULL_REFERENCE_SUITE` on the integrated tree. Retrodiction therefore remains gated. Its later contract will infer withheld or unobserved lineage information, distinct from exact recall of the complete append-only ledger.
