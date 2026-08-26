@@ -25,10 +25,19 @@ The integrated Memory path is explicitly tested as
 \]
 Targeted integration controls pass in `validation/MEMORY_ADMISSION_V0_1.json`.
 
-A provisional downstream Retrodiction branch now replaces exact ledger replay with one withheld receipt factor. Its reference contract first reconstructs the missing kick
+The provisional downstream Retrodiction implementation now contains a complete reference inverse-problem stack:
 \[
-\Delta v_{M,n}=\widetilde v_{M,n}-v_{M,n},
+\boxed{
+\text{withheld lineage}
+\rightarrow\text{observability}
+\rightarrow\text{checkpoint selection}
+\rightarrow\text{estimation}
+\rightarrow\text{uncertainty geometry}
+\rightarrow\text{covariance-preserving permutation nulls}.
+}
 \]
-then identifies either \(q_n\) from an independently known \(\delta m_n\), or \(\delta m_n\) from an independently known positive \(q_n\). If both factors are withheld, the implementation fails closed because only the product \(q_n\delta m_n\) is identifiable.
+It fails closed on product-only factor ambiguity, rank deficiency, invalid covariance, missing descent and incomplete permutation ensembles.
 
-This Retrodiction work remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still `PENDING_FULL_REFERENCE_SUITE`; the first integrated GitHub Actions attempt produced no executable job steps and is recorded as `CI_RESULT_NOT_OBTAINED`. Retrodiction therefore remains gated at the canonical dependency level.
+The newest weighted-null layer passes its exact targeted reference tests (`5 passed`), and the combined checkpoint-selection plus weighted-null layer passes `10` tests in the isolated local reconstruction. Its append-only reference run is `experiments/E003_retrodiction/runs/E003_REFERENCE_0002.json`.
+
+This Retrodiction work remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still `PENDING_FULL_REFERENCE_SUITE`: GitHub Actions attempts terminate before executing test steps, so their result class is `CI_RESULT_NOT_OBTAINED`, not a repository-test failure. Merging tested provisional implementation into `main` does not by itself advance the canonical admitted frontier.
