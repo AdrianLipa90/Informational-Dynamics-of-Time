@@ -31,3 +31,5 @@ from .temporal_activity import (
     ActivityCurrent, activity_current_from_rates, activity_current_from_fields,
     positive_activity_measure, atomic_support, pushforward_positive_measure, image_support,
 )
+
+from .internal_elapsed import cumulative_elapsed_activity, elapsed_increment, reparameterize_activity
