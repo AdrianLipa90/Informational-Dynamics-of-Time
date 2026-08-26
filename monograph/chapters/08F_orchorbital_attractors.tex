@@ -1,0 +1,117 @@
+\chapter{ORCHORBITAL Attractors on Temporal Memory}
+
+The temporal-memory branch now supports a first typed ORCHORBITAL attractor layer. The construction consumes the already defined memory phase state
+\[
+X_M=(m,v_M,\tau_{\rm int},\mathcal A_M)
+\]
+and a finite family of attractors
+\[
+\mathfrak A_i=(c_i,\mu_i),
+\qquad \mu_i>0.
+\]
+
+\section{Binding field}
+
+Relative to attractor \(i\), define
+\[
+\boxed{
+E_i=\frac12\|v_M\|^2-\frac{\mu_i}{\|m-c_i\|}
+}
+\]
+and positive binding margin
+\[
+\boxed{b_i=[-E_i]_+.}
+\]
+For positive total binding \(B=\sum_i b_i\), the attractor weights are
+\[
+\boxed{w_i=\frac{b_i}{B}},
+\qquad
+\sum_iw_i=1,
+\]
+and the active reference basin is the maximizing weight. Exact ties are resolved deterministically for replay stability.
+
+If \(B=0\), the state receives the explicit \texttt{LEAK\_MODE} branch status. The v0.1 reference operator treats this as a fail-closed orbital admission boundary.
+
+\section{Shannon basin organization}
+
+The normalized weights form an instantaneous relational distribution over the bound basins. Their Shannon entropy is
+\[
+\boxed{
+H_A=-\sum_{i:w_i>0}w_i\log_2w_i.
+}
+\]
+For \(N>1\), the associated normalized attractor coherence is
+\[
+\boxed{
+C_A=1-\frac{H_A}{\log_2N}.
+}
+\]
+A symmetric two-attractor reference state therefore has \(H_A=1\) bit and \(C_A=0\), while concentration into one basin drives the coherence toward unity.
+
+\section{Active-centre orbital dynamics}
+
+On an admitted smooth segment with active attractor \(a\), the memory orbit is translated to the active centre and obeys
+\[
+\boxed{
+\frac{d^2m}{d\tau_{\rm int}^2}
+=-\mu_a\frac{m-c_a}{\|m-c_a\|^3}.
+}
+\]
+This preserves the single-centre Kepler--Newton reference law on each smooth segment while allowing the basin field to be re-evaluated at the segment boundary.
+
+The winding increment around the active centre is
+\[
+\boxed{
+\Delta W_a
+=\frac{1}{2\pi}
+\operatorname{wrap}_{(-\pi,\pi]}
+\left[
+\arg(m_{n+1}-c_a)-\arg(m_n-c_a)
+\right].
+}
+\]
+After propagation the complete attractor field is evaluated again. A different maximizing basin is recorded as an attractor-switch candidate for the following segment.
+
+\section{Closure observable}
+
+With declared position and velocity scales \(r_*>0\) and \(v_*>0\), the reference phase-space closure defect is
+\[
+\boxed{
+D_{\rm cl}
+=
+\sqrt{
+\left(\frac{\|m_f-m_i\|}{r_*}\right)^2
++
+\left(\frac{\|v_f-v_i\|}{v_*}\right)^2
+}.
+}
+\]
+The normalization scales remain explicit inputs to the observable.
+
+\section{Position in the temporal dependency graph}
+
+The causal ordering of the first integration is
+\[
+\boxed{
+NOW
+\rightarrow
+\Delta M
+\rightarrow
+q\,\delta m
+\rightarrow
+X_M
+\rightarrow
+\{E_i,b_i,w_i\}
+\rightarrow
+\text{active attractor}
+\rightarrow
+\text{orbit and winding}
+\rightarrow
+\text{field re-evaluation}.
+}
+\]
+Thus ORCHORBITAL is inserted after the memory state and before the downstream Retrodiction node. The broader ORCHORBITAL observables --- hierarchical sphere structure, truth scalar, semantic mass and reduction-readiness --- retain their upstream definitions and await a separate dependency-compatible typed mapping into this temporal repository.
+
+\section{Reference evidence}
+
+The implementation is \texttt{src/idt/orchorbital.py}. The targeted reference suite records nine passing controls covering weight normalization, Shannon basin entropy, leak mode, translation covariance, winding, switch detection and closure-defect consistency. The receipt is \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}. This evidence is classified as an ORCHORBITAL memory reference diagnostic; the canonical admitted frontier remains at Memory pending the parent full-suite admission gate.
