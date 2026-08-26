@@ -2,7 +2,7 @@
 
 Status: `DOWNSTREAM_STAGING_ONLY`
 
-These equation IDs are reserved for the single-missing-receipt Retrodiction candidate while the parent Memory node remains pending its full repository reference-suite admission gate. On Memory admission, these entries may be promoted into the canonical `EQUATION_REGISTRY.md` without renumbering.
+These equation IDs are reserved for the provisional Retrodiction branch while the parent Memory node remains pending its full repository reference-suite admission gate. On Memory admission, these entries may be promoted into the canonical `EQUATION_REGISTRY.md` without renumbering.
 
 **EQ-T024 — missing event kick from retained checkpoints**
 \[
@@ -44,3 +44,45 @@ so
 (cq_n)(\delta m_n/c)=q_n\delta m_n.
 \]
 Therefore the two factors are separately non-identifiable from the memory checkpoints unless one independent factor constraint is supplied.
+
+**EQ-T028 — multi-event Retrodiction sensitivity matrix**
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0},
+\qquad
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N}.
+}
+\]
+The first-order local identifiability gate is
+\[
+\boxed{\operatorname{rank}J_R=2N}.
+\]
+
+**EQ-T029 — final-checkpoint dimensional bound**
+\[
+Y_f\in\mathbb R^4,
+\qquad
+J_R^{\rm final}\in\mathbb R^{4\times2N},
+\qquad
+\boxed{\operatorname{rank}J_R^{\rm final}\le4}.
+\]
+Hence
+\[
+\boxed{N>2\Longrightarrow 4<2N\Longrightarrow\text{final-only multi-kick Retrodiction is dimensionally underdetermined}.}
+\]
+
+**EQ-T030 — checkpoint-augmented observability dimension**
+For retained post-event checkpoint set \(\mathcal C\),
+\[
+Y_{\mathcal C}\in\mathbb R^{4|\mathcal C|},
+\qquad
+J_R\in\mathbb R^{4|\mathcal C|\times2N}.
+\]
+A necessary dimensional condition is
+\[
+\boxed{4|\mathcal C|\ge2N},
+\]
+followed by the actual full-column-rank check
+\[
+\boxed{\operatorname{rank}J_R=2N}.
+\]
