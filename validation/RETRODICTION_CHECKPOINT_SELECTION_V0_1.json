@@ -1,0 +1,58 @@
+{
+  "schema": "IDT_RETRODICTION_CHECKPOINT_SELECTION_V0_1",
+  "status": "PASS_ISOLATED_REFERENCE_HARNESS_PROVISIONAL_DOWNSTREAM",
+  "canon_allowed": false,
+  "dependency_parent": "RETRODICTION_UNCERTAINTY_PROVISIONAL_DOWNSTREAM",
+  "implementation": "src/idt/retrodiction_checkpoint_selection.py",
+  "tests_declared": "tests/reference/test_retrodiction_checkpoint_selection.py",
+  "execution_basis": "isolated finite-difference sensitivity audit mirroring the current multi-event velocity-Verlet Retrodiction forward model",
+  "reference_case": {
+    "unknown_kicks": 3,
+    "latent_dimension": 6,
+    "available_checkpoints": [1, 2, 3],
+    "dimensional_lower_bound_cardinality": 2,
+    "two_checkpoint_subsets": {
+      "[1,2]": {
+        "rank": 4,
+        "status": "RANK_DEFICIENT"
+      },
+      "[1,3]": {
+        "rank": 6,
+        "condition_number": 66.29674473703916,
+        "status": "FULL_RANK"
+      },
+      "[2,3]": {
+        "rank": 6,
+        "condition_number": 72.1557008763692,
+        "status": "FULL_RANK"
+      }
+    },
+    "minimal_full_rank_selection": [1, 3],
+    "all_checkpoint_condition_number": 4.076001711235763,
+    "selection_with_max_condition_number_10": [1, 2, 3]
+  },
+  "randomized_three_event_audit": {
+    "seed": 20260828,
+    "cases": 200,
+    "cases_with_full_rank_two_checkpoint_subset": 200,
+    "full_rank_[1,3]_cases": 200,
+    "full_rank_[2,3]_cases": 200,
+    "best_condition_two_checkpoint_selection_counts": {
+      "[1,3]": 65,
+      "[2,3]": 135
+    },
+    "best_two_checkpoint_condition_number_range": [43.1793649963807, 105.21373383202656],
+    "best_two_checkpoint_condition_number_median": 59.42417303273148,
+    "all_three_checkpoint_condition_number_range": [4.056050370756335, 4.087340069194169],
+    "all_three_checkpoint_condition_number_median": 4.0668305543005125
+  },
+  "controls": [
+    "cardinality lower bound equals ceil(N/2) for N latent 2D kicks and 4D checkpoints",
+    "minimal cardinality is separated from numerical-conditioning admission",
+    "candidate pool [1,2] fails to observe the third event and returns no admissible subset",
+    "explicit maximum condition-number gate can require additional retained checkpoints"
+  ],
+  "evidence_class": "PARTIAL_OBSERVATION_REFERENCE_DIAGNOSTIC",
+  "repository_pytest_for_new_checkpoint_selection_layer": "NOT_OBTAINED",
+  "physical_claim_status": "NOT_EVALUATED"
+}
