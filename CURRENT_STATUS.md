@@ -9,17 +9,25 @@ The repository is maintained as three parallel spines:
 Current admitted frontier:
 
 \[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\mathbf{Temporal\ Transport}}
+\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
 \]
 
-Memory has a `PROVISIONAL_DOWNSTREAM_BRANCH` event-driven Kepler--Newton reference implementation with
-\[
-\Delta v_{M,n}=q_n\delta m_n.
-\]
-The central parameter \(\mu_M\) is conditionally identifiable inside that reference class. The local memory frame now has a geometry-derived \(\mathbb{CP}^1\) Kähler reference subclass in which the projected displacement is normalized by
-\[
-|\delta m|=d_{FS},
-\]
-and the tangent dyad is transported along selected non-antipodal Bloch geodesics.
+Temporal Transport has passed its declared structural reference gate. The active Memory node now has:
 
-Targeted controls are recorded in `validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json`. Temporal Transport remains the admission frontier. The next Memory-node targets are persistence/recall and the higher-dimensional extension of the Kähler memory frame.
+- event-driven Kepler--Newton propagation in \(\tau_{\rm int}\);
+- the upstream-derived event kick \(\Delta v_{M,n}=q_n\delta m_n\);
+- conditional identification of \(\mu_M\) from memory-orbit observables;
+- a geometry-derived \(\mathbb{CP}^1\) Kähler memory-frame reference subclass with \(|\delta m|=d_{FS}\);
+- append-only event receipts \(\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)\);
+- a reversible reference lineage cell and ledger-assisted recall operator.
+
+The current recall candidate is
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1},
+}
+\]
+and targeted controls reconstruct the recorded initial memory state for the declared reference lineage.
+
+The next gate is a combined Memory admission receipt. Retrodiction remains gated until that receipt is recorded; it will be treated as inference with withheld or unobserved lineage information, distinct from exact recall of an append-only ledger.
