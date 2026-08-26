@@ -1,0 +1,72 @@
+\chapter{Partial Observation and Checkpoint Selection}
+
+This chapter records the provisional checkpoint-selection layer downstream of Retrodiction observability and uncertainty geometry. The canonical admitted frontier remains at Memory pending its full repository reference-suite admission result.
+
+\section{Dimensional lower bound}
+
+For \(N\) latent two-component event kicks,
+\[
+\dim z=2N.
+\]
+A retained memory phase-state checkpoint contributes four real coordinates. Therefore every candidate retained set \(\mathcal C\) obeys the necessary dimensional condition
+\[
+4|\mathcal C|\ge2N,
+\]
+which gives
+\[
+\boxed{
+|\mathcal C|\ge\left\lceil\frac{N}{2}\right\rceil.
+}
+\]
+The rank of the actual sensitivity matrix remains the admission test.
+
+\section{Subset observability}
+
+For candidate checkpoint set \(\mathcal C\), define
+\[
+J_R(\mathcal C)
+=\frac{\partial Y_{\mathcal C}}{\partial z}.
+\]
+Local observability requires
+\[
+\boxed{
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+The provisional minimal-information selector is
+\[
+\boxed{
+\mathcal C_*
+=\arg\min_{\mathcal C\subseteq\mathcal C_{\rm avail}}
+|\mathcal C|
+\quad\text{subject to}\quad
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+When several subsets have the same minimum cardinality, the reference selector minimizes condition number and then applies lexicographic order as a deterministic tie-break.
+
+\section{Conditioning as a separate gate}
+
+A protocol may additionally require
+\[
+\boxed{
+\kappa\!\left(J_R(\mathcal C)\right)\le\kappa_{\max}.
+}
+\]
+This separates information sufficiency from numerical stability. In the three-kick reference case the lower bound is two checkpoints. The subsets \(\{1,3\}\) and \(\{2,3\}\) both have rank six, with condition numbers approximately \(66.3\) and \(72.2\), respectively. The minimum-cardinality selector therefore chooses \(\{1,3\}\).
+
+Retaining all three checkpoints gives condition number approximately
+\[
+\boxed{\kappa_{123}\simeq4.076.}
+\]
+With an explicit reference gate \(\kappa_{\max}=10\), the selected set becomes \(\{1,2,3\}\).
+
+\section{Causal placement of retained information}
+
+For the same three-event reference lineage, the candidate set \(\{1,2\}\) has rank four for six latent coordinates. The measured forward sensitivity therefore rejects this retained set. This illustrates that the dimensional cardinality bound alone does not determine which checkpoints carry the required lineage information.
+
+\section{Reference audit}
+
+The executable selector is `src/idt/retrodiction_checkpoint_selection.py`; its validation receipt is `validation/RETRODICTION_CHECKPOINT_SELECTION_V0_1.json`. In a seeded 200-case three-event reference audit, every sampled lineage admitted a full-rank two-checkpoint subset. The best-conditioned two-checkpoint subset had median condition number approximately \(59.42\), whereas retaining all three checkpoints gave median condition number approximately \(4.067\).
+
+The registered evidence class is \texttt{PARTIAL\_OBSERVATION\_REFERENCE\_DIAGNOSTIC}. The later experimental layer will use the same rank and conditioning gates with declared observation covariance and preregistered missing-data patterns.
