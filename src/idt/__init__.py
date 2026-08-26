@@ -116,3 +116,14 @@ from .retrodiction_observability import (
     audit_kick_observability,
     final_checkpoint_dimension_bound,
 )
+
+from .retrodiction_estimation import (
+    RetrodictionEstimationError,
+    RetrodictionEstimate,
+    RetrodictionNullComparison,
+    RetrodictionTruthScore,
+    estimate_latent_kicks,
+    estimate_commitment,
+    score_committed_estimate,
+    compare_with_reference_nulls,
+)
