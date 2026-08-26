@@ -1,32 +1,26 @@
 # CURRENT EVIDENCE STATE
 
-Status: `CAUSAL_BIFURCATION_V0_1_PASS_STRUCTURAL_REFERENCE_SUBCLASS`
+Status: `BIFURCATION_V0_2_AND_TRANSPORT_V0_1_STRUCTURAL_PASS`
 
-Current full reference suite: `71 passed in 0.16s`.
+Current full reference suite: `83 passed in 0.12s`.
 
-NOW controls:
+Bifurcation v0.2 controls:
 
-- Fubini–Study event component is invariant under local phase changes: PASS;
-- positive event signature is non-negative and zero signatures are omitted from support: PASS;
-- positive atomic pushforward support equals the image support even for non-injective maps: PASS.
+- positive-semidefinite dissipator generates a contraction: PASS;
+- zero event magnitude gives identity contraction: PASS;
+- event orientation reversal preserves the contraction/singular spectrum: PASS;
+- commuting dissipative and unitary generators give the adjoint under orientation reversal: PASS;
+- zero dissipator reduces the polar class to the unitary subclass: PASS;
+- commuting fixed generators compose additively in event magnitude and phase: PASS;
+- non-commuting factors make multiplication order visible: PASS;
+- negative event magnitude or non-positive dissipator fails closed: PASS.
 
-Bifurcation controls:
+Temporal Transport v0.1 controls:
 
-- zero current gives zero directed phase increment and identity reference operator: PASS;
-- current reversal gives phase reversal and inverse unitary operator: PASS;
-- activity/current reconstruction agrees with the forward/reverse affinity: PASS;
-- canonical `kappa = ln(2)/(24*pi)` gives `beta = atanh(j/a)/(12*pi)`: PASS;
-- fixed-generator reference operator is unitary: PASS;
-- fixed-generator event operators compose by phase addition: PASS;
-- invalid `|j/a| >= 1` fails closed: PASS.
+- empty event sequence returns identity when dimension is declared: PASS;
+- chronological event order is preserved: PASS;
+- non-commuting event exchange changes the propagator: PASS;
+- interrupted propagator matches the explicit ordered product: PASS;
+- malformed segment/event count fails closed: PASS.
 
-Architecture controls:
-
-- dependency graph is acyclic: PASS;
-- canonical dependency order is enforced in the reference test: PASS;
-- memory remains `PROVISIONAL_DOWNSTREAM_BRANCH` while Temporal Transport is gated: PASS.
-
-Validation receipt: `validation/CAUSAL_BIFURCATION_V0_1.json`.
-Payload SHA-256: `7d997804b435acb68dd2773788d1da9d10d013c9ab4c3f492bfe0a0a3819f673`.
-
-The reference evidence establishes structural properties of the declared reversible phase-only bifurcation subclass. Selection of a unique physical generator, branch-mixing dynamics, non-unitary classes, memory interpretation, subjective elapsed time and metric-time calibration remain downstream/open evidence targets.
+The evidence supports the declared structural operator classes and ordering semantics. Physical generator identification, physical memory interpretation, subjective elapsed time, retrocausal claims and metric-time calibration remain downstream evidence targets.
