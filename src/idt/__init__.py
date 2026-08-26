@@ -134,3 +134,12 @@ from .retrodiction_uncertainty import (
     isotropic_checkpoint_covariance,
     weighted_retrodiction_uncertainty,
 )
+
+from .retrodiction_checkpoint_selection import (
+    RetrodictionCheckpointSelectionError,
+    CheckpointSubsetAudit,
+    CheckpointSelectionResult,
+    checkpoint_cardinality_lower_bound,
+    audit_checkpoint_subset,
+    minimal_observable_checkpoint_set,
+)
