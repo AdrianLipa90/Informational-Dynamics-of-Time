@@ -104,5 +104,5 @@ from .retrodiction import (
     infer_event_weight_from_known_imprint,
     infer_imprint_from_known_event_weight,
     retrodict_single_missing_receipt,
-    receipt_product_equivalent,
+    equivalent_kick_factorization,
 )
