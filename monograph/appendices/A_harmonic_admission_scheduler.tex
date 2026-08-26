@@ -1,0 +1,65 @@
+\chapter{Harmonic Admission Scheduling for Computational Experiments}
+\label{app:harmonic-admission}
+
+This appendix records an engineering control used while running the computational parts of the research program. Its evidential class is \texttt{ENGINEERING\_CONTROL}: it regulates when local processes may start so that numerical work, rendering, repository I/O, and document compilation are less likely to collide in the same execution window. The scheduling convention does not participate in the derivation of the temporal field equations.
+
+\section{Dyadic admission bands}
+
+A base cadence
+\[
+f_0 = 7.83\;\mathrm{Hz},
+\qquad
+T_0=f_0^{-1},
+\]
+is used as an implementation clock. The workload bands are defined by
+\[
+f_k=\frac{f_0}{2^k},
+\qquad
+T_k=\frac{2^k}{f_0}.
+\]
+Band $B_0$ is reserved for lightweight heartbeat observation. Workload admission begins at $B_1$.
+
+For integer base tick $n$, the phase class of band $B_k$, $k\geq1$, is
+\[
+n\equiv 2^{k-1}\pmod{2^k}.
+\]
+These classes are pairwise disjoint. Consequently, a base tick can admit at most one workload class among $B_1,\ldots,B_K$.
+
+\begin{center}
+\begin{tabular}{ccl}
+\hline
+Band & Frequency & Operational role \\
+\hline
+$B_0$ & $7.830$ Hz & heartbeat observation \\
+$B_1$ & $3.915$ Hz & queue and admission \\
+$B_2$ & $1.9575$ Hz & candidate microsteps \\
+$B_3$ & $0.97875$ Hz & critic and graph audit \\
+$B_4$ & $0.489375$ Hz & numerics and small slices \\
+$B_5$ & $0.2446875$ Hz & serialization and repository I/O \\
+$B_6$ & $0.12234375$ Hz & visualization \\
+$B_7$ & $0.061171875$ Hz & LaTeX and heavy builds \\
+\hline
+\end{tabular}
+\end{center}
+
+The numerical value of $f_0$ is an operational scheduling convention in this appendix. Any physical use of a frequency scale requires an independent claim, derivation, and evidence path in the main formalism.
+
+\section{Skip semantics and jitter control}
+
+An admission window is permission to start queued work rather than a demand for periodic execution. Empty windows perform no work. A missed window is skipped:
+\[
+\text{missed slot}\longrightarrow\text{skip},
+\]
+so delayed processes cannot produce a catch-up burst. If a task assigned to $B_k$ is still active at its next eligible slot, the new instance is skipped as well.
+
+Measured scheduling jitter $J_k$ can demote a workload to a slower band,
+\[
+J_k>J_{\max}
+\quad\Longrightarrow\quad
+B_k\mapsto B_{k+1},
+\]
+subject to the configured maximum band. This mechanism is intended to protect the interactive research workflow from render, I/O, and compilation spikes while keeping the computational procedures reproducible.
+
+\section{Reference implementation}
+
+The reference implementation is stored in \texttt{src/idt/harmonic\_scheduler.py}. The scheduler exposes the band definitions, exact phase-slot predicate, next-slot calculation, quiet deep-boundary slots, and jitter-triggered demotion. Reference tests verify pairwise disjoint workload classes and the no-catch-up admission semantics.
