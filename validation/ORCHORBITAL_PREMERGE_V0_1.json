@@ -1,0 +1,25 @@
+{
+  "schema": "IDT_ORCHORBITAL_PREMERGE_V0_1",
+  "status": "PASS_TARGETED_PREMERGE",
+  "branch": "feat/orchorbital-attractor-system-v0.1",
+  "tests": {
+    "syntax_check": "python -m compileall -q src/idt -> PASS in isolated exact-dependency reconstruction",
+    "targeted_command_equivalent": "PYTHONPATH=. pytest -q tests/reference/test_orchorbital.py",
+    "targeted_result": "11 passed in 0.05s"
+  },
+  "covered_layers": [
+    "attractor binding and normalized weights",
+    "Shannon attractor entropy/coherence",
+    "LEAK_MODE fail-closed admission",
+    "translated active-centre Kepler propagation",
+    "winding and closure defect",
+    "segment-boundary attractor switching",
+    "multi-segment switch promotion",
+    "attractor residence in tau_internal",
+    "directed attractor transition graph"
+  ],
+  "merge_gate": "TARGETED_TESTS_PASS",
+  "hosted_full_suite": "CI_RESULT_NOT_OBTAINED historically due runner/prestep infrastructure failure",
+  "canon_allowed": false,
+  "notes": "This pre-merge receipt authorizes implementation/evidence staging to main under the user's merge-after-tests rule. It does not independently advance the admitted theory frontier beyond Memory."
+}
