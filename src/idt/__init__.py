@@ -106,3 +106,13 @@ from .retrodiction import (
     retrodict_single_missing_receipt,
     equivalent_kick_factorization,
 )
+
+from .retrodiction_observability import (
+    RetrodictionObservabilityError,
+    RetrodictionObservabilityAudit,
+    forward_kick_lineage,
+    checkpoint_phase_vector,
+    kick_sensitivity_matrix,
+    audit_kick_observability,
+    final_checkpoint_dimension_bound,
+)
