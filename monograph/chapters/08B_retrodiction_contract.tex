@@ -144,12 +144,71 @@ and a necessary dimensional condition becomes
 \]
 The actual full-column-rank condition must still be checked. In the targeted three-kick reference case, one final checkpoint gives a \(4\times6\) underdetermined matrix, whereas retaining all three post-event checkpoints gives a \(12\times6\) sensitivity matrix with rank six.
 
+\section{Gated latent-lineage estimation}
+
+Once the observability gate passes, the provisional reference estimator solves
+\[
+\boxed{
+\widehat z
+=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2.
+}
+\]
+Writing
+\[
+r_k=Y_{\rm obs}-Y(z_k),
+\qquad
+J_k=J_R(z_k),
+\]
+the damped Gauss--Newton proposal is defined by
+\[
+\boxed{
+(J_k^T J_k+\lambda I)\delta z_k
+=J_k^T r_k,
+\qquad \lambda\ge0.
+}
+\]
+The reference line search accepts only \(\alpha=2^{-j}\) satisfying
+\[
+\|Y_{\rm obs}-Y(z_k+\alpha\delta z_k)\|_2
+<\|r_k\|_2.
+\]
+Loss of full column rank, singular normal equations or absence of an admitted descent step terminates the reference estimate explicitly.
+
+\section{Estimate commitment and reference nulls}
+
+The estimator interface contains the retained observations and public forward-model quantities. The estimate is frozen before sealed truth enters scoring through
+\[
+\boxed{
+C_{\rm est}
+=\operatorname{SHA256}(\widehat z\,\|\,\widehat Y\,\|\,r\,\|\,\mathrm{metadata}).
+}
+\]
+The scorer verifies this commitment before reconstruction error is evaluated.
+
+Two dynamical reference nulls are carried with the same experiment. The zero-kick null fixes
+\[
+z=0
+\]
+and records residual \(r_0\). The checkpoint-order null reverses the complete four-component checkpoint blocks and applies the same estimator capacity, giving fitted residual \(r_{\rm shuf}\). Their reference reductions are
+\[
+\boxed{
+R_0=1-\frac{r_{\rm est}}{r_0},
+\qquad
+R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
+}
+\]
+Their registered evidence class is \texttt{COMPUTATIONAL\_REFERENCE\_DIAGNOSTIC}; physical significance evaluation remains a later evidence gate.
+
+In the first exact three-event reference run, the \(12\times6\) observability matrix has rank six. The estimator converges in two iterations with residual approximately \(1.04\times10^{-14}\). The zero-kick residual is approximately \(9.20\times10^{-2}\), while the reversed-checkpoint fit stalls at approximately \(9.57\times10^{-2}\). Fifty seeded exact-reference cases all retain full rank and converge, with maximum recorded kick-coordinate error approximately \(1.65\times10^{-14}\).
+
 \section{Reference controls and evidence boundary}
 
 Single-missing-receipt controls are recorded in
 \texttt{validation/RETRODICTION\_SINGLE\_MISSING\_RECEIPT\_V0\_1.json},
-and the multi-event rank audit in
-\texttt{validation/RETRODICTION\_OBSERVABILITY\_V0\_1.json}.
-The isolated reference harnesses cover missing-kick reconstruction, conditional factor identification, product-only ambiguity, collinearity rejection, checkpoint tampering, dimensional underdetermination and checkpoint-augmented rank recovery. The observability layer reports `UNDERDETERMINED_DIMENSION`, `RANK_DEFICIENT`, or `LOCALLY_IDENTIFIABLE_REFERENCE` rather than forcing an inverse through a rank-deficient problem.
+the multi-event rank audit in
+\texttt{validation/RETRODICTION\_OBSERVABILITY\_V0\_1.json},
+and the gated estimator/null controls in
+\texttt{validation/RETRODICTION\_ESTIMATION\_NULLS\_V0\_1.json}.
+The isolated reference harnesses cover missing-kick reconstruction, conditional factor identification, product-only ambiguity, collinearity rejection, checkpoint tampering, dimensional underdetermination, checkpoint-augmented rank recovery, gated multi-kick estimation, estimate commitment and the declared reference nulls. The observability layer reports `UNDERDETERMINED_DIMENSION`, `RANK_DEFICIENT`, or `LOCALLY_IDENTIFIABLE_REFERENCE` according to the measured sensitivity structure.
 
 This evidence belongs to a provisional downstream formal reference class. Retrodiction admission remains gated by the parent Memory admission result. Retrocausal tests remain a later dependency node with their own statistical, leakage and classical-channel audits.
