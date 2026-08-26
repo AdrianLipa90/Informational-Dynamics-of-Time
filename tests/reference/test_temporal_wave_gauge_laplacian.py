@@ -137,3 +137,45 @@ def test_invalid_links_and_weights_fail_closed():
         gauge_laplacian(2, [(0,1)], [1.0+0j], [0.0])
     with pytest.raises(TemporalWaveError):
         gauge_laplacian(2, [(0,0)], [1.0+0j], [1.0])
+
+
+def test_randomized_gauge_wave_stress_200_cases():
+    max_gauge = 0.0
+    max_spectrum_drift = 0.0
+    max_energy_error = 0.0
+    min_eigenvalue = float("inf")
+    for seed in range(200):
+        rng = np.random.default_rng(seed + 1000)
+        n = int(rng.integers(3, 13))
+        edges = [(j, (j + 1) % n) for j in range(n)]
+        possible = [
+            (a, b)
+            for a in range(n)
+            for b in range(a + 1, n)
+            if b != (a + 1) % n and not (a == 0 and b == n - 1)
+        ]
+        rng.shuffle(possible)
+        edges += possible[: int(rng.integers(0, min(len(possible), n) + 1))]
+        links = np.exp(1j * rng.uniform(-math.pi, math.pi, len(edges)))
+        weights = rng.uniform(1e-3, 5.0, len(edges))
+        K = gauge_laplacian(n, edges, links, weights)
+        min_eigenvalue = min(min_eigenvalue, float(np.min(np.linalg.eigvalsh(K))))
+        chi = rng.uniform(-math.pi, math.pi, n)
+        U = np.diag(np.exp(1j * chi))
+        Kg = gauge_laplacian(n, edges, gauge_transform_links(edges, links, chi), weights)
+        max_gauge = max(max_gauge, float(np.max(np.abs(Kg - U @ K @ U.conj().T))))
+        max_spectrum_drift = max(
+            max_spectrum_drift,
+            float(np.max(np.abs(np.linalg.eigvalsh(Kg) - np.linalg.eigvalsh(K)))),
+        )
+        q = rng.normal(size=n) + 1j * rng.normal(size=n)
+        p = rng.normal(size=n) + 1j * rng.normal(size=n)
+        nu = float(rng.uniform(0.0, 1.0))
+        qdot, pdot = damped_wave_rhs(q, p, K, damping=nu)
+        direct = float(np.real(np.vdot(K @ q, qdot) + np.vdot(p, pdot)))
+        expected = wave_energy_derivative(p, K, damping=nu)
+        max_energy_error = max(max_energy_error, abs(direct - expected))
+    assert min_eigenvalue >= -1e-10
+    assert max_gauge < 1e-12
+    assert max_spectrum_drift < 1e-11
+    assert max_energy_error < 1e-11
