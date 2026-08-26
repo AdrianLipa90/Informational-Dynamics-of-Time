@@ -143,3 +143,12 @@ from .retrodiction_checkpoint_selection import (
     audit_checkpoint_subset,
     minimal_observable_checkpoint_set,
 )
+
+from .retrodiction_weighted_nulls import (
+    RetrodictionWeightedError,
+    WeightedRetrodictionEstimate,
+    PermutationNullEntry,
+    PermutationNullEnsemble,
+    estimate_latent_kicks_weighted,
+    checkpoint_permutation_null_ensemble,
+)
