@@ -11,14 +11,19 @@
 | T008 | If a positive relational weight \(\pi\) satisfies pairwise detailed balance, every closed-cycle affinity \(\mathcal A_C=\sum_C\sigma_e\) vanishes | T007 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
 | T009 | Symmetric pair mobility \(M_{ab}=\sqrt{\rho_a\rho_b}/[(\eta_a+\eta_b)/2]\) controls pace and cancels from the forward/reverse affinity ratio | T007 + positive scalar fields | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 1 |
 | T009A | If \(A_{ab}=V_R(b)-V_R(a)\), then the closed-cycle drive and cycle affinity vanish | T009 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
-| T009B | Memory-orbit edge drive \(A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)]\) is antisymmetric | T009 + complex memory coordinate | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 8 |
-| T009C | Closed memory-orbit drive equals \(2\lambda_M\) times the signed polygon area enclosed by the memory orbit | T009B | shoelace identity + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 8 |
+| T009B | Memory-orbit drive \(A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)]\) is antisymmetric | T009 + oriented memory coordinate | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 8 |
+| T009C | Closed memory-orbit drive equals \(2\lambda_M\mathcal A_M(C)\), twice coupling times signed polygon area | T009B | shoelace identity + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 8 |
 | T010 | Temporal state admits ordered phase transport \(\Psi_{n+1}=U_n\Psi_n\) | T001 | formal candidate | `CANDIDATE` | Ch. 3–4 |
 | T011 | For unitary phase-only transport, \(U_n=e^{-i\Omega_n}\) | T010 | algebraic derivation | `CANDIDATE` | Ch. 4 |
-| T020 | Transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) localizes discrete transition events | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |
-| T021 | \(\mathcal N=\operatorname{supp}_{\rm at}\mathcal K_T\) | T020 | GREMLIN + formal candidate | `CANDIDATE` | Ch. 5 |
+| T012 | Directed rates decompose into positive activity \(\mathfrak a=W_++W_-\) and signed current \(\mathfrak j=W_+-W_-\) | T009 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
+| T013 | The edge drive is recoverable from \(A=2\operatorname{artanh}(\mathfrak j/\mathfrak a)\) for finite positive rates | T012 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
+| T020 | Phase-bearing transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) carries signed transition weights | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |
+| T020A | Positive temporal activity measure is \(\mathcal A_T=\sum_n\mathfrak a_n\delta_{s_n}\) with \(\mathfrak a_n>0\) | T012 | formal definition + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_POSITIVITY` | Ch. 5 |
+| T021 | Signed-measure NOW lineage based on \(\operatorname{supp}_{\rm at}\mathcal K_T\) | T020 | GREMLIN + formal candidate | `REFINED_BY_T021A` | Ch. 5 |
+| T021A | Active NOW candidate is \(\mathcal N=\operatorname{supp}_{\rm at}\mathcal A_T\) | T020A | positive-measure refinement + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_SUPPORT_PROPERTIES` | Ch. 5 |
 | T022 | \(\Psi_T(s_n^+)=B(q_n)\Psi_T(s_n^-)\) | T021 | formal candidate | `CANDIDATE` | Ch. 6 |
-| T023 | NOW-support is invariant under admissible monotone reparameterization | T021 | proof target | `OPEN_PROOF_TARGET` | Ch. 5 |
+| T023 | Injective pushforward-support lineage for signed atoms | T021 | proved lemma | `REFINED_BY_T023A` | Ch. 5 |
+| T023A | Positive atomic activity support satisfies \(\operatorname{supp}_{\rm at}(f_*\mathcal A_T)=f(\operatorname{supp}_{\rm at}\mathcal A_T)\) for any map defined on the support | T020A–T021A | positive-measure theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
 | T050 | \(\Delta\phi_t=-E\Delta t/\hbar\) calibrates phase order to metric clock time | T011 | later physical bridge | `DEFERRED` | Ch. 11–12 |
 | T070 | Independently derived temporal and spatial branches admit spacetime closure | T050 | final closure | `DEFERRED` | Ch. 12 |
 
