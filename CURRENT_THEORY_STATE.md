@@ -35,7 +35,7 @@ and the reversible reference cell
 \]
 The complete persisted ledger yields the ledger-assisted recall candidate.
 
-A provisional downstream Retrodiction contract now treats one receipt factor as withheld rather than replayed. Reversing the known smooth segment reconstructs
+A provisional downstream Retrodiction contract treats one receipt factor as withheld rather than replayed. Reversing the known smooth segment reconstructs
 \[
 \boxed{\Delta v_{M,n}=\widetilde v_{M,n}-v_{M,n}}.
 \]
@@ -56,4 +56,21 @@ If both factors are withheld, only their product is identifiable because
 \]
 leaves the kick unchanged.
 
-This Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still pending a full repository reference-suite result on the integrated tree, so the Retrodiction node is not yet promoted into the canonical admitted frontier.
+The provisional multi-event extension now introduces the sensitivity matrix
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0},
+\qquad z\in\mathbb R^{2N},
+}
+\]
+with first-order local-identifiability gate
+\[
+\boxed{\operatorname{rank}J_R=2N.}
+\]
+For one final memory phase-state checkpoint, \(Y_f\in\mathbb R^4\), so
+\[
+\operatorname{rank}J_R\le4.
+\]
+Hence more than two unknown two-component kicks are dimensionally underdetermined from a single final checkpoint. Additional retained checkpoints enlarge the measurement space, but the actual full-column-rank test remains mandatory.
+
+This Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still pending a real full repository reference-suite result on the integrated tree, so the Retrodiction node is not yet promoted into the canonical admitted frontier.
