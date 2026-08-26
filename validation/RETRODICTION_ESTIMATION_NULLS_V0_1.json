@@ -1,0 +1,56 @@
+{
+  "schema": "IDT_RETRODICTION_ESTIMATION_NULLS_V0_1",
+  "status": "PASS_ISOLATED_REFERENCE_HARNESS_PROVISIONAL_DOWNSTREAM",
+  "canon_allowed": false,
+  "dependency_parent": "RETRODICTION_OBSERVABILITY_PROVISIONAL_DOWNSTREAM",
+  "implementation": "src/idt/retrodiction_estimation.py",
+  "tests_declared": "tests/reference/test_retrodiction_estimation.py",
+  "execution_basis": "isolated exact-formula harness mirroring the current repository velocity-Verlet forward model, finite-difference observability matrix, damped Gauss-Newton update, strict residual-descent line search, estimate commitment and reference null definitions",
+  "reference_case": {
+    "unknown_kicks": 3,
+    "latent_dimension": 6,
+    "retained_checkpoints": 3,
+    "observation_dimension": 12,
+    "observability_rank": 6,
+    "initial_singular_values": [
+      2.26243798,
+      2.24963441,
+      0.80298760,
+      0.80195300,
+      0.55510882,
+      0.55505126
+    ],
+    "estimator_status": "CONVERGED_RESIDUAL",
+    "iterations": 2,
+    "estimator_residual_norm": 1.0353908618508065e-14,
+    "max_abs_kick_error": 1.3926360065141807e-14,
+    "zero_kick_residual_norm": 0.09201354717183423,
+    "checkpoint_shuffle_residual_norm": 0.0957129801771546,
+    "checkpoint_shuffle_status": "STALLED_NO_DESCENT",
+    "zero_kick_residual_reduction": 0.9999999999998874,
+    "checkpoint_shuffle_residual_reduction": 0.9999999999998919
+  },
+  "randomized_exact_formula_audit": {
+    "seed": 20260826,
+    "cases": 50,
+    "unknown_kicks_per_case": 3,
+    "retained_checkpoints_per_case": 3,
+    "full_rank_cases": 50,
+    "converged_cases": 50,
+    "maximum_iterations_observed": 2,
+    "maximum_abs_kick_error": 1.6438239658356224e-14,
+    "maximum_residual_norm": 1.292096574378813e-14
+  },
+  "controls": [
+    "observability gate precedes optimization",
+    "three latent 2D kicks recover from three retained 4D phase checkpoints in the exact reference case",
+    "three unknown kicks with one final 4D checkpoint fail closed before optimization",
+    "estimate content is committed before sealed truth scoring",
+    "commitment mismatch fails closed",
+    "same-model zero-kick null has substantially larger residual in the exact reference case",
+    "capacity-matched reversed-checkpoint null has substantially larger residual in the exact reference case"
+  ],
+  "repository_pytest_for_new_estimator": "NOT_OBTAINED",
+  "github_actions_parent_memory_gate": "INFRASTRUCTURE_FAILURE_NO_EXECUTED_STEPS_OR_LOGS",
+  "physical_claim_status": "NOT_EVALUATED"
+}
