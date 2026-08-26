@@ -127,3 +127,10 @@ from .retrodiction_estimation import (
     score_committed_estimate,
     compare_with_reference_nulls,
 )
+
+from .retrodiction_uncertainty import (
+    RetrodictionUncertaintyError,
+    RetrodictionUncertaintyAudit,
+    isotropic_checkpoint_covariance,
+    weighted_retrodiction_uncertainty,
+)
