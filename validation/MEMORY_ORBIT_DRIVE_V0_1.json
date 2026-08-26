@@ -1,0 +1,33 @@
+{
+  "schema": "IDT_MEMORY_ORBIT_DRIVE_V0_1",
+  "status": "PASS_STRUCTURAL_REFERENCE_TESTS",
+  "tests": {
+    "targeted_suite": "26 passed in 0.07s"
+  },
+  "latex": {
+    "local_two_pass_compile": "PASS",
+    "pages": 46,
+    "pdf_published_to_github": false
+  },
+  "structural_results": [
+    "Memory edge drive is antisymmetric under edge reversal.",
+    "Closed memory-orbit drive equals twice coupling times signed polygon area.",
+    "Reversing memory-orbit orientation reverses cycle drive.",
+    "Collinear-ray memory control has zero cycle drive.",
+    "Memory cycle affinity equals cycle drive divided by ln(2)."
+  ],
+  "epistemic_boundary": {
+    "physical_memory_identification": "NOT_PROMOTED",
+    "physical_arrow_of_time": "NOT_PROMOTED",
+    "subjective_time": "DEFERRED",
+    "retrodiction": "DEFERRED"
+  },
+  "files_sha256": {
+    "formalism/00D_memory_orbit_drive.md": "276fe817662b4935ff785edd39c560b40582bdfb7cdf381b30b88ae6873df278",
+    "src/idt/memory_orbit.py": "a4b34b370752ab3a41ef7b9defd8825dda7a79aa40da90e5fa55d9ce85ee789c",
+    "tests/reference/test_memory_orbit_drive.py": "462260a7c1c4fdd22de4a94d492bc0dfad574c1caacd4bb5e9c6420d6e4873",
+    "operators/memory_orbit_drive_v01.pnv": "0181708d790ec519fd2a49bea86b7f75672097c56521a9745efd635c86eb523f",
+    "monograph/chapters/08_memory_and_retrodiction.tex": "99331234e9c3934f4e2717cdf06b09dd7c91b64dc6d679b78fc93683cb98b3e0"
+  },
+  "receipt_sha256": "8102d47c63c11b645e5182fef7dcf81c457a7dcc675e32f9b5e0354287f0dc36"
+}

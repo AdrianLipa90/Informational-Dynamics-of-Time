@@ -11,6 +11,8 @@
 | T008 | If a positive relational weight \(\pi\) satisfies pairwise detailed balance, every closed-cycle affinity \(\mathcal A_C=\sum_C\sigma_e\) vanishes | T007 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
 | T009 | Symmetric pair mobility \(M_{ab}=\sqrt{\rho_a\rho_b}/[(\eta_a+\eta_b)/2]\) controls pace and cancels from the forward/reverse affinity ratio | T007 + positive scalar fields | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 1 |
 | T009A | If \(A_{ab}=V_R(b)-V_R(a)\), then the closed-cycle drive and cycle affinity vanish | T009 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
+| T009B | Memory-orbit edge drive \(A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)]\) is antisymmetric | T009 + complex memory coordinate | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 8 |
+| T009C | Closed memory-orbit drive equals \(2\lambda_M\) times the signed polygon area enclosed by the memory orbit | T009B | shoelace identity + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 8 |
 | T010 | Temporal state admits ordered phase transport \(\Psi_{n+1}=U_n\Psi_n\) | T001 | formal candidate | `CANDIDATE` | Ch. 3–4 |
 | T011 | For unitary phase-only transport, \(U_n=e^{-i\Omega_n}\) | T010 | algebraic derivation | `CANDIDATE` | Ch. 4 |
 | T020 | Transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) localizes discrete transition events | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |

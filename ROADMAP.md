@@ -13,7 +13,7 @@ Exit condition: the dependency chain through `NOW -> Bifurcation` is internally 
 
 ## Phase B — Temporal transport and memory
 
-Open only after Phase A closure.
+Full retrodiction remains deferred. A minimal oriented memory-orbit coordinate has been admitted upstream because it supplies a concrete non-exact edge-drive candidate.
 
 ## Phase C — Retrodiction and retrocausal tests
 
@@ -23,16 +23,17 @@ Open only after memory operators have independent receipts.
 
 Introduce spatial structure only after temporal formalism has an independent canonical state.
 
-## Immediate upstream derivation — Shannon to phase to transition
+## Immediate upstream derivation — Shannon to phase to event
 
-Current closure: `RELATIONAL_KINETICS_V0_1`.
+Current closure: `MEMORY_ORBIT_DRIVE_V0_1`.
 
 Next dependency sequence:
 
-1. `CLOSED AS FORMAL CANDIDATE`: \(\sigma_{a\to b}=\log_2[P(b\mid a)/P(a\mid b)]\);
-2. `CLOSED AS MINIMAL KINETIC CANDIDATE`: \(\rho_R,\eta_R\) define symmetric mobility while antisymmetric \(A_{ab}\) defines directional affinity;
-3. derive a non-exact edge drive from memory-orbit state or phase geometry;
-4. derive transition-event weights \(q_e\) and NOW localization from the admitted composite link;
-5. add memory-orbit accumulation;
-6. define subjective elapsed time from internal transition accumulation;
-7. postpone metric calibration and spacetime closure until the temporal branch is independently closed.
+1. `CLOSED`: Shannon exact-difference and geometric-link split;
+2. `CLOSED AS FORMAL CANDIDATE`: directed affinity \(\sigma_{ab}\);
+3. `CLOSED AS MINIMAL KINETIC CANDIDATE`: \(\rho_R,\eta_R\) define symmetric mobility;
+4. `CLOSED AS GEOMETRIC MEMORY CANDIDATE`: oriented memory area supplies non-exact edge drive;
+5. derive transition-event weights \(q_e\) from the admitted composite link;
+6. derive NOW localization from the resulting atomic transition measure;
+7. only then develop memory accumulation and subjective elapsed time;
+8. postpone metric calibration and spacetime closure until the temporal branch is independently closed.

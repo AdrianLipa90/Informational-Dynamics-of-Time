@@ -31,8 +31,7 @@ L_e=G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right].
 
 **EQ-T007 — closed-cycle decomposition**
 \[
-\operatorname{Arg}\!\left(\prod_{e\in C}L_e\right)
-=\gamma_B(C)+\kappa\sum_{e\in C}\sigma_e\pmod{2\pi}.
+\operatorname{Arg}\!\left(\prod_{e\in C}L_e\right)=\gamma_B(C)+\kappa\sum_{e\in C}\sigma_e\pmod{2\pi}.
 \]
 
 **EQ-T008 — directed transition affinity**
@@ -42,21 +41,17 @@ L_e=G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right].
 
 **EQ-T009 — closed-cycle affinity**
 \[
-\mathcal A_C
-=\sum_{e\in C}\sigma_e
-=\log_2\prod_{e\in C}\frac{P_{e,+}}{P_{e,-}}.
+\mathcal A_C=\sum_{e\in C}\sigma_e=\log_2\prod_{e\in C}\frac{P_{e,+}}{P_{e,-}}.
 \]
 
 **EQ-T009B — Shannon--phase cycle closure with path affinity**
 \[
-\operatorname{Arg}\!\left(\prod_{e\in C}L_e\right)
-=\gamma_B(C)+\kappa\mathcal A_C\pmod{2\pi}.
+\operatorname{Arg}\!\left(\prod_{e\in C}L_e\right)=\gamma_B(C)+\kappa\mathcal A_C\pmod{2\pi}.
 \]
 
 **EQ-T009C — relational pair mobility**
 \[
-M_{ab}
-=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}.
+M_{ab}=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}.
 \]
 
 **EQ-T009D — directed kinetic pair**
@@ -69,6 +64,21 @@ W_{b\to a}=M_{ab}e^{-A_{ab}/2}.
 **EQ-T009E — affinity from antisymmetric edge drive**
 \[
 \sigma_{a\to b}=\frac{A_{ab}}{\ln2}.
+\]
+
+**EQ-T009F — oriented memory-edge drive**
+\[
+A^{(M)}_{ab}=\lambda_M\operatorname{Im}[m(a)^*m(b)].
+\]
+
+**EQ-T009G — memory-orbit circulation/area identity**
+\[
+\sum_{e\in C}A^{(M)}_e=2\lambda_M\mathcal A_M(C).
+\]
+
+**EQ-T009H — memory contribution to cycle affinity**
+\[
+\mathcal A_C^{(M)}=\frac{2\lambda_M}{\ln2}\mathcal A_M(C).
 \]
 
 **EQ-T010 — relational phase transport**
