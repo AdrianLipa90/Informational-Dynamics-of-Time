@@ -5,10 +5,10 @@ from src.idt.kepler_memory import MemoryPhaseState
 from src.idt.memory_recall import MemoryEventReceipt, memory_cycle_forward
 from src.idt.retrodiction import (
     RetrodictionError,
+    equivalent_kick_factorization,
     infer_event_weight_from_known_imprint,
     infer_imprint_from_known_event_weight,
     infer_missing_kick,
-    receipt_product_equivalent,
     retrodict_single_missing_receipt,
 )
 
@@ -99,5 +99,5 @@ def test_checkpoint_tampering_fails_closed():
 
 def test_product_factorization_scale_family_preserves_the_kick():
     rec = _receipt()
-    alt = receipt_product_equivalent(rec.event_weight, rec.delta_m, 3.7)
-    assert abs(alt.event_weight * alt.delta_m - rec.event_weight * rec.delta_m) < 1e-15
+    q_alt, dm_alt = equivalent_kick_factorization(rec.event_weight, rec.delta_m, 3.7)
+    assert abs(q_alt * dm_alt - rec.event_weight * rec.delta_m) < 1e-15
