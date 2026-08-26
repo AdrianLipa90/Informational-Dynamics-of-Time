@@ -94,10 +94,62 @@ q_n\delta m_n
 \]
 unchanged. Therefore the factorization is non-identifiable from the memory checkpoints alone. The implementation reports this ambiguity explicitly and does not choose an arbitrary decomposition.
 
+\section{Multi-event observability before estimation}
+
+For \(N\) latent event kicks, collect
+\[
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N},
+\]
+where each \(u_k\) is the two-component memory-velocity jump. Retained post-event checkpoints define a measurement map \(Y(z)\). At a nominal lineage \(z_0\), define
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0}.
+}
+\]
+The first-order local-identifiability gate is
+\[
+\boxed{\operatorname{rank}J_R=2N.}
+\]
+The singular spectrum is retained separately to distinguish full rank from poor conditioning.
+
+One final memory phase-state checkpoint carries four real coordinates,
+\[
+Y_f=(r_x,r_y,v_x,v_y)\in\mathbb R^4,
+\]
+so
+\[
+J_R^{\rm final}\in\mathbb R^{4\times2N},
+\qquad
+\boxed{\operatorname{rank}J_R^{\rm final}\le4.}
+\]
+Consequently,
+\[
+\boxed{
+N>2
+\Longrightarrow
+4<2N
+\Longrightarrow
+\text{final-only reconstruction is dimensionally underdetermined}.
+}
+\]
+This obstruction is established before fitting or optimization.
+
+If a checkpoint set \(\mathcal C\) is retained, then
+\[
+Y_{\mathcal C}\in\mathbb R^{4|\mathcal C|},
+\]
+and a necessary dimensional condition becomes
+\[
+\boxed{4|\mathcal C|\ge2N.}
+\]
+The actual full-column-rank condition must still be checked. In the targeted three-kick reference case, one final checkpoint gives a \(4\times6\) underdetermined matrix, whereas retaining all three post-event checkpoints gives a \(12\times6\) sensitivity matrix with rank six.
+
 \section{Reference controls and evidence boundary}
 
-The targeted reference controls are recorded in
-\texttt{validation/RETRODICTION\_SINGLE\_MISSING\_RECEIPT\_V0\_1.json}.
-The isolated exact-formula harness passes the missing-kick reconstruction, both conditional factor-identification modes, product-only ambiguity, collinearity rejection, zero-weight consistency and checkpoint-tampering controls. Randomized single-cell tests remain at numerical round-off scale in the recorded harness.
+Single-missing-receipt controls are recorded in
+\texttt{validation/RETRODICTION\_SINGLE\_MISSING\_RECEIPT\_V0\_1.json},
+and the multi-event rank audit in
+\texttt{validation/RETRODICTION\_OBSERVABILITY\_V0\_1.json}.
+The isolated reference harnesses cover missing-kick reconstruction, conditional factor identification, product-only ambiguity, collinearity rejection, checkpoint tampering, dimensional underdetermination and checkpoint-augmented rank recovery. The observability layer reports `UNDERDETERMINED_DIMENSION`, `RANK_DEFICIENT`, or `LOCALLY_IDENTIFIABLE_REFERENCE` rather than forcing an inverse through a rank-deficient problem.
 
 This evidence belongs to a provisional downstream formal reference class. Retrodiction admission remains gated by the parent Memory admission result. Retrocausal tests remain a later dependency node with their own statistical, leakage and classical-channel audits.
