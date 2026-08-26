@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_INTEGRATION_REFERENCE_PASS_CANDIDATE / RETRODICTION_TARGETED_ISOLATED_PASS / FULL_SUITE_PENDING`
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_INTEGRATION_REFERENCE_PASS_CANDIDATE / RETRODICTION_TARGETED_ISOLATED_PASS / FULL_SUITE_NOT_OBTAINED`
 
 Recorded transport evidence:
 
@@ -40,7 +40,18 @@ Provisional multi-event observability evidence is recorded in `validation/RETROD
 - duplicate/pre-event checkpoints and invalid numerical tolerances fail closed;
 - randomized audit: 200/200 two-kick final-checkpoint cases were full rank and 200/200 three-kick all-checkpoint cases were full rank in the recorded parameter range.
 
-These Retrodiction results are `PROVISIONAL_DOWNSTREAM` evidence only. They do not substitute for the parent Memory admission gate.
+Provisional gated-estimation evidence is recorded in `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json` and append-only run `experiments/E003_retrodiction/runs/E003_REFERENCE_0001.json`:
+
+- the three-kick reference case passes the `12 x 6`, rank-6 observability gate;
+- damped Gauss--Newton converges in 2 iterations;
+- estimator residual norm: about `1.04e-14`;
+- maximum kick-coordinate error after estimate commitment and truth release: about `1.39e-14`;
+- zero-kick reference residual: about `9.20e-2`;
+- reversed-checkpoint, capacity-matched reference fit residual: about `9.57e-2`;
+- 50/50 seeded three-kick exact-reference cases were full rank and converged, with maximum kick-coordinate error about `1.65e-14`;
+- estimate-commitment mismatch is a fail-closed control.
+
+The registered evidence class for these residual comparisons is `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`. Statistical-effect evaluation, uncertainty propagation, leakage/channel audit and physical-claim evaluation remain later gates.
 
 Validation receipts include:
 
@@ -52,10 +63,11 @@ Validation receipts include:
 - `validation/MEMORY_PERSISTENCE_RECALL_V0_1.json`;
 - `validation/MEMORY_ADMISSION_V0_1.json`;
 - `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`;
-- `validation/RETRODICTION_OBSERVABILITY_V0_1.json`.
+- `validation/RETRODICTION_OBSERVABILITY_V0_1.json`;
+- `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json`.
 
-The first GitHub Actions attempt observed for the integrated Memory admission head returned `failure` with no executed steps and no retrievable logs; it is therefore classified as `CI_RESULT_NOT_OBTAINED`, not as a code/test failure. A failed-job rerun has now been requested successfully and is queued. Until it executes actual test steps, the full-suite result remains `NOT_OBTAINED`.
+GitHub Actions infrastructure status for the integrated Memory admission head: the initial attempt and the explicitly requested failed-job rerun both ended with workflow/job conclusion `failure`, zero executed steps and unavailable job logs. The observable result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`; no repository-test outcome was produced by those runs.
 
-Full repository suite status on the integrated Memory tree: `NOT_OBTAINED / RERUN_QUEUED`.
+Full repository suite status on the integrated Memory tree: `NOT_OBTAINED`.
 
-The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
+The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation and reference-null comparison. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
