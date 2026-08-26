@@ -1,0 +1,44 @@
+{
+  "schema": "IDT_RETRODICTION_WEIGHTED_NULLS_V0_1",
+  "status": "PASS_TARGETED_ISOLATED_REFERENCE",
+  "canon_allowed": false,
+  "dependency_parent": "RETRODICTION_PROVISIONAL_DOWNSTREAM",
+  "implementation": "src/idt/retrodiction_weighted_nulls.py",
+  "tests": "tests/reference/test_retrodiction_weighted_nulls.py",
+  "operator_declaration": "operators/retrodiction_weighted_nulls_v01.pnv",
+  "test_execution": {
+    "environment": "isolated local reconstruction of exact branch implementation dependencies",
+    "command_equivalent": "pytest -q tests/reference/test_retrodiction_weighted_nulls.py",
+    "result": "5 passed in 0.24s",
+    "checks": [
+      "exact three-kick covariance-weighted reconstruction",
+      "all five non-identity three-checkpoint permutations evaluated",
+      "observed chronology beats every permutation in reference case",
+      "covariance-scale law for weighted residual quadratic",
+      "non-positive-definite covariance fails closed",
+      "permutation safety limit fails closed before a partial ensemble"
+    ]
+  },
+  "reference_case": {
+    "mu_memory": 1.0,
+    "delta_taus": [0.03, 0.04, 0.035],
+    "checkpoint_indices": [1, 2, 3],
+    "latent_dimension": 6,
+    "observation_dimension": 12,
+    "observation_covariance_diagonal": 1e-8,
+    "weighted_rank": 6,
+    "condition_number": 4.069853229535235,
+    "observed_weighted_residual_quadratic": 2.4892644531205023e-24,
+    "null_count": 5,
+    "null_minimum": 179779.27136701858,
+    "null_median": 613117.4500443636,
+    "null_maximum": 818629.3502964714,
+    "null_better_or_equal_count": 0,
+    "null_rank_fraction": 0.0
+  },
+  "evidence_class": "PERMUTATION_REFERENCE_DIAGNOSTIC",
+  "native_pnv_execution": "NOT_ASSERTED",
+  "physical_claim_status": "NOT_EVALUATED",
+  "full_repository_suite": "NOT_OBTAINED_FROM_GITHUB_ACTIONS_INFRASTRUCTURE",
+  "notes": "This receipt validates the targeted Python reference implementation and finite checkpoint-permutation ensemble only. It does not promote Retrodiction or establish a statistical or physical effect."
+}
