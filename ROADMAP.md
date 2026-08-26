@@ -19,7 +19,7 @@ Status: `STRUCTURAL_REFERENCE_GATES_PASS`.
 
 ## Phase B — Memory
 
-Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`.
+Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`.
 
 1. `TARGETED_PASS_CANDIDATE`: Kepler--Newton memory propagation in \(\tau_{\rm int}\), signed areal law, conic elements and orbit classification;
 2. `TARGETED_PASS_CANDIDATE`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
@@ -28,15 +28,23 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`.
 5. `TARGETED_PASS_CANDIDATE`: append-only memory receipt ledger and reversible lineage cell;
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
-8. `NEXT_GATE`: full repository reference suite on the integrated Memory tree, then combined Memory admission receipt;
-9. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
-10. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
+8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
+9. `CI_NOTE`: first observed GitHub Actions attempt returned no executed steps and no retrievable logs, so its result is `CI_RESULT_NOT_OBTAINED` rather than a code/test failure;
+10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
+11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Retrodiction is `GATED_PENDING_MEMORY_ADMISSION`.
+Canonical status: `GATED_PENDING_MEMORY_ADMISSION`.
 
-When opened, its first task is deliberately different from recall: infer a prior state when one or more event receipts, state checkpoints, or lineage variables are withheld. A valid retrodiction experiment must compare the estimator against explicit null/baseline models and report reconstruction error without using hidden lineage information.
+A provisional downstream single-missing-receipt reference branch is now implemented without advancing the admitted frontier. It separates exact recall from inference and establishes the first identifiability boundary:
+
+1. `PROVISIONAL_TARGETED_PASS`: reverse the known smooth Kepler segment and infer the missing kick \(\Delta v_{M,n}\);
+2. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(q_n\) when nonzero \(\delta m_n\) is independently known;
+3. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(\delta m_n\) when positive \(q_n\) is independently known;
+4. `PROVED_REFERENCE_AMBIGUITY`: when both factors are withheld, only \(q_n\delta m_n\) is identifiable because positive reciprocal rescaling leaves the kick invariant;
+5. `NEXT_AFTER_MEMORY_ADMISSION`: promote the single-missing-receipt contract, then extend to withheld checkpoints and multi-event latent-lineage inference;
+6. `LATER`: compare every retrodictive estimator against explicit null/baseline models without hidden-lineage leakage.
 
 Required later result stack:
 
