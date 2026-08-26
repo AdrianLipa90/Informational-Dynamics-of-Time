@@ -3,7 +3,7 @@
 The canonical dependency graph is maintained in `formalism/DEPENDENCY_GRAPH.md`.
 
 \[
-\boxed{\mathrm{TIR}\to\mathrm{Temporal\ Primitive}\to\mathrm{Temporal\ Wave}\to\mathrm{NOW}\to\mathrm{Bifurcation}\to\mathrm{Temporal\ Transport}\to\mathrm{Memory}\to\mathrm{Retrodiction}\to\mathrm{Retrocausal\ Tests}\to\mathrm{Einstein\ Closure}}
+\boxed{\mathrm{TIR}\to\mathrm{Temporal\ Primitive}\to\mathrm{Temporal\ Wave}\to\mathrm{NOW}\to\mathrm{Bifurcation}\to\mathrm{Temporal\ Transport}\to\mathrm{Memory}\to\mathrm{ORCHORBITAL\ Attractors}\to\mathrm{Retrodiction}\to\mathrm{Retrocausal\ Tests}\to\mathrm{Einstein\ Closure}}
 \]
 
 ## Phase A — Temporal core and transport
@@ -29,15 +29,32 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
 8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
-9. `CI_INFRASTRUCTURE_BLOCKED`: the Memory admission workflow attempts and the latest Retrodiction-branch workflow produce jobs with zero executed steps and unavailable logs; their observable result class is `CI_RESULT_NOT_OBTAINED`;
+9. `CI_INFRASTRUCTURE_BLOCKED`: the observed hosted workflow jobs terminate before executing test steps; result class remains `CI_RESULT_NOT_OBTAINED`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
+## Phase B2 — ORCHORBITAL attractor organization
+
+Canonical status: `PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS`.
+
+1. `TARGETED_PASS`: define attractor-relative Kepler energy \(E_i\) and positive binding margin \(b_i=[-E_i]_+\);
+2. `TARGETED_PASS`: normalize positive binding into replay-stable attractor weights \(w_i\) and select the maximum-binding basin;
+3. `TARGETED_PASS`: expose `LEAK_MODE` when the total binding margin vanishes and fail closed before orbital propagation;
+4. `TARGETED_PASS`: derive Shannon basin entropy \(H_A\) and normalized attractor coherence \(C_A\) from the weight distribution;
+5. `TARGETED_PASS`: propagate each admitted smooth segment by the existing Kepler law translated to the active attractor centre;
+6. `TARGETED_PASS`: accumulate branch-safe winding increments and re-evaluate the complete attractor field at every segment boundary;
+7. `TARGETED_PASS`: record an attractor-switch candidate when the post-segment maximizing basin differs from the completed segment centre;
+8. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
+9. `REFERENCE_RESULT`: `9 passed in 0.05s` in the isolated exact-dependency harness; receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
+10. `NEXT`: add multi-segment attractor residence statistics, dwell-time distributions in \(\tau_{\rm int}\), switching graphs and basin-transition receipts;
+11. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
+12. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before admitting them into this repository.
+
 ## Phase C — Retrodiction and retrocausal tests
 
-Canonical status: `GATED_PENDING_MEMORY_ADMISSION`.
+Canonical status: `GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION`.
 
-A provisional downstream Retrodiction branch is being developed without advancing the admitted frontier:
+The tested Retrodiction implementation remains provisional downstream:
 
 1. `PROVISIONAL_TARGETED_PASS`: reverse the known smooth Kepler segment and infer the missing kick \(\Delta v_{M,n}\);
 2. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(q_n\) when nonzero \(\delta m_n\) is independently known;
@@ -52,12 +69,11 @@ A provisional downstream Retrodiction branch is being developed without advancin
 11. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
 13. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: for \(N\) latent 2D kicks the dimensional lower bound is \(|\mathcal C|\ge\lceil N/2\rceil\), followed by actual rank and optional conditioning gates;
-14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned (best reference pair condition about `66.3`), while all three checkpoints give condition about `4.076`; an explicit \(\kappa_{\max}=10\) therefore selects all three;
-15. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete five-member non-identity checkpoint-permutation reference ensemble pass the targeted five-test layer; checkpoint observations and covariance are permuted together and every null uses the same estimator capacity;
-16. `REFERENCE_NULL_RESULT`: in E003 reference run 0002 the retained chronology has weighted residual quadratic about `2.49e-24`, while the five null fits range from about `1.80e5` to `8.19e5` with zero nulls at or below the retained chronology;
-17. `NEXT`: preregister an experiment-specific permutation/null calibration with uncertainty-aware comparison statistics before any `STATISTICAL_EFFECT` admission;
-18. `NEXT`: add deliberately missing/noisy checkpoint experiments under the information firewall and quantify reconstruction degradation against the registered null ensemble;
-19. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned, while all three checkpoints give condition about `4.076`;
+15. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete five-member non-identity checkpoint-permutation reference ensemble pass the targeted layer;
+16. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability without hidden-lineage leakage;
+17. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+18. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
@@ -67,4 +83,4 @@ Required later result stack:
 
 ## Phase D — spatial branch and Einstein closure
 
-Spatial structure is introduced after the temporal branch has independently admitted state, transport, memory/retrodiction and clock-calibration structures. Einstein closure remains the final dependency gate.
+Spatial structure is introduced after the temporal branch has independently admitted state, transport, memory/ORCHORBITAL organization, retrodiction and clock-calibration structures. Einstein closure remains the final dependency gate.
