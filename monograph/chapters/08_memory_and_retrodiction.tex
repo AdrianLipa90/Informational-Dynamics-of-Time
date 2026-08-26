@@ -1,6 +1,6 @@
 \chapter{Memory and Retrodiction}
 
-The memory layer is developed downstream of Temporal Transport. The current executable branch combines the existing oriented memory coordinate with a Kepler--Newton evolution law parameterized by the internal elapsed activity variable.
+The memory layer is developed downstream of Temporal Transport. The current executable branch combines an event-imprinted memory coordinate with a Kepler--Newton evolution law parameterized by the internal elapsed activity variable.
 
 \section{Oriented memory coordinate}
 
@@ -22,6 +22,32 @@ For a closed polygonal orbit,
 =2\lambda_M\mathcal A_M(C),
 \]
 where \(\mathcal A_M(C)\) is the signed enclosed area.
+
+\section{Event-imprinted memory coordinate}
+
+For the states immediately before and after an admitted event, define
+\[
+R_n^\pm=\Psi_n^\pm(\Psi_n^\pm)^\dagger,
+\qquad
+\bar\rho_n^\pm=\frac{R_n^\pm}{\operatorname{tr}R_n^\pm}.
+\]
+The projective memory imprint is
+\[
+\boxed{\Delta M_n=\bar\rho_n^+-\bar\rho_n^-}.
+\]
+With declared Hermitian memory observables \(Q_M,P_M\),
+\[
+m=\operatorname{tr}(\rho Q_M)+i\operatorname{tr}(\rho P_M),
+\]
+and the event displacement in the memory plane is
+\[
+\boxed{
+\delta m_n
+=\operatorname{tr}(\Delta M_nQ_M)
++i\operatorname{tr}(\Delta M_nP_M).
+}
+\]
+Independent global phase changes of the pre/post states leave this projective imprint invariant.
 
 \section{Internal-time Newton dynamics}
 
@@ -82,15 +108,44 @@ Combining the areal law with the earlier memory circulation yields
 }
 \]
 
-\section{Bifurcation impulse}
+\section{Event action and orbital bifurcation}
 
-A localized event can modify the orbital state through
+The NOW layer already supplies a non-negative gauge-invariant event magnitude \(q_n\). Using that amplitude and the projected event imprint, define the normalized localized memory action
 \[
 \boxed{
-\mathbf v_M^+
-=\mathbf v_M^-+\Delta\mathbf v_M.
+S_n^{(M)}(m)
+=q_n\operatorname{Re}(\delta m_n^*m).
 }
 \]
-The event-imprint projection that generates \(\Delta\mathbf v_M\) is kept as a separate derivation target. The resulting orbital state can be classified by \(\varepsilon_M\), \(h_M\), eccentricity and the conic branch.
+The event-augmented memory Lagrangian is
+\[
+L_M
+=\frac12|\dot m|^2+\frac{\mu_M}{|m|}
++\sum_n\delta(\tau_{\rm int}-\tau_n)S_n^{(M)}(m).
+\]
+Integrating the Euler--Lagrange equation through one event gives the structural jump
+\[
+\boxed{
+\Delta v_{M,n}=q_n\delta m_n,
+\qquad
+v_{M,n}^+=v_{M,n}^-+q_n\delta m_n.
+}
+\]
+Thus the previously open impulse interface now has an upstream-driven reference closure: event magnitude determines kick amplitude and the projective imprint determines direction.
 
-The current numerical reference uses velocity--Verlet propagation and records targeted structural tests in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json}. Retrodiction opens after the memory update law receives its own admission receipt.
+At fixed event position the orbital invariants change by
+\[
+\boxed{
+\Delta E_M
+=q_n\operatorname{Re}(v_M^*\delta m_n)
++\frac12q_n^2|\delta m_n|^2,
+}
+\]
+\[
+\boxed{
+\Delta h_M=q_n\operatorname{Im}(m^*\delta m_n).
+}
+\]
+The post-event pair \((E_M^+,h_M^+)\) determines the next smooth Kepler-class orbit.
+
+The numerical reference records the Kepler--Newton controls in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json} and the event-action jump controls in \texttt{validation/EVENT\_MEMORY\_KICK\_V0\_1.json}. Physical-unit calibration is assigned to the later metric-time calibration stage. The next Memory-node derivation target is the origin of \(\mu_M\) and the persistence/recall law required to open retrodiction.
