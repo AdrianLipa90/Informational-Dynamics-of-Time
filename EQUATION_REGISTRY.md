@@ -260,6 +260,31 @@ L_M=\frac12|\dot m|^2+\frac{\mu_M}{|m|}+\sum_n\delta(\tau_{\rm int}-\tau_n)S_n^{
 \Delta h_M=q_n\operatorname{Im}(m^*\delta m_n).
 \]
 
+**EQ-T019G — central parameter from angular momentum and conic geometry**
+\[
+\boxed{\mu_M=\frac{h_M^2}{p_M}},
+\qquad
+p_M=\frac{2r_pr_a}{r_p+r_a}
+=a_M(1-e_M^2).
+\]
+
+**EQ-T019H — central parameter from internal period**
+\[
+\boxed{\mu_M=\frac{4\pi^2a_M^3}{T_M^2}}.
+\]
+
+**EQ-T019I — central parameter from memory circulation**
+\[
+\boxed{
+\mu_M
+=\frac{1}{p_M}
+\left(
+\frac{1}{\lambda_M}
+\frac{d\Gamma_M}{d\tau_{\rm int}}
+\right)^2.
+}
+\]
+
 **EQ-T020 — atomic temporal transition measure**
 \[
 \mathcal K_T=\sum_n q_n\,\delta_{s_n}.
