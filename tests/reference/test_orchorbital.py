@@ -5,10 +5,13 @@ from src.idt.kepler_memory import MemoryPhaseState
 from src.idt.orchorbital import (
     AttractorSpec,
     ORCHORBITALError,
+    attractor_residence_summary,
+    attractor_transition_counts,
     centered_kepler_step,
     evaluate_attractor_field,
     orchorbital_step,
     phase_space_closure_defect,
+    propagate_orchorbital,
     winding_increment,
 )
 
@@ -93,6 +96,26 @@ def test_segment_boundary_records_attractor_switch_candidate():
     assert result.active_attractor == "A"
     assert result.field_after.active_attractor == "B"
     assert result.switched_after_segment
+
+
+def test_multisegment_propagation_promotes_boundary_switch_on_next_segment():
+    attractors = [
+        AttractorSpec("A", np.array([0.0, 0.0], dtype=float), 2.0),
+        AttractorSpec("B", np.array([4.0, 0.0], dtype=float), 2.0),
+    ]
+    steps = propagate_orchorbital(_state(1.6, 0.4, 1.0, 0.0), attractors, [0.5, 0.05])
+    assert [step.active_attractor for step in steps] == ["A", "B"]
+    assert attractor_transition_counts(steps) == {("A", "B"): 1}
+
+
+def test_residence_summary_accumulates_internal_dwell_and_winding():
+    steps = propagate_orchorbital(_state(1.0, 0.0, 0.0, 0.8), _attractors(), [0.01, 0.02, 0.03])
+    summary = attractor_residence_summary(steps)
+    assert len(summary) == 1
+    assert summary[0].name == "A"
+    assert summary[0].segments == 3
+    assert abs(summary[0].dwell_tau - 0.06) < 1e-12
+    assert summary[0].winding > 0.0
 
 
 def test_leak_mode_fails_closed_before_orbital_propagation():
