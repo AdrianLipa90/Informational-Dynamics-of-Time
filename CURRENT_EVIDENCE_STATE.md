@@ -37,7 +37,6 @@ Provisional multi-event observability evidence is recorded in `validation/RETROD
 - two unknown 2D kicks give rank 4 from one final 4D checkpoint in the generic reference case;
 - three unknown 2D kicks are dimensionally underdetermined from one final 4D checkpoint because the Jacobian is `4 x 6`;
 - retaining all three post-event checkpoints gives a `12 x 6` Jacobian with rank 6 in the targeted reference case;
-- duplicate/pre-event checkpoints and invalid numerical tolerances fail closed;
 - randomized audit: 200/200 two-kick final-checkpoint cases were full rank and 200/200 three-kick all-checkpoint cases were full rank in the recorded parameter range.
 
 Provisional gated-estimation evidence is recorded in `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json` and append-only run `experiments/E003_retrodiction/runs/E003_REFERENCE_0001.json`:
@@ -59,11 +58,21 @@ Provisional noise/uncertainty evidence is recorded in `validation/RETRODICTION_U
 - six local Fisher kick-coordinate standard errors lie between about `9.98e-6` and `1.42e-5`;
 - doubling the checkpoint standard deviation multiplies latent covariance by four and latent standard errors by two: PASS;
 - Fisher information times the inferred local covariance returns the six-dimensional identity within numerical tolerance: PASS;
-- invalid positive-definiteness and explicit condition-threshold controls fail/classify as declared;
 - a seeded 500-case nonlinear reference audit at checkpoint standard deviation `1e-5` produced zero fit failures;
 - empirical coordinate standard deviations were within about `4.4%` of the local Fisher predictions in that recorded reference regime.
 
-The registered evidence classes are `COMPUTATIONAL_REFERENCE_DIAGNOSTIC` for the estimator/null layer and `NOISE_MODEL_REFERENCE_DIAGNOSTIC` for the uncertainty layer. Statistical-effect evaluation, uncertainty calibration against experiment-specific noise, leakage/channel audit and physical-claim evaluation remain later gates.
+Provisional partial-checkpoint evidence is recorded in `validation/RETRODICTION_CHECKPOINT_SELECTION_V0_1.json`:
+
+- for three latent 2D kicks, the necessary dimensional lower bound is two retained 4D checkpoints;
+- subset `[1,2]` has rank 4 and is rejected for six latent coordinates;
+- subset `[1,3]` has rank 6 with condition number about `66.30`;
+- subset `[2,3]` has rank 6 with condition number about `72.16`;
+- the minimal-cardinality reference selector therefore chooses `[1,3]`;
+- retaining `[1,2,3]` gives condition number about `4.076`;
+- with an explicit maximum admitted condition number `10`, the selector retains all three checkpoints;
+- seeded 200-case three-event audit: every case had a full-rank two-checkpoint subset; the best two-checkpoint condition median was about `59.42`, while all-three-checkpoint condition median was about `4.067`.
+
+The registered evidence classes are `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`, `NOISE_MODEL_REFERENCE_DIAGNOSTIC` and `PARTIAL_OBSERVATION_REFERENCE_DIAGNOSTIC`. Statistical-effect evaluation, experiment-specific uncertainty calibration, leakage/channel audit and physical-claim evaluation remain later gates.
 
 Validation receipts include:
 
@@ -77,10 +86,11 @@ Validation receipts include:
 - `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`;
 - `validation/RETRODICTION_OBSERVABILITY_V0_1.json`;
 - `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json`;
-- `validation/RETRODICTION_UNCERTAINTY_V0_1.json`.
+- `validation/RETRODICTION_UNCERTAINTY_V0_1.json`;
+- `validation/RETRODICTION_CHECKPOINT_SELECTION_V0_1.json`.
 
-GitHub Actions infrastructure status for the integrated Memory admission head: the initial attempt and the explicitly requested failed-job rerun both ended with workflow/job conclusion `failure`, zero executed steps and unavailable job logs. The observable result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`; no repository-test outcome was produced by those runs.
+GitHub Actions infrastructure status: the integrated Memory admission attempts and the latest Retrodiction-branch workflow job end with conclusion `failure`, zero executed steps and unavailable job logs. The observable result class is `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`; no repository-test outcome was produced by those runs.
 
 Full repository suite status on the integrated Memory tree: `NOT_OBTAINED`.
 
-The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation, null comparison and local uncertainty geometry. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
+The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation, null comparison, local uncertainty geometry and partial-checkpoint selection. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
