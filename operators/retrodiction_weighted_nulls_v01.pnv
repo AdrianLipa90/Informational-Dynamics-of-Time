@@ -1,0 +1,34 @@
+# PhaseNav Natural Vector declaration
+# Informational Dynamics of Time — provisional Retrodiction weighted-null operator v0.1
+
+SYSTEM RETRODICTION_WEIGHTED_NULLS_V01 {
+  STATUS = PROVISIONAL_DOWNSTREAM_REFERENCE_CONTRACT;
+  DEPENDS_ON = [RETRODICTION_OBSERVABILITY, RETRODICTION_UNCERTAINTY];
+
+  INPUT Y_OBS;
+  INPUT SIGMA_Y;
+  INPUT CHECKPOINT_SET;
+  INPUT LATENT_KICK_STATE;
+
+  REQUIRE positive_definite(SIGMA_Y);
+  REQUIRE rank(whiten(J_R, SIGMA_Y)) == dim(LATENT_KICK_STATE);
+
+  DEFINE Q(z) = residual(z)^T * inverse(SIGMA_Y) * residual(z);
+  DEFINE WEIGHTED_GN_STEP = solve(J_W^T*J_W + damping*I, J_W^T*r_W);
+  ADMIT STEP only_if Q(next) < Q(current);
+
+  FOR EACH non_identity checkpoint_permutation pi {
+    DEFINE Y_PI = P(pi) * Y_OBS;
+    DEFINE SIGMA_PI = P(pi) * SIGMA_Y * transpose(P(pi));
+    FIT SAME_CAPACITY_MODEL(Y_PI, SIGMA_PI);
+    RECORD Q_PI;
+  }
+
+  OUTPUT Q_OBS;
+  OUTPUT Q_NULL_MIN;
+  OUTPUT NULL_MARGIN = Q_NULL_MIN - Q_OBS;
+  OUTPUT NULL_RANK_FRACTION;
+
+  FAIL_CLOSED on [INVALID_COVARIANCE, RANK_DEFICIENT, NO_WEIGHTED_DESCENT, PARTIAL_NULL_ENSEMBLE];
+  CANON_PROMOTION = FORBIDDEN_UNTIL_PARENT_MEMORY_ADMISSION;
+}
