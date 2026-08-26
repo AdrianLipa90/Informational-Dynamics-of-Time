@@ -23,9 +23,10 @@ The ORCHORBITAL temporal-memory extension adds:
 - explicit `LEAK_MODE` when no attractor is bound;
 - Shannon attractor entropy and normalized basin coherence;
 - active-centre Kepler propagation in internal elapsed activity;
-- winding increments, phase-space closure defect and segment-boundary attractor-switch detection.
+- winding increments, phase-space closure defect and segment-boundary attractor-switch detection;
+- multi-segment attractor residence time, accumulated winding and directed attractor-transition counts.
 
-Targeted ORCHORBITAL reference evidence is `9 passed in 0.05s`; receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
+Targeted ORCHORBITAL reference evidence is `11 passed in 0.07s`; receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
 
 The provisional Retrodiction layer contains single-withheld-receipt inversion, multi-event observability, checkpoint selection, damped Gauss--Newton estimation, information-firewall commitment, covariance/Fisher uncertainty geometry and covariance-preserving checkpoint-permutation null ensembles.
 
