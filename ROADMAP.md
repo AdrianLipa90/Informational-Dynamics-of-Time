@@ -29,7 +29,7 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
 8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
-9. `CI_INFRASTRUCTURE_BLOCKED`: both the first workflow attempt and the explicit failed-job rerun ended with zero executed steps and unavailable logs; the observable result class is `CI_RESULT_NOT_OBTAINED`;
+9. `CI_INFRASTRUCTURE_BLOCKED`: the Memory admission workflow attempts and the latest Retrodiction-branch workflow produce jobs with zero executed steps and unavailable logs; their observable result class is `CI_RESULT_NOT_OBTAINED`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
@@ -51,9 +51,11 @@ A provisional downstream Retrodiction branch is being developed without advancin
 10. `PROVISIONAL_REFERENCE_NULL_PASS`: zero-kick and capacity-matched checkpoint-order nulls are implemented and recorded in E003 reference run 0001;
 11. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
-13. `NEXT`: extend the inverse problem to deliberately missing checkpoints and derive the minimal checkpoint-selection/observability rule under partial retention;
-14. `NEXT`: replace the single reversed-order null by a preregistered checkpoint-permutation/null ensemble and attach uncertainty-calibrated comparison statistics;
-15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+13. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: for \(N\) latent 2D kicks the dimensional lower bound is \(|\mathcal C|\ge\lceil N/2\rceil\), followed by actual rank and optional conditioning gates;
+14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned (best reference pair condition about `66.3`), while all three checkpoints give condition about `4.076`; an explicit \(\kappa_{\max}=10\) therefore selects all three;
+15. `NEXT`: replace the single reversed-order null by a preregistered checkpoint-permutation/null ensemble with the same estimator capacity and declared observation covariance;
+16. `NEXT`: add a covariance-weighted estimator and uncertainty-calibrated null comparison before opening any `STATISTICAL_EFFECT` status;
+17. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
