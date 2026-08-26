@@ -25,13 +25,14 @@ Introduce spatial structure only after temporal formalism has an independent can
 
 ## Immediate upstream derivation — Shannon to phase to transition
 
-Current closure: `SHANNON_PHASE_CORE_V0_2`.
+Current closure: `RELATIONAL_KINETICS_V0_1`.
 
 Next dependency sequence:
 
 1. `CLOSED AS FORMAL CANDIDATE`: \(\sigma_{a\to b}=\log_2[P(b\mid a)/P(a\mid b)]\);
-2. derive the forward/reverse transition weights from relational density \(\rho_R\) and viscosity \(\eta_R\), without inserting a preferred arrow by hand;
-3. derive transition-event weights \(q_e\) and NOW localization from the admitted composite link;
-4. add memory-orbit accumulation;
-5. define subjective elapsed time from internal transition accumulation;
-6. postpone metric calibration and spacetime closure until the temporal branch is independently closed.
+2. `CLOSED AS MINIMAL KINETIC CANDIDATE`: \(\rho_R,\eta_R\) define symmetric mobility while antisymmetric \(A_{ab}\) defines directional affinity;
+3. derive a non-exact edge drive from memory-orbit state or phase geometry;
+4. derive transition-event weights \(q_e\) and NOW localization from the admitted composite link;
+5. add memory-orbit accumulation;
+6. define subjective elapsed time from internal transition accumulation;
+7. postpone metric calibration and spacetime closure until the temporal branch is independently closed.

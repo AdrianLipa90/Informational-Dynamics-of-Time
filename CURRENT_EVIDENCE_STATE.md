@@ -1,16 +1,14 @@
 # CURRENT EVIDENCE STATE
 
-Status: `SHANNON_PHASE_CORE_V0_2_PASS`
+Status: `RELATIONAL_KINETICS_V0_1_PASS`
 
-Reference evidence in the current pass:
+Current targeted reference suite:
 
-- Shannon/phase + harmonic-scheduler targeted suite: `16 passed in 0.05s`;
-- transition affinity antisymmetry: PASS;
-- symmetric-pair zero affinity: PASS;
-- cycle affinity/log-product identity: PASS;
-- detailed-balance cycle cancellation: PASS;
-- affinity-closed transition link: PASS;
-- validation receipt: `validation/SHANNON_PHASE_CORE_V0_2.json`;
-- receipt SHA-256: `f60cb253de69a50f28208d1eef42094f94b3c5122287e22b61812f7d76682a54`.
+- Shannon/phase + relational kinetics + harmonic scheduler: `21 passed in 0.05s`;
+- pair mobility positivity and swap symmetry: PASS;
+- density/viscosity mobility cancellation from affinity: PASS;
+- edge-drive reversal swaps directed rates and flips affinity: PASS;
+- exact scalar drive telescopes on a closed cycle: PASS;
+- non-exact edge drive admits non-zero circulation: PASS.
 
-The evidence establishes the declared algebraic and gauge-closure properties of this reference construction. A physical arrow-of-time identification remains a downstream evidence target.
+The evidence establishes structural identities of the declared reference construction. Physical arrow-of-time, subjective-time, and metric-time claims remain downstream.

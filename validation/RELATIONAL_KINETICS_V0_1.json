@@ -1,0 +1,32 @@
+{
+  "epistemic_boundary": {
+    "memory_generated_drive": "OPEN_DERIVATION_TARGET",
+    "metric_time": "DEFERRED",
+    "physical_arrow_of_time": "NOT_PROMOTED"
+  },
+  "files_sha256": {
+    "CLAIM_REGISTRY.md": "699009824a3fde4b75c46b44fe433d390f2cee0355746886711f50dcd00cafd7",
+    "CURRENT_EVIDENCE_STATE.md": "918701afb60f2ec61a915bb1c22e27b7d935133ac9a002bf87c81f14fcd757ed",
+    "CURRENT_THEORY_STATE.md": "4fb32d80961d6dfb62cb4243fecff505c55c83e0198093de439178d644759503",
+    "EQUATION_REGISTRY.md": "ef482d7bb8dd672cf4d96ec7e47e57eead5558d64c9c6c223ceec3f9c2f0ddf0",
+    "ROADMAP.md": "5f8dadbca539285e05ea225ab71ce662c2aa062eeb63ed53d62d0ffa4e981e7a",
+    "formalism/00C_relational_density_viscosity.md": "75183247c2fe1a25dcff44c966dac1c9bd0754da413b5f14a5fdd15cd3035433",
+    "monograph/chapters/01_information.tex": "be67c23e5c382a77fdd55bfbf67506e8fafa5f6fbcb6724a335d1852e657c52c",
+    "operators/relational_density_viscosity_v01.pnv": "d469d055387cd1a3ce57ea8a5a41ce1a76a4b6c3d25f5d36d2a7c62cfc3b4b40",
+    "src/idt/relational_kinetics.py": "b8f9677c160da499a82c9089a8c550c2ddaaf381375ee5e375349a5fb343d7eb",
+    "tests/reference/test_relational_kinetics.py": "f99c99caad0bbe1dacd9f93244feddd5afd90e0b1c5273c166ce9ae750400b26"
+  },
+  "receipt_sha256": "900c22f2a89669c8b5ba4e5bb307e76068f4cebb46212b73f5bbf23ddf401778",
+  "schema": "IDT_RELATIONAL_KINETICS_V0_1",
+  "status": "PASS_STRUCTURAL_REFERENCE_TESTS",
+  "structural_results": [
+    "Symmetric density/viscosity mobility is positive and invariant under endpoint swap.",
+    "The symmetric mobility factor cancels from the forward/reverse affinity ratio.",
+    "Affinity is set by the antisymmetric edge drive A_ab/log(2).",
+    "Exact scalar-potential edge drives telescope on closed cycles.",
+    "Non-exact edge drives can retain non-zero cycle circulation."
+  ],
+  "tests": {
+    "targeted_suite": "21 passed in 0.05s"
+  }
+}

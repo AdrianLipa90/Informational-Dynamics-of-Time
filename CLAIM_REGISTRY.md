@@ -9,6 +9,8 @@
 | T006 | Candidate composite link \(L_e=G_e e^{i\kappa(\Delta H_e+\sigma_e)}\) yields closed-cycle phase \(\gamma_B+\kappa\sum_C\sigma_e\) | T001–T004 + edge quantity \(\sigma_e\) | conditional derivation + reference tests | `CANDIDATE_WITH_PROVED_CLOSURE` | Ch. 1 |
 | T007 | Directed transition affinity is \(\sigma_{a\to b}=\log_2[P(b\mid a)/P(a\mid b)]\) and is antisymmetric under edge reversal | directed transition pair | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 1 |
 | T008 | If a positive relational weight \(\pi\) satisfies pairwise detailed balance, every closed-cycle affinity \(\mathcal A_C=\sum_C\sigma_e\) vanishes | T007 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
+| T009 | Symmetric pair mobility \(M_{ab}=\sqrt{\rho_a\rho_b}/[(\eta_a+\eta_b)/2]\) controls pace and cancels from the forward/reverse affinity ratio | T007 + positive scalar fields | algebraic theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_IDENTITY` | Ch. 1 |
+| T009A | If \(A_{ab}=V_R(b)-V_R(a)\), then the closed-cycle drive and cycle affinity vanish | T009 | algebraic theorem + reference tests | `PROVED_CONDITIONAL_IDENTITY` | Ch. 1 |
 | T010 | Temporal state admits ordered phase transport \(\Psi_{n+1}=U_n\Psi_n\) | T001 | formal candidate | `CANDIDATE` | Ch. 3–4 |
 | T011 | For unitary phase-only transport, \(U_n=e^{-i\Omega_n}\) | T010 | algebraic derivation | `CANDIDATE` | Ch. 4 |
 | T020 | Transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) localizes discrete transition events | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |

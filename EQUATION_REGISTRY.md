@@ -53,6 +53,24 @@ L_e=G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right].
 =\gamma_B(C)+\kappa\mathcal A_C\pmod{2\pi}.
 \]
 
+**EQ-T009C — relational pair mobility**
+\[
+M_{ab}
+=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}.
+\]
+
+**EQ-T009D — directed kinetic pair**
+\[
+W_{a\to b}=M_{ab}e^{A_{ab}/2},
+\qquad
+W_{b\to a}=M_{ab}e^{-A_{ab}/2}.
+\]
+
+**EQ-T009E — affinity from antisymmetric edge drive**
+\[
+\sigma_{a\to b}=\frac{A_{ab}}{\ln2}.
+\]
+
 **EQ-T010 — relational phase transport**
 \[
 \Psi_{n+1}=U_n\Psi_n.
