@@ -1,0 +1,37 @@
+{
+  "schema": "IDT_CAUSAL_BIFURCATION_V0_1",
+  "status": "PASS_STRUCTURAL_REFERENCE_SUBCLASS",
+  "dependency_frontier": "TEMPORAL_PRIMITIVE -> TEMPORAL_WAVE -> NOW -> BIFURCATION",
+  "tests": {
+    "full_reference_suite": "71 passed in 0.16s",
+    "bifurcation_controls": [
+      "zero current -> zero beta -> identity operator",
+      "current reversal -> beta reversal -> inverse operator",
+      "activity/current reconstruction agrees with forward/reverse affinity",
+      "canonical kappa simplifies beta to atanh(j/a)/(12*pi)",
+      "reference operator is unitary",
+      "fixed-generator composition adds phase parameters",
+      "invalid |j/a| >= 1 fails closed"
+    ],
+    "now_controls": [
+      "positive event weights are gauge-invariant",
+      "zero event signature is omitted from support",
+      "non-injective pushforward merges positive atoms without cancellation"
+    ],
+    "dependency_graph": [
+      "graph is acyclic",
+      "declared project order matches canonical chain",
+      "memory remains provisional while temporal transport is gated"
+    ]
+  },
+  "epistemic_boundary": {
+    "unique_physical_bifurcation_generator": "OPEN",
+    "branch_mixing_generator": "OPEN",
+    "nonunitary_bifurcation_classes": "OPEN",
+    "memory": "PROVISIONAL_DOWNSTREAM_BRANCH",
+    "retrodiction": "GATED",
+    "metric_time": "DEFERRED",
+    "einstein_closure": "DEFERRED_FINAL_GATE"
+  },
+  "payload_sha256": "7d997804b435acb68dd2773788d1da9d10d013c9ab4c3f492bfe0a0a3819f673"
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: Informational Dynamics of Time
+message: "If you use this research repository, please cite it using this metadata."
+type: software
+authors:
+  - family-names: Lipa
+    given-names: Adrian
+year: 2026
+repository-code: "https://github.com/AdrianLipa90/Informational-Dynamics-of-Time"
