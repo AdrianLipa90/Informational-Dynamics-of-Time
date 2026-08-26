@@ -65,6 +65,28 @@ No latent-lineage optimizer is admitted unless
 
 A final-only three-kick case is a mandatory underdetermined negative control.
 
+### E003-D — covariance-weighted chronology nulls
+
+For a declared positive-definite checkpoint covariance \(\Sigma_Y\), the estimator minimizes
+
+\[
+Q(z)=r(z)^T\Sigma_Y^{-1}r(z).
+\]
+
+The weighted sensitivity \(J_W=L^{-1}J_R\), with \(\Sigma_Y=LL^T\), must have full column rank before estimation.
+
+For each preregistered checkpoint-block permutation \(P_\pi\), construct
+
+\[
+Y_\pi=P_\pi Y_{\rm obs},
+\qquad
+\Sigma_\pi=P_\pi\Sigma_YP_\pi^T.
+\]
+
+Every null uses the same latent dimension, forward model, rank gate, damping and line-search capacity as the retained chronology. The default finite reference ensemble excludes identity and fails closed if the complete declared permutation set cannot be evaluated.
+
+Reference outputs include \(Q_{\rm obs}\), the complete \(Q_\pi\) ensemble, \(\min Q_\pi-Q_{\rm obs}\), and the finite-ensemble rank fraction. The latter is a computational reference diagnostic, not a p-value.
+
 ## Information firewall
 
 The estimator may read only:
@@ -74,7 +96,7 @@ The estimator may read only:
 - declared \(\mu_M\);
 - the public forward model;
 - the single complementary receipt factor only in E003-A;
-- numerical tolerances fixed in preregistration.
+- numerical tolerances and covariance fixed in preregistration.
 
 The estimator may not read:
 
@@ -94,6 +116,8 @@ The scorer, not the estimator, may open the sealed truth record after the estima
 
 `NULL_CHECKPOINT_SHUFFLE`: pair an observation package with a checkpoint from another run. The consistency residual must reject the mismatch.
 
+`NULL_CHECKPOINT_PERMUTATION_ENSEMBLE`: fit every preregistered non-identity complete checkpoint-block permutation with jointly permuted covariance and unchanged estimator capacity.
+
 ## Metrics
 
 For identifiable cases:
@@ -104,7 +128,8 @@ For identifiable cases:
 - checkpoint reconstruction residual;
 - sensitivity rank and singular spectrum;
 - condition number for full-column-rank systems;
-- improvement relative to `NULL_ZERO_KICK`.
+- weighted residual quadratic \(Q\) when covariance is declared;
+- improvement relative to registered nulls.
 
 For non-identifiable cases:
 
