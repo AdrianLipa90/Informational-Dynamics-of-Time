@@ -1,0 +1,49 @@
+{
+  "schema": "IDT_E003_REFERENCE_RUN_V0_2",
+  "run_id": "E003_REFERENCE_0002",
+  "status": "REFERENCE_DIAGNOSTIC_COMPLETE",
+  "append_only": true,
+  "case": "covariance-weighted three-kick Retrodiction with checkpoint-permutation null ensemble",
+  "inputs": {
+    "initial_position": [1.2, 0.1],
+    "initial_velocity": [-0.05, 0.85],
+    "mu_memory": 1.0,
+    "delta_taus": [0.03, 0.04, 0.035],
+    "checkpoint_indices": [1, 2, 3],
+    "sealed_reference_kicks": [[0.012, -0.006], [-0.008, 0.011], [0.006, 0.004]],
+    "observation_covariance": "1e-8 * I_12"
+  },
+  "estimator_contract": {
+    "objective": "Q(z)=r(z)^T Sigma_Y^-1 r(z)",
+    "weighted_rank_gate": "rank(L^-1 J_R)=6",
+    "strict_descent": true,
+    "same_capacity_for_nulls": true
+  },
+  "results": {
+    "weighted_rank": 6,
+    "condition_number": 4.069853229535235,
+    "iterations": 2,
+    "observed_weighted_residual_quadratic": 2.4892644531205023e-24,
+    "nonidentity_permutation_count": 5,
+    "null_minimum": 179779.27136701858,
+    "null_median": 613117.4500443636,
+    "null_maximum": 818629.3502964714,
+    "null_margin": 179779.27136701858,
+    "null_better_or_equal_count": 0,
+    "null_rank_fraction": 0.0
+  },
+  "controls": {
+    "positive_definite_covariance_required": "PASS",
+    "covariance_permuted_with_checkpoint_blocks": "PASS",
+    "permutation_limit_fail_closed": "PASS",
+    "identity_excluded_from_default_null_ensemble": "PASS"
+  },
+  "result_stack": {
+    "RAW_OBSERVATION": "REFERENCE_SYNTHETIC_CONTROL",
+    "STATISTICAL_EFFECT": "NOT_EVALUATED",
+    "CLASSICAL_CHANNEL_AUDIT": "NOT_APPLICABLE_TO_REFERENCE_RUN",
+    "PHYSICAL_CLAIM_STATUS": "NOT_EVALUATED"
+  },
+  "evidence_class": "PERMUTATION_REFERENCE_DIAGNOSTIC",
+  "warning": "null_rank_fraction is a finite reference-ensemble diagnostic and is not a p-value"
+}
