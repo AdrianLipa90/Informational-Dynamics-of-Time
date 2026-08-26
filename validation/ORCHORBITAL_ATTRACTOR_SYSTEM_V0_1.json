@@ -1,0 +1,39 @@
+{
+  "schema": "IDT_ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1",
+  "status": "PASS_TARGETED_ISOLATED_REFERENCE",
+  "canon_allowed": false,
+  "dependency_parent": "MEMORY_ACTIVE",
+  "implementation": "src/idt/orchorbital.py",
+  "tests": "tests/reference/test_orchorbital.py",
+  "operator_declaration": "operators/orchorbital_attractor_v01.pnv",
+  "test_execution": {
+    "environment": "isolated local reconstruction of exact ORCHORBITAL implementation dependencies",
+    "command_equivalent": "PYTHONPATH=. pytest -q tests/reference/test_orchorbital.py",
+    "result": "8 passed in 0.05s",
+    "checks": [
+      "binding margins normalize to attractor weights",
+      "deterministic active-attractor selection",
+      "symmetric two-attractor state gives one bit Shannon attractor entropy and zero normalized coherence",
+      "unbound state enters explicit LEAK_MODE",
+      "active-centre Kepler propagation is translation-covariant",
+      "quarter-turn winding increment equals one quarter",
+      "ORCHORBITAL step advances internal elapsed activity and records winding",
+      "LEAK_MODE fails closed before orbital propagation",
+      "phase-space closure defect is zero for identical states"
+    ]
+  },
+  "reference_equations": [
+    "E_i = 0.5 |v_M|^2 - mu_i/|m-c_i|",
+    "b_i = max(0,-E_i)",
+    "w_i = b_i/sum_j b_j",
+    "H_A = -sum_i w_i log2(w_i)",
+    "C_A = 1 - H_A/log2(N)",
+    "d2m/dtau_int2 = -mu_a (m-c_a)/|m-c_a|^3",
+    "Delta W_a = wrap(Delta theta_a)/(2 pi)"
+  ],
+  "evidence_class": "ORCHORBITAL_MEMORY_REFERENCE_DIAGNOSTIC",
+  "native_pnv_execution": "NOT_ASSERTED",
+  "physical_claim_status": "NOT_EVALUATED",
+  "full_repository_suite": "NOT_OBTAINED_FROM_GITHUB_ACTIONS_INFRASTRUCTURE",
+  "notes": "The targeted reference implementation maps ORCHORBITAL attractor/orbit/weight/winding/leak/closure observables onto the temporal-memory state. The canonical admitted frontier remains at Memory pending its parent admission gate."
+}
