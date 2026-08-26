@@ -19,7 +19,7 @@ Status: `STRUCTURAL_REFERENCE_GATES_PASS`.
 
 ## Phase B — Memory
 
-Current target: combine the implemented Memory components into one admission receipt.
+Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`.
 
 1. `TARGETED_PASS_CANDIDATE`: Kepler--Newton memory propagation in \(\tau_{\rm int}\), signed areal law, conic elements and orbit classification;
 2. `TARGETED_PASS_CANDIDATE`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
@@ -27,9 +27,10 @@ Current target: combine the implemented Memory components into one admission rec
 4. `CP1_REFERENCE_PASS_CANDIDATE`: Kähler-derived local memory frame with \(|\delta m|=d_{FS}\) and geodesic frame transport;
 5. `TARGETED_PASS_CANDIDATE`: append-only memory receipt ledger and reversible lineage cell;
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
-7. `NEXT_GATE`: combined Memory admission receipt and dependency audit;
-8. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
-9. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
+7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
+8. `NEXT_GATE`: full repository reference suite on the integrated Memory tree, then combined Memory admission receipt;
+9. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
+10. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
 ## Phase C — Retrodiction and retrocausal tests
 
