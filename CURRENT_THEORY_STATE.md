@@ -1,6 +1,6 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_ACTIVE / MEMORY_EVENT_KICK_AND_MU_IDENTIFIABILITY_CANDIDATE`
+Status: `TEMPORAL_TRANSPORT_ACTIVE / MEMORY_CP1_KAHLER_FRAME_REFERENCE_CANDIDATE`
 
 The canonical admitted dependency frontier remains
 
@@ -12,30 +12,36 @@ The Memory node contains a provisional event-driven Kepler--Newton branch with
 \[
 \Delta\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
 \qquad
-\frac{d^2m}{d\tau_{\rm int}^2}=-\mu_M\frac{m}{|m|^3},
-\]
-and event update
-\[
-\boxed{\Delta v_{M,n}=q_n\delta m_n}.
-\]
-
-Within this Kepler memory reference class, the central parameter is conditionally identifiable from orbit observables:
-\[
-\boxed{\mu_M=\frac{h_M^2}{p_M}},
+\ddot m=-\mu_M\frac{m}{|m|^3},
 \qquad
-\boxed{\mu_M=\frac{4\pi^2a_M^3}{T_M^2}},
+\Delta v_{M,n}=q_n\delta m_n.
 \]
-and, using the memory-circulation law,
+The central parameter \(\mu_M\) is conditionally identifiable from Kepler-orbit observables inside this reference class.
+
+The memory-plane frame now has a geometry-derived \(\mathbb{CP}^1\) reference subclass. For two non-antipodal pure-state Bloch vectors \(\mathbf n_a,\mathbf n_b\),
+\[
+\xi^{FS}_{a\to b}
+=\frac12\frac{\theta_{ab}}{\sin\theta_{ab}}
+\left(\mathbf n_b-\cos\theta_{ab}\,\mathbf n_a\right),
+\qquad
+\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b).
+\]
+For a nonzero displacement,
+\[
+\mathbf e_Q=\frac{\xi^{FS}}{\|\xi^{FS}\|},
+\qquad
+\mathbf e_P=\mathbf n\times\mathbf e_Q,
+\]
+and
 \[
 \boxed{
-\mu_M
-=\frac{1}{p_M}
-\left(
-\frac{1}{\lambda_M}
-\frac{d\Gamma_M}{d\tau_{\rm int}}
-\right)^2.
+\delta m
+=\xi^{FS}\!\cdot\mathbf e_Q
++i\,\xi^{FS}\!\cdot\mathbf e_P,
+\qquad
+|\delta m|=d_{FS}.
 }
 \]
-This converts \(\mu_M\) into an inferable parameter once the corresponding memory-orbit observables are available.
+The dyad is transported between non-antipodal anchors by the minimal Bloch-sphere geodesic rotation, preserving tangency, orthonormality and Kähler orientation.
 
-The next Memory-node derivation targets are the selection/normalization of \(Q_M,P_M\) from the preceding Kähler state geometry and the persistence/recall law required for Retrodiction. A deeper origin law predicting \(\mu_M\) directly from upstream relational primitives remains open.
+The broad Hermitian-observable \((Q_M,P_M)\) family remains available; the CP1 construction supplies a geometry-derived reference frame and normalization. The next Memory-node targets are persistence/recall and extension of the frame construction beyond the CP1 reference subclass. A deeper upstream origin law for \(\mu_M\) remains open.
