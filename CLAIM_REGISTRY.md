@@ -17,6 +17,8 @@
 | T011 | For unitary phase-only transport, \(U_n=e^{-i\Omega_n}\) | T010 | algebraic derivation | `CANDIDATE` | Ch. 4 |
 | T012 | Directed rates decompose into positive activity \(\mathfrak a=W_++W_-\) and signed current \(\mathfrak j=W_+-W_-\) | T009 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
 | T013 | The edge drive is recoverable from \(A=2\operatorname{artanh}(\mathfrak j/\mathfrak a)\) for finite positive rates | T012 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 5 |
+| T014 | System-internal elapsed activity obeys \(d\tau_{\rm int}=(\mathfrak a/\mathfrak a_\star)d\lambda\) and is strictly monotone for positive admitted activity and increasing order parameter | T012 | formal candidate + theorem + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_MONOTONICITY` | Ch. 10 |
+| T015 | Under increasing reparameterization, activity transforms as a one-density so \(d\tau_{\rm int}\) is invariant | T014 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 10 |
 | T020 | Phase-bearing transition measure \(\mathcal K_T=\sum_n q_n\delta_{s_n}\) carries signed transition weights | T010 | source-grounded structural candidate | `CANDIDATE` | Ch. 5 |
 | T020A | Positive temporal activity measure is \(\mathcal A_T=\sum_n\mathfrak a_n\delta_{s_n}\) with \(\mathfrak a_n>0\) | T012 | formal definition + reference tests | `FORMAL_CANDIDATE_WITH_PROVED_POSITIVITY` | Ch. 5 |
 | T021 | Signed-measure NOW lineage based on \(\operatorname{supp}_{\rm at}\mathcal K_T\) | T020 | GREMLIN + formal candidate | `REFINED_BY_T021A` | Ch. 5 |
