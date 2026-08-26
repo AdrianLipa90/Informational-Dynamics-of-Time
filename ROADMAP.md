@@ -24,10 +24,11 @@ Current target: close ordered multi-event transport, then admit the Memory node 
 1. `ACTIVE`: interrupted propagator and order/composition invariants;
 2. `IMPLEMENTED_PROVISIONALLY`: Kepler--Newton memory propagation in \(\tau_{\rm int}\);
 3. `IMPLEMENTED_PROVISIONALLY`: signed areal law, conic elements and orbit classification;
-4. `OPEN_DERIVATION`: map admitted event imprint to \(\Delta\mathbf v_M\);
+4. `TARGETED_PASS_CANDIDATE`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
 5. `OPEN_DERIVATION`: derive or constrain \(\mu_M\) from upstream relational quantities;
-6. `GATED`: memory persistence and recall;
-7. `GATED`: retrodiction.
+6. `OPEN_DERIVATION`: select/normalize \(Q_M,P_M\) from the preceding state geometry;
+7. `NEXT`: derive persistence and recall from the event-driven Kepler memory state;
+8. `GATED`: retrodiction.
 
 ## Phase C — Retrodiction and retrocausal tests
 
