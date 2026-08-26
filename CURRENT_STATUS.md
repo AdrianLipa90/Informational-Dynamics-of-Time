@@ -16,6 +16,10 @@ Memory has a `PROVISIONAL_DOWNSTREAM_BRANCH` event-driven Kepler--Newton referen
 \[
 \Delta v_{M,n}=q_n\delta m_n.
 \]
-The central parameter \(\mu_M\) is now conditionally identifiable inside that reference class through orbit geometry, internal period, or memory-circulation observables. Targeted controls are recorded in `validation/MEMORY_MU_IDENTIFIABILITY_V0_1.json`.
+The central parameter \(\mu_M\) is conditionally identifiable inside that reference class. The local memory frame now has a geometry-derived \(\mathbb{CP}^1\) Kähler reference subclass in which the projected displacement is normalized by
+\[
+|\delta m|=d_{FS},
+\]
+and the tangent dyad is transported along selected non-antipodal Bloch geodesics.
 
-Temporal Transport remains the admission frontier. The next Memory-node targets are Kähler-derived selection/normalization of \(Q_M,P_M\), persistence and recall, followed by Retrodiction.
+Targeted controls are recorded in `validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json`. Temporal Transport remains the admission frontier. The next Memory-node targets are persistence/recall and the higher-dimensional extension of the Kähler memory frame.
