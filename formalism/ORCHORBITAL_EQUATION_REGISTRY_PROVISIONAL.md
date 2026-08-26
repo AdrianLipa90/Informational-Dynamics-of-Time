@@ -91,3 +91,21 @@ a_n
 \text{orbital segment in }\tau_{\rm int}.
 }
 \]
+
+**EQ-T019V — attractor residence time and accumulated winding**
+For \(\mathcal S_i=\{n:a_n=i\}\),
+\[
+\boxed{
+T_i^{\rm res}=\sum_{n\in\mathcal S_i}\Delta\tau_n,
+\qquad
+W_i^{\rm tot}=\sum_{n\in\mathcal S_i}\Delta W_{i,n}.
+}
+\]
+
+**EQ-T019W — directed attractor transition count**
+\[
+\boxed{
+N_{i\to j}
+=\#\{n:a_n=i,\ a_{n+1}=j,\ i\neq j\}.
+}
+\]
