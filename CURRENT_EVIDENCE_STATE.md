@@ -1,19 +1,19 @@
 # CURRENT EVIDENCE STATE
 
-Status: `MEMORY_ORBIT_DRIVE_V0_1_PASS`
+Status: `TEMPORAL_ACTIVITY_NOW_V0_1_PASS`
 
 Current targeted reference suite:
 
-- Shannon/phase + relational kinetics + memory orbit + harmonic scheduler: `26 passed in 0.07s`;
-- memory edge-drive antisymmetry: PASS;
-- memory cycle-drive/signed-area identity: PASS;
-- orientation reversal flips cycle drive: PASS;
-- collinear-ray control has zero drive: PASS;
-- memory cycle affinity equals drive divided by \(\ln2\): PASS;
-- local LaTeX two-pass compile after the memory chapter update: PASS, 46 pages;
-- PDF publication to GitHub: disabled by repository policy.
+- Shannon/phase + relational kinetics + memory-orbit + temporal activity + harmonic scheduler: `31 passed in 0.07s`;
+- activity/current hyperbolic decomposition: PASS;
+- drive reversal preserves positive activity and flips directed current: PASS;
+- edge drive and affinity recovered from activity/current ratio: PASS;
+- coincident positive activity atoms aggregate without cancellation: PASS;
+- non-injective pushforward preserves positive atomic support as the image support: PASS;
+- memory-orbit antisymmetry and signed-area circulation controls remain PASS.
 
-Validation receipt: `validation/MEMORY_ORBIT_DRIVE_V0_1.json`.
-Receipt SHA-256: `8102d47c63c11b645e5182fef7dcf81c457a7dcc675e32f9b5e0354287f0dc36`.
+Fail-loud note: the first run produced `30 passed, 1 failed` because one test compared the floating sum `0.6000000000000001` to `0.6` by exact equality. The assertion was corrected to a numerical tolerance; the implementation itself was unchanged. The final targeted suite is `31 passed`.
 
-The evidence establishes structural identities of the declared mathematical construction. Physical memory, retrodiction, subjective elapsed time, and a physical arrow-of-time identification remain downstream evidence targets.
+The evidence establishes structural properties of the declared mathematical construction. Physical memory, subjective elapsed time, and metric time remain separate downstream evidence targets.
+
+Local monograph verification: two-pass `pdflatex` PASS, 46 pages, no Overfull/Undefined/LaTeX warnings after shortening the appendix running header. PDF remains local only.
