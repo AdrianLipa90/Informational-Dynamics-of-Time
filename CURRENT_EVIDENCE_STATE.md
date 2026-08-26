@@ -74,7 +74,8 @@ Provisional partial-checkpoint evidence is recorded in `validation/RETRODICTION_
 
 Provisional covariance-weighted permutation-null evidence is recorded in `validation/RETRODICTION_WEIGHTED_NULLS_V0_1.json` and append-only run `experiments/E003_retrodiction/runs/E003_REFERENCE_0002.json`:
 
-- exact targeted test file: `5 passed in 0.19s` on the final weighted-null implementation in the isolated local reference reconstruction;
+- exact weighted-null targeted test file: `5 passed in 0.19s`;
+- final pre-merge combined checkpoint-selection plus weighted-null targeted rerun: `10 passed in 0.25s`;
 - weighted three-kick estimator passes rank 6 and reconstructs the exact reference lineage in two iterations;
 - weighted condition number: about `4.070`;
 - retained chronology weighted residual quadratic: about `2.49e-24`;
