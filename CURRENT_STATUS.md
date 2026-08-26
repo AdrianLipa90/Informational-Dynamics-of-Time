@@ -14,17 +14,18 @@ Current admitted frontier:
 
 Temporal Transport has passed its declared structural reference gate. The active Memory node contains the event-driven Kepler--Newton branch, the upstream event kick \(\Delta v_{M,n}=q_n\delta m_n\), conditional \(\mu_M\) identifiability, the \(\mathbb{CP}^1\) Kähler memory-frame reference subclass, append-only event receipts and ledger-assisted recall.
 
-The integrated Memory path is now explicitly tested as
+The provisional downstream Retrodiction implementation contains:
 \[
 \boxed{
-\mathbb{CP}^1\ \text{state geometry}
-\rightarrow\delta m_n
-\rightarrow q_n\delta m_n
-\rightarrow\mathcal C_n
-\rightarrow\mathcal E_n
-\rightarrow\operatorname{RECALL}.
+\text{withheld lineage}
+\rightarrow\text{observability}
+\rightarrow\text{checkpoint selection}
+\rightarrow\text{estimation}
+\rightarrow\text{uncertainty geometry}
+\rightarrow\text{covariance-preserving permutation nulls}.
 }
 \]
-The targeted integration controls pass and are recorded in `validation/MEMORY_ADMISSION_V0_1.json`.
 
-Memory admission is still `PENDING_FULL_REFERENCE_SUITE` on the integrated tree. Retrodiction therefore remains gated. Its later contract will infer withheld or unobserved lineage information, distinct from exact recall of the complete append-only ledger.
+Final pre-merge targeted evidence for the newest layers: `10 passed in 0.25s` for checkpoint selection plus weighted permutation nulls in the isolated local reconstruction of the exact implementation dependencies. The hosted GitHub Actions full-suite remains `CI_RESULT_NOT_OBTAINED` because its jobs terminate before executing test steps.
+
+The tested provisional branch is ready for merge as implementation/evidence staging. Merge does not advance the canonical admitted frontier; Retrodiction remains `PROVISIONAL_DOWNSTREAM` until its dependency gates are explicitly promoted.

@@ -1,8 +1,8 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_ACTIVE / RECALL_REFERENCE_CANDIDATE`
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_ACTIVE / RECALL_REFERENCE_CANDIDATE / RETRODICTION_PROVISIONAL_DOWNSTREAM`
 
-The canonical admitted dependency frontier is now
+The canonical admitted dependency frontier remains
 
 \[
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
@@ -18,40 +18,127 @@ Temporal Transport has passed its declared structural reference gate. The active
 \]
 The central parameter \(\mu_M\) is conditionally identifiable from orbit observables inside this reference class.
 
-For the pure-state \(\mathbb{CP}^1\) reference subclass, the memory displacement is derived from the Kähler/Fubini--Study state geometry. The half-angle tangent logarithm satisfies
+For the pure-state \(\mathbb{CP}^1\) reference subclass, the memory displacement is derived from the Kähler/Fubini--Study state geometry and satisfies
 \[
-\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b),
-\]
-and the Kähler-conjugate tangent dyad gives
-\[
-\boxed{
-\delta m
-=\xi^{FS}\!\cdot\mathbf e_Q
-+i\,\xi^{FS}\!\cdot\mathbf e_P,
-\qquad
 |\delta m|=d_{FS}.
-}
 \]
 
 Memory persistence is represented by the append-only event receipt
 \[
 \boxed{\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)}
 \]
-and the forward lineage cell
+and the reversible reference cell
 \[
-\boxed{\mathcal C_n=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n}.}
+\mathcal C_n=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n},
+\qquad
+\mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
 \]
-The declared reference cell has the explicit inverse
+The complete persisted ledger yields the ledger-assisted recall candidate.
+
+A provisional downstream Retrodiction contract treats one receipt factor as withheld. Reversing the known smooth segment reconstructs
 \[
-\boxed{\mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M),}
+\boxed{\Delta v_{M,n}=\widetilde v_{M,n}-v_{M,n}}.
 \]
-which yields the ledger-assisted recall candidate
+Conditional factor identification obeys
 \[
 \boxed{
-\operatorname{RECALL}_{N\to0}
-=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+\widehat q_n=
+\frac{\operatorname{Re}(\Delta v_{M,n}\delta m_n^*)}{|\delta m_n|^2}
+},
+\qquad
+\boxed{\widehat{\delta m}_n=\Delta v_{M,n}/q_n}.
+\]
+When both factors are withheld, the scale family
+\[
+(q_n,\delta m_n)\mapsto(cq_n,\delta m_n/c),\qquad c>0,
+\]
+preserves the kick and gives the registered product-only ambiguity.
+
+For multi-event Retrodiction,
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0},
+\qquad z\in\mathbb R^{2N},
 }
 \]
-Within the complete recorded reference lineage, this reconstructs the initial memory state in the targeted controls.
+with first-order local-identifiability gate
+\[
+\boxed{\operatorname{rank}J_R=2N.}
+\]
+One final four-component memory checkpoint gives \(\operatorname{rank}J_R\le4\); retained intermediate checkpoints enlarge the observation space and are admitted only after the actual full-column-rank audit.
 
-The current Memory-node gate is to combine the event-imprint, CP1 frame, Kepler dynamics, parameter identifiability and persistence/recall contracts into one admission receipt. Retrodiction remains the next dependency node and will be defined as inference of a prior state with part of the lineage withheld, distinct from exact replay of a persisted ledger.
+After this gate passes, the provisional reference estimator is
+\[
+\boxed{
+\widehat z=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2
+}
+\]
+with damped Gauss--Newton update
+\[
+\boxed{
+(J_k^TJ_k+\lambda I)\delta z_k=J_k^Tr_k
+}
+\]
+and strict residual-descent step admission. The estimate is content-committed before sealed truth enters scoring. Zero-kick and checkpoint-order nulls are carried as reference comparisons.
+
+The provisional uncertainty layer introduces a declared checkpoint covariance
+\[
+\boxed{\Sigma_Y=LL^T},
+\qquad
+\boxed{J_W=L^{-1}J_R}.
+\]
+The local Fisher geometry is
+\[
+\boxed{
+F_z=J_R^T\Sigma_Y^{-1}J_R=J_W^TJ_W,
+\qquad
+C_z\approx F_z^{-1},
+}
+\]
+with local coordinate uncertainties
+\[
+\boxed{\sigma_{z_i}=\sqrt{(C_z)_{ii}}.}
+\]
+The committed residual carries weighted diagnostic
+\[
+\boxed{Q_W=r^T\Sigma_Y^{-1}r.}
+\]
+
+Partial checkpoint retention is now represented as a separate observability-selection problem. Because each retained memory checkpoint contributes four real phase-state coordinates while \(N\) event kicks contribute \(2N\) latent coordinates, the dimensional lower bound is
+\[
+\boxed{
+|\mathcal C|\ge\left\lceil\frac{N}{2}\right\rceil.
+}
+\]
+The actual selected set must satisfy
+\[
+\boxed{
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+The provisional minimal-information selector is
+\[
+\boxed{
+\mathcal C_*
+=\arg\min_{\mathcal C\subseteq\mathcal C_{\rm avail}}|\mathcal C|
+\quad\text{subject to}\quad
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+An explicit numerical-stability gate may additionally impose \(\kappa(J_R(\mathcal C))\le\kappa_{\max}\). Thus checkpoint cardinality and conditioning remain separate measured properties of the inverse problem.
+
+The weighted null layer uses the declared checkpoint covariance directly:
+\[
+\boxed{Q(z)=r(z)^T\Sigma_Y^{-1}r(z)}.
+\]
+For a complete checkpoint-block permutation \(P_\pi\), chronology-null members are generated by
+\[
+\boxed{
+Y_\pi=P_\pi Y_{\rm obs},
+\qquad
+\Sigma_\pi=P_\pi\Sigma_YP_\pi^T.
+}
+\]
+Every null retains the same latent dimension, forward model and estimator capacity. The finite ensemble records \(\Delta Q_{\rm null}\) and \(f_{\rm null}\) as computational reference diagnostics; these quantities are not promoted to statistical-effect status.
+
+The Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is pending a real full repository reference-suite result on the integrated tree, so the canonical admitted frontier remains at Memory even when tested provisional implementation is present on `main`.

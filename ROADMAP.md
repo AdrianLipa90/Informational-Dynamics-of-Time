@@ -19,7 +19,7 @@ Status: `STRUCTURAL_REFERENCE_GATES_PASS`.
 
 ## Phase B — Memory
 
-Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`.
+Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`.
 
 1. `TARGETED_PASS_CANDIDATE`: Kepler--Newton memory propagation in \(\tau_{\rm int}\), signed areal law, conic elements and orbit classification;
 2. `TARGETED_PASS_CANDIDATE`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
@@ -28,15 +28,36 @@ Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`.
 5. `TARGETED_PASS_CANDIDATE`: append-only memory receipt ledger and reversible lineage cell;
 6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage; wrong receipt order is a negative control;
 7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
-8. `NEXT_GATE`: full repository reference suite on the integrated Memory tree, then combined Memory admission receipt;
-9. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
-10. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
+8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
+9. `CI_INFRASTRUCTURE_BLOCKED`: the Memory admission workflow attempts and the latest Retrodiction-branch workflow produce jobs with zero executed steps and unavailable logs; their observable result class is `CI_RESULT_NOT_OBTAINED`;
+10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
+11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Retrodiction is `GATED_PENDING_MEMORY_ADMISSION`.
+Canonical status: `GATED_PENDING_MEMORY_ADMISSION`.
 
-When opened, its first task is deliberately different from recall: infer a prior state when one or more event receipts, state checkpoints, or lineage variables are withheld. A valid retrodiction experiment must compare the estimator against explicit null/baseline models and report reconstruction error without using hidden lineage information.
+A provisional downstream Retrodiction branch is being developed without advancing the admitted frontier:
+
+1. `PROVISIONAL_TARGETED_PASS`: reverse the known smooth Kepler segment and infer the missing kick \(\Delta v_{M,n}\);
+2. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(q_n\) when nonzero \(\delta m_n\) is independently known;
+3. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(\delta m_n\) when positive \(q_n\) is independently known;
+4. `PROVED_REFERENCE_AMBIGUITY`: when both factors are withheld, only \(q_n\delta m_n\) is identifiable because positive reciprocal rescaling leaves the kick invariant;
+5. `PROVISIONAL_OBSERVABILITY_GATE`: for \(N\) latent 2D kicks, build \(J_R=\partial Y/\partial z\) and require \(\operatorname{rank}J_R=2N\) before any estimator is admitted;
+6. `PROVED_DIMENSIONAL_BOUND`: one final 4D memory checkpoint cannot locally identify more than two unknown 2D kicks, because \(\operatorname{rank}J_R\le4\);
+7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in the targeted reference cases; actual rank remains mandatory;
+8. `PROVISIONAL_ESTIMATION_GATE_PASS`: gated damped Gauss--Newton reference estimation is implemented with strict residual-descent admission and fail-closed local-rank checks;
+9. `PROVISIONAL_INFORMATION_FIREWALL_PASS`: estimator input excludes sealed truth and the estimate is content-committed before truth scoring;
+10. `PROVISIONAL_REFERENCE_NULL_PASS`: zero-kick and capacity-matched checkpoint-order nulls are implemented and recorded in E003 reference run 0001;
+11. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
+12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
+13. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: for \(N\) latent 2D kicks the dimensional lower bound is \(|\mathcal C|\ge\lceil N/2\rceil\), followed by actual rank and optional conditioning gates;
+14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned (best reference pair condition about `66.3`), while all three checkpoints give condition about `4.076`; an explicit \(\kappa_{\max}=10\) therefore selects all three;
+15. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete five-member non-identity checkpoint-permutation reference ensemble pass the targeted five-test layer; checkpoint observations and covariance are permuted together and every null uses the same estimator capacity;
+16. `REFERENCE_NULL_RESULT`: in E003 reference run 0002 the retained chronology has weighted residual quadratic about `2.49e-24`, while the five null fits range from about `1.80e5` to `8.19e5` with zero nulls at or below the retained chronology;
+17. `NEXT`: preregister an experiment-specific permutation/null calibration with uncertainty-aware comparison statistics before any `STATISTICAL_EFFECT` admission;
+18. `NEXT`: add deliberately missing/noisy checkpoint experiments under the information firewall and quantify reconstruction degradation against the registered null ensemble;
+19. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 

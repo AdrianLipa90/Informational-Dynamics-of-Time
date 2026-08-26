@@ -1,0 +1,53 @@
+{
+  "schema": "IDT_E003_RETRODICTION_REFERENCE_RUN_V0_1",
+  "run_id": "E003_REFERENCE_0001",
+  "status": "REFERENCE_MODEL_PASS_PROVISIONAL_DOWNSTREAM",
+  "protocol": "experiments/E003_retrodiction/preregistration.json",
+  "amendment": "experiments/E003_retrodiction/amendment_001_estimator_contract.json",
+  "case": "E003-C",
+  "information_firewall": "estimator inputs contain retained checkpoints and public forward-model quantities only; sealed truth is scored after estimate commitment",
+  "latent_kicks": 3,
+  "latent_dimension": 6,
+  "retained_checkpoint_indices": [1, 2, 3],
+  "observation_dimension": 12,
+  "observability_rank": 6,
+  "estimate_commitment_sha256": "ff8528bdd909a4f3f9fdc1cc345459ab4b8724e9bc716cceb47be54023ffaa3b",
+  "estimator": {
+    "status": "CONVERGED_RESIDUAL",
+    "iterations": 2,
+    "residual_norm": 1.0353908618508065e-14,
+    "max_abs_kick_error_after_truth_release": 1.3926360065141807e-14
+  },
+  "nulls": {
+    "NULL_ZERO_KICK": {
+      "residual_norm": 0.09201354717183423,
+      "residual_reduction_vs_null": 0.9999999999998874
+    },
+    "NULL_CHECKPOINT_SHUFFLE": {
+      "permutation": [2, 1, 0],
+      "fit_status": "STALLED_NO_DESCENT",
+      "residual_norm": 0.0957129801771546,
+      "residual_reduction_vs_null": 0.9999999999998919
+    },
+    "NULL_PRODUCT_FACTOR": {
+      "status": "STRUCTURAL_AMBIGUITY_CONTROL",
+      "result": "factorization remains non-identifiable when both q and delta_m are withheld"
+    }
+  },
+  "randomized_reference_audit": {
+    "seed": 20260826,
+    "cases": 50,
+    "full_rank": 50,
+    "converged": 50,
+    "maximum_abs_kick_error": 1.6438239658356224e-14,
+    "maximum_residual_norm": 1.292096574378813e-14
+  },
+  "result_stack": {
+    "RAW_OBSERVATION": "EXACT_REFERENCE_MODEL_CHECKPOINTS",
+    "STATISTICAL_EFFECT": "NOT_EVALUATED_REFERENCE_DIAGNOSTICS_ONLY",
+    "CLASSICAL_CHANNEL_AUDIT": "NOT_APPLICABLE_TO_EXACT_REFERENCE_HARNESS",
+    "PHYSICAL_CLAIM_STATUS": "NOT_EVALUATED"
+  },
+  "repository_pytest": "NOT_OBTAINED",
+  "append_only": true
+}

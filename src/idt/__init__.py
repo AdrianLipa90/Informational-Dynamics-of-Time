@@ -95,3 +95,60 @@ from .memory_recall import (
     recall_memory_lineage,
     event_invariant_signature,
 )
+
+from .retrodiction import (
+    RetrodictionError,
+    MissingKickInference,
+    RetrodictedReceipt,
+    infer_missing_kick,
+    infer_event_weight_from_known_imprint,
+    infer_imprint_from_known_event_weight,
+    retrodict_single_missing_receipt,
+    equivalent_kick_factorization,
+)
+
+from .retrodiction_observability import (
+    RetrodictionObservabilityError,
+    RetrodictionObservabilityAudit,
+    forward_kick_lineage,
+    checkpoint_phase_vector,
+    kick_sensitivity_matrix,
+    audit_kick_observability,
+    final_checkpoint_dimension_bound,
+)
+
+from .retrodiction_estimation import (
+    RetrodictionEstimationError,
+    RetrodictionEstimate,
+    RetrodictionNullComparison,
+    RetrodictionTruthScore,
+    estimate_latent_kicks,
+    estimate_commitment,
+    score_committed_estimate,
+    compare_with_reference_nulls,
+)
+
+from .retrodiction_uncertainty import (
+    RetrodictionUncertaintyError,
+    RetrodictionUncertaintyAudit,
+    isotropic_checkpoint_covariance,
+    weighted_retrodiction_uncertainty,
+)
+
+from .retrodiction_checkpoint_selection import (
+    RetrodictionCheckpointSelectionError,
+    CheckpointSubsetAudit,
+    CheckpointSelectionResult,
+    checkpoint_cardinality_lower_bound,
+    audit_checkpoint_subset,
+    minimal_observable_checkpoint_set,
+)
+
+from .retrodiction_weighted_nulls import (
+    RetrodictionWeightedError,
+    WeightedRetrodictionEstimate,
+    PermutationNullEntry,
+    PermutationNullEnsemble,
+    estimate_latent_kicks_weighted,
+    checkpoint_permutation_null_ensemble,
+)

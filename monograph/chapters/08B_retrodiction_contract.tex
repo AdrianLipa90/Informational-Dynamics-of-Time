@@ -1,0 +1,214 @@
+\chapter{Retrodiction as a Withheld-Lineage Inverse Problem}
+
+This chapter records a provisional downstream Retrodiction reference candidate. The canonical dependency frontier remains at Memory until the integrated Memory tree obtains its full repository reference-suite admission result. The purpose of this chapter is therefore to define the inverse problem without advancing the admitted frontier.
+
+\section{Recall versus retrodiction}
+
+For a complete persisted event ledger, recall applies the known inverse cells
+\[
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+\]
+Retrodiction begins when part of the lineage is withheld and must be inferred from the remaining constraints.
+
+Consider one memory cell
+\[
+X_{n+1}
+=\Phi_K(\Delta\tau_n;\mu_M)
+\circ K(q_n,\delta m_n)
+\,X_n,
+\]
+where
+\[
+K(q_n,\delta m_n):
+\quad v_M\mapsto v_M+q_n\delta m_n.
+\]
+The reference problem retains the checkpoints \(X_n\) and \(X_{n+1}\), the smooth-step duration \(\Delta\tau_n\) and \(\mu_M\), while withholding one factor of the event receipt.
+
+\section{Missing-kick reconstruction}
+
+Reverse only the known smooth Kepler segment:
+\[
+\widetilde X_n
+=\Phi_K^{-1}(\Delta\tau_n;\mu_M)X_{n+1}.
+\]
+The reconstructed kick is
+\[
+\boxed{
+\Delta v_{M,n}
+=\widetilde v_{M,n}-v_{M,n}.
+}
+\]
+The reference implementation requires the recovered position, internal elapsed activity and swept area to agree with the retained pre-event checkpoint within the declared tolerance. A checkpoint mismatch fails closed.
+
+\section{Conditional identifiability of the event weight}
+
+If a nonzero memory imprint \(\delta m_n\) is independently supplied by the upstream state-geometry layer, then
+\[
+\boxed{
+\widehat q_n
+=
+\frac{\operatorname{Re}(\Delta v_{M,n}\delta m_n^*)}
+{|\delta m_n|^2}.
+}
+\]
+The factorization residual is
+\[
+\boxed{
+r_n
+=\Delta v_{M,n}-\widehat q_n\delta m_n.
+}
+\]
+The reference contract requires \(\widehat q_n\ge0\) and a residual below the declared tolerance. Thus a wrong imprint direction is rejected rather than silently absorbed into the scalar estimate.
+
+For the \(\mathbb{CP}^1\) memory-frame reference subclass, the upstream normalization
+\[
+|\delta m_n|=d_{FS}
+\]
+provides an independently defined imprint scale.
+
+\section{Conditional identifiability of the memory imprint}
+
+If \(q_n>0\) is independently known while the imprint is withheld, then
+\[
+\boxed{
+\widehat{\delta m}_n
+=\frac{\Delta v_{M,n}}{q_n}.
+}
+\]
+For \(q_n=0\), consistency requires a zero kick in the reference cell.
+
+\section{Product-only ambiguity}
+
+If both factors are withheld, the checkpoints determine only the product. For every positive scalar \(c\),
+\[
+\boxed{
+(q_n,\delta m_n)
+\mapsto
+(cq_n,\delta m_n/c)
+}
+\]
+leaves
+\[
+q_n\delta m_n
+\]
+unchanged. Therefore the factorization is non-identifiable from the memory checkpoints alone. The implementation reports this ambiguity explicitly and does not choose an arbitrary decomposition.
+
+\section{Multi-event observability before estimation}
+
+For \(N\) latent event kicks, collect
+\[
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N},
+\]
+where each \(u_k\) is the two-component memory-velocity jump. Retained post-event checkpoints define a measurement map \(Y(z)\). At a nominal lineage \(z_0\), define
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0}.
+}
+\]
+The first-order local-identifiability gate is
+\[
+\boxed{\operatorname{rank}J_R=2N.}
+\]
+The singular spectrum is retained separately to distinguish full rank from poor conditioning.
+
+One final memory phase-state checkpoint carries four real coordinates,
+\[
+Y_f=(r_x,r_y,v_x,v_y)\in\mathbb R^4,
+\]
+so
+\[
+J_R^{\rm final}\in\mathbb R^{4\times2N},
+\qquad
+\boxed{\operatorname{rank}J_R^{\rm final}\le4.}
+\]
+Consequently,
+\[
+\boxed{
+N>2
+\Longrightarrow
+4<2N
+\Longrightarrow
+\text{final-only reconstruction is dimensionally underdetermined}.
+}
+\]
+This obstruction is established before fitting or optimization.
+
+If a checkpoint set \(\mathcal C\) is retained, then
+\[
+Y_{\mathcal C}\in\mathbb R^{4|\mathcal C|},
+\]
+and a necessary dimensional condition becomes
+\[
+\boxed{4|\mathcal C|\ge2N.}
+\]
+The actual full-column-rank condition must still be checked. In the targeted three-kick reference case, one final checkpoint gives a \(4\times6\) underdetermined matrix, whereas retaining all three post-event checkpoints gives a \(12\times6\) sensitivity matrix with rank six.
+
+\section{Gated latent-lineage estimation}
+
+Once the observability gate passes, the provisional reference estimator solves
+\[
+\boxed{
+\widehat z
+=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2.
+}
+\]
+Writing
+\[
+r_k=Y_{\rm obs}-Y(z_k),
+\qquad
+J_k=J_R(z_k),
+\]
+the damped Gauss--Newton proposal is defined by
+\[
+\boxed{
+(J_k^T J_k+\lambda I)\delta z_k
+=J_k^T r_k,
+\qquad \lambda\ge0.
+}
+\]
+The reference line search accepts only \(\alpha=2^{-j}\) satisfying
+\[
+\|Y_{\rm obs}-Y(z_k+\alpha\delta z_k)\|_2
+<\|r_k\|_2.
+\]
+Loss of full column rank, singular normal equations or absence of an admitted descent step terminates the reference estimate explicitly.
+
+\section{Estimate commitment and reference nulls}
+
+The estimator interface contains the retained observations and public forward-model quantities. The estimate is frozen before sealed truth enters scoring through
+\[
+\boxed{
+C_{\rm est}
+=\operatorname{SHA256}(\widehat z\,\|\,\widehat Y\,\|\,r\,\|\,\mathrm{metadata}).
+}
+\]
+The scorer verifies this commitment before reconstruction error is evaluated.
+
+Two dynamical reference nulls are carried with the same experiment. The zero-kick null fixes
+\[
+z=0
+\]
+and records residual \(r_0\). The checkpoint-order null reverses the complete four-component checkpoint blocks and applies the same estimator capacity, giving fitted residual \(r_{\rm shuf}\). Their reference reductions are
+\[
+\boxed{
+R_0=1-\frac{r_{\rm est}}{r_0},
+\qquad
+R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
+}
+\]
+Their registered evidence class is \texttt{COMPUTATIONAL\_REFERENCE\_DIAGNOSTIC}; physical significance evaluation remains a later evidence gate.
+
+In the first exact three-event reference run, the \(12\times6\) observability matrix has rank six. The estimator converges in two iterations with residual approximately \(1.04\times10^{-14}\). The zero-kick residual is approximately \(9.20\times10^{-2}\), while the reversed-checkpoint fit stalls at approximately \(9.57\times10^{-2}\). Fifty seeded exact-reference cases all retain full rank and converge, with maximum recorded kick-coordinate error approximately \(1.65\times10^{-14}\).
+
+\section{Reference controls and evidence boundary}
+
+Single-missing-receipt controls are recorded in
+\texttt{validation/RETRODICTION\_SINGLE\_MISSING\_RECEIPT\_V0\_1.json},
+the multi-event rank audit in
+\texttt{validation/RETRODICTION\_OBSERVABILITY\_V0\_1.json},
+and the gated estimator/null controls in
+\texttt{validation/RETRODICTION\_ESTIMATION\_NULLS\_V0\_1.json}.
+The isolated reference harnesses cover missing-kick reconstruction, conditional factor identification, product-only ambiguity, collinearity rejection, checkpoint tampering, dimensional underdetermination, checkpoint-augmented rank recovery, gated multi-kick estimation, estimate commitment and the declared reference nulls. The observability layer reports `UNDERDETERMINED_DIMENSION`, `RANK_DEFICIENT`, or `LOCALLY_IDENTIFIABLE_REFERENCE` according to the measured sensitivity structure.
+
+This evidence belongs to a provisional downstream formal reference class. Retrodiction admission remains gated by the parent Memory admission result. Retrocausal tests remain a later dependency node with their own statistical, leakage and classical-channel audits.
