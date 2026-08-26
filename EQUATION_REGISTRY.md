@@ -126,6 +126,58 @@ d\tau_{\rm int}=\frac{\mathfrak a(\lambda)}{\mathfrak a_\star}\,d\lambda.
 d\tau'_{\rm int}=d\tau_{\rm int}.
 \]
 
+**EQ-T016 — Newton memory dynamics in internal elapsed activity**
+\[
+\frac{d^2m}{d\tau_{\rm int}^2}
+=-\mu_M\frac{m}{|m|^3},
+\qquad \mu_M>0.
+\]
+
+**EQ-T016A — memory specific energy**
+\[
+\varepsilon_M
+=\frac12\left|\frac{dm}{d\tau_{\rm int}}\right|^2
+-\frac{\mu_M}{r_M}.
+\]
+
+**EQ-T017 — signed memory angular momentum and areal law**
+\[
+h_M=\operatorname{Im}\!\left[m^*\frac{dm}{d\tau_{\rm int}}\right],
+\qquad
+\frac{d\mathcal A_M}{d\tau_{\rm int}}=\frac{h_M}{2}.
+\]
+
+**EQ-T017A — circulation rate on a smooth Kepler segment**
+\[
+\frac{d}{d\tau_{\rm int}}\left(\sum_C A_e^{(M)}\right)=\lambda_M h_M.
+\]
+
+**EQ-T018 — memory conic law and third law**
+\[
+r_M(\nu)=\frac{p_M}{1+e_M\cos\nu},
+\qquad
+p_M=\frac{h_M^2}{\mu_M},
+\]
+\[
+a_M=-\frac{\mu_M}{2\varepsilon_M},
+\qquad
+T_M^2=\frac{4\pi^2}{\mu_M}a_M^3
+\quad(\varepsilon_M<0).
+\]
+
+**EQ-T019 — bifurcation-to-memory impulse interface**
+\[
+\mathbf v_M^+=\mathbf v_M^-+\Delta\mathbf v_M.
+\]
+
+**EQ-T019A — temporal activity to memory propagation step**
+\[
+\Delta\tau_{\rm int}
+=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
+\qquad
+(m,\dot m)_{n+1}=\Phi_{K}(\Delta\tau_{\rm int};\mu_M)(m,\dot m)_n.
+\]
+
 **EQ-T020 — atomic temporal transition measure**
 \[
 \mathcal K_T=\sum_n q_n\,\delta_{s_n}.

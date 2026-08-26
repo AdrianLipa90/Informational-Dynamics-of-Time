@@ -1,14 +1,14 @@
 \chapter{Memory and Retrodiction}
 
-The full retrodiction layer remains deferred, but one upstream memory object is admitted here because the preceding kinetic derivation requires a candidate non-exact edge drive.
+The memory layer is developed downstream of Temporal Transport. The current executable branch combines the existing oriented memory coordinate with a Kepler--Newton evolution law parameterized by the internal elapsed activity variable.
 
-\section{Memory as an oriented orbit coordinate}
+\section{Oriented memory coordinate}
 
-Assign to each admitted relational state a complex memory coordinate
+Assign a complex memory coordinate
 \[
 m(s)=x_M(s)+iy_M(s)=r_M(s)e^{i\theta_M(s)}.
 \]
-The first oriented edge functional is
+The oriented edge functional is
 \[
 \boxed{
 A^{(M)}_{ab}
@@ -16,17 +16,81 @@ A^{(M)}_{ab}
 =\lambda_M r_a r_b\sin(\theta_b-\theta_a).
 }
 \]
-It is antisymmetric under edge reversal. Consequently it can supply the directional edge drive of the relational kinetic pair without modifying the symmetric density/viscosity mobility.
-
-For a closed polygonal memory orbit,
+For a closed polygonal orbit,
 \[
 \sum_C A^{(M)}_e
 =2\lambda_M\mathcal A_M(C),
 \]
-where \(\mathcal A_M(C)\) is the signed area enclosed by the orbit in the memory plane. Reversing orientation reverses the sign of the circulation. A degenerate orbit on one ray through the origin has zero circulation.
+where \(\mathcal A_M(C)\) is the signed enclosed area.
 
-Through the transition-affinity relation,
+\section{Internal-time Newton dynamics}
+
+The internal evolution increment inherited from temporal activity is
 \[
-\sigma^{(M)}_{ab}=\frac{A^{(M)}_{ab}}{\ln2},
+d\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\,d\lambda.
 \]
-so an oriented memory loop is a concrete candidate source of non-exact path affinity. This establishes a mathematical bridge between memory-orbit geometry and directed transition structure. The later interpretation of this object as physical memory, retrodiction, or subjective temporal experience remains a separate evidence problem.
+On the memory plane we introduce the effective central parameter \(\mu_M>0\) and
+\[
+V_M(r_M)=-\frac{\mu_M}{r_M}.
+\]
+The smooth memory trajectory obeys
+\[
+\boxed{
+\frac{d^2m}{d\tau_{\rm int}^2}
+=-\mu_M\frac{m}{|m|^3}.
+}
+\]
+The origin and calibration of \(\mu_M\) remain an explicit derivation target.
+
+\section{Kepler structure}
+
+Define
+\[
+\varepsilon_M
+=\frac12\left|\frac{dm}{d\tau_{\rm int}}\right|^2
+-\frac{\mu_M}{r_M},
+\qquad
+h_M
+=\operatorname{Im}\!\left[m^*\frac{dm}{d\tau_{\rm int}}\right].
+\]
+The central-force law gives the areal relation
+\[
+\boxed{
+\frac{d\mathcal A_M}{d\tau_{\rm int}}
+=\frac{h_M}{2}.
+}
+\]
+The corresponding conic is
+\[
+r_M(\nu)
+=\frac{p_M}{1+e_M\cos\nu},
+\qquad
+p_M=\frac{h_M^2}{\mu_M}.
+\]
+For a bound nondegenerate orbit,
+\[
+a_M=-\frac{\mu_M}{2\varepsilon_M},
+\qquad
+T_M^2=\frac{4\pi^2}{\mu_M}a_M^3.
+\]
+Combining the areal law with the earlier memory circulation yields
+\[
+\boxed{
+\frac{d}{d\tau_{\rm int}}
+\left(\sum_C A_e^{(M)}\right)
+=\lambda_M h_M.
+}
+\]
+
+\section{Bifurcation impulse}
+
+A localized event can modify the orbital state through
+\[
+\boxed{
+\mathbf v_M^+
+=\mathbf v_M^-+\Delta\mathbf v_M.
+}
+\]
+The event-imprint projection that generates \(\Delta\mathbf v_M\) is kept as a separate derivation target. The resulting orbital state can be classified by \(\varepsilon_M\), \(h_M\), eccentricity and the conic branch.
+
+The current numerical reference uses velocity--Verlet propagation and records targeted structural tests in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json}. Retrodiction opens after the memory update law receives its own admission receipt.

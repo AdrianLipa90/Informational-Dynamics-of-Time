@@ -1,0 +1,32 @@
+{
+  "schema": "IDT_KEPLER_MEMORY_DYNAMICS_V0_1",
+  "status": "PASS_TARGETED_REFERENCE_TESTS",
+  "targeted_suite": "11 passed in 0.46s",
+  "scope": [
+    "Newton inverse-square central memory acceleration",
+    "Kepler conic geometry and third-law period",
+    "Kepler areal law via angular momentum",
+    "velocity-Verlet reference propagation",
+    "exact per-step swept-area / Kepler areal-law identity for the velocity-Verlet update",
+    "internal elapsed-activity coupling",
+    "explicit memory impulse interface",
+    "fail-closed singular/invalid parameter controls"
+  ],
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "epistemic_boundary": {
+    "memory_node": "PROVISIONAL_DOWNSTREAM_BRANCH",
+    "transport_frontier": "ACTIVE_DERIVATION_TARGET",
+    "event_imprint_to_memory_impulse_projection": "OPEN_DERIVATION_TARGET",
+    "mu_memory_origin": "OPEN_DERIVATION_TARGET",
+    "physical_memory_identification": "OPEN_EVIDENCE_TARGET"
+  },
+  "files_sha256": {
+    "src/idt/kepler_memory.py": "8f36e0d46c97de257befb1bccf41e8f49a0b537873a3eb261b5271dad6ea831f",
+    "tests/reference/test_kepler_memory.py": "6a004afdf0262c5a8b3977522b62a86fe5f64e1ffb83037df64e52d17a1ece10",
+    "src/idt/__init__.py": "c67f7ff284bf1309395ffa48a78803fb2e56651aca6ae19956b32b93e88337d3",
+    "formalism/06_memory_retrodiction.md": "10df300d431b4afece89fd1cb3380593be4d0400692150c707acf604e3e81f0b",
+    "operators/memory_kepler_newton_v01.pnv": "3e45bc11a0cb06b8c478bfe23eaa5bb19d7eafef4ffa0c3d2e360f7362d24af6",
+    "monograph/chapters/08_memory_and_retrodiction.tex": "e48f63b267e714a8a2c76ba3b767a6d279af2781bb7998e4d1f6a7166e60d688"
+  },
+  "receipt_sha256": "e1d0363994d4bf76494f91f778387cadb9828886e7f262ce5b49d453c6329312"
+}

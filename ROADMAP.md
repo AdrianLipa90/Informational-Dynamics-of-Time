@@ -19,14 +19,15 @@ Status: `FORMAL_GATE_PASS`.
 
 ## Phase B — Temporal transport and memory
 
-Current target: close ordered multi-event transport before admitting memory.
+Current target: close ordered multi-event transport, then admit the Memory node through its own update/recall contract.
 
 1. `ACTIVE`: interrupted propagator and order/composition invariants;
-2. `NEXT`: derive event-imprint/update operator;
-3. `GATED`: memory persistence and recall;
-4. `GATED`: internal elapsed-time interpretation and retrodiction.
-
-Existing exploratory memory-orbit and internal-elapsed work remains `PROVISIONAL_DOWNSTREAM_BRANCH` with provenance preserved.
+2. `IMPLEMENTED_PROVISIONALLY`: Kepler--Newton memory propagation in \(\tau_{\rm int}\);
+3. `IMPLEMENTED_PROVISIONALLY`: signed areal law, conic elements and orbit classification;
+4. `OPEN_DERIVATION`: map admitted event imprint to \(\Delta\mathbf v_M\);
+5. `OPEN_DERIVATION`: derive or constrain \(\mu_M\) from upstream relational quantities;
+6. `GATED`: memory persistence and recall;
+7. `GATED`: retrodiction.
 
 ## Phase C — Retrodiction and retrocausal tests
 
@@ -36,4 +37,4 @@ Required result stack: `RAW_OBSERVATION -> STATISTICAL_EFFECT -> CLASSICAL_CHANN
 
 ## Phase D — spatial branch and Einstein closure
 
-Spatial structure is introduced only after the temporal branch has an independently admitted state, transport law and clock-calibration bridge. Einstein closure remains the final dependency gate.
+Spatial structure is introduced after the temporal branch has an independently admitted state, transport law and clock-calibration bridge. Einstein closure remains the final dependency gate.

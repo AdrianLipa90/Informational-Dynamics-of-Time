@@ -1,26 +1,27 @@
 # CURRENT EVIDENCE STATE
 
-Status: `BIFURCATION_V0_2_AND_TRANSPORT_V0_1_STRUCTURAL_PASS`
+Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS`
 
-Current full reference suite: `83 passed in 0.12s`.
+Previously recorded full reference suite at the admitted Temporal Transport frontier: `83 passed in 0.12s`.
 
-Bifurcation v0.2 controls:
+Current Kepler--Newton memory targeted suite: `11 passed in 0.46s`.
 
-- positive-semidefinite dissipator generates a contraction: PASS;
-- zero event magnitude gives identity contraction: PASS;
-- event orientation reversal preserves the contraction/singular spectrum: PASS;
-- commuting dissipative and unitary generators give the adjoint under orientation reversal: PASS;
-- zero dissipator reduces the polar class to the unitary subclass: PASS;
-- commuting fixed generators compose additively in event magnitude and phase: PASS;
-- non-commuting factors make multiplication order visible: PASS;
-- negative event magnitude or non-positive dissipator fails closed: PASS.
+Kepler--Newton memory controls in this execution:
 
-Temporal Transport v0.1 controls:
+- inverse-square central acceleration: PASS;
+- circular reference orbit energy, angular momentum, eccentricity and period: PASS;
+- areal velocity \(h_M/2\): PASS;
+- velocity-Verlet bound-orbit invariant preservation over the reference run: PASS;
+- exact per-step swept area equals \((h_M/2)\Delta\tau_{\rm int}\) under the reference velocity-Verlet update: PASS;
+- temporal activity supplies \(\Delta\tau_{\rm int}\): PASS;
+- explicit impulse changes orbital class in the reference case: PASS;
+- singular zero-radius and nonpositive-\(\mu_M\) inputs fail closed: PASS;
+- conic radius identity: PASS;
+- one circular period sweeps area \(\pi\) in the unit reference orbit: PASS.
 
-- empty event sequence returns identity when dimension is declared: PASS;
-- chronological event order is preserved: PASS;
-- non-commuting event exchange changes the propagator: PASS;
-- interrupted propagator matches the explicit ordered product: PASS;
-- malformed segment/event count fails closed: PASS.
+Full repository suite status for this execution: `NOT_RERUN_IN_THIS_EXECUTION`.
 
-The evidence supports the declared structural operator classes and ordering semantics. Physical generator identification, physical memory interpretation, subjective elapsed time, retrocausal claims and metric-time calibration remain downstream evidence targets.
+Validation receipt: `validation/KEPLER_MEMORY_DYNAMICS_V0_1.json`.
+Receipt digest: `e1d0363994d4bf76494f91f778387cadb9828886e7f262ce5b49d453c6329312`.
+
+The current evidence supports the declared mathematical reference implementation and targeted numerical controls. Memory-node admission continues to follow Temporal Transport closure and the open event-imprint/\(\mu_M\) derivations.

@@ -1,5 +1,5 @@
 {
-  "schema": "IDT_FORMAL_DEPENDENCY_GRAPH_V0_1",
+  "schema": "IDT_FORMAL_DEPENDENCY_GRAPH_V0_2",
   "nodes": [
     {"id": "TIR", "depends_on": [], "status": "AVAILABLE"},
     {"id": "TEMPORAL_PRIMITIVE", "depends_on": ["TIR"], "status": "ACTIVE"},
@@ -7,7 +7,7 @@
     {"id": "NOW", "depends_on": ["TEMPORAL_WAVE"], "status": "STRUCTURAL_PASS"},
     {"id": "BIFURCATION", "depends_on": ["NOW"], "status": "FORMAL_CONTRACT_PASS"},
     {"id": "TEMPORAL_TRANSPORT", "depends_on": ["BIFURCATION"], "status": "ACTIVE_DERIVATION_TARGET"},
-    {"id": "MEMORY", "depends_on": ["TEMPORAL_TRANSPORT"], "status": "PROVISIONAL_DOWNSTREAM_BRANCH"},
+    {"id": "MEMORY", "depends_on": ["TEMPORAL_TRANSPORT"], "status": "PROVISIONAL_DOWNSTREAM_BRANCH_KEPLER_NEWTON_REFERENCE_IMPLEMENTED"},
     {"id": "RETRODICTION", "depends_on": ["MEMORY"], "status": "GATED"},
     {"id": "RETROCAUSAL_TESTS", "depends_on": ["RETRODICTION"], "status": "GATED"},
     {"id": "EINSTEIN_CLOSURE", "depends_on": ["RETROCAUSAL_TESTS"], "status": "DEFERRED_FINAL_GATE"}

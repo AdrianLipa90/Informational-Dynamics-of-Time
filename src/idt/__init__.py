@@ -33,3 +33,22 @@ from .temporal_activity import (
 )
 
 from .internal_elapsed import cumulative_elapsed_activity, elapsed_increment, reparameterize_activity
+
+from .kepler_memory import (
+    KeplerMemoryError,
+    MemoryPhaseState,
+    MemoryOrbitalElements,
+    memory_gravity,
+    specific_memory_energy,
+    memory_angular_momentum,
+    memory_areal_velocity,
+    memory_eccentricity_vector,
+    kepler_semi_latus_rectum,
+    kepler_radius_from_true_anomaly,
+    kepler_period,
+    memory_orbital_elements,
+    apply_memory_impulse,
+    kepler_memory_step,
+    temporal_memory_step,
+    propagate_memory_orbit,
+)
