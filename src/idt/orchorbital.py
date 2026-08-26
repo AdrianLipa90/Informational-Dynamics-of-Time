@@ -49,6 +49,14 @@ class ORCHORBITALStep:
     switched_after_segment: bool
 
 
+@dataclass(frozen=True)
+class AttractorResidence:
+    name: str
+    segments: int
+    dwell_tau: float
+    winding: float
+
+
 def _vec2(value: Sequence[float], name: str) -> np.ndarray:
     arr = np.asarray(value, dtype=float)
     if arr.shape != (2,) or not np.all(np.isfinite(arr)):
@@ -199,6 +207,58 @@ def orchorbital_step(
         winding_increment=delta_winding,
         switched_after_segment=(field_after.active_attractor != active.name),
     )
+
+
+def propagate_orchorbital(
+    state: MemoryPhaseState,
+    attractors: Sequence[AttractorSpec],
+    delta_taus: Sequence[float],
+) -> list[ORCHORBITALStep]:
+    if not delta_taus:
+        raise ORCHORBITALError("delta_taus must be non-empty")
+    current = state
+    out: list[ORCHORBITALStep] = []
+    for raw_delta_tau in delta_taus:
+        step = orchorbital_step(current, attractors, _positive(raw_delta_tau, "delta_tau"))
+        out.append(step)
+        current = step.state_after
+    return out
+
+
+def attractor_residence_summary(steps: Sequence[ORCHORBITALStep]) -> tuple[AttractorResidence, ...]:
+    if not steps:
+        raise ORCHORBITALError("steps must be non-empty")
+    order: list[str] = []
+    values: dict[str, list[float]] = {}
+    counts: dict[str, int] = {}
+    for step in steps:
+        name = step.active_attractor
+        if name not in values:
+            order.append(name)
+            values[name] = [0.0, 0.0]
+            counts[name] = 0
+        delta_tau = float(step.state_after.tau_internal - step.state_before.tau_internal)
+        if not math.isfinite(delta_tau) or delta_tau <= 0.0:
+            raise ORCHORBITALError("step internal elapsed increment must be finite and positive")
+        values[name][0] += delta_tau
+        values[name][1] += float(step.winding_increment)
+        counts[name] += 1
+    return tuple(
+        AttractorResidence(name, counts[name], values[name][0], values[name][1])
+        for name in order
+    )
+
+
+def attractor_transition_counts(steps: Sequence[ORCHORBITALStep]) -> dict[tuple[str, str], int]:
+    if not steps:
+        raise ORCHORBITALError("steps must be non-empty")
+    counts: dict[tuple[str, str], int] = {}
+    for left, right in zip(steps, steps[1:]):
+        edge = (left.active_attractor, right.active_attractor)
+        if edge[0] == edge[1]:
+            continue
+        counts[edge] = counts.get(edge, 0) + 1
+    return counts
 
 
 def phase_space_closure_defect(
