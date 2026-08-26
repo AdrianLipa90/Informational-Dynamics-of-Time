@@ -52,3 +52,11 @@ from .kepler_memory import (
     temporal_memory_step,
     propagate_memory_orbit,
 )
+
+from .event_memory_kick import (
+    EventMemoryKickError,
+    memory_event_action,
+    derived_memory_kick,
+    apply_derived_memory_event_impulse,
+    derived_kick_invariant_changes,
+)
