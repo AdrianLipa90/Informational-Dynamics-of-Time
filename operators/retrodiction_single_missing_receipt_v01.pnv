@@ -1,0 +1,32 @@
+PNV 1
+EPISTEMIC CHYBA
+MODE RESEARCH_CANDIDATE
+
+OP RT.STATE.BEFORE SOURCE memory.checkpoint_before_event
+OP RT.STATE.AFTER SOURCE memory.checkpoint_after_segment
+OP RT.MU SOURCE memory.mu_memory
+OP RT.DTAU SOURCE memory.delta_tau
+OP RT.SMOOTH.INVERSE ORDER RT.STATE.AFTER RT.MU RT.DTAU
+OP RT.KICK.MISSING TRANSFORM RT.SMOOTH.INVERSE infer_missing_kick
+
+OP RT.KNOWN.IMPRINT SOURCE memory.known_delta_m_optional
+OP RT.KNOWN.Q SOURCE temporal.known_event_weight_optional
+OP RT.FACTOR.MODE ORDER RT.KNOWN.IMPRINT RT.KNOWN.Q
+OP RT.FACTOR.INFER TRANSFORM RT.FACTOR.MODE retrodict_single_missing_receipt
+
+OP RT.RESULT.ORDER ORDER RT.KICK.MISSING RT.FACTOR.INFER
+OP RT.RESULT.RETURN RETURN RT.RESULT.ORDER
+
+ASSERT RT.STATE.BEFORE
+ASSERT RT.STATE.AFTER
+ASSERT RT.MU
+ASSERT RT.DTAU
+EMIT RT.RESULT.RETURN
+
+# REFERENCE CONTRACT:
+# reverse known Kepler segment -> infer Delta v_M
+# if delta_m is independently known: q = Re(Delta v * delta_m*) / |delta_m|^2
+# if q > 0 is independently known: delta_m = Delta v / q
+# if both factors are withheld: FAIL CLOSED as PRODUCT_ONLY_AMBIGUITY
+# CLAIMS T024 T025 T026 T027
+# STATUS PROVISIONAL_DOWNSTREAM_RETRODICTION_CANDIDATE
