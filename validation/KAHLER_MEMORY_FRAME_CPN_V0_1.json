@@ -1,0 +1,32 @@
+{
+  "schema": "IDT_KAHLER_MEMORY_FRAME_CPN_V0_1",
+  "status": "TARGETED_REFERENCE_PASS",
+  "canon_allowed": false,
+  "epistemic": "FORMAL_REFERENCE_CLASS",
+  "branch": "feat/kahler-memory-frame-cpn-v0.1",
+  "targeted_checks": {
+    "passed": 8,
+    "failed": 0,
+    "execution_basis": "isolated exact-formula harness matching the repository CPn Fubini-Study log, Kahler dyad, tangent projection and geodesic transport definitions"
+  },
+  "controls": [
+    "CPn logarithm is horizontal and its norm equals acos(|overlap|)",
+    "initial memory dyad is horizontal, unit, real-metric orthogonal and satisfies e_P = i e_Q",
+    "reference event projects to real d_FS with zero residual",
+    "higher-dimensional event resolves into memory-plane component plus nonzero orthogonal residual with exact norm decomposition",
+    "independent global phases leave projected delta_m, d_FS and residual invariant",
+    "shortest-geodesic frame transport preserves the Kahler dyad and round-trips up to endpoint common phase",
+    "CPn construction reduces to the existing CP1 Fubini-Study distance and displacement magnitude",
+    "orthogonal projective cut locus fails closed"
+  ],
+  "reference_observations": {
+    "three_level_example_fs_distance": 0.42110886484700455,
+    "three_level_example_abs_delta_m": 0.20892889390448965,
+    "three_level_example_residual_norm": 0.36562488399122745,
+    "roundtrip_frame_error": 3.5e-17
+  },
+  "claims": ["T019O", "T019P", "T019Q"],
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "memory_admission_effect": "PARALLEL_HIGHER_DIMENSIONAL_REFERENCE_EXTENSION",
+  "physical_claim_status": "NOT_EVALUATED"
+}
