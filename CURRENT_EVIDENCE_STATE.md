@@ -1,29 +1,30 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS / EVENT_MEMORY_KICK_V0_1_TARGETED_PASS`
+Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS / EVENT_MEMORY_KICK_V0_1_TARGETED_PASS / MEMORY_MU_IDENTIFIABILITY_V0_1_TARGETED_PASS`
 
 Previously recorded full reference suite at the admitted Temporal Transport frontier: `83 passed in 0.12s`.
 
-Current Kepler--Newton memory targeted suite: `11 passed in 0.46s`.
+Recorded targeted controls:
 
-Current event-imprint memory-kick targeted suite: `7 passed in 0.08s`.
+- Kepler--Newton memory suite: `11 passed in 0.46s`;
+- event-imprint memory-kick suite: `7 passed in 0.08s`;
+- memory central-parameter identifiability: `6 targeted checks PASS`.
 
-Event-memory kick controls:
+The latest identifiability checks cover:
 
-- gradient of \(S_n^{(M)}=q_n\operatorname{Re}(\delta m_n^*m)\) equals the derived kick: PASS;
-- \(q_n=0\) gives zero kick: PASS;
-- \(\delta m_n=0\) gives zero kick: PASS;
-- kick scales linearly with \(q_n\): PASS;
-- independent global phase changes propagate through the projective imprint with unchanged kick: PASS;
-- exact \(\Delta E_M\) and \(\Delta h_M\) jump identities: PASS;
-- negative event weight fails closed: PASS.
+- ellipse apses recovering \(a_M,e_M,p_M\): PASS;
+- \(\mu_M=h_M^2/p_M\): PASS;
+- \(\mu_M=4\pi^2a_M^3/T_M^2\): PASS;
+- circulation estimator \(\mu_M=p_M^{-1}[(d\Gamma_M/d\tau_{\rm int})/\lambda_M]^2\): PASS;
+- orientation reversal preserving identified \(\mu_M\): PASS;
+- invalid geometry, period and coupling inputs failing closed: PASS.
 
 Validation receipts:
 
 - `validation/KEPLER_MEMORY_DYNAMICS_V0_1.json`;
-- `validation/EVENT_MEMORY_KICK_V0_1.json`.
+- `validation/EVENT_MEMORY_KICK_V0_1.json`;
+- `validation/MEMORY_MU_IDENTIFIABILITY_V0_1.json`.
 
-Full repository suite status for the event-kick execution: `NOT_RERUN_IN_THIS_EXECUTION`.
-GitHub Actions run observed for the branch head at receipt time: `NONE`.
+Full repository suite status for the latest execution: `NOT_RERUN_IN_THIS_EXECUTION`.
 
-The evidence supports the declared mathematical reference implementation and structural event-jump identities. Memory-node admission continues to follow the dependency graph; \(\mu_M\), memory-observable selection, persistence/recall and physical-unit calibration remain later derivation/evidence targets.
+The current evidence supports the declared structural reference implementations and conditional identifiability identities. Memory-node admission continues to follow the dependency graph; Kähler-derived memory-observable selection, persistence/recall, deeper upstream prediction of \(\mu_M\), and physical-unit calibration remain later derivation/evidence targets.

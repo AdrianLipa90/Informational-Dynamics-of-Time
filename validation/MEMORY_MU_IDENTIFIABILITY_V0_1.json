@@ -1,0 +1,24 @@
+{
+  "schema": "IDT_MEMORY_MU_IDENTIFIABILITY_V0_1",
+  "status": "PASS_TARGETED_REFERENCE_CHECKS",
+  "targeted_checks": "6 targeted checks PASS",
+  "controls": [
+    "ellipse apses recover semi-major axis, eccentricity and semi-latus rectum",
+    "mu recovered from signed angular momentum and semi-latus rectum",
+    "mu recovered independently from internal period and semi-major axis",
+    "mu recovered from memory circulation rate and orbit coupling",
+    "orientation reversal preserves identified mu",
+    "invalid apses, zero latus rectum, zero period and zero circulation coupling fail closed"
+  ],
+  "identities": {
+    "mu_from_h_p": "mu_M = h_M^2 / p_M",
+    "mu_from_a_T": "mu_M = 4 pi^2 a_M^3 / T_M^2",
+    "mu_from_circulation": "mu_M = [(dGamma_M/dtau_int)/lambda_M]^2 / p_M"
+  },
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "epistemic_boundary": {
+    "status": "CONDITIONAL_IDENTIFIABILITY_WITHIN_KEPLER_MEMORY_REFERENCE_CLASS",
+    "deeper_upstream_origin_law": "OPEN_DERIVATION_TARGET",
+    "physical_unit_calibration": "DEFERRED_TO_METRIC_TIME_CALIBRATION"
+  }
+}
