@@ -49,9 +49,11 @@ A provisional downstream Retrodiction branch is being developed without advancin
 8. `PROVISIONAL_ESTIMATION_GATE_PASS`: gated damped Gauss--Newton reference estimation is implemented with strict residual-descent admission and fail-closed local-rank checks;
 9. `PROVISIONAL_INFORMATION_FIREWALL_PASS`: estimator input excludes sealed truth and the estimate is content-committed before truth scoring;
 10. `PROVISIONAL_REFERENCE_NULL_PASS`: zero-kick and capacity-matched checkpoint-order nulls are implemented and recorded in E003 reference run 0001;
-11. `NEXT`: introduce an explicit checkpoint-noise model, weighted sensitivity/Fisher geometry and uncertainty propagation for latent kicks;
-12. `NEXT`: extend to deliberately missing checkpoints and compare uncertainty-calibrated estimates against preregistered null ensembles;
-13. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+11. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
+12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
+13. `NEXT`: extend the inverse problem to deliberately missing checkpoints and derive the minimal checkpoint-selection/observability rule under partial retention;
+14. `NEXT`: replace the single reversed-order null by a preregistered checkpoint-permutation/null ensemble and attach uncertainty-calibrated comparison statistics;
+15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
