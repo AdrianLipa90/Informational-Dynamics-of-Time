@@ -53,9 +53,11 @@ A provisional downstream Retrodiction branch is being developed without advancin
 12. `PROVISIONAL_NOISE_REFERENCE_PASS`: the first isotropic-noise reference has weighted condition number about `4.076`; a seeded 500-case nonlinear audit produced empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
 13. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: for \(N\) latent 2D kicks the dimensional lower bound is \(|\mathcal C|\ge\lceil N/2\rceil\), followed by actual rank and optional conditioning gates;
 14. `REFERENCE_SELECTION_RESULT`: in the three-kick reference case, two checkpoints can be information-sufficient but poorly conditioned (best reference pair condition about `66.3`), while all three checkpoints give condition about `4.076`; an explicit \(\kappa_{\max}=10\) therefore selects all three;
-15. `NEXT`: replace the single reversed-order null by a preregistered checkpoint-permutation/null ensemble with the same estimator capacity and declared observation covariance;
-16. `NEXT`: add a covariance-weighted estimator and uncertainty-calibrated null comparison before opening any `STATISTICAL_EFFECT` status;
-17. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+15. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete five-member non-identity checkpoint-permutation reference ensemble pass the targeted five-test layer; checkpoint observations and covariance are permuted together and every null uses the same estimator capacity;
+16. `REFERENCE_NULL_RESULT`: in E003 reference run 0002 the retained chronology has weighted residual quadratic about `2.49e-24`, while the five null fits range from about `1.80e5` to `8.19e5` with zero nulls at or below the retained chronology;
+17. `NEXT`: preregister an experiment-specific permutation/null calibration with uncertainty-aware comparison statistics before any `STATISTICAL_EFFECT` admission;
+18. `NEXT`: add deliberately missing/noisy checkpoint experiments under the information firewall and quantify reconstruction degradation against the registered null ensemble;
+19. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
