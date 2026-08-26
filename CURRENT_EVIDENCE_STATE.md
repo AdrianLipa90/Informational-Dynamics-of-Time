@@ -1,27 +1,29 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS`
+Status: `TRANSPORT_V0_1_RECORDED / KEPLER_MEMORY_V0_1_TARGETED_PASS / EVENT_MEMORY_KICK_V0_1_TARGETED_PASS`
 
 Previously recorded full reference suite at the admitted Temporal Transport frontier: `83 passed in 0.12s`.
 
 Current Kepler--Newton memory targeted suite: `11 passed in 0.46s`.
 
-Kepler--Newton memory controls in this execution:
+Current event-imprint memory-kick targeted suite: `7 passed in 0.08s`.
 
-- inverse-square central acceleration: PASS;
-- circular reference orbit energy, angular momentum, eccentricity and period: PASS;
-- areal velocity \(h_M/2\): PASS;
-- velocity-Verlet bound-orbit invariant preservation over the reference run: PASS;
-- exact per-step swept area equals \((h_M/2)\Delta\tau_{\rm int}\) under the reference velocity-Verlet update: PASS;
-- temporal activity supplies \(\Delta\tau_{\rm int}\): PASS;
-- explicit impulse changes orbital class in the reference case: PASS;
-- singular zero-radius and nonpositive-\(\mu_M\) inputs fail closed: PASS;
-- conic radius identity: PASS;
-- one circular period sweeps area \(\pi\) in the unit reference orbit: PASS.
+Event-memory kick controls:
 
-Full repository suite status for this execution: `NOT_RERUN_IN_THIS_EXECUTION`.
+- gradient of \(S_n^{(M)}=q_n\operatorname{Re}(\delta m_n^*m)\) equals the derived kick: PASS;
+- \(q_n=0\) gives zero kick: PASS;
+- \(\delta m_n=0\) gives zero kick: PASS;
+- kick scales linearly with \(q_n\): PASS;
+- independent global phase changes propagate through the projective imprint with unchanged kick: PASS;
+- exact \(\Delta E_M\) and \(\Delta h_M\) jump identities: PASS;
+- negative event weight fails closed: PASS.
 
-Validation receipt: `validation/KEPLER_MEMORY_DYNAMICS_V0_1.json`.
-Receipt digest: `e1d0363994d4bf76494f91f778387cadb9828886e7f262ce5b49d453c6329312`.
+Validation receipts:
 
-The current evidence supports the declared mathematical reference implementation and targeted numerical controls. Memory-node admission continues to follow Temporal Transport closure and the open event-imprint/\(\mu_M\) derivations.
+- `validation/KEPLER_MEMORY_DYNAMICS_V0_1.json`;
+- `validation/EVENT_MEMORY_KICK_V0_1.json`.
+
+Full repository suite status for the event-kick execution: `NOT_RERUN_IN_THIS_EXECUTION`.
+GitHub Actions run observed for the branch head at receipt time: `NONE`.
+
+The evidence supports the declared mathematical reference implementation and structural event-jump identities. Memory-node admission continues to follow the dependency graph; \(\mu_M\), memory-observable selection, persistence/recall and physical-unit calibration remain later derivation/evidence targets.
