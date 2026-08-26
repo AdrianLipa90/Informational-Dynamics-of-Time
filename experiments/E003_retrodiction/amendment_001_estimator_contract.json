@@ -1,0 +1,33 @@
+{
+  "schema": "IDT_E003_RETRODICTION_AMENDMENT_001",
+  "status": "APPEND_ONLY_PROTOCOL_AMENDMENT",
+  "parent": "experiments/E003_retrodiction/preregistration.json",
+  "reason": "operationalize the preregistered observability-before-optimization rule and named null models in an executable deterministic reference estimator",
+  "hidden_truth_tuning": false,
+  "estimator": {
+    "latent_variables": "direct 2D event kicks",
+    "objective": "0.5 * ||Y_obs - Y(z)||_2^2",
+    "update": "damped Gauss-Newton",
+    "damping": 1e-8,
+    "line_search": "alpha = 2^-j, strict residual descent only",
+    "maximum_line_search_halvings": 10,
+    "maximum_iterations": 32,
+    "residual_tolerance": 1e-10,
+    "step_tolerance": 1e-12,
+    "finite_difference_step": 1e-7,
+    "relative_rank_tolerance": 1e-8,
+    "fail_closed": [
+      "observability gate not full column rank",
+      "local rank loss during estimation",
+      "singular damped normal equations",
+      "commitment mismatch before truth scoring"
+    ]
+  },
+  "null_operationalization": {
+    "NULL_ZERO_KICK": "same forward model with every latent kick fixed to zero",
+    "NULL_CHECKPOINT_SHUFFLE": "reverse complete 4D checkpoint blocks and apply the same estimator capacity",
+    "NULL_PRODUCT_FACTOR": "structural q * delta_m scale ambiguity control; not treated as an optimizer baseline"
+  },
+  "information_firewall": "unchanged from preregistration",
+  "physical_claim_status": "NOT_EVALUATED"
+}
