@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1",
+  "status": "PASS_TARGETED_ISOLATED_HARNESS / PROVISIONAL_DOWNSTREAM_CANDIDATE",
+  "canon_allowed": false,
+  "epistemic": "FORMAL_REFERENCE_CLASS",
+  "dependency_parent": "MEMORY_ADMISSION_PENDING_FULL_REFERENCE_SUITE",
+  "branch": "feat/retrodiction-single-missing-receipt-v0.1",
+  "contract": {
+    "known_dynamics": "event kick followed by one velocity-Verlet Kepler segment",
+    "retained_constraints": [
+      "checkpoint before event",
+      "checkpoint after smooth segment",
+      "mu_M",
+      "delta_tau"
+    ],
+    "withheld_information": "one event receipt factor",
+    "identifiability": {
+      "delta_v": "identifiable by reversing the known smooth segment",
+      "q_given_delta_m": "identifiable with residual/positivity control",
+      "delta_m_given_positive_q": "identifiable by division",
+      "q_and_delta_m_both_unknown": "PRODUCT_ONLY_SCALE_AMBIGUITY"
+    }
+  },
+  "targeted_controls": {
+    "authored_pytest_functions": 8,
+    "isolated_exact_formula_harness": {
+      "passed": 8,
+      "failed": 0,
+      "controls": [
+        "reverse smooth segment recovers the missing event kick",
+        "known nonzero imprint recovers event weight q",
+        "known positive q recovers delta_m",
+        "both factors withheld fail closed as product-only ambiguity",
+        "wrong imprint direction fails the collinearity residual",
+        "zero-weight consistency is enforced",
+        "tampered checkpoint fails closed",
+        "positive scale family preserves q * delta_m"
+      ]
+    },
+    "randomized_roundtrips": {
+      "attempted": 1000,
+      "max_event_weight_absolute_error": 4.0e-15,
+      "max_imprint_absolute_error": 2.6e-15,
+      "max_checkpoint_residual": 1.2e-16
+    }
+  },
+  "repository_pytest_for_this_branch": "NOT_OBTAINED_YET",
+  "memory_admission": "PENDING_FULL_REFERENCE_SUITE",
+  "retrodiction_admission": "GATED_PENDING_MEMORY_ADMISSION",
+  "retrocausal_claim_status": "NOT_EVALUATED"
+}
