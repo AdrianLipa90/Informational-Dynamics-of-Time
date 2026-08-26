@@ -14,18 +14,42 @@ Current admitted frontier:
 
 Temporal Transport has passed its declared structural reference gate. The active Memory node contains the event-driven Kepler--Newton branch, the upstream event kick \(\Delta v_{M,n}=q_n\delta m_n\), conditional \(\mu_M\) identifiability, the \(\mathbb{CP}^1\) Kähler memory-frame reference subclass, append-only event receipts and ledger-assisted recall.
 
-The provisional downstream Retrodiction implementation contains:
+The next typed Memory extension is now ORCHORBITAL attractor organization:
+
 \[
 \boxed{
-\text{withheld lineage}
-\rightarrow\text{observability}
-\rightarrow\text{checkpoint selection}
-\rightarrow\text{estimation}
-\rightarrow\text{uncertainty geometry}
-\rightarrow\text{covariance-preserving permutation nulls}.
+X_M
+\rightarrow
+\{E_i,b_i,w_i\}
+\rightarrow
+\text{active attractor / LEAK\_MODE}
+\rightarrow
+\text{active-centre Kepler segment}
+\rightarrow
+\Delta W
+\rightarrow
+\text{field re-evaluation}
+\rightarrow
+\text{residence / transition graph}.
 }
 \]
 
-Final pre-merge targeted evidence for the newest layers: `10 passed in 0.25s` for checkpoint selection plus weighted permutation nulls in the isolated local reconstruction of the exact implementation dependencies. The hosted GitHub Actions full-suite remains `CI_RESULT_NOT_OBTAINED` because its jobs terminate before executing test steps.
+For attractor \(\mathfrak A_i=(c_i,\mu_i)\), the reference binding field uses
+\[
+E_i=\frac12\|v_M\|^2-\frac{\mu_i}{\|m-c_i\|},
+\qquad
+b_i=[-E_i]_+,
+\qquad
+w_i=\frac{b_i}{\sum_j b_j}.
+\]
+The same weights define a Shannon basin entropy and normalized attractor coherence. Smooth admitted segments preserve the single-centre Kepler law in the selected attractor frame. Multi-segment propagation accumulates attractor residence time in \(\tau_{\rm int}\), winding, and directed attractor-transition counts.
 
-The tested provisional branch is ready for merge as implementation/evidence staging. Merge does not advance the canonical admitted frontier; Retrodiction remains `PROVISIONAL_DOWNSTREAM` until its dependency gates are explicitly promoted.
+Targeted ORCHORBITAL reference evidence: `11 passed in 0.07s` in an isolated local reconstruction of the exact implementation dependencies. The receipt is `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
+
+The Retrodiction implementation remains downstream staging. The canonical dependency path is now
+
+\[
+\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}.
+\]
+
+The hosted GitHub Actions full-suite remains `CI_RESULT_NOT_OBTAINED` because the observed jobs terminate before executing test steps. Targeted reference PASS and hosted full-suite status remain separate evidence classes.

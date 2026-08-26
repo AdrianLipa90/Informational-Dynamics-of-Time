@@ -1,0 +1,47 @@
+PNV 1
+EPISTEMIC CHYBA
+MODE RESEARCH_CANDIDATE
+
+OP ORCH.STATE.MEMORY SOURCE memory.phase_state
+OP ORCH.ATTRACTORS SOURCE memory.attractor_specs
+OP ORCH.ENERGY TRANSFORM ORCH.STATE.MEMORY ORCH.ATTRACTORS kepler_energy_per_attractor
+OP ORCH.BINDING TRANSFORM ORCH.ENERGY positive_negative_energy_margin
+OP ORCH.WEIGHTS TRANSFORM ORCH.BINDING normalize_positive_binding
+OP ORCH.LEAK AUDIT ORCH.BINDING leak_if_zero_total_binding
+OP ORCH.ACTIVE SELECT ORCH.WEIGHTS maximum_binding_deterministic_tie_break
+OP ORCH.ENTROPY TRANSFORM ORCH.WEIGHTS shannon_entropy_bits
+OP ORCH.COHERENCE TRANSFORM ORCH.ENTROPY normalized_attractor_coherence
+OP ORCH.FRAME TRANSFORM ORCH.STATE.MEMORY ORCH.ACTIVE translate_to_active_attractor_center
+OP ORCH.PROPAGATE TRANSFORM ORCH.FRAME kepler_memory_step_in_tau_internal
+OP ORCH.WINDING TRANSFORM ORCH.PROPAGATE wrapped_orbital_winding_increment
+OP ORCH.RECHECK TRANSFORM ORCH.PROPAGATE ORCH.ATTRACTORS reevaluate_attractor_field
+OP ORCH.SWITCH AUDIT ORCH.ACTIVE ORCH.RECHECK attractor_switch_candidate
+OP ORCH.NEXT.ACTIVE SELECT ORCH.RECHECK promote_next_segment_active_attractor
+OP ORCH.RESIDENCE TRANSFORM ORCH.ACTIVE ORCH.PROPAGATE ORCH.WINDING accumulate_segment_count_dwell_tau_and_winding
+OP ORCH.TRANSITION.GRAPH TRANSFORM ORCH.ACTIVE ORCH.NEXT.ACTIVE count_directed_nonself_attractor_transitions
+OP ORCH.RESULT.ORDER ORDER ORCH.ENERGY ORCH.BINDING ORCH.WEIGHTS ORCH.LEAK ORCH.ACTIVE ORCH.ENTROPY ORCH.COHERENCE ORCH.PROPAGATE ORCH.WINDING ORCH.RECHECK ORCH.SWITCH ORCH.NEXT.ACTIVE ORCH.RESIDENCE ORCH.TRANSITION.GRAPH
+OP ORCH.RESULT.RETURN RETURN ORCH.RESULT.ORDER
+
+ASSERT ORCH.STATE.MEMORY
+ASSERT ORCH.ATTRACTORS
+ASSERT ORCH.ENERGY
+ASSERT ORCH.BINDING
+ASSERT ORCH.WEIGHTS
+EMIT ORCH.RESULT.RETURN
+
+# REFERENCE CONTRACT:
+# A_i = (c_i, mu_i), mu_i > 0
+# E_i = 1/2 |v_M|^2 - mu_i / |m-c_i|
+# b_i = max(0, -E_i)
+# w_i = b_i / sum_j b_j when total binding > 0
+# active = argmax_i w_i with deterministic tie-break
+# LEAK_MODE when total binding = 0
+# H_A = -sum_i w_i log2(w_i)
+# C_A = 1 - H_A/log2(N) for N > 1
+# d2m/dtau_int2 = -mu_active (m-c_active)/|m-c_active|^3
+# delta W = wrap(delta theta)/(2 pi)
+# T_i_res = sum_{n:a_n=i} delta_tau_n
+# W_i_tot = sum_{n:a_n=i} delta_W_i_n
+# N_i_to_j = count adjacent active labels i -> j, i != j
+# CLAIMS T019O T019P T019Q T019R T019S T019T T019U T019V
+# STATUS PROVISIONAL_MEMORY_EXTENSION_REFERENCE_CLASS
