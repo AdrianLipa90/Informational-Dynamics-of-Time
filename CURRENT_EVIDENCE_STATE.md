@@ -19,7 +19,7 @@ Recorded Memory-node targeted controls:
 
 The integrated Memory controls verify the CP1 geometry -> event kick -> Kepler propagation -> persisted receipt -> recall path, including a tampered-receipt negative control and upstream global-phase invariance. The isolated integrated round-trip error observed in the reference case was below `3.6e-16`.
 
-Provisional Retrodiction evidence is now recorded separately in `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`:
+Provisional single-missing-receipt Retrodiction evidence is recorded in `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`:
 
 - `8/8` targeted exact-formula controls PASS in the isolated harness;
 - reversing the known smooth segment recovers the missing event kick: PASS;
@@ -29,6 +29,16 @@ Provisional Retrodiction evidence is now recorded separately in `validation/RETR
 - wrong imprint direction fails the collinearity residual: PASS;
 - zero-weight consistency and checkpoint-tampering controls: PASS;
 - 1000 randomized single-cell retrodictions produced maximum absolute errors of about `4.0e-15` for \(q\), `2.6e-15` for \(\delta m\), and `1.2e-16` checkpoint residual.
+
+Provisional multi-event observability evidence is recorded in `validation/RETRODICTION_OBSERVABILITY_V0_1.json`:
+
+- `7/7` targeted exact-formula controls PASS in the isolated harness;
+- one unknown 2D kick gives rank 2 from one final 4D phase-state checkpoint in the reference case;
+- two unknown 2D kicks give rank 4 from one final 4D checkpoint in the generic reference case;
+- three unknown 2D kicks are dimensionally underdetermined from one final 4D checkpoint because the Jacobian is `4 x 6`;
+- retaining all three post-event checkpoints gives a `12 x 6` Jacobian with rank 6 in the targeted reference case;
+- duplicate/pre-event checkpoints and invalid numerical tolerances fail closed;
+- randomized audit: 200/200 two-kick final-checkpoint cases were full rank and 200/200 three-kick all-checkpoint cases were full rank in the recorded parameter range.
 
 These Retrodiction results are `PROVISIONAL_DOWNSTREAM` evidence only. They do not substitute for the parent Memory admission gate.
 
@@ -41,10 +51,11 @@ Validation receipts include:
 - `validation/KAHLER_MEMORY_FRAME_CP1_V0_1.json`;
 - `validation/MEMORY_PERSISTENCE_RECALL_V0_1.json`;
 - `validation/MEMORY_ADMISSION_V0_1.json`;
-- `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`.
+- `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`;
+- `validation/RETRODICTION_OBSERVABILITY_V0_1.json`.
 
-The first GitHub Actions attempt observed for the integrated Memory admission head returned `failure` with no executed steps and no retrievable logs; it is therefore classified as `CI_RESULT_NOT_OBTAINED`, not as a code/test failure. A dedicated CI retry branch has been created. No full repository result has yet been obtained from that retry.
+The first GitHub Actions attempt observed for the integrated Memory admission head returned `failure` with no executed steps and no retrievable logs; it is therefore classified as `CI_RESULT_NOT_OBTAINED`, not as a code/test failure. A failed-job rerun has now been requested successfully and is queued. Until it executes actual test steps, the full-suite result remains `NOT_OBTAINED`.
 
-Full repository suite status on the integrated Memory tree: `NOT_OBTAINED`.
+Full repository suite status on the integrated Memory tree: `NOT_OBTAINED / RERUN_QUEUED`.
 
-The current evidence supports an integrated Memory reference-gate candidate and a provisional downstream single-missing-receipt Retrodiction reference candidate. Final Memory admission remains pending the full repository reference-suite result; Retrodiction admission remains gated by that parent result.
+The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
