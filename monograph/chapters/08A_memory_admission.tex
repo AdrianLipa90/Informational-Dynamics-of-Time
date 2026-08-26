@@ -1,0 +1,52 @@
+\chapter{Memory Integration Gate}
+
+The Memory node is assembled from components derived and validated in the preceding layers. The structural reference path used by the current integration gate is
+\[
+\boxed{
+\mathbb{CP}^1\ \text{state geometry}
+\longrightarrow
+\delta m_n
+\longrightarrow
+q_n\delta m_n
+\longrightarrow
+\mathcal C_n
+\longrightarrow
+\mathcal E_n
+\longrightarrow
+\operatorname{RECALL}.
+}
+\]
+
+For the \(\mathbb{CP}^1\) K\"ahler-frame reference subclass,
+\[
+|\delta m_n|=d_{FS}(a,b).
+\]
+Together with the upstream-derived event kick,
+\[
+\Delta v_{M,n}=q_n\delta m_n,
+\]
+this gives the integrated magnitude identity
+\[
+\boxed{
+|\Delta v_{M,n}|=q_n d_{FS}(a,b).
+}
+\]
+The subsequent memory lineage cell is
+\[
+\mathcal C_n
+=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n},
+\qquad
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+\]
+The append-only ledger therefore carries the quantities required by the declared inverse reference cell and ledger-assisted reconstruction.
+
+\section{Integrated controls}
+
+The dedicated integration test composes two non-collinear CP1 events with event weighting, Kepler propagation and recall. The targeted reference checks verify Fubini--Study normalization, event-kick scaling, complete multi-event reconstruction, recovery of intermediate checkpoints, upstream global-phase invariance and a tampered-receipt negative control. A zero-weight event also preserves reversible smooth propagation.
+
+These controls are recorded in
+\texttt{validation/MEMORY\_ADMISSION\_V0\_1.json}.
+The isolated integration harness passed all six test functions represented by
+\texttt{tests/reference/test\_memory\_admission.py}.
+
+The active Memory status remains an integration-pass candidate until the full repository reference suite is rerun on the integrated tree. Retrodiction opens after that admission gate and is formulated as inference with withheld lineage information, separately from exact reconstruction using a complete persisted ledger.
