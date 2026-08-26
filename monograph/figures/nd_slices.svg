@@ -1,74 +1,24 @@
-<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-<svg width="491.62pt" height="469.2pt" version="1.1" viewBox="0 0 491.62 469.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="ao">
-  <g id="ap">
-   <path d="m0 469.2h491.62v-469.2h-491.62z" fill="#fff"/>
-  </g>
-  <g id="aq">
-   <g id="ar">
-    <path d="m39.56 215.84h180.88v-180.88h-180.88z" fill="#fff"/>
-   </g>
-   <g id="as">
-    <g id="at">
-     <g id="au">
-      <defs>
-       <path id="e" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
-      </defs>
-      <use x="39.559687" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/>
-     </g>
-     <g id="av">
-      <!-- −2.0 -->
-      <g transform="translate(32.275 227.4) scale(.06 -.06)">
-       <defs>
-        <path id="f" transform="scale(.015625)" d="m678 2272h4006v-531h-4006v531z"/>
-        <path id="h" transform="scale(.015625)" d="m1228 531h2203v-531h-2962v531q359 372 979 998 621 627 780 809 303 340 423 576 121 236 121 464 0 372-261 606-261 235-680 235-297 0-627-103-329-103-704-313v638q381 153 712 231 332 78 607 78 725 0 1156-363 431-362 431-968 0-288-108-546-107-257-392-607-78-91-497-524-418-433-1181-1211z"/>
-        <path id="a" transform="scale(.015625)" d="m684 794h660v-794h-660v794z"/>
-        <path id="b" transform="scale(.015625)" d="m2034 4250q-487 0-733-480-245-479-245-1442 0-959 245-1439 246-480 733-480 491 0 736 480 246 480 246 1439 0 963-246 1442-245 480-736 480zm0 500q785 0 1199-621 414-620 414-1801 0-1178-414-1799-414-620-1199-620-784 0-1198 620-414 621-414 1799 0 1181 414 1801 414 621 1198 621z"/>
-       </defs>
-       <use xlink:href="#f"/>
-       <use transform="translate(83.789)" xlink:href="#h"/>
-       <use transform="translate(147.41)" xlink:href="#a"/>
-       <use transform="translate(179.2)" xlink:href="#b"/>
-      </g>
-     </g>
-    </g>
-    <g id="aw">
-     <g id="ax">
-      <use x="62.170262" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/>
-     </g>
-     <g id="ay">
-      <!-- −1.5 -->
-      <g transform="translate(54.885 227.4) scale(.06 -.06)">
-       <defs>
-        <path id="c" transform="scale(.015625)" d="m794 531h1031v3560l-1122-225v575l1116 225h631v-4135h1031v-531h-2687v531z"/>
-        <path id="g" transform="scale(.015625)" d="m691 4666h2478v-532h-1900v-1143q137 47 274 70 138 23 276 23 781 0 1237-428 457-428 457-1159 0-753-469-1171-469-417-1322-417-294 0-599 50-304 50-629 150v635q281-153 581-228t634-75q541 0 856 284 316 284 316 772 0 487-316 771-315 285-856 285-253 0-505-56-251-56-513-175v2344z"/>
-       </defs>
-       <use xlink:href="#f"/>
-       <use transform="translate(83.789)" xlink:href="#c"/>
-       <use transform="translate(147.41)" xlink:href="#a"/>
-       <use transform="translate(179.2)" xlink:href="#g"/>
-      </g>
-     </g>
-    </g>
-    <g id="az"><g id="ba"><use x="84.780836" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bc"><g id="bd"><use x="107.39141" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bf"><g id="bg"><use x="130.001984" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bi"><g id="bj"><use x="152.612558" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bl"><g id="bm"><use x="175.223132" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bo"><g id="bp"><use x="197.833706" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="br"><g id="bs"><use x="220.44428" y="215.841947" stroke="#000000" stroke-width=".8" xlink:href="#e"/></g></g>
-    <g id="bu"><!-- $\phi_1$ --><g transform="translate(126.01 237.97) scale(.07 -.07)"><defs><path id="m" transform="scale(.015625)" d="m2991 4863-253-1291q625 0 946-478 332-488 166-1347-169-859-691-1347-506-478-1131-478l-244-1253h-571l243 1253q-622 0-947 478-331 488-162 1347 166 859 687 1347 510 478 1132 478l253 1291h572zm-863-4429q353 0 656 322 332 360 460 991 125 625-75 991-178 321-531 321l-510-2625zm-572 0 510 2625q-350 0-653-321-341-366-460-991-119-631 75-991 175-322 528-322z"/></defs><use transform="translate(0 .015625)" xlink:href="#m"/><use transform="translate(65.967 -16.391) scale(.7)" xlink:href="#c"/></g></g>
-   </g>
-   <g id="bv"><g id="bw"><g id="bx"><defs><path id="d" d="m0 0h-3.5" stroke="#000" stroke-width=".8"/></defs><use x="39.559688" y="215.841948" stroke="#000000" stroke-width=".8" xlink:href="#d"/></g></g></g>
-   <g id="ii"><path d="m39.56 215.84v-180.88" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/><path d="m220.44 215.84v-180.88" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/><path d="m39.56 215.84h180.88" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/><path d="m39.56 34.957h180.88" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/></g>
-  </g>
-  <g id="ij"><g id="ik"><path d="m298.76 215.84h180.88v-180.88h-180.88z" fill="#fff"/></g></g>
-  <g id="ja"><g id="jb"><path d="m39.56 438.4h180.88v-180.88h-180.88z" fill="#fff"/></g></g>
-  <g id="ka"><g id="kb"><path d="m298.76 438.4h180.88v-180.88h-180.88z" fill="#fff"/></g></g>
-  <g id="lg"><!-- Figure 4.1: common-scale tensor-scalar slices --><g transform="translate(142.21 14.798) scale(.1 -.1)"><defs><path id="al" transform="scale(.015625)" d="m628 4666h2681v-532h-2050v-1375h1850v-531h-1850v-2228h-631v4666z"/><path id="ac" transform="scale(.015625)" d="m603 3500h575v-3500h-575v3500zm0 1363h575v-729h-575v729z"/><path id="ak" transform="scale(.015625)" d="m2906 1791q0 625-258 968-257 344-723 344-462 0-720-344-258-343-258-968 0-622 258-966t720-344q466 0 723 344 258 344 258 966zm575-1357q0-893-397-1329-396-436-1215-436-303 0-572 45t-522 139v559q253-137 500-202 247-66 503-66 566 0 847 295t281 892v285q-178-310-456-463t-666-153q-643 0-1037 490-394 491-394 1301 0 812 394 1302 394 491 1037 491 388 0 666-153t456-462v531h575v-3066z"/></defs><use xlink:href="#al"/><use transform="translate(50.27)" xlink:href="#ac"/><use transform="translate(78.053)" xlink:href="#ak"/></g></g>
- </g>
- <defs><clipPath id="i"><rect x="39.56" y="34.957" width="180.88" height="180.88"/></clipPath><clipPath id="k"><rect x="298.76" y="34.957" width="180.88" height="180.88"/></clipPath><clipPath id="j"><rect x="39.56" y="257.52" width="180.88" height="180.88"/></clipPath><clipPath id="l"><rect x="298.76" y="257.52" width="180.88" height="180.88"/></clipPath></defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="535" height="571" viewBox="0 0 535 571">
+<rect width="100%" height="100%" fill="white"/>
+<text x="50%" y="22" text-anchor="middle" font-family="sans-serif" font-size="15">Figure 4.1 - tensor-scalar slices</text>
+<rect x="30" y="48" width="220" height="220" fill="#fafafa" stroke="#222"/>
+<text x="140.0" y="40" text-anchor="middle" font-family="sans-serif" font-size="10">Theta=(-0.8,-0.3)</text>
+<polyline points="107.3,240.0 85.5,234.9 71.6,221.0 65.3,200.0 64.5,172.9 67.0,148.2 72.1,125.3 80.4,106.6 93.7,92.2 112.4,83.5 137.9,80.4 163.1,82.8 184.6,89.3 201.6,99.5 214.3,114.6 221.4,134.6 221.2,161.0 214.9,181.4 204.1,198.6 190.4,211.9 173.1,223.0 154.0,231.3 132.3,237.4 107.3,240.0" fill="none" stroke="#2b6f9f" stroke-opacity="0.55" stroke-width="1.6"/>
+<polyline points="250.0,264.9 249.3,265.5 249.2,265.6 248.3,266.2 248.2,266.3 247.5,266.9 247.1,267.2 246.6,267.6 246.0,268.0" fill="none" stroke="#2b6f9f" stroke-opacity="0.85" stroke-width="1.6"/>
+<path d="M 135.6 154.4 L 143.6 162.4 M 143.6 154.4 L 135.6 162.4" stroke="#b11" stroke-width="2"/>
+<rect x="285" y="48" width="220" height="220" fill="#fafafa" stroke="#222"/>
+<text x="395.0" y="40" text-anchor="middle" font-family="sans-serif" font-size="10">Theta=(-0.8,0.6)</text>
+<polyline points="403.1,236.6 379.3,232.4 357.8,225.5 338.5,216.1 322.6,203.4 311.3,186.0 307.9,161.0 314.7,138.9 326.2,122.7 341.4,109.2 358.9,97.8 377.8,87.9 397.4,79.4 419.2,72.3 445.5,70.0 463.1,81.1 469.2,103.2 468.9,130.4 466.7,156.7 463.5,183.1 458.3,206.0 448.1,224.6 430.3,235.2 403.1,236.6" fill="none" stroke="#2b6f9f" stroke-opacity="0.55" stroke-width="1.6"/>
+<polyline points="285.0,57.5 285.2,57.3 285.8,56.9 286.4,56.5 287.5,55.7 287.6,55.6 288.4,55.1 288.8,54.8 290.1,54.0 290.1,53.9 290.9,53.4 291.4,53.1 292.6,52.3 292.7,52.2 293.5,51.8 294.1,51.4 295.2,50.7 295.5,50.5 296.0,50.2 296.9,49.7 297.7,49.2 298.3,48.8 298.6,48.7 299.8,48.0" fill="none" stroke="#2b6f9f" stroke-opacity="0.85" stroke-width="1.6"/>
+<path d="M 391.4 153.6 L 399.4 161.6 M 399.4 153.6 L 391.4 161.6" stroke="#b11" stroke-width="2"/>
+<rect x="30" y="303" width="220" height="220" fill="#fafafa" stroke="#222"/>
+<text x="140.0" y="295" text-anchor="middle" font-family="sans-serif" font-size="10">Theta=(0.9,-0.3)</text>
+<polyline points="126.8,489.9 105.6,484.7 88.6,473.5 77.4,457.6 69.9,436.5 65.7,412.9 63.9,387.9 66.1,362.5 74.5,343.8 91.2,332.7 117.5,331.0 139.6,335.3 160.8,342.6 178.6,351.6 194.8,363.5 208.1,378.6 217.3,396.4 222.3,419.4 220.1,444.0 210.9,462.9 196.4,476.3 177.8,484.9 154.0,489.8 126.8,489.9" fill="none" stroke="#2b6f9f" stroke-opacity="0.55" stroke-width="1.6"/>
+<polyline points="244.9,303.0 244.9,303.0 245.8,303.7 246.0,303.8 246.6,304.3 247.1,304.7 247.5,305.0 248.2,305.5 248.3,305.6 249.2,306.3 249.2,306.4 250.0,307.0" fill="none" stroke="#2b6f9f" stroke-opacity="0.85" stroke-width="1.6"/>
+<path d="M 135.6 408.6 L 143.6 416.6 M 143.6 408.6 L 135.6 416.6" stroke="#b11" stroke-width="2"/>
+<rect x="285" y="303" width="220" height="220" fill="#fafafa" stroke="#222"/>
+<text x="395.0" y="295" text-anchor="middle" font-family="sans-serif" font-size="10">Theta=(0.9,0.6)</text>
+<polyline points="431.9,501.9 409.9,496.3 389.3,488.2 369.9,478.8 351.3,468.1 334.8,455.9 320.7,440.8 310.6,421.9 307.9,396.4 315.6,375.4 329.2,360.5 347.0,349.5 367.4,341.7 390.3,336.1 417.5,334.3 439.6,340.6 453.6,355.7 461.0,376.9 465.1,401.5 468.1,427.9 470.1,455.0 468.3,480.5 456.9,498.4 431.9,501.9" fill="none" stroke="#2b6f9f" stroke-opacity="0.55" stroke-width="1.6"/>
+<polyline points="300.9,523.0 300.3,522.6 299.4,522.2 298.6,521.7 298.0,521.3 297.7,521.1 296.6,520.5 296.0,520.1 295.2,519.6 294.3,519.1 293.8,518.8 293.5,518.5 292.5,517.9 291.8,517.4 291.2,517.1 290.1,516.3 289.9,516.2 289.2,515.7 288.4,515.2 287.5,514.6 287.4,514.5 286.2,513.7 285.8,513.4 285.0,512.8" fill="none" stroke="#2b6f9f" stroke-opacity="0.85" stroke-width="1.6"/>
+<path d="M 391.4 409.4 L 399.4 417.4 M 399.4 409.4 L 391.4 417.4" stroke="#b11" stroke-width="2"/>
 </svg>
