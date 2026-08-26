@@ -1,0 +1,30 @@
+{
+  "schema": "IDT_TEMPORAL_ACTIVITY_NOW_V0_1",
+  "status": "PASS_STRUCTURAL_REFERENCE_TESTS_AND_LOCAL_LATEX",
+  "tests": {
+    "initial_run": "30 passed, 1 failed in 0.10s",
+    "initial_failure": "exact floating equality in pushforward aggregation test: 0.6000000000000001 vs 0.6",
+    "correction": "test assertion changed to abs_tol=1e-14; implementation unchanged",
+    "final_targeted_suite": "31 passed in 0.07s"
+  },
+  "latex": {
+    "local_two_pass_compile": "PASS",
+    "pages": 46,
+    "overfull_or_undefined_warnings_after_fix": 0,
+    "pdf_published_to_github": false
+  },
+  "structural_results": [
+    "Directed kinetic pair decomposes into positive symmetric activity and antisymmetric current.",
+    "Edge drive and affinity are recoverable from the current/activity ratio for finite positive rates.",
+    "Positive activity atoms aggregate without cancellation.",
+    "Positive atomic support commutes with pushforward image for arbitrary maps defined on the support.",
+    "Memory-orbit drive remains antisymmetric and its closed circulation equals twice coupling times signed polygon area."
+  ],
+  "epistemic_boundary": {
+    "physical_memory_identification": "NOT_PROMOTED",
+    "subjective_elapsed_time": "NEXT_DERIVATION_TARGET",
+    "metric_time": "DEFERRED",
+    "physical_arrow_of_time": "NOT_PROMOTED"
+  },
+  "receipt_sha256": "915aa5e283c9ef5a25dee7e1b804716caa920c9b3770a1507fd92e9ad0319907"
+}
