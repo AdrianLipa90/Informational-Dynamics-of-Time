@@ -83,11 +83,9 @@ and strict residual-descent step admission. The estimate is content-committed be
 
 The provisional uncertainty layer introduces a declared checkpoint covariance
 \[
-\boxed{\Sigma_Y=LL^T}
-\]
-and whitened sensitivity
-\[
-\boxed{J_W=L^{-1}J_R.}
+\boxed{\Sigma_Y=LL^T},
+\qquad
+\boxed{J_W=L^{-1}J_R}.
 \]
 The local Fisher geometry is
 \[
@@ -105,6 +103,28 @@ The committed residual carries weighted diagnostic
 \[
 \boxed{Q_W=r^T\Sigma_Y^{-1}r.}
 \]
-These objects are registered as provisional Retrodiction noise/uncertainty reference contracts.
+
+Partial checkpoint retention is now represented as a separate observability-selection problem. Because each retained memory checkpoint contributes four real phase-state coordinates while \(N\) event kicks contribute \(2N\) latent coordinates, the dimensional lower bound is
+\[
+\boxed{
+|\mathcal C|\ge\left\lceil\frac{N}{2}\right\rceil.
+}
+\]
+The actual selected set must satisfy
+\[
+\boxed{
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+The provisional minimal-information selector is
+\[
+\boxed{
+\mathcal C_*
+=\arg\min_{\mathcal C\subseteq\mathcal C_{\rm avail}}|\mathcal C|
+\quad\text{subject to}\quad
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+An explicit numerical-stability gate may additionally impose \(\kappa(J_R(\mathcal C))\le\kappa_{\max}\). Thus checkpoint cardinality and conditioning remain separate measured properties of the inverse problem.
 
 The Retrodiction layer remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is pending a real full repository reference-suite result on the integrated tree, so the canonical admitted frontier remains at Memory.
