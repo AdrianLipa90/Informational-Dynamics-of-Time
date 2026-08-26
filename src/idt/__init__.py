@@ -81,6 +81,17 @@ from .kahler_memory_frame import (
     project_cp1_event,
 )
 
+from .kahler_memory_frame_cpn import (
+    CPNMemoryFrameError,
+    CPNMemoryFrame,
+    CPNMemoryProjection,
+    fs_distance_cpn,
+    fs_log_map_cpn,
+    initial_cpn_memory_frame,
+    project_cpn_event,
+    parallel_transport_cpn_frame,
+)
+
 from .memory_recall import (
     MemoryRecallError,
     MemoryEventReceipt,
