@@ -229,7 +229,7 @@ R^2=\frac{|\lambda_M|r^2}{1-|\lambda_M|r^2},
 |\lambda_M|r^2<1.
 \]
 
-**EQ-T019D — event-driven memory impulse**
+**EQ-T019D — general event-driven memory impulse family**
 \[
 \Delta v_M=\chi_M\delta m_n,
 \]
@@ -237,6 +237,27 @@ R^2=\frac{|\lambda_M|r^2}{1-|\lambda_M|r^2},
 \Delta E_M=\operatorname{Re}(v_M^*\Delta v_M)+\frac12|\Delta v_M|^2,
 \qquad
 \Delta h_M=\operatorname{Im}(m^*\Delta v_M).
+\]
+
+**EQ-T019E — upstream-driven event action and derived kick**
+\[
+S_n^{(M)}(m)=q_n\operatorname{Re}(\delta m_n^*m),
+\]
+\[
+L_M=\frac12|\dot m|^2+\frac{\mu_M}{|m|}+\sum_n\delta(\tau_{\rm int}-\tau_n)S_n^{(M)}(m),
+\]
+\[
+\boxed{\Delta v_{M,n}=q_n\delta m_n.}
+\]
+
+**EQ-T019F — exact invariant changes under the derived kick**
+\[
+\Delta E_M
+=q_n\operatorname{Re}(v_M^*\delta m_n)
++\frac12q_n^2|\delta m_n|^2,
+\]
+\[
+\Delta h_M=q_n\operatorname{Im}(m^*\delta m_n).
 \]
 
 **EQ-T020 — atomic temporal transition measure**
