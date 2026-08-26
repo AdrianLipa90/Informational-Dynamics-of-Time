@@ -1,9 +1,17 @@
-# Monograph Status
+# Monograph status
 
-Version: `0.5.0`
+Repository policy: LaTeX source is canonical; compiled PDF is a local QA artifact and is not committed.
 
-The monograph opens the temporal derivation with Kähler information geometry and a tensor--scalar temporal configuration before the order/wave/NOW/bifurcation layers. Fractal-chiral temporal topology remains a derived-property gate with separate topology, chirality and scaling observables.
+Current included downstream reference chapters:
 
-Figure 4.1 is generated prospectively from code as four common-scale 2D slices of one higher-dimensional tensor--scalar surrogate.
+- `08A_memory_admission.tex` — integrated Memory reference gate;
+- `08B_retrodiction_contract.tex` — withheld-lineage inverse problem;
+- `08C_retrodiction_uncertainty.tex` — covariance and local Fisher geometry;
+- `08D_partial_checkpoint_selection.tex` — partial-retention observability and conditioning;
+- `08E_weighted_retrodiction_nulls.tex` — covariance-weighted estimator and permutation-null ensemble.
 
-Repository policy: LaTeX source is tracked; compiled PDF and LaTeX auxiliary files are not tracked.
+Retrodiction chapters remain `PROVISIONAL_DOWNSTREAM` while the canonical admitted dependency frontier remains at Memory. Their presence in the monograph source records the tested reference branch; it does not promote physical or canonical claim status.
+
+Latest weighted-null targeted test: `5 passed`; combined checkpoint-selection plus weighted-null targeted run: `10 passed` in the isolated local reconstruction of the exact implementation dependencies.
+
+GitHub Actions full-suite status remains `CI_RESULT_NOT_OBTAINED` because hosted jobs terminate before executing steps.
