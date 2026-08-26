@@ -38,6 +38,6 @@ The provisional downstream Retrodiction implementation now contains a complete r
 \]
 It fails closed on product-only factor ambiguity, rank deficiency, invalid covariance, missing descent and incomplete permutation ensembles.
 
-The newest weighted-null layer passes its exact targeted reference tests (`5 passed`), and the combined checkpoint-selection plus weighted-null layer passes `10` tests in the isolated local reconstruction. Its append-only reference run is `experiments/E003_retrodiction/runs/E003_REFERENCE_0002.json`.
+The newest weighted-null layer passes its exact targeted reference tests (`5 passed`), and the final pre-merge combined checkpoint-selection plus weighted-null run passes `10 tests in 0.25s` in the isolated local reconstruction of the exact implementation dependencies.
 
-This Retrodiction work remains `PROVISIONAL_DOWNSTREAM_BRANCH`. Memory admission is still `PENDING_FULL_REFERENCE_SUITE`: GitHub Actions attempts terminate before executing test steps, so their result class is `CI_RESULT_NOT_OBTAINED`, not a repository-test failure. Merging tested provisional implementation into `main` does not by itself advance the canonical admitted frontier.
+GitHub Actions full-suite jobs still terminate before executing steps; their result class remains `CI_RESULT_NOT_OBTAINED`. The tested provisional branch is therefore ready to merge as implementation/evidence staging while the canonical admitted frontier remains at Memory.
