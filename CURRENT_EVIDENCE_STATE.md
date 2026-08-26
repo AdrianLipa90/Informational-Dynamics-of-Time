@@ -51,7 +51,19 @@ Provisional gated-estimation evidence is recorded in `validation/RETRODICTION_ES
 - 50/50 seeded three-kick exact-reference cases were full rank and converged, with maximum kick-coordinate error about `1.65e-14`;
 - estimate-commitment mismatch is a fail-closed control.
 
-The registered evidence class for these residual comparisons is `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`. Statistical-effect evaluation, uncertainty propagation, leakage/channel audit and physical-claim evaluation remain later gates.
+Provisional noise/uncertainty evidence is recorded in `validation/RETRODICTION_UNCERTAINTY_V0_1.json`:
+
+- isotropic checkpoint reference standard deviation: `1e-5`;
+- weighted `12 x 6` sensitivity rank: `6`;
+- weighted condition number: about `4.076`;
+- six local Fisher kick-coordinate standard errors lie between about `9.98e-6` and `1.42e-5`;
+- doubling the checkpoint standard deviation multiplies latent covariance by four and latent standard errors by two: PASS;
+- Fisher information times the inferred local covariance returns the six-dimensional identity within numerical tolerance: PASS;
+- invalid positive-definiteness and explicit condition-threshold controls fail/classify as declared;
+- a seeded 500-case nonlinear reference audit at checkpoint standard deviation `1e-5` produced zero fit failures;
+- empirical coordinate standard deviations were within about `4.4%` of the local Fisher predictions in that recorded reference regime.
+
+The registered evidence classes are `COMPUTATIONAL_REFERENCE_DIAGNOSTIC` for the estimator/null layer and `NOISE_MODEL_REFERENCE_DIAGNOSTIC` for the uncertainty layer. Statistical-effect evaluation, uncertainty calibration against experiment-specific noise, leakage/channel audit and physical-claim evaluation remain later gates.
 
 Validation receipts include:
 
@@ -64,10 +76,11 @@ Validation receipts include:
 - `validation/MEMORY_ADMISSION_V0_1.json`;
 - `validation/RETRODICTION_SINGLE_MISSING_RECEIPT_V0_1.json`;
 - `validation/RETRODICTION_OBSERVABILITY_V0_1.json`;
-- `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json`.
+- `validation/RETRODICTION_ESTIMATION_NULLS_V0_1.json`;
+- `validation/RETRODICTION_UNCERTAINTY_V0_1.json`.
 
 GitHub Actions infrastructure status for the integrated Memory admission head: the initial attempt and the explicitly requested failed-job rerun both ended with workflow/job conclusion `failure`, zero executed steps and unavailable job logs. The observable result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`; no repository-test outcome was produced by those runs.
 
 Full repository suite status on the integrated Memory tree: `NOT_OBTAINED`.
 
-The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation and reference-null comparison. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
+The current evidence supports an integrated Memory reference-gate candidate and provisional downstream Retrodiction reference candidates through observability, estimation, null comparison and local uncertainty geometry. Final Memory admission remains pending a real full repository reference-suite result; Retrodiction admission remains gated by that parent result.
