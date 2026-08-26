@@ -1,0 +1,62 @@
+{
+  "schema": "IDT_E003_RETRODICTION_PREREGISTRATION_V0_1",
+  "status": "PREREGISTERED_PROVISIONAL_DOWNSTREAM",
+  "canon_allowed": false,
+  "dependency_parent": "MEMORY_ADMISSION_PENDING_FULL_REFERENCE_SUITE",
+  "objective": "reconstruct deliberately withheld lineage variables from permitted memory checkpoints without hidden-truth leakage",
+  "cases": {
+    "E003-A": {
+      "target": "one missing receipt factor",
+      "retained": ["X_before", "X_after_segment", "mu_M", "delta_tau", "exactly one of q or delta_m"],
+      "withheld": "complementary factor",
+      "expected": "conditional identification subject to residual controls"
+    },
+    "E003-B": {
+      "target": "both q and delta_m withheld",
+      "expected": "PRODUCT_ONLY_AMBIGUITY"
+    },
+    "E003-C": {
+      "target": "multiple latent 2D event kicks",
+      "gate": "rank(J_R) = 2N before optimization",
+      "mandatory_negative_control": "N=3 with one final 4D checkpoint -> UNDERDETERMINED_DIMENSION"
+    }
+  },
+  "information_firewall": {
+    "estimator_allowed": [
+      "declared observed checkpoints",
+      "declared delta_tau values",
+      "declared mu_M",
+      "public forward model",
+      "one independently known receipt factor in E003-A",
+      "predeclared numerical tolerances"
+    ],
+    "estimator_forbidden": [
+      "withheld q",
+      "withheld delta_m",
+      "sealed truth kicks",
+      "undeclared intermediate checkpoints",
+      "generator random seed",
+      "post-hoc parameters derived from hidden truth"
+    ],
+    "truth_access": "scorer only after estimate commit"
+  },
+  "nulls": [
+    "NULL_ZERO_KICK",
+    "NULL_PRODUCT_FACTOR",
+    "NULL_CHECKPOINT_SHUFFLE"
+  ],
+  "thresholds": {
+    "checkpoint_consistency": 1e-10,
+    "factorization_residual": 1e-10,
+    "relative_rank_tolerance": 1e-8,
+    "finite_difference_step": 1e-7
+  },
+  "required_result_stack": [
+    "RAW_OBSERVATION",
+    "STATISTICAL_EFFECT",
+    "CLASSICAL_CHANNEL_AUDIT",
+    "PHYSICAL_CLAIM_STATUS"
+  ],
+  "physical_claim_status": "NOT_EVALUATED",
+  "mutation_policy": "APPEND_ONLY_RUNS"
+}
