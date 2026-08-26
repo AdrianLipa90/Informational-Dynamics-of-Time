@@ -1,0 +1,29 @@
+{
+  "schema": "IDT_EVENT_MEMORY_KICK_V0_1",
+  "status": "PASS_TARGETED_REFERENCE_TESTS",
+  "targeted_suite": "7 passed in 0.08s",
+  "execution_scope": "isolated targeted reference slice reconstructed from the branch implementation and its direct memory-dynamics dependencies",
+  "controls": [
+    "event-action gradient equals derived memory kick",
+    "zero event weight gives zero kick",
+    "zero projected imprint gives zero kick",
+    "kick scales linearly with upstream event weight q_n",
+    "global phase invariance propagates from projective imprint to the kick",
+    "exact energy and angular-momentum jump identities",
+    "negative event weight fails closed"
+  ],
+  "closure": {
+    "event_action": "S_n^(M)=q_n Re(delta_m_n^* m)",
+    "jump_law": "Delta v_M,n = q_n delta_m_n",
+    "upstream_event_amplitude": "q_n",
+    "upstream_memory_direction": "delta_m_n"
+  },
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "github_actions": "NO_WORKFLOW_RUN_OBSERVED_FOR_BRANCH_HEAD_AT_RECEIPT_TIME",
+  "epistemic_boundary": {
+    "claim_status": "MEMORY_FRONTIER_CANDIDATE_WITH_PROVED_STRUCTURAL_JUMP_IDENTITY",
+    "mu_memory_origin": "OPEN_DERIVATION_TARGET",
+    "memory_observable_selection": "OPEN_DERIVATION_TARGET",
+    "physical_unit_calibration": "DEFERRED_TO_METRIC_TIME_CALIBRATION"
+  }
+}
