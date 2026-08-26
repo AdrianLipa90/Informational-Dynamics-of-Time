@@ -202,3 +202,25 @@ With an explicitly declared stability threshold, admission additionally requires
 \kappa\!\left(J_R(\mathcal C)\right)\le\kappa_{\max}.
 }
 \]
+
+**EQ-T040 — covariance-preserving checkpoint-permutation null ensemble**
+For checkpoint-block permutation matrix \(P_\pi\),
+\[
+\boxed{
+Y_\pi=P_\pi Y_{\rm obs},
+\qquad
+\Sigma_\pi=P_\pi\Sigma_YP_\pi^T.
+}
+\]
+Every null is fitted with the same weighted model and latent dimension. The finite reference diagnostics are
+\[
+\boxed{
+\Delta Q_{\rm null}=\min_{\pi\ne id}Q_\pi-Q_{\rm obs},
+}
+\]
+and
+\[
+\boxed{
+f_{\rm null}=\frac{\#\{\pi:Q_\pi\le Q_{\rm obs}\}}{N_{\rm null}}}.
+\]
+`f_null` is registered as a finite computational reference-ensemble diagnostic, not as a p-value.
