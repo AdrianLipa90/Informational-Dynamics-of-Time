@@ -1,0 +1,288 @@
+\documentclass[11pt,a4paper]{book}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\newcommand{\kI}{\kappa}
+\newcommand{\Now}{\mathsf{N}}
+\newcommand{\Past}{\Psi_{-}}
+\newcommand{\Future}{\Psi_{+}}
+\newcommand{\BN}{\mathcal B_{\Now}}
+
+\title{Informational Dynamics of Time\\[0.6em]
+\large From Shannon Information and Berry Phase to Temporal Bifurcation and Spacetime Closure}
+\author{Adrian Lipa}
+\date{2026}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{Research status}
+This monograph develops a temporal branch of the Fundamental Theory of Informational Relations (TIR). Definitions, algebraic consequences, computational demonstrations, standard-physics closure identities, experimental hypotheses, and measured physical results are kept as separate evidence classes throughout the work.
+
+\chapter*{Abstract}
+The project asks whether temporal dynamics can be developed from an informational and phase-geometric starting point before time is recombined with spatial geometry into spacetime. The entrypoint is the TIR decomposition of a phase-relational Hamiltonian into phase and relational/geometric sectors. The temporal branch is then developed using the informational constant
+\begin{equation}
+\kI=\frac{\ln 2}{24\pi},
+\end{equation}
+a temporal transport operator, a localized present event $\Now$, past-directed reconstructive and future-directed admissible wave domains $\Past$ and $\Future$, and a causal-wave bifurcation operator $\BN$. Memory is formulated as backward reconstruction over realized lineage, while retrocausal hypotheses are separated from ordinary retrodiction by explicit experimental discrimination criteria. Spatial dynamics are reintroduced only at the closure stage, where the temporal branch is compared with the standard relativistic phase relation
+\begin{equation}
+\phi=\frac{1}{\hbar}(\mathbf p\cdot\mathbf x-Et).
+\end{equation}
+The purpose of the construction is to make each step algebraically explicit and experimentally auditable.
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{The Temporal Problem}
+Time enters most physical theories as a coordinate or evolution parameter. This monograph instead begins by isolating a temporal branch and asking which structures can be derived before the spatial coordinate is recombined with time.
+
+The development order is
+\begin{equation}
+\mathrm{TIR}
+\rightarrow
+\mathrm{temporal\ dynamics}
+\rightarrow
+\mathrm{temporal\ phase\ transport}
+\rightarrow
+\mathrm{NOW/bifurcation}
+\rightarrow
+\mathrm{memory/retrodiction}
+\rightarrow
+\mathrm{experimental\ discrimination}
+\rightarrow
+\mathrm{spacetime\ closure}.
+\end{equation}
+
+The spatial branch is retained as an external closure object. The resulting temporal equations are therefore available for an independent comparison when space and time are later joined into $(x,t)$.
+
+\chapter{TIR Entrypoint}
+\section{Informational constant}
+The canonical informational constant is
+\begin{equation}
+\kI=\frac{\ln 2}{24\pi}.
+\end{equation}
+It combines the binary Shannon quantity $\ln 2$ with the phase-geometric normalization inherited from TIR.
+
+\section{Phase-relational Hamiltonian}
+The TIR entrypoint is
+\begin{equation}
+\hat H_s(\tau,k)
+=
+\hat H_{\mathrm{phase},s}(\tau,k)
++
+\hat H_{\mathrm{rel},s}(\tau,k),
+\end{equation}
+with
+\begin{equation}
+\hat H_{\mathrm{phase},s}(\tau,k)=
+\frac{\hbar}{\Delta\tau_k}\rho_s(k)
+\left[
+\kI\hat W_s+\delta\hat{\mathcal I}_0(\tau)
+\right]
+\end{equation}
+and
+\begin{equation}
+\hat H_{\mathrm{rel},s}
+=
+\frac12 g_{\mathrm{FS}}^{ab}\hat\Pi_a\hat\Pi_b+V_s.
+\end{equation}
+
+For this monograph the first component provides the temporal entrypoint. The relational/geometric sector is retained for later closure and comparison.
+
+\chapter{Temporal State and Transport}
+Let
+\begin{equation}
+\Sigma_T(\tau)
+\end{equation}
+denote a temporal state. A minimal phase transport is represented as
+\begin{equation}
+U_T(\Delta\tau)
+=
+\exp\left(-\frac{i}{\hbar}\hat H_T\Delta\tau\right).
+\end{equation}
+For reversible/unitary sectors,
+\begin{equation}
+U_T^{-1}(\Delta\tau)=U_T^\dagger(\Delta\tau).
+\end{equation}
+This identity provides an algebraic basis for distinguishing forward temporal transport from backward state reconstruction.
+
+For an energy eigencomponent the conventional temporal phase evolution is
+\begin{equation}
+\Delta\phi_t=-\frac{E\Delta t}{\hbar}.
+\end{equation}
+This relation is used later as a standard-physics closure condition.
+
+\chapter{Temporal Wave Domains and NOW}
+\section{Past and future domains}
+Introduce the past-directed reconstructive domain
+\begin{equation}
+\Past(\tau)
+\end{equation}
+and the future-directed admissible domain
+\begin{equation}
+\Future(\tau).
+\end{equation}
+
+The localized present event is denoted
+\begin{equation}
+\Now:=\mathrm{NOW}.
+\end{equation}
+
+The minimal temporal relation is
+\begin{equation}
+\Past\longrightarrow\Now\longrightarrow\Future.
+\end{equation}
+
+\section{Wave/corpuscular temporal hypothesis}
+The initial research hypothesis assigns a localized/corpuscular role to NOW and wave-domain representations to past and future. The representation is a testable modeling choice and receives the evidence class \texttt{EXPERIMENTAL\_HYPOTHESIS} until connected to physical measurement.
+
+\chapter{NOW as Causal-Wave Bifurcation}
+Define
+\begin{equation}
+\BN:
+\Psi_{\mathrm{in}}
+\mapsto
+\left\{
+\Psi_{\mathrm{out}}^{(1)},
+\Psi_{\mathrm{out}}^{(2)},
+\ldots
+\right\}.
+\end{equation}
+
+A realized history is represented as an admitted lineage
+\begin{equation}
+R_0\prec R_1\prec\cdots\prec R_N.
+\end{equation}
+Alternative future branches remain admissible alternatives until a realization/admission event produces a descendant of the realized lineage.
+
+The formal distinction between an admissible branch and an admitted descendant is essential for experimental bookkeeping and for computational models of temporal bifurcation.
+
+\chapter{Memory as Temporal Re-entry}
+\section{Recall}
+Recall is defined as backward traversal or reconstruction over realized lineage:
+\begin{equation}
+\operatorname{RECALL}(R_k)
+=
+\operatorname{TRACE}^{-}(R_N\rightarrow R_k).
+\end{equation}
+
+This allows a computational system to restore not only a stored value but the relational trajectory that led to the current state.
+
+\section{Retrodiction}
+Retrodiction is written
+\begin{equation}
+\operatorname{RETRODICT}(\Sigma_N)
+\mapsto
+\left\{
+\Sigma_{N-1}^{(i)}
+\right\}.
+\end{equation}
+It denotes inference or reconstruction of a prior state from later evidence.
+
+\chapter{Retrocausal Hypothesis}
+The framework may suggest that a later boundary condition could influence earlier observable statistics, yet does not state that implication as an established result.
+
+A retrocausal discrimination experiment must test a relation of the form
+\begin{equation}
+P(X_{\mathrm{past}}\mid Y_{\mathrm{future}})
+\stackrel{?}{\neq}
+P(X_{\mathrm{past}}),
+\end{equation}
+where the future condition is selected only after the earlier observable is committed.
+
+The protocol must preserve randomization provenance, timestamps, channel audits, sham/null trials, and a frozen analysis plan. Ordinary retrodiction, classical signaling, shared-clock effects, scheduler coupling, post-selection, and analysis leakage are separate hypotheses to be tested against the same data.
+
+\section{CHSH discrimination}
+If the physical architecture supplies two measurement parties with independently selectable settings, a CHSH test may be used:
+\begin{equation}
+S=E(a,b)+E(a,b')+E(a',b)-E(a',b').
+\end{equation}
+The setting-selection rule, coincidence rule, exclusions, timing model, and estimator must be specified before unblinding.
+
+\chapter{Spatial Offset and External Closure}
+For two spatial trajectories define
+\begin{equation}
+\Delta\mathbf x(t)=\mathbf x_1(t)-\mathbf x_2(t)
+\end{equation}
+and the offset-rate object
+\begin{equation}
+D_x(t)=\frac{d}{dt}\Delta\mathbf x(t).
+\end{equation}
+
+The associated spatial phase offset is
+\begin{equation}
+\Delta\phi_x=
+\frac{\mathbf p\cdot\Delta\mathbf x}{\hbar}.
+\end{equation}
+
+This spatial object is kept external to the temporal derivation until the closure chapter.
+
+\chapter{Einstein Closure}
+The closure operation is written schematically as
+\begin{equation}
+x\oplus t\longrightarrow(x,t).
+\end{equation}
+
+The combined phase-offset target is
+\begin{equation}
+\boxed{
+\Delta\phi=
+\frac{1}{\hbar}
+\left(
+\mathbf p\cdot\Delta\mathbf x-E\Delta t
+\right)
+}.
+\end{equation}
+
+Equivalently, in covariant notation,
+\begin{equation}
+\phi=\frac{1}{\hbar}p_\mu x^\mu
+\end{equation}
+subject to the chosen metric/sign convention.
+
+The scientific task is to determine which parts of this structure follow from the independently developed temporal branch and which enter only at the relativistic closure stage.
+
+\chapter{Experimental Program}
+The initial program contains seven stages:
+\begin{enumerate}[label=E\arabic*.]
+\item algebraic temporal closure;
+\item NOW bifurcation simulation;
+\item memory-as-temporal-re-entry benchmark;
+\item spatial/temporal phase-offset closure;
+\item blinded retrodictive controls;
+\item future-condition discrimination;
+\item physical two-party/CHSH discrimination when the hardware architecture supports independently selectable settings.
+\end{enumerate}
+
+Every experimental run should preserve a machine-readable receipt containing code hash, input hashes, randomization provenance, timestamps, raw-data hash, null model, statistic, and verdict class.
+
+\chapter{Evidence Ledger}
+The canonical evidence classes are
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Class & Meaning \\
+\midrule
+\texttt{DEFINITION} & object introduced by the formalism \\
+\texttt{ALGEBRAIC\_CONSEQUENCE} & follows from declared equations/assumptions \\
+\texttt{COMPUTATIONAL\_DEMONSTRATION} & reproduced in code/simulation \\
+\texttt{STANDARD\_PHYSICS\_CLOSURE} & comparison with established identity \\
+\texttt{EXPERIMENTAL\_HYPOTHESIS} & testable physical proposal \\
+\texttt{MEASURED\_PHYSICAL\_RESULT} & supported by preserved measurement data \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\backmatter
+\chapter*{Repository linkage}
+The canonical TIR source entrypoint is documented in \texttt{docs/TIR\_ENTRYPOINT.md}. The evolving definitions and evidence status are maintained in \texttt{docs/FORMALISM.md}, \texttt{docs/CLAIM\_HIERARCHY.md}, \texttt{docs/FALSIFIABILITY.md}, and \texttt{docs/EXPERIMENTS.md}.
+
+\end{document}
