@@ -25,12 +25,6 @@ The provisional Retrodiction layer contains:
 - declared checkpoint covariance, whitened sensitivity and local Fisher uncertainty geometry;
 - covariance-weighted estimation and same-capacity checkpoint-permutation null ensembles.
 
+The final pre-merge targeted rerun for checkpoint selection plus weighted permutation nulls is `10 passed in 0.25s` in an isolated local reconstruction of the exact implementation dependencies. This is targeted reference evidence; the hosted full suite remains `CI_RESULT_NOT_OBTAINED` because workflow jobs terminate before executing test steps.
+
 Reference figures are generated from code. Raster outputs and compiled PDFs are local QA artifacts and are not committed; repository monograph source is LaTeX.
-
-Reproduce figure sources with:
-
-```text
-PYTHONPATH=. python3 scripts/build_figures.py
-```
-
-Reference tests live under `tests/reference/`. GitHub Actions is configured to run the reference suite, but current hosted runs have repeatedly terminated before executing test steps; such runs are recorded as `CI_RESULT_NOT_OBTAINED`, not as repository-test failures.
