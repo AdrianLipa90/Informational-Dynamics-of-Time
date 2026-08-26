@@ -1,0 +1,29 @@
+{
+  "schema": "IDT_MEMORY_PERSISTENCE_RECALL_V0_1",
+  "status": "TARGETED_REFERENCE_PASS",
+  "canon_allowed": false,
+  "epistemic": "CHYBA",
+  "branch": "feat/memory-persistence-recall-v0.1",
+  "reference_class": "event kick + velocity-Verlet Kepler memory lineage",
+  "targeted_tests": {
+    "passed": 8,
+    "failed": 0,
+    "local_elapsed_seconds": 0.13,
+    "execution_basis": "isolated local targeted harness reproducing the branch memory_recall logic and the exact referenced Kepler step / derived event-kick definitions"
+  },
+  "controls": [
+    "velocity-Verlet inverse restores kicked state and tau/area bookkeeping",
+    "single memory lineage cell reconstructs its input",
+    "three-event persisted ledger reconstructs the initial state",
+    "every forward checkpoint is recovered in reverse chronological order",
+    "incorrect ledger ordering is a negative control and does not reconstruct the initial state",
+    "event invariant signature matches direct before/after energy and angular momentum",
+    "empty ledger is the identity reconstruction",
+    "zero delta_tau, negative event weight and non-finite imprint fail closed"
+  ],
+  "claims": ["T019M", "T019N", "T034"],
+  "full_repository_suite": "NOT_RERUN_IN_THIS_EXECUTION",
+  "github_actions_at_receipt": "NONE_OBSERVED",
+  "physical_claim_status": "NOT_EVALUATED",
+  "next_gate": "define persistence metadata/hash contract, then open retrodiction as inference distinct from recorded-lineage recall"
+}
