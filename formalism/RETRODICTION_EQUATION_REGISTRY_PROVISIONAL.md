@@ -127,4 +127,48 @@ R_0=1-\frac{r_{\rm est}}{r_0},
 R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
 }
 \]
-These are reference-model computational diagnostics rather than physical significance statistics.
+Registered evidence class: `COMPUTATIONAL_REFERENCE_DIAGNOSTIC`; physical significance evaluation is a later gate.
+
+**EQ-T035 — checkpoint-noise covariance and whitened sensitivity**
+\[
+\boxed{
+\Sigma_Y=LL^T,
+\qquad
+J_W=L^{-1}J_R.
+}
+\]
+Weighted local identifiability requires
+\[
+\boxed{\operatorname{rank}J_W=\dim z}.
+\]
+
+**EQ-T036 — local Fisher information and latent covariance**
+\[
+\boxed{
+F_z
+=J_R^T\Sigma_Y^{-1}J_R
+=J_W^TJ_W,
+}
+\]
+and for full column rank,
+\[
+\boxed{
+C_z\approx F_z^{-1},
+\qquad
+\sigma_{z_i}=\sqrt{(C_z)_{ii}}.
+}
+\]
+
+**EQ-T037 — weighted residual diagnostic**
+\[
+\boxed{
+Q_W=r^T\Sigma_Y^{-1}r.
+}
+\]
+For observation dimension \(m\) and latent dimension \(p\), when \(m>p\),
+\[
+\boxed{
+\bar Q_W=\frac{Q_W}{m-p}.
+}
+\]
+Registered evidence class: `NOISE_MODEL_REFERENCE_DIAGNOSTIC`; experiment-specific statistical calibration is a later gate.
