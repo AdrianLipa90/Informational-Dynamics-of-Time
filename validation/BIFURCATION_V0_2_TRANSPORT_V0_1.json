@@ -1,0 +1,37 @@
+{
+  "schema": "IDT_BIFURCATION_V0_2_TRANSPORT_V0_1",
+  "status": "PASS_STRUCTURAL_REFERENCE_CLASSES",
+  "tests": {
+    "full_reference_suite": "83 passed in 0.12s",
+    "bifurcation_v02": [
+      "PSD dissipator contraction",
+      "orientation-even singular spectrum",
+      "commuting reversal adjoint",
+      "zero dissipator unitary reduction",
+      "commuting additive composition",
+      "noncommuting order visible",
+      "invalid inputs fail closed"
+    ],
+    "transport_v01": [
+      "empty event identity",
+      "chronological ordered product",
+      "noncommuting exchange visible",
+      "interrupted explicit product",
+      "malformed segment count fail closed"
+    ]
+  },
+  "frontier": {
+    "bifurcation": "FORMAL_CONTRACT_PASS",
+    "temporal_transport": "ACTIVE_DERIVATION_TARGET",
+    "memory": "PROVISIONAL_DOWNSTREAM_BRANCH",
+    "retrodiction": "GATED",
+    "einstein_closure": "DEFERRED_FINAL_GATE"
+  },
+  "epistemic_boundary": {
+    "unique_physical_generators": "OPEN",
+    "physical_memory_identification": "NOT_PROMOTED",
+    "subjective_elapsed_time": "DOWNSTREAM_PROVISIONAL",
+    "metric_time": "DEFERRED"
+  },
+  "payload_sha256": "95728c88a646413ac945b1ccfb8ac76ad73050859b978472b96faaea0c0c3672"
+}

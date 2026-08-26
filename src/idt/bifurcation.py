@@ -23,22 +23,16 @@ class BifurcationParameter:
     phase_increment_rad: float
 
 
-def bifurcation_parameter_from_activity_current(
-    activity: float,
-    current: float,
-    *,
-    kappa_value: float | None = None,
-) -> BifurcationParameter:
-    """Recover the directed phase parameter from positive activity/current data.
+@dataclass(frozen=True)
+class PolarBifurcation:
+    event_strength: float
+    phase_increment_rad: float
+    contraction: np.ndarray
+    unitary: np.ndarray
+    operator: np.ndarray
 
-    For finite positive forward/reverse rates:
-        r = j/a in (-1, 1)
-        A = 2 atanh(r)
-        sigma = A / ln(2)
-        beta = kappa * sigma
 
-    With the canonical kappa = ln(2)/(24*pi), beta = atanh(r)/(12*pi).
-    """
+def bifurcation_parameter_from_activity_current(activity: float, current: float, *, kappa_value: float | None = None) -> BifurcationParameter:
     a = float(activity)
     j = float(current)
     kap = kappa() if kappa_value is None else float(kappa_value)
@@ -55,25 +49,31 @@ def bifurcation_parameter_from_activity_current(
     return BifurcationParameter(a, j, r, drive, sigma, beta)
 
 
+def _square_finite_matrix(matrix: Sequence[Sequence[complex]], name: str) -> np.ndarray:
+    m = np.asarray(matrix, dtype=complex)
+    if m.ndim != 2 or m.shape[0] != m.shape[1] or m.shape[0] == 0:
+        raise BifurcationError(f"{name} must be a non-empty square matrix")
+    if not np.all(np.isfinite(m.real)) or not np.all(np.isfinite(m.imag)):
+        raise BifurcationError(f"{name} must be finite")
+    return m
+
+
+def _hermitian_matrix(matrix: Sequence[Sequence[complex]], name: str, *, tol: float = 1e-12) -> np.ndarray:
+    m = _square_finite_matrix(matrix, name)
+    if not np.allclose(m, m.conj().T, atol=tol, rtol=0.0):
+        raise BifurcationError(f"{name} must be Hermitian")
+    return m
+
+
 def _hermitian_involution(generator: Sequence[Sequence[complex]], *, tol: float = 1e-12) -> np.ndarray:
-    g = np.asarray(generator, dtype=complex)
-    if g.ndim != 2 or g.shape[0] != g.shape[1] or g.shape[0] == 0:
-        raise BifurcationError("generator must be a non-empty square matrix")
-    if not np.all(np.isfinite(g.real)) or not np.all(np.isfinite(g.imag)):
-        raise BifurcationError("generator must be finite")
-    if not np.allclose(g, g.conj().T, atol=tol, rtol=0.0):
-        raise BifurcationError("reference generator must be Hermitian")
+    g = _hermitian_matrix(generator, "reference generator", tol=tol)
     ident = np.eye(g.shape[0], dtype=complex)
     if not np.allclose(g @ g, ident, atol=tol, rtol=0.0):
         raise BifurcationError("reference generator must satisfy G^2 = I")
     return g
 
 
-def unitary_bifurcation_operator(
-    phase_increment_rad: float,
-    generator: Sequence[Sequence[complex]],
-) -> np.ndarray:
-    """Reference unitary subclass B(beta)=exp(-i beta G), for Hermitian G^2=I."""
+def unitary_bifurcation_operator(phase_increment_rad: float, generator: Sequence[Sequence[complex]]) -> np.ndarray:
     beta = float(phase_increment_rad)
     if not math.isfinite(beta):
         raise BifurcationError("phase increment must be finite")
@@ -82,16 +82,45 @@ def unitary_bifurcation_operator(
     return math.cos(beta) * ident - 1j * math.sin(beta) * g
 
 
-def bifurcation_from_activity_current(
-    activity: float,
-    current: float,
-    generator: Sequence[Sequence[complex]],
-    *,
-    kappa_value: float | None = None,
-) -> tuple[BifurcationParameter, np.ndarray]:
-    parameter = bifurcation_parameter_from_activity_current(
-        activity, current, kappa_value=kappa_value
-    )
+def unitary_from_hermitian(phase_increment_rad: float, generator: Sequence[Sequence[complex]]) -> np.ndarray:
+    beta = float(phase_increment_rad)
+    if not math.isfinite(beta):
+        raise BifurcationError("phase increment must be finite")
+    g = _hermitian_matrix(generator, "unitary generator")
+    evals, evecs = np.linalg.eigh(g)
+    phases = np.exp(-1j * beta * evals)
+    return (evecs * phases) @ evecs.conj().T
+
+
+def contractive_event_operator(event_strength: float, dissipator: Sequence[Sequence[complex]], *, tol: float = 1e-12) -> np.ndarray:
+    q = float(event_strength)
+    if not (math.isfinite(q) and q >= 0.0):
+        raise BifurcationError("event strength must be finite and non-negative")
+    d = _hermitian_matrix(dissipator, "dissipator", tol=tol)
+    evals, evecs = np.linalg.eigh(d)
+    if float(evals.min()) < -tol:
+        raise BifurcationError("dissipator must be positive semidefinite")
+    evals = np.maximum(evals, 0.0)
+    weights = np.exp(-q * evals)
+    return (evecs * weights) @ evecs.conj().T
+
+
+def polar_bifurcation_operator(event_strength: float, phase_increment_rad: float, dissipator: Sequence[Sequence[complex]], generator: Sequence[Sequence[complex]]) -> PolarBifurcation:
+    c = contractive_event_operator(event_strength, dissipator)
+    u = unitary_from_hermitian(phase_increment_rad, generator)
+    if c.shape != u.shape:
+        raise BifurcationError("dissipator and unitary generator dimensions must match")
+    return PolarBifurcation(float(event_strength), float(phase_increment_rad), c, u, c @ u)
+
+
+def polar_bifurcation_from_event(event_strength: float, activity: float, current: float, dissipator: Sequence[Sequence[complex]], generator: Sequence[Sequence[complex]], *, kappa_value: float | None = None) -> tuple[BifurcationParameter, PolarBifurcation]:
+    parameter = bifurcation_parameter_from_activity_current(activity, current, kappa_value=kappa_value)
+    bif = polar_bifurcation_operator(event_strength, parameter.phase_increment_rad, dissipator, generator)
+    return parameter, bif
+
+
+def bifurcation_from_activity_current(activity: float, current: float, generator: Sequence[Sequence[complex]], *, kappa_value: float | None = None) -> tuple[BifurcationParameter, np.ndarray]:
+    parameter = bifurcation_parameter_from_activity_current(activity, current, kappa_value=kappa_value)
     return parameter, unitary_bifurcation_operator(parameter.phase_increment_rad, generator)
 
 
