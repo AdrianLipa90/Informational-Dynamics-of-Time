@@ -1,0 +1,36 @@
+SYSTEM TEMPORAL_PHASE_CONNECTION_V01
+VERSION 0.1
+AUTHORITY CANDIDATE_ONLY
+
+CONSTANT KAPPA = ln(2)/(24*pi)
+
+INPUT
+  STATES psi[0..N-1] : normalized complex relational states
+  SHANNON H[0..N-1] : finite scalar state entropies in bits
+  AFFINITY sigma[0..N-1] : finite directed non-exact edge increments in bits
+
+EDGE e=(n -> n+1 mod N)
+  G_e := <psi_n|psi_{n+1}> / |<psi_n|psi_{n+1}>|
+  deltaH_e := H[n+1]-H[n]
+  L_e := G_e * exp(i*KAPPA*(deltaH_e+sigma_e))
+
+CYCLE
+  PHI_T := Arg(product_e L_e)
+  GAMMA_B := Arg(product_e G_e)
+  EXACT_SHANNON_SUM := sum_e deltaH_e
+  AFFINITY_SUM := sum_e sigma_e
+
+ASSERT
+  EXACT_SHANNON_SUM == 0 within declared tolerance
+  PHI_T == wrap(GAMMA_B + KAPPA*AFFINITY_SUM) within declared tolerance
+  PHI_T invariant under psi_n -> exp(i*chi_n) psi_n
+
+OUTPUT
+  temporal_connection_links L_e
+  temporal_cycle_holonomy PHI_T
+  exact_patch_scalar_generator admissible where connection class is exact
+
+FAIL_CLOSED
+  zero Pancharatnam overlap
+  nonfinite state or edge data
+  empty cycle

@@ -22,9 +22,18 @@
     "external_write": false,
     "relation_structurally_isomorphic": true,
     "test_counts": ["2/2", "2/2", "4/4"],
-    "verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"]
+    "verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ]
   },
-  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "hosted_ci": {
+    "run_id": 33073661162,
+    "job_id": 98522133200,
+    "steps_executed": 0,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS"
+  },
   "integration_local_tests": {
     "failed": 0,
     "files": ["relational tensor-scalar forcing", "dependency graph"],
@@ -32,7 +41,7 @@
   },
   "parent_commit": "0979388fdf972965ee0087b60a6ffa27d13ff4f5",
   "schema": "IDT_RELATIONAL_TENSOR_SCALAR_FORCING_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "stress_probe": {
     "cases": 1000,
     "contextual_elapsed_distinguished": 1000,

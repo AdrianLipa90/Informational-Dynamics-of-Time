@@ -1,0 +1,56 @@
+{
+  "schema": "IDT_TEMPORAL_PHASE_CONNECTION_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/temporal-phase-connection-v0.1",
+  "parent_commit": "d54a0f625cc6c357a83a2710d87d58f5aa0ba1b5",
+  "derivation": {
+    "exact_scalar_cycle": "ZERO_BY_TELESCOPING",
+    "global_connection_requirement": "FORCED_FOR_ADMITTED_NONZERO_CYCLE_HOLONOMY",
+    "local_scalar_phase_generator": "RETAINED_ON_EXACT_PATCHES",
+    "berry_cycle_phase": "GAUGE_INVARIANT_CLOSED_PRODUCT",
+    "nonexact_affinity_cycle": "SURVIVES_CYCLE_CLOSURE"
+  },
+  "targeted_local_tests": {
+    "file": "tests/reference/test_temporal_phase_connection.py",
+    "passed": 7,
+    "failed": 0
+  },
+  "integration_local_tests": {
+    "files": ["temporal phase connection", "dependency graph"],
+    "passed": 11,
+    "failed": 0
+  },
+  "stress_probe": {
+    "schema": "IDT_TEMPORAL_PHASE_CONNECTION_PROBE_V0_1",
+    "cases": 1000,
+    "max_gauge_cycle_phase_defect": 2.6645352591003757e-15,
+    "max_exact_scalar_cycle_sum_abs": 6.661338147750939e-16,
+    "max_cycle_formula_defect": 1.7763568394002505e-15,
+    "nonzero_holonomy_cases": 1000,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_TEMPORAL_PHASE_CONNECTION_PROBE_20260827.json",
+    "artifact_sha256": "bb82bc523eedab3917dffbcd2be4ee4bb8a3bcdff2a493afafa00d20d0380bba"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "bridge_status": "DEGRADED_MISSING_NATURAL_QUEUE_STATUS_JSON",
+    "runtime_promotion": false,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_TEMPORAL_PHASE_CONNECTION_GATE_20260827.json",
+    "artifact_sha256": "e3bdc6a7e3daa466f3ad58ccdb704fc0751b09bfa6651b49a2abee0bf6d561aa",
+    "declared_test_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "2/2", "2/2"]
+  },
+  "evidence_boundary": {
+    "global_holonomy_carrier": "CONNECTION_LEVEL",
+    "local_phase_generator": "EXACT_PATCH_SCALAR",
+    "informational_functional_I": "OPEN_UPSTREAM_DYNAMICAL_MONOTONICITY_GATE",
+    "physical_spacetime_interpretation": "DEFERRED_EINSTEIN_CLOSURE"
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}

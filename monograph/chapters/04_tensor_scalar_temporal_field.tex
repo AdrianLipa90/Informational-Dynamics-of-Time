@@ -25,9 +25,9 @@ The symmetric positive sector maps the informational covector to dissipative sta
 \[
 V_I^A=-G^{AB}\partial_B\mathcal I,
 \]
-while the antisymmetric sector maps the phase covector to reversible state transport,
+while the antisymmetric sector maps a local exact phase covector to reversible state transport,
 \[
-V_H^A=\Omega^{AB}\partial_B\mathcal H.
+V_H^A=\Omega^{AB}\partial_B\mathcal H_\alpha.
 \]
 
 In the admitted Kähler factorization,
@@ -36,17 +36,29 @@ g_{K,AB}=(G^{-1})_{AB},
 \qquad
 \Omega^{AB}=J^A{}_{C}G^{CB},
 \]
-so the evolution law is
+so on an exact phase patch the evolution law is
 \[
 \boxed{
 \frac{dx}{d\lambda}
 =-\operatorname{grad}_{g_K}\mathcal I
-+J\operatorname{grad}_{g_K}\mathcal H.
++J\operatorname{grad}_{g_K}\mathcal H_\alpha.
 }
 \]
-This form is the coordinate-covariant factorization of the symmetric informational-response channel and the antisymmetric phase-response channel established in Formalism 01A.
+This form is the coordinate-covariant factorization of the symmetric informational-response channel and the antisymmetric local phase-response channel established in Formalism 01A.
 
-The tensor--scalar temporal architecture is therefore summarized by
+Formalism 01B supplies the global phase completion. The edge link
+\[
+L_e=G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right]
+\]
+defines a temporal connection class whose closed-cycle holonomy is
+\[
+\boxed{
+\Phi_T(C)=\gamma_B(C)+\kappa\sum_{e\in C}\sigma_e\pmod{2\pi}.
+}
+\]
+The exact Shannon part telescopes on a closed cycle. Berry holonomy and non-exact affinity provide the global connection data. Thus \(\mathcal H_\alpha\) is typed as a local exact-patch generator, while the U(1) connection carries global phase patching and cycle information.
+
+The tensor--scalar temporal architecture is therefore summarized locally by
 \[
 \boxed{
 \mathcal T
@@ -54,12 +66,12 @@ The tensor--scalar temporal architecture is therefore summarized by
 \qquad
 \phi=\frac{\mathfrak a}{\mathfrak a_\star},
 \qquad
-\mathcal R^{AB}=G^{AB}+J^A{}_{C}G^{CB}.
+\mathcal R^{AB}=G^{AB}+J^A{}_{C}G^{CB},
 }
 \]
-The scalar answers how much internal elapsed time is realized per ordering increment. The tensorial sector specifies how the relational state responds to informational and phase gradients across the state manifold.
+with a global phase-connection layer supplying the holonomy class. The scalar answers how much internal elapsed time is realized per ordering increment. The tensorial sector specifies how the relational state responds locally, and the connection records globally non-exact phase information.
 
-The remaining upstream derivation task is to constrain the functionals \(\mathcal I\) and \(\mathcal H\) directly from TIR/Shannon relational primitives. Their downstream realizations are already tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
+The remaining upstream functional task is to constrain the informational scalar \(\mathcal I\) from TIR/Shannon relational primitives together with an admitted monotonic dynamical principle. Downstream realizations of the response geometry are tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
 
 \section{nD slices of the tensor--scalar field}
 Because the full tensor--scalar state lives in a space of dimension higher than two, Figure~\ref{fig:nd-slices} provides a family of 2D slices that can be shown publicly as a readable proxy for the richer field geometry.
