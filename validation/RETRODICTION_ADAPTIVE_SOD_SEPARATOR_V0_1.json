@@ -1,6 +1,6 @@
 {
   "schema": "IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_BOUNDED_REFERENCE_PASS_GENERAL_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_BOUNDED_REFERENCE_PASS_GENERAL_GLOBAL_INJECTIVITY_OPEN_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GENERAL_GLOBAL_INJECTIVITY_GATE",
   "branch": "feat/adaptive-sod-separation-v0.1",
   "parent_commit": "6d27224e3364e4454f5e0c385a85f7aec3309de5",
@@ -35,7 +35,11 @@
     "artifact_sha256": "2fd30b3c3ff94deb2dbbe941ecf0d0600d60bea17192e39acf5a6ef2fad6bc76",
     "relation_structurally_isomorphic": true,
     "comparison_sha256": "4d24470e7a0673d1fbd9c7077707a61a6fe3ee3ab7d3ff83498f9c50fae738cc",
-    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"],
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
     "test_counts": ["2/2", "2/2", "3/3"]
   },
   "evidence_boundary": {
@@ -44,7 +48,12 @@
     "general_global_injectivity": "OPEN",
     "all_support_regimes": "OPEN"
   },
-  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "hosted_ci": {
+    "run_id": 33071217874,
+    "job_id": 98513669259,
+    "steps_executed": 0,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS"
+  },
   "targeted_local_tests": {
     "file": "tests/reference/test_retrodiction_adaptive_sod_separator.py",
     "passed": 6,
