@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_PHASE_CONNECTION_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
   "branch": "feat/temporal-phase-connection-v0.1",
   "parent_commit": "d54a0f625cc6c357a83a2710d87d58f5aa0ba1b5",
@@ -51,6 +51,9 @@
     "physical_spacetime_interpretation": "DEFERRED_EINSTEIN_CLOSURE"
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "run_id": 33075279983,
+    "job_id": 98527747680,
+    "steps_executed": 0,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS"
   }
 }
