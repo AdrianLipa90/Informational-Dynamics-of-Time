@@ -15,13 +15,24 @@
     "truth_kicks": [[0.034, -0.023], [-0.008, 0.028], [0.02, -0.015]],
     "alternate_kicks": [[0.02171604910786055, -0.01997647522522139], [0.02066339813510957, 0.02094610600551937], [0.00362139881046886, -0.01096863363360488]],
     "latent_separation": 0.03627527334738057,
-    "base_residual": 1.6939998869943826e-16,
+    "probe_base_residual": 1.6939998869943826e-16,
+    "independent_local_replay_base_residual": 1.942890293094024e-16,
     "weight_A1_separation_negative_control": 0.0,
     "weight_B1_truth": 0.19430826752908295,
     "weight_B1_alternate": 0.19430761251872072,
     "weight_B1_separation": 6.550103622271486e-07,
     "rx1_separation": 4.9135803568578496e-05,
     "added_weight_B1_status": "KNOWN_NULL_SEPARATED"
+  },
+  "targeted_local_replay": {
+    "tests_passed": 3,
+    "tests_total": 3,
+    "classification": "PASS",
+    "latent_separation": 0.03627527334738057,
+    "base_residual": 1.942890293094024e-16,
+    "weight_A1_separation": 0.0,
+    "weight_B1_separation": 6.550103622271486e-07,
+    "rx1_separation": 4.9135803568578496e-05
   },
   "bounded_multistart": {
     "starts": 300,
