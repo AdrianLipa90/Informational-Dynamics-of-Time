@@ -10,7 +10,7 @@
     "interface_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
     "reference_test": "tests/reference/test_01X_RFC_normalized_shape_extensive_scale_interface.py",
     "test_commit": "1de7430ae61537a3d76f2ad95e591856334283b4",
-    "dependency_graph_commit": "d706f7f200db88375ba88ec778f3f3c940eec5ed"
+    "dependency_graph_commit": "c398e005b183738bfbcbf930b7ae4db9b0537a7f"
   },
   "rfc_consumer": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -34,6 +34,7 @@
       "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP"
     ]
   },
+  "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
   "theorem": {
     "normalization": "N(Q)=Q/Q_Sigma",
     "scale_invariance": "N(lambda Q)=N(Q) for lambda>0",
@@ -63,21 +64,31 @@
     "failed": 0
   },
   "idt_full_reference_suite": {
-    "commit": "cd21a53d618de19d187d56bccf654dd974382d1a",
+    "commit": "f6e36990e8055280c924fca17353820aa8d6c814",
     "workflow": "Reference suite",
-    "run_id": 33119431801,
-    "job_id": 98682305136,
+    "run_id": 33120017246,
+    "job_id": 98684287374,
     "result": "PASS",
-    "passed": 337,
+    "passed": 340,
     "failed": 0,
     "spacing_gate_phase": 0.005,
     "spacing_gate_reason": "asymptotic_long_wave_coefficient_probe"
+  },
+  "rfc_full_reference_suite": {
+    "commit": "48d229d5e8374710900822a89e02ccd3eefd5e09",
+    "workflow": "RFC reference suite",
+    "run_id": 33120038218,
+    "job_id": 98684356166,
+    "result": "PASS",
+    "passed": 32,
+    "failed": 0
   },
   "interface_status": {
     "normalized_simplex_shape": "PASS",
     "positive_scale_quotient": "PASS",
     "analytic_extensive_holonomy_defect": "PASS",
     "idt_full_reference_suite": "PASS",
+    "rfc_full_reference_suite": "PASS",
     "p_IDT_to_p_Q_physical_cross_binding": "OPEN",
     "common_state_space_cell_partition_transport": "OPEN",
     "physical_source_mass_coordinate_M_Q": "OPEN"
