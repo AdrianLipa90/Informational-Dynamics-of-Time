@@ -1,0 +1,42 @@
+{
+  "schema": "IDT_TRANSPORT_MEMORY_ADMISSION_BASELINE_V0_1",
+  "status": "TARGETED_TRANSPORT_MEMORY_BRIDGE_PASS_CI_PENDING",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "internal_elapsed": "Delta_tau=(activity/reference_activity)*Delta_lambda",
+    "realized_now_weight": "r=q*epsilon_W",
+    "realization_gate": "g=1[r>0]",
+    "memory_receipt": "E=(Delta_tau,g*q,delta_m)",
+    "memory_kick": "Delta_v_M=g*q*delta_m",
+    "product_as_memory_gain": "BLOCKED_NORMALIZATION_DEPENDENT"
+  },
+  "local_probe": {
+    "cases": 5000,
+    "max_reparameterized_dtau_abs": 1.7763568394002505e-15,
+    "max_kick_identity_abs": 0.0,
+    "wave_scale_gate_failures": 0,
+    "zero_gate_failures": 0,
+    "active_cases": 4277,
+    "product_amplitude_scale_sensitive_cases": 4277,
+    "max_replay_recall_abs": 4.868520327566372e-13,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_TRANSPORT_MEMORY_ADMISSION_PROBE_20260827.json",
+    "artifact_sha256": "d308fb46ea990f7e6f4dcbe88abda2d1ecd04b7575451917a28d1b321d7c269e"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "6ecebd1f89e4aeb37cf701a348f42c326275c663ab18c49918d44dca4c236fe8",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_TRANSPORT_MEMORY_ADMISSION_GATE_20260827.json",
+    "artifact_sha256": "d63e7383ef37a121192bc061935aadea2bfa69c684006b39041063b98aef581d",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "2/2", "1/1"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
