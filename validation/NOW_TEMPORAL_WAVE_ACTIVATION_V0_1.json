@@ -1,6 +1,6 @@
 {
   "schema": "IDT_NOW_TEMPORAL_WAVE_ACTIVATION_BASELINE_V0_1",
-  "status": "TARGETED_NOW_WAVE_ACTIVATION_PASS_CI_PENDING",
+  "status": "TARGETED_NOW_WAVE_ACTIVATION_PASS_CI_INFRA_BLOCKED",
   "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "parent_main": "3050758a26ae1bfae5e2f7ec7e63504f0ef6090d",
@@ -45,6 +45,11 @@
     "sha256": "67ae8e0c585a7c71ed607e7a5c789bd07483f1d5a4cab3032ea82cdc0aa125ab"
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33053679041,
+    "job_id": 98455064524,
+    "conclusion": "failure",
+    "steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
   }
 }
