@@ -1,14 +1,17 @@
 name: Reference suite
 
 on:
+  pull_request:
   push:
     branches:
-      - 'feat/**'
-  pull_request:
+      - main
+  workflow_dispatch:
 
 jobs:
   reference:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
