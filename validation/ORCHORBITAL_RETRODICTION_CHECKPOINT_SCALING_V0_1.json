@@ -1,0 +1,36 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_CHECKPOINT_SCALING_BASELINE_V0_1",
+  "status": "TARGETED_CHECKPOINT_SCALING_BOUND_PASS_N3_LOCAL_FULL_RANK_REFERENCE_N_GE4_DECLARED_SCHEDULE_DIMENSIONAL_NO_GO_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATES",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "latent_dimension": "2N",
+    "final_partial_channels": 3,
+    "final_basin_independent_kinetic_channels_max": 1,
+    "earlier_single_weight_channels_max": "N-1",
+    "rank_upper_bound": "N+3",
+    "necessary_identifiability": "N+3>=2N => N<=3",
+    "minimum_extra_independent_scalars_for_N_ge_4": "N-3"
+  },
+  "numerical_probe": {
+    "cases_per_event_count": 500,
+    "N2": {"latent_dimension": 4, "rank_upper_bound": 5, "observed_rank": 4, "failures": 0},
+    "N3": {"latent_dimension": 6, "rank_upper_bound": 6, "observed_rank": 6, "failures": 0},
+    "N4": {"latent_dimension": 8, "rank_upper_bound": 7, "observed_rank": 7, "failures": 0},
+    "N5": {"latent_dimension": 10, "rank_upper_bound": 8, "observed_rank": 8, "failures": 0},
+    "N6": {"latent_dimension": 12, "rank_upper_bound": 9, "observed_rank": 9, "failures": 0},
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_CHECKPOINT_SCALING_PROBE_20260827.json",
+    "artifact_sha256": "35e31e9bb044867bf6a2221c25ac1187f845e58640fb5b0ee46f58e3c7a7ab94"
+  },
+  "targeted_reference_tests_declared": 5,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "1ee6f9d915d945befb5e9fb5a51f522f8693ff2ea6fa1c734790528f9a068273",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_CHECKPOINT_SCALING_20260827.json",
+    "artifact_sha256": "fc5fc5b8d3dc8fc9dbabe40ae82b007f53c2634753ebdbad6ff02c942be0f9e2",
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"],
+    "test_counts": ["2/2", "2/2", "1/1"]
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"}
+}
