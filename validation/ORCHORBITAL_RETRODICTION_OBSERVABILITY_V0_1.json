@@ -1,0 +1,46 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_OBSERVABILITY_BASELINE_V0_1",
+  "status": "TARGETED_ORCHORBITAL_OBSERVABILITY_PASS_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "full_checkpoint_chain_rule": "J_O=Df(X) J_X",
+    "full_checkpoint_rank": "rank([J_X;J_O])=rank(J_X)",
+    "partial_checkpoint_augmented": "J_PO=[P J_X; Df(X) J_X]",
+    "partial_rank_bound": "rank(J_PO)<=rank(J_X)",
+    "boundary_policy": "finite differences crossing attractor/support/LEAK boundaries fail closed"
+  },
+  "reference_probe": {
+    "cases": 500,
+    "full_checkpoint_rank_unchanged_cases": 500,
+    "max_weight_jacobian_rowspace_residual": 3.457720719261408e-16,
+    "rx_ry_vx_rank_before": 3,
+    "rx_ry_vx_rank_after": 4,
+    "rx_ry_vx_rank_restore_cases": 500,
+    "position_only_rank_before": 2,
+    "position_only_rank_after": 3,
+    "position_only_rank_gain_cases": 500
+  },
+  "independent_replay": {
+    "cases": 500,
+    "full_checkpoint_rank_unchanged_cases": 500,
+    "max_weight_jacobian_rowspace_residual": 3.619705363875762e-16,
+    "rx_ry_vx_rank_restore_cases": 500,
+    "position_only_rank_gain_cases": 500
+  },
+  "targeted_reference_tests_declared": 5,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_ORCHORBITAL_RETRODICTION_OBSERVABILITY_GATE_20260827.json",
+    "artifact_sha256": "e64fdc786ff77100b057b76802e9787eff541bd0874a2d26352e84ea886b4341",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "2/2", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
