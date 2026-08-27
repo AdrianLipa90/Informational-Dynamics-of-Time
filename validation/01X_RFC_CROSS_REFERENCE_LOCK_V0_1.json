@@ -1,0 +1,35 @@
+{
+  "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
+  "status": "PINNED",
+  "idt": {
+    "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+    "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
+    "base_main": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc",
+    "interface": "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
+    "interface_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
+    "receipt": "validation/01X_RFC_NORMALIZED_SHAPE_EXTENSIVE_SCALE_V0_1.json",
+    "receipt_commit": "54542dbf18f38e62883399366e032a4dc86e5e1a"
+  },
+  "rfc": {
+    "repository": "AdrianLipa90/Relational-Field-Closure",
+    "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
+    "commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
+    "gate": "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
+    "pnv": "experiments/gremlin_pnv/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.pnv",
+    "receipt": "validation/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY_V0_1.json"
+  },
+  "pncs": {
+    "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+    "branch": "feat/gremlin-pnv-authoring-v0.2",
+    "commit": "695223eff9373554c4c2aff1aca9c3e1e7dfecd4",
+    "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
+    "native_executor_blob": "8b1a8e00e9ccaeacd9522a64c329a5c77cca1321"
+  },
+  "interface_contract": {
+    "shape": "p_IDT <-> p_Q candidate",
+    "scale": "M_Q=epsilon_Q Q_Sigma/c^2",
+    "holonomy_defect": "Delta_ext=abs(1-s/Q_Sigma)",
+    "physical_cross_binding": "OPEN"
+  },
+  "rule": "All three repository references remain exact and content-addressed for this interface revision."
+}
