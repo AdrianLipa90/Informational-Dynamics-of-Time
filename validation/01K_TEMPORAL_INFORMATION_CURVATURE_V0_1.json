@@ -1,0 +1,24 @@
+{
+  "schema": "IDT_01K_TEMPORAL_INFORMATION_CURVATURE_V0_1",
+  "status": "TARGETED_TEMPORAL_INFORMATION_CURVATURE_INTERFACE_PASS_CANDIDATE",
+  "date": "2026-08-27",
+  "local_reference_test": {
+    "file": "validation/test_01k_temporal_information_curvature.py",
+    "result": "6 passed",
+    "runtime": "0.06 s"
+  },
+  "exact_identities": [
+    "J_pi = ln(2) I_pi",
+    "Xi_I = J_pi / A_rel",
+    "[A_rel]=L^2 implies [Xi_I]=L^-2",
+    "A_rel -> s^2 A_rel implies Xi_I -> s^-2 Xi_I",
+    "dXi_I = A_rel^-1 dJ_pi - J_pi A_rel^-2 dA_rel",
+    "dXi_I/dt = (dXi_I/dtau_int)/(dt/dtau_int) for dt/dtau_int > 0"
+  ],
+  "open_dependencies": [
+    "TIR relational-area calibration contract",
+    "physical length normalization",
+    "RFC Lambda0 coupling coefficient and action-level closure"
+  ],
+  "claim_promotion": false
+}
