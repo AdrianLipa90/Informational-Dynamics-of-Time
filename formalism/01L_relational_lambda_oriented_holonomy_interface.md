@@ -99,8 +99,7 @@ with the coefficient and complete field closure governed by RFC promotion gates.
 For the Einstein-Lambda effective-source convention, define
 
 \[
-\boxed{
-u_R
+\boxed{u_R
 =\frac{c^4}{8\pi G}\Lambda_R
 }
 \]
