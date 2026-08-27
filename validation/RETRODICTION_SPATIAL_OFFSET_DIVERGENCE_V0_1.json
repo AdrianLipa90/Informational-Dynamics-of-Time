@@ -19,7 +19,12 @@
     "relation_structurally_isomorphic": true,
     "test_counts": ["3/3", "1/1", "2/2"]
   },
-  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "hosted_ci": {
+    "run_id": 33069649012,
+    "job_id": 98508309073,
+    "steps_executed": 0,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS"
+  },
   "integration_local_tests": {
     "failed": 0,
     "includes": ["SOD", "07L sparse completion", "dependency graph"],
@@ -42,7 +47,7 @@
     "verdict": "FAIL_GLOBAL_INJECTIVITY_SOD_WITNESS_FOUND"
   },
   "schema": "IDT_RETRODICTION_SPATIAL_OFFSET_DIVERGENCE_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_GLOBAL_WITNESS_PASS_SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS_FOUND_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_GLOBAL_WITNESS_PASS_SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS_FOUND_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "targeted_local_tests": {
     "failed": 0,
     "file": "tests/reference/test_retrodiction_spatial_offset_divergence.py",
