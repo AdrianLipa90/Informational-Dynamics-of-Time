@@ -1,0 +1,37 @@
+schema: IDT_RETRODICTION_FINITE_BRANCH_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - initial_memory_state
+  - attractor_specs
+  - active_first_snapshot
+  - active_second_snapshot
+  - delta_tau_first
+  - delta_tau_second
+  - final_position
+  - final_velocity_x
+  - final_basin_weights
+  - earlier_basin_weight
+
+relations:
+  - T_final = invert_fixed_support_basin_weights(final_position, final_basin_weights)
+  - vy_branches = finite_sign_preimage(final_velocity_x, T_final)
+  - candidate_history = exact_inverse_active_cells(vy_branch)
+  - selected_history = match_earlier_basin_weight(candidate_history)
+
+status_rules:
+  - exactly_one_match: UNIQUE_FIXED_REGIME_TWO_EVENT
+  - zero_matches: INCONSISTENT_OBSERVATION
+  - multiple_matches: GLOBAL_BRANCH_AMBIGUITY
+
+fail_closed:
+  - support_change
+  - uniform_weight_kinetic_degeneracy
+  - inconsistent_kinetic_scalar
+  - active_attractor_regime_violation
+  - invalid_or_nonfinite_inputs
+
+scope:
+  - two-event fixed-regime global branch enumeration
+  - general multi-event injectivity remains downstream
