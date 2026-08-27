@@ -1,0 +1,42 @@
+{
+  "schema": "IDT_TEMPORAL_WAVE_TRANSPORT_CAYLEY_BASELINE_V0_1",
+  "status": "TARGETED_WAVE_TRANSPORT_ENERGY_PASS_CI_PENDING",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "phase_space_generator": "A_W=[[0,-I],[K,-C]]",
+    "energy_metric": "Q_W=diag(K,I)",
+    "lyapunov_identity": "A_W^dagger Q_W + Q_W A_W = diag(0,-2C)",
+    "smooth_segment": "U_h=(I-hA_W/2)^-1(I+hA_W/2)",
+    "segment_energy_gate": "U_h^dagger Q_W U_h <= Q_W",
+    "conservative_limit": "C=0 -> U_h^dagger Q_W U_h = Q_W",
+    "event_compatibility": "[G,Q_W]=0 -> exp(-i beta G)^dagger Q_W exp(-i beta G)=Q_W"
+  },
+  "stress": {
+    "cases": 1000,
+    "max_generator_lyapunov_identity_abs": 9.036560719766055e-16,
+    "max_cayley_positive_energy_defect": 2.788252038584075e-15,
+    "max_conservative_Q_unitarity_abs": 2.664535267923636e-15,
+    "max_Q_compatible_bifurcation_abs": 1.4210957137042335e-14,
+    "max_composed_positive_energy_defect": 1.8887140887886513e-14,
+    "minimum_Q_eigenvalue": 0.10698627702402896,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_TEMPORAL_TRANSPORT_CAYLEY_ENERGY_PROBE_20260827.json",
+    "artifact_sha256": "891e07924d1f7bca2c3b5e5de431dd8a3998e1e12af42292a103c811ea55f0f7"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "ca5aba794968eec6b8d81a5e8a94cc066bf728ba70cf1d2caece06b90e478d93",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_TEMPORAL_TRANSPORT_CAYLEY_GATE_20260827.json",
+    "artifact_sha256": "a741e4839f34f3181f06e4105f8e700fe22562392f9a2d9bc5c903ff48e9717d",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "1/1", "3/3"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
