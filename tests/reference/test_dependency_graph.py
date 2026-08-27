@@ -52,12 +52,12 @@ def test_declared_chain_matches_project_order():
         assert nodes[child]["depends_on"] == [parent]
 
 
-def test_wave_now_bifurcation_frontier_is_typed_in_order():
+def test_wave_now_bifurcation_transport_frontier_is_typed_in_order():
     nodes = _nodes()
     assert nodes["TEMPORAL_WAVE"]["status"] == "TARGETED_DERIVATION_CONTINUUM_HOLONOMY_PASS_CANDIDATE"
     assert nodes["NOW"]["status"] == "STRUCTURAL_PASS_WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE"
     assert nodes["BIFURCATION"]["status"] == "FORMAL_CONTRACT_PASS_NOW_BRIDGE_TARGETED_PASS_CANDIDATE"
-    assert nodes["TEMPORAL_TRANSPORT"]["status"] == "STRUCTURAL_REFERENCE_GATE_PASS"
+    assert nodes["TEMPORAL_TRANSPORT"]["status"] == "STRUCTURAL_REFERENCE_GATE_PASS_WAVE_ENERGY_TARGETED_PASS_CANDIDATE"
 
 
 def test_memory_orchorbital_retrodiction_order_is_explicit():
