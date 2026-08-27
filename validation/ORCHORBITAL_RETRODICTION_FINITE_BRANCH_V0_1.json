@@ -1,0 +1,60 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_FINITE_BRANCH_BASELINE_V0_1",
+  "status": "TARGETED_TWO_EVENT_FIXED_REGIME_GLOBAL_INJECTIVITY_CONDITIONAL_PASS_GENERAL_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GENERAL_MULTI_EVENT_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "final_kinetic_inversion": "T=(u_j-w_j U_S)/(1-m w_j) on fixed positive support S",
+    "hidden_final_velocity": "v_y=+-sqrt(2T-v_x^2)",
+    "branch_count": "at most two regular final-state branches",
+    "first_kick": "u_1=(r_1-r_0-0.5*a_0*dt_1^2)/dt_1-v_0",
+    "second_kick": "u_2=v_1_plus-v_1",
+    "selector": "one earlier basin weight selects among exhaustive regular sign branches",
+    "scope": "TWO_EVENT_FIXED_REGIME_CONDITIONAL_GLOBAL_INJECTIVITY / GENERAL_MULTI_EVENT_OPEN"
+  },
+  "explicit_07H_reflection_pair": {
+    "final_vy_abs": 0.24247769958074847,
+    "truth_earlier_weight_A": 0.5838364569736164,
+    "alternate_earlier_weight_A": 0.6030256253846111,
+    "earlier_weight_A_separation": 0.01918916841099505,
+    "classification": "UNIQUE_FIXED_REGIME_TWO_EVENT"
+  },
+  "local_targeted": {
+    "tests_passed": 5,
+    "tests_total": 5,
+    "elapsed_s": 0.45
+  },
+  "stress": {
+    "generated": 10000,
+    "admitted": 10000,
+    "unique_after_earlier_weight": 10000,
+    "ambiguous": 0,
+    "inconsistent": 0,
+    "candidate_regime_rejects": 221,
+    "max_latent_reconstruction_error": 2.2167990444174233e-11,
+    "max_kinetic_energy_reconstruction_abs": 2.040034807748725e-15,
+    "max_weight_reconstruction_abs": 2.220446049250313e-16,
+    "max_forward_branch_residual": 4.510281037539698e-16,
+    "two_branch_earlier_weight_sep_min": 2.6963444221816957e-07,
+    "two_branch_earlier_weight_sep_median": 0.02426143694524341,
+    "two_branch_earlier_weight_sep_p01": 5.437219226310131e-05,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_FINITE_BRANCH_GLOBAL_GATE_PROBE_20260827.json",
+    "artifact_sha256": "f1ea1bbccac91a6e8955c82981b2043d9311c14ae0f48cbffd3bed577c92ec74"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "4d658962abdeca2a4e8ae7d31730428cf6156def23dbbd2dff06d38237b690c0",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_FINITE_BRANCH_GLOBAL_GATE_20260827.json",
+    "artifact_sha256": "c50c25a37ab4f01f0c8286ce044c833206cba5d254f67c9a6cc2cacf937432bd",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "3/3", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
