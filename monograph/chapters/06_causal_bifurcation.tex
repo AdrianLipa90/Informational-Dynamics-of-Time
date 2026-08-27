@@ -1,6 +1,121 @@
 \chapter{Causal Bifurcation}
-At a localized transition event,
+
+The wave-active NOW carrier localizes the events on which the bifurcation operator acts.  For a realized event $s_e\in\mathcal N_W$,
 \[
-\Psi_T(s_n^+)=B(q_n)\Psi_T(s_n^-).
+\Psi_T(s_e^+)=B_e\Psi_T(s_e^-).
 \]
-The next derivation must classify admissible bifurcation operators by identity limit, composition law, invertibility and information change.
+
+\section{Hyperbolic kinetic coordinates}
+
+At the NOW boundary the activity/current pair obeys
+\[
+\mathfrak a=2M\cosh(A/2),
+\qquad
+\mathfrak j=2M\sinh(A/2).
+\]
+The invariant coordinate is
+\[
+\boxed{
+M=\frac12\sqrt{\mathfrak a^2-\mathfrak j^2},
+}
+\]
+and the oriented coordinate is
+\[
+A=2\operatorname{artanh}\!\left(\frac{\mathfrak j}{\mathfrak a}\right).
+\]
+Using
+\[
+\kappa=\frac{\ln2}{24\pi},
+\qquad
+\beta=\frac{\kappa A}{\ln2},
+\]
+gives
+\[
+\boxed{
+\beta=\frac{1}{12\pi}
+\operatorname{artanh}\!\left(\frac{\mathfrak j}{\mathfrak a}\right),
+\qquad
+A=24\pi\beta.
+}
+\]
+Thus
+\[
+\boxed{
+\mathfrak a=2M\cosh(12\pi\beta),
+\qquad
+\mathfrak j=2M\sinh(12\pi\beta).
+}
+\]
+The coordinate $M$ feeds the Temporal Wave stiffness and the coordinate $\beta$ feeds the directional bifurcation phase.
+
+\section{Wave-active event gate}
+
+The NOW realization weight is
+\[
+r_e^{(W)}=q_e\epsilon_e^{(W)}\ge0.
+\]
+For a declared Hermitian generator $G$, define the directional unitary family
+\[
+B_\phi(\beta_e)=e^{-i\beta_eG}.
+\]
+The tested gate is
+\[
+\boxed{
+r_e^{(W)}>0\Rightarrow B_e=B_\phi(\beta_e),}
+\]
+\[
+\boxed{
+r_e^{(W)}=0\Rightarrow B_e=I.}
+\]
+The positive product $q_e\epsilon_e^{(W)}$ therefore controls event admission, while the sign and magnitude of $\beta_e$ control the orientation of the realized unitary action.
+
+Under current reversal,
+\[
+\mathfrak j\mapsto-\mathfrak j,
+\]
+we have
+\[
+M\mapsto M,
+\qquad
+\beta\mapsto-\beta,
+\]
+and hence
+\[
+\boxed{
+B_\phi(-\beta)=B_\phi(\beta)^\dagger.
+}
+\]
+The same reversal preserves the Temporal Wave stiffness channel and inverts the directional bifurcation action.
+
+\section{General representation and polar branch}
+
+For an additive scalar event parameter $q$, representation consistency gives
+\[
+B(0)=I,
+\qquad
+B(q_1+q_2)=B(q_2)B(q_1),
+\]
+with strongly continuous invertible family
+\[
+B(q)=e^{qG}.
+\]
+A unitary family uses a self-adjoint generator $A$,
+\[
+B(q)=e^{-iqA}.
+\]
+
+The implemented polar reference branch also admits a positive semidefinite dissipator $D$,
+\[
+C(q)=e^{-qD},
+\qquad
+U(\beta)=e^{-i\beta G},
+\]
+and the ordered polar event operator
+\[
+\boxed{
+B_{\rm polar}=C(q)U(\beta).
+}
+\]
+The wave-active gate fixes the event support and directional phase coordinate.  The contractive-strength calibration and physical generator selection remain downstream evidence targets within the bifurcation program.
+
+The resulting bifurcation output is passed in ordered form to the Temporal Transport layer.
