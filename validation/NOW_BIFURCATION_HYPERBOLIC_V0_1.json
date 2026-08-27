@@ -1,0 +1,43 @@
+{
+  "schema": "IDT_NOW_BIFURCATION_HYPERBOLIC_BASELINE_V0_1",
+  "status": "TARGETED_HYPERBOLIC_DECOMPOSITION_PASS_CI_PENDING",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "kinetic_invariant": "activity^2-current^2=4M^2",
+    "wave_coordinate": "M=0.5*sqrt(activity^2-current^2)",
+    "orientation_coordinate": "beta=(1/(12*pi))*atanh(current/activity)",
+    "canonical_inverse": "activity=2M*cosh(12*pi*beta); current=2M*sinh(12*pi*beta)",
+    "current_reversal": "M invariant; beta changes sign",
+    "realization_gate": "q_e*epsilon_e>0 -> exp(-i beta_e G); q_e*epsilon_e=0 -> I"
+  },
+  "local_probe": {
+    "cases": 10000,
+    "max_mobility_relative_error": 2.292940921529514e-13,
+    "max_drive_scaled_relative_error": 6.678668974499608e-14,
+    "max_activity_relative_error": 3.970173274100943e-14,
+    "max_current_relative_error": 3.972909761895324e-14,
+    "max_beta_reversal_abs": 0.0,
+    "max_mobility_reversal_abs": 0.0,
+    "reference_unitary_inverse_error": 7.621602459394194e-18,
+    "reference_unitarity_error": 5.551115123125783e-16,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_BIFURCATION_HYPERBOLIC_COORDINATE_PROBE_20260827.json",
+    "artifact_sha256": "0c658470a25b0b7545b30f23f2094426f06352d80c388982e8bacaf3d75975d0"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "6c2987f83b4bc3e3379d2c71691753f60f5095fa23f026909baac85ee9aa6e72",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_NOW_BIFURCATION_HYPERBOLIC_GATE_20260827.json",
+    "artifact_sha256": "7b21b2b88ab7e0d9ab31947dd30cb50d730b1c84752d4f706d8712dce197f194",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "2/2", "1/1"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
