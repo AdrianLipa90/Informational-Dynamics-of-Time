@@ -1,0 +1,50 @@
+{
+  "schema": "IDT_NOW_TEMPORAL_WAVE_ACTIVATION_BASELINE_V0_1",
+  "status": "TARGETED_NOW_WAVE_ACTIVATION_PASS_CI_PENDING",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "parent_main": "3050758a26ae1bfae5e2f7ec7e63504f0ef6090d",
+  "derivation": {
+    "structural_signature": "q_e = sqrt(d_FS^2 + kappa^2 DeltaH_e^2 + kappa^2 sigma_e^2)",
+    "kinetic_invariant": "activity_e^2-current_e^2=4 M_e^2",
+    "mobility_reconstruction": "M_e=0.5*sqrt(activity_e^2-current_e^2)",
+    "wave_activation": "epsilon_e=M_e*abs((D_L Phi)_e)^2",
+    "realized_measure": "R_NOW^W=sum_e q_e epsilon_e delta_{s_e}",
+    "realized_support": "N_W=N_sig intersect support(epsilon_e>0)",
+    "total_activation": "sum_e epsilon_e=Phi^dagger K_M Phi"
+  },
+  "local_targeted": {
+    "tests_passed": 8,
+    "tests_total": 8,
+    "elapsed_s": 0.07
+  },
+  "stress": {
+    "cases": 1000,
+    "max_mobility_reconstruction_abs": 4.618527782440651e-14,
+    "max_activation_reconstruction_abs": 3.126388037344441e-13,
+    "max_gauge_activation_abs": 8.526512829121202e-14,
+    "support_intersection_failures": 0,
+    "pure_gauge_max_activation": 2.0214560696288428e-30,
+    "ring_gap_max_abs": 1.7728873924482969e-15
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "4291d8156d4028ec3c61112da03cd3a9f798b56bada0726b48be88299c726c65",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_NOW_TEMPORAL_WAVE_GATE_20260827.json",
+    "artifact_sha256": "21d18fde079012024a8353ea14cef5f3361cb1750abde71aa26ef2a176fe0937",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "3/3", "1/1"]
+  },
+  "runtime_probe": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_NOW_TEMPORAL_WAVE_ACTIVATION_PROBE_20260827.json",
+    "sha256": "67ae8e0c585a7c71ed607e7a5c789bd07483f1d5a4cab3032ea82cdc0aa125ab"
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
