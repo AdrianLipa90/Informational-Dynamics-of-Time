@@ -1,0 +1,46 @@
+{
+  "schema": "IDT_RETRODICTION_HYBRID_SPARSE_CHECKPOINTS_BASELINE_V0_1",
+  "status": "TARGETED_HYBRID_SPARSE_LOCAL_RANK_CLOSURE_PASS_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/retrodiction-position-lineage-v0.1",
+  "derivation": {
+    "base_rank_bound": "rank(J_07J)<=N+3",
+    "latent_dimension": "2N",
+    "minimum_extra_scalars": "max(0,N-3)",
+    "orientation_scalar": "h_n=(r_n-c_active)_x*v_y-(r_n-c_active)_y*v_x",
+    "hybrid_gate": "rank(J_H)=2N",
+    "boundary_rule": "fail closed on active-attractor/support change or LEAK_MODE"
+  },
+  "targeted_reference_tests": {
+    "declared": 6,
+    "local_exact_harness_passed": 6,
+    "status": "PASS"
+  },
+  "reference_probe": {
+    "cases_per_event_count": 100,
+    "boundary_or_leak_failures": 0,
+    "N2": {"base_rank": 4, "orientation_channels": 0, "hybrid_rank": 4, "latent_dimension": 4, "full_rank_cases": 100},
+    "N3": {"base_rank": 6, "orientation_channels": 0, "hybrid_rank": 6, "latent_dimension": 6, "full_rank_cases": 100},
+    "N4": {"base_rank": 7, "orientation_channels": 1, "hybrid_rank": 8, "latent_dimension": 8, "full_rank_cases": 100, "min_sigma_hybrid": 4.127342296561852e-06},
+    "N5": {"base_rank": 8, "orientation_channels": 2, "hybrid_rank": 10, "latent_dimension": 10, "full_rank_cases": 100, "min_sigma_hybrid": 8.06705468920649e-06},
+    "N6": {"base_rank": 9, "orientation_channels": 3, "hybrid_rank": 12, "latent_dimension": 12, "full_rank_cases": 100, "min_sigma_hybrid": 5.14623047774104e-07},
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_HYBRID_SPARSE_PROBE_20260827.json",
+    "artifact_sha256": "03199842d731e0a2ba5c963f1b3e565a99919d20c25e32f1b2de9efe504bf3ba"
+  },
+  "scope": {
+    "structural_result": "MINIMAL_SCALAR_COUNT_LOCAL_RANK_CLOSURE_FOR_DECLARED_07J_SCHEDULE",
+    "tested_reference_result": "FULL_LOCAL_RANK_100_OF_100_FOR_EACH_N_4_5_6_WITH_N_MINUS_3_ORIENTATION_SCALARS",
+    "next_gate": "HYBRID_SPARSE_GLOBAL_NULL_SEARCH_AND_INJECTIVITY"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_HYBRID_SPARSE_GATE_20260827.json",
+    "artifact_sha256": "482d36498c84d351ede9451d112f090c5ddce6a17d197b072653a16f589e3874",
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"],
+    "test_counts": ["2/2", "2/2", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
