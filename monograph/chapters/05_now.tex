@@ -1,87 +1,131 @@
-\chapter{NOW as Positive Transition Activity}
+\chapter{NOW as a Positive Wave-Active Transition Support}
 
-The upstream kinetic layer separates transition pace from directional imbalance. For a directed pair
+The NOW layer separates structural event signature, kinetic pace, directional current and dynamical wave activation.
+
+\section{Structural transition signature}
+
+For an admitted transition edge $e:a\to b$, define
+\[
+\boxed{
+q_e=
+\sqrt{
+ d_{FS}(a,b)^2
+ +\kappa^2\Delta H_e^2
+ +\kappa^2\sigma_e^2
+}\ge0.
+}
+\]
+The structural atomic event measure is
+\[
+\mathcal K_T^+
+=\sum_e q_e\,\delta_{s_e},
+\]
+with carrier
+\[
+\boxed{
+\mathcal N_{\rm sig}
+=\operatorname{supp}_{\rm at}\mathcal K_T^+.
+}
+\]
+The Fubini--Study distance and the scalar information increments make $q_e$ invariant under local state-phase choices.
+
+\section{Activity and directed current}
+
+The positive directed kinetic pair is
 \[
 W_{a\to b}=M_{ab}e^{A_{ab}/2},
 \qquad
-W_{b\to a}=M_{ab}e^{-A_{ab}/2},
+W_{b\to a}=M_{ab}e^{-A_{ab}/2}.
 \]
-define
+Its symmetric and antisymmetric combinations are
 \[
 \boxed{
-\mathfrak a_{ab}=W_{a\to b}+W_{b\to a}
-=2M_{ab}\cosh(A_{ab}/2)>0
+\mathfrak a_{ab}=2M_{ab}\cosh(A_{ab}/2)>0,
 }
 \]
-and
 \[
 \boxed{
-\mathfrak j_{ab}=W_{a\to b}-W_{b\to a}
-=2M_{ab}\sinh(A_{ab}/2).
+\mathfrak j_{ab}=2M_{ab}\sinh(A_{ab}/2).
 }
 \]
-The first quantity is symmetric under edge reversal and measures relational activity. The second is antisymmetric and carries directed current. Their ratio recovers the edge drive,
+They obey the exact invariant
 \[
-A_{ab}
-=2\operatorname{artanh}\!\left(\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}\right),
+\boxed{
+\mathfrak a_{ab}^2-\mathfrak j_{ab}^2=4M_{ab}^2,
+}
 \]
-so pace and direction remain separately observable within the same kinetic pair.
+so the mobility entering the Temporal Wave operator is reconstructed as
+\[
+\boxed{
+M_{ab}
+=\frac12\sqrt{\mathfrak a_{ab}^2-\mathfrak j_{ab}^2}.
+}
+\]
 
-\section{Positive event measure}
+\section{Temporal Wave activation}
 
-For realized transition events at ordered locations $s_n$, introduce the positive atomic activity measure
+Let $\Phi$ denote the node amplitude of the Temporal Wave and
+\[
+(D_L\Phi)_e=\Phi_b-L_{ab}\Phi_a.
+\]
+The local wave activation is
 \[
 \boxed{
-\mathcal A_T=\sum_n \mathfrak a_n\,\delta_{s_n},
-\qquad \mathfrak a_n>0.
+\epsilon_e^{(W)}
+=M_e|(D_L\Phi)_e|^2\ge0.
 }
 \]
-The active NOW localization candidate is
+It is invariant under the simultaneous local phase transformation of $\Phi$ and $L$.  A covariantly parallel edge has zero activation.
+
+The total activation is exactly the Temporal Wave quadratic form,
 \[
 \boxed{
-\mathcal N=\operatorname{supp}_{\rm at}\mathcal A_T.
+\sum_e\epsilon_e^{(W)}
+=\Phi^\dagger K_M\Phi.
 }
 \]
-The phase-bearing transition measure remains available for phase and current bookkeeping, while $\mathcal A_T$ carries event existence. Coincident activity atoms add with positive mass.
+For the tested nontrivial-holonomy ring, the positive spectral gap therefore supplies a positive total activation for every nonzero wave state.
+
+\section{Wave-active realization of NOW}
+
+Structural event signature and wave activation combine through the positive atomic measure
+\[
+\boxed{
+\mathcal R_{\rm NOW}^{(W)}
+=\sum_e q_e\epsilon_e^{(W)}\,\delta_{s_e}.
+}
+\]
+Its support is
+\[
+\boxed{
+\mathcal N_W
+=\operatorname{supp}_{\rm at}\mathcal R_{\rm NOW}^{(W)}
+=\mathcal N_{\rm sig}
+\cap
+\operatorname{supp}\{e:\epsilon_e^{(W)}>0\}.
+}
+\]
+The equality follows directly from positivity of both factors.  The structural carrier $\mathcal N_{\rm sig}$ preserves transition typing and lineage; $\mathcal N_W$ carries the tested dynamical realization candidate passed to the bifurcation layer.
 
 \section{Pushforward support}
 
-Let
+For any positive atomic measure
 \[
-\mu=\sum_j a_j\delta_{x_j},\qquad a_j>0,
+\mu=\sum_j a_j\delta_{x_j},
+\qquad a_j>0,
 \]
-and let $f$ be any map defined on the atomic support. Then
+and any map $f$ on its support,
 \[
 (f_*\mu)(\{y\})
 =\sum_{j:f(x_j)=y}a_j.
 \]
-Every image point reached from the original support therefore retains positive atomic mass, even when several atoms merge. Hence
+Every image atom retains positive mass, giving
 \[
 \boxed{
 \operatorname{supp}_{\rm at}(f_*\mu)
 =f(\operatorname{supp}_{\rm at}\mu).
 }
 \]
-The project's admissible monotone reparameterizations are an immediate special case. This positive-measure refinement strengthens the localization theorem because support covariance no longer depends on injectivity of the reparameterization.
+This applies both to the structural positive measure and to the wave-active realization measure.
 
-\section{Operational consequence}
-
-The decomposition now assigns three different roles to one transition pair:
-\[
-\sigma_{ab}=\frac{A_{ab}}{\ln2}
-\quad\text{(affinity)},
-\qquad
-\mathfrak a_{ab}
-\quad\text{(activity)},
-\qquad
-\mathfrak j_{ab}
-\quad\text{(directed current)}.
-\]
-This prepares the next layer: a system-internal elapsed-time coordinate can be constructed from accumulated positive activity while memory-orbit geometry supplies a candidate contribution to the antisymmetric drive.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.86\textwidth]{figures/temporal_activity_decomposition.png}
-\caption{Reference decomposition of one directed kinetic pair at fixed mobility $M=1$. Positive activity is even in the edge drive, while directed current is odd. The figure is generated by \texttt{scripts/build\_temporal\_activity\_figure.py}.}
-\label{fig:temporal-activity-decomposition}
-\end{figure}
+The resulting NOW boundary therefore carries four typed observables: structural signature $q_e$, symmetric activity $\mathfrak a_e$, directed current $\mathfrak j_e$, and wave activation $\epsilon_e^{(W)}$.  Their next decomposition supplies the wave-magnitude and bifurcation-orientation coordinates.
