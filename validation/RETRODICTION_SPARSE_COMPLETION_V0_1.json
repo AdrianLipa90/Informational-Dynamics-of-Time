@@ -55,11 +55,24 @@
     ]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "conclusion": "failure",
+    "job_id": 98502728134,
+    "run_id": 33067976552,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "steps_executed": 0
+  },
+  "integration_local_tests": {
+    "command_scope": [
+      "tests/reference/test_retrodiction_sparse_completion.py",
+      "tests/reference/test_dependency_graph.py"
+    ],
+    "elapsed_seconds": 0.99,
+    "failed": 0,
+    "passed": 10
   },
   "parent_commit": "ab83544134a4c3495b16cf393ae02bcc6c2b25ae",
   "schema": "IDT_RETRODICTION_SPARSE_COMPLETION_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_INFRA_BLOCKED",
   "targeted_local_tests": {
     "elapsed_seconds": 0.98,
     "failed": 0,
