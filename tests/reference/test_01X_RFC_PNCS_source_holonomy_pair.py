@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PAIR = ROOT / "validation" / "IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
 LOCK = ROOT / "validation" / "01X_RFC_CROSS_REFERENCE_LOCK_V0_1.json"
-EXPECTED_PNCS = "ae08bb9df367926322ce5ec74a9382135cba61f6"
+EXPECTED_PNCS = "26fb4714a7d7e71f16024f2120f93099a9c62c01"
 EXPECTED_LOOPS = [
     "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
@@ -13,6 +13,7 @@ EXPECTED_LOOPS = [
     "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
     "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
     "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
+    "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP",
 ]
 
 
@@ -35,28 +36,31 @@ def test_pair_receipt_matches_idt_cross_reference_lock():
         lock["interface_contract"]["pncs_euler_energy_loop"],
         lock["interface_contract"]["pncs_noether_carrier_loop"],
         lock["interface_contract"]["pncs_noether_rfc_current_loop"],
+        lock["interface_contract"]["pncs_scalar_field_rotor_loop"],
     ] == EXPECTED_LOOPS
 
 
 def test_pair_receipt_records_executed_peer_reference_gates():
     pair = _load(PAIR)
     assert pair["idt"]["status"] == "PASS"
-    assert pair["idt"]["passed"] >= 366
+    assert pair["idt"]["passed"] >= 373
     assert pair["idt"]["failed"] == 0
     assert pair["rfc"]["status"] == "PASS"
-    assert pair["rfc"]["passed"] >= 58
+    assert pair["rfc"]["passed"] >= 65
     assert pair["rfc"]["failed"] == 0
     assert pair["pncs"]["native_ci"]["classification"] == "CI_EXECUTION_UNRESOLVED_PRE_TEST"
     assert pair["pncs"]["native_ci"]["code_test_failure_observed"] is False
 
 
-def test_noether_carrier_is_distinct_from_intention_charge_and_rotor_coordinate():
-    pair = _load(PAIR)
-    interface = pair["interface"]
-    assert interface["euler_closed_intention_charge"] == "J_I^EB=hbar*theta_I^EB"
-    assert interface["rotor_kinetic_carrier"] == "P_Phi^EB=J-J_I^EB"
-    assert interface["noether_collective_charge"] == "Q_theta=I_A*(P_Phi^EB/I_phi)"
-    assert interface["energy_per_finite_noether_carrier"] == "epsilon_N^EB=H_Phi^EB/Q_theta"
+def test_scalar_field_rotor_reduction_is_typed_separately_from_01z_defect():
+    interface = _load(PAIR)["interface"]
+    assert interface["legacy_inertia_binding_defect"] == "Delta_I_01Z=abs(I_A/I_phi-1)"
+    assert interface["scalar_field_phase_coefficient"] == "C_A=sum_a A_a^2 V_a"
+    assert interface["scalar_field_collective_inertia"] == "I_A=2*C_A"
+    assert interface["scalar_field_rotor_reduction_defect"] == "Delta_I_reduction=abs(I_phi-I_A)/I_A"
+    assert interface["exact_reduction_identity"] == (
+        "common positive D_tau_chi => Delta_I_reduction=Delta_coefficient=Delta_Q_reduction=Delta_epsilon_reduction"
+    )
     assert interface["exact_inertia_binding_reduction"] == (
         "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi"
     )
@@ -78,7 +82,9 @@ def test_exact_current_measure_bound_and_anti_false_positive_witness_are_explici
     assert witness["binding_verdict"] == "FAIL_LOCAL_CURRENT"
 
 
-def test_physical_promotion_remains_explicit_after_zero_defect_candidate_gate():
+def test_physical_promotion_remains_explicit_after_reduction_theorem():
     pair = _load(PAIR)
-    assert pair["interface"]["inertia_binding_defect"] == "Delta_I=abs(I_A/I_phi-1)"
-    assert pair["interface"]["physical_cross_binding"] == "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
+    assert pair["interface"]["collective_reduction_gate"] == (
+        "same field/rotor phase mode, covariant-rate ID, measure ID and ordered collective support"
+    )
+    assert pair["interface"]["physical_cross_binding"] == "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
