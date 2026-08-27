@@ -11,7 +11,7 @@
       "formalism/01Z_noether_collective_phase_carrier_interface.md"
     ],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "25c23954596b01b888167a9af21599de29aa4bd0"
+    "paired_receipt_commit": "44938c458b67bb0f8974070d9f33b9ccfba3f33b"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -26,7 +26,7 @@
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "commit": "5276133cf2ab6e47b6a4737d9671a1a8f0386a11",
+    "commit": "fa517208e40873523d1c2a5b7fdb852092421afa",
     "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
     "information_holonomy_contract": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
     "source_holonomy_contract": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
@@ -37,10 +37,11 @@
     "shape": "p_IDT <-> p_Q candidate",
     "extensive_factorization": "Q_a=Q_Sigma*p_Q,a",
     "euler_closed_intention_charge": "J_I^EB=hbar*theta_I^EB",
-    "preferred_rotor_carrier": "P_Phi^EB=J-J_I^EB",
+    "rotor_kinetic_carrier": "P_Phi^EB=J-J_I^EB",
     "noether_collective_charge": "Q_theta=I_A*(P_Phi^EB/I_phi)",
     "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
-    "preferred_energy_per_carrier": "epsilon_N^EB=H_Phi^EB/P_Phi^EB",
+    "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
+    "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
     "pncs_reference_loop": "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "pncs_q0_loop": "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
     "pncs_epsilon_loop": "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
@@ -49,8 +50,8 @@
     "physical_cross_binding": "OPEN"
   },
   "executed_reference_gates": {
-    "idt": "355/355 PASS",
-    "rfc": "47/47 PASS"
+    "idt": "356/356 PASS",
+    "rfc": "48/48 PASS"
   },
-  "pinning_rule": "Both repositories pin the same PNCS Noether-collective snapshot and retain immutable tested snapshots for executed reference gates."
+  "pinning_rule": "Both repositories pin the same finite-Noether PNCS code snapshot and retain immutable tested snapshots for executed reference gates."
 }
