@@ -22,7 +22,7 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
-The Temporal Primitive now has an explicit upstream forcing chain:
+The Temporal Primitive has an explicit upstream forcing chain:
 \[
 \boxed{
 \text{relational context}
@@ -52,21 +52,25 @@ At uniform symmetric equilibrium,
 \]
 so the symmetric Shannon response and the later Temporal Wave stiffness share the same relational-mobility Laplacian. Global orientation remains carried by the 01B temporal connection and its holonomy.
 
-## Cross-repository interface branch: IDT 01X-RFC
+## Cross-repository interface branch: IDT 01X/01Y ↔ PNCS ↔ RFC
 
-The normalized 01D simplex state is exported to the RFC source-carrier audit through a separate interface branch:
+The normalized 01D simplex state and the phase-intention source normalization are exported through a parallel cross-repository branch:
 
 \[
 \boxed{
 \text{IDT 01D normalized }p
-\longrightarrow
-\text{IDT 01X-RFC shape/scale interface}
-\stackrel{?}{\longleftrightarrow}
-\text{RFC RF-N1B2H}.
+\to
+\text{01X shape/scale}
+\to
+\text{01Y Euler-closed phase/action normalization}
+\leftrightarrow
+\text{PNV physical-law frame}
+\leftrightarrow
+\text{RFC RF-N1B2H/RF-N1B2I}.
 }
 \]
 
-The interface theorem is
+### 01X — normalized shape and extensive scale
 
 \[
 \mathcal N(Q)=\frac{Q}{Q_\Sigma},
@@ -76,32 +80,91 @@ The interface theorem is
 \boxed{\Delta_{\rm ext}=\left|1-\frac{s}{Q_\Sigma}\right|}.
 \]
 
-The normalized shape is preserved on every positive ray. Exact inverse transport uses the explicit scale coordinate \(s=Q_\Sigma\). RFC's continuous energy conversion combines with that scale as
+Exact inverse transport uses \(s=Q_\Sigma\), and RFC factorizes
+
+\[
+\boxed{Q_a=Q_\Sigma p_{Q,a}.}
+\]
+
+### 01Y — Euler closure before energy per action-charge
+
+The phase closure is
+
+\[
+\Phi_{\rm tot}
+=\Phi_{AB}+\int_\Sigma(\mathcal F_B+s_E\mathcal R_E)+\Theta_I
+=2\pi(D+\epsilon_{EB}).
+\]
+
+For the next intention step,
 
 \[
 \boxed{
-M_Q=\frac{\epsilon_QQ_\Sigma}{c^2},
-\qquad
-m_{Q,a}=M_Qp_a^{(Q)}.
+\theta_{I,k}^{EB}
+=2\pi(D+\epsilon_{EB})
+-\Phi_{AB}
+-\int_\Sigma(\mathcal F_B+s_E\mathcal R_E)
+-\Theta_I^{<k}.
 }
 \]
 
-Status:
+The closure-selected phase fixes the action charge,
+
+\[
+\boxed{J_{I,k}^{EB}=\hbar\theta_{I,k}^{EB},}
+\]
+
+and the canonical rotor supplies
+
+\[
+\boxed{
+H_{\Phi,k}^{EB}
+=\frac{(J_k-J_{I,k}^{EB})^2}{2I_\phi}.
+}
+\]
+
+On the positive non-degenerate sector,
+
+\[
+\boxed{
+\epsilon_{I,k}^{EB}
+=\frac{H_{\Phi,k}^{EB}}{J_{I,k}^{EB}},
+\qquad
+\Delta\tau_{k,\rm eff}^{EB}
+=\frac{J_{I,k}^{EB}}{H_{\Phi,k}^{EB}}
+=\frac1{\epsilon_{I,k}^{EB}}.
+}
+\]
+
+Thus the normalization order is
 
 ```text
-01D normalized simplex shape                PASS
-01X-RFC scale-quotient theorem              PASS
-analytic extensive holonomy defect          PASS
-IDT full reference suite                    PASS 337/337
-RFC full reference suite                    PASS 29/29
-IDT p <-> RFC p_Q physical cross-binding    OPEN
-common cell/state-space transport binding   OPEN
-physical source-mass coordinate M_Q         OPEN
+Euler/Berry closure
+ -> theta_I^EB
+ -> J_I^EB
+ -> rotor H_Phi^EB
+ -> epsilon_I^EB
+ -> Delta_tau_eff^EB
+ -> RFC carrier/current binding
 ```
 
-### PNCS physical-law frame and executable holonomy
+After the physical carrier binding \(Q_\Sigma\leftrightarrow J_I^{EB}\), the RFC candidate coordinate becomes
 
-The interface now has a pinned execution layer in `PhaseNav-Natural-Coding-System`:
+\[
+\epsilon_Q\leftrightarrow\epsilon_I^{EB},
+\qquad
+\boxed{M_I=\frac{H_\Phi^{EB}}{c^2}.}
+\]
+
+A local source additionally requires
+
+\[
+\boxed{J_I^{EB}\stackrel{?}{=}\int_{\Sigma_t}j_I\,dV_h.}
+\]
+
+## PNCS physical-law frame and executable holonomy
+
+Pinned execution layer:
 
 ```text
 PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2
@@ -109,27 +172,15 @@ PNCS_PNV_INFORMATION_HOLONOMY_V0_1
 PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1
 ```
 
-Pinned code snapshot:
+Pinned source-normalization snapshot:
 
 ```text
 AdrianLipa90/PhaseNav-Natural-Coding-System
 feat/gremlin-pnv-authoring-v0.2
-5f3bf90998b8c3547d51e7c47bddaf0d6be25d60
+e6d5e217aeed2906372fdd0aa41845f0df32bbae
 ```
 
-The dependency relation is therefore upgraded from a document-only bridge to a connection with executable control loops:
-
-\[
-\boxed{
-\text{IDT 01D/01X}
-\leftrightarrow
-\text{PNV physical-law frame}
-\leftrightarrow
-\text{RFC RF-N1B2/RF-N1B2H}.
-}
-\]
-
-For a closed law path \(\gamma\), PNV records
+For a closed law path \(\gamma\),
 
 \[
 \mathcal H_\gamma=T_{n-1}\cdots T_1T_0,
@@ -137,13 +188,12 @@ For a closed law path \(\gamma\), PNV records
 \Delta_\gamma=d\!\left(I,\mathcal H_\gamma(I)\right).
 \]
 
-The first source-law loops are:
+The source-law loops are:
 
 ```text
 SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP
   Q_a -> (Q_Sigma,p_Q) -> Q_a'
   invariants: SOURCE.TOTAL_Q, SOURCE.PROFILE_NORM
-  reference status: EXACT CONTROL LOOP
 
 SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP
   Q_a -> n_a=Q_a/q0 -> Q_a'
@@ -151,16 +201,24 @@ SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP
 
 SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP
   j_Q -> rho_Q=(epsilon_Q/c^2)j_Q -> j_Q'
-  gate: epsilon_Q CONDITIONAL
+  gate: epsilon_Q DOWNSTREAM CONDITIONAL CONSUMER
+
+SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP
+  Euler/Berry data
+    -> theta_I^EB
+    -> J_I^EB
+    -> H_Phi^EB
+    -> epsilon_I^EB
+    -> Delta_tau_eff^EB
+    -> exact reconstructed closure input
+  invariants:
+    SOURCE.EULER_CLOSURE_SECTOR
+    SOURCE.INTENTION_ACTION_CHARGE
+    SOURCE.ROTOR_PHASE_ENERGY
+    SOURCE.ENERGY_PER_ACTION_CHARGE
 ```
 
-The first loop is the executable control for the exact extensive/normalized factorization
-
-\[
-\boxed{Q_a=Q_\Sigma p_{Q,a}.}
-\]
-
-The next two loops become physical normalization tests when their independent input gates are admitted. Their presence in the law frame gives `q0` and `epsilon_Q` explicit dependency edges instead of hidden scale choices.
+The fourth loop supplies the candidate normalization upstream of the conditional RFC density conversion. The physical bridge into RFC remains explicit through the carrier/current bindings.
 
 Paired validation is recorded in both repositories as
 
@@ -168,18 +226,27 @@ Paired validation is recorded in both repositories as
 validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json
 ```
 
-with executed reference gates:
+Latest executed reference gates on the pinned test snapshots:
 
 ```text
-IDT Reference suite     337 passed
-RFC Reference suite      29 passed
+IDT Reference suite     348 passed, 0 failed
+RFC Reference suite      40 passed, 0 failed
 ```
 
-The PNCS native source-loop workflow is currently recorded as `CI_EXECUTION_UNRESOLVED_PRE_TEST`; its code verdict remains a separate admission gate.
+The PNCS native source-loop workflow is `CI_EXECUTION_UNRESOLVED_PRE_TEST`; the observed job has `steps=null`, so the PNCS code verdict remains a separate admission gate.
 
-The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path; 01X-RFC and the PNV physical-law frame form a parallel cross-repository connection/audit branch.
+Current cross-repository frontier:
 
-The next source-normalization frontier is an independent derivation of \(\epsilon_Q\), or of \(q_0\) together with a per-carrier energy, from the admitted phase/time Hamiltonian. Any resulting normalization must be inserted as a declared PNV transport edge and audited through a closed information-holonomy loop before it advances the RFC source-coupling gate.
+```text
+Euler/Berry -> J_I^EB -> H_Phi^EB -> epsilon_I^EB   PASS / PASS_CONDITIONAL
+Q_Sigma <-> J_I^EB                                   OPEN
+J_I^EB <-> integral j_I dV_h                         OPEN
+IDT p <-> RFC p_Q physical state-space binding       OPEN
+local measure/cell transport                         OPEN
+RFC source coupling/universality                     OPEN
+```
+
+The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path; 01X/01Y and the PNV physical-law frame form a parallel cross-repository connection/audit branch.
 
 The next upstream Temporal Primitive gate is the nonreversible response decomposition: retain the 01C scalar contraction while separating its symmetric gradient contribution from stationary circulation in a form compatible with the 01B connection sector.
 
