@@ -1,6 +1,6 @@
 {
   "schema": "IDT_RETRODICTION_HYBRID_SPARSE_CHECKPOINTS_BASELINE_V0_1",
-  "status": "TARGETED_HYBRID_SPARSE_LOCAL_RANK_CLOSURE_PASS_CI_PENDING",
+  "status": "TARGETED_HYBRID_SPARSE_LOCAL_RANK_CLOSURE_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATE",
   "branch": "feat/retrodiction-position-lineage-v0.1",
   "derivation": {
@@ -41,6 +41,12 @@
     "test_counts": ["2/2", "2/2", "2/2"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33066790681,
+    "job_id": 98498727006,
+    "job_name": "reference",
+    "job_conclusion": "failure",
+    "executed_steps": 0,
+    "code_test_steps_executed": false
   }
 }
