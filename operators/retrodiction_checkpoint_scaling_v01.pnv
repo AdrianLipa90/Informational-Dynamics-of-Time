@@ -1,0 +1,23 @@
+schema: IDT_RETRODICTION_CHECKPOINT_SCALING_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - event_count N
+  - final_partial_checkpoint_channels = 3
+  - final_basin_kinetic_channels <= 1
+  - earlier_single_weight_channels <= N-1
+
+relations:
+  - latent_dimension = 2*N
+  - rank_upper_bound = 4 + (N-1) = N+3
+  - minimum_rank_deficit = max(0, 2*N-(N+3))
+  - minimum_additional_independent_scalars = max(0, N-3)
+
+status_rules:
+  - N <= 3: DIMENSIONALLY_POSSIBLE
+  - N >= 4: DECLARED_SCHEDULE_DIMENSIONALLY_INSUFFICIENT
+
+scope:
+  - first-order rank budget for the declared sparse checkpoint schedule
+  - independent-channel requirement preserves 07F anti-double-counting
