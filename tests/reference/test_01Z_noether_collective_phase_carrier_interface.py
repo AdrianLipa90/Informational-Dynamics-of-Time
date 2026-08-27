@@ -24,10 +24,10 @@ def rotor_energy(p_phi, i_phi):
     return p_phi * p_phi / (2.0 * i_phi)
 
 
-def epsilon_noether(h_phi, p_phi):
-    if p_phi <= 0.0:
-        raise ValueError("positive carrier sector required")
-    return h_phi / p_phi
+def epsilon_noether(h_phi, q_theta):
+    if q_theta <= 0.0:
+        raise ValueError("positive finite Noether carrier required")
+    return h_phi / q_theta
 
 
 def test_collective_noether_charge_is_field_inertia_times_common_phase_rate():
@@ -55,16 +55,30 @@ def test_inertia_mismatch_has_exact_relative_charge_defect():
     assert math.isclose(defect, abs(i_a / i_phi - 1.0), rel_tol=0.0, abs_tol=1e-15)
 
 
-def test_euler_closed_noether_energy_per_charge_is_p_over_2I():
+def test_general_noether_energy_per_charge_is_typed_by_q_theta():
+    i_phi = 4.0
+    i_a = 5.0
+    rate = 2.0
+    p_phi = i_phi * rate
+    q_theta = noether_charge(i_a, rate)
+    h_phi = rotor_energy(p_phi, i_phi)
+    epsilon_n = epsilon_noether(h_phi, q_theta)
+    assert math.isclose(epsilon_n, h_phi / q_theta, rel_tol=0.0, abs_tol=1e-15)
+    assert not math.isclose(epsilon_n, h_phi / p_phi, rel_tol=0.0, abs_tol=1e-15)
+
+
+def test_euler_closed_noether_energy_reduces_to_p_over_2I_under_binding():
     hbar = 1.0
     theta_i_eb = math.pi
     j_total = 2.0 * math.pi
     j_i = hbar * theta_i_eb
     p_phi = rotor_carrier(j_total, j_i)
     i_phi = 2.0
+    q_theta = noether_charge(i_phi, p_phi / i_phi)
     h_phi = rotor_energy(p_phi, i_phi)
-    epsilon_n = epsilon_noether(h_phi, p_phi)
+    epsilon_n = epsilon_noether(h_phi, q_theta)
     assert math.isclose(p_phi, math.pi, rel_tol=0.0, abs_tol=1e-15)
+    assert math.isclose(q_theta, p_phi, rel_tol=0.0, abs_tol=1e-15)
     assert math.isclose(epsilon_n, p_phi / (2.0 * i_phi), rel_tol=0.0, abs_tol=1e-15)
 
 
@@ -72,24 +86,28 @@ def test_epsilon_noether_equals_half_collective_phase_rate_under_inertia_binding
     i_phi = 2.5
     rate = 4.0
     p_phi = i_phi * rate
+    q_theta = noether_charge(i_phi, rate)
     h_phi = rotor_energy(p_phi, i_phi)
-    epsilon_n = epsilon_noether(h_phi, p_phi)
+    epsilon_n = epsilon_noether(h_phi, q_theta)
     assert math.isclose(epsilon_n, rate / 2.0, rel_tol=0.0, abs_tol=1e-15)
 
 
-def test_mass_coordinate_equals_rotor_energy_over_c2():
+def test_mass_coordinate_equals_rotor_energy_over_c2_using_finite_noether_charge():
     i_phi = 2.0
-    p_phi = 3.0
+    i_a = 2.5
+    rate = 1.5
+    p_phi = i_phi * rate
+    q_theta = noether_charge(i_a, rate)
     h_phi = rotor_energy(p_phi, i_phi)
-    epsilon_n = epsilon_noether(h_phi, p_phi)
-    m_from_carrier = epsilon_n * p_phi / (C * C)
+    epsilon_n = epsilon_noether(h_phi, q_theta)
+    m_from_carrier = epsilon_n * q_theta / (C * C)
     assert math.isclose(m_from_carrier, h_phi / (C * C), rel_tol=1e-15, abs_tol=0.0)
 
 
-def test_positive_sector_fails_closed_at_zero_rotor_carrier():
+def test_positive_sector_fails_closed_at_zero_noether_charge():
     try:
         epsilon_noether(1.0, 0.0)
     except ValueError:
         pass
     else:
-        raise AssertionError("zero rotor carrier must remain outside positive ratio sector")
+        raise AssertionError("zero finite Noether carrier must remain outside positive ratio sector")
