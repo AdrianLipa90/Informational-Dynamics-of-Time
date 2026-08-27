@@ -13,28 +13,56 @@ def _nodes():
 
 
 def test_dependency_graph_is_acyclic():
-    nodes = _nodes(); visiting=set(); visited=set()
+    nodes = _nodes()
+    visiting = set()
+    visited = set()
+
     def visit(node_id):
-        if node_id in visited: return
+        if node_id in visited:
+            return
         assert node_id not in visiting
         visiting.add(node_id)
         for parent in nodes[node_id]["depends_on"]:
             assert parent in nodes
             visit(parent)
-        visiting.remove(node_id); visited.add(node_id)
-    for node_id in nodes: visit(node_id)
+        visiting.remove(node_id)
+        visited.add(node_id)
+
+    for node_id in nodes:
+        visit(node_id)
 
 
 def test_declared_chain_matches_project_order():
     nodes = _nodes()
-    expected=["TIR","TEMPORAL_PRIMITIVE","TEMPORAL_WAVE","NOW","BIFURCATION","TEMPORAL_TRANSPORT","MEMORY","RETRODICTION","RETROCAUSAL_TESTS","EINSTEIN_CLOSURE"]
-    assert list(nodes)==expected
-    for parent,child in zip(expected,expected[1:]):
+    expected = [
+        "TIR",
+        "TEMPORAL_PRIMITIVE",
+        "TEMPORAL_WAVE",
+        "NOW",
+        "BIFURCATION",
+        "TEMPORAL_TRANSPORT",
+        "MEMORY",
+        "ORCHORBITAL_ATTRACTORS",
+        "RETRODICTION",
+        "RETROCAUSAL_TESTS",
+        "EINSTEIN_CLOSURE",
+    ]
+    assert list(nodes) == expected
+    for parent, child in zip(expected, expected[1:]):
         assert nodes[child]["depends_on"] == [parent]
 
 
-def test_memory_is_not_admitted_before_transport():
-    nodes=_nodes()
-    assert nodes["BIFURCATION"]["status"] == "FORMAL_CONTRACT_PASS"
-    assert nodes["TEMPORAL_TRANSPORT"]["status"] == "ACTIVE_DERIVATION_TARGET"
-    assert nodes["MEMORY"]["status"] == "PROVISIONAL_DOWNSTREAM_BRANCH"
+def test_wave_now_bifurcation_frontier_is_typed_in_order():
+    nodes = _nodes()
+    assert nodes["TEMPORAL_WAVE"]["status"] == "TARGETED_DERIVATION_CONTINUUM_HOLONOMY_PASS_CANDIDATE"
+    assert nodes["NOW"]["status"] == "STRUCTURAL_PASS_WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE"
+    assert nodes["BIFURCATION"]["status"] == "FORMAL_CONTRACT_PASS_NOW_BRIDGE_TARGETED_PASS_CANDIDATE"
+    assert nodes["TEMPORAL_TRANSPORT"]["status"] == "STRUCTURAL_REFERENCE_GATE_PASS"
+
+
+def test_memory_orchorbital_retrodiction_order_is_explicit():
+    nodes = _nodes()
+    assert nodes["MEMORY"]["depends_on"] == ["TEMPORAL_TRANSPORT"]
+    assert nodes["ORCHORBITAL_ATTRACTORS"]["depends_on"] == ["MEMORY"]
+    assert nodes["RETRODICTION"]["depends_on"] == ["ORCHORBITAL_ATTRACTORS"]
+    assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in nodes["RETRODICTION"]["status"]
