@@ -12,31 +12,38 @@
     "rotor_energy": "H_Phi^EB=(P_Phi^EB)^2/(2 I_phi)",
     "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
+    "common_measure_gate": "same slice_id, measure_id, ordered cell_ids; Delta_measure audits volumes",
+    "local_current_binding_defect": "Delta_local=sum_a V_a*abs(j_Q,a-j_theta,a)/Q_theta",
+    "total_charge_binding_defect": "Delta_Q=abs(Q_Sigma-Q_theta)/Q_theta",
+    "side_flux_defect": "Delta_F=abs(F_side)",
+    "current_binding_rule": "Delta_local=Delta_Q=Delta_measure=Delta_F=0 => Q_Sigma=Q_theta candidate identity",
     "source_mass_coordinate": "M_N=epsilon_N^EB*Q_theta/c^2=H_Phi^EB/c^2",
-    "physical_cross_binding": "OPEN"
+    "physical_cross_binding": "OPEN_PROMOTION_AFTER_ZERO_DEFECT_CURRENT_GATE"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "code_commit": "fa517208e40873523d1c2a5b7fdb852092421afa",
+    "code_commit": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
     "contracts": [
       "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
       "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
       "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
-      "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1"
+      "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
+      "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1"
     ],
     "loops": [
       "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
       "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
       "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
       "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
-      "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP"
+      "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP"
     ],
     "native_ci": {
-      "run_id": 33123177831,
-      "job_id": 98694885913,
-      "head_commit": "589e200adb09ee176fcb343a08003e5ddac295c3",
-      "code_snapshot": "fa517208e40873523d1c2a5b7fdb852092421afa",
+      "run_id": 33123979049,
+      "job_id": 98697546433,
+      "head_commit": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
+      "code_snapshot": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
       "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
       "steps": null,
       "code_test_failure_observed": false
@@ -45,26 +52,36 @@
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
-    "tested_commit": "f2bee87cfe0ca5cfac242896f49ca0ed1e7943dc",
+    "tested_commit": "c65cbce1ff7e7200ee73af396805f59d0eaa5a90",
     "workflow": "Reference suite",
-    "run_id": 33123309882,
-    "job_id": 98695327591,
-    "passed": 356,
+    "run_id": 33124048723,
+    "job_id": 98697764076,
+    "passed": 370,
     "failed": 0,
     "status": "PASS"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "tested_commit": "c46b8d99ad9267cb28947adeb73cfeade77bfc08",
+    "tested_commit": "020f84b55326d68ee159bb4cd82a03943b90df22",
     "workflow": "RFC reference suite",
-    "run_id": 33123345500,
-    "job_id": 98695448966,
-    "passed": 48,
+    "run_id": 33124064073,
+    "job_id": 98697813131,
+    "passed": 62,
     "failed": 0,
     "status": "PASS"
   },
-  "pairing_rule": "IDT and RFC pin the same finite-Noether PNCS code snapshot; immutable tested commits are retained for the executed reference gates.",
+  "anti_false_positive_witness": {
+    "V": [1.0, 1.0],
+    "j_theta": [1.0, 3.0],
+    "j_Q": [2.0, 2.0],
+    "Q_theta": 4.0,
+    "Q_Sigma": 4.0,
+    "Delta_Q": 0.0,
+    "Delta_local": 0.5,
+    "binding_verdict": "FAIL_LOCAL_CURRENT"
+  },
+  "pairing_rule": "IDT and RFC pin the same six-loop PNCS current-binding code snapshot; equal integrated charge is insufficient without the local-current and common-measure gates.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
 }
