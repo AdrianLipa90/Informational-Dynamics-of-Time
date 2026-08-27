@@ -1,7 +1,7 @@
 {
   "schema": "IDT_TRANSPORT_MEMORY_ADMISSION_BASELINE_V0_1",
-  "status": "TARGETED_TRANSPORT_MEMORY_BRIDGE_PASS_CI_PENDING",
-  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "status": "TARGETED_TRANSPORT_MEMORY_BRIDGE_PASS_CI_INFRA_BLOCKED",
+  "admission": "PENDING_BRANCH_REVIEW_AND_EXECUTED_HOSTED_FULL_SUITE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
     "internal_elapsed": "Delta_tau=(activity/reference_activity)*Delta_lambda",
@@ -37,6 +37,11 @@
     "test_counts": ["3/3", "2/2", "1/1"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "workflow_run_id": 33059922784,
+    "job_id": 98475870446,
+    "steps_executed": 0,
+    "runner_id": 0,
+    "code_test_steps_executed": false
   }
 }
