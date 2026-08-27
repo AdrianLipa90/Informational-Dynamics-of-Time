@@ -1,60 +1,56 @@
 {
   "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
-  "status": "PINNED_WITH_PNCS_EULER_SOURCE_HOLONOMY_AND_PAIRED_VALIDATION",
+  "status": "PINNED_WITH_PNCS_NOETHER_COLLECTIVE_HOLONOMY_AND_PAIRED_VALIDATION",
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
     "base_main": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc",
     "interfaces": [
       "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
-      "formalism/01Y_phase_intention_energy_per_charge_interface.md"
+      "formalism/01Y_phase_intention_energy_per_charge_interface.md",
+      "formalism/01Z_noether_collective_phase_carrier_interface.md"
     ],
-    "interface_anchor_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "4e05fe8b8638345c5d1fe8f145d34741b09e7ab0"
+    "paired_receipt_commit": "25c23954596b01b888167a9af21599de29aa4bd0"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "interface_anchor_commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
     "gates": [
       "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
-      "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md"
+      "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md",
+      "formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md"
     ],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "commit": "e6d5e217aeed2906372fdd0aa41845f0df32bbae",
+    "commit": "5276133cf2ab6e47b6a4737d9671a1a8f0386a11",
     "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
     "information_holonomy_contract": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
     "source_holonomy_contract": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
-    "interfaces": [
-      "src/phasenav_natural_code/gremlin_pnv_bridge_v02.py",
-      "src/phasenav_natural_code/gremlin_pnv_holonomy_v01.py",
-      "src/phasenav_natural_code/pnv_source_holonomy_v01.py",
-      "spec/PNCS_PNV_INFORMATION_HOLONOMY_V0_1.md",
-      "spec/PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1.md"
-    ],
+    "noether_collective_contract": "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
     "native_ci_state": "CI_EXECUTION_UNRESOLVED_PRE_TEST"
   },
   "interface_contract": {
     "shape": "p_IDT <-> p_Q candidate",
     "extensive_factorization": "Q_a=Q_Sigma*p_Q,a",
-    "euler_closed_action_charge": "J_I^EB=hbar*theta_I^EB",
-    "rotor_energy": "H_Phi^EB=(J-J_I^EB)^2/(2 I_phi)",
-    "energy_per_action_charge": "epsilon_I^EB=H_Phi^EB/J_I^EB",
+    "euler_closed_intention_charge": "J_I^EB=hbar*theta_I^EB",
+    "preferred_rotor_carrier": "P_Phi^EB=J-J_I^EB",
+    "noether_collective_charge": "Q_theta=I_A*(P_Phi^EB/I_phi)",
+    "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
+    "preferred_energy_per_carrier": "epsilon_N^EB=H_Phi^EB/P_Phi^EB",
     "pncs_reference_loop": "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "pncs_q0_loop": "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
     "pncs_epsilon_loop": "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
     "pncs_euler_energy_loop": "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
-    "holonomy_defect": "Delta_gamma=d(I,H_gamma(I))",
+    "pncs_noether_carrier_loop": "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
     "physical_cross_binding": "OPEN"
   },
   "executed_reference_gates": {
-    "idt": "348/348 PASS",
-    "rfc": "40/40 PASS"
+    "idt": "355/355 PASS",
+    "rfc": "47/47 PASS"
   },
-  "pinning_rule": "Mutual IDT/RFC references use immutable interface anchors; both repositories pin the same PNCS Euler-source-holonomy snapshot and carry paired validation."
+  "pinning_rule": "Both repositories pin the same PNCS Noether-collective snapshot and retain immutable tested snapshots for executed reference gates."
 }
