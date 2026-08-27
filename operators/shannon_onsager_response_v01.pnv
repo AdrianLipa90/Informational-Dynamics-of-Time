@@ -1,0 +1,29 @@
+PNV_OPERATOR temporal.shannon_onsager_response.v0.1
+STATUS TARGETED_DERIVATION_PASS_CANDIDATE
+INPUT probability_state p
+INPUT stationary_reference pi
+INPUT continuous_time_generator Q
+REQUIRE p > 0
+REQUIRE pi > 0
+REQUIRE sum(p) == 1
+REQUIRE sum(pi) == 1
+REQUIRE Q * 1 == 0
+REQUIRE pi_a * Q_ab == pi_b * Q_ba
+SET r_a = p_a / pi_a
+SET c_ab = pi_a * Q_ab
+SET Lambda_ab = logarithmic_mean(r_a, r_b)
+SET G_bits = ln(2) * D^T * diag(c_ab * Lambda_ab) * D
+SET grad_I_bits = (ln(r) + 1) / ln(2)
+SET p_dot_predicted = -G_bits * grad_I_bits
+SET p_dot_exact = p * Q
+ASSERT norm(p_dot_predicted - p_dot_exact) <= tolerance
+ASSERT G_bits == transpose(G_bits)
+ASSERT G_bits >= 0
+ASSERT G_bits * 1 == 0
+IF pi == uniform AND Q_offdiag == M_ab:
+    SET K0 = D^T * diag(M_ab) * D
+    ASSERT G_bits_at_equilibrium == (ln(2) / dimension) * K0
+OUTPUT G_bits
+OUTPUT p_dot_exact
+OUTPUT information_dissipation_rate
+OUTPUT derivation_receipt

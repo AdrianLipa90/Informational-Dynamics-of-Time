@@ -30,13 +30,46 @@ while the antisymmetric sector maps a local exact phase covector to reversible s
 V_H^A=\Omega^{AB}\partial_B\mathcal H_\alpha.
 \]
 
-In the admitted Kähler factorization,
+Formalism 01C supplies the stationary Shannon informational scalar
+\[
+\boxed{
+\mathcal I_\pi[p]=D_{\rm KL}^{(2)}(p\|\pi).
+}
+\]
+For admitted stationary transition dynamics this scalar contracts. In the detailed-balance sector, Formalism 01D derives the exact symmetric response
+\[
+\boxed{
+G^{(2)}_\pi(p)
+=(\ln2)D^\top\operatorname{diag}[c_{ab}\Lambda(r_a,r_b)]D,
+\qquad
+r_a=\frac{p_a}{\pi_a},
+}
+\]
+and the exact flow identity
+\[
+\boxed{
+\dot p=-G^{(2)}_\pi(p)\nabla_p\mathcal I_\pi.
+}
+\]
+The mass-conservation direction satisfies
+\[
+G^{(2)}_\pi\mathbf1=0,
+\]
+so the corresponding metric response is taken on the active simplex tangent quotient. At uniform zero-drive equilibrium,
+\[
+\boxed{
+G^{(2)}_u(u)=\frac{\ln2}{m}K_0,
+}
+\]
+which ties the symmetric information-response tensor directly to the relational-mobility Laplacian used by Temporal Wave.
+
+In the admitted Kähler factorization on a compatible active sector,
 \[
 g_{K,AB}=(G^{-1})_{AB},
 \qquad
 \Omega^{AB}=J^A{}_{C}G^{CB},
 \]
-so on an exact phase patch the evolution law is
+where the inverse is understood on the nondegenerate tangent sector when conservation constraints are present. On an exact phase patch the evolution law is
 \[
 \boxed{
 \frac{dx}{d\lambda}
@@ -69,9 +102,9 @@ The tensor--scalar temporal architecture is therefore summarized locally by
 \mathcal R^{AB}=G^{AB}+J^A{}_{C}G^{CB},
 }
 \]
-with a global phase-connection layer supplying the holonomy class. The scalar answers how much internal elapsed time is realized per ordering increment. The tensorial sector specifies how the relational state responds locally, and the connection records globally non-exact phase information.
+with a global phase-connection layer supplying the holonomy class. The scalar answers how much internal elapsed time is realized per ordering increment. The symmetric tensorial sector has a Shannon--Onsager realization in probability coordinates, while the antisymmetric/connection sector carries orientation and circulation.
 
-The remaining upstream functional task is to constrain the informational scalar \(\mathcal I\) from TIR/Shannon relational primitives together with an admitted monotonic dynamical principle. Downstream realizations of the response geometry are tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
+The next upstream task is to extend the response decomposition to stationary nonreversible dynamics while retaining the 01C relative-information contraction and the 01B connection/current structure. Downstream realizations are tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
 
 \section{nD slices of the tensor--scalar field}
 Because the full tensor--scalar state lives in a space of dimension higher than two, Figure~\ref{fig:nd-slices} provides a family of 2D slices that can be shown publicly as a readable proxy for the richer field geometry.

@@ -1,0 +1,60 @@
+{
+  "schema": "IDT_SHANNON_ONSAGER_RESPONSE_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/shannon-onsager-response-v0.1",
+  "parent_commit": "948ae88cc4795ff669bb71d8bee947153249b2ad",
+  "derivation": {
+    "information_scalar": "INHERITED_01C_D_KL_BITS_P_TO_PI",
+    "exact_gradient_factorization": "PASS_DETAILED_BALANCE_SECTOR",
+    "response_tensor": "LN2_DTD_DIAG_CONDUCTANCE_LOGMEAN_D",
+    "symmetry": "EXACT",
+    "positive_semidefinite": "EXACT",
+    "mass_conservation_null": "EXACT",
+    "tangent_metric": "CONNECTED_GRAPH_RESTRICTION_OR_PSEUDOINVERSE",
+    "uniform_temporal_wave_bridge": "G_BITS_EQ_LN2_OVER_M_TIMES_K0_AT_UNIFORM_EQUILIBRIUM"
+  },
+  "targeted_local_tests": {
+    "file": "tests/reference/test_shannon_onsager_response.py",
+    "passed": 7,
+    "failed": 0
+  },
+  "integration_local_tests": {
+    "files": ["shannon onsager response", "dependency graph"],
+    "passed": 11,
+    "failed": 0
+  },
+  "stress_probe": {
+    "schema": "IDT_SHANNON_ONSAGER_RESPONSE_PROBE_V0_1",
+    "cases_detailed_balance": 1000,
+    "cases_uniform_bridge": 1000,
+    "max_factorization_defect": 1.3853010579375966e-11,
+    "max_symmetry_defect": 0.0,
+    "max_mass_null_defect": 4.843146605455186e-13,
+    "max_detailed_balance_defect": 4.440892098500626e-16,
+    "min_eigenvalue": -3.1874149335881806e-12,
+    "max_information_rate_bits": -0.000441893765690983,
+    "strict_information_descent_cases": 1000,
+    "max_uniform_K0_bridge_defect": 4.3021142204224816e-16,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_SHANNON_ONSAGER_RESPONSE_PROBE_20260827.json",
+    "artifact_sha256": "fde4dad460736287450074ac0f31dec69edf41556d9c939514c4379b2aefdfbb"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "bridge_status": "DEGRADED_MISSING_NATURAL_QUEUE_STATUS_JSON",
+    "runtime_promotion": false,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_SHANNON_ONSAGER_RESPONSE_GATE_20260827.json",
+    "artifact_sha256": "cc8e7e023809e484ac3954ce51751cbf5b4d43985e07ea3f2953c2b888ac7bd1",
+    "relation_structurally_isomorphic": true,
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS","SUPPORTED_BY_DECLARED_TESTS","SUPPORTED_BY_DECLARED_TESTS"],
+    "test_counts": ["2/2","2/2","2/2"]
+  },
+  "evidence_boundary": {
+    "stationary_scalar_monotonicity": "01C_BROADER_THAN_DETAILED_BALANCE",
+    "exact_symmetric_response_tensor": "PASS_DETAILED_BALANCE_SECTOR",
+    "nonreversible_response_decomposition": "OPEN_NEXT_UPSTREAM_GATE",
+    "phase_holonomy": "01B_CONNECTION_SECTOR",
+    "physical_spacetime_interpretation": "DEFERRED_EINSTEIN_CLOSURE"
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"}
+}

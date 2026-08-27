@@ -16,10 +16,7 @@ For a scalar informational functional \(\mathcal I\), the differential \(d\mathc
 \[
 V_I^A=-G^{AB}\partial_B\mathcal I.
 \]
-Positive informational descent makes the nondegenerate symmetric sector positive definite and defines
-\[
-g_{K,AB}=(G^{-1})_{AB}.
-\]
+Positive informational descent makes the symmetric response positive semidefinite. On each active nondegenerate tangent sector it defines the inverse metric response.
 
 A reversible phase response generated locally by \(\mathcal H_\alpha\) takes the form
 \[
@@ -40,6 +37,57 @@ which yields the local exact-patch factorization
 }
 \]
 
+\section{Shannon--Onsager realization of the symmetric response}
+Formalism 01C fixes the stationary-reference informational scalar to
+\[
+\boxed{
+\mathcal I_\pi[p]=D_{\rm KL}^{(2)}(p\|\pi).
+}
+\]
+For an admitted stationary Markov kernel, data processing gives
+\[
+\mathcal I_\pi[pP]\le\mathcal I_\pi[p].
+\]
+In the continuous-time detailed-balance sector, let
+\[
+c_{ab}=\pi_aQ_{ab}=\pi_bQ_{ba},
+\qquad
+r_a=\frac{p_a}{\pi_a},
+\]
+and define the logarithmic mean
+\[
+\Lambda(x,y)=\frac{x-y}{\ln x-\ln y}.
+\]
+The exact symmetric response tensor is
+\[
+\boxed{
+G^{(2)}_\pi(p)
+=(\ln2)D^\top
+\operatorname{diag}[c_{ab}\Lambda(r_a,r_b)]D,
+}
+\]
+with
+\[
+\boxed{
+\dot p=-G^{(2)}_\pi(p)\nabla_p\mathcal I_\pi.
+}
+\]
+It obeys
+\[
+G^{(2)}_\pi\mathbf1=0,
+\]
+so the constant covector is the mass-conservation null. For a connected response graph, the metric is defined on the probability-simplex tangent quotient.
+
+In the uniform zero-drive relational sector,
+\[
+\boxed{
+G^{(2)}_u(u)=\frac{\ln2}{m}K_0,
+\qquad
+K_0=D^\top\operatorname{diag}(M_{ab})D.
+}
+\]
+Thus the symmetric information geometry and the later Temporal Wave stiffness share the same relational-mobility Laplacian at uniform equilibrium.
+
 \section{Global phase connection and holonomy}
 The Shannon--Pancharatnam primitive assigns each admitted edge
 \[
@@ -51,17 +99,17 @@ Exact scalar differences obey \(\sum_C\Delta H_e=0\), while the closed-cycle tem
 \Phi_T(C)=\gamma_B(C)+\kappa\sum_{e\in C}\sigma_e\pmod{2\pi}.
 }
 \]
-Admitted nonzero \(\Phi_T\) is therefore carried globally by the temporal \(U(1)\) connection and its holonomy. The scalar \(\mathcal H_\alpha\) remains the local generator on an exact patch; the connection supplies the transition and cycle data needed to patch those local descriptions across the state bundle.
+Admitted nonzero \(\Phi_T\) is carried globally by the temporal \(U(1)\) connection and its holonomy. The scalar \(\mathcal H_\alpha\) remains the local generator on an exact patch; the connection supplies the transition and cycle data needed to patch those local descriptions across the state bundle.
 
 The associated two-form is
 \[
 \omega(X,Y)=g_K(JX,Y).
 \]
-The complex-projective/Fubini--Study sectors used by the Memory construction supply an integrable complex structure, while the admitted Berry-curvature sector supplies a closed phase two-form. The resulting package
+The complex-projective/Fubini--Study sectors used by the Memory construction supply an integrable complex structure, while the admitted Berry-curvature sector supplies a closed phase two-form. On compatible active sectors the resulting package
 \[
 \boxed{(\mathcal M,J,g_K,\omega)}
 \]
-is Kähler under these declared compatibility and closure conditions.
+is Kähler under the declared compatibility and closure conditions.
 
 For an oriented two-chain \(\Sigma\), the signed Kähler-area diagnostic
 \[

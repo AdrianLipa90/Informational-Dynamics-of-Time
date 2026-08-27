@@ -77,7 +77,7 @@ The geometric sector is therefore carried by bundle connection data and its holo
 
 ## 4. Consequence for the tensor–scalar Kähler architecture
 
-The phase/orientation side of the response is now typed at two compatible levels:
+The phase/orientation side of the response is typed at two compatible levels:
 \[
 \boxed{
 \text{local: }d\mathcal H_\alpha,
@@ -87,7 +87,7 @@ The phase/orientation side of the response is now typed at two compatible levels
 \]
 Thus the Kähler response of 01A is the local exact-patch factorization, while the Berry/affinity connection supplies the global patching data already used by Temporal Wave.
 
-This closes the earlier ambiguity in the role of \(\mathcal H\): a local scalar generator remains admissible, while global orientation is carried by the connection/holonomy sector whenever admitted cycles have nonzero \(\Phi_T\).
+The informational side is now supplied independently by 01C and 01D: 01C fixes the stationary Shannon relative-information scalar \(\mathcal I_\pi=D_{\rm KL}^{(2)}(p\|\pi)\), while 01D derives its exact symmetric Shannon–Onsager response tensor in the detailed-balance sector. This keeps scalar informational contraction and global phase circulation as separately typed ingredients of the same temporal primitive.
 
 ## 5. Evidence boundary
 
@@ -96,6 +96,8 @@ This closes the earlier ambiguity in the role of \(\mathcal H\): a local scalar 
 - non-exact affinity contribution: inherited from 00B and tested here in the composite link;
 - global connection requirement: forced for representing admitted nonzero cycle holonomy;
 - local scalar \(\mathcal H_\alpha\): retained as the exact-patch generator;
+- stationary informational scalar: supplied by 01C;
+- exact detailed-balance symmetric response tensor: supplied by 01D;
 - physical spacetime interpretation: deferred to the declared Einstein Closure.
 
-The remaining upstream functional debt is the dissipative/informational scalar \(\mathcal I\). Its sign and monotonicity require a separately admitted dynamical principle rather than a free identification with Shannon entropy.
+The next upstream task is the nonreversible response decomposition coupling the 01C contraction law to the circulating connection/current sector.
