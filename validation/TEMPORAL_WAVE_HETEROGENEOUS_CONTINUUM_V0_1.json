@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_WAVE_HETEROGENEOUS_CONTINUUM_BASELINE_V0_1",
-  "status": "TARGETED_HOMOGENIZATION_AND_STRESS_PASS_HOSTED_CI_PENDING",
+  "status": "TARGETED_HOMOGENIZATION_AND_STRESS_PASS_CI_INFRA_BLOCKED",
   "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
   "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
   "derivation": {
@@ -50,7 +50,12 @@
     "calibration_status": "DOWNSTREAM"
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK",
-    "preceding_observation": "previous feature-branch jobs ended before checkout with steps=[] and runner_id=0"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "functional_head": "7ab5f670c28cfe04f4b1a8cebe1ae1fa98f40707",
+    "run_id": 33051368691,
+    "job_id": 98447438891,
+    "conclusion": "failure",
+    "steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
   }
 }
