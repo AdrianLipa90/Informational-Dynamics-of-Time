@@ -1,0 +1,54 @@
+{
+  "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/relational-tensor-scalar-forcing-v0.1",
+  "derivation": {
+    "antisymmetric_phase_sector": "FORCED_UNDER_REVERSIBLE_PHASE_PRESERVATION",
+    "global_kahler_closure": "CONDITIONAL_ON_INTEGRABILITY_AND_CLOSED_PHASE_TWO_FORM",
+    "local_kahler_factorization": "FORCED_AFTER_UNIT_U1_COMPLEX_STRUCTURE_AND_METRIC_COMPATIBILITY",
+    "rank2_response_tensor": "FORCED_UNDER_LOCAL_LINEAR_RESPONSE_AND_COORDINATE_COVARIANCE",
+    "scalar_pace": "FORCED_UNDER_POSITIVE_CONTEXT_SENSITIVE_ELAPSED_MEASURE",
+    "symmetric_positive_sector": "FORCED_UNDER_INFORMATIONAL_DESCENT"
+  },
+  "gremlin": {
+    "artifact_sha256": "46244751d7d729d1e7cfb5c04fddad217671b6cb4acfa43e476e767b7324f32e",
+    "authority": "CANDIDATE_ONLY",
+    "comparison_sha256": "3cfd9e86aa9d64d62e631136a470f305ab56390b1f3762bac06a510649c54622",
+    "evidence_boundary": {
+      "kahler_global_closure": "CONDITIONAL_ON_COMPATIBILITY_PLUS_INTEGRABLE_COMPLEX_STRUCTURE_AND_CLOSED_TWO_FORM",
+      "rank2_response_tensor": "FORCED_UNDER_LOCAL_LINEAR_RESPONSE_AND_COORDINATE_COVARIANCE",
+      "scalar_pace": "FORCED_UNDER_DECLARED_RELATIONAL_MEASURE_PREMISES",
+      "symplectic_phase_sector": "FORCED_UNDER_REVERSIBLE_HAMILTONIAN_RESPONSE_AND_NONDEGENERACY"
+    },
+    "external_write": false,
+    "relation_structurally_isomorphic": true,
+    "test_counts": ["2/2", "2/2", "4/4"],
+    "verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"]
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "integration_local_tests": {
+    "failed": 0,
+    "files": ["relational tensor-scalar forcing", "dependency graph"],
+    "passed": 11
+  },
+  "parent_commit": "0979388fdf972965ee0087b60a6ffa27d13ff4f5",
+  "schema": "IDT_RELATIONAL_TENSOR_SCALAR_FORCING_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "stress_probe": {
+    "cases": 1000,
+    "contextual_elapsed_distinguished": 1000,
+    "max_antisymmetry_defect": 0.0,
+    "max_complex_structure_defect": 0.0,
+    "max_covariance_defect_with_tensor": 7.375727621944656e-15,
+    "max_dissipation_rate": -0.059574268221267046,
+    "max_reparameterization_defect": 3.552713678800501e-15,
+    "max_reversible_rate_abs": 1.6783922442627565e-15,
+    "median_naive_covector_as_vector_defect": 1.0437337722772175,
+    "min_naive_covector_as_vector_defect": 0.09394191129661816,
+    "schema": "IDT_RELATIONAL_TENSOR_SCALAR_FORCING_PROBE_V0_1"
+  },
+  "targeted_local_tests": {
+    "failed": 0,
+    "file": "tests/reference/test_relational_tensor_scalar_forcing.py",
+    "passed": 7
+  }
+}

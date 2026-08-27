@@ -1,29 +1,65 @@
 \chapter{Tensor--Scalar Temporal Field}
-The temporal configuration is represented by the typed pair
+The temporal configuration is represented by a scalar pace together with a rank-two relational response sector. The scalar component is typed by the internal elapsed density
 \[
-\mathcal T=(\phi,\Theta_{AB}),
+\boxed{
+\phi
+=\frac{d\tau_{\rm int}}{d\lambda}
+=\frac{\mathfrak a}{\mathfrak a_\star}>0.
+}
 \]
-where \(\phi\) is scalar and \(\Theta_{AB}\) is a tensorial state component on the Kähler information manifold. The indices \(A,B\) are state-manifold indices at this stage.
+For the same ordering increment \(d\lambda\), distinct admitted relational states may therefore realize distinct internal elapsed increments.
 
-Evolution is parameterized by a pre-metric order parameter \(\lambda\):
+The tensorial response is written locally as
 \[
-\lambda\mapsto\mathcal T(\lambda).
+\boxed{
+\mathcal R^{AB}=G^{AB}+\Omega^{AB},
+}
 \]
-The active minimal-dynamics candidate is
+where
 \[
-\frac{d\mathcal T}{d\lambda}
-=-\operatorname{grad}_{g_K}\mathcal I[\mathcal T]
-+J\operatorname{grad}_{g_K}\mathcal H[\mathcal T].
-\]
-The two contributions are kept separate:
-\[
-\mathcal V_I=-\operatorname{grad}_{g_K}\mathcal I,
+G^{AB}=G^{BA},
 \qquad
-\mathcal V_H=J\operatorname{grad}_{g_K}\mathcal H.
+\Omega^{AB}=-\Omega^{BA}.
 \]
-The first is informational-gradient transport. The second is Kähler-rotated transport and is the earliest formal location where an orientation-sensitive dynamical effect can arise.
+The symmetric positive sector maps the informational covector to dissipative state transport,
+\[
+V_I^A=-G^{AB}\partial_B\mathcal I,
+\]
+while the antisymmetric sector maps the phase covector to reversible state transport,
+\[
+V_H^A=\Omega^{AB}\partial_B\mathcal H.
+\]
 
-Two derivation debts remain explicit: the admissible informational functional \(\mathcal I[\phi,\Theta]\) and the phase/orientation functional \(\mathcal H[\phi,\Theta]\) must be constrained by upstream informational relations rather than selected to force a desired temporal topology.
+In the admitted Kähler factorization,
+\[
+g_{K,AB}=(G^{-1})_{AB},
+\qquad
+\Omega^{AB}=J^A{}_{C}G^{CB},
+\]
+so the evolution law is
+\[
+\boxed{
+\frac{dx}{d\lambda}
+=-\operatorname{grad}_{g_K}\mathcal I
++J\operatorname{grad}_{g_K}\mathcal H.
+}
+\]
+This form is the coordinate-covariant factorization of the symmetric informational-response channel and the antisymmetric phase-response channel established in Formalism 01A.
+
+The tensor--scalar temporal architecture is therefore summarized by
+\[
+\boxed{
+\mathcal T
+=\bigl(\phi,\mathcal R^{AB}\bigr),
+\qquad
+\phi=\frac{\mathfrak a}{\mathfrak a_\star},
+\qquad
+\mathcal R^{AB}=G^{AB}+J^A{}_{C}G^{CB}.
+}
+\]
+The scalar answers how much internal elapsed time is realized per ordering increment. The tensorial sector specifies how the relational state responds to informational and phase gradients across the state manifold.
+
+The remaining upstream derivation task is to constrain the functionals \(\mathcal I\) and \(\mathcal H\) directly from TIR/Shannon relational primitives. Their downstream realizations are already tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
 
 \section{nD slices of the tensor--scalar field}
 Because the full tensor--scalar state lives in a space of dimension higher than two, Figure~\ref{fig:nd-slices} provides a family of 2D slices that can be shown publicly as a readable proxy for the richer field geometry.

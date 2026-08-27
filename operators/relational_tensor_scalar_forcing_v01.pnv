@@ -1,0 +1,41 @@
+schema: IDT_RELATIONAL_TENSOR_SCALAR_FORCING_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+premises:
+  contextual_elapsed_measure: positive_and_absolutely_continuous_wrt_order
+  context_sensitivity: same_delta_lambda_can_have_distinct_delta_tau_internal
+  response: local_linear_and_coordinate_covariant
+  informational_channel: nonincreasing_information_functional
+  phase_channel: preserves_phase_functional
+  phase_structure: unit_U1_generator_J_with_J_squared_minus_identity
+
+forced_scalar:
+  alpha: d_tau_internal / d_lambda
+  current_realization: activity / reference_activity
+
+forced_tensor_response:
+  informational: V_I^A = -G^AB partial_B I
+  reversible: V_H^A = Omega^AB partial_B H
+  G: symmetric_positive_in_nondegenerate_sector
+  Omega: antisymmetric
+
+kahler_factorization:
+  metric: g = inverse(G)
+  compatibility: Omega = J G
+  flow: dx/dlambda = -grad_g I + J grad_g H
+  two_form: omega_AB = g_AC J^C_B
+  closure_inputs:
+    - integrable_complex_structure
+    - closed_phase_two_form
+
+fail_closed:
+  - nonpositive activity
+  - nonpositive reference activity
+  - nonpositive ordering increment
+  - malformed response matrices
+  - nonpositive_definite_G_in_admitted_metric_sector
+
+scope:
+  - local first-order response geometry
+  - global Kahler closure conditional on declared complex/Berry premises
