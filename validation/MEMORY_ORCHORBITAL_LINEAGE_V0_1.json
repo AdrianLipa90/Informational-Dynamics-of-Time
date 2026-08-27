@@ -1,0 +1,42 @@
+{
+  "schema": "IDT_MEMORY_ORCHORBITAL_LINEAGE_BASELINE_V0_1",
+  "status": "TARGETED_MEMORY_ORCHORBITAL_LINEAGE_PASS_CI_PENDING",
+  "admission": "PROVISIONAL_PARENT_MEMORY_CANDIDATE_AND_HOSTED_FULL_SUITE_PENDING",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "binding_margin": "b_i=[mu_i/r_i-T]_+",
+    "velocity_kick_invariant": "argmax_i b_i=argmax_i mu_i/r_i whenever post-kick field is non-leaking",
+    "cell_receipt": "O_n=(E_n,active_name,active_center,active_mu_memory)",
+    "forward_cell": "X_{n+1}=Phi_active(Delta_tau) K_E X_n",
+    "inverse_cell": "X_n=K_E^{-1} Phi_active^{-1}(Delta_tau) X_{n+1}",
+    "leak_boundary": "max_i(mu_i/r_i)<=T -> LEAK_MODE fail-closed"
+  },
+  "local_probe": {
+    "kick_invariance_comparable_cases": 2998,
+    "kick_active_attractor_failures": 0,
+    "kick_weight_change_cases": 2998,
+    "kick_to_leak_cases": 2,
+    "max_centered_roundtrip_abs": 1.5903451134154656e-15,
+    "multicell_trajectories": 500,
+    "max_multicell_recall_abs": 9.21418979169833e-16,
+    "tampered_active_attractor_reconstruction_error": 0.01779837262553,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_MEMORY_ORCHORBITAL_LINEAGE_PROBE_20260827.json",
+    "artifact_sha256": "3a42d6141a6c3a8963b8d3c9b924f48a37b6a56ea707bff2d8e6918dba1cf2b9"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "0f09b584029d7896834d7d643a1a646424a63c19f21d78fc09f343db8f6d3c46",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_MEMORY_ORCHORBITAL_ADMISSION_GATE_20260827.json",
+    "artifact_sha256": "2bdc860c48392ae95c98ab0ff1021473080283ee6d8e5306bb1958d198dd65dc",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "3/3", "1/1"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}

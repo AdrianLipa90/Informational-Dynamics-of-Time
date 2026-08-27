@@ -72,6 +72,55 @@ The winding increment around the active centre is
 \]
 After propagation the complete attractor field is evaluated again. A different maximizing basin is recorded as an attractor-switch candidate for the following segment.
 
+\section{Memory-kick invariant of the active basin}
+
+At fixed memory position define
+\[
+u_i=\frac{\mu_i}{\|m-c_i\|},
+\qquad
+T=\frac12\|v_M\|^2.
+\]
+Then
+\[
+\boxed{b_i=[u_i-T]_+.}
+\]
+An instantaneous Memory event changes velocity while leaving every \(u_i\) fixed. Whenever the post-event state remains bound, the maximizing basin is therefore
+\[
+\boxed{
+\arg\max_i b_i=\arg\max_i u_i,
+}
+\]
+independent of the velocity-only kick. Such a kick can change the normalized basin weights and their Shannon observables, or drive all margins to zero and enter \texttt{LEAK\_MODE}; it does not switch the winning bound attractor at fixed position.
+
+The deterministic reference probe recorded zero active-attractor changes in 2998 before/after bound comparisons, while the normalized basin weights changed in all 2998 comparisons.
+
+\section{Persisted ORCHORBITAL lineage cell}
+
+The transport-derived Memory receipt is
+\[
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+\]
+The event kick is applied before the active-centre smooth segment. Exact ledger-assisted inversion persists the attractor snapshot actually used by the segment:
+\[
+\boxed{
+\mathcal O_n=(\mathcal E_n,a_n,c_{a_n},\mu_{a_n}).
+}
+\]
+The forward and inverse cells are
+\[
+\boxed{
+X_{n+1}=\Phi_{a_n}(\Delta\tau_n)K_{\mathcal E_n}X_n,
+}
+\]
+\[
+\boxed{
+X_n=K_{\mathcal E_n}^{-1}\Phi_{a_n}^{-1}(\Delta\tau_n)X_{n+1}.
+}
+\]
+The centred inverse translates to the persisted active centre, applies the existing algebraic inverse of the Memory velocity-Verlet segment, and translates back before removing the recorded event kick.
+
+A 500-trajectory, six-cell deterministic probe returned a maximum complete-lineage reconstruction defect below \(9.3\times10^{-16}\). Replacing the persisted active attractor by a different valid centre/coupling produced a reconstruction error of approximately \(1.78\times10^{-2}\), establishing the active-attractor snapshot as required lineage provenance.
+
 \section{Residence time and attractor transition graph}
 
 For a multi-segment trajectory, the active attractor of every completed segment is recorded. For attractor \(i\), define its internal residence time
@@ -116,30 +165,24 @@ The normalization scales remain explicit inputs to the observable.
 
 \section{Position in the temporal dependency graph}
 
-The causal ordering of the first integration is
+The causal ordering of the integration is
 \[
 \boxed{
-NOW
+\text{Temporal Transport}
 \rightarrow
-\Delta M
+\text{wave-active Memory receipt}
 \rightarrow
-q\,\delta m
+\text{Memory kick}
 \rightarrow
-X_M
+\text{active attractor snapshot}
 \rightarrow
-\{E_i,b_i,w_i\}
-\rightarrow
-\text{active attractor}
-\rightarrow
-\text{orbit and winding}
-\rightarrow
-\text{field re-evaluation}
+\text{ORCHORBITAL segment}
 \rightarrow
 \text{residence / transition graph}.
 }
 \]
-Thus ORCHORBITAL is inserted after the memory state and before the downstream Retrodiction node. The broader ORCHORBITAL observables --- hierarchical sphere structure, truth scalar, semantic mass and reduction-readiness --- retain their upstream definitions and await a separate dependency-compatible typed mapping into this temporal repository.
+Thus ORCHORBITAL is inserted after the Memory state and before the downstream Retrodiction node. The broader ORCHORBITAL observables --- hierarchical sphere structure, truth scalar, semantic mass and reduction-readiness --- retain their upstream definitions and await a separate dependency-compatible typed mapping into this temporal repository.
 
 \section{Reference evidence}
 
-The implementation is \texttt{src/idt/orchorbital.py}. The targeted reference suite records eleven passing controls covering weight normalization, Shannon basin entropy, leak mode, translation covariance, winding, switch detection, multi-segment switch promotion, residence accumulation, transition counting and closure-defect consistency. The receipt is \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}. This evidence is classified as an ORCHORBITAL memory reference diagnostic; the canonical admitted frontier remains at Memory pending the parent full-suite admission gate.
+The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}. The targeted bridge receipt is \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}. GREMLIN remained candidate-only and all three declared bridge hypotheses were supported by their declared tests. The ORCHORBITAL layer remains provisional while the parent Memory admission and hosted full-suite infrastructure gate remain open.

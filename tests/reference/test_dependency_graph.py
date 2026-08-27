@@ -60,10 +60,10 @@ def test_wave_now_bifurcation_transport_frontier_is_typed_in_order():
     assert nodes["TEMPORAL_TRANSPORT"]["status"] == "STRUCTURAL_REFERENCE_GATE_PASS_WAVE_ENERGY_TARGETED_PASS_CANDIDATE"
 
 
-def test_memory_parent_bridge_precedes_orchorbital_and_retrodiction():
+def test_memory_orchorbital_retrodiction_order_is_explicit():
     nodes = _nodes()
     assert nodes["MEMORY"]["status"] == "INTEGRATION_PASS_TRANSPORT_BRIDGE_TARGETED_PASS_CANDIDATE"
-    assert nodes["MEMORY"]["depends_on"] == ["TEMPORAL_TRANSPORT"]
+    assert nodes["ORCHORBITAL_ATTRACTORS"]["status"] == "PROVISIONAL_MEMORY_EXTENSION_LINEAGE_BRIDGE_TARGETED_PASS_CANDIDATE"
     assert nodes["ORCHORBITAL_ATTRACTORS"]["depends_on"] == ["MEMORY"]
     assert nodes["RETRODICTION"]["depends_on"] == ["ORCHORBITAL_ATTRACTORS"]
     assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in nodes["RETRODICTION"]["status"]
