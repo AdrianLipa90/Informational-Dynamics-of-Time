@@ -31,10 +31,15 @@
     "bridge_status": "DEGRADED_MISSING_NATURAL_QUEUE_STATUS_JSON",
     "runtime_promotion": false
   },
-  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "hosted_ci": {
+    "run_id": 33076782890,
+    "job_id": 98532926357,
+    "steps_executed": 0,
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS"
+  },
   "integration_local_tests": {"failed": 0, "files": ["shannon relative information", "dependency graph"], "passed": 11},
   "parent_commit": "088e0d71c32de9b73797f8c193311919b7b1a6e0",
   "schema": "IDT_SHANNON_RELATIVE_INFORMATION_MONOTONICITY_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_GENERAL_MARKOV_STRESS_PASS_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_GENERAL_MARKOV_STRESS_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "targeted_local_tests": {"failed": 0, "file": "tests/reference/test_shannon_relative_information.py", "passed": 7}
 }
