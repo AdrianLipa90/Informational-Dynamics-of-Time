@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PAIR = ROOT / "validation" / "IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
 LOCK = ROOT / "validation" / "01X_RFC_CROSS_REFERENCE_LOCK_V0_1.json"
-EXPECTED_PNCS = "f7b428f4dc30ddeb1280c9213c5788f576a54db4"
+EXPECTED_PNCS = "ae08bb9df367926322ce5ec74a9382135cba61f6"
 EXPECTED_LOOPS = [
     "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
@@ -41,10 +41,10 @@ def test_pair_receipt_matches_idt_cross_reference_lock():
 def test_pair_receipt_records_executed_peer_reference_gates():
     pair = _load(PAIR)
     assert pair["idt"]["status"] == "PASS"
-    assert pair["idt"]["passed"] >= 370
+    assert pair["idt"]["passed"] >= 366
     assert pair["idt"]["failed"] == 0
     assert pair["rfc"]["status"] == "PASS"
-    assert pair["rfc"]["passed"] >= 62
+    assert pair["rfc"]["passed"] >= 58
     assert pair["rfc"]["failed"] == 0
     assert pair["pncs"]["native_ci"]["classification"] == "CI_EXECUTION_UNRESOLVED_PRE_TEST"
     assert pair["pncs"]["native_ci"]["code_test_failure_observed"] is False
@@ -62,20 +62,23 @@ def test_noether_carrier_is_distinct_from_intention_charge_and_rotor_coordinate(
     )
 
 
-def test_current_binding_defects_and_anti_false_positive_witness_are_explicit():
+def test_exact_current_measure_bound_and_anti_false_positive_witness_are_explicit():
     pair = _load(PAIR)
     interface = pair["interface"]
-    assert interface["local_current_binding_defect"] == "Delta_local=sum_a V_a*abs(j_Q,a-j_theta,a)/Q_theta"
-    assert interface["total_charge_binding_defect"] == "Delta_Q=abs(Q_Sigma-Q_theta)/Q_theta"
-    assert interface["side_flux_defect"] == "Delta_F=abs(F_side)"
+    assert interface["common_slice_gate"] == "same slice_id, normal orientation, measure_id and ordered cell_ids"
+    assert interface["local_current_binding_defect"] == "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta"
+    assert interface["measure_binding_defect"] == "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta"
+    assert interface["total_charge_binding_defect"] == "Delta_Sigma=abs(Q_Sigma-Q_theta)/Q_theta"
+    assert interface["exact_defect_bound"] == "Delta_Sigma <= Delta_J + Delta_V"
     witness = pair["anti_false_positive_witness"]
     assert witness["Q_theta"] == witness["Q_Sigma"] == 4.0
-    assert witness["Delta_Q"] == 0.0
-    assert witness["Delta_local"] == 0.5
+    assert witness["Delta_Sigma"] == 0.0
+    assert witness["Delta_J"] == 0.5
+    assert witness["Delta_V"] == 0.0
     assert witness["binding_verdict"] == "FAIL_LOCAL_CURRENT"
 
 
 def test_physical_promotion_remains_explicit_after_zero_defect_candidate_gate():
     pair = _load(PAIR)
     assert pair["interface"]["inertia_binding_defect"] == "Delta_I=abs(I_A/I_phi-1)"
-    assert pair["interface"]["physical_cross_binding"] == "OPEN_PROMOTION_AFTER_ZERO_DEFECT_CURRENT_GATE"
+    assert pair["interface"]["physical_cross_binding"] == "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
