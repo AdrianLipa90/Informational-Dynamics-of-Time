@@ -144,3 +144,33 @@ X_M
 The tested Retrodiction stack remains provisional downstream and includes withheld-lineage inversion, observability/rank admission, checkpoint selection, estimation, covariance/Fisher uncertainty geometry and covariance-preserving permutation nulls. It consumes the admitted Memory/ORCHORBITAL path and does not redefine the upstream temporal primitives.
 
 Parent Memory admission still requires a real full repository reference-suite result. The presence of tested ORCHORBITAL and Retrodiction implementations therefore does not by itself move the canonical admitted frontier beyond Memory.
+
+## 01K temporal information curvature interface
+
+A separate downstream Einstein-interface branch now starts from the exact 01C Shannon-relative-information scalar and the internal elapsed-time/clock structure:
+
+\[
+\mathcal J_\pi=(\ln2)\mathcal I_\pi,
+\qquad
+\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}}.
+\]
+
+The TIR geometry layer supplies the positive relational area `A_rel` with physical type `L^2`. Once that interface is admitted,
+
+\[
+\boxed{[\Xi_I]=L^{-2}}.
+\]
+
+Temporal evolution is exact by the quotient rule,
+
+\[
+\boxed{
+\frac{d\Xi_I}{d\tau_{\rm int}}
+=\frac{1}{\mathcal A_{\rm rel}}
+\frac{d\mathcal J_\pi}{d\tau_{\rm int}}
+-\frac{\Xi_I}{\mathcal A_{\rm rel}}
+\frac{d\mathcal A_{\rm rel}}{d\tau_{\rm int}}.
+}
+\]
+
+This interface exports a curvature-typed scalar and its temporal rate to RFC. The later dynamic `Lambda0` coupling remains a downstream RFC closure question, so the IDT canonical admitted frontier remains at Memory.
