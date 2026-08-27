@@ -1,0 +1,16 @@
+{
+  "schema": "IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_REFERENCE_V0_1",
+  "branch": "feat/adaptive-sod-separation-v0.1",
+  "event_count": 4,
+  "starts": 40,
+  "converged": 32,
+  "clusters": 1,
+  "selected_separator": "r2x",
+  "old_sod_witness_augmented_record_distance": 2.8972772939672797e-06,
+  "observation_dimension": 11,
+  "latent_dimension": 8,
+  "rank": 8,
+  "smallest_singular_value": 0.0010483429761208533,
+  "condition_number": 1908.4322032578339,
+  "verdict": "KNOWN_SOD_ADAPTIVE_SEPARATOR_PASS_BOUNDED_REFERENCE_SEARCH_SINGLE_CLUSTER_GENERAL_GLOBAL_INJECTIVITY_OPEN"
+}

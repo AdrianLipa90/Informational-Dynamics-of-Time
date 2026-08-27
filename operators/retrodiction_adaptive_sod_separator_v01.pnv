@@ -1,0 +1,33 @@
+schema: IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - reference_position_lineage[N,2]
+  - candidate_position_lineage[N,2]
+  - spatial_tolerance > 0
+
+compute:
+  - delta_SOD = candidate_position_lineage - reference_position_lineage
+  - select argmax abs(delta_SOD[k,axis])
+  - deterministic tie-break: earliest checkpoint, x before y
+  - promote s_SOD = r[k,axis]
+
+reference:
+  - witness = 07M four-event SOD pair
+  - selected = r2x
+  - witness_separation = 2.8972772939672797e-06
+  - augmented_rank = 8 of 8 latent coordinates
+  - bounded_search = 32 converged, 1 latent cluster
+
+status_success:
+  - KNOWN_SOD_ADAPTIVE_SEPARATOR_PASS
+  - BOUNDED_REFERENCE_SEARCH_SINGLE_CLUSTER
+  - GENERAL_GLOBAL_INJECTIVITY_OPEN
+
+fail_closed:
+  - nonfinite position lineages
+  - mismatched shapes
+  - nonpositive spatial tolerance
+  - no coordinate above spatial tolerance
+  - separator outside lineage

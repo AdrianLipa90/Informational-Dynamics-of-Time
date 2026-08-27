@@ -1,0 +1,58 @@
+{
+  "schema": "IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_BOUNDED_REFERENCE_PASS_GENERAL_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GENERAL_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/adaptive-sod-separation-v0.1",
+  "parent_commit": "6d27224e3364e4454f5e0c385a85f7aec3309de5",
+  "selection": {
+    "strategy": "MAX_ABS_SOD_COMPONENT",
+    "tie_break": "EARLIEST_CHECKPOINT_X_BEFORE_Y",
+    "selected_reference": "r2x",
+    "known_witness_separation": 2.8972772939672797e-06
+  },
+  "bounded_reference_probe": {
+    "schema": "IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_PROBE_V0_1",
+    "starts": 40,
+    "converged": 32,
+    "clusters": 1,
+    "cluster_counts": [32],
+    "cluster_separation_from_truth": [0.0],
+    "best_residuals": [0.0],
+    "observation_dimension": 11,
+    "latent_dimension": 8,
+    "rank": 8,
+    "smallest_singular_value": 0.0010483429761208533,
+    "condition_number": 1908.4322032578339,
+    "old_sod_witness_augmented_record_distance": 2.8972772939672797e-06,
+    "separator": "r2x",
+    "verdict": "KNOWN_SOD_ADAPTIVE_SEPARATOR_PASS_BOUNDED_REFERENCE_SEARCH_SINGLE_CLUSTER_GENERAL_GLOBAL_INJECTIVITY_OPEN",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_ADAPTIVE_SOD_SEPARATOR_PROBE_20260827.json",
+    "artifact_sha256": "030a7c55e5501396993860e5a09db777396b30a02cd75ccb3596d5ef5cb3a44c"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_ADAPTIVE_SOD_SEPARATOR_20260827.json",
+    "artifact_sha256": "2fd30b3c3ff94deb2dbbe941ecf0d0600d60bea17192e39acf5a6ef2fad6bc76",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "4d24470e7a0673d1fbd9c7077707a61a6fe3ee3ab7d3ff83498f9c50fae738cc",
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"],
+    "test_counts": ["2/2", "2/2", "3/3"]
+  },
+  "evidence_boundary": {
+    "known_sod_separator": "PASS",
+    "bounded_reference_search": "SINGLE_CLUSTER",
+    "general_global_injectivity": "OPEN",
+    "all_support_regimes": "OPEN"
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "targeted_local_tests": {
+    "file": "tests/reference/test_retrodiction_adaptive_sod_separator.py",
+    "passed": 6,
+    "failed": 0
+  },
+  "integration_local_tests": {
+    "files": ["adaptive SOD separator", "07M SOD", "07L sparse completion", "dependency graph"],
+    "passed": 22,
+    "failed": 0
+  }
+}

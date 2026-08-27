@@ -1,0 +1,70 @@
+\chapter{Adaptive SOD Separation}
+
+Spatial Offset Divergence converts a global-null witness into a geometric difference along the retained Memory/ORCHORBITAL position lineage. The present layer uses that difference constructively to refine the sparse checkpoint record.
+
+\section{Deterministic separator}
+
+For a recorded SOD pair, define
+\[
+(k_\star,a_\star)=\arg\max_{k,a\in\{x,y\}}|\Delta^{\rm SOD}_{k,a}|.
+\]
+The promoted scalar checkpoint is
+\[
+\boxed{s_{\rm SOD}=r_{k_\star,a_\star}.}
+\]
+Ties are resolved deterministically by earliest checkpoint and then by the $x$ coordinate before $y$.
+
+For the four-event SOD witness of the preceding chapter this selects
+\[
+\boxed{s_{\rm SOD}=r_{2x}},
+\]
+with witness separation
+\[
+|\Delta r_{2x}|\approx2.89728\times10^{-6}.
+\]
+The known ambiguous pair is therefore directly separated after the coordinate is added to the observation record.
+
+\section{Reference observability after refinement}
+
+The augmented four-event schedule contains eleven scalar observations for eight latent kick coordinates. Its finite-difference Jacobian remains full rank,
+\[
+\operatorname{rank}J=8,
+\]
+with smallest singular value
+\[
+\sigma_{\min}\approx1.04834\times10^{-3}
+\]
+and condition number
+\[
+\kappa(J)\approx1.90843\times10^3.
+\]
+Thus the separator closes the recorded SOD pair while preserving the local observability gate.
+
+\section{Bounded global-search audit}
+
+A deterministic fixed-regime search used forty declared starts, including the known SOD witness, the reference history, reference-near perturbations and bounded random initializations. Thirty-two starts converged. All converged solutions belonged to a single latent cluster at the reference history.
+
+The result is recorded as
+\[
+\boxed{\text{KNOWN SOD ADAPTIVE SEPARATOR PASS}}
+\]
+and
+\[
+\boxed{\text{BOUNDED REFERENCE SEARCH: SINGLE CLUSTER}}.
+\]
+General global injectivity remains an open downstream gate; the bounded search does not enumerate arbitrary preimages or all attractor/support regimes.
+
+\section{Adaptive Retrodiction loop}
+
+The checkpoint-design workflow is therefore
+\[
+\boxed{
+\mathcal F_S
+\rightarrow \text{global-null search}
+\rightarrow \Delta^{\rm SOD}
+\rightarrow s_{\rm SOD}
+\rightarrow \mathcal F_{S+}
+\rightarrow \text{repeat search}.
+}
+\]
+This creates a fail-closed refinement loop in which each discovered spatially divergent branch returns an explicit coordinate capable of separating that particular witness.

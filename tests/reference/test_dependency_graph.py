@@ -34,19 +34,7 @@ def test_dependency_graph_is_acyclic():
 
 def test_declared_chain_matches_project_order():
     nodes = _nodes()
-    expected = [
-        "TIR",
-        "TEMPORAL_PRIMITIVE",
-        "TEMPORAL_WAVE",
-        "NOW",
-        "BIFURCATION",
-        "TEMPORAL_TRANSPORT",
-        "MEMORY",
-        "ORCHORBITAL_ATTRACTORS",
-        "RETRODICTION",
-        "RETROCAUSAL_TESTS",
-        "EINSTEIN_CLOSURE",
-    ]
+    expected = ["TIR","TEMPORAL_PRIMITIVE","TEMPORAL_WAVE","NOW","BIFURCATION","TEMPORAL_TRANSPORT","MEMORY","ORCHORBITAL_ATTRACTORS","RETRODICTION","RETROCAUSAL_TESTS","EINSTEIN_CLOSURE"]
     assert list(nodes) == expected
     for parent, child in zip(expected, expected[1:]):
         assert nodes[child]["depends_on"] == [parent]
@@ -67,17 +55,22 @@ def test_memory_orchorbital_retrodiction_order_is_explicit():
     assert nodes["ORCHORBITAL_ATTRACTORS"]["depends_on"] == ["MEMORY"]
     assert nodes["RETRODICTION"]["depends_on"] == ["ORCHORBITAL_ATTRACTORS"]
     status = nodes["RETRODICTION"]["status"]
-    assert "KNOWN_NULL_SEPARATION_TARGETED_PASS" in status
-    assert "TWO_EVENT_EXACT_BRANCH_ENUMERATION_TARGETED_PASS" in status
-    assert "TWO_EVENT_FIXED_REGIME_GLOBAL_INJECTIVITY_CONDITIONAL_PASS" in status
-    assert "CHECKPOINT_SCALING_BOUND_PASS" in status
-    assert "N3_DIMENSIONALLY_POSSIBLE" in status
-    assert "N_GE4_DECLARED_SCHEDULE_DIMENSIONAL_NO_GO" in status
-    assert "POSITION_LINEAGE_EXACT_RETRODICTION_TARGETED_PASS" in status
-    assert "RANK_MINIMAL_SPARSE_POSITION_COMPLETION_TARGETED_PASS" in status
-    assert "LOCAL_CHECKPOINT_SUFFICIENCY_CONDITIONAL_PASS" in status
-    assert "SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND" in status
-    assert "SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS" in status
-    assert "KNOWN_SOD_SEPARATOR_PASS" in status
-    assert "GENERAL_GLOBAL_INJECTIVITY_OPEN" in status
-    assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in status
+    for marker in [
+        "KNOWN_NULL_SEPARATION_TARGETED_PASS",
+        "TWO_EVENT_EXACT_BRANCH_ENUMERATION_TARGETED_PASS",
+        "TWO_EVENT_FIXED_REGIME_GLOBAL_INJECTIVITY_CONDITIONAL_PASS",
+        "CHECKPOINT_SCALING_BOUND_PASS",
+        "N3_DIMENSIONALLY_POSSIBLE",
+        "N_GE4_DECLARED_SCHEDULE_DIMENSIONAL_NO_GO",
+        "POSITION_LINEAGE_EXACT_RETRODICTION_TARGETED_PASS",
+        "RANK_MINIMAL_SPARSE_POSITION_COMPLETION_TARGETED_PASS",
+        "LOCAL_CHECKPOINT_SUFFICIENCY_CONDITIONAL_PASS",
+        "SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND",
+        "SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS",
+        "KNOWN_SOD_SEPARATOR_PASS",
+        "ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS",
+        "BOUNDED_REFERENCE_SEARCH_SINGLE_CLUSTER",
+        "GENERAL_GLOBAL_INJECTIVITY_OPEN",
+        "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION",
+    ]:
+        assert marker in status
