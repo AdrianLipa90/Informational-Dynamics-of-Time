@@ -1,6 +1,6 @@
 {
   "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
-  "status": "PINNED_WITH_PNCS_NOETHER_RFC_CURRENT_HOLONOMY_AND_PAIRED_VALIDATION",
+  "status": "PINNED_WITH_PNCS_NOETHER_RFC_EXACT_DEFECT_HOLONOMY_AND_PAIRED_VALIDATION",
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
@@ -12,7 +12,7 @@
       "formalism/01AA_noether_rfc_conserved_current_binding.md"
     ],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "02e8306bb5b83d30fdd5e4b3a1cb3a7f4d6ee3d8"
+    "paired_receipt_commit": "763308360ed3a70bdbd605c25753f77ce9f27938"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -28,7 +28,7 @@
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "commit": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
+    "commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
     "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
     "information_holonomy_contract": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
     "source_holonomy_contract": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
@@ -45,9 +45,12 @@
     "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
     "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
-    "common_measure_gate": "same slice_id, measure_id, ordered cell_ids; Delta_measure audits volumes",
-    "local_current_binding_defect": "Delta_local=sum_a V_a*abs(j_Q,a-j_theta,a)/Q_theta",
-    "total_charge_binding_defect": "Delta_Q=abs(Q_Sigma-Q_theta)/Q_theta",
+    "common_slice_gate": "same slice_id, normal orientation, measure_id and ordered cell_ids",
+    "local_current_binding_defect": "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta",
+    "measure_binding_defect": "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta",
+    "total_charge_binding_defect": "Delta_Sigma=abs(Q_Sigma-Q_theta)/Q_theta",
+    "exact_defect_bound": "Delta_Sigma <= Delta_J + Delta_V",
+    "bound_margin": "Delta_bound=max(0,Delta_Sigma-(Delta_J+Delta_V))",
     "side_flux_defect": "Delta_F=abs(F_side)",
     "pncs_reference_loop": "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "pncs_q0_loop": "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
@@ -55,11 +58,11 @@
     "pncs_euler_energy_loop": "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
     "pncs_noether_carrier_loop": "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
     "pncs_noether_rfc_current_loop": "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
-    "physical_cross_binding": "OPEN_PROMOTION_AFTER_ZERO_DEFECT_CURRENT_GATE"
+    "physical_cross_binding": "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
   },
   "executed_reference_gates": {
-    "idt": "370/370 PASS",
-    "rfc": "62/62 PASS"
+    "idt": "366/366 PASS",
+    "rfc": "58/58 PASS"
   },
-  "pinning_rule": "Both repositories pin the same six-loop PNCS current-binding snapshot; local-current and common-measure defects remain explicit before physical promotion."
+  "pinning_rule": "Both repositories pin the same six-loop PNCS current-binding snapshot and require the exact local-current/measure defect theorem before physical carrier promotion."
 }
