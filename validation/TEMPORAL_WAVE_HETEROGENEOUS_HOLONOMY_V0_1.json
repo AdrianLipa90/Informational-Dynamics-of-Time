@@ -1,0 +1,46 @@
+{
+  "schema": "IDT_TEMPORAL_WAVE_HETEROGENEOUS_HOLONOMY_BASELINE_V0_1",
+  "status": "TARGETED_HOLONOMY_HOMOGENIZATION_AND_STRESS_PASS_HOSTED_CI_PENDING",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
+  "derivation": {
+    "holonomy_phase": "phi = wrap(sum(alpha_e))",
+    "shifted_cell_phase": "delta = wrap(theta - phi)",
+    "shifted_wave_number": "k_eff = delta / L",
+    "mobility_effective": "M_eff = harmonic_mean(M_e)",
+    "damping_effective": "beta_eff = M_eff^2 * mean(eta_e / M_e^2)",
+    "acoustic_branch": "omega = sqrt(M_eff)|k_eff| - i beta_eff k_eff^2/2 + higher_order"
+  },
+  "local_targeted": {
+    "tests_passed": 6,
+    "tests_total": 6,
+    "elapsed_pytest_s": 0.10
+  },
+  "stress": {
+    "cases": 500,
+    "shifted_cell_phases": [0.02, 0.01, 0.005],
+    "max_wave_speed_relative_error": 0.00017891950205440555,
+    "max_damping_relative_error": 0.0001367638979986604,
+    "median_wave_speed_convergence_order": 2.0000736021939813,
+    "median_damping_convergence_order": 1.995918139258115,
+    "max_phase_redistribution_K_spectrum_drift": 5.4569682106375694e-12,
+    "wrong_unshifted_median_relative_error": 0.9999737410218146,
+    "wrong_unshifted_cases_above_10_percent": 500,
+    "wrong_unshifted_verdict": "REJECTED_BY_BASELINE_STRESS"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_HETEROGENEOUS_HOLONOMY_GATE_20260827.json",
+    "artifact_sha256": "ff21624d865d41e82a50073a6800aa1a7ec47a24c302de7cf03e60d98ad0ac72",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "2/2", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK",
+    "preceding_branch_behavior": "feature-branch jobs ended before checkout with steps=[] and runner_id=0"
+  }
+}
