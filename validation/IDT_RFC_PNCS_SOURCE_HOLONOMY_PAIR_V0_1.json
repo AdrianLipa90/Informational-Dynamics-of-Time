@@ -1,0 +1,59 @@
+{
+  "schema": "IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1",
+  "status": "IDT_PASS__RFC_PASS__PNCS_NATIVE_CI_PRE_TEST",
+  "local_repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "interface": {
+    "shape_factorization": "Q_a=Q_Sigma*p_Q,a",
+    "shape_candidate": "p_IDT <-> p_Q",
+    "source_mass_coordinate": "M_Q=epsilon_Q Q_Sigma/c^2",
+    "physical_cross_binding": "OPEN"
+  },
+  "pncs": {
+    "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+    "branch": "feat/gremlin-pnv-authoring-v0.2",
+    "code_commit": "5f3bf90998b8c3547d51e7c47bddaf0d6be25d60",
+    "contracts": [
+      "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
+      "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
+      "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1"
+    ],
+    "loops": [
+      "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
+      "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
+      "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP"
+    ],
+    "native_ci": {
+      "run_id": 33119164722,
+      "job_id": 98681411714,
+      "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
+      "code_test_failure_observed": false
+    }
+  },
+  "idt": {
+    "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+    "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
+    "tested_commit": "cd21a53d618de19d187d56bccf654dd974382d1a",
+    "cross_reference_commit": "8dc616fbcdd14a08ff8ef9d7dabad6ee7330ccc8",
+    "workflow": "Reference suite",
+    "run_id": 33119431801,
+    "job_id": 98682305136,
+    "passed": 337,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "rfc": {
+    "repository": "AdrianLipa90/Relational-Field-Closure",
+    "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
+    "tested_commit": "29407781935484917b7f6acaca797d26fd0c4710",
+    "cross_reference_commit": "a934a408c89630b88026ae0c3839b65c22341368",
+    "workflow": "RFC reference suite",
+    "run_id": 33119678183,
+    "job_id": 98683130920,
+    "passed": 29,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "pairing_rule": "IDT and RFC use immutable interface anchors and pin the same PNCS source-holonomy code snapshot; each repository carries this paired receipt.",
+  "epistemic_state": "CHYBA",
+  "main_mutated": false
+}
