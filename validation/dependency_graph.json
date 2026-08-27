@@ -1,14 +1,15 @@
 {
-  "schema": "IDT_FORMAL_DEPENDENCY_GRAPH_V0_2",
+  "schema": "IDT_FORMAL_DEPENDENCY_GRAPH_V0_3",
   "nodes": [
     {"id": "TIR", "depends_on": [], "status": "AVAILABLE"},
     {"id": "TEMPORAL_PRIMITIVE", "depends_on": ["TIR"], "status": "ACTIVE"},
-    {"id": "TEMPORAL_WAVE", "depends_on": ["TEMPORAL_PRIMITIVE"], "status": "ACTIVE_CANDIDATE"},
-    {"id": "NOW", "depends_on": ["TEMPORAL_WAVE"], "status": "STRUCTURAL_PASS"},
-    {"id": "BIFURCATION", "depends_on": ["NOW"], "status": "FORMAL_CONTRACT_PASS"},
-    {"id": "TEMPORAL_TRANSPORT", "depends_on": ["BIFURCATION"], "status": "ACTIVE_DERIVATION_TARGET"},
-    {"id": "MEMORY", "depends_on": ["TEMPORAL_TRANSPORT"], "status": "PROVISIONAL_DOWNSTREAM_BRANCH_KEPLER_NEWTON_REFERENCE_IMPLEMENTED"},
-    {"id": "RETRODICTION", "depends_on": ["MEMORY"], "status": "GATED"},
+    {"id": "TEMPORAL_WAVE", "depends_on": ["TEMPORAL_PRIMITIVE"], "status": "TARGETED_DERIVATION_CONTINUUM_HOLONOMY_PASS_CANDIDATE"},
+    {"id": "NOW", "depends_on": ["TEMPORAL_WAVE"], "status": "STRUCTURAL_PASS_WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE"},
+    {"id": "BIFURCATION", "depends_on": ["NOW"], "status": "FORMAL_CONTRACT_PASS_NOW_BRIDGE_TARGETED_PASS_CANDIDATE"},
+    {"id": "TEMPORAL_TRANSPORT", "depends_on": ["BIFURCATION"], "status": "STRUCTURAL_REFERENCE_GATE_PASS"},
+    {"id": "MEMORY", "depends_on": ["TEMPORAL_TRANSPORT"], "status": "ACTIVE_DERIVATION_TARGET"},
+    {"id": "ORCHORBITAL_ATTRACTORS", "depends_on": ["MEMORY"], "status": "PROVISIONAL_MEMORY_EXTENSION_TARGETED_PASS"},
+    {"id": "RETRODICTION", "depends_on": ["ORCHORBITAL_ATTRACTORS"], "status": "PROVISIONAL_DOWNSTREAM_GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION"},
     {"id": "RETROCAUSAL_TESTS", "depends_on": ["RETRODICTION"], "status": "GATED"},
     {"id": "EINSTEIN_CLOSURE", "depends_on": ["RETROCAUSAL_TESTS"], "status": "DEFERRED_FINAL_GATE"}
   ]
