@@ -1,0 +1,40 @@
+{
+  "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/shannon-relative-information-v0.1",
+  "derivation": {
+    "detailed_balance_requirement": "NOT_REQUIRED_FOR_SCALAR_MONOTONICITY",
+    "exact_onsager_tensor": "DEFERRED_01D",
+    "information_scalar": "D_KL_BITS_P_TO_STATIONARY_REFERENCE",
+    "monotonicity": "EXACT_BY_DATA_PROCESSING_AND_STATIONARITY",
+    "uniform_reduction": "LOG2_DIM_MINUS_SHANNON_BITS"
+  },
+  "evidence_boundary": {
+    "directional_holonomy": "01B_CONNECTION_SECTOR",
+    "exact_response_tensor_factorization": "01D_OPEN_AT_THIS_GATE",
+    "nonreversible_stationary_monotonicity": "PASS",
+    "physical_spacetime_interpretation": "DEFERRED_EINSTEIN_CLOSURE",
+    "stationary_relative_information_scalar": "CLOSED_CANDIDATE"
+  },
+  "general_markov_stress": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_SHANNON_RELATIVE_INFORMATION_GENERAL_MARKOV_PROBE_20260827.json",
+    "artifact_sha256": "bff8ea32f0139be8441b00656396f5ee54bb2a070270ac2ea5798f434ad41301",
+    "cases": 1000,
+    "max_detailed_balance_defect": 0.1515393109389192,
+    "max_kl_step_delta_bits": -7.011523738312611e-05,
+    "max_stationary_defect_l1": 1.0824674490095276e-15,
+    "min_detailed_balance_defect": 0.001309634830469364,
+    "nonreversible_cases_db_defect_gt_1e-8": 1000,
+    "strict_contraction_cases": 1000
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "bridge_status": "DEGRADED_MISSING_NATURAL_QUEUE_STATUS_JSON",
+    "runtime_promotion": false
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "integration_local_tests": {"failed": 0, "files": ["shannon relative information", "dependency graph"], "passed": 11},
+  "parent_commit": "088e0d71c32de9b73797f8c193311919b7b1a6e0",
+  "schema": "IDT_SHANNON_RELATIVE_INFORMATION_MONOTONICITY_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_GENERAL_MARKOV_STRESS_PASS_CI_PENDING",
+  "targeted_local_tests": {"failed": 0, "file": "tests/reference/test_shannon_relative_information.py", "passed": 7}
+}

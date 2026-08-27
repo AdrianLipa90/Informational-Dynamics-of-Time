@@ -1,0 +1,23 @@
+PNV_OPERATOR temporal.shannon_relative_information.v0.1
+STATUS TARGETED_DERIVATION_PASS_CANDIDATE
+INPUT probability_state p
+INPUT transition_kernel P
+INPUT stationary_reference pi
+REQUIRE p >= 0
+REQUIRE sum(p) == 1
+REQUIRE pi > 0
+REQUIRE sum(pi) == 1
+REQUIRE P >= 0
+REQUIRE row_sum(P) == 1
+REQUIRE pi * P == pi
+SET I_before = KL_bits(p || pi)
+SET p_next = p * P
+SET I_after = KL_bits(p_next || pi)
+ASSERT I_after <= I_before + tolerance
+OUTPUT I_before
+OUTPUT I_after
+OUTPUT delta_I
+IF detailed_balance == false:
+    RETAIN directional_current_sector
+    ROUTE cycle_holonomy -> temporal.phase_connection.v0.1
+OUTPUT derivation_receipt
