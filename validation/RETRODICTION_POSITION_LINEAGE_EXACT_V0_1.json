@@ -1,0 +1,52 @@
+{
+  "schema": "IDT_RETRODICTION_POSITION_LINEAGE_EXACT_BASELINE_V0_1",
+  "status": "TARGETED_POSITION_LINEAGE_EXACT_RETRODICTION_PASS_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_SPARSE_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/retrodiction-position-lineage-v0.1",
+  "derivation": {
+    "position_update": "r_n=r_{n-1}+(v_{n-1}+u_n)dt_n+0.5*A_n(r_{n-1})dt_n^2",
+    "kick_inverse": "u_n=(r_n-r_{n-1}-0.5*A_n(r_{n-1})dt_n^2)/dt_n-v_{n-1}",
+    "velocity_update": "v_n=v_{n-1}+u_n+0.5*(A_n(r_{n-1})+A_n(r_n))*dt_n",
+    "observation_dimension": "2N ordered position scalars",
+    "latent_dimension": "2N kick coordinates",
+    "compatibility_with_07J": "07J sparse schedule has rank<=N+3; 07K uses a richer 2N-scalar ordered position schedule"
+  },
+  "reference_probe": {
+    "generated_cases": 10000,
+    "forward_leak_cases": 13,
+    "admitted_cases": 9987,
+    "reconstructed_cases": 9987,
+    "event_count_min": 1,
+    "event_count_max": 6,
+    "admitted_by_event_count": {
+      "1": 1687,
+      "2": 1680,
+      "3": 1650,
+      "4": 1647,
+      "5": 1646,
+      "6": 1677
+    },
+    "max_total_latent_kick_error": 3.1342321523056973e-13,
+    "max_reconstructed_velocity_state_error": 9.849670420387302e-13
+  },
+  "scope": {
+    "structural_result": "EXACT_RECURSIVE_POSITION_LINEAGE_INVERSE_FOR_DECLARED_MEMORY_ORCHORBITAL_CELL",
+    "tested_reference_result": "9987_OF_9987_ADMITTED_TRAJECTORIES_RECONSTRUCTED_FOR_N_1_TO_6",
+    "next_gate": "SPARSE_HYBRID_CHECKPOINT_SELECTION_AND_GLOBAL_INJECTIVITY"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_POSITION_LINEAGE_EXACT_20260827.json",
+    "artifact_sha256": "f6f3f4f0166a19d2ac7bc5cda185b28211cf3cca7356400fd581cd3d60d6751e",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "2/2", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}

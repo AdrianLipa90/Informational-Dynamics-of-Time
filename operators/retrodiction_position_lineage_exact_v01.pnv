@@ -1,0 +1,45 @@
+schema: IDT_RETRODICTION_POSITION_LINEAGE_EXACT_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - initial_memory_phase_state
+  - finite_attractor_family
+  - retained_active_attractor_sequence
+  - positive_delta_taus
+  - ordered_post_segment_positions
+  - position_tolerance
+
+for_each event_n:
+  - a0 = acceleration(active_n, r_previous)
+  - u_n = (r_n - r_previous - 0.5*a0*delta_tau_n^2)/delta_tau_n - v_previous
+  - a1 = acceleration(active_n, r_n)
+  - v_n = v_previous + u_n + 0.5*(a0+a1)*delta_tau_n
+
+forward_consistency:
+  - replay complete Memory-to-ORCHORBITAL lineage
+  - active sequence must equal retained sequence
+  - ordered positions must match within tolerance
+  - LEAK_MODE fails closed
+
+exact_dimension:
+  - observation_dimension = 2*N
+  - latent_dimension = 2*N
+
+success_status:
+  - EXACT_POSITION_LINEAGE_RECOVERY
+
+fail_closed:
+  - nonfinite phase state
+  - invalid or duplicate attractor
+  - unknown active attractor
+  - length mismatch
+  - nonpositive delta_tau
+  - singular active-centre acceleration
+  - LEAK_MODE during replay
+  - active sequence mismatch
+  - position residual above tolerance
+
+scope:
+  - exact arbitrary-N retained-position-lineage reference class
+  - sparse checkpoint/global injectivity remains downstream

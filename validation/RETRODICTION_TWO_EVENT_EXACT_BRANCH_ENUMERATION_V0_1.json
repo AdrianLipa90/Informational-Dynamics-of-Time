@@ -1,6 +1,6 @@
 {
   "schema": "IDT_RETRODICTION_TWO_EVENT_EXACT_BRANCH_ENUMERATION_BASELINE_V0_1",
-  "status": "TARGETED_TWO_EVENT_EXACT_BRANCH_ENUMERATION_PASS_CI_PENDING",
+  "status": "TARGETED_TWO_EVENT_EXACT_BRANCH_ENUMERATION_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GENERAL_GLOBAL_INJECTIVITY_GATE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
@@ -42,6 +42,11 @@
     "test_counts": ["2/2", "2/2", "2/2"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33064388748,
+    "job_id": 98490774034,
+    "steps": 0,
+    "runner_id": 0,
+    "code_test_steps_executed": false
   }
 }
