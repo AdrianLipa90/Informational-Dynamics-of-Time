@@ -24,16 +24,17 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 
 The Temporal Primitive keeps its existing Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
 
-## Cross-repository branch: IDT 01X/01Y/01Z ↔ PNCS ↔ RFC
+## Cross-repository source branch: IDT 01X/01Y/01Z/01AA ↔ PNCS ↔ RFC
 
 \[
 \boxed{
-\text{IDT normalized shape}
+\text{normalized shape}
 \to 01X
 \to 01Y\;\text{Euler closure}
-\to 01Z\;\text{Noether collective carrier}
+\to 01Z\;\text{finite Noether carrier}
+\to 01AA\;\text{local conserved-current binding}
 \leftrightarrow\text{PNV law frame}
-\leftrightarrow\text{RFC RF-N1B2H/I/J}.
+\leftrightarrow\text{RFC RF-N1B2H/I/J/K}.
 }
 \]
 
@@ -50,10 +51,6 @@ Q_a=Q_\Sigma p_{Q,a}.
 ### 01Y — Euler-selected intention charge and rotor energy
 
 \[
-\Phi_{\rm tot}=2\pi(D+\epsilon_{EB}),
-\]
-
-\[
 \theta_I^{EB}=2\pi(D+\epsilon_{EB})-\Phi_{AB}-\Phi_B-\Phi_E-\Theta_I^{<k},
 \]
 
@@ -63,90 +60,120 @@ Q_a=Q_\Sigma p_{Q,a}.
 \boxed{H_\Phi^{EB}=\frac{(J-J_I^{EB})^2}{2I_\phi}}.
 \]
 
-The intention-action ratio remains a separately typed coordinate:
+The intention-action ratio remains separately typed:
 
 \[
 \epsilon_I^{EB}=H_\Phi^{EB}/J_I^{EB}.
 \]
 
-### 01Z — local Noether carrier / rotor kinetic coordinate
-
-The polar U(1) current is
+### 01Z — finite Noether carrier
 
 \[
-\boxed{J_\vartheta^\mu=2A^2\partial^\mu\vartheta}.
-\]
-
-In the collective normal-phase sector,
-
-\[
-I_A:=2\int_\Sigma A^2dV_h,
+J_\vartheta^\mu=2A^2\partial^\mu\vartheta,
 \qquad
-Q_\vartheta=I_A D_\tau\chi.
+Q_\vartheta=I_A D_\tau\chi,
 \]
 
-The rotor kinetic coordinate is
-
 \[
-\boxed{P_\Phi^{EB}:=J-J_I^{EB}=I_\phi D_\tau\chi}.
+P_\Phi^{EB}=J-J_I^{EB}=I_\phi D_\tau\chi.
 \]
 
-Therefore the field/rotor binding is measured by
+The field/rotor inertia defect is
 
 \[
-\boxed{
-\Delta_I
-=\frac{|Q_\vartheta-P_\Phi^{EB}|}{|P_\Phi^{EB}|}
-=\left|\frac{I_A}{I_\phi}-1\right|.
-}
+\boxed{\Delta_I=\left|\frac{I_A}{I_\phi}-1\right|.}
 \]
 
-The energy-per-finite-Noether-carrier coordinate is typed by the actual conserved field charge:
+The energy-per-finite-Noether-carrier coordinate is
 
 \[
-\boxed{
-\epsilon_N^{EB}=\frac{H_\Phi^{EB}}{Q_\vartheta}.
-}
+\boxed{\epsilon_N^{EB}=\frac{H_\Phi^{EB}}{Q_\vartheta}.}
 \]
 
-At the exact inertia binding \(I_A=I_\phi\),
+At exact \(I_A=I_\phi\),
 
 \[
-\boxed{Q_\vartheta=P_\Phi^{EB}}
-\]
-
-and only then
-
-\[
-\boxed{
-\epsilon_N^{EB}
-=\frac{H_\Phi^{EB}}{P_\Phi^{EB}}
-=\frac{P_\Phi^{EB}}{2I_\phi}
-=\frac12D_\tau\chi.
-}
-\]
-
-The RFC candidate chain is therefore
-
-\[
-\boxed{
-Q_\Sigma
-\stackrel{?}{\longleftrightarrow}
-Q_\vartheta,
+Q_\vartheta=P_\Phi^{EB},
 \qquad
-I_A\stackrel{?}{=}I_\phi,
-\qquad
-\epsilon_Q\stackrel{?}{=}\epsilon_N^{EB}.
-}
+\epsilon_N^{EB}=\frac12D_\tau\chi.
 \]
 
-The corresponding extensive mass coordinate is
+### 01AA — common-measure local-current binding
+
+On one explicit ordered cell partition,
+
+\[
+Q_\vartheta=\sum_aV_a j_{\vartheta,a},
+\qquad
+Q_\Sigma=\sum_aV_a j_{Q,a}.
+\]
+
+The common-measure defect is
 
 \[
 \boxed{
-M_N
-=\frac{\epsilon_N^{EB}Q_\vartheta}{c^2}
-=\frac{H_\Phi^{EB}}{c^2}.
+\Delta_V
+=\frac{\sum_a|V_a^{(\vartheta)}-V_a^{(Q)}|}{\sum_aV_a^{(\vartheta)}}.
+}
+\]
+
+The primary local-current defect is
+
+\[
+\boxed{
+\Delta_{\rm local}
+=\frac{\sum_aV_a|j_{Q,a}-j_{\vartheta,a}|}{Q_\vartheta}.
+}
+\]
+
+The integrated defect is
+
+\[
+\boxed{\Delta_Q=\frac{|Q_\Sigma-Q_\vartheta|}{Q_\vartheta},}
+\]
+
+and the side-flux defect is
+
+\[
+\boxed{\Delta_F=|F_{\rm side}|.}
+\]
+
+The anti-false-positive witness
+
+\[
+j_\vartheta=(1,3),\quad j_Q=(2,2),\quad V=(1,1)
+\]
+
+gives
+
+\[
+Q_\vartheta=Q_\Sigma=4,
+\qquad
+\Delta_Q=0,
+\qquad
+\Delta_{\rm local}=1/2.
+\]
+
+Thus equal integrated charge is insufficient for local-current promotion.
+
+At the zero-defect candidate gate,
+
+\[
+\Delta_V=\Delta_{\rm local}=\Delta_Q=\Delta_F=0
+\]
+
+and the candidate identity is
+
+\[
+\boxed{Q_\Sigma=Q_\vartheta.}
+\]
+
+Then the downstream energy conversion has the direct form
+
+\[
+\boxed{
+\epsilon_Q\stackrel{?}{=}\epsilon_N^{EB}
+=\frac{H_\Phi^{EB}}{Q_\Sigma}.
 }
 \]
 
@@ -157,7 +184,7 @@ Pinned code snapshot:
 ```text
 AdrianLipa90/PhaseNav-Natural-Coding-System
 feat/gremlin-pnv-authoring-v0.2
-fa517208e40873523d1c2a5b7fdb852092421afa
+f7b428f4dc30ddeb1280c9213c5788f576a54db4
 ```
 
 Contracts:
@@ -167,6 +194,7 @@ PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2
 PNCS_PNV_INFORMATION_HOLONOMY_V0_1
 PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1
 PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1
+PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1
 ```
 
 Executable loops:
@@ -177,54 +205,56 @@ SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP
 SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP
 SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP
 SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP
+SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP
 ```
 
-The fifth loop audits
+The sixth loop audits
 
 ```text
-SOURCE.ROTOR_KINETIC_CHARGE
-SOURCE.NOETHER_FINITE_CHARGE
-SOURCE.NOETHER_INERTIA_BINDING_DEFECT
-SOURCE.NOETHER_ENERGY_PER_CHARGE
+SOURCE.NOETHER_TOTAL_CHARGE
+SOURCE.RFC_TOTAL_CHARGE
+SOURCE.COMMON_MEASURE_DEFECT
+SOURCE.LOCAL_CURRENT_BINDING_DEFECT
+SOURCE.TOTAL_CHARGE_BINDING_DEFECT
+SOURCE.SIDE_FLUX_DEFECT
 ```
 
-and fails closed at the RFC candidate binding when \(\Delta_I\) exceeds the declared tolerance. Its general energy coordinate is `H_Phi_EB/Q_theta`; the half-phase-rate expression is the exact zero-defect reduction.
+and fails closed on semantic measure/cell mismatch or any declared defect above tolerance.
 
 Latest executed cross-repository reference snapshots:
 
 ```text
-IDT Reference suite     356 passed, 0 failed
-RFC Reference suite      48 passed, 0 failed
+IDT Reference suite     370 passed, 0 failed
+RFC Reference suite      62 passed, 0 failed
 ```
 
-PNCS native CI remains `CI_EXECUTION_UNRESOLVED_PRE_TEST`; the observed candidate-authoring job for the test head has `steps=null`.
+PNCS native CI remains `CI_EXECUTION_UNRESOLVED_PRE_TEST`; run `33123979049`, job `98697546433` has `steps=null`.
 
 ## Current source frontier
 
 ```text
 Euler/Berry -> J_I^EB                              PASS
-P_Phi^EB=J-J_I^EB                                  PASS
-Noether finite-charge collective reduction         PASS_CONDITIONAL
-finite epsilon_N^EB=H_Phi^EB/Q_theta               PASS typed candidate coordinate
-I_A <-> I_phi                                      OPEN measured by Delta_I
-Q_Sigma <-> Q_theta                                OPEN RFC physical carrier binding
-epsilon_Q <-> epsilon_N^EB                         OPEN downstream carrier binding
-IDT p <-> RFC p_Q                                  OPEN physical state-space binding
-local cell/measure/current transport               OPEN
-RFC source coupling/universality                   OPEN
+finite Q_theta and epsilon_N^EB                   PASS typed candidate coordinates
+I_A <-> I_phi                                     OPEN physical normalization, measured by Delta_I
+common slice/measure/cell current audit           PASS executable candidate gate
+Q_Sigma <-> Q_theta                               PASS_CONDITIONAL at zero current/measure/flux defects
+physical promotion Q_Sigma <-> Q_theta            OPEN evidence gate
+epsilon_Q <-> epsilon_N^EB                        OPEN downstream physical promotion
+IDT p <-> RFC p_Q                                 OPEN physical state-space binding
+RFC source coupling/universality                  OPEN
 ```
 
-The immediate cross-repository target is now the local conserved-current binding
+The next cross-repository step is therefore to feed the zero-defect current-bound carrier into the existing epsilon/mass-density transport and audit the full chain
 
 \[
-\boxed{
-Q_\Sigma
-\stackrel{?}{\longleftrightarrow}
-Q_\vartheta
-=\int_\Sigma n_\mu J_\vartheta^\mu\,dV_h,
-}
+J_\vartheta^\mu
+\to Q_\vartheta
+\leftrightarrow Q_\Sigma
+\to \epsilon_N^{EB}
+\to \rho_N
+\to \text{RFC source operator},
 \]
 
-with an explicitly pinned common measure/cell partition and side-flux/conservation assumptions. This is the next place for a PNV holonomy defect rather than another free normalization constant.
+while retaining the physical promotion gates explicitly.
 
-The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path. The next upstream Temporal Primitive gate remains the nonreversible response decomposition; the 01X/01Y/01Z branch is a parallel physical-source connection and holonomy audit.
+The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path. The 01X/01Y/01Z/01AA branch remains the parallel physical-source connection and holonomy audit.
