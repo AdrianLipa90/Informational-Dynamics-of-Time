@@ -1,0 +1,35 @@
+{
+  "schema": "IDT_RELATIONAL_LAPSE_INTERFACE_RECEIPT_V0_1",
+  "status": "PASS_LOCAL_EXACT_RATIO",
+  "date": "2026-08-27",
+  "branch": "feat/relational-lapse-interface-v0.1",
+  "formalism": "formalism/05C_relational_lapse_interface.md",
+  "reference_test": "tests/reference/test_relational_lapse_interface.py",
+  "local_reference_execution": {
+    "status": "PASS",
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "checks": [
+      "positive_dimensionless_clock_ratio",
+      "reparameterization_jacobian_cancellation",
+      "reference_composition",
+      "kinetic_shared_normalization_ratio",
+      "log_gradient_decomposition",
+      "mobility_log_gradient_decomposition",
+      "weak_log_lapse"
+    ]
+  },
+  "exact_results": {
+    "local_elapsed": "d tau_x = phi_x d lambda",
+    "reference_elapsed": "d tau_ref = phi_ref d lambda",
+    "relational_lapse": "N_R = phi_x / phi_ref > 0",
+    "reparameterization": "N_R invariant under common increasing lambda relabeling",
+    "composition": "N_x|s = N_x|r N_r|s",
+    "kinetic_ratio": "N_R = M_x cosh(A_x/2) / [M_ref cosh(A_ref/2)] for common a_star",
+    "fixed_reference_gradient": "grad ln N_R = grad ln M + 1/2 tanh(A/2) grad A",
+    "physical_time_export_candidate": "Theta_R = N_R c dt"
+  },
+  "claim_boundary": "The lapse ratio is an exact IDT relational clock-ratio invariant. Its binding as physical proper-time lapse and its gravitational source dynamics remain downstream calibration/field-closure gates.",
+  "gremlin_authority": "candidate_generation_and_audit_only"
+}
