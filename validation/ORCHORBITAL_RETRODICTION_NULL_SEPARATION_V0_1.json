@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_NULL_SEPARATION_BASELINE_V0_1",
+  "status": "TARGETED_KNOWN_NULL_SEPARATION_PASS_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "base_null_gate": "delta_B=||Y_B(z)-Y_B(z_tilde)||",
+    "augmented_gate": "delta_BA=||(Y_B,Y_A)(z)-(Y_B,Y_A)(z_tilde)||",
+    "separation_status": "delta_B<=eps and delta_BA>eps -> KNOWN_NULL_SEPARATED",
+    "added_scalar": "checkpoint_1 basin weight w_A",
+    "scope": "KNOWN_PAIR_ONLY / GLOBAL_INJECTIVITY_OPEN"
+  },
+  "explicit_reflection_pair": {
+    "latent_separation": 0.9233193011263697,
+    "base_final_augmented_residual": 5.594315114139762e-17,
+    "earlier_weight_A_reference": 0.5838364569736161,
+    "earlier_weight_A_alternate": 0.6030256253846112,
+    "earlier_weight_A_separation": 0.01918916841099516,
+    "earlier_rx_negative_control_residual": 1.1102230246251565e-16,
+    "base_status": "KNOWN_NULL_PERSISTS",
+    "weight_A_augmented_status": "KNOWN_NULL_SEPARATED",
+    "rx_augmented_status": "KNOWN_NULL_PERSISTS"
+  },
+  "bounded_multistart_diagnostic": {
+    "latent_box": [-1.2, 1.2],
+    "starts": 500,
+    "residual_threshold": 1e-08,
+    "final_only_successes": 495,
+    "final_only_clusters": 2,
+    "final_only_cluster_counts": [317, 178],
+    "added_weight_A_successes": 286,
+    "added_weight_A_clusters": 1,
+    "classification": "DIAGNOSTIC_SUPPORT / NO_GLOBAL_PROOF"
+  },
+  "targeted_reference_tests_declared": 6,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_KNOWN_NULL_SEPARATION_20260827.json",
+    "artifact_sha256": "fe49ff1f993379a90e106fbde0d39f4aa91e87fad7587eaa8c9ba2db12f0bd4c",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "2/2", "3/3"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}

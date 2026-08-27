@@ -1,0 +1,33 @@
+schema: IDT_RETRODICTION_KNOWN_NULL_SEPARATION_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - reference_latent_history
+  - alternate_latent_history
+  - base_checkpoint_observations
+  - added_checkpoint_observations
+  - equivalence_tolerance
+
+relations:
+  - base_residual = norm(Y_base(reference) - Y_base(alternate))
+  - augmented_residual = norm(Y_aug(reference) - Y_aug(alternate))
+  - latent_separation = norm(z_reference - z_alternate)
+
+status_rules:
+  - if base_residual > equivalence_tolerance: NOT_A_BASE_NULL
+  - if base_residual <= equivalence_tolerance and augmented_residual <= equivalence_tolerance: KNOWN_NULL_PERSISTS
+  - if base_residual <= equivalence_tolerance and augmented_residual > equivalence_tolerance: KNOWN_NULL_SEPARATED
+
+fail_closed:
+  - nonfinite latent history
+  - unequal event count
+  - identical latent candidates
+  - invalid checkpoint index
+  - invalid observation kind
+  - missing attractor for weight observation
+  - LEAK_MODE at observed checkpoint
+
+scope:
+  - known candidate pair separation
+  - global injectivity remains downstream

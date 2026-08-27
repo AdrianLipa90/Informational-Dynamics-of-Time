@@ -66,4 +66,6 @@ def test_memory_orchorbital_retrodiction_order_is_explicit():
     assert nodes["ORCHORBITAL_ATTRACTORS"]["status"] == "PROVISIONAL_MEMORY_EXTENSION_LINEAGE_BRIDGE_TARGETED_PASS_CANDIDATE"
     assert nodes["ORCHORBITAL_ATTRACTORS"]["depends_on"] == ["MEMORY"]
     assert nodes["RETRODICTION"]["depends_on"] == ["ORCHORBITAL_ATTRACTORS"]
+    assert "KNOWN_NULL_SEPARATION_TARGETED_PASS" in nodes["RETRODICTION"]["status"]
+    assert "GLOBAL_INJECTIVITY_OPEN" in nodes["RETRODICTION"]["status"]
     assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in nodes["RETRODICTION"]["status"]
