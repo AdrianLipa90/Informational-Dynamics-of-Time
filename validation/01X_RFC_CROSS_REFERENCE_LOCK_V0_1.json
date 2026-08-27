@@ -5,26 +5,14 @@
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
     "base_main": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc",
-    "interfaces": [
-      "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
-      "formalism/01Y_phase_intention_energy_per_charge_interface.md",
-      "formalism/01Z_noether_collective_phase_carrier_interface.md",
-      "formalism/01AA_noether_rfc_conserved_current_binding.md",
-      "formalism/01AB_scalar_field_rotor_inertia_reduction.md"
-    ],
+    "interfaces": ["formalism/01X_RFC_normalized_shape_extensive_scale_interface.md", "formalism/01Y_phase_intention_energy_per_charge_interface.md", "formalism/01Z_noether_collective_phase_carrier_interface.md", "formalism/01AA_noether_rfc_conserved_current_binding.md", "formalism/01AB_scalar_field_rotor_inertia_reduction.md"],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "9ebd391391dfcc7119a9a8d81d2ecec74f640b61"
+    "paired_receipt_commit": "7e1a30299b0ff0eea3eafb7929f36dcc4d67d48c"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "gates": [
-      "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
-      "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md",
-      "formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md",
-      "formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md",
-      "formalism/RFN1B2L_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION.md"
-    ],
+    "gates": ["formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md", "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md", "formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md", "formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md", "formalism/RFN1B2L_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION.md"],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
   },
   "pncs": {
@@ -72,9 +60,6 @@
     "pncs_scalar_field_rotor_loop": "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP",
     "physical_cross_binding": "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
   },
-  "executed_reference_gates": {
-    "idt": "373/373 PASS",
-    "rfc": "65/65 PASS"
-  },
+  "executed_reference_gates": {"idt":"373/373 PASS","rfc":"65/65 PASS"},
   "pinning_rule": "Both repositories pin the same seven-loop PNCS source-law snapshot; the scalar-field/rotor coefficient theorem conditionally closes the inertia equality after the common collective reduction gate, while current and state-space promotion remain measured."
 }
