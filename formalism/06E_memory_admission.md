@@ -1,6 +1,6 @@
 # 06E — Memory Admission Integration Gate
 
-Status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_PENDING`
+Status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / TRANSPORT_PARENT_BRIDGE_TARGETED_PASS / HOSTED_FULL_SUITE_BLOCKED`
 
 This gate composes the previously recorded Memory components without introducing a new upstream primitive. Its purpose is to verify that one admitted temporal event can traverse the complete declared Memory reference path and can be reconstructed from the persisted lineage.
 
@@ -69,12 +69,45 @@ The integration reference controls require simultaneously:
 
 The repository integration test is `tests/reference/test_memory_admission.py`. The isolated exact-formula integration harness passed all six test functions represented there; detailed evidence is recorded in `validation/MEMORY_ADMISSION_V0_1.json`.
 
-## 4. Gate discipline
+## 4. Temporal Transport parent closure
 
-The integration result verifies compatibility of the declared Memory reference components. Final Memory admission additionally requires the repository reference suite to be rerun on the integrated tree, because a cross-component regression outside the targeted integration surface would invalidate promotion.
+The parent boundary is now supplied by `formalism/06G_transport_memory_admission_bridge.md`.
+For one ordered Temporal Transport segment,
+\[
+\boxed{
+\Delta\tau_n
+=\frac{\mathfrak a_n}{\mathfrak a_\star}\Delta\lambda_n
+}
+\]
+is inherited from the existing positive-activity clock and is invariant under the declared increasing reparameterizations.
+
+The wave-active NOW layer supplies
+\[
+r_n^{(W)}=q_n\epsilon_n^{(W)}\ge0
+\]
+and the exact support gate
+\[
+g_n=\mathbf 1[r_n^{(W)}>0].
+\]
+The receipt consumed by Memory is therefore
+\[
+\boxed{
+\mathcal E_n^{T\to M}
+=(\Delta\tau_n,g_nq_n,\delta m_n).
+}
+\]
+For a wave-inactive transition, \(g_n=0\) and the receipt advances only the smooth Memory segment. For a wave-active transition, the existing event amplitude \(q_n\) is retained without an additional gain.
+
+Using \(q_n\epsilon_n^{(W)}\) itself as the kick amplitude is recorded as `BLOCKED_NORMALIZATION_DEPENDENT`, because \(\epsilon_n^{(W)}\) scales as \(|c|^2\) under a nonzero rescaling \(\Phi\mapsto c\Phi\), while the positive realization support does not change.
+
+The deterministic transport-to-Memory probe covered 5,000 cases and returned zero gate failures, reparameterization defect below \(1.8\times10^{-15}\), and forward/reverse lineage reconstruction defect below \(4.9\times10^{-13}\). GREMLIN remained `CANDIDATE_ONLY` and returned `SUPPORTED_BY_DECLARED_TESTS` for the three declared hypotheses.
+
+## 5. Gate discipline
+
+The integration result verifies compatibility of the declared Memory reference components and now also supplies a targeted parent bridge from Temporal Transport. Hosted GitHub Actions still terminates before executing repository test steps, so the full-suite condition remains infrastructure-blocked rather than recorded as a code failure.
 
 Therefore the present status is
 \[
-\boxed{\text{Memory}:\ \mathrm{INTEGRATION\ PASS\ CANDIDATE},}
+\boxed{\text{Memory}:\ \mathrm{INTEGRATION\ PASS\ +\ TRANSPORT\ BRIDGE\ PASS\ CANDIDATE},}
 \]
-with Retrodiction remaining gated until the full-suite condition and combined Memory receipt are satisfied.
+with Retrodiction remaining gated until the combined Memory/ORCHORBITAL admission conditions are satisfied.
