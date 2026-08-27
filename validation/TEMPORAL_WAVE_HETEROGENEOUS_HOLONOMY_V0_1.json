@@ -1,7 +1,7 @@
 {
   "schema": "IDT_TEMPORAL_WAVE_HETEROGENEOUS_HOLONOMY_BASELINE_V0_1",
-  "status": "TARGETED_HOLONOMY_HOMOGENIZATION_AND_STRESS_PASS_HOSTED_CI_PENDING",
-  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "status": "TARGETED_HOLONOMY_HOMOGENIZATION_AND_STRESS_PASS_CI_INFRA_BLOCKED",
+  "admission": "OWNER_APPROVED_FOR_REPOSITORY_MERGE__FORMAL_CANON_STATUS_REMAINS_SEPARATE",
   "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
   "derivation": {
     "holonomy_phase": "phi = wrap(sum(alpha_e))",
@@ -40,7 +40,12 @@
     "test_counts": ["3/3", "2/2", "2/2"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK",
-    "preceding_branch_behavior": "feature-branch jobs ended before checkout with steps=[] and runner_id=0"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33052746383,
+    "job_id": 98451973500,
+    "head_sha": "05d61e37edacec1fd326e0b7929429775463d0a3",
+    "conclusion": "failure",
+    "steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
   }
 }
