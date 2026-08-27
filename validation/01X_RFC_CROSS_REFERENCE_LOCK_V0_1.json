@@ -1,6 +1,6 @@
 {
   "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
-  "status": "PINNED_WITH_PNCS_SOURCE_HOLONOMY",
+  "status": "PINNED_WITH_PNCS_SOURCE_HOLONOMY_AND_PAIRED_VALIDATION",
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
@@ -8,7 +8,9 @@
     "interface": "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
     "interface_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
     "receipt": "validation/01X_RFC_NORMALIZED_SHAPE_EXTENSIVE_SCALE_V0_1.json",
-    "receipt_commit": "54542dbf18f38e62883399366e032a4dc86e5e1a"
+    "receipt_commit": "3b93dfa65093f252f6f39095d0fd685b2e68c88c",
+    "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
+    "paired_receipt_commit": "8856842dea15c96ba3af501b2ddaba2c9138f42d"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -16,7 +18,8 @@
     "interface_anchor_commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
     "gate": "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
     "pnv": "experiments/gremlin_pnv/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.pnv",
-    "receipt": "validation/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY_V0_1.json"
+    "receipt": "validation/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY_V0_1.json",
+    "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
@@ -32,7 +35,8 @@
       "spec/PNCS_PNV_INFORMATION_HOLONOMY_V0_1.md",
       "spec/PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1.md"
     ],
-    "native_executor_blob": "8b1a8e00e9ccaeacd9522a64c329a5c77cca1321"
+    "native_executor_blob": "8b1a8e00e9ccaeacd9522a64c329a5c77cca1321",
+    "native_ci_state": "CI_EXECUTION_UNRESOLVED_PRE_TEST"
   },
   "interface_contract": {
     "shape": "p_IDT <-> p_Q candidate",
@@ -44,5 +48,9 @@
     "holonomy_defect": "Delta_gamma=d(I,H_gamma(I))",
     "physical_cross_binding": "OPEN"
   },
-  "pinning_rule": "Mutual IDT/RFC references use immutable interface-anchor commits; both repositories pin the same PNCS source-holonomy commit and contract paths."
+  "executed_reference_gates": {
+    "idt": "340/340 PASS",
+    "rfc": "32/32 PASS"
+  },
+  "pinning_rule": "Mutual IDT/RFC references use immutable interface-anchor commits; both repositories pin the same PNCS source-holonomy commit and carry the paired validation receipt."
 }
