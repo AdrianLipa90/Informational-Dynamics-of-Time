@@ -1,10 +1,120 @@
 \chapter{Wave Structure of Time}
-The first phase-transport candidate is
+
+The relational transition layer carries a unit-modulus phase link $L_{ab}\in U(1)$ and a positive symmetric mobility $M_{ab}$.  For an oriented edge $e:a\to b$, define the covariant difference
 \[
-\Psi_{n+1}=e^{-i\Omega_n}\Psi_n.
+(D_L\Phi)_{ab}=\Phi_b-L_{ab}\Phi_a.
 \]
-For constant phase increment,
+The associated positive quadratic form is
 \[
-\Psi_n=e^{-in\Omega}\Psi_0.
+\mathcal E_W[\Phi]
+=\sum_e M_e |(D_L\Phi)_e|^2,
 \]
-This supplies a wave structure over relational order before metric-clock calibration enters the dependency graph.
+which defines the Hermitian positive-semidefinite Temporal Wave operator
+\[
+\boxed{
+K_M=D_L^\dagger\operatorname{diag}(M_e)D_L.
+}
+\]
+The mobility is inherited from the relational kinetic pair,
+\[
+M_{ab}
+=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}.
+\]
+Thus the wave stiffness uses the same positive coefficient that controls the symmetric transition rate at zero antisymmetric drive.
+
+\section{Relational viscosity and damping}
+
+Let
+\[
+\bar\eta_{ab}=\frac{\eta_R(a)+\eta_R(b)}2.
+\]
+The viscosity-weighted covariant operator is
+\[
+\boxed{
+C_\eta
+=D_L^\dagger\operatorname{diag}(\bar\eta_e)D_L.
+}
+\]
+For conjugate wave coordinates $(q,p)$, the tested candidate evolution is
+\[
+\dot q=-p,
+\qquad
+\dot p=K_Mq-C_\eta p,
+\]
+or equivalently
+\[
+\boxed{
+\ddot q+C_\eta\dot q+K_Mq=0.
+}
+\]
+With
+\[
+\mathcal H_T
+=\frac12p^\dagger p+\frac12q^\dagger K_Mq,
+\]
+the exact balance is
+\[
+\boxed{
+\frac{d\mathcal H_T}{d\lambda}
+=-p^\dagger C_\eta p\le0.
+}
+\]
+
+\section{Heterogeneous long-wave limit}
+
+For a one-dimensional periodic heterogeneous relational cell, let $M_e$ and $\eta_e$ denote the edge mobility and pair viscosity.  The acoustic cell corrector yields
+\[
+\boxed{
+M_{\rm eff}
+=\left\langle M_e^{-1}\right\rangle^{-1}
+}
+\]
+and
+\[
+\boxed{
+\beta_{\rm eff}
+=M_{\rm eff}^2
+\left\langle\frac{\eta_e}{M_e^2}\right\rangle.
+}
+\]
+The long-wave positive-frequency branch is therefore
+\[
+\boxed{
+\omega(k)
+=\sqrt{M_{\rm eff}}\,|k|
+-i\frac{\beta_{\rm eff}}2k^2
++O(|k|^3).
+}
+\]
+For uniform relational fields,
+\[
+M_{\rm eff}=\frac{\rho_0}{\eta_0},
+\qquad
+\beta_{\rm eff}=\eta_0.
+\]
+
+\section{Holonomy shift}
+
+For total closed-cell phase $\phi$ and Bloch phase $\theta$, the tested heterogeneous branch depends on the shifted wave number
+\[
+\boxed{
+k_{\rm eff}=\frac{\operatorname{wrap}(\theta-\phi)}{L}.
+}
+\]
+Hence
+\[
+\boxed{
+\omega
+=\sqrt{M_{\rm eff}}\,|k_{\rm eff}|
+-i\frac{\beta_{\rm eff}}2k_{\rm eff}^2+\cdots.
+}
+\]
+On a uniform $N$-cycle the exact spectrum is
+\[
+\lambda_m
+=4MN^2
+\sin^2\!\left(\frac{2\pi m-\phi}{2N}\right),
+\]
+so a nontrivial principal holonomy opens a positive lowest-mode gap.
+
+These results provide the upstream wave carrier consumed by the NOW localization layer.  Metric-clock calibration remains assigned to the later Einstein-closure stage of the dependency graph.
