@@ -1,0 +1,45 @@
+schema: IDT_RETRODICTION_SPATIAL_OFFSET_DIVERGENCE_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - reference_sparse_record
+  - candidate_sparse_record
+  - reference_position_lineage[N,2]
+  - candidate_position_lineage[N,2]
+  - reference_latent_history
+  - candidate_latent_history
+  - observation_tolerance > 0
+  - latent_tolerance > 0
+  - spatial_tolerance > 0
+
+compute:
+  - observation_distance = norm(candidate_record - reference_record)
+  - latent_distance = norm(candidate_latent - reference_latent)
+  - delta_SOD[n] = candidate_position[n] - reference_position[n]
+  - D_SOD = sqrt(sum_n norm(delta_SOD[n])^2)
+  - D_SOD_max = max_n norm(delta_SOD[n])
+  - separating_components = position coordinates with abs(delta) > spatial_tolerance
+
+classify:
+  - if observation_distance > observation_tolerance: OBSERVATION_DISTINGUISHABLE
+  - else if latent_distance <= latent_tolerance: SAME_LATENT_PREIMAGE
+  - else if D_SOD > spatial_tolerance: SPATIAL_OFFSET_DIVERGENCE
+  - else: NONSPATIAL_GLOBAL_NULL
+
+reference_witness:
+  - event_count = 4
+  - same_active_sequence = [A,A,A,A]
+  - observation_distance = 2.2581081909157704e-13
+  - latent_distance = 1.943975562143307e-3
+  - D_SOD = 2.9455091703333863e-6
+  - first_divergent_checkpoint = 2
+  - known_separators = [r2x,r2y]
+  - global_injectivity_gate = FAIL_GLOBAL_INJECTIVITY_SOD_WITNESS_FOUND
+
+fail_closed:
+  - mismatched observation shapes
+  - mismatched latent shapes
+  - position lineage shape other than [N,2]
+  - nonfinite values
+  - nonpositive tolerances

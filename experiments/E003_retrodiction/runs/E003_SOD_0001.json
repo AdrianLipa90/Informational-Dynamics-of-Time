@@ -1,0 +1,42 @@
+{
+  "D_SOD_l2": 2.9455091703333863e-06,
+  "D_SOD_max_checkpoint": 2.9455091703333863e-06,
+  "date": "2026-08-27",
+  "delta_taus": [0.004, 0.003, 0.005, 0.0025],
+  "event_count": 4,
+  "first_divergent_checkpoint": 2,
+  "known_separators": ["r2x", "r2y"],
+  "latent_l2": 0.001943975562143307,
+  "measurement_l2": 2.2581081909157704e-13,
+  "measurement_max_abs": 2.1260770921571748e-13,
+  "multistart": {
+    "cluster_counts": [27, 17],
+    "clusters": 2,
+    "converged": 44,
+    "latent_box_abs_max": 1.2,
+    "solver": "fixed-regime damped Gauss-Newton",
+    "starts": 60
+  },
+  "reference_latent": [
+    [0.034, -0.023],
+    [-0.008, 0.028],
+    [0.011, 0.006],
+    [-0.017, -0.009]
+  ],
+  "regime": "FOUR_EVENT_THREE_ATTRACTOR_FIXED_SUPPORT_REFERENCE",
+  "same_active_sequence": ["A", "A", "A", "A"],
+  "schema": "IDT_RETRODICTION_SOD_GLOBAL_WITNESS_PROBE_V0_1",
+  "sod_witness_latent": [
+    [0.034000000000006206, -0.023000000000003372],
+    [-0.0070342409020097, 0.027823047855073037],
+    [0.009454724712228744, 0.006283057597947288],
+    [-0.01642054454155759, -0.009106171287051467]
+  ],
+  "spatial_offset_lineage": [
+    [0.0, -5.551115123125783e-17],
+    [2.897277293967271e-06, -5.308564348105449e-07],
+    [1.7763568394002505e-15, 3.885780586188048e-16],
+    [1.7763568394002505e-15, 3.3306690738754696e-16]
+  ],
+  "verdict": "FAIL_GLOBAL_INJECTIVITY_SOD_WITNESS_FOUND"
+}

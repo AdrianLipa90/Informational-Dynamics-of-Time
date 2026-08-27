@@ -1,0 +1,51 @@
+{
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_ADAPTIVE_GLOBAL_SEARCH",
+  "branch": "feat/spatial-offset-divergence-v0.1",
+  "definition": {
+    "classification": "same sparse record + distinct latent + D_SOD above tolerance",
+    "lineage_norm": "D_SOD = sqrt(sum_n ||Delta_SOD_n||^2)",
+    "offset": "Delta_SOD_n = r_n(z_prime)-r_n(z)"
+  },
+  "gremlin": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_SPATIAL_OFFSET_DIVERGENCE_20260827.json",
+    "artifact_sha256": "1a6818432a85cba18d279e58b9448ac2554bdd2820720a6612d8299c52a8d45f",
+    "authority": "CANDIDATE_ONLY",
+    "comparison_sha256": "2e7c761dfe028f9dd19d9419b3ef917632f6d17ab2ea343a8254dc58025018a6",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "relation_structurally_isomorphic": true,
+    "test_counts": ["3/3", "1/1", "2/2"]
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "integration_local_tests": {
+    "failed": 0,
+    "includes": ["SOD", "07L sparse completion", "dependency graph"],
+    "passed": 16
+  },
+  "reference_witness": {
+    "D_SOD_l2": 2.9455091703333863e-06,
+    "D_SOD_max_checkpoint": 2.9455091703333863e-06,
+    "clusters": 2,
+    "converged": 44,
+    "event_count": 4,
+    "first_divergent_checkpoint": 2,
+    "known_separators": ["r2x", "r2y"],
+    "latent_l2": 0.001943975562143307,
+    "measurement_l2": 2.2581081909157704e-13,
+    "multistart_starts": 60,
+    "probe_artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_SOD_GLOBAL_WITNESS_PROBE_20260827.json",
+    "probe_sha256": "ba06f428e0ad1d4f24b1e5904664e0802d1acf51b1eb8b7f258c8394a4f46852",
+    "same_active_sequence": ["A", "A", "A", "A"],
+    "verdict": "FAIL_GLOBAL_INJECTIVITY_SOD_WITNESS_FOUND"
+  },
+  "schema": "IDT_RETRODICTION_SPATIAL_OFFSET_DIVERGENCE_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_GLOBAL_WITNESS_PASS_SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS_FOUND_CI_PENDING",
+  "targeted_local_tests": {
+    "failed": 0,
+    "file": "tests/reference/test_retrodiction_spatial_offset_divergence.py",
+    "passed": 6
+  }
+}

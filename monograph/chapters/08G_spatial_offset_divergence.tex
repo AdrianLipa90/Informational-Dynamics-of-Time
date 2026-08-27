@@ -1,0 +1,109 @@
+\chapter{Spatial Offset Divergence and Sparse Global Injectivity}
+
+The preceding Retrodiction layers establish two complementary checkpoint results. The complete ordered position lineage supplies an exact arbitrary-event reconstruction reference, while the rank-minimal sparse completion closes the local Jacobian deficit with the smallest number of additional position scalars admitted by the declared rank test. This chapter asks the next question: whether a locally sufficient sparse record identifies one global history.
+
+\section{Definition}
+
+Let
+\[
+\mathcal F_S:z\mapsto Y_S
+\]
+be the sparse observation map, where the latent event history is
+\[
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N}.
+\]
+At this layer, the spatial coordinate is the two-component Memory/ORCHORBITAL position carried by each retained lineage state.
+
+For two candidate histories define
+\[
+\boxed{
+\Delta_n^{\rm SOD}(z,z')=r_n(z')-r_n(z)
+}
+\]
+and
+\[
+\boxed{
+D_{\rm SOD}(z,z')
+=
+\left[
+\sum_{n=1}^{N}
+\|\Delta_n^{\rm SOD}(z,z')\|^2
+\right]^{1/2}.
+}
+\]
+The pair is a Spatial Offset Divergence witness when its sparse observation records agree within the declared measurement tolerance, its latent histories remain distinct, and $D_{\rm SOD}$ exceeds the spatial tolerance.
+
+The distinction is important because a full local Jacobian rank answers a neighborhood question. Spatial Offset Divergence audits the global preimage structure of the same checkpoint map.
+
+\section{Four-event reference witness}
+
+A bounded deterministic multistart search was performed in the same fixed-support three-attractor reference regime used by the preceding ORCHORBITAL Retrodiction gates. For four events with
+\[
+\Delta\tau=(0.004,0.003,0.005,0.0025),
+\]
+60 initializations produced 44 converged solutions grouped into two latent clusters.
+
+The second cluster reproduces the retained 07L sparse record with
+\[
+\|\Delta Y_S\|_2
+\approx2.2581\times10^{-13},
+\]
+while remaining separated from the reference latent history by
+\[
+\|\Delta z\|_2
+\approx1.94398\times10^{-3}.
+\]
+Both histories retain the same active-attractor sequence $(A,A,A,A)$.
+
+Their position histories differ at the second checkpoint by
+\[
+\Delta_2^{\rm SOD}
+\approx
+(2.89728\times10^{-6},-5.30856\times10^{-7}),
+\]
+which gives
+\[
+\boxed{
+D_{\rm SOD}\approx2.94551\times10^{-6}.
+}
+\]
+The remaining retained position checkpoints coincide at numerical precision in this reference witness.
+
+Thus the rank-minimal sparse schedule receives a global-injectivity FAIL for the declared four-event reference: a concrete distinct preimage pair survives while carrying nonzero Spatial Offset Divergence.
+
+\section{Adaptive spatial separation}
+
+The SOD vector also identifies a direct separator. For the recorded witness,
+\[
+|\Delta r_{2x}|\approx2.89728\times10^{-6},
+\qquad
+|\Delta r_{2y}|\approx5.30856\times10^{-7}.
+\]
+Promoting either component into the sparse checkpoint record separates this known pair. This motivates the iterative checkpoint rule
+\[
+\boxed{
+\text{global-null witness}
+\rightarrow
+\Delta^{\rm SOD}
+\rightarrow
+\text{promote a separating coordinate}
+\rightarrow
+\text{repeat the global search}.
+}
+\]
+The known-witness separator is therefore constructive: a detected global ambiguity returns the position coordinate at which the hidden histories first separate.
+
+\section{Connection to the exact position lineage}
+
+The complete position-lineage schedule of the preceding exact reconstruction layer carries every $r_n\in\mathbb R^2$. Its recursion recovers each event kick sequentially for positive finite segment duration and a retained active-attractor sequence. Consequently every SOD witness is distinguished by that complete positional record.
+
+The sparse design can therefore be viewed as a compression of the exact position lineage, while $D_{\rm SOD}$ measures the spatial history hidden by a particular observation-equivalent branch pair.
+
+\section{Reference status}
+
+The targeted SOD implementation and parent integration tests pass locally. The four-event witness establishes a FAIL for global injectivity of the declared minimal sparse schedule and a PASS for separation of that recorded witness by an additional second-checkpoint spatial coordinate. General sparse global injectivity remains the next search frontier after adaptive SOD separation.
+
+The evidence receipt is
+\texttt{validation/RETRODICTION\_SPATIAL\_OFFSET\_DIVERGENCE\_V0\_1.json},
+and the append-only reference run is
+\texttt{experiments/E003\_retrodiction/runs/E003\_SOD\_0001.json}.

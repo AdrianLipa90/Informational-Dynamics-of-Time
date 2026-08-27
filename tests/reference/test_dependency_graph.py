@@ -76,6 +76,8 @@ def test_memory_orchorbital_retrodiction_order_is_explicit():
     assert "POSITION_LINEAGE_EXACT_RETRODICTION_TARGETED_PASS" in status
     assert "RANK_MINIMAL_SPARSE_POSITION_COMPLETION_TARGETED_PASS" in status
     assert "LOCAL_CHECKPOINT_SUFFICIENCY_CONDITIONAL_PASS" in status
-    assert "SPARSE_GLOBAL_INJECTIVITY_OPEN" in status
+    assert "SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND" in status
+    assert "SPARSE_GLOBAL_INJECTIVITY_FAIL_SOD_WITNESS" in status
+    assert "KNOWN_SOD_SEPARATOR_PASS" in status
     assert "GENERAL_GLOBAL_INJECTIVITY_OPEN" in status
     assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in status
