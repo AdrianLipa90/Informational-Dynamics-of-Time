@@ -1,8 +1,8 @@
 # 01AA — Noether ↔ RFC Conserved-Current Binding Interface
 
-Status: `COMMON_SLICE_MEASURE_EXPLICIT / LOCAL_CURRENT_BINDING_PASS_CONDITIONAL / TOTAL_CHARGE_BINDING_PASS_CONDITIONAL / RFC_PHYSICAL_PROMOTION_OPEN`
+Status: `EXACT_DEFECT_THEOREM_PASS / COMMON_SLICE_MEASURE_ORIENTATION_EXPLICIT / LOCAL_CURRENT_BINDING_PASS_CONDITIONAL / RFC_PHYSICAL_PROMOTION_OPEN`
 
-01AA follows 01Z and tests the physical carrier identity at the local-current level before promoting the integrated charge identity.
+01AA follows 01Z and tests whether the finite Euler–Noether phase charge and the RFC extensive source carrier are the same conserved carrier on one explicitly pinned spatial slice.
 
 The target is
 
@@ -15,172 +15,193 @@ Q_\vartheta
 }
 \]
 
-## 1. One explicit slice and cell partition
+## 1. One explicit slice, orientation and cell partition
 
-Choose one oriented spatial slice \(\Sigma\) and an ordered finite-cell partition
+Choose one oriented spatial slice and ordered finite-cell support
 
 \[
-\Sigma=\bigcup_a C_a,
-\qquad
-V_a:=\int_{C_a}dV_h>0.
+\Sigma=\bigcup_a C_a.
 \]
 
-The cross-repository binding carries explicit identifiers for:
+The Noether representation carries
 
-```text
-slice_id
-measure_id
-ordered cell_ids
-cell volumes V_a
-```
+\[
+j_{\vartheta,a},\qquad V_a^{(\vartheta)}>0,
+\]
 
-The semantic measure identifier and ordered cell identifiers must agree exactly across the Noether and RFC representations.
+while RFC carries
 
-For independently supplied numerical cell-volume vectors \(V_a^{(\vartheta)}\) and \(V_a^{(Q)}\), define
+\[
+j_{Q,a},\qquad V_a^{(Q)}>0.
+\]
+
+The interface pins the same `slice_id`, normal-orientation identifier, semantic measure identifier and ordered `cell_ids` before any current promotion.
+
+The finite positive-sector charges are
+
+\[
+\boxed{
+Q_\vartheta=\sum_aV_a^{(\vartheta)}j_{\vartheta,a}>0,
+\qquad
+Q_\Sigma=\sum_aV_a^{(Q)}j_{Q,a}>0.
+}
+\]
+
+## 2. Independent current and measure defects
+
+Define the local-current defect
+
+\[
+\boxed{
+\Delta_J
+:=
+\frac{\sum_aV_a^{(Q)}|j_{Q,a}-j_{\vartheta,a}|}{Q_\vartheta}
+}
+\]
+
+and the charge-weighted measure defect
 
 \[
 \boxed{
 \Delta_V
 :=
-\frac{\sum_a|V_a^{(\vartheta)}-V_a^{(Q)}|}
-{\sum_aV_a^{(\vartheta)}}.
+\frac{\sum_a|V_a^{(Q)}-V_a^{(\vartheta)}|\,|j_{\vartheta,a}|}{Q_\vartheta}.
 }
 \]
 
-Exact common-measure closure has \(\Delta_V=0\).
-
-## 2. Two independently supplied local currents
-
-The Noether side supplies the oriented normal current samples
-
-\[
-j_{\vartheta,a}
-\]
-
-from the 01Z current
-
-\[
-J_\vartheta^\mu=2A^2\partial^\mu\vartheta.
-\]
-
-The RFC side supplies its carrier-current samples
-
-\[
-j_{Q,a}.
-\]
-
-On the common cell support, define
+The global extensive-charge defect is
 
 \[
 \boxed{
-Q_\vartheta=\sum_aV_a j_{\vartheta,a},
-\qquad
-Q_\Sigma=\sum_aV_a j_{Q,a}.
-}
-\]
-
-The positive source sector uses
-
-\[
-Q_\vartheta>0,
-\qquad
-Q_\Sigma>0.
-\]
-
-## 3. Local-current defect
-
-The primary physical binding defect is
-
-\[
-\boxed{
-\Delta_{\rm local}
+\Delta_\Sigma
 :=
-\frac{\sum_aV_a|j_{Q,a}-j_{\vartheta,a}|}
-{Q_\vartheta}.
+\frac{|Q_\Sigma-Q_\vartheta|}{Q_\vartheta}.
 }
 \]
 
-This prevents promotion from equality of integrated charges alone.
+These defects are intentionally independent coordinates. A current mismatch cannot be hidden inside a measure choice and a measure mismatch cannot be hidden inside current normalization.
 
-A constructive witness is
+## 3. Exact defect theorem
+
+Cellwise,
+
+\[
+V_a^{(Q)}j_{Q,a}-V_a^{(\vartheta)}j_{\vartheta,a}
+=
+V_a^{(Q)}(j_{Q,a}-j_{\vartheta,a})
++
+(V_a^{(Q)}-V_a^{(\vartheta)})j_{\vartheta,a}.
+\]
+
+The triangle inequality therefore gives
+
+\[
+\boxed{
+\Delta_\Sigma\le\Delta_J+\Delta_V.
+}
+\]
+
+Hence exact local current and measure binding,
+
+\[
+\Delta_J=0,
+\qquad
+\Delta_V=0,
+\]
+
+implies
+
+\[
+\boxed{Q_\Sigma=Q_\vartheta.}
+\]
+
+This implication is exact for the stated finite-cell representation.
+
+## 4. Equality of totals is deliberately weaker
+
+Local current errors can cancel after integration. For
 
 \[
 j_\vartheta=(1,3),
 \qquad
 j_Q=(2,2),
 \qquad
-V=(1,1).
+V=(1,1),
 \]
 
-Then
+we have
 
 \[
 Q_\vartheta=Q_\Sigma=4,
+\qquad
+\Delta_\Sigma=0,
+\qquad
+\Delta_J=1/2.
 \]
 
-while
-
-\[
-\boxed{\Delta_{\rm local}=1/2.}
-\]
-
-Thus \(Q_\vartheta=Q_\Sigma\) can hold while the local-current binding fails.
-
-## 4. Integrated-charge defect
-
-Define
+Therefore
 
 \[
 \boxed{
-\Delta_Q
-:=
-\frac{|Q_\Sigma-Q_\vartheta|}{Q_\vartheta}.
+\Delta_\Sigma=0
+\not\Rightarrow
+\Delta_J=0.
 }
 \]
 
-Exact local binding implies
+Integrated charge equality alone is never used as the physical current-admission rule.
+
+## 5. Normalized profile consequence
+
+On the positive sector define
 
 \[
-\Delta_{\rm local}=0
-\quad\Longrightarrow\quad
-\Delta_Q=0
+p_{\vartheta,a}
+=\frac{V_a^{(\vartheta)}j_{\vartheta,a}}{Q_\vartheta},
+\qquad
+p_{Q,a}
+=\frac{V_a^{(Q)}j_{Q,a}}{Q_\Sigma}.
 \]
 
-on the exact common measure.
+Under exact local current and measure binding,
 
-The reverse implication is not used as the admission rule.
+\[
+\boxed{p_{Q,a}=p_{\vartheta,a}.}
+\]
 
-## 5. Conservation / side-flux gate
+Thus the same gate that closes the extensive carrier also supplies the phase-current profile needed by the later `p_IDT ↔ p_Q` physical state-space binding.
 
-For a world-tube between slices, RF-N1B2 conservation uses the zero-side-flux sector. Carry the side-flux coordinate
+## 6. Conservation and side flux
+
+For a world-tube between slices, both currents must satisfy the selected conservation law and one declared side-boundary convention. Carry
 
 \[
 F_{\rm side}
 \]
 
-with defect
+with
 
 \[
 \boxed{\Delta_F:=|F_{\rm side}|.}
 \]
 
-Exact conservation binding uses \(\Delta_F=0\).
+Exact cross-slice persistence uses \(\Delta_F=0\), periodic boundary conditions, or the equivalent admitted sufficient-decay condition.
 
-## 6. Consequence for epsilon
+## 7. Consequence for epsilon
 
-01Z already supplies the finite Noether energy coordinate
+01Z supplies
 
 \[
-\epsilon_N^{EB}=rac{H_\Phi^{EB}}{Q_\vartheta}.
+\epsilon_N^{EB}=\frac{H_\Phi^{EB}}{Q_\vartheta}.
 \]
 
-Once the physical current identity is admitted,
+Once the physical current/measure identity is admitted,
 
 \[
 Q_\Sigma=Q_\vartheta,
 \]
 
-so the downstream RFC candidate becomes
+so the RFC carrier coordinate receives
 
 \[
 \boxed{
@@ -189,9 +210,7 @@ so the downstream RFC candidate becomes
 }
 \]
 
-No additional free normalization is introduced at this step.
-
-The extensive source-mass coordinate remains
+The corresponding extensive source-mass coordinate is
 
 \[
 \boxed{
@@ -201,9 +220,9 @@ M_N
 }
 \]
 
-## 7. PNCS executable gate
+## 8. PNCS executable gate
 
-Pinned semantic loop:
+Canonical semantic loop:
 
 ```text
 SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP
@@ -215,7 +234,7 @@ Contract:
 PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1
 ```
 
-The PNV state carries two independently supplied local-current arrays and two explicit measure descriptions. It audits
+PNV audits
 
 ```text
 SOURCE.NOETHER_TOTAL_CHARGE
@@ -223,22 +242,36 @@ SOURCE.RFC_TOTAL_CHARGE
 SOURCE.COMMON_MEASURE_DEFECT
 SOURCE.LOCAL_CURRENT_BINDING_DEFECT
 SOURCE.TOTAL_CHARGE_BINDING_DEFECT
+SOURCE.CURRENT_MEASURE_BOUND_MARGIN
+SOURCE.NOETHER_PROFILE_NORM
+SOURCE.RFC_PROFILE_NORM
 SOURCE.SIDE_FLUX_DEFECT
 ```
 
-The current binding fails closed if local-current equality, integrated-charge equality, common-measure agreement, or the declared side-flux gate is violated.
+The executable `Delta_bound_margin` is
 
-## 8. Advancement
+\[
+\max\{0,\Delta_\Sigma-(\Delta_J+\Delta_V)\}
+\]
+
+and must remain zero within the declared numerical floor.
+
+## 9. Advancement
 
 ```text
 common slice identifier                           EXPLICIT
+common normal orientation                         EXPLICIT gate
 common semantic measure identifier                EXPLICIT gate
 ordered cell partition                            EXPLICIT gate
-cell-volume defect Delta_V                        PASS as audit coordinate
-local-current defect Delta_local                  PASS as audit coordinate
-total-charge defect Delta_Q                       PASS as audit coordinate
-zero-side-flux defect Delta_F                     PASS as audit coordinate
-Q_Sigma <-> Q_theta                               PASS_CONDITIONAL at zero defects
-epsilon_Q <-> epsilon_N^EB                        OPEN physical promotion after carrier identity
+Delta_J                                            PASS exact audit coordinate
+Delta_V                                            PASS exact audit coordinate
+Delta_Sigma                                        PASS exact audit coordinate
+Delta_Sigma <= Delta_J + Delta_V                  PASS EXACT THEOREM
+Delta_F                                            PASS audit coordinate
+zero local defects -> Q_Sigma=Q_theta             PASS CONDITIONAL
+Q_Sigma=Q_theta alone -> local current identity    INSUFFICIENT
+Q_Sigma <-> Q_theta physical carrier identity     OPEN measured binding
+epsilon_Q <-> epsilon_N^EB                        OPEN promotion after carrier identity
+p_IDT <-> p_theta physical state-space binding    OPEN
 RF-N1C source coupling/universality                OPEN
 ```
