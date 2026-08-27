@@ -8,10 +8,18 @@
     "euler_closed_intention_charge": "J_I^EB=hbar*theta_I^EB",
     "rotor_kinetic_carrier": "P_Phi^EB=J-J_I^EB",
     "noether_collective_charge": "Q_theta=I_A*(P_Phi^EB/I_phi)",
-    "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
+    "legacy_inertia_binding_defect": "Delta_I_01Z=abs(I_A/I_phi-1)",
     "rotor_energy": "H_Phi^EB=(P_Phi^EB)^2/(2 I_phi)",
     "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
+    "scalar_field_phase_coefficient": "C_A=sum_a A_a^2 V_a",
+    "scalar_field_collective_inertia": "I_A=2*C_A",
+    "scalar_field_rotor_reduction_defect": "Delta_I_reduction=abs(I_phi-I_A)/I_A",
+    "coefficient_reduction_defect": "Delta_coefficient=abs(I_phi/2-C_A)/C_A",
+    "carrier_reduction_defect": "Delta_Q_reduction=abs(P_Phi-Q_theta)/Q_theta",
+    "epsilon_reduction_defect": "Delta_epsilon_reduction=abs(epsilon_N-(D_tau_chi)/2)/((D_tau_chi)/2)",
+    "exact_reduction_identity": "common positive D_tau_chi => Delta_I_reduction=Delta_coefficient=Delta_Q_reduction=Delta_epsilon_reduction",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
+    "collective_reduction_gate": "same field/rotor phase mode, covariant-rate ID, measure ID and ordered collective support",
     "common_slice_gate": "same slice_id, normal orientation, measure_id and ordered cell_ids",
     "local_current_binding_defect": "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta",
     "measure_binding_defect": "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta",
@@ -22,18 +30,19 @@
     "current_binding_rule": "Delta_J=Delta_V=Delta_Sigma=Delta_F=0 => Q_Sigma=Q_theta conditional carrier closure",
     "normalized_profile_consequence": "exact local current/measure binding => p_Q=p_theta",
     "source_mass_coordinate": "M_N=epsilon_N^EB*Q_theta/c^2=H_Phi^EB/c^2",
-    "physical_cross_binding": "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
+    "physical_cross_binding": "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "code_commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
+    "code_commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
     "contracts": [
       "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
       "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
       "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
       "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
-      "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1"
+      "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1",
+      "PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1"
     ],
     "loops": [
       "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
@@ -41,38 +50,38 @@
       "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
       "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
       "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
-      "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP"
+      "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP"
     ],
     "native_ci": {
-      "run_id": 33124207227,
-      "job_id": 98698284462,
-      "head_commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
-      "code_snapshot": "ae08bb9df367926322ce5ec74a9382135cba61f6",
+      "run_id": 33125567602,
+      "job_id": 98702774903,
+      "head_commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
+      "code_snapshot": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
       "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
-      "steps": [],
-      "runner_id": 0,
+      "steps": null,
       "code_test_failure_observed": false
     }
   },
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
-    "tested_commit": "f0506bfa20782ee99bf238b57d2910379e5b74f7",
+    "tested_commit": "64126c9a88d564ed3d5200a6f226b64cca349571",
     "workflow": "Reference suite",
-    "run_id": 33124509297,
-    "job_id": 98699274250,
-    "passed": 366,
+    "run_id": 33125075845,
+    "job_id": 98701129577,
+    "passed": 373,
     "failed": 0,
     "status": "PASS"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "tested_commit": "ed8db5e9aa82e558b10979a8717415c9247d03b1",
+    "tested_commit": "c868b3d7838ac9f9c824add487ecdf23b75ec85e",
     "workflow": "RFC reference suite",
-    "run_id": 33124577793,
-    "job_id": 98699501693,
-    "passed": 58,
+    "run_id": 33125109859,
+    "job_id": 98701242932,
+    "passed": 65,
     "failed": 0,
     "status": "PASS"
   },
@@ -87,7 +96,7 @@
     "Delta_V": 0.0,
     "binding_verdict": "FAIL_LOCAL_CURRENT"
   },
-  "pairing_rule": "IDT and RFC pin the same six-loop PNCS current-binding snapshot; physical carrier promotion requires the measured inertia, current, measure, orientation and boundary gates rather than integrated-charge equality alone.",
+  "pairing_rule": "IDT and RFC pin the same seven-loop PNCS source-law snapshot; the scalar-field/rotor coefficient theorem conditionally closes I_A=I_phi once the common phase-mode, covariant-rate, measure and collective-support gate is admitted, while physical current promotion remains measured.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
 }
