@@ -1,7 +1,7 @@
 {
   "schema": "IDT_MEMORY_ORCHORBITAL_LINEAGE_BASELINE_V0_1",
-  "status": "TARGETED_MEMORY_ORCHORBITAL_LINEAGE_PASS_CI_PENDING",
-  "admission": "PROVISIONAL_PARENT_MEMORY_CANDIDATE_AND_HOSTED_FULL_SUITE_PENDING",
+  "status": "TARGETED_MEMORY_ORCHORBITAL_LINEAGE_PASS_CI_INFRA_BLOCKED",
+  "admission": "PROVISIONAL_PARENT_MEMORY_CANDIDATE_AND_EXECUTED_HOSTED_FULL_SUITE_PENDING",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
     "binding_margin": "b_i=[mu_i/r_i-T]_+",
@@ -37,6 +37,11 @@
     "test_counts": ["2/2", "3/3", "1/1"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "workflow_run_id": 33060454511,
+    "job_id": 98477638812,
+    "steps_executed": 0,
+    "runner_id": 0,
+    "code_test_steps_executed": false
   }
 }
