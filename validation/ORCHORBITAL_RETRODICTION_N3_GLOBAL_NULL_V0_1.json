@@ -1,0 +1,49 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_N3_GLOBAL_NULL_BASELINE_V0_1",
+  "status": "TARGETED_N3_GLOBAL_NULL_EXPLICIT_SECOND_EARLIER_WEIGHT_KNOWN_NULL_SEPARATION_PASS_N3_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_N3_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "base_schedule": [
+    "weight_A@checkpoint_1",
+    "weight_A@checkpoint_2",
+    "rx@checkpoint_3",
+    "ry@checkpoint_3",
+    "vx@checkpoint_3",
+    "weights_A_B_C@checkpoint_3"
+  ],
+  "explicit_collision": {
+    "truth_kicks": [[0.034, -0.023], [-0.008, 0.028], [0.02, -0.015]],
+    "alternate_kicks": [[0.02171604910786055, -0.01997647522522139], [0.02066339813510957, 0.02094610600551937], [0.00362139881046886, -0.01096863363360488]],
+    "latent_separation": 0.03627527334738057,
+    "base_residual": 1.6939998869943826e-16,
+    "weight_A1_separation_negative_control": 0.0,
+    "weight_B1_truth": 0.19430826752908295,
+    "weight_B1_alternate": 0.19430761251872072,
+    "weight_B1_separation": 6.550103622271486e-07,
+    "rx1_separation": 4.9135803568578496e-05,
+    "added_weight_B1_status": "KNOWN_NULL_SEPARATED"
+  },
+  "bounded_multistart": {
+    "starts": 300,
+    "base_successes": 91,
+    "base_clusters": 2,
+    "base_cluster_counts": [45, 46],
+    "added_weight_B1_successes": 51,
+    "added_weight_B1_clusters": 1,
+    "classification": "DIAGNOSTIC_SUPPORT / NO_GLOBAL_PROOF"
+  },
+  "targeted_reference_tests_declared": 3,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "comparison_sha256": "ffeed170561037dcfa635b4cad12b47f808d6db8d5a2af5b91a06c779d018958",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_N3_GLOBAL_NULL_20260827.json",
+    "artifact_sha256": "d74407ba6b0de910ea639692ad49fadfd86d7bc77e298cb7f02e17baca984828",
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"]
+  },
+  "probe": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_N3_GLOBAL_NULL_PROBE_20260827.json",
+    "artifact_sha256": "b4ec7e55078bbb6d621087b19c354f1411f9843f212848958d9c357a75c1832b"
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"}
+}
