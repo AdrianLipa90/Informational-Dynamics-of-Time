@@ -1,0 +1,69 @@
+{
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATES",
+  "branch": "feat/retrodiction-sparse-completion-v0.1",
+  "derivation": {
+    "07J_minimum_extra_scalars": "N-3",
+    "general_minimum_position_completion": "2N-rank(J_S)",
+    "latent_dimension": "2N",
+    "position_lineage_jacobian": "block_lower_triangular",
+    "position_lineage_rank": "2N for finite positive delta_tau_k",
+    "saturated_07J_base_rank": "N+3",
+    "saturated_07J_completion": "N-3",
+    "diagonal_blocks": "delta_tau_k * I_2"
+  },
+  "evidence_boundary": {
+    "conditioning": "RECORDED_SEPARATELY",
+    "general_global_injectivity": "OPEN",
+    "local_checkpoint_sufficiency": "CONDITIONAL_TARGETED_PASS",
+    "sparse_global_injectivity": "OPEN"
+  },
+  "extended_probe": {
+    "all_base_ranks": "N+3",
+    "all_completed_ranks": "2N",
+    "all_extra_scalar_counts": "N-3",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_RETRODICTION_SPARSE_COMPLETION_PROBE_20260827.json",
+    "artifact_sha256": "477565b89e7673b3ed4424f091dc7cac09ebaa8d6c305dcb54af3825f3f86c9f",
+    "cases_per_event_count": 10,
+    "event_counts": [4, 5, 6, 7, 8, 9, 10],
+    "maximum_condition_number": 500684.423487915,
+    "minimum_smallest_singular_value": 6.027011107503022e-06,
+    "relative_rank_tolerance": 1e-07,
+    "selected_pattern": "r1x,...,r(N-3)x in all 70/70 declared cases",
+    "total_cases": 70
+  },
+  "gremlin": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_SPARSE_COMPLETION_20260827.json",
+    "artifact_sha256": "758b5b76d484a21c886b8c7a93ee4c25373d81a00561c369085344b82e878a24",
+    "authority": "CANDIDATE_ONLY",
+    "comparison_sha256": "f14d82a6b8de8f8bee516cefc3f087f85922b9f96963be06fe05422e7ecf861f",
+    "evaluation_sha256": [
+      "8643778b9752f7175dc600e525a089eea3e01bd686fa9cbd53c5d4742ac662e0",
+      "382eee5144c3581e2e8e8c0f5da9f73eb815438317cf5d8c424bce9fa6462bf1",
+      "cc76f3ce039aa8093c10878cb4237194aefabcc4e5c90fdad0bca3d83a091ab4"
+    ],
+    "hypothesis_ids": [
+      "gremlin:hypothesis:sha256:996fa06f10eb12c54dac6d47d034196b41ef25e6144db237ef6495d3d6e40be5",
+      "gremlin:hypothesis:sha256:346525d065c0d04380a22ebd78679eac9bcd2030acfef4f607557ea8f1f0ab2e",
+      "gremlin:hypothesis:sha256:11d7497c6dadf31990effde0031eacdb10bb5fbb7867b42c8d70690afff853cc"
+    ],
+    "relation_structurally_isomorphic": true,
+    "relational_evaluation_sha256": "eb0afc7d243c0ac13d90208da0bba841ead0d032746d781006f907b40c7ad8c3",
+    "verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  },
+  "parent_commit": "ab83544134a4c3495b16cf393ae02bcc6c2b25ae",
+  "schema": "IDT_RETRODICTION_SPARSE_COMPLETION_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "targeted_local_tests": {
+    "elapsed_seconds": 0.98,
+    "failed": 0,
+    "file": "tests/reference/test_retrodiction_sparse_completion.py",
+    "passed": 6
+  }
+}

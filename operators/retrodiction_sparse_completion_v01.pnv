@@ -1,0 +1,46 @@
+schema: IDT_RETRODICTION_SPARSE_COMPLETION_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - base_sparse_schedule_jacobian
+  - ordered_position_lineage_jacobian
+  - ordered_position_row_labels
+  - positive_relative_rank_tolerance
+
+preconditions:
+  - matrices are finite and two-dimensional
+  - matrices share the latent column count
+  - rank(position_lineage_jacobian) = latent_dimension
+
+rank_certificate:
+  - ordered position lineage is block lower triangular
+  - diagonal block k = delta_tau_k * I_2
+  - positive delta_tau_k implies position_lineage_rank = 2*N
+
+selector:
+  - current = base_sparse_schedule_jacobian
+  - for each scalar position row p_i in declared order:
+      admit p_i iff rank([current; p_i]) = rank(current) + 1
+      stop when rank(current) = latent_dimension
+
+success_assertions:
+  - completed_rank = latent_dimension
+  - selected_scalar_count = latent_dimension - base_rank
+  - saturated_07J_base_rank = N + 3 implies selected_scalar_count = N - 3
+
+success_status:
+  - RANK_MINIMAL_POSITION_COMPLETION
+
+fail_closed:
+  - nonfinite matrix
+  - matrix dimensional mismatch
+  - nonpositive rank tolerance
+  - position pool rank below latent dimension
+  - invalid scalar rank increment
+  - incomplete final rank
+  - selected count differs from measured rank deficit
+
+scope:
+  - local fixed-regime checkpoint sufficiency candidate
+  - global injectivity is a separate downstream gate

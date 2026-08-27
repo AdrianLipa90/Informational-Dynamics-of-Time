@@ -74,6 +74,8 @@ def test_memory_orchorbital_retrodiction_order_is_explicit():
     assert "N3_DIMENSIONALLY_POSSIBLE" in status
     assert "N_GE4_DECLARED_SCHEDULE_DIMENSIONAL_NO_GO" in status
     assert "POSITION_LINEAGE_EXACT_RETRODICTION_TARGETED_PASS" in status
+    assert "RANK_MINIMAL_SPARSE_POSITION_COMPLETION_TARGETED_PASS" in status
+    assert "LOCAL_CHECKPOINT_SUFFICIENCY_CONDITIONAL_PASS" in status
     assert "SPARSE_GLOBAL_INJECTIVITY_OPEN" in status
     assert "GENERAL_GLOBAL_INJECTIVITY_OPEN" in status
     assert "GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION" in status
