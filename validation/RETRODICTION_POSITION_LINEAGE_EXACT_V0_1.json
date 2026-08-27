@@ -1,6 +1,6 @@
 {
   "schema": "IDT_RETRODICTION_POSITION_LINEAGE_EXACT_BASELINE_V0_1",
-  "status": "TARGETED_POSITION_LINEAGE_EXACT_RETRODICTION_PASS_CI_PENDING",
+  "status": "TARGETED_POSITION_LINEAGE_EXACT_RETRODICTION_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_SPARSE_GLOBAL_INJECTIVITY_GATE",
   "branch": "feat/retrodiction-position-lineage-v0.1",
   "derivation": {
@@ -10,6 +10,11 @@
     "observation_dimension": "2N ordered position scalars",
     "latent_dimension": "2N kick coordinates",
     "compatibility_with_07J": "07J sparse schedule has rank<=N+3; 07K uses a richer 2N-scalar ordered position schedule"
+  },
+  "targeted_reference_tests": {
+    "declared": 6,
+    "local_exact_harness_passed": 6,
+    "status": "PASS"
   },
   "reference_probe": {
     "generated_cases": 10000,
@@ -47,6 +52,12 @@
     "test_counts": ["2/2", "2/2", "2/2"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33065963544,
+    "job_id": 98495952746,
+    "job_name": "reference",
+    "job_conclusion": "failure",
+    "executed_steps": 0,
+    "code_test_steps_executed": false
   }
 }
