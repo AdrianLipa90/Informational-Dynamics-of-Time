@@ -1,6 +1,6 @@
 {
   "schema": "IDT_ORCHORBITAL_RETRODICTION_OBSERVABILITY_BASELINE_V0_1",
-  "status": "TARGETED_ORCHORBITAL_OBSERVABILITY_PASS_CI_PENDING",
+  "status": "TARGETED_ORCHORBITAL_OBSERVABILITY_PASS_CI_INFRA_BLOCKED",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_HOSTED_FULL_SUITE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
@@ -41,6 +41,10 @@
     "test_counts": ["2/2", "2/2", "2/2"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "workflow_run_id": 33062338333,
+    "job_id": 98483916119,
+    "executed_steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
   }
 }

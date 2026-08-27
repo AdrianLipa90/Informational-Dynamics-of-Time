@@ -1,0 +1,59 @@
+{
+  "schema": "IDT_ORCHORBITAL_RETRODICTION_ESTIMATION_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_ESTIMATION_PASS_GLOBAL_NULL_EXPLICIT_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "measurement": "Y(z)=partial_memory_checkpoint+ORCHORBITAL_weights",
+    "rank_gate": "rank(dY/dz)=dim(z)",
+    "local_step": "delta_z=argmin ||J delta_z-(Y_target-Y(z))||_2",
+    "line_search": "same active-attractor/support regime with strictly decreasing residual",
+    "rank_deficient_status": "AMBIGUOUS_FIT / RETRODICTION_UNRESOLVED",
+    "global_claim_gate": "separate global injectivity/additional checkpoint test"
+  },
+  "observability_replay": {
+    "cases": 500,
+    "full_checkpoint_rank_same": 500,
+    "partial_rx_ry_vx_rank_3_to_4": 500,
+    "position_only_rank_2_to_3": 500,
+    "max_full_checkpoint_weight_rowspace_residual": 3.619705363875762e-16
+  },
+  "local_estimation": {
+    "cases": 200,
+    "successful_recoveries": 200,
+    "max_latent_error": 4.6949912690116956e-09,
+    "max_observation_residual": 8.996117987372108e-11
+  },
+  "partial_only_negative_control": {
+    "cases": 200,
+    "good_residual_wrong_latent_cases": 200,
+    "median_latent_error": 0.005511556235292925,
+    "max_latent_error": 0.02618850346837075,
+    "max_observation_residual": 9.978937937594909e-11
+  },
+  "global_reflection_null": {
+    "augmented_observation_residual": 1.936720866602264e-14,
+    "latent_separation": 0.9233193011263697,
+    "vy_reference": 0.24247769958074852,
+    "vy_alternate": -0.24247769958074855,
+    "alternate_kicks": [
+      [0.03399999999998063, 0.34071654937113033],
+      [-0.00802729491823317, -0.8206629500579328]
+    ]
+  },
+  "targeted_reference_tests_declared": 5,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_ORCHORBITAL_RETRODICTION_ESTIMATION_PROBE_20260827.json",
+    "artifact_sha256": "db97c9ddf6ffbd53ecf9b809ea39f162489df1926a218de32fb9a7d5a1d017df",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["3/3", "3/3", "3/3"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}
