@@ -1,0 +1,47 @@
+{
+  "schema": "IDT_RETRODICTION_TWO_EVENT_EXACT_BRANCH_ENUMERATION_BASELINE_V0_1",
+  "status": "TARGETED_TWO_EVENT_EXACT_BRANCH_ENUMERATION_PASS_CI_PENDING",
+  "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GENERAL_GLOBAL_INJECTIVITY_GATE",
+  "branch": "feat/now-temporal-wave-activation-v0.1",
+  "derivation": {
+    "fixed_sequence": "one ordered active-attractor pair determines at most one kick pair",
+    "second_inverse": "(r1,v1_plus_u2)=Phi_a2^{-1}(Delta_tau2) X2",
+    "first_kick": "u1=(r1-r0-0.5*a10*Delta_tau1^2)/Delta_tau1-v0",
+    "first_post_velocity": "v1=v0+u1+0.5*(a10+a11)*Delta_tau1",
+    "second_kick": "u2=(v1_plus_u2)-v1",
+    "branch_space": "M attractors -> M^2 ordered two-event active sequences",
+    "admission": "forward replay must reproduce active sequence and final full phase checkpoint"
+  },
+  "reference_probe": {
+    "generated_cases": 5000,
+    "forward_leak_cases": 10,
+    "admitted_cases": 4990,
+    "unique_branch_cases": 4990,
+    "multiple_branch_cases": 0,
+    "no_branch_cases": 0,
+    "max_recovered_latent_error": 3.230770417104829e-11,
+    "attractor_count": 3,
+    "enumerated_sequences_per_case": 9
+  },
+  "scope": {
+    "structural_result": "FINITE_EXACT_TWO_EVENT_BRANCH_ENUMERATION",
+    "tested_reference_result": "UNIQUE_BRANCH_4990_OF_4990_ADMITTED_CASES",
+    "next_gate": "GENERAL_MULTI_EVENT_AND_GLOBAL_INJECTIVITY"
+  },
+  "targeted_reference_tests_declared": 5,
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "relation_structurally_isomorphic": true,
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_TWO_EVENT_EXACT_BRANCH_ENUMERATION_20260827.json",
+    "artifact_sha256": "356fa50fb1a50e352c97248b70e380ef8d71b4e486532b28bc378c38e20832fa",
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "2/2", "2/2"]
+  },
+  "hosted_ci": {
+    "status": "PENDING_CURRENT_HEAD_CHECK"
+  }
+}

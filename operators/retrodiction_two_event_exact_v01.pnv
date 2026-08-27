@@ -1,0 +1,37 @@
+schema: IDT_RETRODICTION_TWO_EVENT_EXACT_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+inputs:
+  - initial_memory_phase_state
+  - final_full_memory_phase_state
+  - finite_attractor_family
+  - delta_tau_1
+  - delta_tau_2
+  - residual_tolerance
+
+for_each ordered_active_sequence (a1, a2):
+  - inverse_second_segment: X1_plus_u2 = Phi_a2^{-1}(delta_tau_2) X2
+  - reconstruct_u1_from_position_update
+  - reconstruct_v1_from_velocity_verlet
+  - reconstruct_u2 = v1_plus_u2 - v1
+  - forward_replay_complete_memory_orchorbital_lineage
+  - admit_only_if_active_sequence_matches_and_final_checkpoint_matches
+
+statuses:
+  - NO_ADMISSIBLE_BRANCH
+  - EXACT_UNIQUE_REFERENCE_BRANCH
+  - FINITE_BRANCH_AMBIGUITY
+
+fail_closed:
+  - invalid full phase state
+  - nonfinite attractor definition
+  - duplicate attractor names
+  - nonpositive delta_tau
+  - singular centered inverse
+  - LEAK_MODE during forward consistency replay
+  - final residual above declared tolerance
+
+scope:
+  - exact two-event finite branch enumeration
+  - general multi-event/global injectivity remains downstream

@@ -1,6 +1,6 @@
 {
   "schema": "IDT_ORCHORBITAL_RETRODICTION_NULL_SEPARATION_BASELINE_V0_1",
-  "status": "TARGETED_KNOWN_NULL_SEPARATION_PASS_GLOBAL_INJECTIVITY_OPEN_CI_PENDING",
+  "status": "TARGETED_KNOWN_NULL_SEPARATION_PASS_GLOBAL_INJECTIVITY_OPEN_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "admission": "PROVISIONAL_DOWNSTREAM_PENDING_PARENT_MEMORY_ORCHORBITAL_ADMISSION_AND_GLOBAL_INJECTIVITY_GATE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
@@ -46,6 +46,11 @@
     "test_counts": ["2/2", "2/2", "3/3"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33063893682,
+    "job_id": 98489128863,
+    "steps": 0,
+    "runner_id": 0,
+    "code_test_steps_executed": false
   }
 }
