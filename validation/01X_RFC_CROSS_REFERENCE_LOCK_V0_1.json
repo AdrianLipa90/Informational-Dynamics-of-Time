@@ -1,6 +1,6 @@
 {
   "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
-  "status": "PINNED",
+  "status": "PINNED_WITH_PNCS_SOURCE_HOLONOMY",
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
@@ -13,7 +13,7 @@
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
+    "interface_anchor_commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
     "gate": "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
     "pnv": "experiments/gremlin_pnv/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.pnv",
     "receipt": "validation/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY_V0_1.json"
@@ -21,15 +21,28 @@
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "commit": "695223eff9373554c4c2aff1aca9c3e1e7dfecd4",
+    "commit": "5f3bf90998b8c3547d51e7c47bddaf0d6be25d60",
     "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
+    "information_holonomy_contract": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
+    "source_holonomy_contract": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
+    "interfaces": [
+      "src/phasenav_natural_code/gremlin_pnv_bridge_v02.py",
+      "src/phasenav_natural_code/gremlin_pnv_holonomy_v01.py",
+      "src/phasenav_natural_code/pnv_source_holonomy_v01.py",
+      "spec/PNCS_PNV_INFORMATION_HOLONOMY_V0_1.md",
+      "spec/PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1.md"
+    ],
     "native_executor_blob": "8b1a8e00e9ccaeacd9522a64c329a5c77cca1321"
   },
   "interface_contract": {
     "shape": "p_IDT <-> p_Q candidate",
+    "extensive_factorization": "Q_a=Q_Sigma*p_Q,a",
     "scale": "M_Q=epsilon_Q Q_Sigma/c^2",
-    "holonomy_defect": "Delta_ext=abs(1-s/Q_Sigma)",
+    "pncs_reference_loop": "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
+    "pncs_q0_loop": "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
+    "pncs_epsilon_loop": "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
+    "holonomy_defect": "Delta_gamma=d(I,H_gamma(I))",
     "physical_cross_binding": "OPEN"
   },
-  "rule": "All three repository references remain exact and content-addressed for this interface revision."
+  "pinning_rule": "Mutual IDT/RFC references use immutable interface-anchor commits; both repositories pin the same PNCS source-holonomy commit and contract paths."
 }
