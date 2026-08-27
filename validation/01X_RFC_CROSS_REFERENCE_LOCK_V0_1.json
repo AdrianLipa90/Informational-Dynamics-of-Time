@@ -11,7 +11,7 @@
     ],
     "interface_anchor_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "653d47911d1fb521a39a29fde6be2371c774e6bb"
+    "paired_receipt_commit": "4e05fe8b8638345c5d1fe8f145d34741b09e7ab0"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -53,8 +53,8 @@
     "physical_cross_binding": "OPEN"
   },
   "executed_reference_gates": {
-    "idt": "347/347 PASS",
-    "rfc": "39/39 PASS"
+    "idt": "348/348 PASS",
+    "rfc": "40/40 PASS"
   },
   "pinning_rule": "Mutual IDT/RFC references use immutable interface anchors; both repositories pin the same PNCS Euler-source-holonomy snapshot and carry paired validation."
 }
