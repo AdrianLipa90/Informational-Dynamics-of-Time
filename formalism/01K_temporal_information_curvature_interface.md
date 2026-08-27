@@ -1,6 +1,6 @@
 # 01K — Temporal Information Curvature Interface
 
-Status: `TARGETED_TEMPORAL_INFORMATION_CURVATURE_INTERFACE_PASS_CANDIDATE / RELATIONAL_AREA_BINDING_PENDING`
+Status: `TARGETED_TEMPORAL_INFORMATION_CURVATURE_INTERFACE_PASS_CANDIDATE / PHASE_CLOCK_AREA_BINDING_CANDIDATE`
 
 ## 1. Purpose
 
@@ -9,7 +9,8 @@ This gate types the dimensional bridge between the dimensionless Shannon-relativ
 The central distinction is explicit:
 
 - Shannon entropy and KL relative information are dimensionless information scalars once the logarithm base is fixed;
-- an inverse-area quantity appears only after division by an admitted positive relational area carrying dimension `L^2`.
+- an inverse-area quantity appears after division by an admitted positive relational area carrying dimension `L^2`;
+- 01L supplies a local `L`-typed phase-clock carrier from the calibrated temporal phase flow.
 
 RFC owns the later binding of this inverse-area scalar into the dynamic `Lambda0` sector.
 
@@ -73,6 +74,75 @@ so
 
 This is the inverse-square information scalar exported by IDT.
 
+### 3A. Phase-clock length carrier from 01L
+
+For the calibrated phase rate
+
+\[
+\omega_t
+=\frac{d\varphi/d\tau_{\rm int}}{dt/d\tau_{\rm int}},
+\qquad |\omega_t|>0,
+\]
+
+01L gives
+
+\[
+\boxed{
+\ell_\varphi=\frac{c}{|\omega_t|}
+=\frac{\hbar c}{E}.
+}
+\]
+
+Let `da_FS` denote a dimensionless Fubini--Study area element imported from the projective geometry layer. The local phase-clock area candidate is
+
+\[
+\boxed{
+ d\mathcal A_{\rm rel}
+ :=\ell_\varphi^2\,da_{FS}
+ =\frac{c^2}{\omega_t^2}\,da_{FS}.
+}
+\]
+
+For a cell `P` with constant calibrated phase-rate magnitude,
+
+\[
+\boxed{
+\mathcal A_{\rm rel}^{(P)}
+=\frac{c^2}{\omega_P^2}\,a_{FS}^{(P)}.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\Xi_I^{(P)}
+=\frac{\mathcal J_\pi}{a_{FS}^{(P)}}
+\left(\frac{\omega_P}{c}\right)^2
+}
+\]
+
+and, using `E_P = hbar |omega_P|`,
+
+\[
+\boxed{
+\Xi_I^{(P)}
+=\frac{\mathcal J_\pi}{a_{FS}^{(P)}}
+\left(\frac{E_P}{\hbar c}\right)^2.
+}
+\]
+
+For a spatially varying nonzero phase rate,
+
+\[
+\boxed{
+\mathcal A_{\rm rel}^{(P)}
+=\int_P\frac{c^2}{\omega_t(x)^2}\,da_{FS}(x).
+}
+\]
+
+The constant-rate formula is the exact reduction of this integral when `omega_t` is constant on the cell.
+
 ## 4. Exact temporal differential
 
 Along any admitted temporal evolution,
@@ -97,12 +167,29 @@ Using internal elapsed activity `tau_int`,
 }
 \]
 
-Therefore temporal change of the inverse-area information scalar receives two typed contributions:
+For the constant-dimensionless-area and constant-over-cell phase-rate sector,
 
-1. information redistribution at fixed area;
-2. relational-area evolution at fixed information.
+\[
+\Xi_I
+=\frac{\mathcal J_\pi}{a_{FS}}
+\frac{\omega_t^2}{c^2},
+\]
 
-For a fixed relational area, the 01C KL contraction transfers directly to `Xi_I`.
+hence
+
+\[
+\boxed{
+\frac{d\Xi_I}{d\tau_{\rm int}}
+=
+\frac{\omega_t^2}{c^2a_{FS}}
+\frac{d\mathcal J_\pi}{d\tau_{\rm int}}
++
+\frac{2\mathcal J_\pi\omega_t}{c^2a_{FS}}
+\frac{d\omega_t}{d\tau_{\rm int}}.
+}
+\]
+
+Temporal change therefore contains an information-redistribution channel and a phase-rate/scale channel.
 
 ## 5. Clock calibration
 
@@ -125,7 +212,7 @@ the calibrated rate is
 }
 \]
 
-Thus the scalar itself is clock-coordinate independent, while its reported rate transforms by the usual chain rule.
+The scalar itself is carried by the admitted physical phase-clock map, while its reported temporal rate follows the usual chain rule.
 
 ## 6. TIR normalization crosslink
 
@@ -135,24 +222,34 @@ TIR fixes
 \kappa=\frac{\ln2}{24\pi}.
 \]
 
-Hence the numerator can equivalently be written
+Hence
 
 \[
 \mathcal J_\pi
 =24\pi\kappa\,\mathcal I_\pi,
 \]
 
-and therefore
+and in the constant-rate cell sector
 
 \[
 \boxed{
-\Xi_I
+\Xi_I^{(P)}
 =
-\frac{24\pi\kappa}{\mathcal A_{\rm rel}}\,\mathcal I_\pi.
+\frac{24\pi\kappa}{a_{FS}^{(P)}}
+\mathcal I_\pi
+\left(\frac{\omega_P}{c}\right)^2.
 }
 \]
 
-This is an exact substitution once the independent TIR definition of `kappa` and the 01C bit-valued KL scalar are admitted.
+For the full CP1/Bloch sphere, `a_FS = pi`, so
+
+\[
+\boxed{
+\Xi_I^{(S^2)}
+=24\kappa\,\mathcal I_\pi
+\left(\frac{\omega}{c}\right)^2.
+}
+\]
 
 ## 7. Export contract
 
@@ -161,13 +258,16 @@ IDT exports to downstream field closure:
 ```text
 information_scalar_bits        = I_pi
 information_scalar_nats        = J_pi = ln(2) I_pi
-relational_area                = A_rel > 0
+calibrated_phase_rate           = omega_t
+phase_length_per_radian         = ell_phi = c / |omega_t| = hbar c / E
+phase_clock_area_element        = dA_rel = ell_phi^2 da_FS
 temporal_information_curvature = Xi_I = J_pi / A_rel
-internal_time_rate             = dXi_I / d tau_int
-clock_calibration              = dt / d tau_int > 0
+constant_cell_form              = Xi_I = (J_pi / a_FS) (omega/c)^2
+internal_time_rate              = dXi_I / d tau_int
+clock_calibration               = dt / d tau_int > 0
 ```
 
-Required upstream receipt for physical `L^-2` typing: a TIR relational-area calibration contract.
+Required upstream geometric receipt: the TIR projective/polyhedral area carrier and refinement rule.
 
 ## 8. Evidence boundary
 
@@ -175,12 +275,15 @@ Exact at this gate:
 
 - bit-to-nat conversion;
 - inverse-area scaling;
+- 01L phase-clock length identity;
+- constant-rate area and curvature reduction;
 - quotient-rule temporal differential;
-- chain-rule clock conversion;
-- constant-area inheritance of 01C information contraction.
+- constant-area phase-rate derivative;
+- chain-rule clock conversion.
 
 Downstream field binding:
 
+- selection/refinement of the physical projective cell;
+- treatment of phase-rate zeros and nonuniform cells;
 - the coefficient coupling `Xi_I` into `Lambda0`;
-- metric/area physical calibration;
 - Einstein-Bianchi closure.
