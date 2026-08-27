@@ -52,6 +52,53 @@ At uniform symmetric equilibrium,
 \]
 so the symmetric Shannon response and the later Temporal Wave stiffness share the same relational-mobility Laplacian. Global orientation remains carried by the 01B temporal connection and its holonomy.
 
+## Cross-repository interface branch: IDT 01X-RFC
+
+The normalized 01D simplex state is exported to the RFC source-carrier audit through a separate interface branch:
+
+\[
+\boxed{
+\text{IDT 01D normalized }p
+\longrightarrow
+\text{IDT 01X-RFC shape/scale interface}
+\stackrel{?}{\longleftrightarrow}
+\text{RFC RF-N1B2H}.
+}
+\]
+
+The interface theorem is
+
+\[
+\mathcal N(Q)=\frac{Q}{Q_\Sigma},
+\qquad
+\mathcal H_s(Q)=\frac{s}{Q_\Sigma}Q,
+\qquad
+\boxed{\Delta_{\rm ext}=\left|1-\frac{s}{Q_\Sigma}\right|}.
+\]
+
+The normalized shape is preserved on every positive ray. Exact inverse transport uses the explicit scale coordinate \(s=Q_\Sigma\). RFC's continuous energy conversion combines with that scale as
+
+\[
+\boxed{
+M_Q=\frac{\epsilon_QQ_\Sigma}{c^2},
+\qquad
+m_{Q,a}=M_Qp_a^{(Q)}.
+}
+\]
+
+Status:
+
+```text
+01D normalized simplex shape                PASS
+01X-RFC scale-quotient theorem              PASS
+analytic extensive holonomy defect          PASS
+IDT p <-> RFC p_Q cross-binding             OPEN
+common cell/state-space transport binding   OPEN
+physical source-mass coordinate M_Q         OPEN
+```
+
+This interface branch does not alter the canonical Temporal Primitive → Temporal Wave admission order.
+
 The next upstream gate is the nonreversible response decomposition: retain the 01C scalar contraction while separating its symmetric gradient contribution from stationary circulation in a form compatible with the 01B connection sector.
 
 The downstream Retrodiction frontier remains preregistered adaptive global search across broader latent boxes and attractor/support regimes. Retrocausal Tests remain gated until the Retrodiction admission conditions are satisfied.
