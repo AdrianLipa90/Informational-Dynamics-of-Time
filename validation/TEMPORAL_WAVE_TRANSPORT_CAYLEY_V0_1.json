@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_WAVE_TRANSPORT_CAYLEY_BASELINE_V0_1",
-  "status": "TARGETED_WAVE_TRANSPORT_ENERGY_PASS_CI_PENDING",
+  "status": "TARGETED_WAVE_TRANSPORT_ENERGY_PASS_CI_INFRA_BLOCKED",
   "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
   "branch": "feat/now-temporal-wave-activation-v0.1",
   "derivation": {
@@ -37,6 +37,11 @@
     "test_counts": ["2/2", "1/1", "3/3"]
   },
   "hosted_ci": {
-    "status": "PENDING_CURRENT_HEAD_CHECK"
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "run_id": 33054633634,
+    "job_id": 98458239372,
+    "conclusion": "failure",
+    "steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
   }
 }
