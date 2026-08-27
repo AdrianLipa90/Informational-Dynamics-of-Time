@@ -97,7 +97,7 @@ common cell/state-space transport binding   OPEN
 physical source-mass coordinate M_Q         OPEN
 ```
 
-This interface branch does not alter the canonical Temporal Primitive → Temporal Wave admission order.
+The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path; 01X-RFC is a parallel cross-repository interface branch.
 
 The next upstream gate is the nonreversible response decomposition: retain the 01C scalar contraction while separating its symmetric gradient contribution from stationary circulation in a form compatible with the 01B connection sector.
 
