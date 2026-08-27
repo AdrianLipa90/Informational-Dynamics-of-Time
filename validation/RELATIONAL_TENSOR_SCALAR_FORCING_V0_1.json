@@ -10,9 +10,9 @@
     "symmetric_positive_sector": "FORCED_UNDER_INFORMATIONAL_DESCENT"
   },
   "gremlin": {
-    "artifact_sha256": "46244751d7d729d1e7cfb5c04fddad217671b6cb4acfa43e476e767b7324f32e",
     "authority": "CANDIDATE_ONLY",
     "comparison_sha256": "3cfd9e86aa9d64d62e631136a470f305ab56390b1f3762bac06a510649c54622",
+    "evaluation_sha256": ["055a0f507c5ba0b3181c3b40da096c8274c03e92da463b646f2c74ee07ee7892", "a52a90a64b602c95a0dc40e0b7b4c6fd66e901585e5480866cf023a681e609ea", "51c4ffc97fe317ab20f8da72833b1fcc0b83aa123d51010ed7efce24838addd4"],
     "evidence_boundary": {
       "kahler_global_closure": "CONDITIONAL_ON_COMPATIBILITY_PLUS_INTEGRABLE_COMPLEX_STRUCTURE_AND_CLOSED_TWO_FORM",
       "rank2_response_tensor": "FORCED_UNDER_LOCAL_LINEAR_RESPONSE_AND_COORDINATE_COVARIANCE",
@@ -20,19 +20,17 @@
       "symplectic_phase_sector": "FORCED_UNDER_REVERSIBLE_HAMILTONIAN_RESPONSE_AND_NONDEGENERACY"
     },
     "external_write": false,
+    "hypothesis_ids": ["gremlin:hypothesis:sha256:5159ff44bad5947f74d28fa53d54a75644abc136e760cb7e35cc9ef8f4bfe005", "gremlin:hypothesis:sha256:997575b9e4133a9daf52654ed619a61006eb310dd3afc4e66d4f260162b6c4b6", "gremlin:hypothesis:sha256:1078b31d3266a089c8dbb97039bc6e20e3cee1a467687e9197c202bec9dfa106"],
     "relation_structurally_isomorphic": true,
+    "schema": "IDT_GREMLIN_RELATIONAL_TENSOR_SCALAR_FORCING_GATE_20260827",
     "test_counts": ["2/2", "2/2", "4/4"],
     "verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"]
   },
-  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
-  "integration_local_tests": {
-    "failed": 0,
-    "files": ["relational tensor-scalar forcing", "dependency graph"],
-    "passed": 11
-  },
+  "hosted_ci": {"job_id": 98522133200, "run_id": 33073661162, "status": "CI_INFRA_BLOCKED_BEFORE_STEPS", "steps_executed": 0},
+  "integration_local_tests": {"failed": 0, "files": ["relational tensor-scalar forcing", "dependency graph"], "passed": 11},
   "parent_commit": "0979388fdf972965ee0087b60a6ffa27d13ff4f5",
   "schema": "IDT_RELATIONAL_TENSOR_SCALAR_FORCING_BASELINE_V0_1",
-  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_INFRA_BLOCKED_BEFORE_STEPS",
   "stress_probe": {
     "cases": 1000,
     "contextual_elapsed_distinguished": 1000,
@@ -46,9 +44,5 @@
     "min_naive_covector_as_vector_defect": 0.09394191129661816,
     "schema": "IDT_RELATIONAL_TENSOR_SCALAR_FORCING_PROBE_V0_1"
   },
-  "targeted_local_tests": {
-    "failed": 0,
-    "file": "tests/reference/test_relational_tensor_scalar_forcing.py",
-    "passed": 7
-  }
+  "targeted_local_tests": {"failed": 0, "file": "tests/reference/test_relational_tensor_scalar_forcing.py", "passed": 7}
 }

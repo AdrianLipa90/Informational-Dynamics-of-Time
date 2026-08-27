@@ -1,0 +1,42 @@
+{
+  "admission": "BASELINE_CANDIDATE_PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/relational-tensor-scalar-forcing-v0.1",
+  "derivation": {
+    "connection_complement": "FORCED_UNDER_ADMITTED_NONZERO_GAUGE_INVARIANT_CLOSED_CYCLE_PHASE",
+    "global_exact_scalar_cycle_phase": "CYCLE_TRIVIAL",
+    "local_hamiltonian_role": "PRESERVED_AS_SEPARATE_REVERSIBLE_GENERATOR",
+    "smooth_composite_curvature": "F_BERRY_PLUS_KAPPA_D_AFFINITY_WHEN_SMOOTH_LIFT_EXISTS",
+    "temporal_wave_link_compatibility": "EXACT_U1_ENDPOINT_GAUGE_LAW"
+  },
+  "gremlin": {
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_PHASE_CONNECTION_COMPLEMENT_20260827.json",
+    "artifact_sha256": "f673d5b2425217d345451f8eaf8f46126256bdacbf1221f1e76fd2d5285f9bb1",
+    "authority": "CANDIDATE_ONLY",
+    "comparison_sha256": "fff019afa06e8ea867683150d268ca0651ad57fd4d1daeb3c66616cbd6960879",
+    "external_write": false,
+    "hypothesis_verdicts": ["SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS", "SUPPORTED_BY_DECLARED_TESTS"],
+    "probe_artifact": "/dev/shm/ciel_noema/gremlin/IDT_PHASE_CONNECTION_COMPLEMENT_PROBE_20260827.json",
+    "probe_sha256": "fb835d3ee8d1cb3bcec5092103eb419a91de46b02e33ceadff318f3ca756fe9f",
+    "relation_structurally_isomorphic": true,
+    "test_counts": ["2/2", "2/2", "1/1"]
+  },
+  "hosted_ci": {"status": "PENDING_CURRENT_HEAD_CHECK"},
+  "integration_local_tests": {
+    "files": ["relational tensor-scalar forcing", "phase connection complement", "dependency graph"],
+    "passed": 17,
+    "failed": 0
+  },
+  "parent_commit": "d54a0f625cc6c357a83a2710d87d58f5aa0ba1b5",
+  "schema": "IDT_PHASE_CONNECTION_COMPLEMENT_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_PENDING",
+  "stress_probe": {
+    "cases": 1000,
+    "max_closed_cycle_gauge_defect": 2.2093438190040615e-14,
+    "max_composite_cycle_identity_defect": 8.881784197001252e-16,
+    "max_covariant_difference_gauge_defect": 1.874292253145376e-15,
+    "max_exact_cycle_sum": 8.881784197001252e-16,
+    "nonzero_composite_cycle_count": 1000,
+    "schema": "IDT_PHASE_CONNECTION_COMPLEMENT_PROBE_V0_1"
+  },
+  "targeted_local_tests": {"file": "tests/reference/test_phase_connection_forcing.py", "passed": 6, "failed": 0}
+}

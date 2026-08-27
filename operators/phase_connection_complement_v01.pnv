@@ -1,0 +1,28 @@
+schema: IDT_PHASE_CONNECTION_COMPLEMENT_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+local_phase:
+  reversible_generator: V_H = Omega dH_local = J G dH_local
+  exact_cycle_integral: zero
+
+global_phase:
+  pancharatnam_link: G_ab
+  temporal_link: L_e = G_e exp(i kappa (Delta_H_Shannon + sigma_e))
+  gauge_law: L_ab -> exp(i(chi_b-chi_a)) L_ab
+  covariant_difference: D_L q = q_b - L_ab q_a
+
+closed_cycle:
+  phase: gamma_B + kappa sum(sigma_e)
+  exact_shannon_sum: zero
+
+smooth_lift:
+  composite_connection: C = A_Berry + kappa dH_Shannon + kappa varsigma
+  curvature: F_C = F_Berry + kappa d(varsigma)
+  exact_scalar_curvature: zero
+
+scope:
+  - discrete U1 connection law
+  - closed-cycle holonomy
+  - smooth connection lift when admitted
+  - local Hamiltonian and global connection remain separately typed

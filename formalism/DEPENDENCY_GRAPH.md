@@ -11,7 +11,7 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Node | Status | Notes |
 |---|---|---|
 | TIR entry point | `AVAILABLE` | inherited source layer |
-| Temporal Primitive | `ACTIVE / RELATIONAL_TENSOR_SCALAR_FORCING_TARGETED_PASS_CANDIDATE` | 01A derives the positive scalar temporal pace from a context-sensitive elapsed measure, the rank-two response tensor from coordinate covariance, and the symmetric/antisymmetric response split; Kähler factorization follows under the declared unit-U(1), compatibility, integrability and closed-curvature premises |
+| Temporal Primitive | `ACTIVE / RELATIONAL_TENSOR_SCALAR_FORCING_PHASE_CONNECTION_COMPLEMENT_TARGETED_PASS_CANDIDATE` | 01A derives the positive scalar temporal pace from a context-sensitive elapsed measure and the rank-two symmetric/antisymmetric response split. 01B derives the U(1) connection complement required by admitted nonzero closed-cycle phase and proves exact compatibility of the composite temporal links with the Temporal Wave covariant-difference law |
 | Temporal Wave | `TARGETED_DERIVATION_CONTINUUM_HOLONOMY_PASS_CANDIDATE` | gauge-covariant stiffness, relational mobility, viscosity damping, heterogeneous continuum and holonomy-shift gates recorded in 02A–02D |
 | NOW | `STRUCTURAL_PASS / WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE` | structural signature carrier retained; 03B adds positive gauge-invariant Temporal Wave activation and wave-active realization support |
 | Bifurcation | `FORMAL_CONTRACT_PASS / NOW_BRIDGE_TARGETED_PASS_CANDIDATE` | reversible/contractive operator contract retained; 04A gives exact hyperbolic coordinates from activity/current to wave mobility and directional phase |
@@ -22,6 +22,6 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
-The upstream tensor--scalar gate now types the temporal architecture before Temporal Wave: the relational context supplies a positive scalar pace \(\phi\), while coordinate-covariant informational and phase response supplies the rank-two operator \(\mathcal R^{AB}=G^{AB}+\Omega^{AB}\). In the compatible complex/Berry sector this factorizes as \(-\mathrm{grad}_{g_K}\mathcal I+J\mathrm{grad}_{g_K}\mathcal H\).
+The upstream tensor--scalar gate now types the temporal architecture before Temporal Wave: relational context supplies the positive scalar pace \(\phi\), coordinate-covariant response supplies \(\mathcal R^{AB}=G^{AB}+\Omega^{AB}\), and 01B supplies the global phase connection complement carried discretely by \(L_e\). The local reversible generator remains \(J\mathrm{grad}_{g_K}\mathcal H\), while global closed-cycle phase is carried by Berry/affinity holonomy.
 
 The current downstream frontier remains preregistered adaptive global search across broader latent boxes and attractor/support regimes. Retrocausal Tests remain gated until the Retrodiction admission conditions are satisfied.
