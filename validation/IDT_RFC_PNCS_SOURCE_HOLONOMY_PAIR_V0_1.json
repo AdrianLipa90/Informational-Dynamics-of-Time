@@ -5,32 +5,36 @@
   "interface": {
     "shape_factorization": "Q_a=Q_Sigma*p_Q,a",
     "shape_candidate": "p_IDT <-> p_Q",
-    "euler_closed_action_charge": "J_I^EB=hbar*theta_I^EB",
-    "rotor_energy": "H_Phi^EB=(J-J_I^EB)^2/(2 I_phi)",
-    "energy_per_action_charge": "epsilon_I^EB=H_Phi^EB/J_I^EB",
-    "effective_time_step": "Delta_tau_eff^EB=J_I^EB/H_Phi^EB",
-    "source_mass_coordinate": "M_I=H_Phi^EB/c^2",
+    "euler_closed_intention_charge": "J_I^EB=hbar*theta_I^EB",
+    "preferred_rotor_carrier": "P_Phi^EB=J-J_I^EB",
+    "noether_collective_charge": "Q_theta=I_A*(P_Phi^EB/I_phi)",
+    "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
+    "rotor_energy": "H_Phi^EB=(P_Phi^EB)^2/(2 I_phi)",
+    "preferred_energy_per_carrier": "epsilon_N^EB=H_Phi^EB/P_Phi^EB=P_Phi^EB/(2 I_phi)",
+    "source_mass_coordinate": "M_N=H_Phi^EB/c^2",
     "physical_cross_binding": "OPEN"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "code_commit": "e6d5e217aeed2906372fdd0aa41845f0df32bbae",
+    "code_commit": "5276133cf2ab6e47b6a4737d9671a1a8f0386a11",
     "contracts": [
       "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
       "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
-      "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1"
+      "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
+      "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1"
     ],
     "loops": [
       "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
       "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
       "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
-      "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP"
+      "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP"
     ],
     "native_ci": {
-      "run_id": 33121573174,
-      "job_id": 98689454717,
-      "head_commit": "e6d5e217aeed2906372fdd0aa41845f0df32bbae",
+      "run_id": 33122515234,
+      "job_id": 98692654992,
+      "head_commit": "5276133cf2ab6e47b6a4737d9671a1a8f0386a11",
       "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
       "steps": null,
       "code_test_failure_observed": false
@@ -39,28 +43,26 @@
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
-    "tested_commit": "04de014d908060ab329e53bffdab74dfc5599af4",
-    "cross_reference_commit": "876dab1bc0b7e22eae0078630d12fc20ed3346ce",
+    "tested_commit": "43bf6eb99fe126c98e15519c4f0c2b7ef36a4167",
     "workflow": "Reference suite",
-    "run_id": 33121699876,
-    "job_id": 98689879614,
-    "passed": 348,
+    "run_id": 33122254433,
+    "job_id": 98691757651,
+    "passed": 355,
     "failed": 0,
     "status": "PASS"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "tested_commit": "ec5176222af50c4f5ebfd455645f889849c5ca3e",
-    "cross_reference_commit": "6aa1ccb2b5ffe2d788748b276fcd58fb434b5ebe",
+    "tested_commit": "4f7ec9331fae477377fa4eda27462c28b992bbed",
     "workflow": "RFC reference suite",
-    "run_id": 33121748877,
-    "job_id": 98690039397,
-    "passed": 40,
+    "run_id": 33122296015,
+    "job_id": 98691904795,
+    "passed": 47,
     "failed": 0,
     "status": "PASS"
   },
-  "pairing_rule": "IDT and RFC pin the same PNCS Euler-closed source-holonomy snapshot; immutable interface anchors avoid cyclic head locks.",
+  "pairing_rule": "IDT and RFC pin the same PNCS Noether-collective source-holonomy snapshot; immutable interface anchors avoid cyclic head locks.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
 }
