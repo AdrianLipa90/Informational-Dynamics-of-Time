@@ -1,0 +1,25 @@
+schema: IDT_RETRODICTION_N3_GLOBAL_NULL_V0_1
+status: CANDIDATE
+authority: REFERENCE_ONLY
+
+base_schedule:
+  - weight_A@checkpoint_1
+  - weight_A@checkpoint_2
+  - rx@checkpoint_3
+  - ry@checkpoint_3
+  - vx@checkpoint_3
+  - basin_weights@checkpoint_3
+
+relations:
+  - base_collision = norm(Y_base(z)-Y_base(z_alt)) <= tolerance
+  - added_scalar = weight_B@checkpoint_1
+  - augmented_separation = abs(weight_B1(z)-weight_B1(z_alt))
+
+status_rules:
+  - base_collision and augmented_separation > tolerance: KNOWN_NULL_SEPARATED
+  - base_collision and augmented_separation <= tolerance: KNOWN_NULL_PERSISTS
+
+scope:
+  - explicit N=3 distinct-history collision
+  - pair-scoped checkpoint refinement
+  - N=3 global injectivity remains downstream
