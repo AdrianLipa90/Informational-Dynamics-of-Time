@@ -1,6 +1,6 @@
 {
   "schema": "IDT_01X_RFC_CROSS_REFERENCE_LOCK_V0_1",
-  "status": "PINNED_WITH_PNCS_NOETHER_RFC_EXACT_DEFECT_HOLONOMY_AND_PAIRED_VALIDATION",
+  "status": "PINNED_WITH_PNCS_SCALAR_FIELD_ROTOR_REDUCTION_AND_NOETHER_RFC_CURRENT_HOLONOMY",
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
@@ -9,10 +9,11 @@
       "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
       "formalism/01Y_phase_intention_energy_per_charge_interface.md",
       "formalism/01Z_noether_collective_phase_carrier_interface.md",
-      "formalism/01AA_noether_rfc_conserved_current_binding.md"
+      "formalism/01AA_noether_rfc_conserved_current_binding.md",
+      "formalism/01AB_scalar_field_rotor_inertia_reduction.md"
     ],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "763308360ed3a70bdbd605c25753f77ce9f27938"
+    "paired_receipt_commit": "9ebd391391dfcc7119a9a8d81d2ecec74f640b61"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
@@ -21,19 +22,21 @@
       "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
       "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md",
       "formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md",
-      "formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md"
+      "formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md",
+      "formalism/RFN1B2L_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION.md"
     ],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
+    "commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
     "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
     "information_holonomy_contract": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
     "source_holonomy_contract": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
     "noether_collective_contract": "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
     "noether_rfc_current_contract": "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1",
+    "scalar_field_rotor_reduction_contract": "PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1",
     "native_ci_state": "CI_EXECUTION_UNRESOLVED_PRE_TEST"
   },
   "interface_contract": {
@@ -42,9 +45,17 @@
     "euler_closed_intention_charge": "J_I^EB=hbar*theta_I^EB",
     "rotor_kinetic_carrier": "P_Phi^EB=J-J_I^EB",
     "noether_collective_charge": "Q_theta=I_A*(P_Phi^EB/I_phi)",
-    "inertia_binding_defect": "Delta_I=abs(I_A/I_phi-1)",
+    "legacy_inertia_binding_defect": "Delta_I_01Z=abs(I_A/I_phi-1)",
+    "scalar_field_phase_coefficient": "C_A=sum_a A_a^2 V_a",
+    "scalar_field_collective_inertia": "I_A=2*C_A",
+    "scalar_field_rotor_reduction_defect": "Delta_I_reduction=abs(I_phi-I_A)/I_A",
+    "coefficient_reduction_defect": "Delta_coefficient=abs(I_phi/2-C_A)/C_A",
+    "carrier_reduction_defect": "Delta_Q_reduction=abs(P_Phi-Q_theta)/Q_theta",
+    "epsilon_reduction_defect": "Delta_epsilon_reduction=abs(epsilon_N-(D_tau_chi)/2)/((D_tau_chi)/2)",
+    "exact_reduction_identity": "common positive D_tau_chi => Delta_I_reduction=Delta_coefficient=Delta_Q_reduction=Delta_epsilon_reduction",
     "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
+    "collective_reduction_gate": "same field/rotor phase mode, covariant-rate ID, measure ID and ordered collective support",
     "common_slice_gate": "same slice_id, normal orientation, measure_id and ordered cell_ids",
     "local_current_binding_defect": "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta",
     "measure_binding_defect": "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta",
@@ -58,11 +69,12 @@
     "pncs_euler_energy_loop": "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
     "pncs_noether_carrier_loop": "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
     "pncs_noether_rfc_current_loop": "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
-    "physical_cross_binding": "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
+    "pncs_scalar_field_rotor_loop": "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP",
+    "physical_cross_binding": "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
   },
   "executed_reference_gates": {
-    "idt": "366/366 PASS",
-    "rfc": "58/58 PASS"
+    "idt": "373/373 PASS",
+    "rfc": "65/65 PASS"
   },
-  "pinning_rule": "Both repositories pin the same six-loop PNCS current-binding snapshot and require the exact local-current/measure defect theorem before physical carrier promotion."
+  "pinning_rule": "Both repositories pin the same seven-loop PNCS source-law snapshot; the scalar-field/rotor coefficient theorem conditionally closes the inertia equality after the common collective reduction gate, while current and state-space promotion remain measured."
 }
