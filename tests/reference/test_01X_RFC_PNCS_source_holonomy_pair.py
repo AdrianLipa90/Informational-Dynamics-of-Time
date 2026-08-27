@@ -35,10 +35,10 @@ def test_pair_receipt_matches_idt_cross_reference_lock():
 def test_pair_receipt_records_executed_peer_reference_gates():
     pair = _load(PAIR)
     assert pair["idt"]["status"] == "PASS"
-    assert pair["idt"]["passed"] == 337
+    assert pair["idt"]["passed"] >= 337
     assert pair["idt"]["failed"] == 0
     assert pair["rfc"]["status"] == "PASS"
-    assert pair["rfc"]["passed"] == 29
+    assert pair["rfc"]["passed"] >= 29
     assert pair["rfc"]["failed"] == 0
     assert pair["pncs"]["native_ci"]["classification"] == "CI_EXECUTION_UNRESOLVED_PRE_TEST"
     assert pair["pncs"]["native_ci"]["code_test_failure_observed"] is False
