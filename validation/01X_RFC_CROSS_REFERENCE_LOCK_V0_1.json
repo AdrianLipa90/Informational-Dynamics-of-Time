@@ -7,7 +7,7 @@
     "base_main": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc",
     "interfaces": ["formalism/01X_RFC_normalized_shape_extensive_scale_interface.md", "formalism/01Y_phase_intention_energy_per_charge_interface.md", "formalism/01Z_noether_collective_phase_carrier_interface.md", "formalism/01AA_noether_rfc_conserved_current_binding.md", "formalism/01AB_scalar_field_rotor_inertia_reduction.md"],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_commit": "7e1a30299b0ff0eea3eafb7929f36dcc4d67d48c"
+    "paired_receipt_commit": "9a7499976aa833f6208e77b74dc4b489ed4fa619"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
