@@ -1,0 +1,46 @@
+{
+  "admission": "PENDING_BRANCH_REVIEW",
+  "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
+  "ci": {
+    "attempts": 2,
+    "conclusion": "INFRA_BLOCKED_BEFORE_STEPS",
+    "jobs": [
+      {
+        "attempt": 1,
+        "job_id": 98351589056,
+        "steps": 0
+      },
+      {
+        "attempt": 2,
+        "job_id": 98351753905,
+        "steps": 0
+      }
+    ],
+    "run_id": 33021160476
+  },
+  "gremlin": {
+    "evaluation_sha256": "244d14df1969732c3edef8c3e1594e2dbd43133862674202e79ddef4441eca41",
+    "hypothesis_id": "gremlin:hypothesis:sha256:3675e1f22e2989370ca01404eb9b930361d915a89a55466c9d8beb466dfaca2f",
+    "tests_passed": 5,
+    "tests_total": 5,
+    "verdict": "SUPPORTED_BY_DECLARED_TESTS"
+  },
+  "local_harness": {
+    "elapsed_s": 0.2,
+    "tests_passed": 11,
+    "tests_total": 11
+  },
+  "metrics": {
+    "gauge_covariance_max_abs": 4.47545209131181e-16,
+    "holonomy_gap_finest_abs_error": 2.442271920255479e-07,
+    "holonomy_gap_order_min_last2": 1.9999934339267418,
+    "random_stress_cases": 200,
+    "random_stress_max_energy_identity_error": 5.684341886080802e-14,
+    "random_stress_max_gauge_covariance": 7.160723346098895e-15,
+    "random_stress_max_spectrum_drift": 2.4868995751603507e-14,
+    "ring_spectrum_max_abs": 1.8189894035458565e-12
+  },
+  "parent_commit": "a9a272722fa8149fa93a8c1c03b377d4befabb70",
+  "schema": "IDT_TEMPORAL_WAVE_GAUGE_LAPLACIAN_BASELINE_V0_1",
+  "status": "TARGETED_LOCAL_AND_STRESS_PASS_CI_INFRA_BLOCKED"
+}

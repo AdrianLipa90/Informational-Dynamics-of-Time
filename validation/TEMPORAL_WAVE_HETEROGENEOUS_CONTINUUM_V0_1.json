@@ -1,0 +1,61 @@
+{
+  "schema": "IDT_TEMPORAL_WAVE_HETEROGENEOUS_CONTINUUM_BASELINE_V0_1",
+  "status": "TARGETED_HOMOGENIZATION_AND_STRESS_PASS_CI_INFRA_BLOCKED",
+  "admission": "PENDING_BRANCH_REVIEW_AND_HOSTED_FULL_SUITE",
+  "branch": "feat/temporal-wave-gauge-laplacian-v0.1",
+  "derivation": {
+    "mobility_effective": "M_eff = harmonic_mean(M_e)",
+    "wave_speed": "c_eff^2 = M_eff",
+    "damping_effective": "beta_eff = M_eff^2 * mean(eta_e / M_e^2)",
+    "attenuation": "Im(omega) = -beta_eff*k^2/2 + higher_order",
+    "relational_mobility": "M_e = sqrt(rho_j*rho_j1)/eta_bar_e",
+    "relational_M_eff": "inverse(mean(eta_bar_e/sqrt(rho_j*rho_j1)))",
+    "relational_beta_eff": "M_eff^2*mean(eta_bar_e^3/(rho_j*rho_j1))",
+    "uniform_reduction": {
+      "M_eff": "rho0/eta0",
+      "beta_eff": "eta0"
+    }
+  },
+  "stress": {
+    "cases": 500,
+    "bloch_phases": [0.08, 0.04, 0.02],
+    "max_wave_speed_relative_error": 5.079114268253267e-05,
+    "max_damping_relative_error": 7.451397791985819e-05,
+    "median_wave_speed_convergence_order": 2.000013138257951,
+    "median_damping_convergence_order": 2.0000917727223575,
+    "naive_harmonic_viscosity": {
+      "median_relative_error": 0.3404187453270899,
+      "minimum_relative_error": 0.008091246536255148,
+      "cases_above_1_percent": 499,
+      "cases_above_5_percent": 486,
+      "verdict": "REJECTED_BY_BASELINE_STRESS"
+    }
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_HETEROGENEOUS_CONTINUUM_GATE_20260827.json",
+    "artifact_sha256": "9a63015bd3f9cdbb6414c427105940ae475cf84cd37935cfab75873f3726461e",
+    "structural_match": true,
+    "hypothesis_verdicts": [
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS",
+      "SUPPORTED_BY_DECLARED_TESTS"
+    ],
+    "test_counts": ["2/2", "2/2", "3/3"]
+  },
+  "bridge": {
+    "fluid_time_wave_form": "omega^2 = c_s^2 k^2",
+    "idt_long_wave_form": "Re(omega)^2 = M_eff k^2 + O(k^4)",
+    "structural_coefficient_slot": "c_s^2 <-> M_eff",
+    "calibration_status": "DOWNSTREAM"
+  },
+  "hosted_ci": {
+    "status": "CI_INFRA_BLOCKED_BEFORE_STEPS",
+    "functional_head": "7ab5f670c28cfe04f4b1a8cebe1ae1fa98f40707",
+    "run_id": 33051368691,
+    "job_id": 98447438891,
+    "conclusion": "failure",
+    "steps": 0,
+    "classification": "NO_CODE_TEST_STEPS_EXECUTED"
+  }
+}
