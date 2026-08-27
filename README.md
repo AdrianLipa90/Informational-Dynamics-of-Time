@@ -33,3 +33,35 @@ The provisional Retrodiction layer contains single-withheld-receipt inversion, m
 Hosted full-suite status remains `CI_RESULT_NOT_OBTAINED` because the observed workflow jobs terminate before executing test steps. Targeted reference evidence and hosted full-suite evidence are recorded separately.
 
 Reference figures are generated from code. Raster outputs and compiled PDFs are local QA artifacts and are not committed; repository monograph source is LaTeX.
+
+## Temporal information curvature export
+
+Gate `01K` adds a downstream Einstein-interface scalar while keeping the admitted frontier unchanged. From the 01C relative-information scalar in bits,
+
+\[
+\mathcal J_\pi=(\ln2)\mathcal I_\pi,
+\]
+
+and an admitted positive relational area
+
+\[
+[\mathcal A_{\rm rel}]=L^2,
+\]
+
+IDT exports
+
+\[
+\boxed{\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}}},
+\qquad
+\boxed{[\Xi_I]=L^{-2}}.
+\]
+
+Its exact temporal differential is
+
+\[
+d\Xi_I
+=\mathcal A_{\rm rel}^{-1}d\mathcal J_\pi
+-\mathcal J_\pi\mathcal A_{\rm rel}^{-2}d\mathcal A_{\rm rel}.
+\]
+
+The physical relational-area calibration is supplied by the TIR geometry interface; RFC owns the later `Xi_I -> Lambda0` field binding. Targeted 01K evidence: `6 passed`; receipt: `validation/01K_TEMPORAL_INFORMATION_CURVATURE_V0_1.json`.
