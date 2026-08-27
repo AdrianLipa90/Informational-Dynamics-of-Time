@@ -54,9 +54,12 @@ def test_edge_spacing_preserves_effective_coefficients():
     eta = rng.uniform(0.2, 3.0, 7)
     mobility, viscosity = periodic_relational_edge_fields(rho, eta)
     target = effective_long_wave_coefficients(mobility, viscosity)
+    # This gate tests the asymptotic long-wave coefficient, not finite-phase
+    # dispersion.  Use a sufficiently small Bloch phase so the O(theta^2)
+    # correction stays below the declared tolerance for every spacing probe.
     for spacing in [0.2, 0.7, 1.0, 2.3]:
         c_est, beta_est = acoustic_coefficient_estimate(
-            mobility, viscosity, 0.01, edge_spacing=spacing
+            mobility, viscosity, 0.005, edge_spacing=spacing
         )
         assert abs(c_est - target.wave_speed) / target.wave_speed < 5e-5
         assert abs(beta_est - target.damping_eff) / target.damping_eff < 5e-5
