@@ -85,7 +85,7 @@ and
 \boxed{J=I_\phi D_\tau\chi+J_I.}
 \]
 
-The intention term is linear in the phase rate and therefore does not alter the quadratic kinetic coefficient.
+The intention term is linear in the phase rate and the quadratic kinetic coefficient remains \(I_\phi/2\).
 
 If the rotor is the collective-coordinate reduction of the stated scalar-field phase sector on the same measure, equality of the quadratic coefficients gives the exact conditional theorem
 
@@ -93,16 +93,16 @@ If the rotor is the collective-coordinate reduction of the stated scalar-field p
 \boxed{I_\phi=I_A=2\int_\Sigma A^2dV_h.}
 \]
 
-Thus the previously defined inertia defect
+Thus the previously defined 01Z inertia defect
 
 \[
-\Delta_I=\left|\frac{I_A}{I_\phi}-1\right|
+\Delta_I^{01Z}=\left|\frac{I_A}{I_\phi}-1\right|
 \]
 
 satisfies
 
 \[
-\boxed{\Delta_I=0}
+\boxed{\Delta_I^{01Z}=0}
 \]
 
 inside this admitted collective reduction.
@@ -168,11 +168,11 @@ Since \(Q_\vartheta^{EB}=P_\Phi^{EB}\),
 }
 \]
 
-No separate inertia-normalization constant is introduced.
+The collective phase-rate reduction therefore fixes the finite Noether energy-per-carrier coordinate.
 
 ## 6. Exact theorem versus interface gates
 
-The coefficient matching is exact after the collective reduction is admitted. The remaining gates are therefore upstream identification gates:
+The coefficient matching is exact after the collective reduction is admitted. The remaining gates are upstream identification gates:
 
 ```text
 same scalar phase mode theta <-> chi                 OPEN interface binding
@@ -180,11 +180,11 @@ same covariant phase rate D_tau theta <-> D_tau chi OPEN interface binding
 same spatial slice and dV_h                          OPEN physical/measure binding
 same collective-mode support                         OPEN support binding
 I_phi = 2 integral A^2 dV_h after those bindings     PASS EXACT CONDITIONAL
-Delta_I after those bindings                         ZERO EXACT
+Delta_I^01Z after those bindings                     ZERO EXACT
 Q_theta = P_Phi after those bindings                 PASS EXACT CONDITIONAL
 ```
 
-The inertia equality is no longer treated as an independent empirical fit once these common-reduction premises are satisfied.
+The inertia equality is thereby fixed by the admitted common reduction premises.
 
 ## 7. Relation to 01AA/RFC
 
@@ -215,3 +215,55 @@ and
 \]
 
 becomes the downstream RFC candidate normalization.
+
+## 8. Executable PNCS reduction coordinates
+
+The PNCS collective-reduction loop evaluates the coefficient theorem from independently supplied finite-cell field data and rotor inertia.
+
+For
+
+\[
+C_A:=\sum_a A_a^2V_a,
+\qquad
+I_A:=2C_A,
+\]
+
+define the executable reduction coordinates
+
+\[
+\boxed{
+\Delta_I^{red}:=\frac{|I_\phi-I_A|}{I_A}}
+\]
+
+and
+
+\[
+\Delta_C:=\frac{|I_\phi/2-C_A|}{C_A},
+\qquad
+\Delta_Q^{red}:=\frac{|P_\Phi-Q_\vartheta|}{Q_\vartheta},
+\]
+
+\[
+\Delta_\epsilon^{red}
+:=\frac{|\epsilon_N-(D_\tau\chi)/2|}{(D_\tau\chi)/2}.
+\]
+
+For one common positive covariant phase rate,
+
+\[
+\boxed{
+\Delta_I^{red}
+=\Delta_C
+=\Delta_Q^{red}
+=\Delta_\epsilon^{red}.}
+\]
+
+The earlier 01Z coordinate \(\Delta_I^{01Z}=|I_A/I_\phi-1|\) and the executable reduction coordinate \(\Delta_I^{red}=|I_\phi-I_A|/I_A\) are separately typed away from the exact gate and share the same zero set \(I_A=I_\phi\).
+
+Executable contract:
+
+`PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1`
+
+Semantic loop:
+
+`SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP`
