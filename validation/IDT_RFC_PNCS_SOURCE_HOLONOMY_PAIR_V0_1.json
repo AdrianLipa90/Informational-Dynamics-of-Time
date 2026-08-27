@@ -12,18 +12,22 @@
     "rotor_energy": "H_Phi^EB=(P_Phi^EB)^2/(2 I_phi)",
     "energy_per_finite_noether_carrier": "epsilon_N^EB=H_Phi^EB/Q_theta",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
-    "common_measure_gate": "same slice_id, measure_id, ordered cell_ids; Delta_measure audits volumes",
-    "local_current_binding_defect": "Delta_local=sum_a V_a*abs(j_Q,a-j_theta,a)/Q_theta",
-    "total_charge_binding_defect": "Delta_Q=abs(Q_Sigma-Q_theta)/Q_theta",
+    "common_slice_gate": "same slice_id, normal orientation, measure_id and ordered cell_ids",
+    "local_current_binding_defect": "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta",
+    "measure_binding_defect": "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta",
+    "total_charge_binding_defect": "Delta_Sigma=abs(Q_Sigma-Q_theta)/Q_theta",
+    "exact_defect_bound": "Delta_Sigma <= Delta_J + Delta_V",
+    "bound_margin": "Delta_bound=max(0,Delta_Sigma-(Delta_J+Delta_V))",
     "side_flux_defect": "Delta_F=abs(F_side)",
-    "current_binding_rule": "Delta_local=Delta_Q=Delta_measure=Delta_F=0 => Q_Sigma=Q_theta candidate identity",
+    "current_binding_rule": "Delta_J=Delta_V=Delta_Sigma=Delta_F=0 => Q_Sigma=Q_theta conditional carrier closure",
+    "normalized_profile_consequence": "exact local current/measure binding => p_Q=p_theta",
     "source_mass_coordinate": "M_N=epsilon_N^EB*Q_theta/c^2=H_Phi^EB/c^2",
-    "physical_cross_binding": "OPEN_PROMOTION_AFTER_ZERO_DEFECT_CURRENT_GATE"
+    "physical_cross_binding": "OPEN_MEASURED_CURRENT_AND_INERTIA_PROMOTION"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "code_commit": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
+    "code_commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
     "contracts": [
       "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
       "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
@@ -40,34 +44,35 @@
       "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP"
     ],
     "native_ci": {
-      "run_id": 33123979049,
-      "job_id": 98697546433,
-      "head_commit": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
-      "code_snapshot": "f7b428f4dc30ddeb1280c9213c5788f576a54db4",
+      "run_id": 33124207227,
+      "job_id": 98698284462,
+      "head_commit": "ae08bb9df367926322ce5ec74a9382135cba61f6",
+      "code_snapshot": "ae08bb9df367926322ce5ec74a9382135cba61f6",
       "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
-      "steps": null,
+      "steps": [],
+      "runner_id": 0,
       "code_test_failure_observed": false
     }
   },
   "idt": {
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
-    "tested_commit": "c65cbce1ff7e7200ee73af396805f59d0eaa5a90",
+    "tested_commit": "f0506bfa20782ee99bf238b57d2910379e5b74f7",
     "workflow": "Reference suite",
-    "run_id": 33124048723,
-    "job_id": 98697764076,
-    "passed": 370,
+    "run_id": 33124509297,
+    "job_id": 98699274250,
+    "passed": 366,
     "failed": 0,
     "status": "PASS"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "tested_commit": "020f84b55326d68ee159bb4cd82a03943b90df22",
+    "tested_commit": "ed8db5e9aa82e558b10979a8717415c9247d03b1",
     "workflow": "RFC reference suite",
-    "run_id": 33124064073,
-    "job_id": 98697813131,
-    "passed": 62,
+    "run_id": 33124577793,
+    "job_id": 98699501693,
+    "passed": 58,
     "failed": 0,
     "status": "PASS"
   },
@@ -77,11 +82,12 @@
     "j_Q": [2.0, 2.0],
     "Q_theta": 4.0,
     "Q_Sigma": 4.0,
-    "Delta_Q": 0.0,
-    "Delta_local": 0.5,
+    "Delta_Sigma": 0.0,
+    "Delta_J": 0.5,
+    "Delta_V": 0.0,
     "binding_verdict": "FAIL_LOCAL_CURRENT"
   },
-  "pairing_rule": "IDT and RFC pin the same six-loop PNCS current-binding code snapshot; equal integrated charge is insufficient without the local-current and common-measure gates.",
+  "pairing_rule": "IDT and RFC pin the same six-loop PNCS current-binding snapshot; physical carrier promotion requires the measured inertia, current, measure, orientation and boundary gates rather than integrated-charge equality alone.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
 }
