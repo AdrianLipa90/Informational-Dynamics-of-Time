@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PAIR = ROOT / "validation" / "IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
 LOCK = ROOT / "validation" / "01X_RFC_CROSS_REFERENCE_LOCK_V0_1.json"
-EXPECTED_PNCS = "5276133cf2ab6e47b6a4737d9671a1a8f0386a11"
+EXPECTED_PNCS = "fa517208e40873523d1c2a5b7fdb852092421afa"
 EXPECTED_LOOPS = [
     "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
@@ -39,21 +39,25 @@ def test_pair_receipt_matches_idt_cross_reference_lock():
 def test_pair_receipt_records_executed_peer_reference_gates():
     pair = _load(PAIR)
     assert pair["idt"]["status"] == "PASS"
-    assert pair["idt"]["passed"] >= 355
+    assert pair["idt"]["passed"] >= 356
     assert pair["idt"]["failed"] == 0
     assert pair["rfc"]["status"] == "PASS"
-    assert pair["rfc"]["passed"] >= 47
+    assert pair["rfc"]["passed"] >= 48
     assert pair["rfc"]["failed"] == 0
     assert pair["pncs"]["native_ci"]["classification"] == "CI_EXECUTION_UNRESOLVED_PRE_TEST"
     assert pair["pncs"]["native_ci"]["code_test_failure_observed"] is False
 
 
-def test_noether_carrier_is_distinct_from_intention_charge():
+def test_noether_carrier_is_distinct_from_intention_charge_and_rotor_coordinate():
     pair = _load(PAIR)
-    assert pair["interface"]["euler_closed_intention_charge"] == "J_I^EB=hbar*theta_I^EB"
-    assert pair["interface"]["preferred_rotor_carrier"] == "P_Phi^EB=J-J_I^EB"
-    assert pair["interface"]["noether_collective_charge"] == "Q_theta=I_A*(P_Phi^EB/I_phi)"
-    assert pair["interface"]["preferred_energy_per_carrier"] == "epsilon_N^EB=H_Phi^EB/P_Phi^EB=P_Phi^EB/(2 I_phi)"
+    interface = pair["interface"]
+    assert interface["euler_closed_intention_charge"] == "J_I^EB=hbar*theta_I^EB"
+    assert interface["rotor_kinetic_carrier"] == "P_Phi^EB=J-J_I^EB"
+    assert interface["noether_collective_charge"] == "Q_theta=I_A*(P_Phi^EB/I_phi)"
+    assert interface["energy_per_finite_noether_carrier"] == "epsilon_N^EB=H_Phi^EB/Q_theta"
+    assert interface["exact_inertia_binding_reduction"] == (
+        "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi"
+    )
 
 
 def test_inertia_binding_defect_remains_explicit():
