@@ -36,66 +36,13 @@
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
     "code_commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
-    "contracts": [
-      "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
-      "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
-      "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
-      "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
-      "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1",
-      "PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1"
-    ],
-    "loops": [
-      "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
-      "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
-      "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
-      "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
-      "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
-      "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
-      "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP"
-    ],
-    "native_ci": {
-      "run_id": 33125567602,
-      "job_id": 98702774903,
-      "head_commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
-      "code_snapshot": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
-      "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
-      "steps": null,
-      "code_test_failure_observed": false
-    }
+    "contracts": ["PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2","PNCS_PNV_INFORMATION_HOLONOMY_V0_1","PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1","PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1","PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1","PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1"],
+    "loops": ["SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP","SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP","SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP","SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP","SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP","SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP","SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP"],
+    "native_ci": {"run_id":33125567602,"job_id":98702774903,"head_commit":"26fb4714a7d7e71f16024f2120f93099a9c62c01","code_snapshot":"26fb4714a7d7e71f16024f2120f93099a9c62c01","classification":"CI_EXECUTION_UNRESOLVED_PRE_TEST","steps":null,"code_test_failure_observed":false}
   },
-  "idt": {
-    "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
-    "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
-    "tested_commit": "f1bbb6698234c38dd2c643c646ff00f72964fe41",
-    "workflow": "Reference suite",
-    "run_id": 33126056152,
-    "job_id": 98704363770,
-    "passed": 373,
-    "failed": 0,
-    "status": "PASS"
-  },
-  "rfc": {
-    "repository": "AdrianLipa90/Relational-Field-Closure",
-    "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "tested_commit": "98fe8c186a420ba8f59fc6b218de4ac86e7ef12c",
-    "workflow": "RFC reference suite",
-    "run_id": 33126145853,
-    "job_id": 98704659073,
-    "passed": 65,
-    "failed": 0,
-    "status": "PASS"
-  },
-  "anti_false_positive_witness": {
-    "V": [1.0, 1.0],
-    "j_theta": [1.0, 3.0],
-    "j_Q": [2.0, 2.0],
-    "Q_theta": 4.0,
-    "Q_Sigma": 4.0,
-    "Delta_Sigma": 0.0,
-    "Delta_J": 0.5,
-    "Delta_V": 0.0,
-    "binding_verdict": "FAIL_LOCAL_CURRENT"
-  },
+  "idt": {"repository":"AdrianLipa90/Informational-Dynamics-of-Time","branch":"feat/idt-rfc-normalized-shape-holonomy-v0.1","tested_commit":"ba9a63a0df97b5432594cd4a87f8490712c8ce57","workflow":"Reference suite","run_id":33126334707,"job_id":98705275335,"passed":373,"failed":0,"status":"PASS"},
+  "rfc": {"repository":"AdrianLipa90/Relational-Field-Closure","branch":"feat/rfc-gremlin-pnv-holonomy-v0.1","tested_commit":"98fe8c186a420ba8f59fc6b218de4ac86e7ef12c","workflow":"RFC reference suite","run_id":33126145853,"job_id":98704659073,"passed":65,"failed":0,"status":"PASS"},
+  "anti_false_positive_witness": {"V":[1.0,1.0],"j_theta":[1.0,3.0],"j_Q":[2.0,2.0],"Q_theta":4.0,"Q_Sigma":4.0,"Delta_Sigma":0.0,"Delta_J":0.5,"Delta_V":0.0,"binding_verdict":"FAIL_LOCAL_CURRENT"},
   "pairing_rule": "IDT and RFC pin the same seven-loop PNCS source-law snapshot; the scalar-field/rotor coefficient theorem conditionally closes I_A=I_phi once the common phase-mode, covariant-rate, measure and collective-support gate is admitted, while physical current promotion remains measured.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
