@@ -19,23 +19,25 @@ Status: `STRUCTURAL_REFERENCE_GATES_PASS`.
 
 ## Phase B — Memory
 
-Current status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / FULL_SUITE_NOT_OBTAINED`.
+Current promotion-branch status: `MEMORY_REFERENCE_GATE_ADMISSION_PASS / HOSTED_FULL_SUITE_PASS`.
 
-1. `TARGETED_PASS_CANDIDATE`: Kepler--Newton memory propagation in \(\tau_{\rm int}\), signed areal law, conic elements and orbit classification;
-2. `TARGETED_PASS_CANDIDATE`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
+1. `TARGETED_PASS`: Kepler--Newton memory propagation in \(\tau_{\rm int}\), signed areal law, conic elements and orbit classification;
+2. `TARGETED_PASS`: event imprint projects to \(\delta m_n\) and the normalized event action yields \(\Delta v_{M,n}=q_n\delta m_n\);
 3. `CONDITIONAL_IDENTIFIABILITY_PASS`: \(\mu_M\) recoverable from \((h_M,p_M)\), \((a_M,T_M)\), or memory-circulation rate plus conic geometry;
-4. `CP1_REFERENCE_PASS_CANDIDATE`: Kähler-derived local memory frame with \(|\delta m|=d_{FS}\) and geodesic frame transport;
-5. `TARGETED_PASS_CANDIDATE`: append-only memory receipt ledger and reversible lineage cell;
-6. `TARGETED_PASS_CANDIDATE`: ledger-assisted `RECALL` reconstructs the recorded reference lineage;
-7. `INTEGRATION_PASS_CANDIDATE`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
-8. `BLOCKING_GATE`: obtain a full repository reference-suite result on the integrated Memory tree, then issue the combined Memory admission receipt;
-9. `CI_INFRASTRUCTURE_BLOCKED`: the observed hosted workflow jobs terminate before executing test steps; result class remains `CI_RESULT_NOT_OBTAINED`;
+4. `CP1_REFERENCE_PASS`: Kähler-derived local memory frame with \(|\delta m|=d_{FS}\) and geodesic frame transport;
+5. `TARGETED_PASS`: append-only memory receipt ledger and reversible lineage cell;
+6. `TARGETED_PASS`: ledger-assisted `RECALL` reconstructs the recorded reference lineage;
+7. `INTEGRATION_PASS`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
+8. `PASS_HOSTED_FULL_SUITE`: GitHub Actions run `33193861826`, job `98925901636`, executed `python -m pytest -q tests/reference` and returned `431 passed in 7.08s` on Python 3.12.14 / Ubuntu 24.04;
+9. `ADMISSION_RECEIPT_ISSUED`: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` binds source commit `3ac1f53af5223d16f8818dba99a63a6af2ba9498`, tested PR merge `e0b1cdc491a1a501adce93b8d62ade063e167500`, and tested tree `92302498f3c9131b163d5d0ccbbeab1db935d29f`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
+Canonical `main` adopts this admission state when the promotion PR is merged.
+
 ## Phase B2 — ORCHORBITAL attractor organization
 
-Canonical status: `PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS / HOSTED_SUITE_PASS`.
 
 1. `TARGETED_PASS`: define attractor-relative Kepler energy \(E_i\) and positive binding margin \(b_i=[-E_i]_+\);
 2. `TARGETED_PASS`: normalize positive binding into replay-stable attractor weights \(w_i\) and select the maximum-binding basin;
@@ -48,13 +50,14 @@ Canonical status: `PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS`.
 9. `TARGETED_PASS`: accumulate per-attractor residence segment count, dwell time in \(\tau_{\rm int}\), winding and directed transition counts;
 10. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
 11. `REFERENCE_RESULT`: `11 passed in 0.07s` in the isolated exact-dependency harness; receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
-12. `NEXT`: generate append-only attractor-residence/switch receipts for long temporal trajectories and characterize dwell-time distributions;
-13. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
-14. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before admitting them into this repository.
+12. `HOSTED_SUITE_PASS`: the ORCHORBITAL reference tests are included in the successful 431-test repository suite;
+13. `NEXT`: generate append-only attractor-residence/switch receipts for long temporal trajectories and characterize dwell-time distributions;
+14. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
+15. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before their admission into this repository.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Canonical status: `GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION`.
+Canonical status: `GATED_PENDING_ORCHORBITAL_ADMISSION`.
 
 The tested Retrodiction implementation remains provisional downstream:
 
@@ -70,7 +73,7 @@ The tested Retrodiction implementation remains provisional downstream:
 10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
 12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-13. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability without hidden-lineage leakage;
+13. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability under the declared lineage firewall;
 14. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
 15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
