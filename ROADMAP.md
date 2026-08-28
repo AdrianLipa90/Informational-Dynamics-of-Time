@@ -34,7 +34,7 @@ The admitted stack contains binding-margin attractor selection, translated Keple
 
 Synchronized admission run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
-Receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+Receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
 ## Phase C — Retrodiction
 
