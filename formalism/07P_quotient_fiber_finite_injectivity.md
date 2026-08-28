@@ -1,10 +1,10 @@
 # 07P — Quotient/Fiber Finite-Domain Injectivity Gate
 
-Status: `PROVISIONAL_DOWNSTREAM / GREMLIN_QUOTIENT_FIBER_CANDIDATE / LOCAL_REFERENCE_9_OF_9_PASS / FINITE_DOMAIN_GATE_IMPLEMENTED / HOSTED_FULL_SUITE_REQUIRED_FOR_PROMOTION / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `PROVISIONAL_DOWNSTREAM / GREMLIN_QUOTIENT_FIBER_CANDIDATE / LOCAL_REFERENCE_9_OF_9_PASS / FINITE_DOMAIN_GATE_IMPLEMENTED / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 ## 1. Dependency position
 
-The current Retrodiction frontier contains pair-scoped collision witnesses, continuous ORCHORBITAL separators, spatial-offset/divergence channels, adaptive SOD selection, and event-aware residence conditioning. The active global question is whether a declared observation family separates every collision in a candidate history domain.
+The Retrodiction stack already contains pair-scoped collision witnesses, continuous ORCHORBITAL separators, spatial-offset/divergence channels, adaptive SOD selection, and event-aware residence conditioning. 07P adds the missing finite-domain admission rule: a declared observation bundle must separate every collision pair in a declared finite candidate-history domain.
 
 Reference implementation:
 
@@ -14,7 +14,9 @@ Reference tests:
 
 `tests/reference/test_retrodiction_quotient_fiber_injectivity.py`.
 
-This layer converts the existing pair-level evidence into a finite-domain collision audit.
+Evidence receipt:
+
+`validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
 ## 2. Exact finite-set lemma
 
@@ -37,14 +39,13 @@ F_c:\mathcal C\to\mathcal F_c,
 \qquad c=1,\ldots,m,
 \]
 
-be declared fiber channels. Define the augmented observation
+be declared fiber channels. Define
 
 \[
-\widetilde Y(z)
-=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr).
+\widetilde Y(z)=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr).
 \]
 
-For exact equality on the finite set,
+Then
 
 \[
 \boxed{
@@ -57,9 +58,9 @@ Y(z_i)=Y(z_j)
 }
 \]
 
-The proof is the pair partition of \(\mathcal C\times\mathcal C\): every distinct pair is separated either by the base projection or, when it lies in one base fiber, by at least one retained fiber channel.
+The proof partitions all distinct candidate pairs into those already separated by the base projection and those lying in one base fiber. Injectivity of the augmented map is equivalent to separation of every pair in the second class by at least one retained fiber channel.
 
-The numerical reference gate uses explicit tolerances
+The numerical gate uses explicit tolerances
 
 \[
 \varepsilon_B>0,
@@ -81,40 +82,40 @@ and
 \|Y(z_i)-Y(z_j)\|_2\le\varepsilon_B.
 \]
 
-It is separated by the declared fiber when
+It is fiber-separated when
 
 \[
 \exists c:\
 \|F_c(z_i)-F_c(z_j)\|_2>\varepsilon_F.
 \]
 
-The finite-domain status `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER` is emitted only when every collision pair passes that condition.
+The implementation emits `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER` only when every collision pair in the declared finite domain is separated.
 
 ## 3. GREMLIN relational-isomorphism candidate
 
-GREMLIN identified the invariant
+GREMLIN identified the common typed structure
 
 ```text
 non-injective base projection
   -> collision fiber
   -> retained lift coordinate
-  -> pair separation inside the fiber
+  -> separation inside the fiber
   -> inverse recovery on the declared finite domain
 ```
 
-The candidate is supported by three independently versioned structures.
+The candidate is grounded in three independently versioned source structures.
 
-### 3.1 RFC normalized-shape / extensive-scale fiber
+### 3.1 RFC normalized shape and extensive scale
 
 Pinned source:
 
 ```text
-repo: AdrianLipa90/Relational-Field-Closure
-commit: e7817ce07a989ae95246f21e5e632da4b9d04493
-file: formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md
+AdrianLipa90/Relational-Field-Closure
+e7817ce07a989ae95246f21e5e632da4b9d04493
+formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md
 ```
 
-For a positive carrier vector \(Q\), RFC defines
+RFC defines
 
 \[
 \mathcal N(Q)=p,
@@ -129,22 +130,22 @@ with
 \qquad \lambda>0.
 \]
 
-The extensive coordinate \(Q_\Sigma\) is carried separately, and the exact lift
+The extensive coordinate \(Q_\Sigma\) is retained separately and the lift
 
 \[
 \mathcal L_{Q_\Sigma}(p)=Q_\Sigma p
 \]
 
-closes the round trip. In 07P terminology, normalized shape is the base projection and the positive extensive scale is a fiber separator.
+closes the round trip. In the 07P dictionary, normalized shape is a quotient/base coordinate and positive extensive scale is a separating fiber coordinate.
 
 ### 3.2 Secret of a Half exact two-sheeted quotient
 
 Pinned source:
 
 ```text
-repo: AdrianLipa90/secret-of-a-half
-commit: 4cf36453ee2b6d33a1f9177ca324b9ef491270be
-file: monograph/chapters/41_paired_spectrum_quotient_correspondence.tex
+AdrianLipa90/secret-of-a-half
+4cf36453ee2b6d33a1f9177ca324b9ef491270be
+monograph/chapters/41_paired_spectrum_quotient_correspondence.tex
 ```
 
 The exact quotient
@@ -163,147 +164,146 @@ and for \(w\ne0\),
 
 \[
 q^{-1}(w)
-=
-\left\{
+=\left\{
 \frac12+\sqrt w,
 \frac12-\sqrt w
 \right\}.
 \]
 
-The quotient therefore has an exact two-element fiber. A sheet coordinate separates the two lifted states while the quotient value remains identical.
-
-The same source proves the commuting diagram
+The quotient therefore has an exact two-element fiber. A sheet coordinate separates the two lifted states at one quotient value. The same source proves
 
 \[
-q\circ N_s=J\circ q,
+\boxed{q\circ N_s=J\circ q},
 \]
 
-showing that a dynamics can descend through the quotient while the lifted two-sheet structure remains recoverable only with fiber information.
+so the quotient dynamics commutes exactly while the lifted sheet information remains separately typed.
 
-### 3.3 TIR projection/orientation/open-holonomy structure
+### 3.3 TIR projection, orientation and open holonomy
 
 Pinned source:
 
 ```text
-repo: AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations
-commit: 26bd867c10b6f6e21b54f2a4dc7b2f49df62907a
-file: archive/v7.9/full/33_debt10_white_thread_open_holonomy_preckm_v3_5/METATIME_SM_WHITE_THREAD_OPEN_HOLONOMY_PRECKM_v3_5.md
+AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations
+26bd867c10b6f6e21b54f2a4dc7b2f49df62907a
+archive/v7.9/full/33_debt10_white_thread_open_holonomy_preckm_v3_5/METATIME_SM_WHITE_THREAD_OPEN_HOLONOMY_PRECKM_v3_5.md
 ```
 
-The source carries an open-path White-Thread holonomy between non-identical oriented sector bases and verifies nonzero off-diagonal structure. For the 07P candidate dictionary, the projected/base description and its orientation/transport data occupy distinct information roles. GREMLIN classifies this as a structural candidate for a fiber-transport channel; domain-specific promotion requires an explicit commuting map into the Retrodiction state space.
+The source carries an open-path White-Thread holonomy between non-identical oriented sector bases and verifies nonzero off-diagonal structure. For the 07P candidate dictionary, projected/base information and orientation/transport information occupy distinct roles. GREMLIN keeps this mapping at candidate status until an explicit commuting map into the Retrodiction state space is supplied.
 
-## 4. IDT reflection-null binding
+## 4. Exact IDT reflection-null binding
 
-07H supplies a concrete two-history collision for the final retained base checkpoint
-
-\[
-Y_B=(r_x,r_y,v_x,w_A,w_B,w_C)_2.
-\]
-
-The two latent histories have
+07H supplies two latent histories with
 
 \[
-\|\widetilde z-z\|_2
-=0.9233193011263697,
+\|\widetilde z-z\|_2=0.9233193011263697
 \]
 
-while
+and final retained base observation
 
 \[
-\delta_B
-=5.594315114139762\times10^{-17}.
+Y_B=(r_x,r_y,v_x,w_A,w_B,w_C)_2
 \]
 
-The earlier continuous basin weight gives
+with
+
+\[
+\delta_B=5.594315114139762\times10^{-17}.
+\]
+
+The earlier continuous basin weight is
 
 \[
 w_{A,1}(z)=0.5838364569736161,
-\]
-
-\[
+\qquad
 w_{A,1}(\widetilde z)=0.6030256253846112,
 \]
 
-and therefore
+hence
 
 \[
-\boxed{
-|\Delta w_{A,1}|
-=0.01918916841099516.
-}
+\boxed{|\Delta w_{A,1}|=0.01918916841099516.}
 \]
 
-The 07P finite-domain gate classifies this two-history domain as
+The two-history finite domain therefore receives
 
 `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER`
 
-when `w_A_1` is the declared fiber channel.
+when `w_A_1` is supplied as the fiber channel.
 
-The 07H negative control
+The 07H negative-control coordinate satisfies
 
 \[
-|\Delta r_{x,1}|
-=1.1102230246251565\times10^{-16}
+|\Delta r_{x,1}|=1.1102230246251565\times10^{-16},
 \]
 
-remains within the declared fiber tolerance and therefore leaves that collision unresolved. This preserves the distinction between adding a coordinate and adding a separating coordinate.
+which remains within the declared fiber tolerance and preserves the collision. This directly tests the distinction between coordinate count and separating information.
 
-## 5. Residence labels, continuous channels and provenance
+## 5. Typed Retrodiction fiber bundle
 
-07O establishes an event-aware residence signature containing active/next attractor labels, switch/leak indices and winding increments. For the declared reflection pair, the discrete residence and switch lineage remains equivalent, while the earlier continuous basin weight separates the histories.
+07O establishes an event-aware residence signature containing active/next-attractor labels, switch/leak indices and winding increments. For the declared reflection pair the discrete residence/switch class is shared, while the earlier continuous basin weight separates the histories.
 
-07P therefore treats all retained channels uniformly at the gate interface while preserving their typed origin:
+The current Retrodiction observation architecture is therefore represented as
 
 \[
 \boxed{
-\text{base projection}
-\;\oplus\;
-\text{continuous ORCH observables}
-\;\oplus\;
-\text{spatial/SOD coordinates}
-\;\oplus\;
-\text{residence/transport channels}.
+Y_{\rm aug}
+=
+Y_B
+\oplus F_{\rm ORCH}^{\rm cont}
+\oplus F_{\rm SOD}
+\oplus F_{\rm residence}
+\oplus F_{\rm holonomy},
 }
 \]
 
-Content-addressed provenance commitments remain audit coordinates and stay outside semantic pair separation unless a later gate explicitly admits a provenance field as an observation.
+where each channel remains separately typed and is admitted as a separator only by the finite-domain pair audit. Content-addressed provenance commitments remain integrity coordinates unless a later observation contract explicitly promotes one into the semantic observation bundle.
 
 ## 6. Reference controls
 
-The initial 07P reference suite contains nine tests:
+The 07P reference suite contains nine tests:
 
 1. exact two-sheet quotient collision separated by a sheet coordinate;
 2. normalized-shape collision separated by scale;
 3. identical declared fiber preserving a collision;
-4. all base-collision pairs required for finite-domain PASS;
-5. no-collision finite domain returning the vacuous base-injective status;
-6. deterministic sorted channel attribution;
-7. malformed shape/tolerance/non-finite inputs fail closed;
+4. every base-collision pair required for finite-domain PASS;
+5. finite domain with no base collisions;
+6. deterministic channel attribution;
+7. malformed shape, tolerance and non-finite inputs fail closed;
 8. exact 07H reflection-null values separated by `w_A_1`;
 9. exact 07H `r_x_1` negative control preserving the collision.
 
-Local exact result before repository write:
+Local pre-write result:
 
 ```text
 9 passed in 0.04s
 ```
 
-Hosted full-suite authority is the next promotion requirement for this branch head.
+Hosted repository gate:
 
-## 7. Scope of the new status
+- workflow: `Reference suite`;
+- run: `33200684482` / run number `592`;
+- job: `98949092398`;
+- tested branch head: `17d3ba854e83f930194b8dd4c4b7089382578a35`;
+- tested PR merge commit: `ee1985c96df734d32a8232c03ca078c993ef7318`;
+- command: `python -m pytest -q tests/reference`;
+- result: `495 passed in 10.14s`;
+- Python: `3.12.14`;
+- runner: Ubuntu `24.04.4`.
 
-07P introduces a strict finite-domain claim:
+## 7. Frontier result
+
+07P advances Retrodiction from isolated pair-separation witnesses to a reusable finite-domain injectivity gate:
 
 \[
 \boxed{
-\text{every base collision in the declared finite candidate set}
-\text{ is separated by the declared fiber bundle}
+\forall (z_i,z_j)\in\mathcal K_{\rm base}:\
+\exists c\quad F_c(z_i)\ne F_c(z_j)
 }
 \]
 
-when the implementation emits `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER`.
+for the declared finite collision set \(\mathcal K_{\rm base}\).
 
-The current repository-wide frontier remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. Advancement from a finite candidate set to a global history domain requires a domain-covering argument, constructive inverse, or equivalent global separation theorem using the retained continuous ORCHORBITAL and spatial/holonomy channels.
+The governing repository frontier remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The next admission target is a domain-covering separation argument, constructive inverse, or equivalent global theorem over the retained continuous ORCHORBITAL, SOD and holonomy channels.
 
 ## 8. GREMLIN evidence
 
@@ -313,10 +313,10 @@ Live candidate artifact:
 /dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_QUOTIENT_FIBER_20260828.json
 ```
 
-Candidate artifact SHA-256:
+SHA-256:
 
 ```text
 2c0caeca231bc135ceec972a6df6cec99db517455564b55f66c5f4314773c1fc
 ```
 
-GREMLIN status remains `CHYBA / CANDIDATE_ONLY`. The formal lemma and reference tests are the independent admission path for IDT.
+GREMLIN remains `CHYBA / CANDIDATE_ONLY`; the exact finite-set lemma, executable gate and hosted reference suite provide the independent IDT evidence path.
