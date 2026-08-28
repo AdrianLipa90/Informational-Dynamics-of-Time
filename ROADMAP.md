@@ -51,17 +51,17 @@ Current promotion-branch status: `ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / HO
 10. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
 11. `REFERENCE_RESULT`: base ORCHORBITAL receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
 12. `HOSTED_SUITE_PASS`: ORCHORBITAL reference tests are included in successful repository-wide hosted suites;
-13. `RESIDENCE_LEDGER_PASS`: append-only attractor-residence/switch receipts, strict schema, long-trajectory dwell distributions and transition lineage; receipts `validation/ORCHORBITAL_RESIDENCE_LEDGER_V0_1.json` and `validation/ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1.json`;
-14. `PNCS_HIERARCHY_PASS`: pinned PNCS v0.29 sphere/entity hierarchy maps to nested IDT temporal-memory attractor families; receipt `validation/ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1.json`;
-15. `TYPED_OBSERVABLES_PASS`: pinned PNCS truth scalar, semantic mass and reduction readiness remain separately typed and residence-weightable where declared; receipt `validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json`;
+13. `RESIDENCE_LEDGER_PASS`: append-only attractor-residence/switch receipts, strict schema, long-trajectory dwell distributions and transition lineage;
+14. `PNCS_HIERARCHY_PASS`: pinned PNCS v0.29 sphere/entity hierarchy maps to nested IDT temporal-memory attractor families;
+15. `TYPED_OBSERVABLES_PASS`: pinned PNCS truth scalar, semantic mass and reduction readiness remain separately typed and residence-weightable where declared;
 16. `ADMISSION_RECEIPT_ISSUED`: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
-17. `PASS_HOSTED_FULL_SUITE`: run `33196818703`, job `98935954122`, returned `475 passed in 11.91s` for the typed-observable completion tree.
+17. `PASS_HOSTED_FULL_SUITE`: synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
 Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The tested Retrodiction implementation remains provisional while its admission work continues:
 
@@ -71,17 +71,21 @@ The tested Retrodiction implementation remains provisional while its admission w
 4. `PROVED_REFERENCE_AMBIGUITY`: when both factors are withheld, only \(q_n\delta m_n\) is identifiable because positive reciprocal rescaling leaves the kick invariant;
 5. `PROVISIONAL_OBSERVABILITY_GATE`: for \(N\) latent 2D kicks, build \(J_R=\partial Y/\partial z\) and require \(\operatorname{rank}J_R=2N\) before any estimator is admitted;
 6. `PROVED_DIMENSIONAL_BOUND`: one final 4D memory checkpoint cannot locally identify more than two unknown 2D kicks, because \(\operatorname{rank}J_R\le4\);
-7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in the targeted reference cases;
+7. `PROVISIONAL_CHECKPOINT_AUGMENTATION_PASS`: retained intermediate checkpoints enlarge the measurement space and produce full column rank in targeted reference cases;
 8. `PROVISIONAL_ESTIMATION_GATE_PASS`: gated damped Gauss--Newton reference estimation is implemented with strict residual-descent admission and fail-closed local-rank checks;
 9. `PROVISIONAL_INFORMATION_FIREWALL_PASS`: estimator input excludes sealed truth and the estimate is content-committed before truth scoring;
 10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
 12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-13. `EVENT_AWARE_RESIDENCE_CONDITIONING_PASS`: versioned Memory-event -> ORCH smooth-residence cells preserve append-only provenance across kick boundaries; the declared 07G reflection-null pair keeps the same active-label and switch/leak lineage, while provenance hashes remain outside semantic pair separation; receipt `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
-14. `KNOWN_NULL_CONTINUOUS_SEPARATOR_PASS`: the earlier ORCHORBITAL weight \(w_{A,1}\) remains a separating retained scalar for the declared reflection pair, as recorded in 07H;
-15. `ACTIVE_NEXT`: advance the global branch-separation program beyond discrete residence labels, retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN` as the governing status;
-16. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
-17. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+13. `EVENT_AWARE_RESIDENCE_CONDITIONING_PASS`: versioned Memory-event -> ORCH smooth-residence cells preserve append-only provenance across kick boundaries; the declared 07G reflection-null pair keeps the same active-label and switch/leak lineage, while provenance hashes remain outside semantic pair separation;
+14. `KNOWN_NULL_CONTINUOUS_SEPARATOR_PASS`: the earlier ORCHORBITAL weight \(w_{A,1}\) separates the declared reflection pair by `0.01918916841099516`;
+15. `SPATIAL_OFFSET_DIVERGENCE_PASS`: the retained position lineage exposes SOD witnesses for sparse-record collisions;
+16. `ADAPTIVE_SOD_SEPARATOR_PASS`: the largest retained SOD coordinate is selected deterministically for a declared witness;
+17. `QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: for a finite candidate set, every distinct-latent pair colliding under the base projection must be separated by at least one declared fiber channel; formalism `07P`, receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
+18. `PASS_HOSTED_FULL_SUITE`: 07P tested on run `33200684482`, job `98949092398`, branch head `17d3ba854e83f930194b8dd4c4b7089382578a35`, PR merge `ee1985c96df734d32a8232c03ca078c993ef7318`, result `495 passed in 10.14s` on Python 3.12.14 / Ubuntu 24.04.4;
+19. `ACTIVE_NEXT`: derive a domain-covering separator theorem, constructive inverse, or equivalent global injectivity argument over retained continuous ORCHORBITAL, SOD and holonomy channels while retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN`;
+20. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+21. `LATER`: carry an admitted global Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
