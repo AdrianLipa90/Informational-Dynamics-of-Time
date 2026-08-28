@@ -1,21 +1,37 @@
 {
   "schema": "IDT_HALF_FRAME_TEMPORAL_GLUING_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/half-frame-temporal-gluing-v0.1",
-  "formalism": "formalism/02J_half_frame_temporal_gluing.md",
+  "formalism": [
+    "formalism/02J_half_frame_temporal_gluing.md",
+    "formalism/02JA_half_frame_elapsed_measure_gluing.md",
+    "formalism/02JB_half_frame_path_complex.md",
+    "formalism/02JC_half_frame_now_frontier_update.md"
+  ],
   "implementation": "src/idt/half_frame_temporal_gluing.py",
-  "tests": "tests/reference/test_half_frame_temporal_gluing.py",
+  "tests": [
+    "tests/reference/test_half_frame_temporal_gluing.py",
+    "tests/reference/test_half_frame_schrodinger_integration.py",
+    "tests/reference/test_half_frame_now_frontier.py"
+  ],
   "construction": {
     "phase_sector": "Phi_N = 2 pi N",
     "full_frames": "N",
     "half_supports": "2N",
     "neighbor_identifications": "R_n ~ L_(n+1), count N-1",
     "glued_supports": "N+1",
-    "split_isometry": "S|n> = (|n,L> + |n,R>)/sqrt(2)",
+    "support_count_theorem": "2N - (N-1) = N+1",
+    "split_isometry": "S|n> = (|n,L> + |n,R>)/sqrt(2); S^dagger S = I_N",
     "gluing_coisometry": "Q Q^dagger = I_(N+1)",
     "interface_amplitude": "b_n = (a_n + a_(n+1))/2",
     "seam_defect": "d_n = (a_n - a_(n+1))/2",
-    "norm_identity": "sum |b|^2 + sum |d|^2 = sum |a|^2"
+    "amplitude_norm_identity": "sum |b|^2 + sum |d|^2 = sum |a|^2",
+    "elapsed_support": "ell_0=theta_1/2; ell_n=(theta_n+theta_(n+1))/2; ell_N=theta_N/2",
+    "elapsed_measure_identity": "sum_j ell_j = sum_n theta_n = Theta_N",
+    "path_complex": "N frames -> N oriented edges on N+1 glued-support vertices",
+    "path_laplacian": "L_V = D_N diag(w_n) D_N^T",
+    "uniform_spectrum": "lambda_k = 2w[1-cos(k pi/(N+1))]",
+    "now_frontier": "NOW_N <-> |N|_boundary; append frame N+1 converts |N| to |N,N+1| and creates NOW_(N+1)=|N+1|"
   },
   "declared_patterns": {
     "2pi": "|1|1|",
@@ -24,22 +40,55 @@
     "8pi": "|1|12|23|34|4|"
   },
   "declared_gates": [
-    "half_split_isometry",
-    "gluing_coisometry",
-    "quotient_dimension_N_plus_1",
-    "modular_pattern_N_1_to_4",
-    "antisymmetric_seam_kernel",
-    "exact_norm_decomposition",
-    "constructive_equal_phase_gluing",
-    "opposite_phase_interface_null",
-    "uniform_chain_zero_seam_defect"
+    "half_split_isometry_pass",
+    "gluing_coisometry_pass",
+    "quotient_dimension_N_plus_1_pass",
+    "modular_pattern_N_1_to_4_pass",
+    "antisymmetric_seam_kernel_pass",
+    "exact_amplitude_norm_decomposition_pass",
+    "constructive_equal_phase_gluing_pass",
+    "opposite_phase_interface_null_pass",
+    "uniform_chain_zero_seam_defect_pass",
+    "elapsed_measure_conservation_pass",
+    "path_complex_incidence_pass",
+    "weighted_path_laplacian_psd_pass",
+    "uniform_path_exact_spectrum_pass",
+    "low_mode_quadratic_continuum_pass",
+    "now_frontier_realization_pass",
+    "schrodinger_half_frame_integration_pass",
+    "reference_fuzziness_growth_witness_pass"
   ],
+  "reference_witness": {
+    "frame_labels": [3, 5, 7, 11, 13],
+    "initial_state": "sharp first frame",
+    "zeta_scale": 0.6,
+    "collatz_coupling": 1.0,
+    "delta_Theta": 1.0,
+    "initial_interface_occupancy": 0.25,
+    "evolved_interface_occupancy": "greater_than_0.5",
+    "classification": "FINITE_REFERENCE_WITNESS"
+  },
   "downstream": {
-    "schrodinger_frame_flow_binding": "NEXT_GATE_AFTER_ALGEBRAIC_PASS",
+    "phase_aware_half_seam_connection": "ACTIVE_NEXT_GATE",
     "spin_half_4pi_physical_binding": "SEPARATELY_TYPED_OPEN_GATE",
-    "continuous_coarse_graining": "DOWNSTREAM_OF_GLUED_SUPPORTS"
+    "continuous_coarse_graining": "DOWNSTREAM_OF_GLUED_SUPPORTS",
+    "retrocausal_classification": "SEPARATE_DOWNSTREAM_EVIDENCE_GATE"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "reference_workflow": "Reference suite",
+    "reference_run_number": 755,
+    "reference_run_id": 33218562564,
+    "reference_job_id": 99007541934,
+    "tested_head_sha": "2cb7453a1c15f2bf3ffde80850a1eb9295709b90",
+    "tested_pr_merge_sha": "12b9a37867e44f487297774667316ee013131513",
+    "tests_passed": 640,
+    "tests_total": 640,
+    "elapsed_seconds": 17.14,
+    "monograph_workflow": "Monograph PDF",
+    "monograph_run_number": 27,
+    "monograph_run_id": 33218562604,
+    "monograph_job_id": 99007541997,
+    "monograph_status": "PASS"
   }
 }
