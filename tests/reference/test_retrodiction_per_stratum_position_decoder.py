@@ -104,6 +104,28 @@ def test_missing_fiber_labels_account_for_base_final_position() -> None:
     ) == ("r1x", "r1y", "r2x", "r2y")
 
 
+@pytest.mark.parametrize("event_count", [1, 2, 3, 5, 8])
+def test_final_position_base_schedule_has_exact_2n_minus_2_fiber_budget(
+    event_count: int,
+) -> None:
+    active_sequence = tuple("A" for _ in range(event_count))
+    base_specs = (
+        ScalarCheckpointObservation(event_count, "rx"),
+        ScalarCheckpointObservation(event_count, "ry"),
+    )
+    missing = missing_position_fiber_labels(
+        active_sequence,
+        base_specs,
+        (0.0, 0.0),
+    )
+    assert len(missing) == 2 * event_count - 2
+    assert missing == tuple(
+        f"r{k}{axis}"
+        for k in range(1, event_count)
+        for axis in ("x", "y")
+    )
+
+
 def test_exact_decoder_assembles_real_ordered_position_lineage() -> None:
     signature, positions, base_specs, base_values, fibers = _reference_data()
     decoded = decode_per_stratum_position_lineage(
