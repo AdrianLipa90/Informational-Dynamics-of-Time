@@ -22,19 +22,21 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
-The Temporal Primitive keeps its existing Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
+The Temporal Primitive keeps its Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
 
-## Cross-repository source branch: IDT 01X/01Y/01Z/01AA ↔ PNCS ↔ RFC
+## Cross-repository source branch: IDT 01X–01AC ↔ PNCS ↔ RFC
 
 \[
 \boxed{
 \text{normalized shape}
 \to 01X
-\to 01Y\;\text{Euler closure}
+\to 01Y\;\text{Euler-selected intention charge}
 \to 01Z\;\text{finite Noether carrier}
-\to 01AA\;\text{local conserved-current binding}
+\to 01AA\;\text{local conserved-current theorem}
+\to 01AB\;\text{scalar-field/rotor coefficient reduction}
+\to 01AC\;\text{gauge-covariant common-}U(1)\text{ pullback}
 \leftrightarrow\text{PNV law frame}
-\leftrightarrow\text{RFC RF-N1B2H/I/J/K}.
+\leftrightarrow\text{RFC RF-N1B2H--M}.
 }
 \]
 
@@ -43,10 +45,10 @@ The Temporal Primitive keeps its existing Shannon/Onsager and phase-connection a
 \[
 \mathcal N(Q)=Q/Q_\Sigma,
 \qquad
-\Delta_{\rm ext}=\left|1-s/Q_\Sigma\right|,
-\qquad
 Q_a=Q_\Sigma p_{Q,a}.
 \]
+
+The normalized profile and the extensive source coordinate remain separately typed.
 
 ### 01Y — Euler-selected intention charge and rotor energy
 
@@ -57,10 +59,12 @@ Q_a=Q_\Sigma p_{Q,a}.
 \[
 \boxed{J_I^{EB}=\hbar\theta_I^{EB}},
 \qquad
-\boxed{H_\Phi^{EB}=\frac{(J-J_I^{EB})^2}{2I_\phi}}.
+\boxed{P_\Phi^{EB}=J-J_I^{EB}},
+\qquad
+\boxed{H_\Phi^{EB}=\frac{(P_\Phi^{EB})^2}{2I_\phi}}.
 \]
 
-The intention-action ratio remains separately typed:
+The intention-action energy coordinate remains separately typed as
 
 \[
 \epsilon_I^{EB}=H_\Phi^{EB}/J_I^{EB}.
@@ -68,80 +72,75 @@ The intention-action ratio remains separately typed:
 
 ### 01Z — finite Noether carrier
 
+The collective field coordinate is
+
 \[
-J_\vartheta^\mu=2A^2\partial^\mu\vartheta,
-\qquad
 Q_\vartheta=I_A D_\tau\chi,
-\]
-
-\[
-P_\Phi^{EB}=J-J_I^{EB}=I_\phi D_\tau\chi.
-\]
-
-The field/rotor inertia defect is
-
-\[
-\boxed{\Delta_I=\left|\frac{I_A}{I_\phi}-1\right|.}
-\]
-
-The energy-per-finite-Noether-carrier coordinate is
-
-\[
-\boxed{\epsilon_N^{EB}=\frac{H_\Phi^{EB}}{Q_\vartheta}.}
-\]
-
-At exact \(I_A=I_\phi\),
-
-\[
-Q_\vartheta=P_\Phi^{EB},
 \qquad
-\epsilon_N^{EB}=\frac12D_\tau\chi.
+I_A=2\int_\Sigma A^2dV_h,
 \]
 
-### 01AA — common-measure local-current binding
-
-On one explicit ordered cell partition,
+while the rotor kinetic coordinate is
 
 \[
-Q_\vartheta=\sum_aV_a j_{\vartheta,a},
-\qquad
-Q_\Sigma=\sum_aV_a j_{Q,a}.
+P_\Phi^{EB}=I_\phi D_\tau\chi.
 \]
 
-The common-measure defect is
+01Z carries the comparison coordinate
+
+\[
+\boxed{\Delta_I^{01Z}=\left|\frac{I_A}{I_\phi}-1\right|}
+\]
+
+and
+
+\[
+\boxed{\epsilon_N^{EB}=\frac{H_\Phi^{EB}}{Q_\vartheta}}.
+\]
+
+### 01AA — exact local-current / measure theorem
+
+On one common slice, orientation and ordered cell support,
+
+\[
+Q_\vartheta=\sum_aV_{\vartheta,a}j_{\vartheta,a},
+\qquad
+Q_\Sigma=\sum_aV_{Q,a}j_{Q,a}.
+\]
+
+The executable local defects are
+
+\[
+\boxed{
+\Delta_J
+=\frac{\sum_aV_{Q,a}|j_{Q,a}-j_{\vartheta,a}|}{Q_\vartheta},
+}
+\]
 
 \[
 \boxed{
 \Delta_V
-=\frac{\sum_a|V_a^{(\vartheta)}-V_a^{(Q)}|}{\sum_aV_a^{(\vartheta)}}.
+=\frac{\sum_a|V_{Q,a}-V_{\vartheta,a}|\,|j_{\vartheta,a}|}{Q_\vartheta},
 }
 \]
-
-The primary local-current defect is
 
 \[
 \boxed{
-\Delta_{\rm local}
-=\frac{\sum_aV_a|j_{Q,a}-j_{\vartheta,a}|}{Q_\vartheta}.
+\Delta_\Sigma
+=\frac{|Q_\Sigma-Q_\vartheta|}{Q_\vartheta}.
 }
 \]
 
-The integrated defect is
+They satisfy the exact finite-cell bound
 
 \[
-\boxed{\Delta_Q=\frac{|Q_\Sigma-Q_\vartheta|}{Q_\vartheta},}
+\boxed{\Delta_\Sigma\le\Delta_J+\Delta_V.}
 \]
 
-and the side-flux defect is
+The witness
 
 \[
-\boxed{\Delta_F=|F_{\rm side}|.}
-\]
-
-The anti-false-positive witness
-
-\[
-j_\vartheta=(1,3),\quad j_Q=(2,2),\quad V=(1,1)
+V=(1,1),\qquad j_\vartheta=(1,3),\qquad j_Q=(2,2)
 \]
 
 gives
@@ -149,42 +148,161 @@ gives
 \[
 Q_\vartheta=Q_\Sigma=4,
 \qquad
-\Delta_Q=0,
+\Delta_\Sigma=0,
 \qquad
-\Delta_{\rm local}=1/2.
+\Delta_J=1/2,
 \]
 
-Thus equal integrated charge is insufficient for local-current promotion.
+so the local-current coordinate remains part of the promotion gate even when the integrated totals coincide.
 
-At the zero-defect candidate gate,
+### 01AB — scalar-field / rotor coefficient reduction
+
+For the collective scalar phase sector,
 
 \[
-\Delta_V=\Delta_{\rm local}=\Delta_Q=\Delta_F=0
+C_A=\int_\Sigma A^2dV_h,
+\qquad
+I_A=2C_A,
 \]
 
-and the candidate identity is
+and
 
 \[
-\boxed{Q_\Sigma=Q_\vartheta.}
+L_{phase}^{field}=\frac{I_A}{2}(D_\tau\chi)^2.
 \]
 
-Then the downstream energy conversion has the direct form
+The canonical rotor carries
+
+\[
+L_{phase}^{rotor}=\frac{I_\phi}{2}(D_\tau\chi)^2.
+\]
+
+On the admitted common collective reduction,
+
+\[
+\boxed{I_\phi=I_A.}
+\]
+
+The executable reduction coordinate is separately typed from the 01Z ratio:
 
 \[
 \boxed{
-\epsilon_Q\stackrel{?}{=}\epsilon_N^{EB}
-=\frac{H_\Phi^{EB}}{Q_\Sigma}.
+\Delta_I^{red}=\frac{|I_\phi-I_A|}{I_A}.
+}
+\]
+
+At the exact reduction gate,
+
+\[
+Q_\vartheta=P_\Phi^{EB},
+\qquad
+\epsilon_N^{EB}=\frac12D_\tau\chi.
+\]
+
+### 01AC — gauge-covariant common-U(1) pullback
+
+The admitted Berry convention
+
+\[
+\mathcal A_B=i\langle u|du\rangle
+\]
+
+gives under a local section change
+
+\[
+|u\rangle\mapsto e^{i\lambda}|u\rangle,
+\qquad
+\boxed{\mathcal A'^{ABE}=\mathcal A^{ABE}-d\lambda.}
+\]
+
+With
+
+\[
+\vartheta' = \vartheta+\lambda,
+\]
+
+the invariant one-form is
+
+\[
+\boxed{\mathscr D\vartheta=d\vartheta+\mathcal A^{ABE}.}
+\]
+
+For a common local fiber coordinate along the relational trajectory,
+
+\[
+\chi(\tau)=\vartheta(q(\tau))+\chi_0,
+\]
+
+and therefore
+
+\[
+\boxed{q^*(\mathscr D\vartheta)=D_\tau\chi\,d\tau.}
+\]
+
+The executable layer keeps three rates independent:
+
+\[
+r_{field}=\sum_a(\partial_a\vartheta+\mathcal A_a^{ABE})\dot q^a,
+\qquad
+r_n=n_\mu\mathscr D^\mu\vartheta,
+\qquad
+r_{rotor}=D_\tau\chi.
+\]
+
+The field and rotor generators are
+
+\[
+Q_\vartheta=I_A r_n,
+\qquad
+P_\Phi=I_\phi r_{rotor},
+\]
+
+with the exact factorization
+
+\[
+\boxed{
+\frac{Q_\vartheta}{P_\Phi}
+=
+\frac{I_A}{I_\phi}
+\frac{r_n}{r_{rotor}}.
+}
+\]
+
+The gauge-pullback audit tracks
+
+\[
+\Delta_{gauge},\quad
+\Delta_I^{red},\quad
+\Delta_{rate},\quad
+\Delta_{normal},\quad
+\Delta_Q,\quad
+\Delta_\epsilon,\quad
+\Delta_{factorization},\quad
+\Delta_{action}.
+\]
+
+On the common zero-defect surface,
+
+\[
+\boxed{
+I_A=I_\phi,
+\quad
+r_n=r_{field}=r_{rotor},
+\quad
+Q_\vartheta=P_\Phi^{EB},
+\quad
+\epsilon_N^{EB}=\frac12D_\tau\chi.
 }
 \]
 
 ## PNCS executable law frame
 
-Pinned code snapshot:
+Pinned executable snapshot:
 
 ```text
 AdrianLipa90/PhaseNav-Natural-Coding-System
 feat/gremlin-pnv-authoring-v0.2
-f7b428f4dc30ddeb1280c9213c5788f576a54db4
+b741460dba15d979a6387305daf93f476becb54e
 ```
 
 Contracts:
@@ -195,9 +313,11 @@ PNCS_PNV_INFORMATION_HOLONOMY_V0_1
 PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1
 PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1
 PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1
+PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1
+PNCS_PNV_GAUGE_COVARIANT_PHASE_PULLBACK_V0_1
 ```
 
-Executable loops:
+Eight executable loops:
 
 ```text
 SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP
@@ -206,55 +326,41 @@ SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP
 SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP
 SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP
 SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP
+SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP
+SOURCE.PHASE.NOETHER.GAUGE_COVARIANT_PULLBACK.ROUNDTRIP
 ```
 
-The sixth loop audits
+Focused source-law checks authored: `68`.
+
+Latest executed cross-repository gates:
 
 ```text
-SOURCE.NOETHER_TOTAL_CHARGE
-SOURCE.RFC_TOTAL_CHARGE
-SOURCE.COMMON_MEASURE_DEFECT
-SOURCE.LOCAL_CURRENT_BINDING_DEFECT
-SOURCE.TOTAL_CHARGE_BINDING_DEFECT
-SOURCE.SIDE_FLUX_DEFECT
+IDT Reference suite     382 passed, 0 failed
+RFC Reference suite      74 passed, 0 failed
 ```
 
-and fails closed on semantic measure/cell mismatch or any declared defect above tolerance.
-
-Latest executed cross-repository reference snapshots:
-
-```text
-IDT Reference suite     370 passed, 0 failed
-RFC Reference suite      62 passed, 0 failed
-```
-
-PNCS native CI remains `CI_EXECUTION_UNRESOLVED_PRE_TEST`; run `33123979049`, job `98697546433` has `steps=null`.
+PNCS native CI remains `CI_EXECUTION_UNRESOLVED_PRE_TEST`; run `33129045847`, job `98713992469` has `steps=null`, so it supplies no PNCS code-test verdict.
 
 ## Current source frontier
 
-```text
-Euler/Berry -> J_I^EB                              PASS
-finite Q_theta and epsilon_N^EB                   PASS typed candidate coordinates
-I_A <-> I_phi                                     OPEN physical normalization, measured by Delta_I
-common slice/measure/cell current audit           PASS executable candidate gate
-Q_Sigma <-> Q_theta                               PASS_CONDITIONAL at zero current/measure/flux defects
-physical promotion Q_Sigma <-> Q_theta            OPEN evidence gate
-epsilon_Q <-> epsilon_N^EB                        OPEN downstream physical promotion
-IDT p <-> RFC p_Q                                 OPEN physical state-space binding
-RFC source coupling/universality                  OPEN
-```
-
-The next cross-repository step is therefore to feed the zero-defect current-bound carrier into the existing epsilon/mass-density transport and audit the full chain
+The dependency frontier is now
 
 \[
-J_\vartheta^\mu
-\to Q_\vartheta
-\leftrightarrow Q_\Sigma
-\to \epsilon_N^{EB}
-\to \rho_N
-\to \text{RFC source operator},
+\boxed{
+\text{physical common-}U(1)\text{ realization}
+\to
+\text{normal-flow/slice realization}
+\to
+J_Q^\mu\leftrightarrow J_\vartheta^\mu
+\to
+Q_\Sigma\leftrightarrow Q_\vartheta
+\to
+\epsilon_Q\leftrightarrow\epsilon_N^{EB}
+\to
+\text{RFC source coupling/universality}.
+}
 \]
 
-while retaining the physical promotion gates explicitly.
+The formal gauge sign, pullback identity, scalar-field/rotor coefficient reduction and finite-generator identity are represented as conditional exact gates. Physical current and state-space promotion remain measured gates.
 
-The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path. The 01X/01Y/01Z/01AA branch remains the parallel physical-source connection and holonomy audit.
+The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path. The 01X–01AC branch is the parallel physical-source connection and holonomy audit.
