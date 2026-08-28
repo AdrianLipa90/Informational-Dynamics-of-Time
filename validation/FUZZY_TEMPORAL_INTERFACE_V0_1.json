@@ -1,0 +1,29 @@
+{
+  "schema": "IDT_FUZZY_TEMPORAL_INTERFACE_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/fuzzy-temporal-interface-order-parameter-v0.1",
+  "formalism": "formalism/02JI_fuzzy_temporal_interface_order_parameter.md",
+  "implementation": "src/idt/fuzzy_temporal_interface.py",
+  "tests": "tests/reference/test_fuzzy_temporal_interface.py",
+  "exact_identities": {
+    "defect_decomposition": "|d_n|^2 = (r_(n+1)-r_n)^2/4 + r_n r_(n+1) sin^2(delta_n/2)",
+    "pair_partition": "o_n + f_n = 1",
+    "amplitude_balance": "g_n = 2 r_n r_(n+1)/(r_n^2+r_(n+1)^2)",
+    "fuzzy_interface_strength": "F_n = g_n cos^2(delta_n/2)",
+    "baseline_subtraction": "F_n = o_n - (1-g_n)/2",
+    "onsager_growth": "D_Theta F_n = [g_n K_n/2] sin^2(delta_n) >= 0 at fixed magnitudes"
+  },
+  "typed_roles": {
+    "schrodinger": "creates/changes neighboring amplitude co-occupancy g_n through unitary frame transport",
+    "onsager": "reduces phase mismatch delta_n through seam-defect descent",
+    "joint_interface": "requires both nonzero neighboring occupancy and phase coherence"
+  },
+  "boundaries": {
+    "combined_full_system_monotonicity": "NOT_PROMOTED; governed by 02JH reversible-power minus dissipation balance",
+    "physical_microframe_identification": "OPEN",
+    "spin_half_binding": "OPEN"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
