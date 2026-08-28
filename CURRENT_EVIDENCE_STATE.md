@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS / FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS / 07K_NDARRAY_CARRIER_INTERFACE_PASS / POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 ## Upstream admitted evidence
 
@@ -40,7 +40,7 @@ Receipt: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
 
 For injective carrier \(P\), augmented record \(A=(Y,F)\), and a single-valued lift satisfying \(P=L\circ A\), 07R proves exactly that \(A\) is injective. The finite executable audit checks carrier injectivity and lift functionality separately.
 
-Hosted run `33202559485`, job `98955383447`, tested head `6abca4ad72c04cdca5d1128e690c17898b8650d7` and returned `510 passed in 14.11s`.
+Hosted run `33202559485`, job `98955383447`, returned `510 passed in 14.11s`.
 
 Receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
 
@@ -52,48 +52,70 @@ Receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
 \alpha(z)=(a_1,\ldots,a_N).
 \]
 
-Unequal active sequences are exactly separated by the retained record. Every collision candidate is therefore assigned to a fixed-sequence stratum \(\mathcal Z_s\). Inside each stratum, the 07K ordered position lineage is the exact constructive carrier, with \(2N\) position scalars for \(2N\) latent kick coordinates and a block-lower-triangular sensitivity with diagonal blocks \(\Delta\tau_nI_2\).
+Unequal active sequences are exactly separated by the retained record. Every collision candidate is therefore assigned to a fixed-sequence stratum \(\mathcal Z_s\). Inside each stratum, the 07K ordered position lineage is the exact constructive carrier.
 
-The executable reference verifies:
+The first hosted control run `33203185181`, job `98957507517`, returned `1 failed, 517 passed in 11.81s` and identified an over-strong carrier-rejection expectation. After correcting the carrier/decoder contract, run `33203339457`, job `98958035895`, returned `518 passed in 12.06s`.
 
-1. exact stratum-key normalization;
-2. exact cross-stratum separation;
-3. the \(2N\)-dimensional rank certificate;
-4. real two-event constructive composition from retained active sequence and replayed position lineage through 07K to the generating kicks;
-5. carrier/decoder separation: a perturbed dynamically admissible position lineage is mapped by 07K to a different latent history;
-6. mismatch, elapsed-time and label fail-closed controls.
+Receipt: `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
 
-The first hosted control expected a perturbed admissible carrier to raise. Run `33203185181`, job `98957507517`, correctly returned `1 failed, 517 passed in 11.81s`. The failure identified a test-contract mismatch: the exact 07K inverse maps each admissible carrier to its corresponding latent history, while carrier selection belongs to the decoder \(L_s\). The test was corrected accordingly.
+### 07T — exact per-stratum position decoder baseline
+
+07T represents every absolute position coordinate by a typed label
+
+\[
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
+\]
+
+and constructs a deterministic assembler from position coordinates already present in the base record plus explicitly retained absolute position fibers.
+
+The decoder requires each label in \(\Lambda_P\) exactly once and returns
+
+```text
+EXACT_PER_STRATUM_POSITION_DECODER
+```
+
+with the complete finite \(N\times2\) 07K carrier.
+
+For the declared sparse schedule the base record contains \((r_{Nx},r_{Ny})\), hence the exact baseline packet contains the earlier coordinates
+
+\[
+F_{\rm pos}^{\rm baseline}=\{r_{kx},r_{ky}:1\le k<N\},
+\]
+
+with
+
+\[
+\boxed{|F_{\rm pos}^{\rm baseline}|=2N-2.}
+\]
+
+The three-event reference composes the decoded carrier through the 07S/07K inverse and recovers the generating kick history within tolerance.
+
+Initial hosted run `33204395192`, job `98961625586`, returned `1 failed, 527 passed in 14.36s`. The failure exposed the 07K generic-sequence parser using a boolean test on a multi-element NumPy carrier. The parser was hardened with explicit zero-length testing.
 
 Corrected hosted authority:
 
 - workflow: `Reference suite`;
-- run: `33203339457` / run number `637`;
-- job: `98958035895`;
-- tested branch head: `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`;
-- tested PR merge commit: `3386f3e1a8fb63812095333955640e37040fa645`;
+- run: `33204551313` / run number `659`;
+- job: `98962152065`;
+- tested branch head: `8d0964f1d6d343193bb72966f4443780d2edafe0`;
+- tested PR merge commit: `11c9f9f5a912fc351c7e44bc16d3903bfb161a06`;
 - command: `python -m pytest -q tests/reference`;
-- result: `518 passed in 12.06s`;
+- result: `528 passed in 14.20s`;
 - Python `3.12.14`, Ubuntu `24.04.4`;
 - conclusion: `success`.
 
 Evidence files:
 
-- `src/idt/retrodiction_stratified_position_lift.py`;
-- `tests/reference/test_retrodiction_stratified_position_lift.py`;
-- `formalism/07S_stratified_position_lift_reduction.md`;
-- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+- `src/idt/retrodiction_per_stratum_position_decoder.py`;
+- `src/idt/retrodiction_position_lineage_exact.py`;
+- `tests/reference/test_retrodiction_per_stratum_position_decoder.py`;
+- `formalism/07T_per_stratum_position_decoder_baseline.md`;
+- `validation/RETRODICTION_PER_STRATUM_POSITION_DECODER_V0_1.json`.
 
-The active constructive gate is `PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE`:
+The active constructive gate is now `POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE`. The first analytic candidate reuses the already retained ordered winding and supplies active-attractor post-segment radial scalars to reconstruct earlier position vectors recursively.
 
-\[
-\boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
-}
-\]
-
-`GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
+`GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status for the compressed Retrodiction architecture.
 
 ## Canonical integration state
 
-The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the 07S exact stratified reduction and hosted reference pass. Canonical `main` remains unchanged until explicit merge authorization.
+Canonical `main` contains Memory, ORCHORBITAL and the Retrodiction stack through 07S. 07T is carried by draft PR #23 and remains separate from `main` pending explicit merge authorization.
