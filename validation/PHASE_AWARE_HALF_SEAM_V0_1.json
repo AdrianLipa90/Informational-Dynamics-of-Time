@@ -1,0 +1,46 @@
+{
+  "schema": "IDT_PHASE_AWARE_HALF_SEAM_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/phase-aware-half-seam-connection-v0.1",
+  "formalism": [
+    "formalism/02JD_phase_aware_half_seam_connection.md",
+    "formalism/02JE_half_seam_double_cover_signature.md"
+  ],
+  "implementation": "src/idt/phase_aware_half_seam.py",
+  "tests": [
+    "tests/reference/test_phase_aware_half_seam.py",
+    "tests/reference/test_half_seam_double_cover.py"
+  ],
+  "construction": {
+    "seam_link": "L_n = exp(i varphi_n)",
+    "half_link": "exp(+/- i varphi_n/2)",
+    "overlap": "b_n=(exp(+i varphi_n/2)a_n+exp(-i varphi_n/2)a_(n+1))/2",
+    "defect": "d_n=(exp(+i varphi_n/2)a_n-exp(-i varphi_n/2)a_(n+1))/2",
+    "gauge_law": "varphi_n -> varphi_n + chi_(n+1)-chi_n",
+    "gauge_invariant_mismatch": "delta_n=alpha_(n+1)-alpha_n-varphi_n mod 2pi",
+    "two_pi_amplitude_law": "b(varphi+2pi)=-b(varphi); d(varphi+2pi)=-d(varphi)",
+    "four_pi_amplitude_return": "b(varphi+4pi)=b(varphi); d(varphi+4pi)=d(varphi)",
+    "two_pi_probability_return": "|b(varphi+2pi)|^2=|b(varphi)|^2"
+  },
+  "declared_gates": [
+    "phase_aware_gluing_coisometry",
+    "phase_aware_exact_norm_decomposition",
+    "gauge_invariant_overlap_probability",
+    "gauge_invariant_defect_probability",
+    "constructive_delta_zero_control",
+    "interface_null_delta_pi_control",
+    "zero_phase_reduction_to_02J",
+    "exact_gradient_open_path_removal",
+    "two_pi_internal_amplitude_sign_flip",
+    "four_pi_internal_amplitude_return",
+    "two_pi_quadratic_observable_return"
+  ],
+  "downstream": {
+    "physical_spin_half_binding": "OPEN",
+    "edge_native_nonexact_source_derivation": "OPEN",
+    "closed_cycle_holonomy_test": "NEXT_AFTER_NONEXACT_SOURCE"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
