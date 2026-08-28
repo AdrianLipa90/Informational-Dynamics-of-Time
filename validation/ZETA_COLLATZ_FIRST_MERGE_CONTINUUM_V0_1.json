@@ -1,0 +1,70 @@
+{
+  "schema": "IDT_ZETA_COLLATZ_FIRST_MERGE_CONTINUUM_V0_1",
+  "status": "FIRST_MERGE_LOCALITY_PASS_PRIME_PATH_HOMOGENIZATION_PASS_PRIME_SPECIFIC_DISCRIMINATOR_OPEN",
+  "branch": "feat/zeta-collatz-schrodinger-temporal-fuzziness-v0.1",
+  "formalism": "formalism/02F_zeta_ordered_first_merge_frame_continuum.md",
+  "implementation": "src/idt/zeta_collatz_frame_continuum.py",
+  "tests": "tests/reference/test_zeta_collatz_frame_continuum.py",
+  "first_merge_geometry": {
+    "distance": "d_C(a,b)=min_{r,s:C^r(a)=C^s(b)}(r+s)",
+    "mobility": "M_e=1/(1+d_C)",
+    "zeta_order": "p_1<...<p_N equivalently ln(p_1)<...<ln(p_N)",
+    "local_operator": "K_path=D^dagger diag(M_e) D on normalized interval h=1/(N-1)"
+  },
+  "deterministic_prime_results": {
+    "N64": {
+      "M_eff": 0.014590088003705417,
+      "E5": 0.08565962761355066
+    },
+    "N128": {
+      "M_eff": 0.013088735442646606,
+      "E5": 0.06962156645259879
+    },
+    "N256": {
+      "M_eff": 0.010143601575241657,
+      "E5": 0.014908007099230037,
+      "mode_ratios": [
+        0.960362478018032,
+        1.0100856686225372,
+        0.988035787630144,
+        1.0061679651492554,
+        0.9933153326274665
+      ]
+    }
+  },
+  "null_controls": {
+    "odd_composites_N256": {
+      "M_eff": 0.01070484026699131,
+      "E5": 0.02771242777487193,
+      "mode_ratios": [
+        0.9796869471676557,
+        0.9422456196546909,
+        0.974442570542275,
+        1.0070721994267655,
+        0.9721349231877843
+      ],
+      "verdict": "HOMOGENIZATION_PRESENT"
+    },
+    "prime_mobility_permutation": {
+      "rng_seed": 20260828,
+      "permutations_tested": 32,
+      "verdict": "RANDOMIZED_ORDER_INCLUDES_CASES_BELOW_AND_ABOVE_CANONICAL_PRIME_ORDER_FINITE_SIZE_ERROR"
+    }
+  },
+  "hosted_reference_gate": {
+    "run_id": 33216689107,
+    "run_number": 723,
+    "job_id": 99001801175,
+    "tested_head_sha": "fd79f2a42e689fa7c426571c95c60b3bf8da7ba7",
+    "result": "609 passed in 14.68s",
+    "conclusion": "success"
+  },
+  "epistemic_status": {
+    "first_merge_locality": "ALGEBRAIC_REFERENCE_PASS",
+    "sparse_nearest_frame_path": "ALGEBRAIC_REFERENCE_PASS",
+    "prime_path_low_mode_continuum": "DETERMINISTIC_REFERENCE_PASS",
+    "composite_null_homogenization": "PASS_NULL",
+    "prime_specific_continuum_privilege": "OPEN",
+    "joint_zeta_frequency_collatz_discriminator": "ACTIVE_NEXT_GATE"
+  }
+}
