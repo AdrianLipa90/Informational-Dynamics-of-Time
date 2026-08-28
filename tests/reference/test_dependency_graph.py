@@ -130,6 +130,34 @@ def test_temporal_wave_records_zeta_collatz_frame_and_null_control_status():
         assert marker in status
 
 
+def test_half_frame_realization_is_parallel_and_does_not_redefine_now_dependency():
+    nodes = _nodes()
+    half = nodes["HALF_FRAME_TEMPORAL_GLUING"]
+    assert set(half["depends_on"]) == {"TEMPORAL_WAVE", "RELATIONAL_PRECEDENCE"}
+    assert set(nodes["NOW"]["depends_on"]) == {"TEMPORAL_WAVE", "RELATIONAL_PRECEDENCE"}
+    assert "HALF_FRAME_TEMPORAL_GLUING" not in nodes["NOW"]["depends_on"]
+
+    for marker in [
+        "HALF_FRAME_MODULAR_SUPPORT_COUNT_PASS",
+        "HALF_SPLIT_ISOMETRY_PASS",
+        "GLUING_COISOMETRY_PASS",
+        "SEAM_KERNEL_PASS",
+        "AMPLITUDE_NORM_DECOMPOSITION_PASS",
+        "ELAPSED_MEASURE_CONSERVATION_PASS",
+        "PATH_COMPLEX_INCIDENCE_PASS",
+        "PATH_LAPLACIAN_EXACT_SPECTRUM_PASS",
+        "LOW_MODE_QUADRATIC_CONTINUUM_PASS",
+        "NOW_FRONTIER_REALIZATION_PASS",
+        "SCHRODINGER_HALF_FRAME_INTEGRATION_PASS",
+        "REFERENCE_FUZZINESS_GROWTH_WITNESS_PASS",
+        "SPIN_HALF_4PI_PHYSICAL_BINDING_OPEN",
+        "PHASE_AWARE_HALF_SEAM_CONNECTION_ACTIVE_NEXT_GATE",
+        "HOSTED_REFERENCE_SUITE_640_OF_640",
+        "MONOGRAPH_PDF_PASS",
+    ]:
+        assert marker in half["status"]
+
+
 def test_memory_and_orchorbital_admission_markers_are_recorded():
     nodes = _nodes()
     for marker in ["REFERENCE_GATE_ADMITTED", "HOSTED_FULL_SUITE_PASS"]:
