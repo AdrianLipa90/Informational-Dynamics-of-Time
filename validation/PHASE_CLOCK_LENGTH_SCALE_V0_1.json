@@ -2,7 +2,7 @@
   "schema": "IDT_PHASE_CLOCK_LENGTH_SCALE_V0_1",
   "status": "TARGETED_DERIVATION_PASS_CANDIDATE__FORWARD_PORT_CI_PENDING",
   "date": "2026-08-28",
-  "gate": "05B_phase_clock_length_scale",
+  "gate": "01L_phase_clock_length_scale",
   "exact_identities": [
     "omega_t = (dphi/dtau_int)/(dt/dtau_int)",
     "ell_phi = c/|omega_t|",
