@@ -1,6 +1,6 @@
 # 06E — Memory Admission Integration Gate
 
-Status: `INTEGRATION_REFERENCE_PASS_CANDIDATE / TRANSPORT_PARENT_BRIDGE_TARGETED_PASS / HOSTED_FULL_SUITE_BLOCKED`
+Status: `MEMORY_REFERENCE_GATE_ADMITTED / INTEGRATION_PASS / TRANSPORT_PARENT_BRIDGE_PASS / HOSTED_FULL_SUITE_PASS`
 
 This gate composes the previously recorded Memory components without introducing a new upstream primitive. Its purpose is to verify that one admitted temporal event can traverse the complete declared Memory reference path and can be reconstructed from the persisted lineage.
 
@@ -102,12 +102,29 @@ Using \(q_n\epsilon_n^{(W)}\) itself as the kick amplitude is recorded as `BLOCK
 
 The deterministic transport-to-Memory probe covered 5,000 cases and returned zero gate failures, reparameterization defect below \(1.8\times10^{-15}\), and forward/reverse lineage reconstruction defect below \(4.9\times10^{-13}\). GREMLIN remained `CANDIDATE_ONLY` and returned `SUPPORTED_BY_DECLARED_TESTS` for the three declared hypotheses.
 
-## 5. Gate discipline
+## 5. Hosted full-suite admission
 
-The integration result verifies compatibility of the declared Memory reference components and now also supplies a targeted parent bridge from Temporal Transport. Hosted GitHub Actions still terminates before executing repository test steps, so the full-suite condition remains infrastructure-blocked rather than recorded as a code failure.
+The full repository reference suite was executed by GitHub Actions on 28 August 2026 through PR #21. The runner checked out the exact PR merge of source commit `3ac1f53af5223d16f8818dba99a63a6af2ba9498` with the evidence-only branch and executed
 
-Therefore the present status is
+```text
+python -m pytest -q tests/reference
+```
+
+under Python 3.12.14 on `ubuntu-24.04`. The result was
+
+```text
+431 passed in 7.08s
+```
+
+with workflow run `33193861826`, job `98925901636`, and conclusion `success`. The tested PR merge commit is `e0b1cdc491a1a501adce93b8d62ade063e167500` with tree `92302498f3c9131b163d5d0ccbbeab1db935d29f`.
+
+The append-only hosted evidence receipt is `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+
+The previously declared full-suite blocker is therefore closed for the integrated Memory tree. The Memory reference gate is admitted on this proposed promotion branch. Canonical `main` changes only if the corresponding pull request is merged.
+
+Therefore the proposed post-merge status is
 \[
-\boxed{\text{Memory}:\ \mathrm{INTEGRATION\ PASS\ +\ TRANSPORT\ BRIDGE\ PASS\ CANDIDATE},}
+\boxed{\text{Memory}:\ \mathrm{REFERENCE\ GATE\ ADMITTED}.}
 \]
-with Retrodiction remaining gated until the combined Memory/ORCHORBITAL admission conditions are satisfied.
+
+ORCHORBITAL is not auto-promoted by this result. Its targeted implementation is covered by the same successful repository suite, but its own residence/switch, hierarchy and typed-observable admission work remains the next dependency gate. Retrodiction is consequently gated by ORCHORBITAL admission rather than by the now-closed Memory full-suite condition.
