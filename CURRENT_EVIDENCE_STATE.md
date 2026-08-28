@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 ## Temporal transport
 
@@ -25,58 +25,89 @@ Hosted admission evidence:
 
 ## ORCHORBITAL attractor organization
 
-Base receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
-
-The admitted promotion-branch component stack contains:
-
-- active-attractor binding, Shannon basin entropy/coherence, translated Kepler segments, winding, switch candidates, transition counts and phase-space closure diagnostics;
-- append-only content-addressed residence receipts with exact binary64 state hashes and receipt hash chaining;
-- strict residence schema controls and append-integrity controls;
-- a real 101-segment dynamic residence profile with verified `A -> B` transition and global dwell-time accounting;
-- generic hierarchy aggregation with Shannon chain-rule audit and transition coarse-graining;
-- pinned PNCS v0.29 sphere/entity hierarchy binding with typed projection, canonical, hierarchy-lineage and mass-binding IDs;
-- pinned PNCS v0.27 truth scalar, semantic mass and reduction-readiness carriers;
-- residence-weighted semantic mass using verified temporal dwell lineage.
+The admitted promotion-branch component stack contains active-attractor dynamics, Shannon basin organization, translated Kepler propagation, winding and switches, append-only content-addressed residence lineage, strict residence schema controls, hierarchy coarse-graining, pinned PNCS sphere/entity hierarchy, typed PNCS truth/mass/reduction coordinates and residence-weighted semantic mass.
 
 Component receipts:
 
 - `validation/ORCHORBITAL_RESIDENCE_LEDGER_V0_1.json`;
 - `validation/ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1.json`;
 - `validation/ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1.json`;
-- `validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json`.
+- `validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json`;
+- combined admission: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-Hosted ORCHORBITAL completion evidence includes the synchronized checkpoint run `33197346515`, job `98937750103`, with `476 passed in 11.95s`.
+The synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
-Combined admission receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+## Retrodiction evidence frontier
 
-## Retrodiction active next gate
+Existing Retrodiction evidence includes withheld-lineage inversion, local observability/rank admission, checkpoint selection, damped Gauss--Newton estimation, covariance/Fisher uncertainty geometry, covariance-preserving permutation nulls, finite-branch controls, spatial-offset/divergence witnesses, adaptive SOD separation and event-aware residence conditioning.
 
-Existing Retrodiction evidence includes withheld-lineage inversion, local observability/rank admission, checkpoint selection, damped Gauss--Newton estimation, covariance/Fisher uncertainty geometry, covariance-preserving permutation nulls, finite-branch controls, spatial-offset/divergence witnesses and adaptive SOD separation.
+### Event-aware residence conditioning
 
-The new event-aware residence-conditioning layer binds each Memory event to one verified ORCHORBITAL smooth-residence receipt while preserving chronological state continuity through a separate content-addressed bridge chain.
-
-Targeted result for the declared 07G reflection pair:
+For the declared 07G reflection pair:
 
 - final retained base observation remains equivalent at tolerance `1e-10`;
 - latent separation remains greater than `0.9`;
-- active-attractor residence sequence: equivalent;
-- post-segment next-attractor / switch / leak lineage: equivalent;
-- bridge provenance heads: distinct and excluded from semantic pair-separation status;
-- pair status: `KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS`;
-- earlier continuous separator `weight:A@1` remains effective with absolute difference `0.01918916841099516`.
-
-Exact binary64 elapsed-time hardening also passes for the large-internal-time case `tau=36`, scheduled `delta_tau=1e-8`, where schedule and observed state difference have distinct exact float encodings but satisfy the declared operation-level relation.
+- active-attractor residence sequence is equivalent;
+- post-segment next-attractor / switch / leak lineage is equivalent;
+- provenance heads are integrity coordinates outside semantic pair separation;
+- pair status is `KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS`;
+- earlier continuous separator `weight:A@1` differs by `0.01918916841099516`.
 
 Evidence:
 
-- implementation: `src/idt/retrodiction_orchorbital_residence_conditioning.py`;
-- formalism: `formalism/07O_orchorbital_residence_conditioned_retrodiction.md`;
-- receipt: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
-- hosted run `33197888242`: `485 passed in 13.87s`;
-- hardened hosted run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
+- `src/idt/retrodiction_orchorbital_residence_conditioning.py`;
+- `formalism/07O_orchorbital_residence_conditioned_retrodiction.md`;
+- `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+- hosted run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
 
-The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The active next work is global branch separation using retained continuous ORCHORBITAL and spatial-offset/divergence channels beyond the discrete residence-label equivalence class.
+### 07P quotient/fiber finite-domain injectivity
+
+07P introduces the finite-set separation criterion
+
+\[
+\widetilde Y\text{ injective on }\mathcal C
+\iff
+\forall i\ne j:\ Y(z_i)=Y(z_j)\Rightarrow\exists c:\ F_c(z_i)\ne F_c(z_j).
+\]
+
+The executable numerical gate checks every distinct-latent pair whose base projection collides within the declared tolerance and requires at least one declared fiber channel to separate the pair.
+
+Reference controls cover:
+
+- exact two-sheet quotient / sheet-coordinate separation;
+- normalized-shape / scale-fiber separation;
+- unresolved identical-fiber collision;
+- all-pair finite-domain requirement;
+- deterministic channel attribution;
+- fail-closed malformed and non-finite inputs;
+- exact 07H `w_A_1` positive separator;
+- exact 07H `r_x_1` negative control.
+
+Local targeted result:
+
+```text
+9 passed in 0.04s
+```
+
+Hosted authority:
+
+- workflow: `Reference suite`;
+- run: `33200684482` / run number `592`;
+- job: `98949092398`;
+- tested branch head: `17d3ba854e83f930194b8dd4c4b7089382578a35`;
+- tested PR merge commit: `ee1985c96df734d32a8232c03ca078c993ef7318`;
+- result: `495 passed in 10.14s`;
+- Python `3.12.14`, Ubuntu `24.04.4`.
+
+Evidence files:
+
+- `src/idt/retrodiction_quotient_fiber_injectivity.py`;
+- `tests/reference/test_retrodiction_quotient_fiber_injectivity.py`;
+- `formalism/07P_quotient_fiber_finite_injectivity.md`;
+- `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
+
+The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The active next gate is a domain-covering or constructive global separation argument using the retained continuous ORCHORBITAL, spatial/SOD and holonomy channels.
 
 ## Canonical integration state
 
-The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction residence-conditioning evidence. Canonical `main` remains unchanged until explicit merge authorization.
+The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the hosted finite-domain quotient/fiber gate. Canonical `main` remains unchanged until explicit merge authorization.
