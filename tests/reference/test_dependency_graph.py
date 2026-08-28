@@ -152,7 +152,7 @@ def test_half_frame_realization_is_parallel_and_does_not_redefine_now_dependency
         "REFERENCE_FUZZINESS_GROWTH_WITNESS_PASS",
         "SPIN_HALF_4PI_PHYSICAL_BINDING_OPEN",
         "PHASE_AWARE_HALF_SEAM_CONNECTION_ACTIVE_NEXT_GATE",
-        "HOSTED_REFERENCE_SUITE_640_OF_640",
+        "HOSTED_REFERENCE_SUITE_641_OF_641",
         "MONOGRAPH_PDF_PASS",
     ]:
         assert marker in half["status"]
