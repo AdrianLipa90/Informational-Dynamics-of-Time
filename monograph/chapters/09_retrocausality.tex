@@ -1,2 +1,111 @@
 \chapter{Retrocausality}
-Status: deferred until its dependency frontier is admitted.
+
+Status: \texttt{PREREGISTRATION\_READY / EXECUTION\_GATED\_BY\_RETRODICTION\_ADMISSION}.
+
+This chapter records the experimental architecture for the downstream Retrocausal Tests node. The protocol is fixed before confirmatory acquisition so that statistical choices, temporal ordering, exclusion rules and classical-channel audits remain independent of the eventual result.
+
+\section{Ordered trial structure}
+
+For trial $i$, define
+\[
+\boxed{t_{0,i}<t_{S,i}<t_{F,i}<t_{R,i}.}
+\]
+Here $t_0$ initializes the trial, $t_S$ seals the early observation, $t_F$ generates the future condition, and $t_R$ reveals that condition to the analysis layer.
+
+Let the sealed early record be $X_i$ with commitment
+\[
+\boxed{C_i=H(\operatorname{canonical}(X_i)).}
+\]
+The binary reference future condition is
+\[
+F_i\in\{0,1\},
+\]
+and is generated independently after the early-record commitment has been persisted.
+
+\section{Frozen early-data score}
+
+A deterministic feature map and score map are frozen before acquisition,
+\[
+Z_i=g(X_i),
+\qquad
+s_i=h(Z_i).
+\]
+Both maps use the sealed early record as their input. The primary confirmatory statistic is the standardized difference
+\[
+\boxed{
+T_{\rm obs}
+=\frac{\bar s_{F=1}-\bar s_{F=0}}
+{\sqrt{s_1^2/n_1+s_0^2/n_0}}.
+}
+\]
+The V0.1 reference protocol fixes a two-sided alternative, $10^5$ block-respecting permutations and
+\[
+\boxed{\alpha=0.005.}
+\]
+
+The permutation p-value is
+\[
+\boxed{
+p_{\rm perm}
+=\frac{1+\#\{b:|T_b|\ge |T_{\rm obs}|\}}
+{B+1}.
+}
+\]
+
+\section{Acquisition and stopping contract}
+
+The preregistered confirmatory target is
+\[
+\boxed{N_{\rm valid}=4096}
+\]
+with an attempted-trial ceiling of $4608$. Acquisition ends when the valid-trial target or operational ceiling is reached. Statistical outcomes are excluded from the stopping rule.
+
+Machine-checkable exclusions cover failed serialization/hash commitment, ordering violations, malformed future-RNG records, duplicate trial identifiers, declared acquisition failures, non-finite frozen scores and trial-specific classical availability of the future condition before $t_F$.
+
+All excluded trials remain in the append-only raw ledger with an exclusion code.
+
+\section{Classical-channel audit}
+
+A statistical effect advances through a dedicated classical-channel audit covering process/thread memory, environment and configuration, filesystem/cache state, databases and shared memory, network paths, RNG-state sharing, timestamps, future-condition precomputation, metadata leakage, post-seal mutation, pre-reveal label access and label-conditioned preprocessing.
+
+The evidence sequence is fixed as
+\[
+\boxed{
+\mathrm{RAW\ OBSERVATION}
+\to
+\mathrm{STATISTICAL\ EFFECT}
+\to
+\mathrm{CLASSICAL\ CHANNEL\ AUDIT}
+\to
+\mathrm{PHYSICAL\ CLAIM\ STATUS}.
+}
+\]
+
+A discovered classical channel terminates the confirmatory path at the channel-audit stage. A statistical effect that passes the channel audit becomes eligible for the downstream physical-claim review once the Retrodiction dependency gate is admitted.
+
+\section{Controls}
+
+Three controls are preregistered:
+
+\begin{enumerate}
+\item block-permuted future labels as the statistical null ensemble;
+\item a separate engineering dataset in which the later label is deliberately available before the seal, verifying that the leakage audit identifies an ordinary classical channel;
+\item a separate positive-control dataset with a known low-amplitude classical marker in the early record, verifying sensitivity of the frozen score/audit stack.
+\end{enumerate}
+
+Control data are stored separately from the confirmatory dataset.
+
+\section{Retrodiction dependency}
+
+The protocol inherits the Retrodiction collision/fiber audits. The residence-bound winding--radius architecture provides an authenticated route from retained event-residence lineage to the exact position carrier and then to reconstructed event kicks on its declared domain. The active dependency coordinate is the augmented global-domain coverage audit.
+
+The machine-readable preregistration is stored at
+\begin{center}
+\texttt{experiments/E004\_retrocausal\_preregistration/preregistration\_v0\_1.json}
+\end{center}
+and the complete protocol at
+\begin{center}
+\texttt{experiments/E004\_retrocausal\_preregistration/PROTOCOL\_V0\_1.md}.
+\end{center}
+
+Any protocol change creates a new version while preserving this preregistration unchanged.
