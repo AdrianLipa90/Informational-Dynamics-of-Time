@@ -2,6 +2,8 @@
 
 Repository policy: LaTeX source is canonical; compiled PDF is a QA/build artifact.
 
+Canonical build entrypoint: `monograph/main.tex`. The older `monograph/informational_dynamics_of_time.tex` is retained as a historical single-file snapshot and is not the canonical build target.
+
 The monograph now follows the synchronized Retrodiction sequence through 08O:
 
 - `08A_memory_admission.tex` — integrated Memory reference gate;
