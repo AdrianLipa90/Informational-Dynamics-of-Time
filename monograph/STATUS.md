@@ -15,22 +15,34 @@ Current included downstream reference chapters:
 - `08I_orchorbital_residence_conditioning.tex` — event-aware Memory/ORCH residence bridge and global-null residence-label audit;
 - `08J_quotient_fiber_finite_injectivity.tex` — all-collision finite-domain quotient/fiber injectivity gate;
 - `08K_oriented_winding_fiber.tex` — ordered signed ORCHORBITAL winding as an explicit Retrodiction fiber coordinate;
-- `08L_fiber_lift_composition.tex` — exact composition theorem linking retained base/fiber coordinates to an injective position-lineage carrier.
+- `08L_fiber_lift_composition.tex` — exact composition theorem linking retained base/fiber coordinates to an injective position-lineage carrier;
+- `08M_stratified_position_lift.tex` — exact active-sequence stratification and reduction to per-stratum position decoding.
 
 Promotion-branch admitted frontier:
 
 `Temporal Transport -> Memory -> ORCHORBITAL Attractors`.
 
-Retrodiction is the active next dependency gate. 07P, 07Q and 07R now organize the global closure as
+Retrodiction is the active next dependency gate. 07P--07S now organize the global closure as
 
 ```text
-retained base + fiber coordinates
--> single-valued position-lineage lift
--> exact 07K inverse carrier
+retained active-sequence stratum
++ retained base/fiber coordinates
+-> per-stratum position decoder L_s
+-> ordered 07K position carrier
+-> exact 07K inverse
 -> latent history
 ```
 
-The exact 07R theorem states that if the position-lineage carrier `P` is injective and `P = L o (Y,F)` for a single-valued lift `L`, then the augmented retained observation `(Y,F)` is injective. The active constructive target is `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`; the governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+07S uses the complete retained active-attractor sequence as an exact stratum key. Unequal active sequences are separated directly by the retained record. Within one fixed-sequence stratum, 07K assigns an exact latent history to the ordered position carrier, while the active constructive gate identifies that carrier from retained augmented coordinates.
+
+Current Retrodiction frontier:
+
+```text
+STRATIFIED_GLOBAL_REDUCTION_PASS
+CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS
+PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
+GENERAL_GLOBAL_INJECTIVITY_OPEN
+```
 
 Memory hosted admission evidence: run `33193861826`, job `98925901636`, `431 passed in 7.08s`.
 
@@ -47,8 +59,10 @@ Retrodiction evidence includes:
 - event-aware residence hardening run `33198069462`: `486 passed in 8.89s`;
 - quotient/fiber run `33200684482`, job `98949092398`: `495 passed in 10.14s`;
 - oriented-winding run `33201861565`, job `98953023513`: `502 passed in 8.09s`;
-- fiber-lift composition run `33202559485`, job `98955383447`: `510 passed in 14.11s` on tested branch head `6abca4ad72c04cdca5d1128e690c17898b8650d7`;
-- 07R receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
+- fiber-lift composition run `33202559485`, job `98955383447`: `510 passed in 14.11s`;
+- stratified position-lift correction run `33203339457`, job `98958035895`: `518 passed in 12.06s` on tested branch head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`;
+- 07R receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
+- 07S receipt: `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
 
 Admission receipts:
 
