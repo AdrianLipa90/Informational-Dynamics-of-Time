@@ -123,7 +123,7 @@ A 500-trajectory, six-cell deterministic probe returned a maximum complete-linea
 
 \section{Content-addressed residence ledger}
 
-The residence/switch layer now persists every completed segment as a content-addressed receipt
+The residence/switch layer persists every completed segment as a content-addressed receipt
 \[
 \boxed{
 \mathcal R_k=
@@ -195,6 +195,77 @@ with tree
 
 The formal gate is recorded in \texttt{formalism/06I\_orchorbital\_residence\_ledger.md}; the append-only evidence receipt is \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}.
 
+\section{PNCS hierarchy binding}
+
+The hierarchy layer is pinned to
+\begin{verbatim}
+AdrianLipa90/PhaseNav-Natural-Coding-System
+7a54596c1794be29e0b85f5c363213cc81eb87d7
+PNCS_ORCHORBITAL_HARVEST_HARDENING_V0_29
+\end{verbatim}
+and maps PNCS sphere/entity lineage into the existing IDT hierarchy engine. Sphere nodes retain parent-sphere lineage; attractor leaves retain typed entity-projection, canonical-entity and hierarchy-lineage identifiers. Semantic mass is paired with a typed PNCS mass-binding identifier when supplied.
+
+The generated hierarchy supports root-to-attractor paths, hierarchy-field aggregation, Shannon chain-rule auditing, residence coarse-graining and transition-count coarse-graining. Dynamic attractor coverage is checked exactly against the bound PNCS entity leaves.
+
+The hosted repository suite containing this binding returned
+\begin{verbatim}
+457 passed in 13.90s
+\end{verbatim}
+in GitHub Actions run \texttt{33195337839}, job \texttt{98930915664}.
+
+\section{Typed PNCS observable coordinates}
+
+The retained observable layer is pinned to the same PNCS commit and the v0.27 ORCHORBITAL observable/reduction sources. Three coordinates remain separately typed:
+\[
+\boxed{
+\mathcal O_{\rm ORCH}
+=
+\left(
+T,
+\mathcal R_{\Omega},
+\{m_{\rm sem}(a_i)\}
+\right).
+}
+\]
+The truth scalar carries
+\[
+T\in[0,1]
+\]
+or the explicit null state of the upstream observable contract. Semantic mass satisfies
+\[
+m_{\rm sem}(a_i)\ge0
+\]
+and retains its entity-projection and mass-binding provenance.
+
+Reduction readiness preserves the upstream threshold exactly,
+\[
+\boxed{
+\mathrm{reduce\_ready}\iff\Omega\ge\Omega_{\rm crit}.
+}
+\]
+A selected orbital index is carried only for a reduction-ready record.
+
+For verified residence lineage, the temporal semantic-mass aggregate is
+\[
+\boxed{
+\bar m_{\rm sem}^{(\tau)}
+=
+\frac{\sum_k\Delta\tau_k\,m_{\rm sem}(a_k)}{\sum_k\Delta\tau_k}.
+}
+\]
+Every active attractor in the evaluated lineage resolves to an explicit semantic-mass binding before this aggregate is admitted.
+
+The full hosted reference suite containing the typed observable tests returned
+\begin{verbatim}
+475 passed in 11.91s
+\end{verbatim}
+in GitHub Actions run \texttt{33196818703}, job \texttt{98935954122}, under Python 3.12.14 on Ubuntu 24.04. The tested PR merge commit is
+\texttt{00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f}
+with tree
+\texttt{42b93983941098c02b350d9fb7bf18536ef4aeee}.
+
+The formal binding is recorded in \texttt{formalism/06K\_orchorbital\_typed\_observables.md}; evidence is bound by \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}.
+
 \section{Closure observable}
 
 With declared position and velocity scales \(r_*>0\) and \(v_*>0\), the reference phase-space closure defect is
@@ -213,26 +284,28 @@ The normalization scales remain explicit inputs to the observable.
 
 \section{Position in the temporal dependency graph}
 
-The current integration chain is
+The promotion-branch integration chain is
 \[
 \boxed{
 \text{Temporal Transport}
 \rightarrow
-\text{Memory receipt}
+\text{Memory}
 \rightarrow
-\text{Memory kick}
+\text{ORCHORBITAL attractor dynamics}
 \rightarrow
-\text{active attractor snapshot}
+\text{residence/switch lineage}
 \rightarrow
-\text{ORCHORBITAL segment}
+\text{PNCS hierarchy binding}
 \rightarrow
-\text{content-addressed residence ledger}
+\text{typed ORCHORBITAL observables}
 \rightarrow
-\text{dwell / switch observables}.
+\mathbf{Retrodiction}.
 }
 \]
-The Memory admission gate has hosted full-suite PASS on the promotion branch. ORCHORBITAL is the active next dependency node. Its current frontier is hierarchical attractor-family typing followed by dependency-compatible typing of the retained truth, semantic-mass and reduction-readiness observables. Retrodiction follows that ORCHORBITAL admission boundary.
+Memory and ORCHORBITAL each carry their admission receipts on the promotion branch. Retrodiction is the active next dependency gate.
 
 \section{Reference evidence}
 
-The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}; the residence ledger is \texttt{src/idt/orchorbital\_residence\_ledger.py}. Evidence is bound through \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}, and \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}. GREMLIN remains candidate-only and its declared bridge hypotheses retain their recorded supported-by-tests status.
+The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}; the residence ledger is \texttt{src/idt/orchorbital\_residence\_ledger.py}; the hierarchy engine is \texttt{src/idt/orchorbital\_hierarchy.py}; the PNCS hierarchy bridge is \texttt{src/idt/orchorbital\_pncs\_hierarchy\_binding.py}; and the typed observable bridge is \texttt{src/idt/orchorbital\_pncs\_observables.py}.
+
+Evidence is bound through \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_PNCS\_HIERARCHY\_BINDING\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}, and \texttt{validation/ORCHORBITAL\_ADMISSION\_HOSTED\_FULL\_SUITE\_2026\_08\_28.json}. GREMLIN remains candidate-only and its declared bridge hypotheses retain their recorded supported-by-tests status.
