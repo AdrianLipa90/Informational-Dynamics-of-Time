@@ -157,6 +157,26 @@ def glued_temporal_measures(frame_measures: Sequence[float]) -> np.ndarray:
     return out
 
 
+def temporal_path_incidence(frame_count: int) -> np.ndarray:
+    n = _validate_frame_count(frame_count)
+    d = np.zeros((n + 1, n), dtype=float)
+    for edge in range(n):
+        d[edge, edge] = -1.0
+        d[edge + 1, edge] = 1.0
+    return d
+
+
+def temporal_support_laplacian(edge_weights: Sequence[float]) -> np.ndarray:
+    weights = np.asarray(edge_weights, dtype=float)
+    if weights.ndim != 1 or weights.size == 0:
+        raise HalfFrameGluingError("edge_weights must be a non-empty one-dimensional vector")
+    if not np.all(np.isfinite(weights)) or np.any(weights <= 0.0):
+        raise HalfFrameGluingError("edge_weights must be finite and strictly positive")
+    d = temporal_path_incidence(int(weights.size))
+    lap = d @ np.diag(weights) @ d.T
+    return 0.5 * (lap + lap.T)
+
+
 def audit_half_frame_state(amplitudes: Sequence[complex]) -> HalfFrameAudit:
     a = _normalized_frame_amplitudes(amplitudes)
     b = whole_to_glued_operator(a.size) @ a
