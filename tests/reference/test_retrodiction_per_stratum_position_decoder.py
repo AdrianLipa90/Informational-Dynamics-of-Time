@@ -182,7 +182,7 @@ def test_duplicate_fiber_coordinate_fails_closed() -> None:
 
 def test_out_of_range_or_invalid_axis_fails_closed() -> None:
     signature, _, base_specs, base_values, fibers = _reference_data()
-    with pytest.raises(PerStratumPositionDecoderError, match="\[1,event_count\]"):
+    with pytest.raises(PerStratumPositionDecoderError, match=r"\[1,event_count\]"):
         decode_per_stratum_position_lineage(
             signature.active_sequence,
             base_specs,
