@@ -1,6 +1,6 @@
 \chapter{Nature of the Temporal State}
 
-The temporal architecture developed here begins with directed relational composability rather than an assumed temporal order. Realized relations form composable words. Their prefixes define distinct history occurrences, positive transition activity supplies an intrinsic duration weight, and the combination produces temporal precedence. NOW is then the maximal supported frontier of the realized occurrence history.
+The temporal architecture developed here begins with directed relational composability rather than an assumed temporal order. Realized relations form composable words. Their prefixes define distinct history occurrences, positive transition activity supplies an intrinsic duration weight, and the combination produces temporal precedence. NOW is then the maximal supported frontier of the realized occurrence history. A downstream half-frame construction provides a finite-support realization in which neighboring temporal frames overlap while preserving the total intrinsic elapsed measure.
 
 \section{Pretime relational composition}
 
@@ -153,6 +153,126 @@ the intrinsic duration density becomes
 }
 \]
 
+\section{Half-frame temporal gluing}
+
+Let a finite serial sector contain $N$ discrete temporal frames. Associate the phase budget
+\[
+\boxed{\Phi_N=2\pi N.}
+\]
+Each frame is split into two half-supports,
+\[
+\boxed{
+|n\rangle
+\mapsto
+\frac{|n,L\rangle+|n,R\rangle}{\sqrt2}.
+}
+\]
+Neighboring halves are identified by
+\[
+\boxed{|n,R\rangle\sim|n+1,L\rangle.}
+\]
+The resulting support sequence has $N+1$ elements,
+\[
+\boxed{
+|1|,\ |12|,\ |23|,\ldots,\ |N-1,N|,\ |N|.
+}
+\]
+The first modular sectors therefore read
+\[
+\begin{aligned}
+2\pi &: \quad |1|1|,\\
+4\pi &: \quad |1|12|2|,\\
+6\pi &: \quad |1|12|23|3|,\\
+8\pi &: \quad |1|12|23|34|4|.
+\end{aligned}
+\]
+The counting identity is
+\[
+\boxed{2N-(N-1)=N+1.}
+\]
+
+For frame amplitudes $a_n$, the neighboring overlap and antisymmetric seam amplitudes are
+\[
+\boxed{
+b_n=\frac{a_n+a_{n+1}}2,
+\qquad
+d_n=\frac{a_n-a_{n+1}}2.
+}
+\]
+Together with the two boundary amplitudes they satisfy the exact norm decomposition
+\[
+\boxed{
+\sum_{j=0}^{N}|b_j|^2
++\sum_{n=1}^{N-1}|d_n|^2
+=\sum_{n=1}^{N}|a_n|^2.
+}
+\]
+Equal neighboring phase therefore occupies the overlap support, while opposite neighboring phase produces an interface null and transfers weight into the seam-defect sector.
+
+The same topology acts on the positive activity-derived elapsed measure. For frame intervals $\theta_n>0$, define
+\[
+\boxed{\ell_0=\frac{\theta_1}{2},}
+\]
+\[
+\boxed{\ell_n=\frac{\theta_n+\theta_{n+1}}2,
+\qquad 1\le n<N,}
+\]
+and
+\[
+\boxed{\ell_N=\frac{\theta_N}{2}.}
+\]
+Then
+\[
+\boxed{
+\sum_{j=0}^{N}\ell_j
+=\sum_{n=1}^{N}\theta_n
+=\Theta_N.
+}
+\]
+Thus neighboring overlap redistributes temporal support while preserving the total intrinsic elapsed measure exactly.
+
+\section{Half-frame path complex and long-wave topology}
+
+The $N+1$ glued supports form vertices $v_0,\ldots,v_N$. Each full temporal frame becomes one oriented edge
+\[
+\boxed{e_n=[v_{n-1},v_n].}
+\]
+Hence the half-frame quotient generates the path complex $P_{N+1}$. Its incidence operator is
+\[
+\boxed{\partial_1 e_n=v_n-v_{n-1}.}
+\]
+For positive frame weights $w_n$, the support Laplacian is
+\[
+\boxed{
+L_V=D_N\operatorname{diag}(w_n)D_N^T,
+}
+\]
+with
+\[
+L_V=L_V^T,
+\qquad
+L_V\succeq0,
+\qquad
+L_V\mathbf1=0.
+\]
+For uniform $w_n=w$, its exact spectrum is
+\[
+\boxed{
+\lambda_k
+=2w\left[1-\cos\left(\frac{k\pi}{N+1}\right)\right],
+\qquad k=0,\ldots,N.
+}
+\]
+The low sector approaches
+\[
+\boxed{
+\lambda_k
+=w\left(\frac{k\pi}{N+1}\right)^2
++O\!\left(\frac{k^4}{(N+1)^4}\right).
+}
+\]
+This provides the topological origin of the local path incidence used by the discrete Temporal Wave coarse-graining sector.
+
 \section{NOW as the maximal realized frontier}
 
 For an admitted transition edge define the gauge-invariant event signature
@@ -185,7 +305,27 @@ Then
 \]
 For a serial history the frontier contains the latest supported occurrence. For independent concurrent branches it is the antichain of maximal supported occurrences.
 
-Thus the event carrier records realized event content across history, while NOW selects the maximal boundary of the currently realized supported history.
+The half-frame path gives a concrete serial realization of the same rule. At stage $N$ the terminal pure support is
+\[
+\boxed{\mathrm{NOW}_N\leftrightarrow|N|_\partial.}
+\]
+When frame $N+1$ is realized,
+\[
+\boxed{
+|N|_\partial
+\longmapsto
+|N,N+1|,
+\qquad
+\mathrm{NOW}_{N+1}\leftrightarrow|N+1|_\partial.
+}
+\]
+The previous boundary is thereby incorporated into the neighboring-history interface while the newly created right boundary becomes the maximal serial support.
+
+At the level of elapsed measure, if the new frame carries $\theta_{N+1}>0$, the support extension increases the total measure by exactly
+\[
+\boxed{\Delta\Theta=\theta_{N+1}.}
+\]
+Thus the half-frame moving frontier and the prefix-extension ordering share the same positive one-step temporal increment.
 
 \section{Relative clocks and calibrated elapsed time}
 
@@ -250,6 +390,14 @@ A realized operator word has the compositional form
 \]
 The operator composition and the relational occurrence prefix carry the same realized lineage order.
 
+Within the Zeta--Collatz Temporal Wave candidate, a Hermitian frame Hamiltonian acts on the already-derived intrinsic coordinate,
+\[
+\boxed{
+i\partial_\Theta a(\Theta)=H_{\zeta C}a(\Theta).
+}
+\]
+The half-frame quotient then supplies the topology-driven interface readout. In the declared five-frame reference witness, a sharp initial frame has raw neighboring-interface occupancy $F_{1/2}(0)=0.25$, while the evolved state at the declared intrinsic interval reaches an occupancy above $0.5$. This is retained as a finite reference witness of dynamical frame-to-interface spreading; general dynamical classification remains subject to its separate gate.
+
 \section{Memory and retrodiction}
 
 Memory retains the realized occurrence lineage together with its temporal carriers. ORCHORBITAL records the active-attractor sequence
@@ -284,10 +432,12 @@ The present derivation is
 &\downarrow\\
 &\text{TEMPORAL PRECEDENCE FROM PREFIX EXTENSION}\\
 &\downarrow\\
+&\text{TEMPORAL WAVE / HALF-FRAME OVERLAP SUPPORT}\\
+&\downarrow\\
 &\text{NOW}=\operatorname{Max}(\text{SUPPORTED REALIZED OCCURRENCES})\\
 &\downarrow\\
 &\text{BIFURCATION}\to\text{TRANSPORT}\to\text{MEMORY}\to\text{RETRODICTION}.
 \end{aligned}
 }
 \]
-Physical clock calibration and downstream spacetime closure retain their declared evidence gates.
+Physical clock calibration, spin-$1/2$/four-$\pi$ binding and downstream spacetime closure retain their declared evidence gates.
