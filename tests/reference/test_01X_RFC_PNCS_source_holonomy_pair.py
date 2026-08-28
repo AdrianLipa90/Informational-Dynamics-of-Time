@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PAIR = ROOT / "validation" / "IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
 LOCK = ROOT / "validation" / "01X_RFC_CROSS_REFERENCE_LOCK_V0_1.json"
-EXPECTED_PNCS = "26fb4714a7d7e71f16024f2120f93099a9c62c01"
+EXPECTED_PNCS = "b741460dba15d979a6387305daf93f476becb54e"
 EXPECTED_LOOPS = [
     "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
     "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
@@ -14,6 +14,7 @@ EXPECTED_LOOPS = [
     "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
     "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
     "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP",
+    "SOURCE.PHASE.NOETHER.GAUGE_COVARIANT_PULLBACK.ROUNDTRIP",
 ]
 
 
@@ -37,16 +38,17 @@ def test_pair_receipt_matches_idt_cross_reference_lock():
         lock["interface_contract"]["pncs_noether_carrier_loop"],
         lock["interface_contract"]["pncs_noether_rfc_current_loop"],
         lock["interface_contract"]["pncs_scalar_field_rotor_loop"],
+        lock["interface_contract"]["pncs_gauge_covariant_pullback_loop"],
     ] == EXPECTED_LOOPS
 
 
 def test_pair_receipt_records_executed_peer_reference_gates():
     pair = _load(PAIR)
     assert pair["idt"]["status"] == "PASS"
-    assert pair["idt"]["passed"] >= 373
+    assert pair["idt"]["passed"] >= 381
     assert pair["idt"]["failed"] == 0
     assert pair["rfc"]["status"] == "PASS"
-    assert pair["rfc"]["passed"] >= 65
+    assert pair["rfc"]["passed"] >= 73
     assert pair["rfc"]["failed"] == 0
     assert pair["pncs"]["native_ci"]["classification"] == "CI_EXECUTION_UNRESOLVED_PRE_TEST"
     assert pair["pncs"]["native_ci"]["code_test_failure_observed"] is False
@@ -66,6 +68,24 @@ def test_scalar_field_rotor_reduction_is_typed_separately_from_01z_defect():
     )
 
 
+def test_gauge_covariant_pullback_sign_rate_and_moment_map_are_explicit():
+    pair = _load(PAIR)
+    interface = pair["interface"]
+    assert interface["gauge_connection_transform"] == "A'=A-dlambda"
+    assert interface["gauge_phase_transform"] == "theta'=theta+lambda"
+    assert interface["gauge_invariant_phase_one_form"] == "Dtheta=dtheta+A_ABE"
+    assert interface["field_pullback_rate"] == "r_field=sum_a(partial_a theta+A_a^ABE)qdot^a"
+    assert interface["normal_projected_rate"] == "r_n=n_mu D^mu theta"
+    assert interface["rotor_covariant_rate"] == "r_rotor=D_tau chi"
+    assert interface["moment_map_factorization"] == "Q_theta/P_Phi=(I_A/I_phi)(r_n/r_rotor)"
+    assert interface["gauge_pullback_exact_consequence"] == (
+        "common zero-defect U1 reduction => Q_theta=P_Phi and epsilon_N=(1/2)D_tau_chi"
+    )
+    assert interface["common_u1_gate"] == (
+        "same bundle_id, phase_patch_id, ABE_connection_id, measure_id and ordered collective support"
+    )
+
+
 def test_exact_current_measure_bound_and_anti_false_positive_witness_are_explicit():
     pair = _load(PAIR)
     interface = pair["interface"]
@@ -82,9 +102,9 @@ def test_exact_current_measure_bound_and_anti_false_positive_witness_are_explici
     assert witness["binding_verdict"] == "FAIL_LOCAL_CURRENT"
 
 
-def test_physical_promotion_remains_explicit_after_reduction_theorem():
+def test_physical_promotion_remains_explicit_after_gauge_pullback_theorem():
     pair = _load(PAIR)
     assert pair["interface"]["collective_reduction_gate"] == (
         "same field/rotor phase mode, covariant-rate ID, measure ID and ordered collective support"
     )
-    assert pair["interface"]["physical_cross_binding"] == "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
+    assert pair["interface"]["physical_cross_binding"] == "OPEN_PHYSICAL_COMMON_U1_NORMAL_CURRENT_PROMOTION"
