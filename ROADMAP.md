@@ -34,7 +34,7 @@ The admitted stack contains binding-margin attractor selection, translated Keple
 
 Synchronized admission run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
-Receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+Receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
 ## Phase C — Retrodiction
 
@@ -49,7 +49,8 @@ Completed layers:
 7. 07Q ordered winding separator;
 8. 07R exact carrier/lift composition theorem;
 9. 07S exact active-sequence stratification;
-10. 07T exact per-stratum position decoder baseline.
+10. 07T exact per-stratum position decoder baseline;
+11. 07U exact winding-radius position decoder and factor-two additional-scalar compression.
 
 07T uses the complete Cartesian carrier
 
@@ -57,40 +58,46 @@ Completed layers:
 \Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
 \]
 
-and a deterministic assembler from base coordinates plus explicit position fibers. For the declared sparse schedule retaining the final position,
+with baseline additional packet
 
 \[
 \boxed{|F_{\rm pos}^{baseline}|=2N-2}.
 \]
 
-Corrected hosted 07T run `33204551313`, job `98962152065`, returned `528 passed in 14.20s`.
-
-The all-branch integration tree passed `534/534` in PR #24 and the latest 07T forward-port passed `534/534` in PR #26.
-
-Active next gate:
-
-```text
-POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
-```
-
-Target: replace explicit baseline position coordinates with already retained ordered winding plus the minimum additional continuous ORCHORBITAL/SOD-derived coordinates while preserving a single-valued decoder into the exact 07K carrier.
-
-First analytic candidate:
+07U reuses the ordered signed winding and introduces the pre-final active-attractor radius
 
 \[
-\rho_k=\|r_k-c_{a_k}\|,
+\rho_k=\|r_k-c_{a_k}\|>0,
 \]
+
+with exact reconstruction
 
 \[
 \boxed{
 r_k=c_{a_k}+\rho_k
 \begin{pmatrix}
-\cos(\theta_{k-1}+2\pi\Delta W_k)\\
-\sin(\theta_{k-1}+2\pi\Delta W_k)
-\end{pmatrix}.}
+\cos(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k)
+\end{pmatrix},
+\qquad k<N.
+}
 \]
 
-For the declared schedule this targets `N-1` new radial scalars while reusing the existing winding lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the global promotion coordinate through this compression gate.
+For `N>1`,
+
+\[
+\boxed{N_{\rm radial}=N-1,\qquad N_{\rm Cartesian}=2N-2,\qquad N_{\rm radial}/N_{\rm Cartesian}=1/2.}
+\]
+
+Hosted 07U run `33205507810`, job `98965399355`, returned `551 passed in 12.09s`; merge commit is `f6ccb49cecbe9da9beb91f29b1c7bbc9e15283f3`.
+
+Active next gate:
+
+```text
+RADIAL_PACKET_RESIDENCE_BINDING_ACTIVE_NEXT_GATE
+```
+
+Target: bind every pre-final radial coordinate directly to the persisted ORCHORBITAL residence lineage, preserving append-only provenance from active-attractor observation through the compressed 07K carrier. The broader `GENERAL_GLOBAL_INJECTIVITY_OPEN` coordinate remains active while domain coverage and persisted radial binding are extended.
 
 After Retrodiction admission, continue into preregistered retrocausal-test protocols with the established evidence chain
 
@@ -98,7 +105,7 @@ After Retrodiction admission, continue into preregistered retrocausal-test proto
 
 ## Phase D — relativistic/spatial closure
 
-The parallel IDT source branch now includes executable 01AG charge-projected Maxwell-source hardening. RFC RF-M1/RF-E0 is hardened and merged to RFC `main`, with the Einstein node represented as a dual-prerequisite gate.
+The parallel IDT source branch includes executable 01AG charge-projected Maxwell-source hardening. RFC RF-M1/RF-E0 is hardened and merged to RFC `main`, with the Einstein node represented as a dual-prerequisite gate.
 
 Next relativistic promotion coordinates:
 
