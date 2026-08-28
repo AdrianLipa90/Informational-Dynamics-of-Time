@@ -136,6 +136,27 @@ def conditional_glued_probabilities(amplitudes: Sequence[complex]) -> np.ndarray
     return (np.abs(b) ** 2) / norm2
 
 
+def glued_temporal_measures(frame_measures: Sequence[float]) -> np.ndarray:
+    theta = np.asarray(frame_measures, dtype=float)
+    if theta.ndim != 1 or theta.size == 0:
+        raise HalfFrameGluingError("frame_measures must be a non-empty one-dimensional vector")
+    if not np.all(np.isfinite(theta)) or np.any(theta <= 0.0):
+        raise HalfFrameGluingError("frame_measures must be finite and strictly positive")
+
+    n = int(theta.size)
+    out = np.empty(n + 1, dtype=float)
+    out[0] = 0.5 * theta[0]
+    out[-1] = 0.5 * theta[-1]
+    if n > 1:
+        out[1:-1] = 0.5 * (theta[:-1] + theta[1:])
+
+    residual = abs(float(np.sum(out)) - float(np.sum(theta)))
+    tolerance = 1e-12 * max(1.0, abs(float(np.sum(theta))))
+    if residual > tolerance:
+        raise HalfFrameGluingError("elapsed-measure gluing failed conservation check")
+    return out
+
+
 def audit_half_frame_state(amplitudes: Sequence[complex]) -> HalfFrameAudit:
     a = _normalized_frame_amplitudes(amplitudes)
     b = whole_to_glued_operator(a.size) @ a
