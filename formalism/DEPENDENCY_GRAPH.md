@@ -18,7 +18,7 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
 | Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
 | ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / GATED_PENDING_ORCHORBITAL_ADMISSION` | active next gate: condition existing observability/estimation stack on verified ORCHORBITAL residence/switch lineage |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ACTIVE_NEXT_GATE / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | active next gate: condition existing observability/estimation stack on verified ORCHORBITAL residence/switch lineage |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
