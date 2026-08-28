@@ -61,7 +61,7 @@ Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The tested Retrodiction implementation remains provisional while its admission work continues:
 
@@ -82,10 +82,12 @@ The tested Retrodiction implementation remains provisional while its admission w
 15. `SPATIAL_OFFSET_DIVERGENCE_PASS`: the retained position lineage exposes SOD witnesses for sparse-record collisions;
 16. `ADAPTIVE_SOD_SEPARATOR_PASS`: the largest retained SOD coordinate is selected deterministically for a declared witness;
 17. `QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: for a finite candidate set, every distinct-latent pair colliding under the base projection must be separated by at least one declared fiber channel; formalism `07P`, receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
-18. `PASS_HOSTED_FULL_SUITE`: 07P tested on run `33200684482`, job `98949092398`, branch head `17d3ba854e83f930194b8dd4c4b7089382578a35`, PR merge `ee1985c96df734d32a8232c03ca078c993ef7318`, result `495 passed in 10.14s` on Python 3.12.14 / Ubuntu 24.04.4;
-19. `ACTIVE_NEXT`: derive a domain-covering separator theorem, constructive inverse, or equivalent global injectivity argument over retained continuous ORCHORBITAL, SOD and holonomy channels while retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN`;
-20. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
-21. `LATER`: carry an admitted global Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
+18. `PASS_HOSTED_FULL_SUITE`: 07P tested on run `33200684482`, job `98949092398`, result `495 passed in 10.14s`;
+19. `ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS`: ordered signed residence winding \(\mathcal W=(\Delta W_1,\ldots,\Delta W_N)\), persisted as exact binary64 hex, separates the exact reflection-null pair at fiber tolerance `1e-12` while the base and active-label class remain colliding; formalism `07Q`, receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
+20. `PASS_HOSTED_FULL_SUITE`: 07Q tested on run `33201861565`, job `98953023513`, branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`, PR merge `35b95bf5596014d76b8710047d036342a3b84e88`, result `502 passed in 8.09s` on Python 3.12.14 / Ubuntu 24.04.4;
+21. `ACTIVE_NEXT`: characterize complete base-collision fibers and derive a domain-covering separator theorem or constructive lift using ordered winding together with retained continuous ORCHORBITAL and SOD coordinates while retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN`;
+22. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+23. `LATER`: carry an admitted global Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
