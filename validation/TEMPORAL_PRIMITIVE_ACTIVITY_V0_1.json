@@ -1,18 +1,29 @@
 {
   "schema": "IDT_TEMPORAL_PRIMITIVE_ACTIVITY_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/temporal-primitive-from-relational-activity-v0.1",
   "formalism": "formalism/00E_activity_derived_temporal_primitive.md",
   "implementation": "src/idt/temporal_primitive_activity.py",
   "tests": "tests/reference/test_temporal_primitive_activity.py",
   "derived_coordinates": {
+    "unique_extensive_even_density": "F(W_plus,W_minus) = C (W_plus + W_minus), C > 0",
+    "intrinsic_activity_units": "C = 1",
     "activity_measure": "dTheta = activity * d_lambda",
     "orientation": "chi = current / activity = tanh(A/2)",
     "shannon_drive": "A = ln(2) * sigma_bits",
-    "relational_lapse": "N_R(x|r) = activity_x / activity_r"
+    "relational_lapse": "N_R(x|r) = activity_x / activity_r",
+    "clock_calibration": "dt = T_r dTheta_r; d_tau_hat_x = N_R dt"
   },
+  "uniqueness_premises": [
+    "continuous_local_density_on_positive_directed_traffic",
+    "independent_channel_extensivity",
+    "orientation_even_duration",
+    "positive_density",
+    "increasing_reparameterization_covariance"
+  ],
   "declared_gates": [
     "positive_activity_measure",
+    "independent_channel_extensivity",
     "path_additivity",
     "monotone_reparameterization_invariance",
     "orientation_reversal_parity",
@@ -24,10 +35,21 @@
   ],
   "gremlin": {
     "authority": "CANDIDATE_ONLY",
-    "contract": "positive symmetric transition traffic -> additive path measure; antisymmetric traffic -> orientation; activity ratio -> lapse; calibration -> clock reading",
+    "contract": "independent transition superposition -> extensive density; orientation exchange -> even duration and odd direction; positive symmetric traffic -> intrinsic duration; activity ratio -> lapse; reference calibration -> elapsed clock reading",
     "live_execution": "UNRECORDED_IN_THIS_RECEIPT"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 711,
+    "run_id": 33213660712,
+    "job_id": 98992396008,
+    "tested_pr_merge_sha": "8397d1e258ad99ebfd2897652f5887cc889a71c3",
+    "tested_head_sha": "03219743f1a58d2bfa6ddb2125642d76489d3dee",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 576,
+    "tests_total": 576,
+    "elapsed_seconds": 14.30
   }
 }
