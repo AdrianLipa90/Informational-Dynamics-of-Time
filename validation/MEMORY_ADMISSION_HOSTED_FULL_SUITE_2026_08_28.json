@@ -1,0 +1,56 @@
+{
+  "schema": "IDT_MEMORY_ADMISSION_HOSTED_FULL_SUITE_V1",
+  "status": "PASS_MEMORY_ADMISSION_EVIDENCE_PROMOTION_READY",
+  "canon_allowed": false,
+  "promotion_ready": true,
+  "created_utc": "2026-08-28T17:16:25Z",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "source": {
+    "main_base_commit": "3ac1f53af5223d16f8818dba99a63a6af2ba9498",
+    "main_base_tree": "62f036df6b09e873659566c425c074af507aa081",
+    "evidence_branch": "chore/memory-full-suite-refresh-20260828",
+    "evidence_head_at_trigger": "52f046578c79bcec220669a0a8fad045836c0c07",
+    "pull_request": 21,
+    "tested_pr_merge_commit": "e0b1cdc491a1a501adce93b8d62ade063e167500",
+    "tested_pr_merge_tree": "92302498f3c9131b163d5d0ccbbeab1db935d29f"
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "workflow_id": 343022781,
+    "run_id": 33193861826,
+    "run_number": 535,
+    "job_id": 98925901636,
+    "job_name": "reference",
+    "runner_image": "ubuntu-24.04",
+    "python": "3.12.14",
+    "command": "python -m pytest -q tests/reference",
+    "tests_collected_and_passed": 431,
+    "tests_failed": 0,
+    "duration_seconds": 7.08,
+    "test_step_executed": true,
+    "test_step_conclusion": "success",
+    "job_conclusion": "success",
+    "workflow_conclusion": "success"
+  },
+  "memory_gate": {
+    "previous_blocker": "FULL_REPOSITORY_REFERENCE_SUITE_NOT_OBTAINED",
+    "previous_blocker_closed": true,
+    "integration_receipt": "validation/MEMORY_ADMISSION_V0_1.json",
+    "transport_parent_receipt": "validation/TRANSPORT_MEMORY_ADMISSION_V0_1.json",
+    "memory_orchorbital_lineage_receipt": "validation/MEMORY_ORCHORBITAL_LINEAGE_V0_1.json",
+    "admission_evidence": "PASS",
+    "proposed_memory_status_after_merge": "MEMORY_REFERENCE_GATE_ADMITTED"
+  },
+  "downstream_boundary": {
+    "orchorbital_auto_promoted": false,
+    "orchorbital_status": "PROVISIONAL_MEMORY_EXTENSION_WITH_HOSTED_SUITE_PASS",
+    "retrodiction_auto_promoted": false,
+    "retrodiction_status": "GATED_PENDING_ORCHORBITAL_ADMISSION"
+  },
+  "evidence_policy": {
+    "hosted_full_suite_distinct_from_targeted_reference_receipts": true,
+    "infrastructure_pre_step_failure_treated_as_test_failure": false,
+    "main_mutated": false,
+    "static_runtime_fallback": false
+  }
+}
