@@ -14,29 +14,40 @@ Proposed admitted frontier after merge of the current promotion branch:
 
 Memory admission is bound by `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-ORCHORBITAL now has all three declared admission components:
+ORCHORBITAL admission is bound by `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` and contains the residence ledger, pinned PNCS hierarchy, and separately typed truth-scalar / semantic-mass / reduction-readiness coordinates.
 
-1. append-only content-addressed residence/switch lineage with strict schema and long-trajectory dwell statistics — `formalism/06I_orchorbital_residence_ledger.md`;
-2. pinned PNCS v0.29 sphere/entity hierarchy mapped onto nested IDT attractor families — `formalism/06J_orchorbital_pncs_hierarchy_binding.md`;
-3. pinned PNCS v0.27 typed truth scalar, semantic mass and reduction-readiness bindings — `formalism/06K_orchorbital_typed_observables.md`.
-
-The typed-observable completion tree was executed by GitHub Actions run `33196818703`, job `98935954122`:
+The fully synchronized ORCHORBITAL promotion checkpoint was executed by GitHub Actions run `33197346515`, job `98937750103`:
 
 ```text
 python -m pytest -q tests/reference
-475 passed in 11.91s
+476 passed in 11.95s
 ```
 
-Environment: Python `3.12.14`, Ubuntu `24.04`. Tested PR merge commit: `00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f`; tested tree: `42b93983941098c02b350d9fb7bf18536ef4aeee`.
-
-The combined promotion-branch receipt is `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
-
-The active dependency path is therefore
+The active dependency path is
 
 \[
 \boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
 \]
 
-Retrodiction remains the active next admission gate. Its first new task is to condition the existing withheld-lineage / observability / estimator stack on verified ORCHORBITAL residence and switch histories and measure the effect of basin labels under the declared lineage firewall.
+## Retrodiction frontier
+
+The event-aware ORCHORBITAL residence-conditioning step is implemented and hosted-suite validated. The bridge represents each Memory event explicitly before its smooth ORCHORBITAL residence segment and preserves the chronological content-addressed lineage across event boundaries.
+
+For the declared 07G reflection pair, the retained final observation remains equivalent while the latent histories remain separated by more than `0.9`. The active-attractor sequence and next-attractor/switch/leak lineage are also equivalent, giving the pair-scoped result
+
+```text
+KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS
+```
+
+The two bridge provenance heads differ and remain integrity coordinates outside semantic pair separation. The earlier continuous ORCHORBITAL scalar `weight:A@1` separates the same pair by `0.01918916841099516`.
+
+Evidence:
+
+- `formalism/07O_orchorbital_residence_conditioned_retrodiction.md`;
+- `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+- run `33197888242`: `485 passed in 13.87s`;
+- hardened run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
+
+The active Retrodiction problem is now global branch separation beyond the discrete residence-label equivalence class. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status.
 
 Canonical `main` remains unchanged until an explicit merge command is issued.
