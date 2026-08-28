@@ -1,0 +1,81 @@
+\chapter{Winding--Radius Exact Position Decoder}
+\label{chap:winding-radius-position-decoder}
+
+The Cartesian baseline of Chapter~\ref{chap:per-stratum-position-decoder} retains $2N-2$ pre-final position scalars when the final position is already present in the base record. The ORCHORBITAL residence lineage also retains the ordered signed winding
+\[
+\mathcal W=(\Delta W_1,\ldots,\Delta W_N),
+\]
+with each increment evaluated relative to the active attractor center of its segment. The present layer combines that existing angular coordinate with one active-attractor radius per pre-final checkpoint.
+
+For checkpoint $k$, let
+\[
+\rho_k=\|r_k-c_{a_k}\|>0,
+\]
+where $c_{a_k}$ is the center selected by the retained active-attractor sequence. Given the preceding position $r_{k-1}$, define
+\[
+\theta_{k-1}^{(a_k)}
+=\operatorname{atan2}\!\left(
+(r_{k-1}-c_{a_k})_y,
+(r_{k-1}-c_{a_k})_x
+\right).
+\]
+The persisted winding increment determines the next relative direction and the retained radius determines its magnitude. Hence, for $1\le k<N$,
+\[
+\boxed{
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos\!\left(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k\right)\\
+\sin\!\left(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k\right)
+\end{pmatrix}.
+}
+\]
+The final position $r_N$ is read from the declared base record. Its signed winding increment $\Delta W_N$ is retained as an independent consistency condition on the final segment.
+
+The resulting decoder is the deterministic map
+\[
+\boxed{
+L_s^{\rho W}:
+\bigl(r_0,\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N\bigr)
+\longmapsto
+(r_1,\ldots,r_N),
+}
+\]
+where $\alpha=(a_1,\ldots,a_N)$ is the exact retained active-attractor sequence. The typed implementation admits finite two-component positions, unique finite attractor centers, positive radial coordinates, wrapped winding increments in $[-1/2,1/2]$, and a finite final winding consistency tolerance.
+
+For $N>1$, the explicit Cartesian baseline requires
+\[
+N_{\rm Cartesian}=2N-2
+\]
+new scalar coordinates. The winding--radius packet requires
+\[
+N_{\rm radial}=N-1
+\]
+new scalar coordinates while reusing the $N$ winding scalars already carried by the augmented ORCHORBITAL record. Therefore
+\[
+\boxed{
+\frac{N_{\rm radial}}{N_{\rm Cartesian}}
+=\frac{N-1}{2N-2}
+=\frac12.
+}
+\]
+For $N=1$, the final position already supplies the complete position carrier and no pre-final radial coordinate is required.
+
+The executable reference reconstructs a real three-event ordered position lineage and composes it with the exact 07K position-lineage inverse, recovering the generating kick history within the declared tolerance. A separate A$\to$B switching trajectory verifies that the reconstruction uses the retained segment-wise active center rather than a single fixed orbital center.
+
+Hosted Reference-suite run \texttt{33205507810}, job \texttt{98965399355}, checked the pull-request merge of the 07U implementation and returned
+\begin{verbatim}
+551 passed in 12.09s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4. The merge commit is \texttt{f6ccb49cecbe9da9beb91f29b1c7bbc9e15283f3}.
+
+Combining the exact active-sequence stratification, the winding--radius decoder, the injective ordered position carrier and the 07K inverse gives the conditional reconstruction chain
+\[
+\boxed{
+(\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N)
+\xrightarrow{\ L_s^{\rho W}\ }
+(r_1,\ldots,r_N)
+\xrightarrow{\ 07K^{-1}\ }
+(u_1,\ldots,u_N).
+}
+\]
+On the declared domain of positive radii and nonsingular active-center geometry, this chain supplies an exact augmented Retrodiction coordinate system. The next engineering task is to bind the radial packet directly to the persisted ORCHORBITAL residence lineage so that the complete compressed carrier has one append-only provenance path.

@@ -1,0 +1,75 @@
+name: Monograph PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'monograph/**'
+      - '.github/workflows/monograph-pdf.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX and PDF QA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended lmodern poppler-utils
+
+      - name: Audit included LaTeX sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('monograph')
+          main = (root / 'main.tex').read_text(encoding='utf-8')
+          targets = re.findall(r'\\(?:input|include)\{([^}]+)\}', main)
+          missing = []
+          for target in targets:
+              path = root / (target + '.tex')
+              if not path.exists():
+                  missing.append(str(path))
+          if missing:
+              raise SystemExit('Missing LaTeX sources: ' + ', '.join(missing))
+          if len(targets) != len(set(targets)):
+              raise SystemExit('Duplicate input/include target in monograph/main.tex')
+          print(f'Audited {len(targets)} input/include targets: all present and unique')
+          PY
+
+      - name: Build canonical monograph
+        working-directory: monograph
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+
+      - name: Check unresolved LaTeX references
+        working-directory: monograph
+        run: |
+          if grep -E 'LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|Undefined control sequence|LaTeX Error' main.log; then
+            echo 'Unresolved LaTeX issue detected'
+            exit 1
+          fi
+
+      - name: Validate PDF payload
+        working-directory: monograph
+        run: |
+          pdfinfo main.pdf
+          pdftotext main.pdf /tmp/idt-monograph.txt
+          test -s /tmp/idt-monograph.txt
+          grep -q 'Informational Dynamics of Time' /tmp/idt-monograph.txt
+
+      - name: Package final PDF
+        run: |
+          mkdir -p dist
+          cp monograph/main.pdf dist/Informational-Dynamics-of-Time.pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: informational-dynamics-of-time-pdf
+          path: dist/Informational-Dynamics-of-Time.pdf
+          if-no-files-found: error
+          retention-days: 30

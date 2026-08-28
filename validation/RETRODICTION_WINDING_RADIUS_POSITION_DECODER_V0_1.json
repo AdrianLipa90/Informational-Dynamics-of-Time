@@ -1,0 +1,57 @@
+{
+  "schema": "IDT_RETRODICTION_WINDING_RADIUS_POSITION_DECODER_V0_1",
+  "date": "2026-08-28",
+  "status": "PASS_07U_CONDITIONAL_RECONSTRUCTION_REFERENCE",
+  "layer": "RETRODICTION_07U",
+  "implementation": "src/idt/retrodiction_winding_radius_position_decoder.py",
+  "tests": "tests/reference/test_retrodiction_winding_radius_position_decoder.py",
+  "formalism": "formalism/07U_winding_radius_position_decoder.md",
+  "hosted_reference_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33205507810,
+    "run_number": 673,
+    "job_id": 98965399355,
+    "tested_head": "56b5de2ff615e1165ba1f5f7fc007a80a8de7112",
+    "tested_pr_merge": "7a6815fdcba53464634b17ef0b86785a89dd29f5",
+    "result": "551 passed in 12.09s",
+    "python": "3.12.14",
+    "runner": "Ubuntu 24.04.4",
+    "conclusion": "success"
+  },
+  "main_merge_commit": "f6ccb49cecbe9da9beb91f29b1c7bbc9e15283f3",
+  "construction": {
+    "retained_discrete_coordinate": "active_attractor_sequence",
+    "reused_continuous_coordinate": "ordered_signed_winding",
+    "new_pre_final_coordinate": "active_attractor_radius",
+    "base_terminal_coordinate": "final_position",
+    "output_carrier": "ordered_07K_position_lineage"
+  },
+  "scalar_budget": {
+    "cartesian_baseline": "2N-2",
+    "radial_packet": "N-1",
+    "reused_winding": "N",
+    "new_scalar_ratio_for_N_gt_1": "1/2"
+  },
+  "reference_coverage": [
+    "real_three_event_position_reconstruction",
+    "07K_exact_kick_recovery",
+    "factor_two_new_scalar_budget",
+    "N_equals_1_boundary",
+    "A_to_B_active_attractor_switch",
+    "radial_packet_firewall",
+    "winding_firewall",
+    "attractor_firewall",
+    "singular_center_firewall",
+    "final_winding_consistency_firewall"
+  ],
+  "status_markers": [
+    "EXACT_WINDING_RADIUS_POSITION_DECODER_PASS",
+    "POSITION_FIBER_COMPRESSION_PASS",
+    "POSITION_FIBER_NEW_SCALAR_BUDGET_HALVED",
+    "CONDITIONAL_AUGMENTED_WINDING_RADIUS_RECONSTRUCTION_PASS",
+    "RADIAL_PACKET_RESIDENCE_BINDING_ACTIVE_NEXT_GATE",
+    "GENERAL_GLOBAL_INJECTIVITY_OPEN"
+  ],
+  "canon_allowed": false,
+  "promotion_ready": true
+}
