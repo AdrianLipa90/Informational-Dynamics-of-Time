@@ -1,6 +1,10 @@
 name: Monograph PDF
 
 on:
+  pull_request:
+    paths:
+      - 'monograph/**'
+      - '.github/workflows/monograph-pdf.yml'
   push:
     branches:
       - main
