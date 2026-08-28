@@ -1,0 +1,18 @@
+{
+  "schema": "IDT_01AE_RFC_PHASE_ENERGY_SOURCE_INTERFACE_V0_1",
+  "status": "PASS_ALGEBRAIC_REFERENCE",
+  "observed_date_utc": "2026-08-28",
+  "reference_test": "tests/reference/test_01ae_rfc_phase_energy_source_interface.py",
+  "local_precommit_result": "4 passed, 0 failed",
+  "exact_handoff": [
+    "omega_Q = D_hat_tau chi = D_t chi / N_R",
+    "epsilon_N = omega_Q / 2",
+    "j_theta = 2 A^2 omega_Q",
+    "E_theta = A^2 omega_Q^2 = epsilon_N j_theta",
+    "rho_theta = E_theta / c^2"
+  ],
+  "downstream_consumer": "AdrianLipa90/Relational-Field-Closure:formalism/RFN1B2O_PHASE_ENERGY_CURRENT_SOURCE_BINDING.md",
+  "gravity_equation_owner": "RFC",
+  "promotion_state": "EXACT_CONDITIONAL_INTERFACE",
+  "github_actions_full_suite_executed": false
+}
