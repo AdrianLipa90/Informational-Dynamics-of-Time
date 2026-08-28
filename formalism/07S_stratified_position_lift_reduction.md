@@ -44,7 +44,7 @@ A(z_1)\ne A(z_2),
 
 where \(A=(Y,F)\) denotes the complete retained augmented record and includes the residence stratum key.
 
-Global collisions can therefore occur only inside one fixed-sequence stratum.
+Every global collision candidate is therefore assigned to one fixed-sequence stratum.
 
 ## 3. Fixed-sequence injective carrier
 
@@ -182,11 +182,19 @@ and reconstructs the generating kick pair within the declared numerical toleranc
 
 ## 7. Decoder firewall
 
-07S keeps the missing decoder explicit.
+07S assigns two distinct roles:
 
-If the supplied position lineage is changed while remaining dynamically admissible in the same active-sequence stratum, 07K reconstructs the latent history corresponding to that changed carrier. This is expected: the exact inverse proves that a supplied carrier determines a history; it does not determine which carrier corresponds to the compressed retained record.
+\[
+\boxed{
+L_s:\text{retained record}\to\text{position carrier},
+\qquad
+07K^{-1}:\text{position carrier}\to\text{latent history}.
+}
+\]
 
-The corrected negative control therefore verifies
+When a supplied position lineage is changed while remaining dynamically admissible in the same active-sequence stratum, 07K reconstructs the latent history corresponding to that changed carrier. The exact inverse therefore gives a one-to-one carrier-to-history map on the admitted fixed-sequence domain, while carrier selection is supplied by \(L_s\).
+
+The corrected control verifies
 
 \[
 \boxed{
@@ -196,9 +204,9 @@ P_s'\ne P_s
 }
 \]
 
-for the perturbed reference carrier while both are valid fixed-stratum reconstructions.
+for the perturbed reference carrier while both remain valid fixed-stratum reconstructions.
 
-Thus the remaining gate cannot be replaced by replay of the carrier itself. The missing object is precisely
+The active constructive object is precisely
 
 \[
 \boxed{
@@ -208,7 +216,7 @@ L_s:(Y,F)|_{\mathcal Z_s}
 }
 \]
 
-This decoder must be derived from retained coordinates such as ordered winding, continuous ORCHORBITAL observables and SOD/spatial coordinates, with its own injectivity and consistency audit.
+This decoder is derived from retained coordinates such as ordered winding, continuous ORCHORBITAL observables and SOD/spatial coordinates, with its own injectivity and consistency audit.
 
 ## 8. Hosted reference evidence
 
@@ -226,12 +234,12 @@ The test layer covers:
 2. exact cross-stratum separation for unequal active sequences;
 3. the \(2N\)-dimensional stratified reduction certificate;
 4. constructive real-trajectory composition with 07K;
-5. the decoder firewall: a perturbed admissible position carrier yields a different latent history rather than being falsely rejected by the 07K inverse;
+5. the decoder firewall: a perturbed admissible position carrier maps to a different latent history under the exact 07K inverse;
 6. sequence/elapsed-count mismatch rejection;
 7. non-positive elapsed-time rejection;
 8. empty attractor-label rejection.
 
-An initial test expectation incorrectly required a perturbed but dynamically admissible position carrier to fail the 07K inverse. Hosted run `33203185181` correctly falsified that expectation with `1 failed, 517 passed`. The test was corrected to encode the actual carrier/decoder contract.
+The first hosted version encoded the stronger expectation that a perturbed dynamically admissible carrier should be rejected. Run `33203185181` returned `1 failed, 517 passed` and identified that mismatch with the carrier/decoder contract. The corrected control records the carrier-to-history behavior described above.
 
 Hosted authority after correction:
 
@@ -247,10 +255,10 @@ Hosted authority after correction:
 
 ## 9. Active frontier
 
-07S removes cross-active-sequence ambiguity from the global closure problem and reduces the remaining task to one constructive problem repeated over fixed-sequence strata:
+07S resolves cross-active-sequence separation exactly and expresses the remaining closure as one constructive problem repeated over fixed-sequence strata:
 
 ```text
 PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
 ```
 
-The active target is to construct and audit \(L_s\) from retained base observations and the existing winding/ORCHORBITAL/SOD fiber channels to the ordered 07K position carrier. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status until those per-stratum decoders are established on the admitted domain or an equivalent domain-covering separation theorem is receipted.
+The active target is to construct and audit \(L_s\) from retained base observations and the existing winding/ORCHORBITAL/SOD fiber channels to the ordered 07K position carrier. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this active decoder gate.
