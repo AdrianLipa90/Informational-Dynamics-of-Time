@@ -2,7 +2,7 @@
 
 Status: `EXACT_EUCLIDEAN_REGULARITY_THEOREM / EXACT_EULER_WINDING_CLOSURE / AB_HOLONOMY_ISOMORPHISM_CANDIDATE / MICROSCOPIC_HAWKING_CHANNEL_BINDING_OPEN`
 
-01AH develops the horizon-side relational isomorphism suggested by the Aharonov–Bohm route. The exact theorem is geometric: regularity of a non-extremal Euclidean horizon fixes a `2π` winding. The comparison with the electromagnetic Aharonov–Bohm loop is an isomorphism of `U(1)` holonomy structure, not an identification of the electromagnetic potential with the gravitational horizon connection.
+01AH develops the horizon-side relational isomorphism suggested by the Aharonov–Bohm route. The exact theorem is geometric: regularity of a non-extremal Euclidean horizon fixes a `2π` winding. The electromagnetic Aharonov–Bohm loop and the Euclidean-horizon loop are kept as separately typed physical connections while their common `U(1)` closed-loop structure is audited as an isomorphism candidate.
 
 ## 1. Near-horizon Euclidean geometry
 
@@ -80,7 +80,7 @@ The regularity gate is
 \boxed{\delta_{cone}=0.}
 \]
 
-Thus the Euler closure defect is literally the Euclidean conical defect in the near-horizon plane.
+Thus the Euler closure defect is the Euclidean conical defect in the near-horizon plane.
 
 ## 4. Hawking temperature from the primitive winding
 
@@ -144,7 +144,7 @@ Both sides are closed-loop phase holonomies and both admit an Euler winding desc
 
 The project already uses global Euler phase closure and winding sectors to organize multiple phase contributions. 01AH supplies a standard geometric horizon anchor for that language: the Euclidean thermal circle itself has a primitive `2π` winding.
 
-A later microscopic Hawking-channel theorem may compare the project’s internal phase-information transport to this exact horizon winding and thermal period. Such a comparison must preserve the distinction between the exact Euclidean regularity theorem and any proposed microscopic emission mechanism.
+A later microscopic Hawking-channel theorem may compare the project’s internal phase-information transport to this exact horizon winding and thermal period. The promotion contract keeps the exact Euclidean regularity theorem and the candidate microscopic emission mechanism as separate evidential layers.
 
 ## 7. Executable defects
 
@@ -172,7 +172,7 @@ Exact at 01AH:
 - primitive `2π` Euler winding;
 - `beta_H=2π/kappa_H`;
 - `T_H=kappa_H/(2π)` in natural units;
-- trivial primitive horizon holonomy `W_H=1`.
+- primitive horizon holonomy `W_H=1`.
 
 Candidate bridge:
 
