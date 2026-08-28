@@ -1,89 +1,64 @@
 # CURRENT STATUS
 
-The repository is maintained as three parallel spines:
+The repository is maintained as three synchronized spines:
 
 - **FORMALISM** — canonical equations, dependency graph and typed operator contracts;
-- **EVIDENCE** — tests, receipts, manifests and audits;
-- **MONOGRAPH** — a LaTeX view of admitted formalism and recorded evidence.
+- **EVIDENCE** — tests, receipts, manifests and hosted audits;
+- **MONOGRAPH** — LaTeX projection of admitted formalism and evidence.
 
-Proposed admitted frontier after merge of the current promotion branch:
+Canonical `main` now contains the merged Memory/ORCHORBITAL/Retrodiction promotion stack together with the phase-clock/lapse work and the IDT side of the relativistic bridge.
+
+## Canonical temporal spine
 
 \[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
+\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
 \]
 
-Memory and ORCHORBITAL admission remain bound by their hosted full-suite receipts. The active dependency path is
+Memory and ORCHORBITAL are admitted by hosted full-suite receipts. Retrodiction remains the active constructive layer.
+
+## Parallel relativistic prerequisite
+
+The Einstein node also carries the explicit side prerequisite
 
 \[
-\boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
+\boxed{\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Gauge\ Covariant\ Noether\ Source}\rightarrow\mathrm{Relativistic\ Field\ Bridge}\rightarrow\mathrm{Einstein\ Closure}}.
 \]
 
-## Retrodiction frontier
+The executable source interface is IDT 01AC/01AG. The cross-repository bridge is RFC RF-M1/RF-E0. The current dependency graph therefore requires both the temporal/retrodiction spine and the relativistic field bridge at Einstein closure.
 
-07O provides the event-aware Memory-event -> ORCH smooth-residence bridge. 07P upgrades pair witnesses into the finite-domain quotient/fiber criterion. 07Q binds the persisted ordered signed ORCHORBITAL winding
+## Retrodiction frontier through 07T
 
-\[
-\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
-\]
-
-as a concrete fiber coordinate and separates the exact reflection null while its sparse base observation and active-label class coincide.
-
-07R supplies the exact composition theorem. For an injective carrier \(P\), augmented retained observation \(A=(Y,F)\), and single-valued lift \(L\),
+07R supplies the exact carrier/lift composition theorem and 07S partitions the domain by the retained active-attractor sequence
 
 \[
-\boxed{P=L\circ A}
-\quad\Longrightarrow\quad
-\boxed{A\text{ injective}}.
-\]
-
-The reference carrier is the exact 07K ordered position lineage
-
-\[
-P(z)=(r_1(z),\ldots,r_N(z)).
-\]
-
-07S now uses the exact retained active-attractor sequence
-
-\[
-\boxed{\alpha(z)=(a_1(z),\ldots,a_N(z))}
-\]
-
-as a stratum key. Unequal active sequences are separated directly by the retained residence record. Hence every collision candidate is assigned to one fixed-sequence stratum
-
-\[
+\alpha(z)=(a_1,\ldots,a_N),
+\qquad
 \mathcal Z_s=\{z:\alpha(z)=s\}.
 \]
 
-Inside each stratum, 07K supplies the injective position carrier. If a single-valued decoder
+07T now supplies an exact per-stratum decoder baseline. For the ordered position carrier
 
 \[
-\boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N)
-}
+P_s(z)=(r_1,\ldots,r_N),
 \]
 
-is constructed, 07R gives injectivity inside that stratum; exact active-sequence separation then gives injectivity across their union.
+let the retained base record contain any already observed `rx`/`ry` coordinates and let `F_pos` contain each remaining absolute position coordinate exactly once. Then the deterministic assembler
 
-The executable 07S reference confirms:
+\[
+\boxed{L_s^{pos}(Y,F_{pos})=(r_1,\ldots,r_N)}
+\]
 
-- exact active-sequence stratum keys;
-- exact cross-stratum separation;
-- \(2N\) latent coordinates and \(2N\) position-lineage coordinates with the 07K rank certificate;
-- real two-event composition `retained stratum + position lineage -> 07K -> generating kicks`;
-- a perturbed admissible carrier maps through 07K to a different latent history, preserving the distinct roles of decoder selection and carrier inversion.
+is single-valued on the declared stratum whenever complete coordinate coverage passes the decoder firewall.
 
-The first hosted control encoded an over-strong rejection expectation and run `33203185181` returned `1 failed, 517 passed`. After correcting the control to the carrier/decoder contract, run `33203339457`, job `98958035895`, tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051` and returned `518 passed in 12.06s` on Python 3.12.14 / Ubuntu 24.04.4.
+For the declared sparse schedule carrying the final position directly, the exact baseline packet is
 
-Evidence:
+\[
+\boxed{F_{pos}^{baseline}=\{r_{kx},r_{ky}:1\le k<N\}},
+\qquad
+\boxed{|F_{pos}^{baseline}|=2N-2}.
+\]
 
-- `formalism/07P_quotient_fiber_finite_injectivity.md`;
-- `formalism/07Q_oriented_winding_fiber_separator.md`;
-- `formalism/07R_fiber_lift_composition_theorem.md`;
-- `formalism/07S_stratified_position_lift_reduction.md`;
-- `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
-- `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
-- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
-- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+The 07K carrier interface is hardened for native NumPy `(N,2)` arrays by explicit zero-length testing. The corrected 07T branch authority is hosted run `33204551313`, job `98962152065`, with `528 passed in 14.20s`.
 
 Current Retrodiction status:
 
@@ -94,11 +69,20 @@ FIBER_LIFT_COMPOSITION_THEOREM_PASS
 FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS
 STRATIFIED_GLOBAL_REDUCTION_PASS
 CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS
-PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
+EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS
+FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS
+07K_NDARRAY_CARRIER_INTERFACE_PASS
+POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
 HOSTED_FULL_SUITE_PASS
 GENERAL_GLOBAL_INJECTIVITY_OPEN
 ```
 
-The active constructive target is the per-stratum decoder \(L_s\) from retained base observations plus ordered winding, continuous ORCHORBITAL and SOD coordinates to the exact 07K position carrier.
+The active constructive coordinate is `POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE`: replace as much of the explicit `2N-2` position packet as possible with already retained winding, continuous ORCHORBITAL and SOD-derived coordinates while preserving a single-valued map to the exact 07K carrier.
 
-Canonical `main` remains unchanged until an explicit merge command is issued.
+## Consolidated validation
+
+The all-branch consolidation PR #24 passed the full Reference suite at `534/534` on run `33204645439` before merge to `main` as commit `ea59854ef6e0c105e8bee91945d25cea0e1efb8f`.
+
+RFC relativistic hardening is on RFC `main` at merge commit `786a872efa0dc75cad7c2b1591a8cb8a1dc45858`; the post-merge RFC workflow run `33203930064` concluded `success`.
+
+The current forward-port adds the latest 07T formalism, native ndarray carrier hardening and its hosted receipt on top of that canonical merged state without removing the relativistic side prerequisite.

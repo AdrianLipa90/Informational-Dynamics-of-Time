@@ -133,7 +133,7 @@ def test_exact_decoder_composes_with_07k_to_recover_real_kicks() -> None:
         _attractors(),
         signature,
         _dts(),
-        decoded.position_lineage.tolist(),
+        decoded.position_lineage,
         position_tolerance=1e-9,
     )
     assert recovered.status == "CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_RECOVERY"
