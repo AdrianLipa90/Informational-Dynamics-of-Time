@@ -1,18 +1,22 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE / STRATIFIED_GLOBAL_REDUCTION_PASS / EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS / FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS / 07K_NDARRAY_CARRIER_INTERFACE_PASS / POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE / RELATIVISTIC_FIELD_BRIDGE_PREREQUISITE_HARDENED / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-The proposed admitted frontier after merge of the current promotion branch is
+## Canonical dependency structure
 
-\[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
-\]
-
-The active downstream dependency path is
+The temporal spine is
 
 \[
-\boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
+\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}.
 \]
+
+Einstein closure also carries the parallel relativistic prerequisite
+
+\[
+\boxed{\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Gauge\ Covariant\ Noether\ Source}\rightarrow\mathrm{Relativistic\ Field\ Bridge}\rightarrow\mathrm{Einstein\ Closure}}.
+\]
+
+The source branch is IDT 01AC/01AG and the field bridge is RFC RF-M1/RF-E0.
 
 ## Temporal-memory and ORCHORBITAL substrate
 
@@ -26,214 +30,119 @@ Memory evolves in internal elapsed activity with event-driven Kepler cells,
 \Delta v_{M,n}=q_n\delta m_n.
 \]
 
-ORCHORBITAL organization selects an active attractor from positive binding margins and propagates each admitted smooth segment around that center. The residence layer persists exact segment chronology, active-attractor identity, elapsed time and signed winding increment
+The ORCHORBITAL residence layer persists event chronology, active-attractor identity, elapsed time and signed winding increment
 
 \[
-\boxed{
-\Delta W_k=\frac{1}{2\pi}\operatorname{wrap}(\theta_{k+1}-\theta_k).
-}
+\boxed{\Delta W_k=\frac{1}{2\pi}\operatorname{wrap}(\theta_{k+1}-\theta_k).}
 \]
-
-Memory and ORCHORBITAL admission are bound by their hosted full-suite receipts.
 
 ## Retrodiction quotient/fiber architecture
 
-07P defines a finite-domain augmented observation
+07P defines the finite-domain augmented record
 
 \[
 \widetilde Y(z)=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr)
 \]
 
-and establishes the exact finite-set criterion
+with exact finite-set collision separation. 07Q supplies the ordered winding fiber
 
 \[
-\boxed{
-\widetilde Y\text{ injective on }\mathcal C
-\iff
-\forall i\ne j:\
-Y(z_i)=Y(z_j)
-\Longrightarrow
-\exists c:\ F_c(z_i)\ne F_c(z_j).
-}
-\]
-
-07Q supplies the persisted ordered signed winding fiber
-
-\[
-\boxed{
 \mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
-}
 \]
 
-For the exact reflection pair, the sparse base projection and active sequence coincide while \(\mathcal W\) separates the two histories at the declared fiber tolerance.
-
-## 07R fiber-lift composition
-
-Let
+07R supplies the exact composition theorem
 
 \[
-P:\mathcal Z\to\mathcal X
-\]
-
-be an injective carrier and
-
-\[
-A(z)=(Y(z),F(z)).
-\]
-
-If a single-valued lift satisfies
-
-\[
-\boxed{P=L\circ A,}
-\]
-
-then
-
-\[
-\boxed{A\text{ is injective}.}
-\]
-
-The carrier used by the Retrodiction program is the 07K ordered post-segment position lineage
-
-\[
-\boxed{P(z)=(r_1(z),\ldots,r_N(z)).}
-\]
-
-For a fixed active-attractor sequence and positive elapsed increments, 07K recovers each event kick algebraically:
-
-\[
-\boxed{
-u_n=
-\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
-{\Delta\tau_n}
--v_{n-1},}
-\]
-
-\[
-\boxed{
-v_n=v_{n-1}+u_n+
-\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
-\]
-
-## 07S stratified global reduction
-
-The event-aware residence signature retains the complete active-attractor sequence
-
-\[
-\boxed{
-\alpha(z)=(a_1(z),\ldots,a_N(z)).
-}
-\]
-
-exactly. Define the fixed-sequence stratum
-
-\[
-\boxed{
-\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
-}
-\]
-
-Because \(\alpha\) is part of the retained record,
-
-\[
-\boxed{
-\alpha(z_1)\ne\alpha(z_2)
+P=L\circ(Y,F),\quad P\;\text{injective}
 \Longrightarrow
-A(z_1)\ne A(z_2).
-}
+(Y,F)\;\text{injective}.
 \]
 
-Hence collision analysis is stratified by the exact retained sequence key.
-
-Within each \(\mathcal Z_s\), the ordered position lineage supplies the 07K carrier \(P_s\). If the retained base/fiber coordinates admit a single-valued per-stratum decoder
+The carrier is the 07K ordered post-segment position lineage
 
 \[
-\boxed{
-L_s:A(\mathcal Z_s)\to P_s(\mathcal Z_s),
+P(z)=(r_1(z),\ldots,r_N(z)).
+\]
+
+07S partitions the domain by the retained active-attractor sequence
+
+\[
+\alpha(z)=(a_1,\ldots,a_N),
 \qquad
-P_s=L_s\circ A|_{\mathcal Z_s},
-}
+\mathcal Z_s=\{z:\alpha(z)=s\}.
 \]
 
-then 07R gives injectivity on that stratum. Exact active-sequence separation then yields injectivity on the union of admitted strata:
+Unequal sequence keys are separated directly by the retained record, reducing the remaining collision problem to a fixed-sequence decoder.
+
+## 07T exact per-stratum decoder baseline
+
+For one stratum, define the complete Cartesian carrier labels
 
 \[
-\boxed{
-\left[\forall s:\ A|_{\mathcal Z_s}\text{ injective}\right]
-\land
-\left[\alpha\text{ retained exactly}\right]
-\Longrightarrow
-A\text{ injective on }\mathcal Z.
-}
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny}).
 \]
 
-The 07K position sensitivity carries \(2N\) output coordinates for \(2N\) latent kick coordinates and has a block-lower-triangular structure with diagonal blocks
+Let the base observation provide any subset of these labels and let the explicit position-fiber packet provide every remaining label exactly once. The deterministic assembler gives
 
 \[
-\boxed{\Delta\tau_n I_2.}
+\boxed{L_s^{\rm pos}(Y,F_{\rm pos})=((r_{1x},r_{1y}),\ldots,(r_{Nx},r_{Ny})).}
 \]
 
-For positive \(\Delta\tau_n\), the fixed-sequence carrier therefore has the required rank structure and exact constructive inverse.
-
-### Decoder/carrier role separation
-
-07S fixes the architectural composition as
+Hence
 
 \[
-\boxed{
-(Y,F)|_{\mathcal Z_s}
-\xrightarrow{L_s}
-(r_1,\ldots,r_N)
-\xrightarrow{07K^{-1}}
-(u_1,\ldots,u_N).
-}
+\boxed{P_s=L_s^{\rm pos}\circ(Y,F_{\rm pos})|_{\mathcal Z_s}.}
 \]
 
-A perturbed but dynamically admissible position carrier maps through 07K to its corresponding distinct latent history. The carrier-to-history inverse and retained-record-to-carrier decoder are therefore separate typed transformations.
+For the declared sparse schedule with final position already retained,
 
-The corrected hosted reference gate returned
+\[
+\boxed{F_{\rm pos}^{\rm baseline}=\{r_{kx},r_{ky}:1\le k<N\}},
+\qquad
+\boxed{|F_{\rm pos}^{\rm baseline}|=2N-2}.
+\]
+
+The executable decoder enforces complete coordinate coverage, unique sources, valid axes/indices and finite values. The 07K parser accepts the resulting NumPy `(N,2)` carrier through explicit zero-length checking.
+
+Corrected hosted 07T authority: run `33204551313`, job `98962152065`, `528 passed in 14.20s`.
+
+The merged cross-branch tree then passed `534/534` in PR #24 and again `534/534` in PR #26 while preserving the relativistic side prerequisite.
+
+## Active frontier
+
+The active constructive coordinate is
 
 ```text
-518 passed in 12.06s
+POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
 ```
 
-in run `33203339457`, job `98958035895`, on tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051` after an earlier control expectation was corrected from run `33203185181` (`1 failed, 517 passed`).
+The analytic candidate reuses ordered winding together with active-attractor radius
 
-Bindings:
+\[
+\rho_k=\|r_k-c_{a_k}\|,
+\]
 
-- `formalism/07R_fiber_lift_composition_theorem.md`;
-- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
-- `formalism/07S_stratified_position_lift_reduction.md`;
-- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
-
-The active Retrodiction frontier is now
-
-```text
-PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
-```
-
-with the constructive target
+so that, given the previous position and winding increment,
 
 \[
 \boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
-}
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}+2\pi\Delta W_k)
+\end{pmatrix}.}
 \]
 
-Candidate retained inputs are the already typed ordered winding, continuous ORCHORBITAL and SOD/spatial channels. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
+For the declared schedule this targets replacement of the explicit `2N-2` baseline packet by `N-1` active-radius scalars while reusing the existing winding lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global promotion status for the compressed architecture.
 
-## 01K temporal information curvature interface
+## Parallel Einstein interface
 
-The separate Einstein-interface branch carries
+01L/01K supply the phase-clock length and inverse-area information-curvature carrier,
 
 \[
-\mathcal J_\pi=(\ln2)\mathcal I_\pi,
+\ell_\varphi=\frac{c}{|\omega_t|}=\frac{\hbar c}{E},
 \qquad
-\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}},
-\qquad
-[\Xi_I]=L^{-2},
+\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}}.
 \]
 
-as a parallel downstream curvature-typed export while Retrodiction is the active sequential temporal gate.
-
-Canonical `main` remains unchanged until explicit merge authorization.
+01AG supplies the charge-projected variation-level Maxwell source interface. RFC RF-M1/RF-E0 supplies the AB-normalized Maxwell and Einstein-Bianchi stress-energy bridge. Their remaining promotion coordinates are tracked independently of the active Retrodiction compression gate.
