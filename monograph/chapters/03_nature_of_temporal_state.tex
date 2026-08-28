@@ -1,120 +1,195 @@
 \chapter{Nature of the Temporal State}
 
-The temporal architecture developed in this work begins with ordered relational support and directed transition traffic. A positive temporal measure is derived from the symmetric transition activity; temporal orientation is carried separately by the normalized directed current. Relative clock rates, calibrated elapsed time, event realization, transport and retained history are then constructed downstream.
+The temporal architecture developed here begins with directed relational composability rather than an assumed temporal order. Realized relations form composable words. Their prefixes define distinct history occurrences, positive transition activity supplies an intrinsic duration weight, and the combination produces temporal precedence. NOW is then the maximal supported frontier of the realized occurrence history.
 
-\section{Ordered relational support and transition traffic}
+\section{Pretime relational composition}
 
 Let
 \[
-(S,\prec)
+\mathcal G=(S,E,s,t)
 \]
-be an ordered relational domain and
+be a directed relational multigraph. An edge $e:a\to b$ carries source and target labels. Two relations compose when
 \[
-\boxed{\Psi:S\to\mathcal H}
+\boxed{t(e_k)=s(e_{k+1}).}
 \]
-the temporal-state map. The relation $\prec$ supplies precedence between admitted events. A strictly increasing label $\lambda$ may parameterize an ordered relational path.
-
-For an admitted active pair $a\leftrightarrow b$,
+A finite realized word is
 \[
-W_{a\to b}=M_{ab}e^{A_{ab}/2},
+\boxed{
+P_n=e_n\circ\cdots\circ e_1,
+}
+\]
+with prefixes
+\[
+P_0=\mathrm{id},
 \qquad
-W_{b\to a}=M_{ab}e^{-A_{ab}/2},
+P_k=e_k\circ\cdots\circ e_1.
 \]
-with $M_{ab}>0$. Define
+Define the realized occurrence
 \[
-\boxed{\mathfrak a_{ab}=W_{a\to b}+W_{b\to a}=2M_{ab}\cosh(A_{ab}/2)>0,}
+\boxed{\nu_k=(P_k,x_k),}
 \]
-\[
-\boxed{\mathfrak j_{ab}=W_{a\to b}-W_{b\to a}=2M_{ab}\sinh(A_{ab}/2).}
-\]
-The normalized orientation coordinate is
+where $x_k$ is the terminal state label of $P_k$. Repeated state labels remain distinct occurrences because the full prefixes differ.
+
+Define the prefix relation
 \[
 \boxed{
-\chi_{ab}=\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}
-=\tanh(A_{ab}/2).
+\nu_i\sqsubseteq\nu_j
+\iff
+\exists Q:\ P_j=Q\circ P_i.
 }
 \]
-The transition affinity in bits satisfies
+On prefix-labelled occurrences it is reflexive, transitive and antisymmetric. Along one realized serial word it is total.
+
+\section{Transition traffic and intrinsic duration}
+
+For an admitted active pair,
 \[
-\boxed{
-\sigma_{ab}=\log_2\frac{W_{a\to b}}{W_{b\to a}},
+W_+=Me^{A/2},
 \qquad
-A_{ab}=(\ln2)\sigma_{ab}.
-}
+W_-=Me^{-A/2},
+\qquad M>0,
 \]
+and therefore
+\[
+\boxed{\mathfrak a=W_++W_-=2M\cosh(A/2)>0,}
+\]
+\[
+\boxed{\mathfrak j=W_+-W_-=2M\sinh(A/2).}
+\]
+Independent-channel extensivity, continuity and invariance of duration under orientation exchange force the local duration density to have the form
+\[
+F(W_+,W_-)=C(W_++W_-),
+\qquad C>0.
+\]
+In intrinsic activity units $C=1$.
 
-\section{Activity-derived temporal measure}
-
-Under an increasing relabeling $\lambda'=f(\lambda)$, the transition weights transform as one-densities,
-\[
-W'_\pm=W_\pm\frac{d\lambda}{d\lambda'}.
-\]
-Consequently
-\[
-\mathfrak a'=\mathfrak a\frac{d\lambda}{d\lambda'}.
-\]
-Define the intrinsic temporal increment
-\[
-\boxed{d\Theta=\mathfrak a\,d\lambda.}
-\]
-Then
-\[
-\boxed{d\Theta'=d\Theta.}
-\]
-For an ordered interval $\Gamma_{12}$,
+For any increasing local edge parameter $\lambda_e$,
 \[
 \boxed{
-\Theta[\Gamma_{12}]
-=\int_{\Gamma_{12}}\mathfrak a\,d\lambda.
+\theta(e)=\int_e\mathfrak a\,d\lambda_e>0
 }
 \]
-Positive activity gives positive accumulation on every active realized interval, while concatenation gives
+is invariant under admitted reparameterization. The infinitesimal form is
+\[
+\boxed{d\Theta=\mathfrak a\,d\lambda_e.}
+\]
+For a realized prefix,
 \[
 \boxed{
-\Theta[\Gamma_{13}]
-=\Theta[\Gamma_{12}]+\Theta[\Gamma_{23}].
+\Theta(P_k)=\sum_{r=1}^{k}\theta(e_r).
 }
 \]
-
-Under reversal of transition orientation $A\mapsto-A$,
+Hence a strict prefix extension obeys
 \[
-\boxed{d\Theta\mapsto d\Theta,}
-\qquad
-\boxed{\chi\mapsto-\chi.}
+\boxed{
+\nu_i\sqsubset\nu_j
+\Longrightarrow
+\Theta(P_i)<\Theta(P_j).
+}
 \]
-Thus duration and orientation are carried by distinct temporal coordinates.
+On one serial word the converse holds. Temporal precedence is therefore defined on realized occurrences by
+\[
+\boxed{
+\nu_i\prec_T\nu_j
+\iff
+\nu_i\sqsubset\nu_j,
+}
+\]
+with $\Theta$ providing its strictly increasing scalar realization.
 
-Using
+\section{Recurrence and temporal advance}
+
+A relational cycle in state labels,
+\[
+A\to B\to A,
+\]
+produces
+\[
+(A,P_0)\prec_T(B,P_1)\prec_T(A,P_2).
+\]
+Thus the state label can recur while the realized occurrence history continues to advance. The distinction between state identity and occurrence identity is retained by the full relation prefix.
+
+\section{Duration and orientation}
+
+The normalized directional coordinate is
+\[
+\boxed{
+\chi=\frac{\mathfrak j}{\mathfrak a}=\tanh(A/2).
+}
+\]
+Using the Shannon affinity in bits,
+\[
+A=(\ln2)\sigma,
+\]
+we obtain
+\[
+\boxed{
+\chi=\tanh\!\left(\frac{\ln2}{2}\sigma\right)
+}
+\]
+and
+\[
+\boxed{
+d\Theta=2M\cosh\!\left(\frac{\ln2}{2}\sigma\right)d\lambda_e.}
+\]
+Under orientation reversal $A\mapsto-A$, duration is even and $\chi$ is odd. At $A=0$,
+\[
+\boxed{\theta(e)>0,\qquad \chi=0.}
+\]
+The accumulated duration coordinate and the local directional-affinity coordinate are therefore distinct.
+
+With
 \[
 M_{ab}
 =\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]},
 \]
-the duration density becomes
+the intrinsic duration density becomes
 \[
 \boxed{
-\frac{d\Theta}{d\lambda}
+\frac{d\Theta}{d\lambda_e}
 =
 2\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}
 \cosh\!\left(\frac{\ln2}{2}\sigma_{ab}\right).
 }
 \]
-The orientation coordinate is
+
+\section{NOW as the maximal realized frontier}
+
+For an admitted transition edge define the gauge-invariant event signature
 \[
 \boxed{
-\chi_{ab}
-=\tanh\!\left(\frac{\ln2}{2}\sigma_{ab}\right).
+q_e=
+\sqrt{
+ d_{FS}(a,b)^2+
+ \kappa^2\Delta H_e^2+
+ \kappa^2\sigma_e^2
+ }\ge0.
 }
 \]
+The nonzero event carrier is
+\[
+\mathcal E_q
+=\operatorname{supp}_{\rm at}
+\left(\sum_e q_e\delta_{s_e}\right).
+\]
+For a finite realized down-set $D$ of occurrence prefixes, define
+\[
+D_q=\{\nu\in D:q_{e(\nu)}>0\}.
+\]
+Then
+\[
+\boxed{
+\mathcal N(D)
+=\operatorname{Max}_{\prec_T}(D_q).
+}
+\]
+For a serial history the frontier contains the latest supported occurrence. For independent concurrent branches it is the antichain of maximal supported occurrences.
+
+Thus the event carrier records realized event content across history, while NOW selects the maximal boundary of the currently realized supported history.
 
 \section{Relative clocks and calibrated elapsed time}
 
-For a local subsystem $x$ and reference subsystem $r$ on the same ordered patch,
-\[
-d\Theta_x=\mathfrak a_xd\lambda,
-\qquad
-d\Theta_r=\mathfrak a_rd\lambda.
-\]
-The relational lapse is
+For two active subsystems on a common relational comparison patch,
 \[
 \boxed{
 N_R(x|r)
@@ -122,11 +197,11 @@ N_R(x|r)
 =\frac{\mathfrak a_x}{\mathfrak a_r}>0.
 }
 \]
-It is invariant under the admitted increasing reparameterization and composes under reference change,
+Reference changes compose multiplicatively,
 \[
-\boxed{N_{x|s}=N_{x|r}N_{r|s}.}
+N_{x|s}=N_{x|r}N_{r|s}.
 \]
-A physical reference-clock calibration supplies a conversion scale $T_r>0$,
+A physical reference-clock calibration supplies the conversion scale,
 \[
 \boxed{dt=T_r\,d\Theta_r,}
 \]
@@ -134,16 +209,14 @@ and therefore
 \[
 \boxed{d\hat\tau_x=N_Rdt.}
 \]
-
 On the admitted lapse/phase-rate bridge,
 \[
-\boxed{r_t=N_Rr_n^{(\tau)},}
+\boxed{r_t=N_Rr_n^{(\tau)}.}
 \]
-so relative clock rate and proper phase rate share the same relational normalization.
 
-\section{Phase topology}
+\section{Phase topology, bifurcation and transport}
 
-The information--phase transition link is
+The information--phase link is
 \[
 L_e
 =G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right],
@@ -158,89 +231,62 @@ On a closed cycle,
 \pmod{2\pi}.
 }
 \]
-The local coordinate $\chi$ carries directed transition orientation while the connection holonomy carries extended cycle orientation.
-
-\section{NOW, bifurcation and transport}
-
-The NOW layer localizes realized temporal activity on event support. At an admitted event $s_n$,
+At a supported maximal event occurrence the state update is represented by
 \[
 \boxed{
 \Psi_T(s_n^+)=B_n\Psi_T(s_n^-).
 }
 \]
-For the reversible reference family,
-\[
-B(q)=e^{qG},
-\qquad
-B_\phi(\beta)=e^{-i\beta G}.
-\]
-
-Between event surfaces,
+Between event occurrences,
 \[
 \boxed{\Psi_{n+1}=U_n\Psi_n.}
 \]
-An ordered history has the compositional form
+A realized operator word has the compositional form
 \[
 \boxed{
 \Psi_N
 =U_{N-1}B_{N-1}\cdots U_2B_2U_1B_1\Psi_0.
 }
 \]
-Each active segment carries its accumulated $\Theta$ interval.
+The operator composition and the relational occurrence prefix carry the same realized lineage order.
 
-\section{Memory as temporal lineage}
+\section{Memory and retrodiction}
 
-Memory retains the consequences of admitted events along the ordered activity measure. ORCHORBITAL organizes the resulting history through
+Memory retains the realized occurrence lineage together with its temporal carriers. ORCHORBITAL records the active-attractor sequence
 \[
-\boxed{\alpha=(a_1,\ldots,a_N)},
-\qquad
-\boxed{\mathcal W=(\Delta W_1,\ldots,\Delta W_N)}.
+\alpha=(a_1,\ldots,a_N),
 \]
-The residence-bound radial lineage adds
+signed winding
 \[
-\boxed{
-\mathcal R=(\rho_1,\ldots,\rho_N),
-\qquad
-\rho_k=\|r_k-c_{a_k}\|>0.
-}
+\mathcal W=(\Delta W_1,\ldots,\Delta W_N),
 \]
-The retained temporal state therefore contains the current state together with an ordered, authenticated history carrier.
-
-\section{Retrodiction and hidden history geometry}
-
-Within one retained active-attractor stratum, the winding--radius carrier supplies
+and residence-bound radial lineage
 \[
-(\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N)
-\longmapsto
-(r_1,\ldots,r_N),
+\mathcal R=(\rho_1,\ldots,\rho_N).
 \]
-which composes with the exact position-lineage inverse
-\[
-(r_1,\ldots,r_N)
-\longmapsto
-(u_1,\ldots,u_N).
-\]
-Spatial Offset Divergence audits collision fibers of compressed observation maps by measuring separation between the full position histories carried by observation-equivalent candidates. The activity-derived $\Theta$ coordinate supplies the elapsed lineage on the same ordered history.
+Retrodiction reconstructs hidden histories on these retained strata. Spatial Offset Divergence audits collision fibres of compressed observation maps, while the cumulative coordinate $\Theta(P_k)$ supplies the intrinsic duration carried by the same realized prefix history.
 
 \section{Derived temporal architecture}
 
-The resulting chain is
+The present derivation is
 \[
 \boxed{
 \begin{aligned}
-&\text{RELATIONAL ORDER + TRANSITION TRAFFIC}\\
+&\text{DIRECTED RELATIONAL COMPOSABILITY}\\
 &\downarrow\\
-&\mathfrak a=W_++W_-,\qquad \mathfrak j=W_+-W_-\\
+&\text{REALIZED WORDS AND PREFIX OCCURRENCES}\\
 &\downarrow\\
-&d\Theta=\mathfrak a\,d\lambda,\qquad \chi=\mathfrak j/\mathfrak a\\
+&\mathfrak a=W_++W_-,\quad \mathfrak j=W_+-W_-\\
 &\downarrow\\
-&N_R=d\Theta_x/d\Theta_r\\
+&\theta(e)=\int_e\mathfrak a\,d\lambda_e,\quad
+\Theta(P)=\sum_e\theta(e),\quad
+\chi=\mathfrak j/\mathfrak a\\
 &\downarrow\\
-&\text{CALIBRATED ELAPSED TIME + PHASE RATE}\\
+&\text{TEMPORAL PRECEDENCE FROM PREFIX EXTENSION}\\
 &\downarrow\\
-&\text{NOW}\to\text{BIFURCATION}\to\text{TRANSPORT}\\
+&\text{NOW}=\operatorname{Max}(\text{SUPPORTED REALIZED OCCURRENCES})\\
 &\downarrow\\
-&\text{MEMORY}\to\text{RETRODICTION}.
+&\text{BIFURCATION}\to\text{TRANSPORT}\to\text{MEMORY}\to\text{RETRODICTION}.
 \end{aligned}
 }
 \]

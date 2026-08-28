@@ -36,7 +36,7 @@ def test_declared_temporal_spine_preserves_project_order():
     spine = [
         "TIR",
         "TEMPORAL_PRIMITIVE",
-        "TEMPORAL_WAVE",
+        "RELATIONAL_PRECEDENCE",
         "NOW",
         "BIFURCATION",
         "TEMPORAL_TRANSPORT",
@@ -51,6 +51,9 @@ def test_declared_temporal_spine_preserves_project_order():
     assert positions == sorted(positions)
     for parent, child in zip(spine, spine[1:]):
         assert parent in nodes[child]["depends_on"]
+
+    assert nodes["TEMPORAL_WAVE"]["depends_on"] == ["TEMPORAL_PRIMITIVE"]
+    assert "TEMPORAL_WAVE" in nodes["NOW"]["depends_on"]
 
 
 def test_relativistic_bridge_is_an_explicit_parallel_einstein_prerequisite():
@@ -75,6 +78,27 @@ def test_temporal_primitive_records_upstream_forcing_chain():
         "SHANNON_ONSAGER_RESPONSE_TARGETED_PASS_CANDIDATE",
     ]:
         assert marker in status
+
+
+def test_relational_precedence_and_now_markers_are_recorded():
+    nodes = _nodes()
+    assert nodes["RELATIONAL_PRECEDENCE"]["depends_on"] == ["TEMPORAL_PRIMITIVE"]
+    precedence_status = nodes["RELATIONAL_PRECEDENCE"]["status"]
+    for marker in [
+        "RELATIONAL_COMPOSITION_PREFIX_OCCURRENCE_ORDER_ALGEBRAIC_REFERENCE_PASS",
+        "POSITIVE_THETA_ORDER_EMBEDDING_PASS",
+        "STATE_RECURRENCE_WITHOUT_OCCURRENCE_ORDER_CYCLE_PASS",
+        "SERIAL_NOW_UNIQUE_MAXIMUM_PASS",
+        "CONCURRENT_NOW_MAXIMAL_ANTICHAIN_PASS",
+        "TRANSITIVE_FRONTIER_PASS",
+        "HOSTED_REFERENCE_SUITE_589_OF_589",
+    ]:
+        assert marker in precedence_status
+
+    assert set(nodes["NOW"]["depends_on"]) == {"TEMPORAL_WAVE", "RELATIONAL_PRECEDENCE"}
+    now_status = nodes["NOW"]["status"]
+    assert "RELATIONAL_MAXIMAL_REALIZED_EVENT_FRONTIER_ALGEBRAIC_REFERENCE_PASS" in now_status
+    assert "SERIAL_UNIQUE_CONCURRENT_ANTICHAIN_PASS" in now_status
 
 
 def test_memory_and_orchorbital_admission_markers_are_recorded():

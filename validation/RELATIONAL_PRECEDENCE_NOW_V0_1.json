@@ -1,0 +1,61 @@
+{
+  "schema": "IDT_RELATIONAL_PRECEDENCE_NOW_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/relational-composition-precedence-now-v0.1",
+  "formalism": "formalism/00F_relational_composition_precedence.md",
+  "implementation": "src/idt/relational_precedence.py",
+  "tests": "tests/reference/test_relational_precedence.py",
+  "primitive_input": {
+    "states": "relational state labels S",
+    "relations": "directed source-target morphisms e",
+    "composition": "e_next o e admitted iff target(e) = source(e_next)",
+    "metric_clock": "introduced only downstream through reference calibration"
+  },
+  "derived_coordinates": {
+    "occurrence": "nu_k = (P_k, x_k) with full realized prefix P_k",
+    "prefix_order": "nu_i <= nu_j iff P_j = Q o P_i",
+    "edge_duration": "theta(e) = integral_e activity d_lambda_e > 0",
+    "cumulative_duration": "Theta(P_k) = sum_{r<=k} theta(e_r)",
+    "temporal_precedence": "nu_i <_T nu_j iff nu_i is a strict prefix occurrence of nu_j",
+    "now_frontier": "N(D) = Max_{<_T}({supported realized occurrences in D})"
+  },
+  "proved_reference_properties": [
+    "prefix-labelled occurrences remain distinct under repeated state labels",
+    "prefix extension is acyclic on occurrences",
+    "positive theta strictly embeds serial prefix order into the cumulative Theta coordinate",
+    "serial supported histories have one maximal NOW occurrence",
+    "independent concurrent branches produce a maximal supported antichain",
+    "frontier maximality uses transitive precedence reachability"
+  ],
+  "declared_gates": [
+    "relational_composability",
+    "prefix_reflexivity_transitivity_antisymmetry",
+    "serial_prefix_total_order",
+    "strict_positive_theta_order_embedding",
+    "state_recurrence_without_occurrence_order_cycle",
+    "serial_unique_supported_now_frontier",
+    "concurrent_now_maximal_antichain",
+    "transitive_reachability_frontier",
+    "fail_closed_noncomposable_history",
+    "fail_closed_cyclic_strict_precedence"
+  ],
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "contract": "relation composition -> prefix extension; prefix extension -> occurrence order; positive extensive measure -> scalar order embedding; maximal supported occurrences -> NOW frontier",
+    "live_execution": "UNRECORDED_IN_THIS_RECEIPT"
+  },
+  "hosted_ci": {
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 715,
+    "run_id": 33214797446,
+    "job_id": 98995918318,
+    "tested_pr_merge_sha": "ed12ed992dedf7b0a6319e50398fb5dae016eb9d",
+    "tested_head_sha": "7f58f7a794b16924c9e5c8b64007d79f860cf6e3",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 589,
+    "tests_total": 589,
+    "elapsed_seconds": 14.31
+  }
+}

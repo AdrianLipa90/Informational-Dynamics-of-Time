@@ -2,17 +2,17 @@
 
 Status: `FORMAL_CANDIDATE / ALGEBRAIC_REFERENCE_GATE`
 
-This layer derives an intrinsic temporal measure from the admitted relational transition kinetics. Its inputs are an ordered relational path, the positive transition weights of 00C and the directed affinity of 00B. The derivation also identifies the unique local extensive orientation-even temporal density up to one positive clock-scale factor.
+This layer derives an intrinsic positive duration weight from admitted relational transition kinetics. Its primitive input is directed relational traffic on a composable source--target relation; a global temporal order is supplied only downstream by 00F from relational composition plus the positive activity measure.
 
-## 1. Ordered relational path
+## 1. Pretime directed relation
 
-Let
+Let an admitted relational edge be
 
 \[
-\Gamma:\lambda\mapsto s(\lambda)
+e:a\to b.
 \]
 
-be an admitted relational path, with \(\lambda\) any strictly increasing label of transition order.
+The symbols \(a\) and \(b\) are source and target labels of the relation. Their source--target typing supplies composability with other relations and does not require a metric clock coordinate.
 
 For an active pair \(a\leftrightarrow b\), 00C supplies
 
@@ -52,7 +52,7 @@ The symmetric activity and directed current are
 
 ## 2. Uniqueness of the local extensive duration density
 
-Let a candidate local temporal density be a continuous map
+Let a candidate local duration density be a continuous map
 
 \[
 F:\mathbb R_{>0}^2\to\mathbb R_{>0},
@@ -60,11 +60,9 @@ F:\mathbb R_{>0}^2\to\mathbb R_{>0},
 (W_+,W_-)\mapsto F(W_+,W_-).
 \]
 
-Impose the following structural requirements.
-
 ### 2.1 Independent-channel extensivity
 
-For two independent transition channels on the same ordered patch, their directed traffic adds componentwise. The temporal density is required to add with that traffic:
+For two independent transition channels on the same relational carrier, require
 
 \[
 \boxed{
@@ -73,7 +71,7 @@ F(u_++v_+,u_-+v_-)
 }
 \]
 
-Continuity together with additivity on the positive cone gives a linear form
+Continuity and additivity on the positive cone give
 
 \[
 F(W_+,W_-)=c_+W_+ + c_-W_-.
@@ -81,19 +79,19 @@ F(W_+,W_-)=c_+W_+ + c_-W_-.
 
 ### 2.2 Orientation-even duration
 
-Reversing the local edge exchanges the two directed weights. Duration is invariant under this exchange:
+Reversing the relation exchanges the directed weights. Duration is invariant under this exchange:
 
 \[
 \boxed{F(W_+,W_-)=F(W_-,W_+).}
 \]
 
-Therefore
+Hence
 
 \[
-c_+=c_-=:C.
+c_+=c_-=:C>0
 \]
 
-Positivity gives \(C>0\), and hence
+and therefore
 
 \[
 \boxed{
@@ -101,75 +99,97 @@ F(W_+,W_-)=C(W_++W_-)=C\mathfrak a.
 }
 \]
 
-Thus the symmetric transition activity is the unique continuous local temporal density satisfying independent-channel extensivity and orientation-evenness, up to one positive multiplicative scale.
+Thus symmetric transition activity is the unique continuous local extensive orientation-even duration density up to one positive multiplicative scale.
 
-### 2.3 Reparameterization covariance
+## 3. Local parameter covariance and edge duration
 
-Treat directed transition weights as one-densities with respect to the ordering label. Under an increasing relabeling
+Choose any admissible increasing local parameter \(\lambda_e\) along the directed relation. This parameter is a coordinate on the relation carrier, not a physical clock.
+
+Under
 
 \[
-\lambda'=f(\lambda),
+\lambda'_e=f(\lambda_e),
 \qquad
-\frac{d\lambda'}{d\lambda}>0,
+\frac{d\lambda'_e}{d\lambda_e}>0,
 \]
+
+the directed traffic transforms as a one-density,
 
 \[
 W'_\pm
-=W_\pm\frac{d\lambda}{d\lambda'}.
-\]
-
-The derived density therefore transforms as
-
-\[
-F'
-=F\frac{d\lambda}{d\lambda'}.
+=W_\pm\frac{d\lambda_e}{d\lambda'_e}.
 \]
 
 Hence
 
 \[
-\boxed{F'd\lambda'=F d\lambda.}
+F'
+=F\frac{d\lambda_e}{d\lambda'_e}
 \]
 
-The remaining constant \(C\) is a clock-unit scale. Intrinsic activity units choose \(C=1\); physical clock calibration supplies the later conversion factor.
+and
 
-## 3. Intrinsic temporal measure
+\[
+\boxed{F'd\lambda'_e=F d\lambda_e.}
+\]
 
-With the intrinsic choice \(C=1\), define
+In intrinsic activity units choose \(C=1\). The invariant duration weight carried by one realized relation is
 
 \[
 \boxed{
-d\Theta=\mathfrak a\,d\lambda.}
-\]
-
-Then
-
-\[
-\boxed{d\Theta'=d\Theta.}
-\]
-
-For an interval of relational history \(\Gamma_{12}\),
-
-\[
-\boxed{
-\Theta[\Gamma_{12}]
-=\int_{\Gamma_{12}}\mathfrak a\,d\lambda.
+\theta(e)
+:=\int_e\mathfrak a\,d\lambda_e>0.
 }
 \]
 
-Positivity of \(\mathfrak a\) gives positive accumulation on every active interval. Integration gives exact path concatenation,
+For an infinitesimal relation segment,
+
+\[
+\boxed{d\Theta=\mathfrak a\,d\lambda_e.}
+\]
+
+The remaining overall scale is fixed only when a physical reference clock is calibrated.
+
+## 4. Composition additivity
+
+For two composable realized relations
+
+\[
+e_2\circ e_1,
+\qquad
+t(e_1)=s(e_2),
+\]
+
+define
 
 \[
 \boxed{
-\Theta[\Gamma_{13}]
-=\Theta[\Gamma_{12}]
-+\Theta[\Gamma_{23}].
+\theta(e_2\circ e_1)
+:=\theta(e_1)+\theta(e_2).
 }
 \]
 
-The intrinsic temporal coordinate is therefore an additive measure of realized relational activity.
+For a finite composable word
 
-## 4. Temporal orientation
+\[
+P_n=e_n\circ\cdots\circ e_1,
+\]
+
+\[
+\boxed{
+\Theta(P_n)=\sum_{k=1}^{n}\theta(e_k).
+}
+\]
+
+Positivity gives
+
+\[
+\Theta(P_{n+1})-\Theta(P_n)=\theta(e_{n+1})>0.
+\]
+
+00F uses this strict growth on relation prefixes to derive temporal precedence without taking an ordered temporal path as primitive input.
+
+## 5. Temporal orientation
 
 Define the normalized directed coordinate
 
@@ -182,13 +202,11 @@ Define the normalized directed coordinate
 }
 \]
 
-Under edge-orientation reversal
+Under edge reversal
 
 \[
 A\mapsto-A,
 \]
-
-the temporal coordinates transform as
 
 \[
 \boxed{d\Theta\mapsto d\Theta,}
@@ -206,11 +224,11 @@ At the symmetric point \(A=0\),
 }
 \]
 
-Thus the duration measure remains active at the orientation-symmetric point. Duration and arrow/orientation are distinct coordinates of the temporal primitive.
+Thus duration and directional affinity are distinct coordinates.
 
-## 5. Shannon affinity form
+## 6. Shannon affinity form
 
-00B supplies the transition affinity in bits,
+00B supplies
 
 \[
 \sigma
@@ -224,7 +242,7 @@ Therefore
 \[
 \boxed{
 d\Theta
-=2M\cosh\!\left(\frac{\ln2}{2}\sigma\right)d\lambda,
+=2M\cosh\!\left(\frac{\ln2}{2}\sigma\right)d\lambda_e,
 }
 \]
 
@@ -235,7 +253,7 @@ d\Theta
 }
 \]
 
-Using the 00C mobility,
+Using
 
 \[
 M_{ab}
@@ -244,11 +262,9 @@ M_{ab}
 {\tfrac12[\eta_R(a)+\eta_R(b)]},
 \]
 
-the duration density becomes
-
 \[
 \boxed{
-\frac{d\Theta}{d\lambda}
+\frac{d\Theta}{d\lambda_e}
 =
 2\frac{\sqrt{\rho_R(a)\rho_R(b)}}
 {\tfrac12[\eta_R(a)+\eta_R(b)]}
@@ -256,7 +272,7 @@ the duration density becomes
 }
 \]
 
-This gives the direct relational-information map
+Hence
 
 \[
 \boxed{
@@ -269,24 +285,22 @@ This gives the direct relational-information map
 The fixed information-phase normalization
 
 \[
-\boxed{
-\kappa=\frac{\ln2}{24\pi}
-}
+\boxed{\kappa=\frac{\ln2}{24\pi}}
 \]
 
-governs the phase-link sector, while \(d\Theta\) is the derived activity measure used for clock comparison.
+continues to govern the phase-link sector.
 
-## 6. Relational lapse as a derived ratio
+## 7. Relational lapse as a derived ratio
 
-For two active subsystems \(x\) and \(r\) referred to the same ordering label,
+For two active subsystems \(x\) and \(r\) evaluated on a common relational comparison patch,
 
 \[
-d\Theta_x=\mathfrak a_x d\lambda,
+d\Theta_x=\mathfrak a_xd\lambda,
 \qquad
-d\Theta_r=\mathfrak a_r d\lambda.
+d\Theta_r=\mathfrak a_rd\lambda.
 \]
 
-Their intrinsic clock ratio is
+Then
 
 \[
 \boxed{
@@ -296,66 +310,58 @@ N_R(x|r)
 }
 \]
 
-The common ordering label cancels. For three clocks,
+For three clocks,
 
 \[
-\boxed{
-N_{x|s}=N_{x|r}N_{r|s}.
-}
+\boxed{N_{x|s}=N_{x|r}N_{r|s}.}
 \]
 
-After calibration of the reference clock by \(T_r>0\),
+After reference calibration
 
 \[
 \boxed{dt=T_r\,d\Theta_r,}
 \]
 
-the local calibrated elapsed interval follows as
+\[
+\boxed{d\hat\tau_x=N_R(x|r)dt.}
+\]
+
+## 8. Temporal primitive handoff
+
+The local derived pair is
 
 \[
 \boxed{
-d\hat\tau_x
-=T_r\,d\Theta_x
-=N_R(x|r)\,dt.
+\mathbb T_e=(d\Theta_e,\chi_e).
 }
 \]
 
-The multiplicative scale left by the uniqueness theorem is therefore fixed at the clock-calibration layer.
-
-## 7. Temporal primitive
-
-The derived local temporal primitive is the typed pair
-
-\[
-\boxed{
-\mathbb T_{ab}
-=\left(d\Theta_{ab},\chi_{ab}\right).
-}
-\]
-
-Its components carry distinct roles:
+Its typed handoff is
 
 ```text
-ordering relation      : lambda labels admitted precedence
+directed relation      : source -> target composability
+local relation parameter: lambda_e [coordinate only]
 directed traffic       : W_plus, W_minus
 unique duration density: activity = W_plus + W_minus [up to clock scale]
-intrinsic duration     : dTheta = activity d_lambda
+invariant edge duration: theta(e) = integral activity d_lambda_e
 orientation coordinate : chi = current/activity
-clock comparison       : N_R = dTheta_x/dTheta_ref
-clock calibration      : dt = T_ref dTheta_ref
-calibrated local time  : d tau_hat = N_R dt
-phase topology         : kappa-weighted Shannon/geometric link
+composition accumulation: Theta(P_n) = sum theta(e_k)
+derived precedence      : 00F prefix-order embedding
+clock comparison        : N_R = dTheta_x/dTheta_ref
+clock calibration       : dt = T_ref dTheta_ref
 ```
 
 The derivational sequence is
 
 \[
 \boxed{
-\text{RELATIONAL TRANSITIONS}
+\text{DIRECTED RELATIONAL COMPOSABILITY}
 \to
-\text{EXTENSIVE EVEN ACTIVITY MEASURE}
+\text{EXTENSIVE EVEN ACTIVITY}
 \to
-(d\Theta,\chi)
+(\theta,\chi)
+\to
+\text{00F DERIVED PRECEDENCE}
 \to
 N_R
 \to
@@ -363,20 +369,21 @@ N_R
 }
 \]
 
-## 8. GREMLIN candidate audit contract
+## 9. GREMLIN candidate audit contract
 
-GREMLIN remains candidate-only. The relational-isomorphism candidate submitted by this gate is
+GREMLIN remains candidate-only. The candidate relation is
 
 ```text
-independent transition superposition -> extensive path density
+independent transition superposition -> extensive local density
 orientation exchange                 -> even duration / odd direction
-positive symmetric traffic           -> intrinsic duration measure
-antisymmetric traffic                -> orientation coordinate
-ratio of duration measures           -> relational lapse
-reference calibration                -> elapsed clock reading
+local parameter covariance           -> invariant edge duration
+relation composition                 -> additive duration accumulation
+positive edge duration               -> strict prefix growth in 00F
+activity ratio                        -> relational lapse
+reference calibration                -> physical clock reading
 ```
 
-Promotion requires algebraic tests for positivity, independent-channel additivity, reparameterization invariance, orientation reversal, Shannon-affinity consistency, clock-ratio composition and fail-closed domain behavior.
+Promotion requires algebraic tests for positivity, channel extensivity, reparameterization invariance, composition additivity, orientation reversal, Shannon-affinity consistency, clock-ratio composition and fail-closed domain behavior.
 
 Reference implementation: `src/idt/temporal_primitive_activity.py`.
 Reference tests: `tests/reference/test_temporal_primitive_activity.py`.
