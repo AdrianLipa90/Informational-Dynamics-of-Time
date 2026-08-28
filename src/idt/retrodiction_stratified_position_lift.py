@@ -72,10 +72,11 @@ def certify_stratified_global_reduction(
 
     Because the retained residence signature contains the exact active sequence,
     histories with different active sequences cannot share the same augmented
-    observation.  Within one fixed sequence, the complete ordered post-segment
+    observation. Within one fixed sequence, the complete ordered post-segment
     position lineage has an exact constructive inverse to the event kicks (07K).
-    Hence global injectivity is reduced to reconstructing that position lineage
-    from the retained augmented observation inside every fixed-sequence stratum.
+    Together with the 07R fiber-lift composition theorem, global injectivity is
+    therefore reduced to reconstructing that position lineage from the retained
+    augmented observation inside every fixed-sequence stratum.
     """
     sequence = _active_sequence(active_sequence)
     dts = tuple(float(value) for value in delta_taus)
@@ -115,10 +116,10 @@ def retrodict_from_retained_position_lift(
 ) -> ConstructivePositionLiftRecovery:
     """Compose a retained residence stratum with a decoded position-lineage lift.
 
-    This function is the executable constructive part of the 07Q implication.
-    It accepts an already-decoded ordered position lineage and then invokes the
-    exact 07K inverse using the active sequence retained by the residence layer.
-    It does not construct the missing Y_aug -> position-lineage decoder.
+    This function is the executable constructive part of the 07R implication.
+    It accepts an already-decoded ordered position lineage and invokes the exact
+    07K inverse using the active sequence retained by the residence layer. It
+    keeps the remaining Y_aug -> position-lineage decoder as a separate gate.
     """
     if not isinstance(residence_signature, ResidenceLineageSignature):
         raise StratifiedPositionLiftError(
@@ -147,7 +148,7 @@ def retrodict_from_retained_position_lift(
         )
     if recovered.observation_dimension != certificate.position_lineage_dimension:
         raise StratifiedPositionLiftError(
-            "decoded position-lineage dimension does not match the 07Q certificate"
+            "decoded position-lineage dimension does not match the stratified certificate"
         )
     return ConstructivePositionLiftRecovery(
         active_sequence=sequence,
