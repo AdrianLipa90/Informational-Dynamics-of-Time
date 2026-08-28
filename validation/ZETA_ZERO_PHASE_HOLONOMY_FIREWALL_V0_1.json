@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_ZETA_ZERO_PHASE_HOLONOMY_FIREWALL_V0_1",
+  "status": "FROZEN_ZERO_PHASE_GATE_PASS_LOCAL_OFF_ZERO_NEUTRAL_CLOSED_GRADIENT_HOLONOMY_TRIVIAL_THEOREM_PASS",
+  "branch": "feat/zeta-collatz-schrodinger-temporal-fuzziness-v0.1",
+  "formalism": [
+    "formalism/02H_zeta_zero_phase_bulk_discriminator.md",
+    "formalism/02I_zeta_exact_gradient_holonomy_firewall.md"
+  ],
+  "implementation": "src/idt/zeta_zero_collatz_phase_discriminator.py",
+  "tests": "tests/reference/test_zeta_zero_collatz_phase_discriminator.py",
+  "zero_fixture": {
+    "count": 20,
+    "source_repository": "AdrianLipa90/secret-of-a-half",
+    "source_path": "data/processed/first_20_zeta_zeros.csv",
+    "source_blob_sha": "9a7e7bc48dc598d080895fe179a10fe078e9b7d7",
+    "idt_fixture": "data/reference/riemann_zeta_zeros_first20_v0_1.csv"
+  },
+  "phase_texture": "L_k(gamma)=exp[-i gamma (ln p_{k+1}-ln p_k)]",
+  "collatz_coherence": "Q_W(gamma)=abs(mean(Mhat_k L_k(gamma)))",
+  "local_controls": {
+    "offsets": [-1.0, -0.5, -0.25, -0.125, 0.125, 0.25, 0.5, 1.0],
+    "bulk_prime_window_starts": [50, 100, 250, 500, 1000],
+    "window_size": 128,
+    "mean_ratio_tolerance": 0.0005,
+    "per_zero_ratio_tolerance": 0.002,
+    "verdict": "ZERO_ORDINATES_LOCALLY_NEUTRAL_UNDER_DECLARED_PHASE_COHERENCE"
+  },
+  "exact_gradient_firewall": {
+    "vertex_phase": "u_k=exp(-i gamma ln p_k)",
+    "link": "L_{k,k+1}=u_{k+1} u_k^*",
+    "closed_product": "prod_k L_{k,k+1}=1",
+    "holonomy_phase": "0 mod 2pi",
+    "scope": "all finite real gamma including recorded zeta-zero ordinates",
+    "verdict": "NONZERO_HOLONOMY_REQUIRES_INDEPENDENT_NONEXACT_LINK_COMPONENT"
+  },
+  "hosted_reference_gate": {
+    "run_id": 33217486268,
+    "run_number": 740,
+    "job_id": 99004260679,
+    "tested_head_sha": "782573eb483008cee4bff9a83957c28e36901693",
+    "result": "621 passed in 17.42s",
+    "conclusion": "success"
+  },
+  "active_next_gate": "EDGE_NATIVE_NONEXACT_ZETA_COLLATZ_CONNECTION"
+}
