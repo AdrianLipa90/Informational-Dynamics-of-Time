@@ -1,20 +1,20 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_ACTIVE / ORCHORBITAL_ATTRACTOR_REFERENCE_CANDIDATE / RETRODICTION_PROVISIONAL_DOWNSTREAM`
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_ATTRACTOR_REFERENCE_CANDIDATE / RETRODICTION_PROVISIONAL_DOWNSTREAM`
 
-The canonical admitted frontier remains
+The proposed admitted frontier after merge of the current evidence branch is
 
 \[
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
 \]
 
-The dependency path being developed downstream of the active Memory node is
+The active downstream dependency path is
 
 \[
 \boxed{
 \mathrm{Memory}
 \rightarrow
-\mathrm{ORCHORBITAL\ Attractors}
+\mathbf{ORCHORBITAL\ Attractors}
 \rightarrow
 \mathrm{Retrodiction}.
 }
@@ -51,6 +51,8 @@ and the reversible reference cell
 \qquad
 \mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
 \]
+
+The complete hosted repository reference suite executed on 28 August 2026 and returned `431 passed in 7.08s`. The exact evidence binding is `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`. This closes the declared repository-wide Memory admission condition on the promotion branch.
 
 ## ORCHORBITAL attractor extension
 
@@ -139,11 +141,13 @@ X_M
 }
 \]
 
+The current ORCHORBITAL implementation has targeted reference PASS and is included in the successful 431-test hosted suite. Its next admission work is long-trajectory residence/switch provenance, hierarchical attractor families and typed links for the retained ORCHORBITAL observables.
+
 ## Retrodiction downstream staging
 
-The tested Retrodiction stack remains provisional downstream and includes withheld-lineage inversion, observability/rank admission, checkpoint selection, estimation, covariance/Fisher uncertainty geometry and covariance-preserving permutation nulls. It consumes the admitted Memory/ORCHORBITAL path and does not redefine the upstream temporal primitives.
+The tested Retrodiction stack remains provisional downstream and includes withheld-lineage inversion, observability/rank admission, checkpoint selection, estimation, covariance/Fisher uncertainty geometry and covariance-preserving permutation nulls. It consumes the admitted Memory path and the developing ORCHORBITAL path.
 
-Parent Memory admission still requires a real full repository reference-suite result. The presence of tested ORCHORBITAL and Retrodiction implementations therefore does not by itself move the canonical admitted frontier beyond Memory.
+The Memory repository-wide admission condition is now satisfied on the promotion branch. ORCHORBITAL is the active parent gate before Retrodiction admission.
 
 ## 01K temporal information curvature interface
 
@@ -173,4 +177,4 @@ Temporal evolution is exact by the quotient rule,
 }
 \]
 
-This interface exports a curvature-typed scalar and its temporal rate to RFC. The later dynamic `Lambda0` coupling remains a downstream RFC closure question, so the IDT canonical admitted frontier remains at Memory.
+This interface exports a curvature-typed scalar and its temporal rate to RFC. The later dynamic `Lambda0` coupling remains a downstream RFC closure question. The current temporal admission frontier is Memory, with ORCHORBITAL now the active next node.
