@@ -1,0 +1,63 @@
+{
+  "schema": "IDT_ZETA_COLLATZ_TEMPORAL_FUZZINESS_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/zeta-collatz-schrodinger-temporal-fuzziness-v0.1",
+  "formalism": "formalism/02E_zeta_collatz_prime_frame_schrodinger_fuzziness.md",
+  "implementation": "src/idt/zeta_collatz_temporal_fuzziness.py",
+  "tests": "tests/reference/test_zeta_collatz_temporal_fuzziness.py",
+  "exact_inputs": {
+    "prime_factor": "z_p(sigma,tau) = p^(-sigma) exp(-i tau ln p)",
+    "prime_generator_identity": "i d_tau z_p = ln(p) z_p",
+    "zeta_prime_generator": "D_zeta = diag(ln p)",
+    "collatz_frame_laplacian": "L_C = D_C - W_C with symmetric verified-orbit overlap weights",
+    "intrinsic_evolution_coordinate": "Theta inherited from 00E/00F"
+  },
+  "candidate_operator": {
+    "hamiltonian": "H_zetaC = alpha_zeta * centered(D_zeta) + g_C * L_C",
+    "flow": "i d_Theta psi = H_zetaC psi",
+    "propagator": "U(delta_Theta) = exp(-i H_zetaC delta_Theta)",
+    "discrete_fuzziness": "N_eff = 1 / sum_k |psi_k|^4",
+    "continuous_field": "Psi_T(vartheta;Theta) = normalized sum_k psi_k(Theta) g_epsilon(vartheta-Theta_k)"
+  },
+  "declared_gates": [
+    "prime_frame_validation",
+    "finite_collatz_orbit_verification",
+    "exact_log_prime_generator_identity",
+    "symmetric_collatz_overlap",
+    "collatz_laplacian_psd",
+    "zeta_collatz_hamiltonian_hermitian",
+    "intrinsic_theta_unitarity",
+    "zero_coupling_population_control",
+    "connected_coupling_frame_spread",
+    "frame_permutation_spectral_invariance",
+    "continuous_fuzzy_field_normalization",
+    "continuous_width_response",
+    "fail_closed_unverified_frame"
+  ],
+  "epistemic_boundary": {
+    "prime_collatz_frames": "MODEL_CANDIDATE",
+    "zeta_zero_resonance_binding": "OPEN_DOWNSTREAM_GATE",
+    "critical_axis_physical_binding": "OPEN_DOWNSTREAM_GATE",
+    "universal_collatz_completion": "OPEN_MATHEMATICAL_GATE",
+    "temporal_wave_coarse_graining": "TARGETED_CANDIDATE"
+  },
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "contract": "prime labels + Collatz lineage -> discrete frames; log-prime zeta generator + Collatz Laplacian -> Hermitian frame flow; derived Theta -> unitary spreading; localized reconstruction -> temporal fuzziness",
+    "live_execution": "UNRECORDED_IN_THIS_RECEIPT"
+  },
+  "hosted_ci": {
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 719,
+    "run_id": 33215368562,
+    "job_id": 98997666270,
+    "tested_pr_merge_sha": "9b51b5a114dd3cda0ec944dc3cd8573354af5895",
+    "tested_head_sha": "0cf9c0606bcf5039d3ab25145deb319a60c80995",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 603,
+    "tests_total": 603,
+    "elapsed_seconds": 12.28
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "IDT_ZETA_COLLATZ_JOINT_ALIGNMENT_V0_1",
+  "status": "LOW_PRIME_ALIGNMENT_WITNESS_PASS_BULK_WINDOW_STABILITY_FAIL_PRIME_BULK_ALIGNMENT_OPEN",
+  "branch": "feat/zeta-collatz-schrodinger-temporal-fuzziness-v0.1",
+  "formalism": "formalism/02G_joint_zeta_collatz_alignment_discriminator.md",
+  "implementation": "src/idt/zeta_collatz_joint_discriminator.py",
+  "tests": "tests/reference/test_zeta_collatz_joint_discriminator.py",
+  "statistic": {
+    "frequency_operator": "D_zeta=diag(ln p - mean(ln p))",
+    "path_operator": "K_C centered by trace and built from first-merge mobilities",
+    "normalization": "both operators divided by Frobenius norm",
+    "alignment_score": "A_zetaC=||[Dhat_zeta,Khat_C]||_F",
+    "null": "permute same Collatz mobility vector while keeping prime ln(p) sequence fixed"
+  },
+  "first_64_prime_window": {
+    "commutator_score": 0.028936147002747912,
+    "permutations": 128,
+    "rng_seed": 20260828,
+    "null_min": 0.0033473405111120445,
+    "null_max": 0.02703775789697496,
+    "lower_tail_fraction": 1.0,
+    "verdict": "LOW_PRIME_JOINT_ALIGNMENT_WITNESS_PASS"
+  },
+  "bulk_window_lower_tail_fractions": {
+    "start_10_count_64": 0.1953125,
+    "start_50_count_64": 0.4296875,
+    "start_100_count_64": 0.546875,
+    "start_250_count_64": 0.0546875,
+    "start_500_count_64": 0.828125
+  },
+  "window_stability_verdict": "FAIL",
+  "interpretive_status": "LOW_PRIME_BOUNDARY_SECTOR_RETAINED_BULK_PROMOTION_OPEN",
+  "hosted_reference_gate": {
+    "run_id": 33216986274,
+    "run_number": 729,
+    "job_id": 99002723385,
+    "tested_head_sha": "44e2e9317de2ba3117e3c225dde1388995d074ef",
+    "result": "614 passed in 12.88s",
+    "conclusion": "success"
+  },
+  "active_next_gate": "BULK_RENORMALIZED_ZETA_ZERO_OR_HOLONOMY_DISCRIMINATOR"
+}
