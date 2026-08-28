@@ -14,15 +14,25 @@ Current included downstream reference chapters:
 - `08H_adaptive_sod_separation.tex` — adaptive SOD separator layer;
 - `08I_orchorbital_residence_conditioning.tex` — event-aware Memory/ORCH residence bridge and global-null residence-label audit;
 - `08J_quotient_fiber_finite_injectivity.tex` — all-collision finite-domain quotient/fiber injectivity gate;
-- `08K_oriented_winding_fiber.tex` — ordered signed ORCHORBITAL winding as an explicit Retrodiction fiber coordinate.
+- `08K_oriented_winding_fiber.tex` — ordered signed ORCHORBITAL winding as an explicit Retrodiction fiber coordinate;
+- `08L_fiber_lift_composition.tex` — exact composition theorem linking retained base/fiber coordinates to an injective position-lineage carrier.
 
 Promotion-branch admitted frontier:
 
 `Temporal Transport -> Memory -> ORCHORBITAL Attractors`.
 
-Retrodiction is the active next dependency gate. The event-aware residence bridge, finite-domain quotient/fiber gate and oriented-winding known-null separator have hosted reference PASS. The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`; the active target is a domain-covering characterization of collision fibers and a separator construction using ordered winding together with retained continuous ORCHORBITAL and SOD coordinates.
+Retrodiction is the active next dependency gate. 07P, 07Q and 07R now organize the global closure as
 
-Memory hosted admission evidence: GitHub Actions run `33193861826`, job `98925901636`, `431 passed in 7.08s`.
+```text
+retained base + fiber coordinates
+-> single-valued position-lineage lift
+-> exact 07K inverse carrier
+-> latent history
+```
+
+The exact 07R theorem states that if the position-lineage carrier `P` is injective and `P = L o (Y,F)` for a single-valued lift `L`, then the augmented retained observation `(Y,F)` is injective. The active constructive target is `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`; the governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+
+Memory hosted admission evidence: run `33193861826`, job `98925901636`, `431 passed in 7.08s`.
 
 ORCHORBITAL completion evidence includes:
 
@@ -34,13 +44,11 @@ ORCHORBITAL completion evidence includes:
 
 Retrodiction evidence includes:
 
-- event-aware residence bridge and known-null label audit run `33197888242`: `485 passed in 13.87s`;
-- exact large-`tau` binary64 elapsed-time hardening run `33198069462`: `486 passed in 8.89s`;
-- residence receipt: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
-- quotient/fiber hosted run `33200684482`, job `98949092398`: `495 passed in 10.14s`;
-- quotient/fiber receipt: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
-- oriented-winding hosted run `33201861565`, job `98953023513`: `502 passed in 8.09s` on tested branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`;
-- oriented-winding receipt: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
+- event-aware residence hardening run `33198069462`: `486 passed in 8.89s`;
+- quotient/fiber run `33200684482`, job `98949092398`: `495 passed in 10.14s`;
+- oriented-winding run `33201861565`, job `98953023513`: `502 passed in 8.09s`;
+- fiber-lift composition run `33202559485`, job `98955383447`: `510 passed in 14.11s` on tested branch head `6abca4ad72c04cdca5d1128e690c17898b8650d7`;
+- 07R receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
 
 Admission receipts:
 
