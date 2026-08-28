@@ -1,107 +1,110 @@
 # Roadmap
 
-The canonical dependency graph is maintained in `formalism/DEPENDENCY_GRAPH.md`.
+The executable dependency authority is `validation/dependency_graph.json`; formal derivations live under `formalism/` and are mirrored into the monograph.
 
 \[
 \boxed{\mathrm{TIR}\to\mathrm{Temporal\ Primitive}\to\mathrm{Temporal\ Wave}\to\mathrm{NOW}\to\mathrm{Bifurcation}\to\mathrm{Temporal\ Transport}\to\mathrm{Memory}\to\mathrm{ORCHORBITAL\ Attractors}\to\mathrm{Retrodiction}\to\mathrm{Retrocausal\ Tests}\to\mathrm{Einstein\ Closure}}
 \]
 
-## Phase A — Temporal core and transport
+Einstein closure also requires the parallel source/field chain
+
+\[
+\boxed{\mathrm{Temporal\ Primitive}\to\mathrm{Gauge\ Covariant\ Noether\ Source}\to\mathrm{Relativistic\ Field\ Bridge}\to\mathrm{Einstein\ Closure}}.
+\]
+
+## Phase A — temporal core and transport
 
 Status: `STRUCTURAL_REFERENCE_GATES_PASS`.
 
-1. Shannon relational information primitives: `PASS`;
-2. geometric phase-link primitives: `PASS`;
-3. transition affinity and relational kinetic decomposition: `PASS`;
-4. gauge-invariant NOW localization: `PASS`;
-5. bifurcation operator reference class: `PASS_FORMAL_REFERENCE_CLASS`;
-6. temporal transport norm/conditioning/cut gate: `PASS_STRUCTURAL_REFERENCE_GATE`.
+Shannon relational information, phase-link geometry, relational kinetics, NOW localization, bifurcation reference class and temporal transport structural gates are present.
 
 ## Phase B — Memory
 
 Status: `MEMORY_REFERENCE_GATE_ADMISSION_PASS / HOSTED_FULL_SUITE_PASS`.
 
-The Memory stack contains Kepler--Newton propagation, event imprint kicks, conditional central-parameter identifiability, CP1 Kähler memory frames, append-only receipts, recall and integrated transport->Memory lineage. Hosted admission run `33193861826`, job `98925901636`, returned `431 passed in 7.08s`.
+Hosted admission run `33193861826`, job `98925901636`, returned `431 passed in 7.08s`.
 
-Admission receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
-
-Parallel derivations remain active for the geometry-derived frame beyond CP1 and direct prediction of \(\mu_M\) from earlier relational primitives.
+Receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
 ## Phase B2 — ORCHORBITAL attractor organization
 
 Status: `ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / HOSTED_FULL_SUITE_PASS`.
 
-The admitted stack contains binding-margin attractor selection, Shannon basin organization, translated Kepler propagation, winding/switch tracking, append-only residence lineage, strict schema, pinned PNCS hierarchy, typed truth/mass/reduction coordinates and residence-weighted semantic mass.
+The admitted stack contains binding-margin attractor selection, translated Kepler propagation, winding/switch tracking, append-only residence lineage, strict schema, pinned PNCS hierarchy and typed observable bindings.
 
 Synchronized admission run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
-Admission receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+Receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-## Phase C — Retrodiction and retrocausal tests
+## Phase C — Retrodiction
 
-Current promotion-branch status:
+Completed layers:
 
-`ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+1. local inverse, observability/rank and dimensional gates;
+2. checkpoint augmentation, estimation and information firewall;
+3. covariance/Fisher uncertainty geometry and null controls;
+4. exact position-lineage inverse and finite-branch controls;
+5. SOD/spatial witnesses and event-aware residence conditioning;
+6. 07P finite-domain quotient/fiber injectivity;
+7. 07Q ordered winding separator;
+8. 07R exact carrier/lift composition theorem;
+9. 07S exact active-sequence stratification;
+10. 07T exact per-stratum position decoder baseline.
 
-Completed Retrodiction layers:
+07T uses the complete Cartesian carrier
 
-1. local withheld-lineage inverse and conditional factor identifiability;
-2. local observability/rank gate and dimensional bounds;
-3. checkpoint augmentation, estimation and information firewall;
-4. covariance/Fisher uncertainty geometry and weighted permutation nulls;
-5. finite-branch exact controls and position-lineage exact inverse;
-6. spatial-offset/divergence and adaptive SOD witnesses;
-7. event-aware residence conditioning and exact provenance firewall;
-8. `07P QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: every distinct-latent base collision in a finite candidate set is audited against declared fiber channels; hosted run `33200684482`, `495 passed in 10.14s`;
-9. `07Q ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS`: ordered signed winding separates the exact reflection null; hosted run `33201861565`, `502 passed in 8.09s`;
-10. `07R FIBER_LIFT_COMPOSITION_THEOREM_PASS`: exact theorem `P injective` and `P=L o (Y,F)` imply `(Y,F)` injective; finite reference hosted run `33202559485`, `510 passed in 14.11s`;
-11. `07S STRATIFIED_GLOBAL_REDUCTION_PASS`: retained active sequence \(\alpha(z)\) exactly separates strata, reducing collision analysis to fixed active-sequence domains;
-12. `07S CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS`: retained sequence plus a decoded position lineage composes through 07K to the generating real two-event kick history;
-13. `07S DECODER_FIREWALL_PASS`: a perturbed admissible position carrier maps to its corresponding distinct history, preserving the typed composition `retained record -> decoder -> carrier -> 07K inverse -> latent history`;
-14. first 07S hosted control run `33203185181`: `1 failed, 517 passed in 11.81s`, identifying an over-strong carrier-rejection expectation;
-15. corrected 07S hosted run `33203339457`, job `98958035895`, tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`: `518 passed in 12.06s`.
+\[
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
+\]
 
-Current exact reduction:
+and a deterministic assembler from base coordinates plus explicit position fibers. For the declared sparse schedule retaining the final position,
+
+\[
+\boxed{|F_{\rm pos}^{baseline}|=2N-2}.
+\]
+
+Corrected hosted 07T run `33204551313`, job `98962152065`, returned `528 passed in 14.20s`.
+
+The all-branch integration tree passed `534/534` in PR #24 and the latest 07T forward-port passed `534/534` in PR #26.
+
+Active next gate:
+
+```text
+POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
+```
+
+Target: replace explicit baseline position coordinates with already retained ordered winding plus the minimum additional continuous ORCHORBITAL/SOD-derived coordinates while preserving a single-valued decoder into the exact 07K carrier.
+
+First analytic candidate:
+
+\[
+\rho_k=\|r_k-c_{a_k}\|,
+\]
 
 \[
 \boxed{
-\mathcal Z=\bigsqcup_s\mathcal Z_s,
-\qquad
-\mathcal Z_s=\{z:\alpha(z)=s\}.
-}
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}+2\pi\Delta W_k)
+\end{pmatrix}.}
 \]
 
-Unequal \(s\) are separated by the retained active-sequence coordinate. For every fixed \(s\), the 07K carrier is
+For the declared schedule this targets `N-1` new radial scalars while reusing the existing winding lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the global promotion coordinate through this compression gate.
 
-\[
-P_s(z)=(r_1,\ldots,r_N),
-\]
-
-and the active constructive gate is
-
-\[
-\boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
-}
-\]
-
-Once a domain-covering family of these per-stratum decoders is established, the exact 07R composition theorem and cross-stratum sequence separation provide the Retrodiction injectivity closure on the admitted domain.
-
-Active next step:
-
-`PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE` — derive the decoder from the already retained ordered winding, continuous ORCHORBITAL and SOD/spatial coordinates, with explicit consistency and injectivity audits.
-
-After Retrodiction admission:
-
-- preregister experiment-specific null calibration before `STATISTICAL_EFFECT` admission;
-- carry the admitted Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
-
-Required later result stack:
+After Retrodiction admission, continue into preregistered retrocausal-test protocols with the established evidence chain
 
 `RAW_OBSERVATION -> STATISTICAL_EFFECT -> CLASSICAL_CHANNEL_AUDIT -> PHYSICAL_CLAIM_STATUS`.
 
-`ANOMALY_DETECTED` and `RETROCAUSAL_CANDIDATE` remain distinct statuses.
+## Phase D — relativistic/spatial closure
 
-## Phase D — spatial branch and Einstein closure
+The parallel IDT source branch now includes executable 01AG charge-projected Maxwell-source hardening. RFC RF-M1/RF-E0 is hardened and merged to RFC `main`, with the Einstein node represented as a dual-prerequisite gate.
 
-Spatial structure enters after the temporal branch admits state, transport, Memory/ORCHORBITAL organization, Retrodiction and clock-calibration structures. Einstein closure remains the final dependency gate.
+Next relativistic promotion coordinates:
+
+- measured RFC carrier-current equality with the independently constructed electromagnetic current;
+- vacuum normalization `mu_*`;
+- charged-matter stress-energy completion;
+- RF-N1C determination of `G` and `kappa_E`;
+- action-level dynamic `Lambda0`;
+- full Einstein closure audit.
