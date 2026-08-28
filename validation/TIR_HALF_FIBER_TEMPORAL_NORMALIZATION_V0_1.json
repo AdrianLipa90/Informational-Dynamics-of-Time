@@ -1,0 +1,46 @@
+{
+  "schema": "IDT_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/tir-half-fiber-temporal-normalization-v0.1",
+  "formalism": "formalism/02JF_tir_half_fiber_temporal_normalization.md",
+  "implementation": "src/idt/tir_half_fiber_temporal_normalization.py",
+  "tests": "tests/reference/test_tir_half_fiber_temporal_normalization.py",
+  "tir_source": {
+    "repository": "AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations",
+    "pr": 96,
+    "branch": "feat/tir-relational-half-seam-v0.1",
+    "head": "46ad51b19471be509cda536365af77998996e5b7",
+    "export": [
+      "FIRST_DISTINCTION_HALF",
+      "HALF_FIBER_U1",
+      "ABSOLUTE_PHASE_RATE_UNDERDETERMINATION",
+      "COMMON_CYCLE_RELATIVE_PHASE_RATE_RATIO"
+    ]
+  },
+  "derived_coordinates": {
+    "intrinsic_phase_rate": "Omega_Theta = (dphi/dlambda)/activity = dphi/dTheta",
+    "intrinsic_information_rate": "Gamma_I^(Theta) = kappa Omega_Theta",
+    "relational_lapse": "N_R = activity_x/activity_ref",
+    "calibrated_local_phase_rate": "dphi/dtau_hat_x = Omega_Theta/T_ref",
+    "coordinate_local_rate_relation": "dphi/dt = N_R dphi/dtau_hat_x",
+    "common_cycle_average_ratio": "Omega_bar_i/Omega_bar_j = m_i/m_j",
+    "modular_support_count": "N frame windings -> N+1 glued supports"
+  },
+  "declared_gates": [
+    "reparameterization_invariant_intrinsic_phase_rate",
+    "kappa_information_rate_identity_after_temporal_normalization",
+    "relational_lapse_phase_rate_bridge",
+    "common_cycle_winding_ratio",
+    "modular_winding_support_count",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "absolute_physical_time_unit": "DOWNSTREAM_REFERENCE_CLOCK_CALIBRATION",
+    "pointwise_rate_ratio": "OPEN_WITHOUT_SYNCHRONIZATION_LAW",
+    "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE",
+    "specific_tir_fiber_to_specific_idt_seam_binding": "OPEN"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
