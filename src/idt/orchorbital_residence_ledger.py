@@ -16,6 +16,20 @@ from .orchorbital import ORCHORBITALError, ORCHORBITALStep
 
 
 RECEIPT_SCHEMA = "idt.orchorbital-residence-receipt/v1"
+_RECEIPT_KEYS = {
+    "schema",
+    "index",
+    "active_attractor",
+    "next_attractor",
+    "post_segment_leak",
+    "delta_tau_hex",
+    "winding_increment_hex",
+    "switched_after_segment",
+    "state_before_sha256",
+    "state_after_sha256",
+    "previous_receipt_sha256",
+    "receipt_sha256",
+}
 
 
 @dataclass(frozen=True)
@@ -118,6 +132,28 @@ def _receipt_hash(receipt: ORCHORBITALResidenceReceipt) -> str:
 
 
 def _validate_receipt_fields(receipt: ORCHORBITALResidenceReceipt) -> None:
+    if type(receipt.index) is not int:
+        raise ORCHORBITALError("receipt index must be an integer")
+    if type(receipt.active_attractor) is not str:
+        raise ORCHORBITALError("receipt active attractor must be a string")
+    if receipt.next_attractor is not None and type(receipt.next_attractor) is not str:
+        raise ORCHORBITALError("receipt next attractor must be null or a string")
+    if type(receipt.post_segment_leak) is not bool:
+        raise ORCHORBITALError("receipt post_segment_leak must be boolean")
+    if type(receipt.switched_after_segment) is not bool:
+        raise ORCHORBITALError("receipt switched_after_segment must be boolean")
+    for label, value in (
+        ("delta_tau_hex", receipt.delta_tau_hex),
+        ("winding_increment_hex", receipt.winding_increment_hex),
+        ("state_before_sha256", receipt.state_before_sha256),
+        ("state_after_sha256", receipt.state_after_sha256),
+        ("receipt_sha256", receipt.receipt_sha256),
+    ):
+        if type(value) is not str:
+            raise ORCHORBITALError(f"receipt {label} must be a string")
+    if receipt.previous_receipt_sha256 is not None and type(receipt.previous_receipt_sha256) is not str:
+        raise ORCHORBITALError("receipt previous hash must be null or a string")
+
     if receipt.index < 0:
         raise ORCHORBITALError("receipt index must be non-negative")
     if not receipt.active_attractor.strip():
@@ -155,14 +191,24 @@ def residence_receipt_from_step(
     index: int,
     previous_receipt_sha256: str | None,
 ) -> ORCHORBITALResidenceReceipt:
-    if index < 0:
-        raise ORCHORBITALError("receipt index must be non-negative")
+    if type(index) is not int or index < 0:
+        raise ORCHORBITALError("receipt index must be a non-negative integer")
     if index == 0 and previous_receipt_sha256 is not None:
         raise ORCHORBITALError("genesis receipt cannot have a previous hash")
-    if index > 0 and (previous_receipt_sha256 is None or not _is_sha256(previous_receipt_sha256)):
+    if index > 0 and (
+        type(previous_receipt_sha256) is not str or not _is_sha256(previous_receipt_sha256)
+    ):
         raise ORCHORBITALError("non-genesis receipt requires a valid previous hash")
+    if type(step.active_attractor) is not str:
+        raise ORCHORBITALError("step active attractor must be a string")
+    if type(step.field_after.leak_mode) is not bool:
+        raise ORCHORBITALError("step post-segment leak flag must be boolean")
+    if type(step.switched_after_segment) is not bool:
+        raise ORCHORBITALError("step switch flag must be boolean")
+    if step.field_after.active_attractor is not None and type(step.field_after.active_attractor) is not str:
+        raise ORCHORBITALError("step next attractor must be null or a string")
 
-    active = str(step.active_attractor).strip()
+    active = step.active_attractor.strip()
     if not active:
         raise ORCHORBITALError("step active attractor must be non-empty")
     delta_tau = float(step.state_after.tau_internal - step.state_before.tau_internal)
@@ -172,14 +218,14 @@ def residence_receipt_from_step(
     if not math.isfinite(winding):
         raise ORCHORBITALError("step winding increment must be finite")
 
-    post_leak = bool(step.field_after.leak_mode)
+    post_leak = step.field_after.leak_mode
     next_attractor = None if post_leak else step.field_after.active_attractor
     if next_attractor is not None:
-        next_attractor = str(next_attractor).strip()
+        next_attractor = next_attractor.strip()
         if not next_attractor:
             raise ORCHORBITALError("step next attractor must be non-empty when bound")
     expected_switch = next_attractor != active
-    if bool(step.switched_after_segment) != expected_switch:
+    if step.switched_after_segment != expected_switch:
         raise ORCHORBITALError("step switch flag disagrees with evaluated field lineage")
 
     draft = ORCHORBITALResidenceReceipt(
@@ -249,28 +295,47 @@ def receipt_to_dict(receipt: ORCHORBITALResidenceReceipt) -> dict[str, object]:
 
 
 def receipt_from_dict(value: dict[str, object]) -> ORCHORBITALResidenceReceipt:
-    if value.get("schema") != RECEIPT_SCHEMA:
+    if type(value) is not dict:
+        raise ORCHORBITALError("ORCHORBITAL residence receipt must be a JSON object")
+    if set(value) != _RECEIPT_KEYS:
+        raise ORCHORBITALError("ORCHORBITAL residence receipt keys do not match schema")
+    if value["schema"] != RECEIPT_SCHEMA:
         raise ORCHORBITALError("unsupported ORCHORBITAL residence receipt schema")
-    try:
-        receipt = ORCHORBITALResidenceReceipt(
-            index=int(value["index"]),
-            active_attractor=str(value["active_attractor"]),
-            next_attractor=None if value["next_attractor"] is None else str(value["next_attractor"]),
-            post_segment_leak=bool(value["post_segment_leak"]),
-            delta_tau_hex=str(value["delta_tau_hex"]),
-            winding_increment_hex=str(value["winding_increment_hex"]),
-            switched_after_segment=bool(value["switched_after_segment"]),
-            state_before_sha256=str(value["state_before_sha256"]),
-            state_after_sha256=str(value["state_after_sha256"]),
-            previous_receipt_sha256=(
-                None
-                if value["previous_receipt_sha256"] is None
-                else str(value["previous_receipt_sha256"])
-            ),
-            receipt_sha256=str(value["receipt_sha256"]),
-        )
-    except (KeyError, TypeError, ValueError) as exc:
-        raise ORCHORBITALError("malformed ORCHORBITAL residence receipt") from exc
+    if type(value["index"]) is not int:
+        raise ORCHORBITALError("receipt index JSON type must be integer")
+    if type(value["active_attractor"]) is not str:
+        raise ORCHORBITALError("receipt active_attractor JSON type must be string")
+    if value["next_attractor"] is not None and type(value["next_attractor"]) is not str:
+        raise ORCHORBITALError("receipt next_attractor JSON type must be null or string")
+    if type(value["post_segment_leak"]) is not bool:
+        raise ORCHORBITALError("receipt post_segment_leak JSON type must be boolean")
+    if type(value["switched_after_segment"]) is not bool:
+        raise ORCHORBITALError("receipt switched_after_segment JSON type must be boolean")
+    for key in (
+        "delta_tau_hex",
+        "winding_increment_hex",
+        "state_before_sha256",
+        "state_after_sha256",
+        "receipt_sha256",
+    ):
+        if type(value[key]) is not str:
+            raise ORCHORBITALError(f"receipt {key} JSON type must be string")
+    if value["previous_receipt_sha256"] is not None and type(value["previous_receipt_sha256"]) is not str:
+        raise ORCHORBITALError("receipt previous_receipt_sha256 JSON type must be null or string")
+
+    receipt = ORCHORBITALResidenceReceipt(
+        index=value["index"],
+        active_attractor=value["active_attractor"],
+        next_attractor=value["next_attractor"],
+        post_segment_leak=value["post_segment_leak"],
+        delta_tau_hex=value["delta_tau_hex"],
+        winding_increment_hex=value["winding_increment_hex"],
+        switched_after_segment=value["switched_after_segment"],
+        state_before_sha256=value["state_before_sha256"],
+        state_after_sha256=value["state_after_sha256"],
+        previous_receipt_sha256=value["previous_receipt_sha256"],
+        receipt_sha256=value["receipt_sha256"],
+    )
     _validate_receipt_fields(receipt)
     return receipt
 
@@ -288,7 +353,7 @@ def read_residence_ledger(path: str | os.PathLike[str]) -> tuple[ORCHORBITALResi
             value = json.loads(line)
         except json.JSONDecodeError as exc:
             raise ORCHORBITALError(f"invalid residence ledger JSON at line {line_number}") from exc
-        if not isinstance(value, dict):
+        if type(value) is not dict:
             raise ORCHORBITALError(f"residence ledger line {line_number} must be an object")
         receipts.append(receipt_from_dict(value))
     verify_residence_receipts(receipts)
