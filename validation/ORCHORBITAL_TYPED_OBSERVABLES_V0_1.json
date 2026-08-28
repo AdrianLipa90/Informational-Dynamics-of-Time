@@ -1,0 +1,59 @@
+{
+  "schema": "IDT_ORCHORBITAL_TYPED_OBSERVABLES_V0_1",
+  "status": "PASS_SOURCE_PINNED_TYPED_OBSERVABLE_REFERENCE",
+  "canon_allowed": false,
+  "promotion_ready": true,
+  "created_utc": "2026-08-28T17:55:00Z",
+  "upstream": {
+    "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+    "commit": "7a54596c1794be29e0b85f5c363213cc81eb87d7",
+    "observable_contract": "PNCS_ORCHORBITAL_BINDING_V0_27",
+    "observable_source": "src/phasenav_natural_code/orch_orbital_core_v27.py",
+    "reduction_source": "src/phasenav_natural_code/orch_orbital_reduction_v27.py"
+  },
+  "idt": {
+    "implementation": "src/idt/orchorbital_pncs_observables.py",
+    "reference_tests": "tests/reference/test_orchorbital_pncs_observables.py",
+    "implementation_commit": "1b5eec4a7d984abb0a471a3acd23089257d6f9fd",
+    "test_commit": "285a9dd853a6e6c187f5e1f193089b4c23bcf022",
+    "formalism": "formalism/06K_orchorbital_typed_observables.md"
+  },
+  "controls": {
+    "truth_scalar_typed_id": "PASS",
+    "truth_scalar_domain": "PASS",
+    "truth_scalar_source_pin": "PASS",
+    "semantic_mass_projection_provenance": "PASS",
+    "semantic_mass_mass_binding_pair": "PASS",
+    "complete_mass_coverage_gate": "PASS",
+    "reduction_typed_ids": "PASS",
+    "reduction_threshold_equivalence": "PASS",
+    "selected_orbital_readiness_constraint": "PASS",
+    "separate_typed_observable_carriers": "PASS",
+    "residence_weighted_semantic_mass": "PASS",
+    "missing_active_mass_fail_closed": "PASS"
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33196818703,
+    "run_number": 557,
+    "job_id": 98935954122,
+    "python": "3.12.14",
+    "runner_image": "ubuntu-24.04",
+    "command": "python -m pytest -q tests/reference",
+    "tests_passed": 475,
+    "tests_failed": 0,
+    "duration_seconds": 11.91,
+    "conclusion": "success",
+    "tested_branch_commit": "285a9dd853a6e6c187f5e1f193089b4c23bcf022",
+    "tested_pr_merge_commit": "00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f",
+    "tested_pr_merge_tree": "42b93983941098c02b350d9fb7bf18536ef4aeee"
+  },
+  "dependency_state": {
+    "memory": "REFERENCE_GATE_ADMISSION_PASS_ON_PROMOTION_BRANCH",
+    "orchorbital_residence": "REFERENCE_COMPONENT_PASS",
+    "orchorbital_hierarchy": "REFERENCE_COMPONENT_PASS",
+    "orchorbital_typed_observables": "REFERENCE_COMPONENT_PASS",
+    "orchorbital_overall": "ADMISSION_CONDITIONS_SATISFIED_PENDING_COMBINED_RECEIPT_AND_FINAL_SUITE",
+    "next": "COMBINED_ORCHORBITAL_ADMISSION"
+  }
+}
