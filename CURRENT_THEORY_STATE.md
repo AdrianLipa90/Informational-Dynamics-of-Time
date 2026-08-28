@@ -1,6 +1,6 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The proposed admitted frontier after merge of the current promotion branch is
 
@@ -74,10 +74,12 @@ Each admitted smooth segment follows the active-centre translated Kepler law
 =-\mu_a\frac{m-c_a}{\|m-c_a\|^3},
 \]
 
-with winding increment
+with signed winding increment
 
 \[
+\boxed{
 \Delta W_a=\frac{1}{2\pi}\operatorname{wrap}(\theta_{n+1}-\theta_n).
+}
 \]
 
 The residence layer persists exact segment lineage. For each attractor \(i\), maximal contiguous residence episodes carry
@@ -183,7 +185,7 @@ The earlier continuous ORCHORBITAL coordinate separates the pair,
 }
 \]
 
-The current Retrodiction information channels remain distinctly typed as
+The Retrodiction information channels remain distinctly typed as
 
 \[
 \boxed{
@@ -193,13 +195,13 @@ The current Retrodiction information channels remain distinctly typed as
 \;\mid\;
 \text{spatial/SOD coordinates}
 \;\mid\;
-\text{holonomy channels}
+\text{oriented winding/holonomy}
 \;\mid\;
 \text{provenance commitments}.
 }
 \]
 
-The formal and evidence bindings are `formalism/07O_orchorbital_residence_conditioned_retrodiction.md` and `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`. The hardened hosted suite returned `486 passed in 8.89s` in run `33198069462`, job `98940226102`.
+The formal and evidence bindings are `formalism/07O_orchorbital_residence_conditioned_retrodiction.md` and `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`.
 
 ## Quotient/fiber finite-domain Retrodiction
 
@@ -228,74 +230,73 @@ Y(z_i)=Y(z_j)
 }
 \]
 
-Thus every distinct pair is either separated by the base observation or, when it lies in one base fiber, by at least one retained fiber coordinate.
+The 07P binding is `formalism/07P_quotient_fiber_finite_injectivity.md` with receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`. Hosted run `33200684482`, job `98949092398`, returned `495 passed in 10.14s`.
 
-The executable numerical gate uses explicit tolerances. A pair enters the base-collision set when
+## Oriented winding as a fiber coordinate
 
-\[
-\|z_i-z_j\|_2>\varepsilon_Z,
-\qquad
-\|Y(z_i)-Y(z_j)\|_2\le\varepsilon_B,
-\]
-
-and the pair is fiber-separated when
+07Q uses the already persisted signed residence winding as a concrete fiber candidate. For an \(N\)-event history,
 
 \[
-\exists c:\
-\|F_c(z_i)-F_c(z_j)\|_2>\varepsilon_F.
+\boxed{
+\mathcal W(z)
+=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+}
 \]
 
-The finite-domain PASS state is emitted only when every base collision satisfies this separation condition.
-
-For the exact 07H reflection pair,
+The canonical storage is the exact binary64 `winding_increment_hex` carried by each residence receipt. Segment order is retained. Define
 
 \[
-\|\widetilde z-z\|_2=0.9233193011263697,
-\qquad
-\delta_B=5.594315114139762\times10^{-17},
+\delta_W
+=\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2.
 \]
 
-while
+For the exact 07G/07H reflection pair, the base projection remains equivalent and the active-attractor sequence remains equal, while hosted reference tests establish
 
 \[
-\boxed{|\Delta w_{A,1}|=0.01918916841099516.}
+\boxed{
+\delta_W>10^{-12}.
+}
 \]
 
-Therefore the declared two-history candidate domain is separated when the earlier continuous basin weight is included as a fiber channel. The negative-control coordinate satisfies
-
-\[
-|\Delta r_{x,1}|=1.1102230246251565\times10^{-16},
-\]
-
-and preserves the collision at the declared tolerance.
-
-GREMLIN supplied a cross-domain relational-isomorphism candidate for the same structure from three pinned source families:
-
-\[
-\text{RFC normalized shape / extensive scale},
-\]
-
-\[
-\text{Secret of a Half exact two-sheet quotient / sheet fiber},
-\]
-
-and
-
-\[
-\text{TIR orientation / open-holonomy transport}.
-\]
-
-The candidate remains `CHYBA / CANDIDATE_ONLY`. The IDT evidence path is the exact finite-set lemma, executable gate, adversarial controls and hosted repository suite.
-
-The 07P binding is `formalism/07P_quotient_fiber_finite_injectivity.md` with receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`. The hosted reference run `33200684482`, job `98949092398`, tested branch head `17d3ba854e83f930194b8dd4c4b7089382578a35` and returned
+Hence this pair receives
 
 ```text
-495 passed in 10.14s
+BASE_NULL_SEPARATED_BY_ORIENTED_WINDING
+```
+
+without using provenance commitments as semantic coordinates.
+
+Feeding \(\mathcal W\) directly into the 07P finite-domain gate gives, for the declared two-history candidate domain,
+
+\[
+\boxed{
+N_{\rm collision}=1,
+\quad
+N_{\rm separated}=1,
+\quad
+N_{\rm unresolved}=0,
+}
+\]
+
+and status
+
+```text
+FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER
+```
+
+with the separating channel attributed to `oriented_winding`.
+
+This matches the repository's broader orientation-preservation pattern: the 01L temporal-holonomy carrier retains cycle orientation through the signed phase quadrature, while 07Q retains the signed segment-circulation lineage inside a Retrodiction collision fiber. GREMLIN treats that cross-layer relation as a structural candidate; repository evidence is governed by the explicit 07Q/07P tests.
+
+The 07Q binding is `formalism/07Q_oriented_winding_fiber_separator.md` with receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`. Hosted run `33201861565`, job `98953023513`, tested branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363` and returned
+
+```text
+502 passed in 8.09s
 ```
 
 on Python 3.12.14 / Ubuntu 24.04.4.
 
-The active Retrodiction frontier is now a domain-covering separation theorem, constructive inverse, or equivalent global injectivity argument over the retained continuous ORCHORBITAL, SOD and holonomy channels. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status.
+The active Retrodiction frontier is now the characterization of complete base-collision fibers and a domain-covering separator theorem or constructive lift using ordered winding together with retained continuous ORCHORBITAL and SOD coordinates. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status.
 
 ## 01K temporal information curvature interface
 
