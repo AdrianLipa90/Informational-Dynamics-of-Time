@@ -122,10 +122,29 @@ obeys
 This gives the formalism an orientation-sensitive geometric object. Temporal chirality is then tested downstream by the dynamics and holonomy gates.
 
 \section{Visual phase portrait}
-Figure~\ref{fig:kahler-flow-2d} gives a 2D slice of the Kähler time flow: informational descent provides the inward tendency, while the phase lift bends trajectories while preserving the typed separation of the two response channels.
+Figure~\ref{fig:kahler-flow-2d} gives a schematic 2D slice of the Kähler time flow. The nested contours represent levels of the informational functional; representative trajectories combine inward informational descent with the transverse phase response.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.78\textwidth]{figures/kahler_flow_2d.png}
-  \caption{Two-dimensional Kähler time flow with contour levels of the informational functional and representative trajectories.}
+  \begin{tikzpicture}[scale=1.05]
+    \draw[->] (-3.4,0) -- (3.4,0) node[right] {$q^1$};
+    \draw[->] (0,-2.5) -- (0,2.5) node[above] {$q^2$};
+    \draw[dashed] (0,0) ellipse (2.6 and 1.8);
+    \draw[dashed] (0,0) ellipse (1.9 and 1.3);
+    \draw[dashed] (0,0) ellipse (1.2 and 0.8);
+    \draw[->,thick] (2.7,1.55)
+      .. controls (1.75,2.05) and (0.65,1.55) .. (0.35,0.85)
+      .. controls (0.05,0.20) and (0.65,-0.45) .. (1.00,-0.18)
+      .. controls (1.25,0.03) and (0.80,0.45) .. (0.38,0.28);
+    \draw[->,thick] (-2.7,-1.35)
+      .. controls (-1.75,-1.95) and (-0.65,-1.45) .. (-0.35,-0.80)
+      .. controls (-0.05,-0.15) and (-0.60,0.40) .. (-0.92,0.18)
+      .. controls (-1.15,-0.02) and (-0.72,-0.40) .. (-0.32,-0.25);
+    \draw[->,thick] (-2.45,1.50)
+      .. controls (-1.20,1.80) and (0.30,1.20) .. (0.72,0.48)
+      .. controls (1.02,-0.05) and (0.48,-0.58) .. (0.08,-0.38);
+    \node[anchor=west] at (1.75,1.95) {informational contours};
+    \node[anchor=west] at (1.55,-1.55) {descent + phase lift};
+  \end{tikzpicture}
+  \caption{Schematic two-dimensional Kähler time-flow slice with informational level contours and representative trajectories combining symmetric descent with the transverse phase response.}
   \label{fig:kahler-flow-2d}
 \end{figure}
