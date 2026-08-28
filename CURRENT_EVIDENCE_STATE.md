@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 ## Temporal transport
 
@@ -41,7 +41,7 @@ The synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, re
 
 Existing Retrodiction evidence includes withheld-lineage inversion, local observability/rank admission, checkpoint selection, damped Gauss--Newton estimation, covariance/Fisher uncertainty geometry, covariance-preserving permutation nulls, finite-branch controls, spatial-offset/divergence witnesses, adaptive SOD separation and event-aware residence conditioning.
 
-### Event-aware residence conditioning
+### 07O event-aware residence conditioning
 
 For the declared 07G reflection pair:
 
@@ -49,86 +49,133 @@ For the declared 07G reflection pair:
 - latent separation remains greater than `0.9`;
 - active-attractor residence sequence is equivalent;
 - post-segment next-attractor / switch / leak lineage is equivalent;
-- provenance heads are integrity coordinates outside semantic pair separation;
-- pair status is `KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS`;
+- provenance heads remain integrity coordinates outside semantic pair separation;
 - earlier continuous separator `weight:A@1` differs by `0.01918916841099516`.
 
-Evidence:
-
-- `src/idt/retrodiction_orchorbital_residence_conditioning.py`;
-- `formalism/07O_orchorbital_residence_conditioned_retrodiction.md`;
-- `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
-- hosted run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
+Evidence: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`; hosted run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
 
 ### 07P quotient/fiber finite-domain injectivity
 
-07P introduces the finite-set separation criterion
-
-\[
-\widetilde Y\text{ injective on }\mathcal C
-\iff
-\forall i\ne j:\ Y(z_i)=Y(z_j)\Rightarrow\exists c:\ F_c(z_i)\ne F_c(z_j).
-\]
-
-The executable numerical gate checks every distinct-latent pair whose base projection collides within the declared tolerance and requires at least one declared fiber channel to separate the pair.
-
-Reference controls cover exact two-sheet quotient / sheet-coordinate separation, normalized-shape / scale-fiber separation, unresolved identical-fiber collisions, all-pair finite-domain coverage, deterministic channel attribution, malformed/non-finite inputs, the exact 07H `w_A_1` positive separator and the exact 07H `r_x_1` negative control.
+07P checks every distinct-latent pair whose base projection collides and requires at least one declared fiber channel to separate it. Controls include exact sheet and scale fibers, unresolved identical-fiber collisions, all-pair coverage, malformed/non-finite inputs, and exact 07H positive/negative controls.
 
 Hosted authority:
 
-- workflow: `Reference suite`;
-- run: `33200684482` / run number `592`;
-- job: `98949092398`;
-- tested branch head: `17d3ba854e83f930194b8dd4c4b7089382578a35`;
-- tested PR merge commit: `ee1985c96df734d32a8232c03ca078c993ef7318`;
-- result: `495 passed in 10.14s`;
-- Python `3.12.14`, Ubuntu `24.04.4`.
+- run `33200684482` / #592;
+- job `98949092398`;
+- tested head `17d3ba854e83f930194b8dd4c4b7089382578a35`;
+- merge `ee1985c96df734d32a8232c03ca078c993ef7318`;
+- `495 passed in 10.14s`.
 
-Evidence files:
-
-- `src/idt/retrodiction_quotient_fiber_injectivity.py`;
-- `tests/reference/test_retrodiction_quotient_fiber_injectivity.py`;
-- `formalism/07P_quotient_fiber_finite_injectivity.md`;
-- `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
+Receipt: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
 ### 07Q oriented-winding fiber separator
 
-07Q promotes the already persisted ordered signed winding sequence from a diagnostic into an explicit Retrodiction fiber candidate:
+07Q binds the persisted ordered signed winding
 
 \[
-\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
 \]
 
-The canonical carrier is the exact binary64 `winding_increment_hex` field in each residence receipt. The decoded vector is used for numerical separation, while provenance hashes remain outside the semantic metric.
+into the Retrodiction fiber architecture. Canonical values come from exact binary64 `winding_increment_hex`; provenance hashes do not enter the semantic separation metric.
 
-For the same 07G/07H reflection null:
+For the same reflection null:
 
-- the base observation remains a collision at tolerance `1e-10`;
+- base collision persists at tolerance `1e-10`;
 - latent separation remains greater than `0.9`;
 - active-attractor sequence remains equal;
 - ordered winding distance is greater than `1e-12`;
 - pair status is `BASE_NULL_SEPARATED_BY_ORIENTED_WINDING`;
-- direct 07P integration reports one base collision, one separated collision, zero unresolved collisions and `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER` with channel `oriented_winding`.
+- direct 07P integration gives 1 base collision / 1 separated / 0 unresolved with channel `oriented_winding`.
+
+Hosted authority:
+
+- run `33201861565` / #607;
+- job `98953023513`;
+- tested head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`;
+- merge `35b95bf5596014d76b8710047d036342a3b84e88`;
+- `502 passed in 8.09s`.
+
+Receipt: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
+
+### 07R fiber-lift composition theorem
+
+07R separates the exact theorem from its finite executable audit. Define an injective carrier
+
+\[
+P:\mathcal Z\to\mathcal X
+\]
+
+and augmented retained observation
+
+\[
+A(z)=(Y(z),F(z)).
+\]
+
+If there is a single-valued lift
+
+\[
+L:A(\mathcal Z)\to\mathcal X
+\]
+
+with
+
+\[
+P=L\circ A,
+\]
+
+then `A` is injective. This implication is exact and follows by composition with carrier injectivity.
+
+The current carrier is the 07K ordered post-segment position lineage. The finite reference audit independently checks:
+
+- `carrier_collision_count == 0` for distinct latent candidates;
+- no equal augmented observation maps to two distinct carrier values (`lift_conflict_count == 0`).
+
+Reference controls cover:
+
+1. exact finite composition pattern;
+2. explicit `FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN`;
+3. explicit `CARRIER_INJECTIVITY_FAIL_ON_FINITE_DOMAIN`;
+4. identical-latent control;
+5. exact reflection pair with base + oriented winding and the 07K position carrier;
+6. same pair with identical zero-fiber negative control;
+7. mismatched count rejection;
+8. non-finite input rejection.
+
+For the exact reflection pair with `oriented_winding`, the finite audit returns
+
+```text
+FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS
+```
+
+with zero carrier collisions, zero augmented collisions and zero lift conflicts. With the zero-fiber control it returns
+
+```text
+FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN
+```
+
+because the same augmented base record maps to two distinct position carriers.
 
 Hosted authority:
 
 - workflow: `Reference suite`;
-- run: `33201861565` / run number `607`;
-- job: `98953023513`;
-- tested branch head: `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`;
-- tested PR merge commit: `35b95bf5596014d76b8710047d036342a3b84e88`;
-- result: `502 passed in 8.09s`;
-- Python `3.12.14`, Ubuntu `24.04.4`.
+- run: `33202559485` / run number `621`;
+- job: `98955383447`;
+- tested branch head: `6abca4ad72c04cdca5d1128e690c17898b8650d7`;
+- tested PR merge commit: `a58b0c382727435f0e16231085181b60651f7f98`;
+- command: `python -m pytest -q tests/reference`;
+- result: `510 passed in 14.11s`;
+- Python `3.12.14`, Ubuntu `24.04.4`;
+- conclusion: `success`.
 
 Evidence files:
 
-- `src/idt/retrodiction_oriented_winding_fiber.py`;
-- `tests/reference/test_retrodiction_oriented_winding_fiber.py`;
-- `formalism/07Q_oriented_winding_fiber_separator.md`;
-- `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
+- `src/idt/retrodiction_fiber_lift.py`;
+- `tests/reference/test_retrodiction_fiber_lift.py`;
+- `formalism/07R_fiber_lift_composition_theorem.md`;
+- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
 
-The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The active next gate is a domain-covering characterization of base-collision fibers and a separator cover using ordered winding together with retained continuous ORCHORBITAL and spatial/SOD channels.
+The active global closure target is now `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`: construct a domain-covering lift from retained base + fiber coordinates to the 07K ordered position lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status until that lift or an equivalent fiber-separation argument is receipted.
 
 ## Canonical integration state
 
-The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the hosted oriented-winding fiber separator. Canonical `main` remains unchanged until explicit merge authorization.
+The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the 07R exact composition theorem and finite hosted reference gate. Canonical `main` remains unchanged until explicit merge authorization.
