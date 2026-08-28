@@ -12,13 +12,14 @@ Current included downstream reference chapters:
 - `08F_orchorbital_attractors.tex` — ORCHORBITAL attractor dynamics, residence lineage, pinned PNCS hierarchy and typed observables;
 - `08G_spatial_offset_divergence.tex` — spatial-offset/divergence witness layer;
 - `08H_adaptive_sod_separation.tex` — adaptive SOD separator layer;
-- `08I_orchorbital_residence_conditioning.tex` — event-aware Memory/ORCH residence bridge and global-null residence-label audit.
+- `08I_orchorbital_residence_conditioning.tex` — event-aware Memory/ORCH residence bridge and global-null residence-label audit;
+- `08J_quotient_fiber_finite_injectivity.tex` — all-collision finite-domain quotient/fiber injectivity gate.
 
 Promotion-branch admitted frontier:
 
 `Temporal Transport -> Memory -> ORCHORBITAL Attractors`.
 
-Retrodiction is the active next dependency gate. The event-aware ORCHORBITAL residence-conditioning interface has targeted hosted PASS, while `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the active global status.
+Retrodiction is the active next dependency gate. The event-aware residence bridge and the finite-domain quotient/fiber gate have hosted reference PASS. The governing next status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`, with the active target a domain-covering separation theorem or constructive inverse over retained continuous ORCHORBITAL, SOD and holonomy channels.
 
 Memory hosted admission evidence: GitHub Actions run `33193861826`, job `98925901636`, `431 passed in 7.08s`.
 
@@ -30,11 +31,14 @@ ORCHORBITAL completion evidence includes:
 - typed-observable completion run `33196818703`: `475 passed in 11.91s`;
 - synchronized ORCHORBITAL admission checkpoint run `33197346515`: `476 passed in 11.95s`.
 
-Retrodiction residence-conditioning evidence:
+Retrodiction evidence includes:
 
 - event-aware residence bridge and known-null label audit run `33197888242`: `485 passed in 13.87s`;
 - exact large-`tau` binary64 elapsed-time hardening run `33198069462`: `486 passed in 8.89s`;
-- receipt: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`.
+- residence receipt: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+- quotient/fiber targeted reference: `9 passed in 0.04s`;
+- quotient/fiber hosted run `33200684482`, job `98949092398`: `495 passed in 10.14s` on tested branch head `17d3ba854e83f930194b8dd4c4b7089382578a35`;
+- quotient/fiber receipt: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
 Admission receipts:
 
