@@ -127,7 +127,6 @@ def maximal_frontier(
         if a == b:
             raise RelationalPrecedenceError("strict precedence cannot contain self loops")
 
-    # Detect directed cycles in the declared strict precedence relation.
     adjacency = {node: set() for node in nodes}
     for a, b in relation:
         adjacency[a].add(b)
@@ -149,14 +148,26 @@ def maximal_frontier(
     for node in nodes:
         visit(node)
 
+    reachability: dict[str, set[str]] = {node: set() for node in nodes}
+
+    def descendants(node: str) -> set[str]:
+        if reachability[node]:
+            return reachability[node]
+        out: set[str] = set()
+        for nxt in adjacency[node]:
+            out.add(nxt)
+            out.update(descendants(nxt))
+        reachability[node] = out
+        return out
+
+    for node in nodes:
+        descendants(node)
+
     maximal = []
     for candidate in nodes:
         if candidate not in supported:
             continue
-        has_supported_successor = any(
-            a == candidate and b in supported for a, b in relation
-        )
-        if not has_supported_successor:
+        if not (reachability[candidate] & supported):
             maximal.append(candidate)
 
     return tuple(maximal)
