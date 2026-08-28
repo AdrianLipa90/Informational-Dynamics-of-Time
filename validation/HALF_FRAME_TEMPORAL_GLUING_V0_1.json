@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_HALF_FRAME_TEMPORAL_GLUING_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/half-frame-temporal-gluing-v0.1",
+  "formalism": "formalism/02J_half_frame_temporal_gluing.md",
+  "implementation": "src/idt/half_frame_temporal_gluing.py",
+  "tests": "tests/reference/test_half_frame_temporal_gluing.py",
+  "construction": {
+    "phase_sector": "Phi_N = 2 pi N",
+    "full_frames": "N",
+    "half_supports": "2N",
+    "neighbor_identifications": "R_n ~ L_(n+1), count N-1",
+    "glued_supports": "N+1",
+    "split_isometry": "S|n> = (|n,L> + |n,R>)/sqrt(2)",
+    "gluing_coisometry": "Q Q^dagger = I_(N+1)",
+    "interface_amplitude": "b_n = (a_n + a_(n+1))/2",
+    "seam_defect": "d_n = (a_n - a_(n+1))/2",
+    "norm_identity": "sum |b|^2 + sum |d|^2 = sum |a|^2"
+  },
+  "declared_patterns": {
+    "2pi": "|1|1|",
+    "4pi": "|1|12|2|",
+    "6pi": "|1|12|23|3|",
+    "8pi": "|1|12|23|34|4|"
+  },
+  "declared_gates": [
+    "half_split_isometry",
+    "gluing_coisometry",
+    "quotient_dimension_N_plus_1",
+    "modular_pattern_N_1_to_4",
+    "antisymmetric_seam_kernel",
+    "exact_norm_decomposition",
+    "constructive_equal_phase_gluing",
+    "opposite_phase_interface_null",
+    "uniform_chain_zero_seam_defect"
+  ],
+  "downstream": {
+    "schrodinger_frame_flow_binding": "NEXT_GATE_AFTER_ALGEBRAIC_PASS",
+    "spin_half_4pi_physical_binding": "SEPARATELY_TYPED_OPEN_GATE",
+    "continuous_coarse_graining": "DOWNSTREAM_OF_GLUED_SUPPORTS"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
