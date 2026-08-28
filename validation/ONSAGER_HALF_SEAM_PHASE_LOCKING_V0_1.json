@@ -1,6 +1,6 @@
 {
   "schema": "IDT_ONSAGER_HALF_SEAM_PHASE_LOCKING_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/onsager-half-seam-phase-locking-v0.1",
   "formalism": "formalism/02JG_onsager_half_seam_phase_locking.md",
   "implementation": "src/idt/onsager_half_seam_phase_locking.py",
@@ -44,6 +44,17 @@
     "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 772,
+    "run_id": 33220495369,
+    "job_id": 99013319516,
+    "tested_head_sha": "5c9f59c45461d21421516674c2ca479c4985f774",
+    "tested_pr_merge_sha": "450e179a6666421fd71ee62c194b9a611f85fd6e",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 686,
+    "tests_total": 686,
+    "elapsed_seconds": 19.40
   }
 }
