@@ -1,0 +1,78 @@
+{
+  "schema": "idt.retrocausal-preregistration/v1",
+  "experiment_id": "E004",
+  "protocol_version": "0.1",
+  "status": "PREREGISTRATION_READY_EXECUTION_GATED_BY_RETRODICTION_ADMISSION",
+  "dependency": {
+    "required_node": "RETRODICTION",
+    "active_blocker": "AUGMENTED_GLOBAL_DOMAIN_COVERAGE_ACTIVE_NEXT_GATE",
+    "execution_gate": "GATED",
+    "physical_claim_gate": "GATED"
+  },
+  "ordered_events": ["t0", "tS", "tF", "tR"],
+  "required_temporal_inequality": "t0 < tS < tF < tR",
+  "future_condition": {
+    "type": "binary",
+    "labels": [0, 1],
+    "generation_after_seal": true,
+    "independent_rng_required": true,
+    "raw_rng_record_required": true
+  },
+  "primary_statistic": {
+    "name": "standardized_future_condition_score_difference",
+    "alternative": "two-sided",
+    "alpha": 0.005,
+    "permutations": 100000,
+    "permutation_scope": "within_preregistered_exchangeability_blocks"
+  },
+  "sample_rule": {
+    "valid_trials_target": 4096,
+    "attempted_trials_ceiling": 4608,
+    "outcome_dependent_stopping": false
+  },
+  "evidence_chain": [
+    "RAW_OBSERVATION",
+    "STATISTICAL_EFFECT",
+    "CLASSICAL_CHANNEL_AUDIT",
+    "PHYSICAL_CLAIM_STATUS"
+  ],
+  "required_controls": [
+    "BLOCK_PERMUTED_FUTURE_LABELS",
+    "PRESEAL_CLASSICAL_LABEL_AVAILABILITY_NEGATIVE_CONTROL",
+    "KNOWN_LOW_AMPLITUDE_CLASSICAL_CHANNEL_POSITIVE_CONTROL"
+  ],
+  "classical_channel_audit": [
+    "PROCESS_AND_THREAD_MEMORY",
+    "ENVIRONMENT_AND_CONFIGURATION",
+    "FILESYSTEM_CACHE_AND_TEMPORARY_STATE",
+    "DATABASE_AND_SHARED_MEMORY",
+    "NETWORK_SOCKETS_AND_EXTERNAL_REQUESTS",
+    "RNG_STATE_SHARING",
+    "CLOCK_AND_TIMESTAMP_SOURCE",
+    "FUTURE_CONDITION_PRECOMPUTATION",
+    "METADATA_AND_ORDERING_LEAKAGE",
+    "POST_SEAL_MUTATION",
+    "PRE_REVEAL_LABEL_ACCESS",
+    "LABEL_CONDITIONED_PREPROCESSING"
+  ],
+  "claim_transition": {
+    "statistical_significance_required": true,
+    "classical_channel_audit_pass_required": true,
+    "retrodiction_admission_required": true,
+    "independent_replication_required": true
+  },
+  "immutability": {
+    "append_only": true,
+    "changes_require_new_protocol_version": true,
+    "required_preacquisition_hashes": [
+      "PROTOCOL",
+      "PREREGISTRATION_JSON",
+      "FEATURE_AND_SCORING_CODE",
+      "ACQUISITION_CODE",
+      "RNG_ADAPTER_CODE",
+      "CLASSICAL_CHANNEL_AUDIT_CODE",
+      "DEPENDENCY_GRAPH_COMMIT",
+      "HARDWARE_CONFIGURATION_MANIFEST"
+    ]
+  }
+}
