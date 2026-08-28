@@ -1,6 +1,6 @@
 {
   "schema": "IDT_FUZZY_TEMPORAL_INTERFACE_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/fuzzy-temporal-interface-order-parameter-v0.1",
   "formalism": "formalism/02JI_fuzzy_temporal_interface_order_parameter.md",
   "implementation": "src/idt/fuzzy_temporal_interface.py",
@@ -18,12 +18,27 @@
     "onsager": "reduces phase mismatch delta_n through seam-defect descent",
     "joint_interface": "requires both nonzero neighboring occupancy and phase coherence"
   },
+  "controls": {
+    "isolated_sharp_frame": "F_n = 0",
+    "equal_in_phase_neighbors": "F_n = 1",
+    "equal_antiphase_neighbors": "F_n = 0"
+  },
   "boundaries": {
     "combined_full_system_monotonicity": "NOT_PROMOTED; governed by 02JH reversible-power minus dissipation balance",
     "physical_microframe_identification": "OPEN",
     "spin_half_binding": "OPEN"
   },
   "hosted_ci": {
-    "status": "PENDING"
-  }
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 779,
+    "run_id": 33221782104,
+    "job_id": 99017152727,
+    "tested_head_sha": "8b373241ac45ad74b1c84ae054e6860496a37987",
+    "tested_pr_merge_sha": "93b8cc413146e84bc61e748d4a589ba048f750fe",
+    "tests_passed": 718,
+    "tests_total": 718,
+    "elapsed_seconds": 17.51
+  },
+  "next_gate": "FUZZY_INTERFACE_CHAIN_PROPAGATION"
 }
