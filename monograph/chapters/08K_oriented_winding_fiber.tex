@@ -1,0 +1,92 @@
+\chapter{Oriented Winding as a Retrodiction Fiber Coordinate}
+\label{chap:oriented-winding-fiber}
+
+The finite-domain quotient/fiber gate of the previous chapter turns Retrodiction ambiguity into a precise separation problem.  Whenever two distinct latent histories share the same retained base observation, at least one additional retained coordinate must distinguish the corresponding points inside that base fiber.
+
+The ORCHORBITAL residence layer already carries such an orientation-sensitive coordinate.  For every completed smooth segment around the active attractor, define the signed winding increment
+\[
+\Delta W_k
+=\frac{1}{2\pi}\operatorname{wrap}(\theta_{k+1}-\theta_k).
+\]
+The residence receipt persists this quantity in exact binary64 hexadecimal form.  For an $N$-event history $z$, retain the ordered vector
+\[
+\boxed{
+\mathcal W(z)
+=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+}
+\]
+The segment ordering is part of the coordinate.  Its cumulative value
+\[
+W_{\Sigma}(z)=\sum_{k=1}^{N}\Delta W_k(z)
+\]
+is a derived diagnostic, whereas the Retrodiction separator uses the complete ordered vector.
+
+Let $Y(z)$ denote the declared sparse base observation.  For two latent histories $z$ and $\widetilde z$, define
+\[
+\delta_B=\|Y(\widetilde z)-Y(z)\|_2,
+\qquad
+\delta_Z=\|\widetilde z-z\|_2,
+\]
+and
+\[
+\boxed{
+\delta_W
+=\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2.
+}
+\]
+At positive tolerances $\varepsilon_B$, $\varepsilon_Z$ and $\varepsilon_W$, an admitted pairwise winding separator satisfies
+\[
+\delta_B\le\varepsilon_B,
+\qquad
+\delta_Z>\varepsilon_Z,
+\qquad
+\delta_W>\varepsilon_W.
+\]
+
+The reference test uses the same two-event reflection-null pair employed by the earlier global-null and residence-conditioning audits.  Its final retained base vector is
+\[
+(r_{x,2},r_{y,2},v_{x,2},w_{A,2},w_{B,2},w_{C,2}).
+\]
+The two histories remain equivalent in that base projection at tolerance $10^{-10}$, their latent separation remains greater than $0.9$, and their active-attractor sequence remains identical.  The ordered winding coordinate nevertheless satisfies
+\[
+\boxed{
+\delta_W>10^{-12}.
+}
+\]
+The pair therefore receives the executable status
+\begin{verbatim}
+BASE_NULL_SEPARATED_BY_ORIENTED_WINDING
+\end{verbatim}
+without using provenance hashes as semantic separation coordinates.
+
+The same winding vector is then passed directly into the generic quotient/fiber gate as the channel \texttt{oriented\_winding}.  For the declared two-history candidate domain, the audit records one base collision, one separated collision and zero unresolved collisions, yielding
+\begin{verbatim}
+FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER
+\end{verbatim}
+for that finite domain.
+
+This construction also preserves a structural relation already present in the temporal-holonomy layer.  There, the full phase carrier
+\[
+h_R=e^{i\tau_R}
+\]
+retains transport orientation through the signed quadrature.  Here, the ordered signed circulation increments retain orientation inside a Retrodiction collision fiber.  The cross-layer relation is used as a candidate-generating guide, while the Retrodiction status is governed by the executable winding and quotient/fiber tests.
+
+The reference implementation is
+\begin{verbatim}
+src/idt/retrodiction_oriented_winding_fiber.py
+\end{verbatim}
+and the validation receipt is
+\begin{verbatim}
+validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json
+\end{verbatim}
+The hosted Reference suite run 33201861565, job 98953023513, tested branch head
+\begin{verbatim}
+1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363
+\end{verbatim}
+and returned
+\begin{verbatim}
+502 passed in 8.09s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction frontier is now the characterization of complete base-collision fibers and a domain-covering separator construction using ordered winding together with retained continuous ORCHORBITAL and spatial/SOD coordinates.  The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until that domain-covering gate is receipted.
