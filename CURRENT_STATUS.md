@@ -16,13 +16,6 @@ Memory admission is bound by `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026
 
 ORCHORBITAL admission is bound by `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` and contains the residence ledger, pinned PNCS hierarchy, and separately typed truth-scalar / semantic-mass / reduction-readiness coordinates.
 
-The fully synchronized ORCHORBITAL promotion checkpoint was executed by GitHub Actions run `33197346515`, job `98937750103`:
-
-```text
-python -m pytest -q tests/reference
-476 passed in 11.95s
-```
-
 The active dependency path is
 
 \[
@@ -31,11 +24,9 @@ The active dependency path is
 
 ## Retrodiction frontier
 
-The event-aware ORCHORBITAL residence-conditioning step is implemented and hosted-suite validated. The bridge represents each Memory event explicitly before its smooth ORCHORBITAL residence segment and preserves chronological content-addressed lineage across event boundaries.
+07O provides the event-aware Memory-event -> ORCH smooth-residence bridge. For the declared reflection pair, the final sparse base observation and discrete residence/switch class coincide while the latent histories remain separated by more than `0.9`; the earlier continuous `weight:A@1` coordinate separates them by `0.01918916841099516`.
 
-For the declared 07G reflection pair, the retained final observation and discrete residence/switch class coincide while the latent histories remain separated by more than `0.9`. The earlier continuous ORCHORBITAL scalar `weight:A@1` separates the pair by `0.01918916841099516`.
-
-07P adds the finite-domain quotient/fiber injectivity gate. For a declared finite candidate set, every pair that collides under the base projection must be separated by at least one retained fiber channel. The exact finite-set condition is
+07P upgrades pair witnesses into the finite-domain quotient/fiber criterion
 
 \[
 \widetilde Y\text{ injective on }\mathcal C
@@ -46,46 +37,90 @@ Y(z_i)=Y(z_j)
 \exists c:\ F_c(z_i)\ne F_c(z_j).
 \]
 
-07Q now binds the already persisted signed ORCHORBITAL winding increments into that fiber architecture. For an event lineage,
+07Q binds the already persisted ordered signed ORCHORBITAL winding
 
 \[
-\boxed{
 \mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
-}
 \]
 
-is retained in exact binary64 hexadecimal form and decoded only for the declared separation metric. On the exact 07G/07H reflection-null pair, the base observation still collides and the active residence sequence still agrees, while the ordered winding fiber satisfies
+as a concrete fiber coordinate. On the exact reflection null, the base observation and active-label class remain colliding while
+
+\[
+\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2>10^{-12}.
+\]
+
+07R now supplies the exact composition theorem. Let
+
+\[
+P:\mathcal Z\to\mathcal X
+\]
+
+be an injective carrier and let
+
+\[
+A(z)=(Y(z),F(z)).
+\]
+
+If there exists a single-valued lift
+
+\[
+L:A(\mathcal Z)\to\mathcal X
+\]
+
+such that
+
+\[
+\boxed{P=L\circ A,}
+\]
+
+then
+
+\[
+\boxed{A\text{ is injective on }\mathcal Z.}
+\]
+
+The proof is exact: `A(z1)=A(z2)` implies `P(z1)=P(z2)` through `L`, and carrier injectivity then gives `z1=z2`.
+
+The current carrier is the 07K ordered position lineage
+
+\[
+P(z)=(r_1(z),\ldots,r_N(z)),
+\]
+
+for which 07K provides exact kick recovery under the declared active-attractor sequence and elapsed increments. Therefore the global closure problem is reduced to constructing
 
 \[
 \boxed{
-\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2>10^{-12}.
+L:(Y,F)\mapsto(r_1,\ldots,r_N).
 }
 \]
 
-The pair therefore returns `BASE_NULL_SEPARATED_BY_ORIENTED_WINDING`. When the same coordinate is supplied to 07P as `oriented_winding`, the two-history candidate domain returns `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER` with one base collision, one separated collision and zero unresolved collisions.
+The finite 07R audit keeps the theorem and numerical evidence separate. It independently checks carrier injectivity and functional-lift consistency. On the exact 07Q reflection pair, `base + oriented_winding -> position carrier` returns `FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS`; replacing winding by an identical zero fiber returns `FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN`.
 
 Evidence:
 
-- `formalism/07O_orchorbital_residence_conditioned_retrodiction.md`;
-- `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
 - `formalism/07P_quotient_fiber_finite_injectivity.md`;
 - `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
 - `formalism/07Q_oriented_winding_fiber_separator.md`;
 - `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
-- 07O hardened run `33198069462`, job `98940226102`: `486 passed in 8.89s`;
-- 07P hosted run `33200684482`, job `98949092398`: `495 passed in 10.14s`;
-- 07Q hosted run `33201861565`, job `98953023513`: `502 passed in 8.09s` on tested branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`.
+- `formalism/07R_fiber_lift_composition_theorem.md`;
+- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
+- 07P run `33200684482`, job `98949092398`: `495 passed in 10.14s`;
+- 07Q run `33201861565`, job `98953023513`: `502 passed in 8.09s`;
+- 07R run `33202559485`, job `98955383447`: `510 passed in 14.11s` on tested branch head `6abca4ad72c04cdca5d1128e690c17898b8650d7`.
 
 Current Retrodiction status:
 
 ```text
 QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS
 ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS
+FIBER_LIFT_COMPOSITION_THEOREM_PASS
+FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS
+POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE
 HOSTED_FULL_SUITE_PASS
 GENERAL_GLOBAL_INJECTIVITY_OPEN
-ACTIVE_NEXT_GATE
 ```
 
-The next active problem is to characterize the complete collision fibers of the retained base projection and establish a domain-covering separator using ordered winding together with the already available continuous ORCHORBITAL and spatial/SOD coordinates.
+The next active problem is no longer an unconstrained global inverse search. It is the constructive/domain-covering `POSITION_LINEAGE_LIFT`: recover the 07K ordered position carrier from retained base observations plus ordered winding, continuous ORCHORBITAL and SOD coordinates.
 
 Canonical `main` remains unchanged until an explicit merge command is issued.
