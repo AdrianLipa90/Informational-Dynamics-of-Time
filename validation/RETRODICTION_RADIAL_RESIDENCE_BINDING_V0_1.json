@@ -1,0 +1,36 @@
+{
+  "schema": "idt.retrodiction-radial-residence-binding-validation/v1",
+  "gate": "07V_RADIAL_PACKET_RESIDENCE_BINDING",
+  "implementation": "src/idt/retrodiction_radial_residence_binding.py",
+  "reference_tests": "tests/reference/test_retrodiction_radial_residence_binding.py",
+  "radial_schema": "idt.retrodiction-radial-residence-binding/v1",
+  "tested_head": "2047bd585ca91c58bb106547a2ea4cb296a19bfc",
+  "tested_pr_merge": "cf59dc9e69f26fa5b566d6b54e26294ef7478efb",
+  "workflow": "Reference suite",
+  "run_id": 33209552154,
+  "run_number": 692,
+  "job_id": 98979116624,
+  "python": "3.12.14",
+  "ubuntu": "24.04.4",
+  "result": "557 passed in 14.11s",
+  "conclusion": "success",
+  "new_reference_tests": 6,
+  "verified_properties": [
+    "radial coordinates are content-bound to exact event-residence cells",
+    "radial coordinates are bound to committed post-segment state hashes",
+    "active-attractor identity is retained per radial coordinate",
+    "radial coordinates form an ordered content hash chain",
+    "pre-final radial packet feeds the exact 07U position decoder",
+    "07U output composes with 07K to recover the declared reference kicks",
+    "tampered radial content fails closed",
+    "residence-lineage mismatch fails closed",
+    "active-attractor switching is covered by a reference control"
+  ],
+  "semantic_observability_firewall": "provenance hashes authenticate coordinates and are excluded from semantic separation",
+  "status": [
+    "RADIAL_PACKET_RESIDENCE_BINDING_PASS",
+    "RESIDENCE_BOUND_WINDING_RADIUS_CARRIER_PASS",
+    "HOSTED_FULL_SUITE_PASS",
+    "GENERAL_GLOBAL_INJECTIVITY_OPEN"
+  ]
+}
