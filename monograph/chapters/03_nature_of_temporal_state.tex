@@ -1,8 +1,8 @@
 \chapter{Nature of the Temporal State}
 
-The temporal architecture developed in this work is organized around an ordered relational support, a state carried on that support, directed event activity, transport between event surfaces, local bifurcation at admitted events, an internal elapsed measure, and retained memory lineage. These objects are typed separately and are joined by the dependency structure developed in the preceding and subsequent formal layers.
+The temporal architecture developed in this work begins with ordered relational support and directed transition traffic. A positive temporal measure is derived from the symmetric transition activity; temporal orientation is carried separately by the normalized directed current. Relative clock rates, calibrated elapsed time, event realization, transport and retained history are then constructed downstream.
 
-\section{Ordered relational support}
+\section{Ordered relational support and transition traffic}
 
 Let
 \[
@@ -12,92 +12,125 @@ be an ordered relational domain and
 \[
 \boxed{\Psi:S\to\mathcal H}
 \]
-the temporal-state map. The relation $\prec$ supplies precedence between admitted events, while $\Psi$ supplies the state assigned to the ordered support.
+the temporal-state map. The relation $\prec$ supplies precedence between admitted events. A strictly increasing label $\lambda$ may parameterize an ordered relational path.
 
-For an admitted transition $a\to b$, the directed kinetic representation is
+For an admitted active pair $a\leftrightarrow b$,
 \[
 W_{a\to b}=M_{ab}e^{A_{ab}/2},
 \qquad
-W_{b\to a}=M_{ab}e^{-A_{ab}/2}.
+W_{b\to a}=M_{ab}e^{-A_{ab}/2},
 \]
-The associated positive activity and directed current are
+with $M_{ab}>0$. Define
 \[
-\boxed{\mathfrak a_{ab}=2M_{ab}\cosh(A_{ab}/2)>0,}
+\boxed{\mathfrak a_{ab}=W_{a\to b}+W_{b\to a}=2M_{ab}\cosh(A_{ab}/2)>0,}
 \]
 \[
-\boxed{\mathfrak j_{ab}=2M_{ab}\sinh(A_{ab}/2).}
+\boxed{\mathfrak j_{ab}=W_{a\to b}-W_{b\to a}=2M_{ab}\sinh(A_{ab}/2).}
 \]
-They separate elapsed pace from transition orientation. Their ratio reconstructs the directed affinity,
+The normalized orientation coordinate is
 \[
 \boxed{
-A_{ab}=2\operatorname{artanh}\!\left(\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}\right).
+\chi_{ab}=\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}
+=\tanh(A_{ab}/2).
 }
 \]
-
-\section{NOW, bifurcation and transport}
-
-The NOW layer localizes admitted event support. At an event $s_n$, the state update is represented by
+The transition affinity in bits satisfies
 \[
 \boxed{
-\Psi_T(s_n^+)=B_n\Psi_T(s_n^-).
-}
-\]
-For the admitted reversible reference family,
-\[
-B(q)=e^{qG},
-\]
-with the unitary directional subclass
-\[
-B_\phi(\beta)=e^{-i\beta G}.
-\]
-
-Between admitted event surfaces, local transport is represented by
-\[
-\boxed{\Psi_{n+1}=U_n\Psi_n.}
-\]
-An ordered history therefore has the compositional form
-\[
-\boxed{
-\Psi_N
-=U_{N-1}B_{N-1}\cdots U_2B_2U_1B_1\Psi_0,
-}
-\]
-with operator ordering inherited from $(S,\prec)$.
-
-\section{Internal elapsed activity}
-
-The positive temporal activity supplies the internal elapsed one-form
-\[
-\boxed{
-d\tau_{\rm int}=\phi\,d\lambda,
+\sigma_{ab}=\log_2\frac{W_{a\to b}}{W_{b\to a}},
 \qquad
-\phi=\frac{\mathfrak a}{\mathfrak a_\star}>0.
+A_{ab}=(\ln2)\sigma_{ab}.
 }
 \]
-Here $\lambda$ labels the ordered relational path and $d\tau_{\rm int}$ measures accumulated elapsed activity along it.
 
-For a local relational subsystem and an admitted reference clock,
+\section{Activity-derived temporal measure}
+
+Under an increasing relabeling $\lambda'=f(\lambda)$, the transition weights transform as one-densities,
 \[
-d\tau_x=\phi_xd\lambda,
-\qquad
-d\tau_{\rm ref}=\phi_{\rm ref}d\lambda,
+W'_\pm=W_\pm\frac{d\lambda}{d\lambda'}.
 \]
-the relational lapse is
+Consequently
+\[
+\mathfrak a'=\mathfrak a\frac{d\lambda}{d\lambda'}.
+\]
+Define the intrinsic temporal increment
+\[
+\boxed{d\Theta=\mathfrak a\,d\lambda.}
+\]
+Then
+\[
+\boxed{d\Theta'=d\Theta.}
+\]
+For an ordered interval $\Gamma_{12}$,
 \[
 \boxed{
-N_R(x)=\frac{d\tau_x}{d\tau_{\rm ref}}
-=\frac{\phi_x}{\phi_{\rm ref}}>0.
+\Theta[\Gamma_{12}]
+=\int_{\Gamma_{12}}\mathfrak a\,d\lambda.
 }
 \]
-The ratio is invariant under the admitted increasing reparameterization of $\lambda$ and composes under a change of reference clock,
+Positive activity gives positive accumulation on every active realized interval, while concatenation gives
 \[
-N_{x|s}=N_{x|r}N_{r|s}.
+\boxed{
+\Theta[\Gamma_{13}]
+=\Theta[\Gamma_{12}]+\Theta[\Gamma_{23}].
+}
 \]
-After explicit reference-clock calibration,
+
+Under reversal of transition orientation $A\mapsto-A$,
 \[
-dt=T_{\rm ref}d\tau_{\rm ref},
+\boxed{d\Theta\mapsto d\Theta,}
+\qquad
+\boxed{\chi\mapsto-\chi.}
 \]
-the local calibrated elapsed interval becomes
+Thus duration and orientation are carried by distinct temporal coordinates.
+
+Using
+\[
+M_{ab}
+=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]},
+\]
+the duration density becomes
+\[
+\boxed{
+\frac{d\Theta}{d\lambda}
+=
+2\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}
+\cosh\!\left(\frac{\ln2}{2}\sigma_{ab}\right).
+}
+\]
+The orientation coordinate is
+\[
+\boxed{
+\chi_{ab}
+=\tanh\!\left(\frac{\ln2}{2}\sigma_{ab}\right).
+}
+\]
+
+\section{Relative clocks and calibrated elapsed time}
+
+For a local subsystem $x$ and reference subsystem $r$ on the same ordered patch,
+\[
+d\Theta_x=\mathfrak a_xd\lambda,
+\qquad
+d\Theta_r=\mathfrak a_rd\lambda.
+\]
+The relational lapse is
+\[
+\boxed{
+N_R(x|r)
+=\frac{d\Theta_x}{d\Theta_r}
+=\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+}
+\]
+It is invariant under the admitted increasing reparameterization and composes under reference change,
+\[
+\boxed{N_{x|s}=N_{x|r}N_{r|s}.}
+\]
+A physical reference-clock calibration supplies a conversion scale $T_r>0$,
+\[
+\boxed{dt=T_r\,d\Theta_r,}
+\]
+and therefore
 \[
 \boxed{d\hat\tau_x=N_Rdt.}
 \]
@@ -106,33 +139,76 @@ On the admitted lapse/phase-rate bridge,
 \[
 \boxed{r_t=N_Rr_n^{(\tau)},}
 \]
-so the local phase rate and the relational elapsed-clock ratio share the same temporal normalization.
+so relative clock rate and proper phase rate share the same relational normalization.
+
+\section{Phase topology}
+
+The information--phase transition link is
+\[
+L_e
+=G_e\exp\!\left[i\kappa(\Delta H_e+\sigma_e)\right],
+\qquad
+\boxed{\kappa=\frac{\ln2}{24\pi}}.
+\]
+On a closed cycle,
+\[
+\boxed{
+\operatorname{Arg}\prod_{e\in C}L_e
+=\gamma_B(C)+\kappa\sum_{e\in C}\sigma_e
+\pmod{2\pi}.
+}
+\]
+The local coordinate $\chi$ carries directed transition orientation while the connection holonomy carries extended cycle orientation.
+
+\section{NOW, bifurcation and transport}
+
+The NOW layer localizes realized temporal activity on event support. At an admitted event $s_n$,
+\[
+\boxed{
+\Psi_T(s_n^+)=B_n\Psi_T(s_n^-).
+}
+\]
+For the reversible reference family,
+\[
+B(q)=e^{qG},
+\qquad
+B_\phi(\beta)=e^{-i\beta G}.
+\]
+
+Between event surfaces,
+\[
+\boxed{\Psi_{n+1}=U_n\Psi_n.}
+\]
+An ordered history has the compositional form
+\[
+\boxed{
+\Psi_N
+=U_{N-1}B_{N-1}\cdots U_2B_2U_1B_1\Psi_0.
+}
+\]
+Each active segment carries its accumulated $\Theta$ interval.
 
 \section{Memory as temporal lineage}
 
-The Memory layer retains the consequences of admitted events in ordered internal elapsed activity. ORCHORBITAL organizes the resulting history through the active-attractor sequence
+Memory retains the consequences of admitted events along the ordered activity measure. ORCHORBITAL organizes the resulting history through
 \[
-\boxed{\alpha=(a_1,\ldots,a_N)}
-\]
-and ordered signed winding
-\[
-\boxed{\mathcal W=(\Delta W_1,\ldots,\Delta W_N).}
+\boxed{\alpha=(a_1,\ldots,a_N)},
+\qquad
+\boxed{\mathcal W=(\Delta W_1,\ldots,\Delta W_N)}.
 \]
 The residence-bound radial lineage adds
 \[
 \boxed{
 \mathcal R=(\rho_1,\ldots,\rho_N),
 \qquad
-\rho_k=\|r_k-c_{a_k}\|>0,
+\rho_k=\|r_k-c_{a_k}\|>0.
 }
 \]
-with every radial coordinate bound to its exact event-residence cell and committed post-segment state.
-
-The retained temporal state therefore contains both the current state and an ordered lineage used by the declared reconstruction gates.
+The retained temporal state therefore contains the current state together with an ordered, authenticated history carrier.
 
 \section{Retrodiction and hidden history geometry}
 
-Within one retained active-attractor stratum, the winding--radius carrier supplies the constructive lift
+Within one retained active-attractor stratum, the winding--radius carrier supplies
 \[
 (\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N)
 \longmapsto
@@ -144,28 +220,28 @@ which composes with the exact position-lineage inverse
 \longmapsto
 (u_1,\ldots,u_N).
 \]
-Spatial Offset Divergence audits collision fibers of compressed observation maps by measuring the separation between the full position histories carried by observation-equivalent candidates.
+Spatial Offset Divergence audits collision fibers of compressed observation maps by measuring separation between the full position histories carried by observation-equivalent candidates. The activity-derived $\Theta$ coordinate supplies the elapsed lineage on the same ordered history.
 
-This links the temporal-state description to a concrete reconstruction question: how much ordered lineage must be retained for an observation to select one history in the declared domain.
+\section{Derived temporal architecture}
 
-\section{Typed temporal architecture}
-
-The resulting structure is summarized by
+The resulting chain is
 \[
 \boxed{
-\text{ORDER}
-\to
-\text{EVENT SUPPORT}
-\to
-\text{BIFURCATION}
-\to
-\text{TRANSPORT}
-\to
-\text{ELAPSED ACTIVITY}
-\to
-\text{MEMORY LINEAGE}
-\to
-\text{RETRODICTION}.
+\begin{aligned}
+&\text{RELATIONAL ORDER + TRANSITION TRAFFIC}\\
+&\downarrow\\
+&\mathfrak a=W_++W_-,\qquad \mathfrak j=W_+-W_-\\
+&\downarrow\\
+&d\Theta=\mathfrak a\,d\lambda,\qquad \chi=\mathfrak j/\mathfrak a\\
+&\downarrow\\
+&N_R=d\Theta_x/d\Theta_r\\
+&\downarrow\\
+&\text{CALIBRATED ELAPSED TIME + PHASE RATE}\\
+&\downarrow\\
+&\text{NOW}\to\text{BIFURCATION}\to\text{TRANSPORT}\\
+&\downarrow\\
+&\text{MEMORY}\to\text{RETRODICTION}.
+\end{aligned}
 }
 \]
-The mathematical roles are correspondingly separated into precedence, state, activity, directed current, bifurcation, transport, elapsed one-form, relational lapse, retained lineage and inverse-history map. Physical clock calibration and downstream spacetime closure retain their declared evidence and dependency gates.
+Physical clock calibration and downstream spacetime closure retain their declared evidence gates.
