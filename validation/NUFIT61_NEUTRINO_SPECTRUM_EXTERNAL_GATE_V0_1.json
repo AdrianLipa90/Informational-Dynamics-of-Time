@@ -1,0 +1,25 @@
+{
+  "schema": "IDT_NUFIT61_NEUTRINO_SPECTRUM_EXTERNAL_GATE_V0_1",
+  "status": "EXTERNAL_NEUTRINO_SPECTRUM_EVIDENCE__NON_PROMOTING",
+  "date": "2026-08-28",
+  "idt_base_commit": "2ede618a5d03aa410f1d03b7286494622babd215",
+  "source_evidence": {
+    "gremlin_branch": "feat/gremlin-nufit61-correlated-ratio-line-v2.6",
+    "gremlin_commit": "b9b20f573b95d63cc069cbd0aedfa01f56a28f89",
+    "receipt": "provenance/NUFIT61_TIR_RATIO33_CORRELATED_SURFACE_RECEIPT_V2_6.json",
+    "exact_relation": "Delta_m31^2 = 33 Delta_m21^2",
+    "TBoff_NO_delta_chi2_min": 0.9902209322450616,
+    "TByes_NO_delta_chi2_min": 0.44097506178386237,
+    "reproduced_across_runners": true
+  },
+  "idt_role": {
+    "consumer_scope": "external neutrino mass-splitting input for phase -> PMNS -> flavor -> information tests",
+    "01AC_gauge_covariant_phase_pullback_unchanged": true,
+    "01AD_relational_lapse_phase_rate_unchanged": true,
+    "eight_loop_source_holonomy_unchanged": true,
+    "temporal_dynamics_claim_promoted": false,
+    "phase_flavor_information_binding_promoted": false
+  },
+  "next_gate": "Use the externally admitted mass-splitting surface together with standard PMNS evolution to test IDT proper-phase transport against flavor-information observables without adding an arbitrary RF interaction.",
+  "claim_promotion": false
+}

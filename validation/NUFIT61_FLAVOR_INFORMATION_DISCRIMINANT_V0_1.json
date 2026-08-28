@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_NUFIT61_FLAVOR_INFORMATION_DISCRIMINANT_V0_1",
+  "status": "DOWNSTREAM_FLAVOR_INFORMATION_TARGET__NON_PROMOTING",
+  "date": "2026-08-28",
+  "idt_base_commit": "2ede618a5d03aa410f1d03b7286494622babd215",
+  "gremlin_v27": {
+    "branch": "feat/gremlin-nufit61-flavor-discriminant-map-v2.7",
+    "receipt_commit": "c4a2dddec81513f59aa845c1637e19b1e234b384",
+    "receipt_path": "provenance/NUFIT61_RATIO33_FLAVOR_DISCRIMINANT_RECEIPT_V2_7.json",
+    "regression": "307 passed in 1.02s",
+    "official_nufit61_replay": "success"
+  },
+  "stable_probability_target": {
+    "channel": "mu->mu",
+    "observable": "difference between free NuFIT 6.1 spectrum and exact TIR ratio-33 profiled spectrum under standard vacuum PMNS evolution",
+    "ten_percent_l_over_e_smearing": true,
+    "TBoff_NO": {
+      "l_over_e_km_per_gev": 1749.0,
+      "max_abs_delta_probability": 0.01298329111140234
+    },
+    "TByes_NO": {
+      "l_over_e_km_per_gev": 1754.0,
+      "max_abs_delta_probability": 0.006870781483088506
+    }
+  },
+  "flavor_information_target": {
+    "measure": "I(S_in;S_out) for uniform flavor input",
+    "TBoff_NO": {
+      "l_over_e_km_per_gev": 1126.0,
+      "delta_bits": 0.012863850771418828
+    },
+    "TByes_NO": {
+      "l_over_e_km_per_gev": 1129.0,
+      "delta_bits": 0.006569128345661479
+    }
+  },
+  "idt_holonomy": {
+    "01AC_gauge_covariant_phase_pullback_retained": true,
+    "01AD_relational_lapse_phase_rate_retained": true,
+    "observable_input_is_standard_PMNS_phase_transport": true,
+    "arbitrary_RF_interaction_added": false,
+    "R_S_I_readout_role": "R(S_beta,I_alpha)=P(alpha->beta) is used as the relational flavor readout established by the prior BELZEBUB audit"
+  },
+  "firewalls": {
+    "matter_effects_included": false,
+    "experiment_specific_detector_model_included": false,
+    "temporal_geometry_source_promoted": false,
+    "claim_promotion": false
+  },
+  "next_gate": "Matter-propagation robustness of the muon-survival target, followed by experiment-specific response folding."
+}
