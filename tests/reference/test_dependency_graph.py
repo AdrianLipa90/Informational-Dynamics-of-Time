@@ -86,7 +86,8 @@ def test_memory_and_orchorbital_admission_markers_are_recorded():
 
 
 def test_downstream_frontier_markers_are_preserved():
-    status = _nodes()["RETRODICTION"]["status"]
+    nodes = _nodes()
+    status = nodes["RETRODICTION"]["status"]
     for marker in [
         "SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND",
         "ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS",
@@ -106,9 +107,14 @@ def test_downstream_frontier_markers_are_preserved():
         "EXACT_WINDING_RADIUS_POSITION_DECODER_PASS",
         "POSITION_FIBER_NEW_SCALAR_BUDGET_HALVED",
         "CONDITIONAL_AUGMENTED_WINDING_RADIUS_RECONSTRUCTION_PASS",
-        "RADIAL_PACKET_RESIDENCE_BINDING_ACTIVE_NEXT_GATE",
+        "RADIAL_PACKET_RESIDENCE_BINDING_PASS",
+        "RESIDENCE_BOUND_WINDING_RADIUS_CARRIER_PASS",
+        "AUGMENTED_GLOBAL_DOMAIN_COVERAGE_ACTIVE_NEXT_GATE",
         "HOSTED_FULL_SUITE_PASS",
         "GENERAL_GLOBAL_INJECTIVITY_OPEN",
         "ORCHORBITAL_PARENT_ADMITTED",
     ]:
         assert marker in status
+    retro_status = nodes["RETROCAUSAL_TESTS"]["status"]
+    assert "PREREGISTRATION_PREPARATION_ALLOWED" in retro_status
+    assert "EXECUTION_AND_PHYSICAL_CLAIM_GATE_GATED" in retro_status
