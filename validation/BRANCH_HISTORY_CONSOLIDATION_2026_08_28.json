@@ -1,0 +1,21 @@
+{
+  "schema": "IDT_BRANCH_HISTORY_CONSOLIDATION_V0_1",
+  "date_utc": "2026-08-28",
+  "purpose": "Consolidate stale branch ancestry without regressing the canonical main tree.",
+  "canonical_parent": "9827a11122a31dd11048199c64ce8bba5b1b8c23",
+  "tree_policy": "OURS_CANONICAL_MAIN_PLUS_THIS_MANIFEST",
+  "semantic_promotion": false,
+  "active_branch_excluded": "feat/07v-radial-residence-and-nature-retrocausal-prereg-20260828",
+  "consolidated_branch_heads": [
+    {"branch":"audit/relativistic-bridge-01ag-hardening-v0.1","head":"f29b8276b220b456999ebec8cc1e4c7bb5d594b5","classification":"FORWARD_PORTED_OR_SUPERSEDED_ON_MAIN"},
+    {"branch":"feat/idt-rfc-normalized-shape-holonomy-v0.1","head":"e6c57b314bcf2e04de679c46c0be309f46cba053","classification":"LATE_HISTORICAL_CANDIDATE_PRESERVED_IN_ANCESTRY"},
+    {"branch":"feat/now-temporal-wave-activation-v0.1","head":"dc0b1a49cac33974514826d97b6328d4027a61a8","classification":"LATE_HISTORICAL_RETRODICTION_EVIDENCE_PRESERVED_IN_ANCESTRY"},
+    {"branch":"feat/phase-clock-length-scale-v0.1","head":"f90435edbfbba8211e6c28cc49a7c22f8059021b","classification":"FORWARD_PORTED_OR_SUPERSEDED_ON_MAIN"},
+    {"branch":"feat/relational-lapse-interface-v0.1","head":"e3cbcd39f2cc9ea8f3e08f613aa5124de1c4dac4","classification":"FORWARD_PORTED_OR_SUPERSEDED_ON_MAIN"},
+    {"branch":"feat/relational-tensor-scalar-forcing-v0.1","head":"707ece1c13bb75bd16fb30ddadaa5ec588a248fe","classification":"LATE_PHASE_CONNECTION_CANDIDATE_PRESERVED_IN_ANCESTRY"},
+    {"branch":"feat/retrodiction-07t-per-stratum-position-decoder-20260828","head":"a7159490bb430bc278ac52b0af42918253368062","classification":"FORWARD_PORTED_BY_07T_CONSOLIDATION"},
+    {"branch":"feat/retrodiction-position-lineage-v0.1","head":"e2fb4638f0d529ed4d9b883d06d4d911a917bcbe","classification":"LATE_HYBRID_SPARSE_LOCAL_RANK_CANDIDATE_PRESERVED_IN_ANCESTRY"},
+    {"branch":"merge/finalize-07t-doc-holonomy-20260828","head":"0322842ce0bac93df6146c10f29bea0b9489f7a2","classification":"SUPERSEDED_07T_DOCUMENTATION_HISTORY"}
+  ],
+  "rule": "Branch ancestry is retained for provenance. Current canonical files and statuses come from the main parent unless explicitly reintroduced by a later audited PR."
+}
