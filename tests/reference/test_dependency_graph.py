@@ -101,6 +101,24 @@ def test_relational_precedence_and_now_markers_are_recorded():
     assert "SERIAL_UNIQUE_CONCURRENT_ANTICHAIN_PASS" in now_status
 
 
+def test_temporal_wave_records_zeta_collatz_frame_and_null_control_status():
+    status = _nodes()["TEMPORAL_WAVE"]["status"]
+    for marker in [
+        "ZETA_COLLATZ_FRAME_ALGEBRAIC_REFERENCE_PASS",
+        "ZETA_PRIME_LOG_GENERATOR_PASS",
+        "SCHRODINGER_DERIVED_THETA_FUZZINESS_PASS",
+        "FIRST_MERGE_LOCALITY_PASS",
+        "SPARSE_ZETA_ORDERED_COLLATZ_PATH_PASS",
+        "PRIME_PATH_LOW_MODE_HOMOGENIZATION_PASS",
+        "COMPOSITE_PATH_HOMOGENIZATION_NULL_PASS",
+        "RANDOMIZED_ORDER_NULL_PASS",
+        "PRIME_SPECIFIC_CONTINUUM_DISCRIMINATOR_OPEN",
+        "JOINT_ZETA_FREQUENCY_COLLATZ_DISCRIMINATOR_ACTIVE_NEXT_GATE",
+        "HOSTED_REFERENCE_SUITE_609_OF_609",
+    ]:
+        assert marker in status
+
+
 def test_memory_and_orchorbital_admission_markers_are_recorded():
     nodes = _nodes()
     for marker in ["REFERENCE_GATE_ADMITTED", "HOSTED_FULL_SUITE_PASS"]:
