@@ -1,6 +1,6 @@
 # 03A — Temporal Activity and Directed Current
 
-Status: `STRUCTURAL_PASS / AUXILIARY_TO_CANONICAL_NOW`
+Status: `STRUCTURAL_PASS / ACTIVITY_DERIVED_TEMPORAL_INPUT_TO_NOW`
 
 For a positive directed kinetic pair
 \[
@@ -23,13 +23,30 @@ Under edge reversal,
 \]
 Moreover,
 \[
-\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}=\tanh(A_{ab}/2),
+\boxed{
+\chi_{ab}:=\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}
+=\tanh(A_{ab}/2),
+}
 \]
 so
 \[
 \boxed{
-A_{ab}=2\operatorname{artanh}\!\left(\frac{\mathfrak j_{ab}}{\mathfrak a_{ab}}\right).
+A_{ab}=2\operatorname{artanh}(\chi_{ab}).
 }
 \]
 
-The activity/current pair is therefore retained as a decomposition of pace and orientation. Canonical NOW localization is defined upstream from the positive gauge-invariant event signature \(q_e\); activity is used downstream to reconstruct the directed bifurcation parameter and, later, candidate internal elapsed activity.
+00E uses the symmetric traffic to derive the intrinsic temporal increment
+\[
+\boxed{d\Theta=\mathfrak a\,d\lambda}
+\]
+and the normalized current to carry local temporal orientation. The NOW layer then applies the independent positive gauge-invariant event signature \(q_e\) to localize realized event support. The typed handoff is therefore
+\[
+\boxed{
+(\mathfrak a,\chi)
+\to
+(d\Theta,\text{orientation})
+\quad\text{and}\quad
+q_e\to\text{NOW support}.
+}
+\]
+The bifurcation layer consumes the realized support together with the activity/current coordinates to construct the directed event update.
