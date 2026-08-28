@@ -2,9 +2,12 @@ import numpy as np
 
 from idt.zeta_collatz_temporal_fuzziness import is_prime
 from idt.zeta_zero_collatz_phase_discriminator import (
+    closed_gradient_holonomy,
+    closed_gradient_links,
     load_reference_zero_ordinates,
     local_zero_phase_contrast,
     prime_gap_phase_texture,
+    prime_vertex_phases,
     reference_zero_phase_ratios,
     symmetric_local_frequency_controls,
 )
@@ -33,6 +36,24 @@ def test_prime_gap_phase_texture_has_unit_modulus():
     primes = _prime_block(100, 64)
     phase = prime_gap_phase_texture(primes, load_reference_zero_ordinates()[0])
     np.testing.assert_allclose(np.abs(phase), 1.0, rtol=0.0, atol=2e-15)
+
+
+def test_neighbor_phase_texture_is_exact_vertex_gradient():
+    primes = _prime_block(100, 64)
+    gamma = load_reference_zero_ordinates()[3]
+    vertex = prime_vertex_phases(primes, gamma)
+    expected = vertex[1:] * np.conjugate(vertex[:-1])
+    np.testing.assert_allclose(prime_gap_phase_texture(primes, gamma), expected, rtol=0.0, atol=2e-15)
+
+
+def test_closed_exact_gradient_has_trivial_holonomy_for_zero_and_off_zero_frequencies():
+    primes = _prime_block(100, 64)
+    frequencies = list(load_reference_zero_ordinates()[:5]) + [17.25, 33.0, 71.5]
+    for gamma in frequencies:
+        links = closed_gradient_links(primes, gamma)
+        np.testing.assert_allclose(np.abs(links), 1.0, rtol=0.0, atol=2e-15)
+        holonomy = closed_gradient_holonomy(primes, gamma)
+        assert abs(holonomy - 1.0) < 5e-13
 
 
 def test_local_frequency_controls_are_symmetric_and_frozen_before_scoring():
