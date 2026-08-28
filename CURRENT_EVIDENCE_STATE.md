@@ -1,181 +1,99 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-## Temporal transport
+## Upstream admitted evidence
 
-Recorded structural evidence:
+Memory hosted admission: run `33193861826`, job `98925901636`, `431 passed in 7.08s`; receipt `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-- prior full reference suite: `83 passed in 0.12s`;
-- temporal-transport closure delta: `3/3 PASS` for spectral norm bound, algebraic invertibility/conditioning separation and exact cut factorization;
-- receipt: `validation/TEMPORAL_TRANSPORT_CLOSURE_V0_2.json`.
-
-## Memory
-
-Memory reference evidence includes Kepler--Newton propagation, event-imprint kicks, conditional central-parameter identifiability, CP1 Kähler memory frames, append-only receipts, ledger-assisted recall and the integrated CP1 -> event kick -> Kepler -> persisted receipt -> recall path.
-
-Hosted admission evidence:
-
-- workflow: `Reference suite`;
-- run: `33193861826` / run number `535`;
-- job: `98925901636`;
-- command: `python -m pytest -q tests/reference`;
-- result: `431 passed in 7.08s`;
-- receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
-
-## ORCHORBITAL attractor organization
-
-The admitted promotion-branch component stack contains active-attractor dynamics, Shannon basin organization, translated Kepler propagation, winding and switches, append-only content-addressed residence lineage, strict residence schema controls, hierarchy coarse-graining, pinned PNCS sphere/entity hierarchy, typed PNCS truth/mass/reduction coordinates and residence-weighted semantic mass.
-
-Component receipts:
-
-- `validation/ORCHORBITAL_RESIDENCE_LEDGER_V0_1.json`;
-- `validation/ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1.json`;
-- `validation/ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1.json`;
-- `validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json`;
-- combined admission: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
-
-The synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
+ORCHORBITAL hosted admission is bound by `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` and contains residence-ledger, strict-schema, PNCS hierarchy and typed-observable evidence. The synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
 ## Retrodiction evidence frontier
 
-Existing Retrodiction evidence includes withheld-lineage inversion, local observability/rank admission, checkpoint selection, damped Gauss--Newton estimation, covariance/Fisher uncertainty geometry, covariance-preserving permutation nulls, finite-branch controls, spatial-offset/divergence witnesses, adaptive SOD separation and event-aware residence conditioning.
+### 07O — event-aware residence conditioning
 
-### 07O event-aware residence conditioning
+The declared reflection pair retains equivalent final sparse base observation and equivalent active/switch/leak residence class, while its latent histories remain separated by more than `0.9`. The earlier continuous `weight:A@1` coordinate separates the pair by `0.01918916841099516`.
 
-For the declared 07G reflection pair:
+Hosted hardening: run `33198069462`, job `98940226102`, `486 passed in 8.89s`.
 
-- final retained base observation remains equivalent at tolerance `1e-10`;
-- latent separation remains greater than `0.9`;
-- active-attractor residence sequence is equivalent;
-- post-segment next-attractor / switch / leak lineage is equivalent;
-- provenance heads remain integrity coordinates outside semantic pair separation;
-- earlier continuous separator `weight:A@1` differs by `0.01918916841099516`.
+### 07P — quotient/fiber finite-domain injectivity
 
-Evidence: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`; hosted run `33198069462`, job `98940226102`: `486 passed in 8.89s`.
-
-### 07P quotient/fiber finite-domain injectivity
-
-07P checks every distinct-latent pair whose base projection collides and requires at least one declared fiber channel to separate it. Controls include exact sheet and scale fibers, unresolved identical-fiber collisions, all-pair coverage, malformed/non-finite inputs, and exact 07H positive/negative controls.
-
-Hosted authority:
-
-- run `33200684482` / #592;
-- job `98949092398`;
-- tested head `17d3ba854e83f930194b8dd4c4b7089382578a35`;
-- merge `ee1985c96df734d32a8232c03ca078c993ef7318`;
-- `495 passed in 10.14s`.
+For every distinct-latent pair colliding under the base projection, the finite-domain gate requires at least one declared fiber channel to separate the pair. Hosted run `33200684482`, job `98949092398`, returned `495 passed in 10.14s`.
 
 Receipt: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
-### 07Q oriented-winding fiber separator
+### 07Q — oriented winding fiber
 
-07Q binds the persisted ordered signed winding
+The persisted ordered signed winding
 
 \[
 \mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
 \]
 
-into the Retrodiction fiber architecture. Canonical values come from exact binary64 `winding_increment_hex`; provenance hashes do not enter the semantic separation metric.
+separates the exact reflection null at fiber tolerance `1e-12`; direct 07P integration gives one base collision, one separated collision and zero unresolved collisions with channel `oriented_winding`.
 
-For the same reflection null:
-
-- base collision persists at tolerance `1e-10`;
-- latent separation remains greater than `0.9`;
-- active-attractor sequence remains equal;
-- ordered winding distance is greater than `1e-12`;
-- pair status is `BASE_NULL_SEPARATED_BY_ORIENTED_WINDING`;
-- direct 07P integration gives 1 base collision / 1 separated / 0 unresolved with channel `oriented_winding`.
-
-Hosted authority:
-
-- run `33201861565` / #607;
-- job `98953023513`;
-- tested head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`;
-- merge `35b95bf5596014d76b8710047d036342a3b84e88`;
-- `502 passed in 8.09s`.
+Hosted run `33201861565`, job `98953023513`, returned `502 passed in 8.09s`.
 
 Receipt: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
 
-### 07R fiber-lift composition theorem
+### 07R — fiber-lift composition theorem
 
-07R separates the exact theorem from its finite executable audit. Define an injective carrier
+For injective carrier \(P\), augmented record \(A=(Y,F)\), and a single-valued lift satisfying \(P=L\circ A\), 07R proves exactly that \(A\) is injective. The finite executable audit checks carrier injectivity and lift functionality separately.
 
-\[
-P:\mathcal Z\to\mathcal X
-\]
+Hosted run `33202559485`, job `98955383447`, tested head `6abca4ad72c04cdca5d1128e690c17898b8650d7` and returned `510 passed in 14.11s`.
 
-and augmented retained observation
+Receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
 
-\[
-A(z)=(Y(z),F(z)).
-\]
+### 07S — stratified global reduction
 
-If there is a single-valued lift
+07S uses `ResidenceLineageSignature.active_sequence` as an exact discrete stratum key
 
 \[
-L:A(\mathcal Z)\to\mathcal X
+\alpha(z)=(a_1,\ldots,a_N).
 \]
 
-with
+Unequal active sequences are exactly separated by the retained record. Every collision candidate is therefore assigned to a fixed-sequence stratum \(\mathcal Z_s\). Inside each stratum, the 07K ordered position lineage is the exact constructive carrier, with \(2N\) position scalars for \(2N\) latent kick coordinates and a block-lower-triangular sensitivity with diagonal blocks \(\Delta\tau_nI_2\).
 
-\[
-P=L\circ A,
-\]
+The executable reference verifies:
 
-then `A` is injective. This implication is exact and follows by composition with carrier injectivity.
+1. exact stratum-key normalization;
+2. exact cross-stratum separation;
+3. the \(2N\)-dimensional rank certificate;
+4. real two-event constructive composition from retained active sequence and replayed position lineage through 07K to the generating kicks;
+5. carrier/decoder separation: a perturbed dynamically admissible position lineage is mapped by 07K to a different latent history;
+6. mismatch, elapsed-time and label fail-closed controls.
 
-The current carrier is the 07K ordered post-segment position lineage. The finite reference audit independently checks:
+The first hosted control expected a perturbed admissible carrier to raise. Run `33203185181`, job `98957507517`, correctly returned `1 failed, 517 passed in 11.81s`. The failure identified a test-contract mismatch: the exact 07K inverse maps each admissible carrier to its corresponding latent history, while carrier selection belongs to the decoder \(L_s\). The test was corrected accordingly.
 
-- `carrier_collision_count == 0` for distinct latent candidates;
-- no equal augmented observation maps to two distinct carrier values (`lift_conflict_count == 0`).
-
-Reference controls cover:
-
-1. exact finite composition pattern;
-2. explicit `FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN`;
-3. explicit `CARRIER_INJECTIVITY_FAIL_ON_FINITE_DOMAIN`;
-4. identical-latent control;
-5. exact reflection pair with base + oriented winding and the 07K position carrier;
-6. same pair with identical zero-fiber negative control;
-7. mismatched count rejection;
-8. non-finite input rejection.
-
-For the exact reflection pair with `oriented_winding`, the finite audit returns
-
-```text
-FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS
-```
-
-with zero carrier collisions, zero augmented collisions and zero lift conflicts. With the zero-fiber control it returns
-
-```text
-FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN
-```
-
-because the same augmented base record maps to two distinct position carriers.
-
-Hosted authority:
+Corrected hosted authority:
 
 - workflow: `Reference suite`;
-- run: `33202559485` / run number `621`;
-- job: `98955383447`;
-- tested branch head: `6abca4ad72c04cdca5d1128e690c17898b8650d7`;
-- tested PR merge commit: `a58b0c382727435f0e16231085181b60651f7f98`;
+- run: `33203339457` / run number `637`;
+- job: `98958035895`;
+- tested branch head: `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`;
+- tested PR merge commit: `3386f3e1a8fb63812095333955640e37040fa645`;
 - command: `python -m pytest -q tests/reference`;
-- result: `510 passed in 14.11s`;
+- result: `518 passed in 12.06s`;
 - Python `3.12.14`, Ubuntu `24.04.4`;
 - conclusion: `success`.
 
 Evidence files:
 
-- `src/idt/retrodiction_fiber_lift.py`;
-- `tests/reference/test_retrodiction_fiber_lift.py`;
-- `formalism/07R_fiber_lift_composition_theorem.md`;
-- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
+- `src/idt/retrodiction_stratified_position_lift.py`;
+- `tests/reference/test_retrodiction_stratified_position_lift.py`;
+- `formalism/07S_stratified_position_lift_reduction.md`;
+- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
 
-The active global closure target is now `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`: construct a domain-covering lift from retained base + fiber coordinates to the 07K ordered position lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status until that lift or an equivalent fiber-separation argument is receipted.
+The active constructive gate is `PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE`:
+
+\[
+\boxed{
+L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
+}
+\]
+
+`GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
 
 ## Canonical integration state
 
-The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the 07R exact composition theorem and finite hosted reference gate. Canonical `main` remains unchanged until explicit merge authorization.
+The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the 07S exact stratified reduction and hosted reference pass. Canonical `main` remains unchanged until explicit merge authorization.
