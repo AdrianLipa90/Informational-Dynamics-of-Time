@@ -107,10 +107,28 @@ with a global phase-connection layer supplying the holonomy class. The scalar an
 The next upstream task is to extend the response decomposition to stationary nonreversible dynamics while retaining the 01C relative-information contraction and the 01B connection/current structure. Downstream realizations are tested through Temporal Wave, NOW, Bifurcation, Transport, Memory and Retrodiction.
 
 \section{nD slices of the tensor--scalar field}
-Because the full tensor--scalar state lives in a space of dimension higher than two, Figure~\ref{fig:nd-slices} provides a family of 2D slices that can be shown publicly as a readable proxy for the richer field geometry.
+Because the full tensor--scalar state lives in a space of dimension higher than two, Figure~\ref{fig:nd-slices} provides four schematic two-dimensional slices as a readable proxy for the richer field geometry.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/nd_slices.png}
-  \caption{Four common-scale two-dimensional slices of one higher-dimensional tensor--scalar surrogate. The fixed tensor coordinates $(\Theta_1,\Theta_2)$ deform the local informational landscape; the cross marks the minimum in each slice.}
+  \begin{tikzpicture}[scale=0.86]
+    \foreach \x/\y/\ang/\sx/\sy/\mx/\my/\lab in {
+      -3.3/2.0/12/1.35/0.72/-3.0/1.82/{slice 1},
+       1.0/2.0/-18/1.18/0.82/1.25/1.72/{slice 2},
+      -3.3/-1.4/28/1.30/0.62/-3.55/-1.20/{slice 3},
+       1.0/-1.4/-32/1.10/0.88/0.72/-1.62/{slice 4}}
+    {
+      \begin{scope}[shift={(\x,\y)},rotate=\ang]
+        \draw[dashed] (0,0) ellipse ({1.75*\sx} and {1.30*\sy});
+        \draw[dashed] (0,0) ellipse ({1.25*\sx} and {0.90*\sy});
+        \draw[dashed] (0,0) ellipse ({0.72*\sx} and {0.50*\sy});
+      \end{scope}
+      \draw[thick] (\mx-0.10,\my-0.10) -- (\mx+0.10,\my+0.10);
+      \draw[thick] (\mx-0.10,\my+0.10) -- (\mx+0.10,\my-0.10);
+      \node[font=\small] at (\x,\y-1.45) {\lab};
+    }
+    \node[font=\small,anchor=west] at (-5.0,3.25) {common-scale 2D tensor--scalar sections};
+    \node[font=\small,anchor=west] at (-5.0,-3.0) {$\times$ marks the local minimum in each section};
+  \end{tikzpicture}
+  \caption{Schematic four common-scale two-dimensional slices of a higher-dimensional tensor--scalar surrogate. The fixed tensor coordinates deform the local informational landscape; the cross marks the minimum in each slice.}
   \label{fig:nd-slices}
 \end{figure}
