@@ -1,0 +1,55 @@
+{
+  "schema": "IDT_CROSS_REFERENCE_UPDATE_V1",
+  "date": "2026-08-27",
+  "node": "IDT_01M_HERMITIAN_ORIENTED_EXCHANGE",
+  "status": "CANDIDATE_CROSS_REPOSITORY_BINDING",
+  "pins": {
+    "IDT_01L": {
+      "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+      "branch": "feat/relational-lambda-oriented-holonomy-v0.1",
+      "commit": "305e8602620b552052471fadfe798cad44a2d182",
+      "path": "formalism/01L_relational_lambda_oriented_holonomy_interface.md"
+    },
+    "IDT_01M": {
+      "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+      "branch": "feat/hermitian-oriented-exchange-interface-v0.1",
+      "commit": "09e9abe24ecaf362cb46e8da40aff915593da68f",
+      "path": "formalism/01M_hermitian_oriented_exchange_interface.md"
+    },
+    "RFC_RF_L1A": {
+      "repository": "AdrianLipa90/Relational-Field-Closure",
+      "branch": "feat/rfl1a-hermitian-oriented-exchange-v0.1",
+      "commit": "9e6b5451ee4cdef9b755c8abbed15f3892cb3e0c",
+      "path": "formalism/RFL1A_HERMITIAN_ORIENTED_EXCHANGE_GATE.md"
+    },
+    "GREMLIN_V1_4": {
+      "repository": "AdrianLipa90/GREMLIN",
+      "branch": "feat/gremlin-hermitian-oriented-exchange-v1.4",
+      "commit": "1cfeb2df52f3b98318bf207c6a12cd3e6a913f24",
+      "ci_run": 33125674008,
+      "ci_result": "209 passed"
+    }
+  },
+  "interface": {
+    "relational_scalar": "Lambda_R [L^-2]",
+    "effective_source_energy_density": "u_R=Lambda_R*c^4/(8*pi*G)",
+    "oriented_holonomy": "J_complex=E_R*exp(i*tau_R)",
+    "hermitian_exchange": "H_ex=J_complex|01><10|+conj(J_complex)|10><01|",
+    "pauli_decomposition": "Re(J)/2*(XX+YY)+Im(J)/2*(XY-YX)",
+    "orientation_control": "tau_R -> -tau_R preserves exchange probabilities and reverses the signed phase quadrature"
+  },
+  "authority": {
+    "operator_reference_conformance": "PASS",
+    "physical_target_attribution": "OPEN",
+    "neutrino_adapter": "TEST_TARGET",
+    "joint_state_witness_for_entanglement": "REQUIRED"
+  },
+  "open_gates": [
+    "physical neutrino flavor/mass state map",
+    "three-flavor Hermitian extension",
+    "vacuum and matter Hamiltonian compatibility",
+    "spin-connection or geometric connection target adapter",
+    "holonomy residual phase prediction",
+    "uncertainty propagation and oscillation-data comparison"
+  ]
+}
