@@ -18,7 +18,7 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
 | Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
 | ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ACTIVE_NEXT_GATE / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | residence conditioning is validated; the active next task is global branch separation with retained continuous ORCHORBITAL and spatial-offset/divergence channels |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ACTIVE_NEXT_GATE / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | 07P upgrades pair witnesses into an all-collision finite-domain gate; the active next task is a domain-covering or constructive global separation argument over retained continuous ORCHORBITAL, SOD and holonomy channels |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
@@ -30,6 +30,8 @@ Promotion-branch admission receipts:
 Current provisional Retrodiction evidence:
 
 - event-aware residence conditioning: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+- finite quotient/fiber injectivity: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
+- hosted 07P reference run: `33200684482`, job `98949092398`, `495 passed in 10.14s`;
 - governing global status: `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 Canonical `main` adopts branch admission states through explicit merge.
