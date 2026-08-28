@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_INTEGRATION_REFERENCE_PASS_CANDIDATE / ORCHORBITAL_TARGETED_REFERENCE_PASS / RETRODICTION_TARGETED_REFERENCE_PASS / FULL_SUITE_NOT_OBTAINED`
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_HOSTED_FULL_SUITE_PASS_PROMOTION_READY / ORCHORBITAL_TARGETED_REFERENCE_PASS / RETRODICTION_TARGETED_REFERENCE_PASS`
 
 ## Temporal transport
 
@@ -23,6 +23,12 @@ Recorded targeted controls:
 
 The integrated Memory path verifies `CP1 geometry -> event kick -> Kepler propagation -> persisted receipt -> recall`, including a tampered-receipt negative control and upstream global-phase invariance. The isolated integrated round-trip error in the recorded reference case is below `3.6e-16`.
 
+The previously outstanding repository-wide admission condition has now been executed by GitHub Actions. Run `33193861826`, job `98925901636`, executed `python -m pytest -q tests/reference` on Python 3.12.14 / Ubuntu 24.04 and returned `431 passed in 7.08s`. The workflow conclusion is `success`.
+
+The tested PR merge commit is `e0b1cdc491a1a501adce93b8d62ade063e167500`, tree `92302498f3c9131b163d5d0ccbbeab1db935d29f`. The append-only evidence binding is `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+
+Memory is therefore promotion-ready on the evidence branch. Canonical `main` remains unchanged until PR #21 is merged.
+
 ## ORCHORBITAL attractor extension
 
 Receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
@@ -44,6 +50,8 @@ Targeted exact-dependency reference result:
 - `LEAK_MODE` fails closed before orbital propagation: PASS;
 - phase-space closure defect is zero for identical states: PASS.
 
+These ORCHORBITAL tests are also contained in the successful 431-test repository suite. This closes the hosted-execution uncertainty for the existing implementation, but does not by itself satisfy the remaining ORCHORBITAL admission work on long-trajectory residence/switch provenance, hierarchical attractor families and typed observables.
+
 Evidence class: `ORCHORBITAL_MEMORY_REFERENCE_DIAGNOSTIC`.
 
 ## Retrodiction downstream staging
@@ -57,12 +65,20 @@ Recorded provisional evidence includes:
 - partial-checkpoint selection: two checkpoints can be information-sufficient but poorly conditioned; all three give condition about `4.067--4.076` in the recorded reference range;
 - covariance-weighted permutation nulls: targeted file `5 passed`, final checkpoint-selection + weighted-null rerun `10 passed in 0.25s`; the retained chronology beats all five non-identity checkpoint permutations in E003 reference run 0002.
 
-Retrodiction remains `PROVISIONAL_DOWNSTREAM` in the dependency graph.
+Retrodiction remains `PROVISIONAL_DOWNSTREAM` in the dependency graph and is gated by ORCHORBITAL admission.
 
 ## Hosted full-suite status
 
-Observed GitHub Actions jobs for the integrated Memory/Retrodiction history terminate with conclusion `failure` but zero executed steps and unavailable logs. The recorded result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`.
+Current hosted result: `PASS`.
 
-No repository-test PASS or code/test FAIL is inferred from those hosted runs.
+- workflow: `Reference suite`;
+- run: `33193861826` / run number `535`;
+- job: `98925901636`;
+- test step executed: yes;
+- command: `python -m pytest -q tests/reference`;
+- result: `431 passed in 7.08s`;
+- job/workflow conclusion: `success`.
 
-The canonical admitted frontier remains at Memory pending a real full repository reference-suite result. ORCHORBITAL has targeted reference PASS as a Memory extension; Retrodiction remains downstream staging behind the Memory -> ORCHORBITAL admission path.
+Earlier zero-step infrastructure failures remain historical evidence and are not reclassified as code-test failures. The fresh executed run supersedes them for the current integrated Memory evidence gate.
+
+The next admission dependency is now ORCHORBITAL Attractors. Retrodiction remains downstream staging behind `Memory -> ORCHORBITAL`.
