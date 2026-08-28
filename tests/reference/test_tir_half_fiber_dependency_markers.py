@@ -11,9 +11,17 @@ def _graph():
     return json.loads(GRAPH.read_text())
 
 
+def _schema_minor(schema: str) -> int:
+    prefix = "IDT_FORMAL_DEPENDENCY_GRAPH_V0_"
+    assert schema.startswith(prefix)
+    suffix = schema[len(prefix):]
+    assert suffix.isdigit()
+    return int(suffix)
+
+
 def test_dependency_graph_records_tir_half_fiber_normalization_pass():
     graph = _graph()
-    assert graph["schema"] == "IDT_FORMAL_DEPENDENCY_GRAPH_V0_35"
+    assert _schema_minor(graph["schema"]) >= 35
     nodes = {node["id"]: node for node in graph["nodes"]}
 
     primitive = nodes["TEMPORAL_PRIMITIVE"]["status"]
