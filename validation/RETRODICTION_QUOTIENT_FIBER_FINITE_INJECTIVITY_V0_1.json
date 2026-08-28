@@ -1,0 +1,66 @@
+{
+  "schema": "IDT_RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1",
+  "status": "CANDIDATE_ONLY_LOCAL_REFERENCE_PASS",
+  "epistemic_operator": "CHYBA",
+  "canon_allowed": false,
+  "branch": "chore/memory-full-suite-refresh-20260828",
+  "parent_branch_head_before_07p": "6531473ec480a68c6a6ff68845b63f8a53e8f9fc",
+  "implementation_commits": {
+    "source": "88bcaf8f25f830cfab2ec2e8fbebeb07b5ceb7e7",
+    "tests": "461821470b1637d8f9ee81406c9f413cfc7cbc0b",
+    "formalism": "c81b12ef211032e2d48ba1d5799a99d2489372d1"
+  },
+  "implementation": "src/idt/retrodiction_quotient_fiber_injectivity.py",
+  "tests": "tests/reference/test_retrodiction_quotient_fiber_injectivity.py",
+  "formalism": "formalism/07P_quotient_fiber_finite_injectivity.md",
+  "local_reference": {
+    "command": "python -m pytest -q tests/reference/test_retrodiction_quotient_fiber_injectivity.py",
+    "result": "9 passed in 0.04s",
+    "status": "PASS"
+  },
+  "gate": {
+    "exact_lemma": "augmented map is injective on a finite candidate set iff every distinct pair colliding under the base projection is separated by at least one declared fiber channel",
+    "numerical_status_pass": "FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER",
+    "global_frontier": "GENERAL_GLOBAL_INJECTIVITY_OPEN"
+  },
+  "idt_07h_binding": {
+    "latent_separation": 0.9233193011263697,
+    "base_residual": 5.594315114139762e-17,
+    "separating_channel": "w_A_1",
+    "separating_delta": 0.01918916841099516,
+    "negative_control_channel": "r_x_1",
+    "negative_control_delta": 1.1102230246251565e-16,
+    "status": "PASS"
+  },
+  "gremlin": {
+    "live_surface": "/dev/shm/ciel_noema",
+    "generation_binding": "c74cf21cf49efbc89b226cfefa8e7e7c6c011d261d1bdca808107d98bd33db44",
+    "artifact": "/dev/shm/ciel_noema/gremlin/IDT_GREMLIN_RETRODICTION_QUOTIENT_FIBER_20260828.json",
+    "artifact_sha256": "2c0caeca231bc135ceec972a6df6cec99db517455564b55f66c5f4314773c1fc",
+    "promotion_state": "CANDIDATE_ONLY",
+    "runtime_execution_authority": false,
+    "canon_write_authority": false
+  },
+  "cross_repository_source_pins": [
+    {
+      "repository": "AdrianLipa90/Relational-Field-Closure",
+      "commit": "e7817ce07a989ae95246f21e5e632da4b9d04493",
+      "path": "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
+      "role": "NORMALIZATION_QUOTIENT_PLUS_EXTENSIVE_SCALE_FIBER"
+    },
+    {
+      "repository": "AdrianLipa90/secret-of-a-half",
+      "commit": "4cf36453ee2b6d33a1f9177ca324b9ef491270be",
+      "path": "monograph/chapters/41_paired_spectrum_quotient_correspondence.tex",
+      "role": "EXACT_TWO_SHEETED_QUOTIENT_FIBER"
+    },
+    {
+      "repository": "AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations",
+      "commit": "26bd867c10b6f6e21b54f2a4dc7b2f49df62907a",
+      "path": "archive/v7.9/full/33_debt10_white_thread_open_holonomy_preckm_v3_5/METATIME_SM_WHITE_THREAD_OPEN_HOLONOMY_PRECKM_v3_5.md",
+      "role": "ORIENTATION_PLUS_OPEN_HOLONOMY_TRANSPORT_CANDIDATE"
+    }
+  ],
+  "promotion_requirement": "HOSTED_FULL_REFERENCE_SUITE_PASS_ON_EXACT_FINAL_BRANCH_HEAD",
+  "main_modified_by_this_change": false
+}
