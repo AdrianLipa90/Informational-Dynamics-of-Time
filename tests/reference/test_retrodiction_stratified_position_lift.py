@@ -106,19 +106,27 @@ def test_constructive_composition_recovers_real_kicks_from_retained_stratum_and_
     assert result.status == "CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_RECOVERY"
 
 
-def test_tampered_lifted_position_fails_closed_under_07k_replay() -> None:
+def test_tampered_position_lineage_decodes_to_a_different_same_stratum_history() -> None:
     signature, positions = _signature_and_positions()
     tampered = [np.array(value, dtype=float, copy=True) for value in positions]
     tampered[-1][0] += 1e-4
-    with pytest.raises(StratifiedPositionLiftError):
-        retrodict_from_retained_position_lift(
-            _initial(),
-            _attractors(),
-            signature,
-            (0.004, 0.003),
-            tampered,
-            position_tolerance=1e-10,
-        )
+    result = retrodict_from_retained_position_lift(
+        _initial(),
+        _attractors(),
+        signature,
+        (0.004, 0.003),
+        tampered,
+        position_tolerance=1e-10,
+    )
+    assert result.active_sequence == signature.active_sequence
+    assert result.recovered.status == "EXACT_POSITION_LINEAGE_RECOVERY"
+    assert result.recovered.max_position_residual <= 1e-10
+    assert not np.allclose(
+        np.asarray(result.recovered.kicks, dtype=complex),
+        np.asarray(_kicks(), dtype=complex),
+        rtol=0.0,
+        atol=1e-10,
+    )
 
 
 def test_sequence_elapsed_length_mismatch_fails_closed() -> None:
