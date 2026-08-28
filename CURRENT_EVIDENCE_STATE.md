@@ -1,6 +1,6 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 ## Temporal transport
 
@@ -72,22 +72,7 @@ Evidence:
 
 The executable numerical gate checks every distinct-latent pair whose base projection collides within the declared tolerance and requires at least one declared fiber channel to separate the pair.
 
-Reference controls cover:
-
-- exact two-sheet quotient / sheet-coordinate separation;
-- normalized-shape / scale-fiber separation;
-- unresolved identical-fiber collision;
-- all-pair finite-domain requirement;
-- deterministic channel attribution;
-- fail-closed malformed and non-finite inputs;
-- exact 07H `w_A_1` positive separator;
-- exact 07H `r_x_1` negative control.
-
-Local targeted result:
-
-```text
-9 passed in 0.04s
-```
+Reference controls cover exact two-sheet quotient / sheet-coordinate separation, normalized-shape / scale-fiber separation, unresolved identical-fiber collisions, all-pair finite-domain coverage, deterministic channel attribution, malformed/non-finite inputs, the exact 07H `w_A_1` positive separator and the exact 07H `r_x_1` negative control.
 
 Hosted authority:
 
@@ -106,8 +91,44 @@ Evidence files:
 - `formalism/07P_quotient_fiber_finite_injectivity.md`;
 - `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
-The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The active next gate is a domain-covering or constructive global separation argument using the retained continuous ORCHORBITAL, spatial/SOD and holonomy channels.
+### 07Q oriented-winding fiber separator
+
+07Q promotes the already persisted ordered signed winding sequence from a diagnostic into an explicit Retrodiction fiber candidate:
+
+\[
+\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+\]
+
+The canonical carrier is the exact binary64 `winding_increment_hex` field in each residence receipt. The decoded vector is used for numerical separation, while provenance hashes remain outside the semantic metric.
+
+For the same 07G/07H reflection null:
+
+- the base observation remains a collision at tolerance `1e-10`;
+- latent separation remains greater than `0.9`;
+- active-attractor sequence remains equal;
+- ordered winding distance is greater than `1e-12`;
+- pair status is `BASE_NULL_SEPARATED_BY_ORIENTED_WINDING`;
+- direct 07P integration reports one base collision, one separated collision, zero unresolved collisions and `FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER` with channel `oriented_winding`.
+
+Hosted authority:
+
+- workflow: `Reference suite`;
+- run: `33201861565` / run number `607`;
+- job: `98953023513`;
+- tested branch head: `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`;
+- tested PR merge commit: `35b95bf5596014d76b8710047d036342a3b84e88`;
+- result: `502 passed in 8.09s`;
+- Python `3.12.14`, Ubuntu `24.04.4`.
+
+Evidence files:
+
+- `src/idt/retrodiction_oriented_winding_fiber.py`;
+- `tests/reference/test_retrodiction_oriented_winding_fiber.py`;
+- `formalism/07Q_oriented_winding_fiber_separator.md`;
+- `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
+
+The governing global status remains `GENERAL_GLOBAL_INJECTIVITY_OPEN`. The active next gate is a domain-covering characterization of base-collision fibers and a separator cover using ordered winding together with retained continuous ORCHORBITAL and spatial/SOD channels.
 
 ## Canonical integration state
 
-The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the hosted finite-domain quotient/fiber gate. Canonical `main` remains unchanged until explicit merge authorization.
+The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the hosted oriented-winding fiber separator. Canonical `main` remains unchanged until explicit merge authorization.
