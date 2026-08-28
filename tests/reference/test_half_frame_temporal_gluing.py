@@ -13,6 +13,8 @@ from idt.half_frame_temporal_gluing import (
     norm_decomposition,
     seam_defect_amplitudes,
     split_isometry,
+    temporal_path_incidence,
+    temporal_support_laplacian,
     whole_to_glued_operator,
 )
 
@@ -104,3 +106,48 @@ def test_nonuniform_elapsed_measure_is_exactly_conserved():
     assert np.all(glued > 0.0)
     assert math.isclose(float(np.sum(glued)), float(np.sum(theta)), rel_tol=0.0, abs_tol=2e-15)
     np.testing.assert_allclose(glued[1:-1], 0.5 * (theta[:-1] + theta[1:]), atol=0.0)
+
+
+def test_half_frame_quotient_induces_path_incidence():
+    for n in (1, 2, 4, 9):
+        d = temporal_path_incidence(n)
+        assert d.shape == (n + 1, n)
+        np.testing.assert_allclose(np.sum(d, axis=0), 0.0, atol=0.0)
+        assert np.linalg.matrix_rank(d) == n
+        for edge in range(n):
+            column = d[:, edge]
+            assert np.count_nonzero(column == -1.0) == 1
+            assert np.count_nonzero(column == 1.0) == 1
+            assert np.count_nonzero(column) == 2
+
+
+def test_weighted_support_laplacian_is_psd_with_constant_zero_mode():
+    weights = np.asarray([0.2, 1.1, 0.7, 2.3, 0.4])
+    lap = temporal_support_laplacian(weights)
+    np.testing.assert_allclose(lap, lap.T, atol=0.0)
+    np.testing.assert_allclose(lap @ np.ones(weights.size + 1), 0.0, atol=2e-15)
+    eig = np.linalg.eigvalsh(lap)
+    assert eig[0] > -2e-14
+    assert eig[1] > 0.0
+
+
+def test_uniform_path_spectrum_matches_exact_formula():
+    n = 12
+    weight = 0.73
+    lap = temporal_support_laplacian(np.full(n, weight))
+    actual = np.linalg.eigvalsh(lap)
+    k = np.arange(n + 1, dtype=float)
+    expected = 2.0 * weight * (1.0 - np.cos(k * math.pi / (n + 1)))
+    np.testing.assert_allclose(actual, expected, rtol=0.0, atol=2e-14)
+
+
+def test_low_path_modes_approach_quadratic_continuum():
+    weight = 1.4
+    errors = []
+    for n in (32, 64, 128):
+        eig = np.linalg.eigvalsh(temporal_support_laplacian(np.full(n, weight)))
+        k = np.arange(1, 5, dtype=float)
+        target = weight * (k * math.pi / (n + 1)) ** 2
+        errors.append(float(np.max(np.abs(eig[1:5] / target - 1.0))))
+    assert errors[2] < errors[1] < errors[0]
+    assert errors[-1] < 1e-3
