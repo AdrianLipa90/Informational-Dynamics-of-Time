@@ -1,14 +1,14 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS / FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS / 07K_NDARRAY_CARRIER_INTERFACE_PASS / POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-The proposed admitted frontier after merge of the current promotion branch is
+The canonical admitted frontier is
 
 \[
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
 \]
 
-The active downstream dependency path is
+and the active downstream dependency path is
 
 \[
 \boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
@@ -26,7 +26,7 @@ Memory evolves in internal elapsed activity with event-driven Kepler cells,
 \Delta v_{M,n}=q_n\delta m_n.
 \]
 
-ORCHORBITAL organization selects an active attractor from positive binding margins and propagates each admitted smooth segment around that center. The residence layer persists exact segment chronology, active-attractor identity, elapsed time and signed winding increment
+ORCHORBITAL organization selects an active attractor and preserves signed segment winding
 
 \[
 \boxed{
@@ -38,26 +38,13 @@ Memory and ORCHORBITAL admission are bound by their hosted full-suite receipts.
 
 ## Retrodiction quotient/fiber architecture
 
-07P defines a finite-domain augmented observation
+07P defines an augmented observation
 
 \[
 \widetilde Y(z)=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr)
 \]
 
-and establishes the exact finite-set criterion
-
-\[
-\boxed{
-\widetilde Y\text{ injective on }\mathcal C
-\iff
-\forall i\ne j:\
-Y(z_i)=Y(z_j)
-\Longrightarrow
-\exists c:\ F_c(z_i)\ne F_c(z_j).
-}
-\]
-
-07Q supplies the persisted ordered signed winding fiber
+and the finite-domain separator condition. 07Q supplies the ordered signed winding fiber
 
 \[
 \boxed{
@@ -65,55 +52,21 @@ Y(z_i)=Y(z_j)
 }
 \]
 
-For the exact reflection pair, the sparse base projection and active sequence coincide while \(\mathcal W\) separates the two histories at the declared fiber tolerance.
-
-## 07R fiber-lift composition
-
-Let
+07R introduces the exact carrier/lift theorem. For an injective carrier \(P\) and augmented retained record \(A=(Y,F)\),
 
 \[
-P:\mathcal Z\to\mathcal X
+\boxed{P=L\circ A}
+\quad\Longrightarrow\quad
+\boxed{A\text{ injective}.}
 \]
 
-be an injective carrier and
-
-\[
-A(z)=(Y(z),F(z)).
-\]
-
-If a single-valued lift satisfies
-
-\[
-\boxed{P=L\circ A,}
-\]
-
-then
-
-\[
-\boxed{A\text{ is injective}.}
-\]
-
-The carrier used by the Retrodiction program is the 07K ordered post-segment position lineage
+The carrier is the 07K ordered post-segment position lineage
 
 \[
 \boxed{P(z)=(r_1(z),\ldots,r_N(z)).}
 \]
 
-For a fixed active-attractor sequence and positive elapsed increments, 07K recovers each event kick algebraically:
-
-\[
-\boxed{
-u_n=
-\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
-{\Delta\tau_n}
--v_{n-1},}
-\]
-
-\[
-\boxed{
-v_n=v_{n-1}+u_n+
-\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
-\]
+For fixed active-attractor sequence and positive elapsed increments, 07K algebraically recovers each kick from the ordered positions.
 
 ## 07S stratified global reduction
 
@@ -125,102 +78,142 @@ The event-aware residence signature retains the complete active-attractor sequen
 }
 \]
 
-exactly. Define the fixed-sequence stratum
+exactly. Define
 
 \[
 \boxed{
-\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
+\mathcal Z_s=\{z:\alpha(z)=s\}.
 }
 \]
 
 Because \(\alpha\) is part of the retained record,
 
 \[
-\boxed{
 \alpha(z_1)\ne\alpha(z_2)
 \Longrightarrow
 A(z_1)\ne A(z_2).
-}
 \]
 
-Hence collision analysis is stratified by the exact retained sequence key.
+Thus collision analysis reduces to fixed-sequence strata. Inside each stratum, a decoder
 
-Within each \(\mathcal Z_s\), the ordered position lineage supplies the 07K carrier \(P_s\). If the retained base/fiber coordinates admit a single-valued per-stratum decoder
+\[
+L_s:A(\mathcal Z_s)\to P_s(\mathcal Z_s)
+\]
+
+with \(P_s=L_s\circ A|_{\mathcal Z_s}\) composes with 07R and 07K to give latent-history uniqueness on that stratum.
+
+## 07T exact coordinate-complete decoder
+
+Let
 
 \[
 \boxed{
-L_s:A(\mathcal Z_s)\to P_s(\mathcal Z_s),
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
+}
+\]
+
+be the complete scalar label set of the 07K carrier. 07T assigns every label exactly one source from either the retained base record or an explicit absolute position-fiber packet.
+
+If the combined retained coordinates cover \(\Lambda_P\) exactly once, define
+
+\[
+\boxed{
+L_s^{\rm pos}(Y,F_{\rm pos})
+=\bigl((r_{1x},r_{1y}),\ldots,(r_{Nx},r_{Ny})\bigr).
+}
+\]
+
+Then
+
+\[
+\boxed{
+P_s=L_s^{\rm pos}\circ(Y,F_{\rm pos})|_{\mathcal Z_s}.
+}
+\]
+
+This is the first explicit per-stratum decoder satisfying the 07R composition premise.
+
+For the declared 07J sparse schedule,
+
+\[
+(r_{Nx},r_{Ny})\subset Y,
+\]
+
+so the coordinate-complete additional packet is
+
+\[
+\boxed{
+F_{\rm pos}^{\rm baseline}
+=\{r_{kx},r_{ky}:1\le k<N\},
 \qquad
-P_s=L_s\circ A|_{\mathcal Z_s},
+|F_{\rm pos}^{\rm baseline}|=2N-2.
 }
 \]
 
-then 07R gives injectivity on that stratum. Exact active-sequence separation then yields injectivity on the union of admitted strata:
+The 07L local-rank budget and the 07T exact-carrier budget remain separately typed:
 
 \[
 \boxed{
-\left[\forall s:\ A|_{\mathcal Z_s}\text{ injective}\right]
-\land
-\left[\alpha\text{ retained exactly}\right]
-\Longrightarrow
-A\text{ injective on }\mathcal Z.
+N_{\rm add}^{\rm local}=N-3,
+\qquad
+N_{\rm add}^{\rm exact\ carrier}=2N-2
 }
 \]
 
-The 07K position sensitivity carries \(2N\) output coordinates for \(2N\) latent kick coordinates and has a block-lower-triangular structure with diagonal blocks
+for the saturated declared 07J schedule. The first quantity closes local rank; the second supplies a direct global carrier decoder.
 
-\[
-\boxed{\Delta\tau_n I_2.}
-\]
+A real three-event reference uses base coordinates \((r_{3x},r_{3y})\) and position fibers \((r_{1x},r_{1y},r_{2x},r_{2y})\). The assembled carrier composes through 07K and reconstructs the generating kick vector within tolerance.
 
-For positive \(\Delta\tau_n\), the fixed-sequence carrier therefore has the required rank structure and exact constructive inverse.
-
-### Decoder/carrier role separation
-
-07S fixes the architectural composition as
-
-\[
-\boxed{
-(Y,F)|_{\mathcal Z_s}
-\xrightarrow{L_s}
-(r_1,\ldots,r_N)
-\xrightarrow{07K^{-1}}
-(u_1,\ldots,u_N).
-}
-\]
-
-A perturbed but dynamically admissible position carrier maps through 07K to its corresponding distinct latent history. The carrier-to-history inverse and retained-record-to-carrier decoder are therefore separate typed transformations.
-
-The corrected hosted reference gate returned
+The integration also hardened the 07K input parser so a NumPy \((N,2)\) carrier is accepted according to its generic sequence contract. Hosted run `33204551313`, job `98962152065`, returned
 
 ```text
-518 passed in 12.06s
+528 passed in 14.20s
 ```
 
-in run `33203339457`, job `98958035895`, on tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051` after an earlier control expectation was corrected from run `33203185181` (`1 failed, 517 passed`).
+on tested head `8d0964f1d6d343193bb72966f4443780d2edafe0`.
 
 Bindings:
 
-- `formalism/07R_fiber_lift_composition_theorem.md`;
-- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
 - `formalism/07S_stratified_position_lift_reduction.md`;
-- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`;
+- `formalism/07T_per_stratum_position_decoder_baseline.md`;
+- `validation/RETRODICTION_PER_STRATUM_POSITION_DECODER_V0_1.json`.
 
-The active Retrodiction frontier is now
+## Position-fiber compression frontier
 
-```text
-PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
-```
+The next exact candidate uses the active-center polar decomposition. Let
 
-with the constructive target
+\[
+\rho_k=\|r_k-c_{a_k}\|,
+\qquad
+\theta_{k-1}=\arg(r_{k-1}-c_{a_k}).
+\]
+
+Because 07Q retains
+
+\[
+\Delta W_k=\frac{1}{2\pi}\operatorname{wrap}(\theta_k-\theta_{k-1}),
+\]
+
+the direction of \(r_k-c_{a_k}\) is fixed modulo \(2\pi\), and hence
 
 \[
 \boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}+2\pi\Delta W_k)
+\end{pmatrix}.
 }
 \]
 
-Candidate retained inputs are the already typed ordered winding, continuous ORCHORBITAL and SOD/spatial channels. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
+Since the declared base schedule already retains final \(r_N\), recursive recovery of the earlier carrier suggests an additional radial packet of only \(N-1\) scalars while reusing the existing ordered winding fiber. The active gate is therefore
+
+```text
+POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
+```
+
+with `GENERAL_GLOBAL_INJECTIVITY_OPEN` retained for the compressed architecture until this construction is implemented and receipted.
 
 ## 01K temporal information curvature interface
 
@@ -234,6 +227,6 @@ The separate Einstein-interface branch carries
 [\Xi_I]=L^{-2},
 \]
 
-as a parallel downstream curvature-typed export while Retrodiction is the active sequential temporal gate.
+as a parallel downstream curvature-typed export while Retrodiction remains the active sequential gate.
 
-Canonical `main` remains unchanged until explicit merge authorization.
+Canonical `main` contains the stack through 07S. 07T remains on draft PR #23 pending explicit merge authorization.
