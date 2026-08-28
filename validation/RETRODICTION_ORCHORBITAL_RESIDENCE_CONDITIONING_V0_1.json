@@ -1,0 +1,74 @@
+{
+  "schema": "IDT_RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1",
+  "status": "PASS_EVENT_AWARE_RESIDENCE_BRIDGE_KNOWN_NULL_LABEL_PERSISTENCE",
+  "canon_allowed": false,
+  "promotion_ready": false,
+  "created_utc": "2026-08-28T18:12:00Z",
+  "dependency": {
+    "parent": "ORCHORBITAL_ATTRACTORS",
+    "node": "RETRODICTION",
+    "overall_retrodiction_status": "PROVISIONAL_ACTIVE_NEXT_GATE_GENERAL_GLOBAL_INJECTIVITY_OPEN"
+  },
+  "implementation": {
+    "path": "src/idt/retrodiction_orchorbital_residence_conditioning.py",
+    "formalism": "formalism/07O_orchorbital_residence_conditioned_retrodiction.md",
+    "bridge_schema": "idt.memory-orchorbital-residence-cell/v1",
+    "residence_schema": "idt.orchorbital-residence-receipt/v1"
+  },
+  "controls": {
+    "memory_event_to_smooth_residence_bridge": "PASS",
+    "outer_pre_event_state_continuity": "PASS",
+    "event_to_smooth_input_hash_binding": "PASS",
+    "event_local_residence_receipt_verification": "PASS",
+    "content_hash_tamper_detection": "PASS",
+    "binary64_large_tau_elapsed_binding": "PASS",
+    "known_reflection_pair_base_equivalence": "PASS",
+    "known_reflection_pair_active_labels_equivalent": "PASS",
+    "known_reflection_pair_switch_lineage_equivalent": "PASS",
+    "provenance_hash_excluded_from_semantic_separation": "PASS",
+    "winding_reported_as_separate_continuous_coordinate": "PASS"
+  },
+  "known_reflection_pair": {
+    "latent_separation_lower_bound": 0.9,
+    "base_observation": ["rx@2", "ry@2", "vx@2", "weight:A@2", "weight:B@2", "weight:C@2"],
+    "equivalence_tolerance": 1e-10,
+    "residence_label_status": "KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS",
+    "earlier_continuous_weight_separator": {
+      "coordinate": "weight:A@1",
+      "absolute_difference": 0.01918916841099516,
+      "source_formalism": "formalism/07H_known_global_null_separation.md"
+    }
+  },
+  "information_firewall": {
+    "semantic_pair_status_uses": [
+      "active_attractor_sequence",
+      "next_attractor_sequence",
+      "switch_indices",
+      "leak_indices"
+    ],
+    "continuous_diagnostic_separate": ["winding_increment_sequence"],
+    "provenance_only": ["bridge_head_sha256", "state_sha256", "receipt_sha256"]
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33198069462,
+    "run_number": 576,
+    "job_id": 98940226102,
+    "python": "3.12.14",
+    "runner": "Ubuntu 24.04.4",
+    "command": "python -m pytest -q tests/reference",
+    "tests_passed": 486,
+    "tests_failed": 0,
+    "duration_seconds": 8.89,
+    "conclusion": "success",
+    "tested_branch_commit": "7537322cbf9df4c4270d79619ed1dc6f2ae028b9",
+    "tested_pr_merge_commit": "adbf31231033ab602455a75393b65816857f6afd",
+    "tested_pr_merge_tree": "d6064dbb6092a976c376a1c4a14cf53225bcb263"
+  },
+  "frontier": {
+    "completed": "EVENT_AWARE_ORCHORBITAL_RESIDENCE_CONDITIONING",
+    "result": "DISCRETE_RESIDENCE_LABELS_PRESERVE_DECLARED_07G_GLOBAL_NULL",
+    "retained_separator": "EARLIER_CONTINUOUS_ORCHORBITAL_WEIGHT",
+    "next_global_status": "GENERAL_GLOBAL_INJECTIVITY_OPEN"
+  }
+}
