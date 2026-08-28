@@ -1,0 +1,44 @@
+{
+  "schema":"IDT_01AG_RELATIVISTIC_MAXWELL_SOURCE_HARDENING_V0_1",
+  "status":"PASS",
+  "repository":"AdrianLipa90/Informational-Dynamics-of-Time",
+  "branch":"audit/relativistic-bridge-01ag-hardening-v0.1",
+  "pull_request":22,
+  "attested_tested_commit":"82faeffd77e9b6bab0fb879cf76af39b4673d7d2",
+  "workflow":"Reference suite",
+  "workflow_run_id":33203002798,
+  "workflow_job_id":98956893800,
+  "full_reference_suite":{"passed":437,"failed":0,"status":"PASS"},
+  "focused_01AG":"5/5 PASS",
+  "checks":[
+    "synchronized IDT/RFC gauge covariance",
+    "finite-difference variation of matter kinetic density with respect to A_mu equals charge-projected current over hbar",
+    "single-charge reduction J_Q=q J_theta and J_EM=-(q/hbar)J_theta",
+    "adversarial cross-charge mass-mixing commutator firewall",
+    "neutral-neutrino Maxwell-source null control with nontrivial field dynamics",
+    "parallel relativistic prerequisite in the IDT dependency graph"
+  ],
+  "rfc_peer":{
+    "repository":"AdrianLipa90/Relational-Field-Closure",
+    "branch":"audit/relativistic-bridge-hardening-v0.1",
+    "pull_request":14,
+    "attested_tested_commit":"6be45ab1abe56da1ad98255bc7f1ccc1a271cd1d",
+    "workflow_run_id":33203140994,
+    "workflow_job_id":98957357027,
+    "passed":448,
+    "failed":0,
+    "focused_RF_M1":"9/9 PASS",
+    "focused_RF_E0":"7/7 PASS",
+    "status":"PASS"
+  },
+  "bridge_chain":["01AC","01AG","RF-M1","RF-E0","EINSTEIN_CLOSURE"],
+  "open_promotion_coordinates":[
+    "measured equality between the independently constructed RFC carrier current and J_EM",
+    "vacuum normalization mu_*",
+    "charged-matter stress-energy completion",
+    "RF-N1C G and kappa_E",
+    "action-level dynamic Lambda0",
+    "full Einstein closure audit"
+  ],
+  "main_mutated":false
+}

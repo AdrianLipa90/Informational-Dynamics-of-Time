@@ -1,0 +1,35 @@
+{
+  "schema": "IDT_ALL_OPEN_BRANCHES_MAIN_CONSOLIDATION_2026_08_28_V0_1",
+  "status": "PRE_MERGE_FULL_SUITE_PASS",
+  "date": "2026-08-28",
+  "consolidation_branch": "merge/all-open-idt-20260828",
+  "pull_request": 24,
+  "base_main_commit": "ecf023516d9060931e802297ce76de65edc9ae8a",
+  "attested_tested_commit": "b6609395770f3557075904e38da7e5613480409f",
+  "workflow": "Reference suite",
+  "workflow_run_id": 33204556386,
+  "workflow_job_id": 98962168697,
+  "full_reference_suite": {
+    "passed": 534,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "integrated_branches": [
+    {"pull_request": 21, "role": "Memory_ORCHORBITAL_Retrodiction_07S", "integration": "MERGED_TO_MAIN_BEFORE_CONSOLIDATION"},
+    {"pull_request": 22, "role": "01AG_relativistic_Maxwell_source_bridge", "integration": "FORWARD_PORTED_WITH_DEPENDENCY_RECONCILIATION"},
+    {"pull_request": 14, "role": "01L_phase_clock_length_scale", "integration": "FORWARD_PORTED_WITH_01K_INTEGRATION"},
+    {"pull_request": 15, "role": "05C_relational_lapse", "integration": "ALREADY_PRESENT_ON_MAIN_IN_EQUAL_OR_NEWER_FORM"},
+    {"pull_request": 23, "role": "Retrodiction_07T_per_stratum_position_decoder", "integration": "FORWARD_PORTED_WITH_NDARRAY_TO_07K_SEQUENCE_REPAIR"}
+  ],
+  "dependency_reconciliation": {
+    "schema": "IDT_FORMAL_DEPENDENCY_GRAPH_V0_25",
+    "temporal_spine_preserved": true,
+    "relativistic_parallel_prerequisite_preserved": true,
+    "einstein_closure_depends_on": ["RETROCAUSAL_TESTS", "RELATIVISTIC_FIELD_BRIDGE"]
+  },
+  "rfc_main": {
+    "merge_commit": "786a872efa0dc75cad7c2b1591a8cb8a1dc45858",
+    "post_merge_ci_run": 33203930064,
+    "status": "PASS"
+  }
+}

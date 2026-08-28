@@ -1,0 +1,61 @@
+{
+  "schema":"IDT_RFC_RELATIVISTIC_BRIDGE_UPDATE_2026_08_28_01AG_V0_1",
+  "status":"DUAL_REPOSITORY_HARDENED_CHECKPOINT_PINNED",
+  "updated":"2026-08-28",
+  "chain":["IDT-01AC","IDT-01AG","RFC-RF-M1","RFC-RF-E0","EINSTEIN_CLOSURE"],
+  "idt":{
+    "repository":"AdrianLipa90/Informational-Dynamics-of-Time",
+    "branch":"audit/relativistic-bridge-01ag-hardening-v0.1",
+    "pull_request":22,
+    "attested_tested_commit":"82faeffd77e9b6bab0fb879cf76af39b4673d7d2",
+    "workflow_run_id":33203002798,
+    "workflow_job_id":98956893800,
+    "full_suite":"437/437 PASS",
+    "focused_01AG":"5/5 PASS",
+    "interfaces":[
+      "formalism/01AC_gauge_covariant_phase_pullback_noether_generator.md",
+      "formalism/01AG_charge_projected_noether_maxwell_source.md",
+      "tests/reference/test_01AG_charge_projected_noether_maxwell_source.py",
+      "validation/IDT_01AG_RELATIVISTIC_MAXWELL_SOURCE_HARDENING_V0_1.json"
+    ]
+  },
+  "rfc":{
+    "repository":"AdrianLipa90/Relational-Field-Closure",
+    "branch":"audit/relativistic-bridge-hardening-v0.1",
+    "pull_request":14,
+    "attested_tested_commit":"6be45ab1abe56da1ad98255bc7f1ccc1a271cd1d",
+    "workflow_run_id":33203140994,
+    "workflow_job_id":98957357027,
+    "full_suite":"448/448 PASS",
+    "focused_RF_M1":"9/9 PASS",
+    "focused_RF_E0":"7/7 PASS",
+    "interfaces":[
+      "closure/maxwell/RF_M1_AHARONOV_BOHM_MAXWELL_HOLONOMY.md",
+      "closure/einstein/RF_E0_AB_MAXWELL_STRESS_ENERGY_BRIDGE.md",
+      "formalism/RFM1_RFE0_AB_MAXWELL_EINSTEIN_DEPENDENCY.md",
+      "validation/RFM1_RFE0_RELATIVISTIC_BRIDGE_HARDENING_V0_1.json",
+      "CROSS_REFERENCE_LOCK.json"
+    ]
+  },
+  "variation_level_current_bridge":{
+    "multiplet":"J_EM^mu=-(1/hbar) J_Q^mu",
+    "single_charge":"J_EM^mu=-(q/hbar) J_theta^mu",
+    "charge_compatibility_gate":"[M^2,Q]=0"
+  },
+  "maxwell_einstein_bridge":{
+    "AB_connection":"a_AB=(q/hbar)A",
+    "curvature":"F=dA=(hbar/q)d a_AB",
+    "homogeneous_sector":"dF=0",
+    "sourced_sector":"nabla_mu F^(mu nu)=mu_* J_EM^nu",
+    "einstein_source_gate":"G_mu_nu+Lambda g_mu_nu=kappa_E T_total(mu,nu)"
+  },
+  "open_promotion_coordinates":[
+    "physical RFC carrier-current equality with the charge-projected electromagnetic current",
+    "vacuum field normalization mu_*",
+    "complete charged-matter stress-energy action",
+    "RF-N1C determination of G and kappa_E",
+    "action-level dynamic Lambda0 realization",
+    "full Einstein field-equation and unified-limit audit"
+  ],
+  "main_mutated":false
+}
