@@ -1,0 +1,78 @@
+\chapter{Exact Per-Stratum Position Decoder Baseline}
+\label{chap:per-stratum-position-decoder}
+
+The stratified Retrodiction construction reduces every remaining collision problem to a fixed active-attractor sequence. For one such stratum $\mathcal Z_s$, the exact carrier is the ordered post-segment position lineage
+\[
+P_s(z)=(r_1(z),\ldots,r_N(z)).
+\]
+The present layer supplies a direct constructive decoder by retaining enough absolute position coordinates to assemble this carrier exactly.
+
+Let
+\[
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
+\]
+be the complete scalar carrier label set. Position coordinates may originate either in the base observation $Y$ or in an explicitly retained position-fiber packet $F_{\rm pos}$. When every label in $\Lambda_P$ occurs exactly once across these two sources, define
+\[
+\boxed{
+L_s^{\rm pos}(Y,F_{\rm pos})
+=\bigl((r_{1x},r_{1y}),\ldots,(r_{Nx},r_{Ny})\bigr).
+}
+\]
+By construction,
+\[
+\boxed{
+P_s=L_s^{\rm pos}\circ(Y,F_{\rm pos})|_{\mathcal Z_s}.
+}
+\]
+This supplies the lift required by the earlier carrier-composition theorem.
+
+For the declared sparse checkpoint schedule, the final position is retained directly in the base record,
+\[
+(r_{Nx},r_{Ny})\subset Y.
+\]
+The coordinate-complete baseline packet therefore consists of all earlier Cartesian position scalars,
+\[
+\boxed{
+F_{\rm pos}^{\rm baseline}=\{r_{kx},r_{ky}:1\le k<N\},
+\qquad
+|F_{\rm pos}^{\rm baseline}|=2N-2.
+}
+\]
+This exact carrier budget is recorded separately from the local rank-completion budget. For the saturated sparse schedule,
+\[
+N_{\rm add}^{\rm local}=N-3,
+\qquad
+N_{\rm add}^{\rm exact\ carrier}=2N-2.
+\]
+
+The executable decoder enforces finite values, valid checkpoint indices and axes, unique coordinate sources, no base/fiber overlap and complete carrier coverage. A successful decode returns \texttt{EXACT\_PER\_STRATUM\_POSITION\_DECODER} and a finite $N\times2$ ordered position array.
+
+A real three-event reference uses the final base position together with four earlier position-fiber scalars, assembles $(r_1,r_2,r_3)$, and passes that carrier into the exact position-lineage inverse. The generating three-event kick vector is recovered within the declared tolerance.
+
+This integration also hardened the existing carrier interface. The decoder naturally emits a NumPy $(N,2)$ array; the earlier generic position parser used a boolean truth-value check that is ambiguous for multi-element NumPy arrays. The zero-length test was made explicit, preserving the declared generic sequence contract.
+
+The initial hosted run \texttt{33204395192}, job \texttt{98961625586}, exposed that interface defect and returned
+\begin{verbatim}
+1 failed, 527 passed in 14.36s
+\end{verbatim}
+The corrected run \texttt{33204551313}, job \texttt{98962152065}, on branch head \texttt{8d0964f1d6d343193bb72966f4443780d2edafe0} returned
+\begin{verbatim}
+528 passed in 14.20s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The next Retrodiction problem is compression of the explicit baseline packet. The first exact candidate reuses the ordered signed winding and the active-attractor radial coordinate
+\[
+\rho_k=\|r_k-c_{a_k}\|.
+\]
+Given $r_{k-1}$, the active center $c_{a_k}$ and winding increment $\Delta W_k$, the direction of $r_k-c_{a_k}$ is fixed modulo $2\pi$, so
+\[
+\boxed{
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}+2\pi\Delta W_k)
+\end{pmatrix}.
+}
+\]
+For the declared schedule with final position already retained, this provides the analytic target of $N-1$ new radial scalars while reusing the existing winding lineage. The active status is \texttt{POSITION\_FIBER\_COMPRESSION\_ACTIVE\_NEXT\_GATE}; the governing compressed-architecture status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN}.
