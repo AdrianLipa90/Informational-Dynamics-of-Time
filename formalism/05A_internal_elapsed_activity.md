@@ -1,57 +1,200 @@
 # 05A — System-Internal Elapsed Activity
 
-Status: `FORMAL_CANDIDATE_WITH_PROVED_STRUCTURAL_IDENTITIES`
+Status: `ACTIVITY_DERIVED_ELAPSED_MEASURE_CANDIDATE`
 
-The positive temporal activity field supplies a system-internal elapsed coordinate before metric clock calibration is introduced.
+00E supplies the intrinsic positive temporal measure directly from relational transition activity. This layer carries that measure into the Temporal Transport clock interface and introduces clock normalization only as a downstream comparison/calibration operation.
 
-Let \(\lambda\) be an admissible increasing ordering parameter, let \(\mathfrak a(\lambda)>0\) be realized temporal activity, and choose a strictly positive system-internal reference activity \(\mathfrak a_\star\). Define
+## 1. Activity-derived elapsed measure
+
+Let \(\lambda\) be an admissible increasing ordering label. From the directed relational kinetics,
+
+\[
+W_+=Me^{A/2},
+\qquad
+W_-=Me^{-A/2},
+\]
+
+with \(M>0\), define
+
 \[
 \boxed{
-d\tau_{\rm int}
-=\frac{\mathfrak a(\lambda)}{\mathfrak a_\star}\,d\lambda.
+\mathfrak a=W_++W_-=2M\cosh(A/2)>0.
 }
 \]
-For a discrete ordered path,
+
+The intrinsic elapsed increment is
+
 \[
 \boxed{
-\tau_{{\rm int},N}
+d\Theta=\mathfrak a\,d\lambda.
+}
+\]
+
+For an ordered discrete path,
+
+\[
+\boxed{
+\Theta_N
 =\sum_{n=0}^{N-1}
-\frac{\mathfrak a_n}{\mathfrak a_\star}\,\Delta\lambda_n,
+\mathfrak a_n\,\Delta\lambda_n,
 \qquad
 \Delta\lambda_n>0.
 }
 \]
-Because every admitted activity and ordering increment is positive, \(\tau_{\rm int}\) is strictly monotone along an admitted realized path.
 
-## Reparameterization covariance
+Positive activity gives positive accumulation along every active realized interval. Concatenation of ordered intervals gives exact additivity.
 
-For an increasing relabeling \(\lambda'=f(\lambda)\), require activity to transform as a one-density,
+## 2. Reparameterization invariance
+
+For an increasing relabeling \(\lambda'=f(\lambda)\), transition weights transform as one-densities,
+
+\[
+W'_\pm(\lambda')
+=W_\pm(\lambda)\frac{d\lambda}{d\lambda'}.
+\]
+
+Therefore
+
 \[
 \mathfrak a'(\lambda')
-=\mathfrak a(\lambda)\frac{d\lambda}{d\lambda'}.
+=\mathfrak a(\lambda)\frac{d\lambda}{d\lambda'}
 \]
-Then
+
+and
+
 \[
 \boxed{
-\mathfrak a'(\lambda')\,d\lambda'
-=\mathfrak a(\lambda)\,d\lambda,
+\mathfrak a'(\lambda')d\lambda'
+=\mathfrak a(\lambda)d\lambda
+=d\Theta.
 }
 \]
-and therefore \(d\tau_{\rm int}\) is invariant under the admitted relabeling.
 
-## Density, viscosity and directional drive
+The accumulated elapsed measure is therefore intrinsic to the admitted relational path and its transition activity.
 
-Using the relational kinetic closure,
+## 3. Duration and orientation
+
+The directed current is
+
 \[
-\frac{d\tau_{\rm int}}{d\lambda}
-=\frac{2M}{\mathfrak a_\star}\cosh(A/2),
+\mathfrak j=W_+-W_-=2M\sinh(A/2).
+\]
+
+The normalized orientation coordinate is
+
+\[
+\boxed{
+\chi=\frac{\mathfrak j}{\mathfrak a}=\tanh(A/2).
+}
+\]
+
+Under edge reversal \(A\mapsto-A\),
+
+\[
+\boxed{d\Theta\mapsto d\Theta,}
 \qquad
-M=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12(\eta_R(a)+\eta_R(b))}.
+\boxed{\chi\mapsto-\chi.}
 \]
-Thus relational density raises the internal activity pace, relational viscosity lowers it, and the magnitude of the antisymmetric drive raises activity through an even function. Edge reversal \(A\mapsto -A\) leaves elapsed activity unchanged while reversing the directed current.
 
-Formalism 01A identifies
+At the symmetric point \(A=0\),
+
 \[
-\boxed{\phi=\mathfrak a/\mathfrak a_\star}
+\mathfrak a=2M>0,
+\qquad
+\chi=0.
 \]
-as the forced positive scalar pace for a context-sensitive internal elapsed measure. Calibration against biological, cognitive and physical clock observables is a downstream validation program.
+
+Thus accumulated elapsed activity and transition orientation are carried as separate coordinates.
+
+## 4. Density, viscosity and Shannon affinity
+
+The relational mobility is
+
+\[
+\boxed{
+M
+=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}.
+}
+\]
+
+00B gives
+
+\[
+A=(\ln2)\sigma,
+\]
+
+so the elapsed density is
+
+\[
+\boxed{
+\frac{d\Theta}{d\lambda}
+=
+2\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}
+\cosh\!\left(\frac{\ln2}{2}\sigma\right).
+}
+\]
+
+and the orientation coordinate is
+
+\[
+\boxed{
+\chi
+=\tanh\!\left(\frac{\ln2}{2}\sigma\right).
+}
+\]
+
+This gives the typed map
+
+\[
+\boxed{
+(\rho_R,\eta_R,\sigma)
+\longmapsto
+(d\Theta,\chi).
+}
+\]
+
+## 5. Clock comparison and calibration
+
+For a local subsystem \(x\) and reference subsystem \(r\) on the same ordered patch,
+
+\[
+d\Theta_x=\mathfrak a_xd\lambda,
+\qquad
+d\Theta_r=\mathfrak a_rd\lambda.
+\]
+
+Their intrinsic relative clock rate is
+
+\[
+\boxed{
+N_R(x|r)
+=\frac{d\Theta_x}{d\Theta_r}
+=\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+}
+\]
+
+A reference clock calibration supplies a conversion scale \(T_r>0\),
+
+\[
+\boxed{dt=T_r\,d\Theta_r.}
+\]
+
+The local calibrated elapsed increment is then
+
+\[
+\boxed{
+d\hat\tau_x=N_R(x|r)\,dt.}
+\]
+
+The sequence is therefore
+
+\[
+\boxed{
+\text{relational activity}
+\to d\Theta
+\to N_R
+\to d\hat\tau.
+}
+\]
+
+Physical clock comparison supplies the calibration of \(T_r\); the activity-derived measure and clock ratio retain their algebraic definitions upstream.
