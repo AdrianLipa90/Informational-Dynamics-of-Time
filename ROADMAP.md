@@ -28,7 +28,7 @@ Current promotion-branch status: `MEMORY_REFERENCE_GATE_ADMISSION_PASS / HOSTED_
 5. `TARGETED_PASS`: append-only memory receipt ledger and reversible lineage cell;
 6. `TARGETED_PASS`: ledger-assisted `RECALL` reconstructs the recorded reference lineage;
 7. `INTEGRATION_PASS`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
-8. `PASS_HOSTED_FULL_SUITE`: GitHub Actions run `33193861826`, job `98925901636`, executed `python -m pytest -q tests/reference` and returned `431 passed in 7.08s` on Python 3.12.14 / Ubuntu 24.04;
+8. `PASS_HOSTED_FULL_SUITE`: GitHub Actions run `33193861826`, job `98925901636`, returned `431 passed in 7.08s`;
 9. `ADMISSION_RECEIPT_ISSUED`: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
@@ -61,7 +61,7 @@ Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The tested Retrodiction implementation remains provisional while its admission work continues:
 
@@ -77,17 +77,20 @@ The tested Retrodiction implementation remains provisional while its admission w
 10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
 12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-13. `EVENT_AWARE_RESIDENCE_CONDITIONING_PASS`: versioned Memory-event -> ORCH smooth-residence cells preserve append-only provenance across kick boundaries; the declared 07G reflection-null pair keeps the same active-label and switch/leak lineage, while provenance hashes remain outside semantic pair separation;
+13. `EVENT_AWARE_RESIDENCE_CONDITIONING_PASS`: versioned Memory-event -> ORCH smooth-residence cells preserve append-only provenance across kick boundaries;
 14. `KNOWN_NULL_CONTINUOUS_SEPARATOR_PASS`: the earlier ORCHORBITAL weight \(w_{A,1}\) separates the declared reflection pair by `0.01918916841099516`;
 15. `SPATIAL_OFFSET_DIVERGENCE_PASS`: the retained position lineage exposes SOD witnesses for sparse-record collisions;
 16. `ADAPTIVE_SOD_SEPARATOR_PASS`: the largest retained SOD coordinate is selected deterministically for a declared witness;
-17. `QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: for a finite candidate set, every distinct-latent pair colliding under the base projection must be separated by at least one declared fiber channel; formalism `07P`, receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
-18. `PASS_HOSTED_FULL_SUITE`: 07P tested on run `33200684482`, job `98949092398`, result `495 passed in 10.14s`;
-19. `ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS`: ordered signed residence winding \(\mathcal W=(\Delta W_1,\ldots,\Delta W_N)\), persisted as exact binary64 hex, separates the exact reflection-null pair at fiber tolerance `1e-12` while the base and active-label class remain colliding; formalism `07Q`, receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
-20. `PASS_HOSTED_FULL_SUITE`: 07Q tested on run `33201861565`, job `98953023513`, branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363`, PR merge `35b95bf5596014d76b8710047d036342a3b84e88`, result `502 passed in 8.09s` on Python 3.12.14 / Ubuntu 24.04.4;
-21. `ACTIVE_NEXT`: characterize complete base-collision fibers and derive a domain-covering separator theorem or constructive lift using ordered winding together with retained continuous ORCHORBITAL and SOD coordinates while retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN`;
-22. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
-23. `LATER`: carry an admitted global Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
+17. `QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: every distinct-latent base collision in a finite candidate set must be separated by at least one declared fiber channel; formalism `07P`, receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
+18. `PASS_HOSTED_FULL_SUITE`: 07P run `33200684482`, job `98949092398`, `495 passed in 10.14s`;
+19. `ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS`: ordered signed residence winding \(\mathcal W=(\Delta W_1,\ldots,\Delta W_N)\) separates the exact reflection-null pair; formalism `07Q`, receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
+20. `PASS_HOSTED_FULL_SUITE`: 07Q run `33201861565`, job `98953023513`, `502 passed in 8.09s`;
+21. `FIBER_LIFT_COMPOSITION_THEOREM_PASS`: exact theorem `P injective` and `P=L o (Y,F)` imply `(Y,F)` injective; formalism `07R`, receipt `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
+22. `FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS`: the exact reflection pair with base + oriented winding and the 07K position carrier has zero carrier collisions and zero lift conflicts; matched zero-fiber control returns `FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN`;
+23. `PASS_HOSTED_FULL_SUITE`: 07R run `33202559485`, job `98955383447`, head `6abca4ad72c04cdca5d1128e690c17898b8650d7`, merge `a58b0c382727435f0e16231085181b60651f7f98`, `510 passed in 14.11s` on Python 3.12.14 / Ubuntu 24.04.4;
+24. `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`: construct a domain-covering lift from retained base observations plus ordered winding, continuous ORCHORBITAL and SOD coordinates to the exact 07K ordered position lineage;
+25. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+26. `LATER`: carry an admitted global Retrodiction gate into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
