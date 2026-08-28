@@ -61,9 +61,9 @@ Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Current promotion-branch status: `ACTIVE_NEXT_GATE / GATED_PENDING_ORCHORBITAL_PROMOTION_TO_MAIN`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-The tested Retrodiction implementation remains provisional downstream while its own admission work continues:
+The tested Retrodiction implementation remains provisional while its admission work continues:
 
 1. `PROVISIONAL_TARGETED_PASS`: reverse the known smooth Kepler segment and infer the missing kick \(\Delta v_{M,n}\);
 2. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(q_n\) when nonzero \(\delta m_n\) is independently known;
@@ -77,9 +77,11 @@ The tested Retrodiction implementation remains provisional downstream while its 
 10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
 12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-13. `ACTIVE_NEXT`: condition Retrodiction on verified attractor-residence/switch histories and test whether basin labels improve identifiability under the declared lineage firewall;
-14. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
-15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
+13. `EVENT_AWARE_RESIDENCE_CONDITIONING_PASS`: versioned Memory-event -> ORCH smooth-residence cells preserve append-only provenance across kick boundaries; the declared 07G reflection-null pair keeps the same active-label and switch/leak lineage, while provenance hashes remain outside semantic pair separation; receipt `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+14. `KNOWN_NULL_CONTINUOUS_SEPARATOR_PASS`: the earlier ORCHORBITAL weight \(w_{A,1}\) remains a separating retained scalar for the declared reflection pair, as recorded in 07H;
+15. `ACTIVE_NEXT`: advance the global branch-separation program beyond discrete residence labels, retaining `GENERAL_GLOBAL_INJECTIVITY_OPEN` as the governing status;
+16. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
+17. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
 Required later result stack:
 
