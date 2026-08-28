@@ -1,6 +1,6 @@
 {
   "schema": "IDT_RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1",
-  "status": "CANDIDATE_ONLY_LOCAL_REFERENCE_PASS",
+  "status": "FINITE_DOMAIN_GATE_HOSTED_FULL_SUITE_PASS",
   "epistemic_operator": "CHYBA",
   "canon_allowed": false,
   "branch": "chore/memory-full-suite-refresh-20260828",
@@ -8,7 +8,8 @@
   "implementation_commits": {
     "source": "88bcaf8f25f830cfab2ec2e8fbebeb07b5ceb7e7",
     "tests": "461821470b1637d8f9ee81406c9f413cfc7cbc0b",
-    "formalism": "c81b12ef211032e2d48ba1d5799a99d2489372d1"
+    "formalism": "c81b12ef211032e2d48ba1d5799a99d2489372d1",
+    "candidate_receipt": "17d3ba854e83f930194b8dd4c4b7089382578a35"
   },
   "implementation": "src/idt/retrodiction_quotient_fiber_injectivity.py",
   "tests": "tests/reference/test_retrodiction_quotient_fiber_injectivity.py",
@@ -16,6 +17,19 @@
   "local_reference": {
     "command": "python -m pytest -q tests/reference/test_retrodiction_quotient_fiber_injectivity.py",
     "result": "9 passed in 0.04s",
+    "status": "PASS"
+  },
+  "hosted_reference": {
+    "workflow": "Reference suite",
+    "run_id": 33200684482,
+    "run_number": 592,
+    "job_id": 98949092398,
+    "tested_branch_head": "17d3ba854e83f930194b8dd4c4b7089382578a35",
+    "tested_pr_merge_commit": "ee1985c96df734d32a8232c03ca078c993ef7318",
+    "command": "python -m pytest -q tests/reference",
+    "result": "495 passed in 10.14s",
+    "python": "3.12.14",
+    "runner": "Ubuntu 24.04.4",
     "status": "PASS"
   },
   "gate": {
@@ -61,6 +75,6 @@
       "role": "ORIENTATION_PLUS_OPEN_HOLONOMY_TRANSPORT_CANDIDATE"
     }
   ],
-  "promotion_requirement": "HOSTED_FULL_REFERENCE_SUITE_PASS_ON_EXACT_FINAL_BRANCH_HEAD",
+  "next_requirement": "DOMAIN_COVERING_OR_CONSTRUCTIVE_GLOBAL_SEPARATION_ARGUMENT",
   "main_modified_by_this_change": false
 }
