@@ -16,11 +16,18 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | NOW | `STRUCTURAL_PASS / WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE` | structural signature carrier plus wave-active realization support |
 | Bifurcation | `FORMAL_CONTRACT_PASS / NOW_BRIDGE_TARGETED_PASS_CANDIDATE` | exact activity/current hyperbolic coordinates feed wave mobility and directional phase |
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
-| Memory | `INTEGRATION_PASS / TRANSPORT_BRIDGE_TARGETED_PASS_CANDIDATE` | transport/NOW-derived duration and event-gated memory receipts |
-| ORCHORBITAL Attractors | `PROVISIONAL_MEMORY_EXTENSION / LINEAGE_BRIDGE_TARGETED_PASS_CANDIDATE` | active-attractor snapshot persisted for exact recall |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION` | 07F–07N observability, exact lineage, sparse completion, SOD witness and adaptive separator gates |
+| Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
+| ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / GATED_PENDING_ORCHORBITAL_ADMISSION` | active next gate: condition existing observability/estimation stack on verified ORCHORBITAL residence/switch lineage |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
+
+Promotion-branch admission receipts:
+
+- Memory: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
+- ORCHORBITAL: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+
+Canonical `main` adopts these branch admission states through explicit merge.
 
 The Temporal Primitive keeps its Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
 
