@@ -51,6 +51,15 @@ def _ordered_primes(primes: Sequence[int]) -> tuple[int, ...]:
     return values
 
 
+def prime_vertex_phases(primes: Sequence[int], gamma: float) -> np.ndarray:
+    values = _ordered_primes(primes)
+    gamma_f = float(gamma)
+    if not math.isfinite(gamma_f):
+        raise ZetaCollatzFuzzinessError("gamma must be finite")
+    logp = np.log(np.asarray(values, dtype=float))
+    return np.exp(-1j * gamma_f * logp)
+
+
 def prime_gap_phase_texture(primes: Sequence[int], gamma: float) -> np.ndarray:
     """Exact neighboring Euler-factor phase texture at a fixed ordinate.
 
@@ -58,12 +67,27 @@ def prime_gap_phase_texture(primes: Sequence[int], gamma: float) -> np.ndarray:
     phase difference is exp[-i gamma (ln p_{k+1}-ln p_k)].
     """
 
-    values = _ordered_primes(primes)
-    gamma_f = float(gamma)
-    if not math.isfinite(gamma_f):
-        raise ZetaCollatzFuzzinessError("gamma must be finite")
-    logp = np.log(np.asarray(values, dtype=float))
-    return np.exp(-1j * gamma_f * np.diff(logp))
+    vertex = prime_vertex_phases(primes, gamma)
+    return vertex[1:] * np.conjugate(vertex[:-1])
+
+
+def closed_gradient_links(primes: Sequence[int], gamma: float) -> np.ndarray:
+    """Close the exact vertex-phase gradient around the same prime frame set."""
+
+    vertex = prime_vertex_phases(primes, gamma)
+    return np.roll(vertex, -1) * np.conjugate(vertex)
+
+
+def closed_gradient_holonomy(primes: Sequence[int], gamma: float) -> complex:
+    """Product holonomy of the closed exact-gradient Zeta phase connection.
+
+    The result is identically one up to floating-point roundoff because
+        L_k = u_{k+1} u_k^*
+    telescopes around a closed cycle.
+    """
+
+    links = closed_gradient_links(primes, gamma)
+    return complex(np.prod(links))
 
 
 def centred_collatz_mobility(primes: Sequence[int]) -> np.ndarray:
