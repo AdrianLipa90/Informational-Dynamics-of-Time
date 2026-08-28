@@ -29,7 +29,7 @@ Current promotion-branch status: `MEMORY_REFERENCE_GATE_ADMISSION_PASS / HOSTED_
 6. `TARGETED_PASS`: ledger-assisted `RECALL` reconstructs the recorded reference lineage;
 7. `INTEGRATION_PASS`: CP1 geometry -> \(\delta m\) -> \(q\delta m\) -> Kepler lineage -> receipt -> recall passes the dedicated end-to-end controls;
 8. `PASS_HOSTED_FULL_SUITE`: GitHub Actions run `33193861826`, job `98925901636`, executed `python -m pytest -q tests/reference` and returned `431 passed in 7.08s` on Python 3.12.14 / Ubuntu 24.04;
-9. `ADMISSION_RECEIPT_ISSUED`: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` binds source commit `3ac1f53af5223d16f8818dba99a63a6af2ba9498`, tested PR merge `e0b1cdc491a1a501adce93b8d62ade063e167500`, and tested tree `92302498f3c9131b163d5d0ccbbeab1db935d29f`;
+9. `ADMISSION_RECEIPT_ISSUED`: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
 10. `PARALLEL_OPEN_DERIVATION`: extend the geometry-derived frame beyond the CP1 reference subclass;
 11. `PARALLEL_OPEN_DERIVATION`: predict \(\mu_M\) directly from earlier relational primitives.
 
@@ -37,7 +37,7 @@ Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase B2 — ORCHORBITAL attractor organization
 
-Current promotion-branch status: `ACTIVE_NEXT_GATE / PROVISIONAL_MEMORY_EXTENSION / TARGETED_REFERENCE_PASS / HOSTED_SUITE_PASS`.
+Current promotion-branch status: `ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / HOSTED_FULL_SUITE_PASS`.
 
 1. `TARGETED_PASS`: define attractor-relative Kepler energy \(E_i\) and positive binding margin \(b_i=[-E_i]_+\);
 2. `TARGETED_PASS`: normalize positive binding into replay-stable attractor weights \(w_i\) and select the maximum-binding basin;
@@ -49,17 +49,21 @@ Current promotion-branch status: `ACTIVE_NEXT_GATE / PROVISIONAL_MEMORY_EXTENSIO
 8. `TARGETED_PASS`: promote the changed basin on the following segment in multi-segment propagation;
 9. `TARGETED_PASS`: accumulate per-attractor residence segment count, dwell time in \(\tau_{\rm int}\), winding and directed transition counts;
 10. `TARGETED_PASS`: expose an explicitly normalized phase-space closure defect observable;
-11. `REFERENCE_RESULT`: `11 passed in 0.07s` in the isolated exact-dependency harness; receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
-12. `HOSTED_SUITE_PASS`: the ORCHORBITAL reference tests are included in the successful 431-test repository suite;
-13. `NEXT`: generate append-only attractor-residence/switch receipts for long temporal trajectories and characterize dwell-time distributions;
-14. `NEXT`: map hierarchical ORCHORBITAL sphere/entity structure onto nested temporal-memory attractor families;
-15. `NEXT`: derive typed links for the retained ORCHORBITAL observables truth scalar, semantic mass and reduction readiness before their admission into this repository.
+11. `REFERENCE_RESULT`: base ORCHORBITAL receipt `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`;
+12. `HOSTED_SUITE_PASS`: ORCHORBITAL reference tests are included in successful repository-wide hosted suites;
+13. `RESIDENCE_LEDGER_PASS`: append-only attractor-residence/switch receipts, strict schema, long-trajectory dwell distributions and transition lineage; receipts `validation/ORCHORBITAL_RESIDENCE_LEDGER_V0_1.json` and `validation/ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1.json`;
+14. `PNCS_HIERARCHY_PASS`: pinned PNCS v0.29 sphere/entity hierarchy maps to nested IDT temporal-memory attractor families; receipt `validation/ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1.json`;
+15. `TYPED_OBSERVABLES_PASS`: pinned PNCS truth scalar, semantic mass and reduction readiness remain separately typed and residence-weightable where declared; receipt `validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json`;
+16. `ADMISSION_RECEIPT_ISSUED`: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
+17. `PASS_HOSTED_FULL_SUITE`: run `33196818703`, job `98935954122`, returned `475 passed in 11.91s` for the typed-observable completion tree.
+
+Canonical `main` adopts this admission state when the promotion PR is merged.
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Canonical status: `GATED_PENDING_ORCHORBITAL_ADMISSION`.
+Current promotion-branch status: `ACTIVE_NEXT_GATE / GATED_PENDING_ORCHORBITAL_PROMOTION_TO_MAIN`.
 
-The tested Retrodiction implementation remains provisional downstream:
+The tested Retrodiction implementation remains provisional downstream while its own admission work continues:
 
 1. `PROVISIONAL_TARGETED_PASS`: reverse the known smooth Kepler segment and infer the missing kick \(\Delta v_{M,n}\);
 2. `PROVISIONAL_CONDITIONAL_IDENTIFIABILITY`: infer \(q_n\) when nonzero \(\delta m_n\) is independently known;
@@ -73,7 +77,7 @@ The tested Retrodiction implementation remains provisional downstream:
 10. `PROVISIONAL_UNCERTAINTY_GEOMETRY_PASS`: declared positive-definite checkpoint covariance yields whitened sensitivity, weighted rank/conditioning, local Fisher information and latent covariance;
 11. `PROVISIONAL_PARTIAL_CHECKPOINT_SELECTION_PASS`: checkpoint cardinality is separated from rank and conditioning admission;
 12. `PROVISIONAL_WEIGHTED_NULL_PASS`: covariance-weighted latent-kick estimation and the complete non-identity checkpoint-permutation reference ensemble pass the targeted layer;
-13. `NEXT_AFTER_ORCHORBITAL`: condition Retrodiction on attractor-residence/switch histories and test whether basin labels improve identifiability under the declared lineage firewall;
+13. `ACTIVE_NEXT`: condition Retrodiction on verified attractor-residence/switch histories and test whether basin labels improve identifiability under the declared lineage firewall;
 14. `NEXT`: preregister experiment-specific null calibration before any `STATISTICAL_EFFECT` admission;
 15. `LATER`: carry the admitted estimator into retrocausal-test protocols with statistical-effect and classical-channel audits.
 
