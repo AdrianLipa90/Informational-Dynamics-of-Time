@@ -1,0 +1,27 @@
+{
+  "schema": "IDT_ZETA_COLLATZ_NAIVE_OVERLAP_LOCALITY_V0_1",
+  "status": "FAIL_NAIVE_OVERLAP_LOCALITY",
+  "candidate_under_test": "w_ij = |E_i intersect E_j| / sqrt(|E_i||E_j|) using complete verified Collatz transition-edge sets",
+  "reason": "Prime-seeded Collatz orbits share terminal lineage edges, making the naive overlap graph nonlocal and complete on the declared reference prime sets.",
+  "reference_sets": [
+    {"prime_count": 8, "largest_prime": 19, "off_diagonal_graph_density": 1.0, "zero_laplacian_modes": 1, "first_nonzero_laplacian_eigenvalue": 2.480223},
+    {"prime_count": 16, "largest_prime": 53, "off_diagonal_graph_density": 1.0, "zero_laplacian_modes": 1, "first_nonzero_laplacian_eigenvalue": 3.312213},
+    {"prime_count": 32, "largest_prime": 131, "off_diagonal_graph_density": 1.0, "zero_laplacian_modes": 1, "first_nonzero_laplacian_eigenvalue": 5.761839},
+    {"prime_count": 64, "largest_prime": 311, "off_diagonal_graph_density": 1.0, "zero_laplacian_modes": 1, "first_nonzero_laplacian_eigenvalue": 10.784189}
+  ],
+  "interpretation_gate": "The full-orbit overlap is suitable as a global coherent-coupling candidate but fails the declared locality requirement for an emergent neighboring-frame continuum.",
+  "retained_passes": [
+    "prime-frame validation",
+    "exact log-prime zeta generator",
+    "Hermitian finite-frame Hamiltonian",
+    "unitary intrinsic-Theta amplitude spreading",
+    "normalized fuzzy-field reconstruction"
+  ],
+  "active_next_gate": "RENORMALIZED_COLLATZ_FRAME_DISTANCE_FIRST_MERGE_LOCALITY",
+  "candidate_repairs": [
+    "subtract universal terminal-tail contribution before overlap scoring",
+    "use first-merge depth / pre-merge path distance",
+    "use weighted common-suffix length with terminal core projected out",
+    "compare against degree-preserving randomized and prime-label-shuffled nulls"
+  ]
+}
