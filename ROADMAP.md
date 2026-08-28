@@ -25,8 +25,6 @@ The Memory stack contains Kepler--Newton propagation, event imprint kicks, condi
 
 Admission receipt: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-Parallel derivations remain active for the geometry-derived frame beyond CP1 and direct prediction of \(\mu_M\) from earlier relational primitives.
-
 ## Phase B2 — ORCHORBITAL attractor organization
 
 Status: `ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / HOSTED_FULL_SUITE_PASS`.
@@ -39,9 +37,9 @@ Admission receipt: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_2
 
 ## Phase C — Retrodiction and retrocausal tests
 
-Current promotion-branch status:
+Current branch status:
 
-`ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+`ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS / FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS / 07K_NDARRAY_CARRIER_INTERFACE_PASS / POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 Completed Retrodiction layers:
 
@@ -52,14 +50,17 @@ Completed Retrodiction layers:
 5. finite-branch exact controls and position-lineage exact inverse;
 6. spatial-offset/divergence and adaptive SOD witnesses;
 7. event-aware residence conditioning and exact provenance firewall;
-8. `07P QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: every distinct-latent base collision in a finite candidate set is audited against declared fiber channels; hosted run `33200684482`, `495 passed in 10.14s`;
+8. `07P QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS`: finite-domain all-collision fiber audit; hosted run `33200684482`, `495 passed in 10.14s`;
 9. `07Q ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS`: ordered signed winding separates the exact reflection null; hosted run `33201861565`, `502 passed in 8.09s`;
-10. `07R FIBER_LIFT_COMPOSITION_THEOREM_PASS`: exact theorem `P injective` and `P=L o (Y,F)` imply `(Y,F)` injective; finite reference hosted run `33202559485`, `510 passed in 14.11s`;
-11. `07S STRATIFIED_GLOBAL_REDUCTION_PASS`: retained active sequence \(\alpha(z)\) exactly separates strata, reducing collision analysis to fixed active-sequence domains;
-12. `07S CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS`: retained sequence plus a decoded position lineage composes through 07K to the generating real two-event kick history;
-13. `07S DECODER_FIREWALL_PASS`: a perturbed admissible position carrier maps to its corresponding distinct history, preserving the typed composition `retained record -> decoder -> carrier -> 07K inverse -> latent history`;
-14. first 07S hosted control run `33203185181`: `1 failed, 517 passed in 11.81s`, identifying an over-strong carrier-rejection expectation;
-15. corrected 07S hosted run `33203339457`, job `98958035895`, tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`: `518 passed in 12.06s`.
+10. `07R FIBER_LIFT_COMPOSITION_THEOREM_PASS`: exact theorem `P injective` and `P=L o (Y,F)` imply `(Y,F)` injective; hosted run `33202559485`, `510 passed in 14.11s`;
+11. `07S STRATIFIED_GLOBAL_REDUCTION_PASS`: exact retained active sequence separates strata;
+12. `07S CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS`: supplied ordered position lineage composes through 07K to the generating history;
+13. corrected 07S hosted run `33203339457`, job `98958035895`: `518 passed in 12.06s`;
+14. `07T EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS`: typed base/fiber coordinate assembler constructs the complete 07K position carrier when every scalar position label is covered exactly once;
+15. `07T FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS`: for the declared sparse schedule with final position retained, the explicit baseline additional packet has exactly `2N-2` scalar position coordinates;
+16. `07T 07K_NDARRAY_CARRIER_INTERFACE_PASS`: the generic 07K carrier parser accepts the NumPy `(N,2)` carrier emitted by the decoder after hardening its zero-length check;
+17. initial 07T run `33204395192`, job `98961625586`: `1 failed, 527 passed in 14.36s`, exposing the ndarray truth-value interface defect;
+18. corrected 07T run `33204551313`, job `98962152065`, head `8d0964f1d6d343193bb72966f4443780d2edafe0`: `528 passed in 14.20s`.
 
 Current exact reduction:
 
@@ -71,25 +72,54 @@ Current exact reduction:
 }
 \]
 
-Unequal \(s\) are separated by the retained active-sequence coordinate. For every fixed \(s\), the 07K carrier is
+For each fixed stratum the exact carrier is
 
 \[
-P_s(z)=(r_1,\ldots,r_N),
+P_s(z)=(r_1,\ldots,r_N).
 \]
 
-and the active constructive gate is
+07T provides the coordinate-complete baseline
 
 \[
 \boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
+L_s^{\rm pos}:(Y,F_{\rm pos})|_{\mathcal Z_s}\to(r_1,\ldots,r_N),
 }
 \]
 
-Once a domain-covering family of these per-stratum decoders is established, the exact 07R composition theorem and cross-stratum sequence separation provide the Retrodiction injectivity closure on the admitted domain.
+with
+
+\[
+\boxed{|F_{\rm pos}^{\rm baseline}|=2N-2}
+\]
+
+for the declared sparse schedule.
+
+The 07L and 07T budgets remain distinct:
+
+\[
+\boxed{
+N_{\rm add}^{\rm local}=N-3,
+\qquad
+N_{\rm add}^{\rm exact\ carrier}=2N-2.
+}
+\]
 
 Active next step:
 
-`PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE` — derive the decoder from the already retained ordered winding, continuous ORCHORBITAL and SOD/spatial coordinates, with explicit consistency and injectivity audits.
+`POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE` — replace explicit earlier Cartesian position scalars by a smaller exact coordinate packet while retaining a single-valued decoder to the same 07K carrier.
+
+First analytic target:
+
+\[
+\boxed{
+(r_{k-1},a_k,\Delta W_k,\rho_k)
+\mapsto r_k,
+\qquad
+\rho_k=\|r_k-c_{a_k}\|.
+}
+\]
+
+For the declared schedule the working compression target is `N-1` new radial scalars, reusing the already retained ordered winding fiber and final base position.
 
 After Retrodiction admission:
 
@@ -99,8 +129,6 @@ After Retrodiction admission:
 Required later result stack:
 
 `RAW_OBSERVATION -> STATISTICAL_EFFECT -> CLASSICAL_CHANNEL_AUDIT -> PHYSICAL_CLAIM_STATUS`.
-
-`ANOMALY_DETECTED` and `RETROCAUSAL_CANDIDATE` remain distinct statuses.
 
 ## Phase D — spatial branch and Einstein closure
 
