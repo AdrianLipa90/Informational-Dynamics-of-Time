@@ -1,0 +1,99 @@
+{
+  "schema": "IDT_01X_RFC_NORMALIZED_SHAPE_EXTENSIVE_SCALE_V0_1",
+  "status": "PASS_ANALYTIC_REFERENCE_AND_IDT_SUITE__RFC_CROSS_BINDING_OPEN",
+  "idt_base": {
+    "branch": "main",
+    "commit": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc"
+  },
+  "idt_artifacts": {
+    "interface": "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
+    "interface_commit": "7be599b9c7d99123521fd8f82ac2bdc4c735b3cf",
+    "reference_test": "tests/reference/test_01X_RFC_normalized_shape_extensive_scale_interface.py",
+    "test_commit": "1de7430ae61537a3d76f2ad95e591856334283b4",
+    "dependency_graph_commit": "c398e005b183738bfbcbf930b7ae4db9b0537a7f"
+  },
+  "rfc_consumer": {
+    "repository": "AdrianLipa90/Relational-Field-Closure",
+    "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
+    "interface_anchor_commit": "4087ba00a1808a98f128fb09be5aaa43fed2c664",
+    "gate": "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
+    "gate_commit": "2e4a20cf0a9244b37fc5ed7cf1fdd29e227f41b9",
+    "pnv": "experiments/gremlin_pnv/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.pnv",
+    "pnv_commit": "4d2e60c91b6da9dda001d97e2a96fd7c20ebe480"
+  },
+  "pncs_contract": {
+    "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+    "branch": "feat/gremlin-pnv-authoring-v0.2",
+    "code_head": "5f3bf90998b8c3547d51e7c47bddaf0d6be25d60",
+    "bridge": "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
+    "information_holonomy": "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
+    "source_holonomy": "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
+    "source_loops": [
+      "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
+      "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
+      "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP"
+    ]
+  },
+  "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
+  "theorem": {
+    "normalization": "N(Q)=Q/Q_Sigma",
+    "scale_invariance": "N(lambda Q)=N(Q) for lambda>0",
+    "lift": "L_s(p)=s p",
+    "holonomy": "H_s(Q)=(s/Q_Sigma)Q",
+    "defect": "Delta_ext=abs(1-s/Q_Sigma)",
+    "exact_inverse_transport": "s=Q_Sigma"
+  },
+  "rfc_source_interface": {
+    "shape_candidate": "p_IDT <-> p_Q",
+    "extensive_source_mass_coordinate": "M_Q=epsilon_Q Q_Sigma/c^2",
+    "cell_mass": "m_Q,a=M_Q p_a^(Q)",
+    "cell_density": "rho_Q,a=M_Q p_a^(Q)/V_a"
+  },
+  "constructive_probe": {
+    "Q1": [2, 3, 5],
+    "Q2": [4, 6, 10],
+    "common_simplex_state": [0.2, 0.3, 0.5],
+    "shape_defect": 0.0,
+    "unit_lift_defect_Q1": "9/10",
+    "unit_lift_defect_Q2": "19/20"
+  },
+  "reference_execution": {
+    "combined_rfc_idt_fixture": "11 passed in 0.13s",
+    "idt_interface_tests": 5,
+    "rfc_interface_tests": 6,
+    "failed": 0
+  },
+  "idt_full_reference_suite": {
+    "commit": "f6e36990e8055280c924fca17353820aa8d6c814",
+    "workflow": "Reference suite",
+    "run_id": 33120017246,
+    "job_id": 98684287374,
+    "result": "PASS",
+    "passed": 340,
+    "failed": 0,
+    "spacing_gate_phase": 0.005,
+    "spacing_gate_reason": "asymptotic_long_wave_coefficient_probe"
+  },
+  "rfc_full_reference_suite": {
+    "commit": "48d229d5e8374710900822a89e02ccd3eefd5e09",
+    "workflow": "RFC reference suite",
+    "run_id": 33120038218,
+    "job_id": 98684356166,
+    "result": "PASS",
+    "passed": 32,
+    "failed": 0
+  },
+  "interface_status": {
+    "normalized_simplex_shape": "PASS",
+    "positive_scale_quotient": "PASS",
+    "analytic_extensive_holonomy_defect": "PASS",
+    "idt_full_reference_suite": "PASS",
+    "rfc_full_reference_suite": "PASS",
+    "p_IDT_to_p_Q_physical_cross_binding": "OPEN",
+    "common_state_space_cell_partition_transport": "OPEN",
+    "physical_source_mass_coordinate_M_Q": "OPEN"
+  },
+  "epistemic_state": "CHYBA",
+  "canonical_temporal_path_preserved": true,
+  "main_mutated": false
+}
