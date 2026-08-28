@@ -7,6 +7,7 @@ from idt.half_frame_temporal_gluing import (
     conditional_glued_probabilities,
     glued_amplitudes,
     glued_support_labels,
+    glued_temporal_measures,
     gluing_coisometry,
     modular_phase_budget,
     norm_decomposition,
@@ -87,3 +88,19 @@ def test_single_frame_is_two_equal_half_supports():
     audit = audit_half_frame_state([1.0])
     assert audit.support_labels == ("1", "1")
     np.testing.assert_allclose(conditional_glued_probabilities([1.0]), [0.5, 0.5], atol=2e-15)
+
+
+def test_uniform_elapsed_measure_patterns_match_half_frame_picture():
+    np.testing.assert_allclose(glued_temporal_measures([2.0]), [1.0, 1.0], atol=0.0)
+    np.testing.assert_allclose(glued_temporal_measures([2.0, 2.0]), [1.0, 2.0, 1.0], atol=0.0)
+    np.testing.assert_allclose(glued_temporal_measures([2.0, 2.0, 2.0]), [1.0, 2.0, 2.0, 1.0], atol=0.0)
+    np.testing.assert_allclose(glued_temporal_measures([2.0, 2.0, 2.0, 2.0]), [1.0, 2.0, 2.0, 2.0, 1.0], atol=0.0)
+
+
+def test_nonuniform_elapsed_measure_is_exactly_conserved():
+    theta = np.asarray([0.17, 0.83, 1.4, 0.26, 2.11])
+    glued = glued_temporal_measures(theta)
+    assert glued.size == theta.size + 1
+    assert np.all(glued > 0.0)
+    assert math.isclose(float(np.sum(glued)), float(np.sum(theta)), rel_tol=0.0, abs_tol=2e-15)
+    np.testing.assert_allclose(glued[1:-1], 0.5 * (theta[:-1] + theta[1:]), atol=0.0)
