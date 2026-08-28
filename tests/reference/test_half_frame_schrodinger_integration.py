@@ -44,3 +44,16 @@ def test_schrodinger_readout_and_elapsed_support_share_same_N_plus_1_topology():
     assert audit.glued_amplitudes.size == elapsed_supports.size == 6
     assert len(audit.support_labels) == 6
     assert math.isclose(float(np.sum(elapsed_supports)), float(np.sum(frame_measures)), abs_tol=2e-15)
+
+
+def test_reference_schrodinger_flow_can_increase_neighbor_overlap_occupancy():
+    frames = build_prime_frames([3, 5, 7, 11, 13])
+    h = zeta_collatz_hamiltonian(frames, zeta_scale=0.6, collatz_coupling=1.0)
+    psi0 = np.asarray([1.0, 0.0, 0.0, 0.0, 0.0], dtype=complex)
+    initial = interface_occupancy(psi0)
+    psi = propagate_frame_amplitudes(psi0, h, 1.0)
+    evolved = interface_occupancy(psi)
+
+    assert math.isclose(initial, 0.25, rel_tol=0.0, abs_tol=2e-15)
+    assert evolved > 0.5
+    assert evolved > initial + 0.25
