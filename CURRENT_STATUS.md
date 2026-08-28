@@ -6,7 +6,7 @@ The repository is maintained as three parallel spines:
 - **EVIDENCE** — tests, receipts, manifests and audits;
 - **MONOGRAPH** — a LaTeX view of admitted formalism and recorded evidence.
 
-Proposed admitted frontier after merge of the current promotion branch:
+Canonical admitted frontier:
 
 \[
 \boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
@@ -42,7 +42,7 @@ The reference carrier is the exact 07K ordered position lineage
 P(z)=(r_1(z),\ldots,r_N(z)).
 \]
 
-07S now uses the exact retained active-attractor sequence
+07S uses the exact retained active-attractor sequence
 
 \[
 \boxed{\alpha(z)=(a_1(z),\ldots,a_N(z))}
@@ -54,25 +54,61 @@ as a stratum key. Unequal active sequences are separated directly by the retaine
 \mathcal Z_s=\{z:\alpha(z)=s\}.
 \]
 
-Inside each stratum, 07K supplies the injective position carrier. If a single-valued decoder
+Inside each stratum, 07K supplies the injective position carrier.
+
+## 07T exact per-stratum decoder baseline
+
+07T now constructs the first explicit decoder
 
 \[
 \boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N)
+L_s^{\rm pos}:(Y,F_{\rm pos})|_{\mathcal Z_s}
+\longrightarrow
+(r_1,\ldots,r_N)
 }
 \]
 
-is constructed, 07R gives injectivity inside that stratum; exact active-sequence separation then gives injectivity across their union.
+using typed absolute position labels `r{k}{x|y}`. The decoder combines position coordinates already present in the base record with an explicit position-fiber packet and emits the carrier only when every required coordinate is covered exactly once.
 
-The executable 07S reference confirms:
+For the declared 07J sparse schedule the base record already contains
 
-- exact active-sequence stratum keys;
-- exact cross-stratum separation;
-- \(2N\) latent coordinates and \(2N\) position-lineage coordinates with the 07K rank certificate;
-- real two-event composition `retained stratum + position lineage -> 07K -> generating kicks`;
-- a perturbed admissible carrier maps through 07K to a different latent history, preserving the distinct roles of decoder selection and carrier inversion.
+\[
+(r_{Nx},r_{Ny}),
+\]
 
-The first hosted control encoded an over-strong rejection expectation and run `33203185181` returned `1 failed, 517 passed`. After correcting the control to the carrier/decoder contract, run `33203339457`, job `98958035895`, tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051` and returned `518 passed in 12.06s` on Python 3.12.14 / Ubuntu 24.04.4.
+so the exact baseline packet is
+
+\[
+\boxed{
+F_{\rm pos}^{\rm baseline}
+=\{r_{kx},r_{ky}:1\le k<N\},
+\qquad
+|F_{\rm pos}^{\rm baseline}|=2N-2.
+}
+\]
+
+This is an exact constructive sufficiency bound for the full 07K carrier. It remains separately typed from the 07L local-rank minimum \(N-3\).
+
+The real three-event integration assembles
+
+\[
+(r_{1x},r_{1y},r_{2x},r_{2y})
++ (r_{3x},r_{3y})_{Y}
+\to
+(r_1,r_2,r_3)
+\to 07K^{-1}
+\to (u_1,u_2,u_3),
+\]
+
+and recovers the generating kick history at the declared tolerance.
+
+The integration also exposed and hardened the 07K generic-sequence interface for NumPy \((N,2)\) carriers. Initial run `33204395192` returned `1 failed, 527 passed in 14.36s`; after the explicit zero-length correction, hosted run `33204551313`, job `98962152065`, tested head `8d0964f1d6d343193bb72966f4443780d2edafe0` and returned
+
+```text
+528 passed in 14.20s
+```
+
+on Python 3.12.14 / Ubuntu 24.04.4.
 
 Evidence:
 
@@ -80,10 +116,12 @@ Evidence:
 - `formalism/07Q_oriented_winding_fiber_separator.md`;
 - `formalism/07R_fiber_lift_composition_theorem.md`;
 - `formalism/07S_stratified_position_lift_reduction.md`;
+- `formalism/07T_per_stratum_position_decoder_baseline.md`;
 - `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
 - `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
 - `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
-- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`;
+- `validation/RETRODICTION_PER_STRATUM_POSITION_DECODER_V0_1.json`.
 
 Current Retrodiction status:
 
@@ -94,11 +132,14 @@ FIBER_LIFT_COMPOSITION_THEOREM_PASS
 FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS
 STRATIFIED_GLOBAL_REDUCTION_PASS
 CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS
-PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
+EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS
+FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS
+07K_NDARRAY_CARRIER_INTERFACE_PASS
+POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE
 HOSTED_FULL_SUITE_PASS
 GENERAL_GLOBAL_INJECTIVITY_OPEN
 ```
 
-The active constructive target is the per-stratum decoder \(L_s\) from retained base observations plus ordered winding, continuous ORCHORBITAL and SOD coordinates to the exact 07K position carrier.
+The active constructive target is compression of the explicit position-fiber packet while preserving the same single-valued position carrier. The first analytic candidate reuses ordered winding and supplies one active-attractor radius per earlier checkpoint, targeting a reduction from \(2N-2\) explicit position scalars to \(N-1\) radial scalars for the declared schedule.
 
-Canonical `main` remains unchanged until an explicit merge command is issued.
+Canonical `main` contains the admitted Memory/ORCHORBITAL/07S promotion stack. 07T remains on draft PR #23 pending explicit merge authorization.
