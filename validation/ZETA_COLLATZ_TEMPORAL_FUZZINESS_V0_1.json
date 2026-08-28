@@ -1,6 +1,6 @@
 {
   "schema": "IDT_ZETA_COLLATZ_TEMPORAL_FUZZINESS_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/zeta-collatz-schrodinger-temporal-fuzziness-v0.1",
   "formalism": "formalism/02E_zeta_collatz_prime_frame_schrodinger_fuzziness.md",
   "implementation": "src/idt/zeta_collatz_temporal_fuzziness.py",
@@ -47,6 +47,17 @@
     "live_execution": "UNRECORDED_IN_THIS_RECEIPT"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 719,
+    "run_id": 33215368562,
+    "job_id": 98997666270,
+    "tested_pr_merge_sha": "9b51b5a114dd3cda0ec944dc3cd8573354af5895",
+    "tested_head_sha": "0cf9c0606bcf5039d3ab25145deb319a60c80995",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 603,
+    "tests_total": 603,
+    "elapsed_seconds": 12.28
   }
 }
