@@ -18,7 +18,7 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
 | Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
 | ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ACTIVE_NEXT_GATE / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | 07P upgrades pair witnesses into an all-collision finite-domain gate; 07Q binds ordered signed residence winding as a concrete fiber coordinate and separates the exact reflection null; the active next task is a domain-covering collision-fiber separator argument using winding with continuous ORCHORBITAL and SOD channels |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | 07P upgrades pair witnesses into an all-collision finite-domain gate; 07Q binds ordered signed residence winding as a concrete fiber coordinate; 07R proves that an injective carrier plus a single-valued lift from retained coordinates makes the augmented observation injective. The active next task is construction of the position-lineage lift into the exact 07K carrier. |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
@@ -32,8 +32,11 @@ Current provisional Retrodiction evidence:
 - event-aware residence conditioning: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
 - finite quotient/fiber injectivity: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
 - oriented winding fiber separator: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
+- fiber-lift composition theorem/audit: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
 - hosted 07P reference run: `33200684482`, job `98949092398`, `495 passed in 10.14s`;
 - hosted 07Q reference run: `33201861565`, job `98953023513`, `502 passed in 8.09s`;
+- hosted 07R reference run: `33202559485`, job `98955383447`, `510 passed in 14.11s`;
+- active next gate: `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`;
 - governing global status: `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 Canonical `main` adopts branch admission states through explicit merge.
