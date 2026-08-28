@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/tir-half-fiber-temporal-normalization-v0.1",
   "formalism": "formalism/02JF_tir_half_fiber_temporal_normalization.md",
   "implementation": "src/idt/tir_half_fiber_temporal_normalization.py",
@@ -10,6 +10,13 @@
     "pr": 96,
     "branch": "feat/tir-relational-half-seam-v0.1",
     "head": "46ad51b19471be509cda536365af77998996e5b7",
+    "source_ci": {
+      "integrated_run_number": 43,
+      "integrated_run_id": 33219847391,
+      "publication_run_number": 142,
+      "publication_run_id": 33219847399,
+      "status": "PASS"
+    },
     "export": [
       "FIRST_DISTINCTION_HALF",
       "HALF_FIBER_U1",
@@ -41,6 +48,17 @@
     "specific_tir_fiber_to_specific_idt_seam_binding": "OPEN"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 766,
+    "run_id": 33220008797,
+    "job_id": 99011876446,
+    "tested_head_sha": "6738335ba0ee086bc0c2b4c882e026a6dd2c4f09",
+    "tested_pr_merge_sha": "1f272edfdc8bde8629a636c9e1ed8486f67c9c3b",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 667,
+    "tests_total": 667,
+    "elapsed_seconds": 15.19
   }
 }
