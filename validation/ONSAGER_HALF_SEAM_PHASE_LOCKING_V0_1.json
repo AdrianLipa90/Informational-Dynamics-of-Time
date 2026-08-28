@@ -1,0 +1,60 @@
+{
+  "schema": "IDT_ONSAGER_HALF_SEAM_PHASE_LOCKING_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/onsager-half-seam-phase-locking-v0.1",
+  "formalism": "formalism/02JG_onsager_half_seam_phase_locking.md",
+  "implementation": "src/idt/onsager_half_seam_phase_locking.py",
+  "tests": "tests/reference/test_onsager_half_seam_phase_locking.py",
+  "inputs": [
+    "02JD_PHASE_AWARE_HALF_SEAM",
+    "01A_01D_POSITIVE_ONSAGER_RESPONSE",
+    "00E_ACTIVITY_DERIVED_INTRINSIC_THETA",
+    "02JF_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION"
+  ],
+  "derived_relations": {
+    "seam_defect": "V = |d|^2 = (r0^2+r1^2-2 r0 r1 cos(delta))/4",
+    "gradient": "dV/ddelta = r0 r1 sin(delta)/2",
+    "onsager_flow": "D_Theta delta = -mu dV/ddelta",
+    "sine_locking": "D_Theta delta = -(mu r0 r1/2) sin(delta)",
+    "lyapunov": "dV/dTheta = -mu (dV/ddelta)^2 <= 0",
+    "stable_lock": "delta = 0 mod 2pi",
+    "interface_null_control": "delta = pi mod 2pi",
+    "resonant_mismatch": "Delta_ij = m_j phi_i - m_i phi_j - A_ij",
+    "local_locked_rate": "m_j Omega_i - m_i Omega_j - Omega_A = 0",
+    "stationary_connection_ratio": "Omega_i/Omega_j = m_i/m_j"
+  },
+  "declared_gates": [
+    "seam_defect_gradient_exact",
+    "positive_onsager_descent",
+    "lyapunov_nonincrease",
+    "constructive_lock_stability",
+    "pi_interface_null_instability",
+    "small_mismatch_exponential_relaxation",
+    "positive_semidefinite_network_descent",
+    "winding_weighted_resonant_lock",
+    "stationary_connection_local_rate_ratio",
+    "connection_rate_detuning_source",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "seam_defect_as_onsager_scalar": "DECLARED_MODEL_INPUT",
+    "fixed_magnitudes_for_single_seam_stability": "DECLARED_DOMAIN",
+    "full_schrodinger_amplitude_phase_coupling": "NEXT_GATE",
+    "physical_oscillator_identification": "SEPARATE_EVIDENCE_GATE",
+    "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
+  },
+  "hosted_ci": {
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 772,
+    "run_id": 33220495369,
+    "job_id": 99013319516,
+    "tested_head_sha": "5c9f59c45461d21421516674c2ca479c4985f774",
+    "tested_pr_merge_sha": "450e179a6666421fd71ee62c194b9a611f85fd6e",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 686,
+    "tests_total": 686,
+    "elapsed_seconds": 19.40
+  }
+}
