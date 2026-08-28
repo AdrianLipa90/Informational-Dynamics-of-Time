@@ -25,7 +25,7 @@ Here
 \[
 d_{FS}(a,b)=\arccos|\langle\psi_a|\psi_b\rangle|
 \]
-is the Fubini–Study ray distance. Thus local phase choices cannot create or remove an event atom.
+is the Fubini--Study ray distance. The scalar \(q_e\) is invariant under local phase re-expression of the same ray data.
 
 ## Positive atomic event measure
 
@@ -33,26 +33,28 @@ Define
 \[
 \boxed{\mathcal K_T^+=\sum_e q_e\,\delta_{s_e},\qquad q_e\ge0.}
 \]
-Zero-weight atoms are omitted from the reduced measure. The canonical NOW candidate is
+The reduced atomic support is
 \[
 \boxed{\mathcal N=\operatorname{supp}_{\rm at}\mathcal K_T^+.}
 \]
 
-Relational density and viscosity may rescale realization through the positive mobility
+Relational density and viscosity rescale realization through the positive mobility
 \[
 M_{ab}=\frac{\sqrt{\rho_R(a)\rho_R(b)}}{\tfrac12[\eta_R(a)+\eta_R(b)]}>0,
 \]
-so a realization-weighted event measure can be written as
+so the realization-weighted event measure is
 \[
 \boxed{\mathcal R_T=\sum_e M_{ab}q_e\,\delta_{s_e}.}
 \]
 Because \(M_{ab}>0\),
 \[
+\boxed{
 \operatorname{supp}_{\rm at}\mathcal R_T
 =\operatorname{supp}_{\rm at}\mathcal K_T^+
 =\mathcal N.
+}
 \]
-Density and viscosity can therefore change event pace/weight without changing which admitted transition signatures vanish.
+Density and viscosity therefore control event weighting while the positive atomic support is inherited from \(q_e\).
 
 ## T023 — positive pushforward-support identity
 
@@ -61,26 +63,39 @@ For any map \(f\) defined on the atomic support,
 (f_*\mathcal K_T^+)(\{y\})
 =\sum_{e:f(s_e)=y}q_e.
 \]
-Every non-empty fibre that intersects \(\mathcal N\) has strictly positive total mass, so
+Every fibre intersecting \(\mathcal N\) carries positive total mass, so
 \[
 \boxed{
 \operatorname{supp}_{\rm at}(f_*\mathcal K_T^+)
 =f(\mathcal N).
 }
 \]
-No injectivity assumption is required for this positive measure. Strictly increasing reparameterizations are therefore an immediate special case.
+Strictly increasing reparameterizations are an immediate special case.
 
-## Separation from temporal activity
+## Temporal typing
 
-The symmetric kinetic activity
+The upstream activity-derived primitive carries
 \[
-\mathfrak a_e=W_{e,+}+W_{e,-}>0
+\boxed{d\Theta_e=\mathfrak a_e\,d\lambda,}
+\qquad
+\boxed{\chi_e=\mathfrak j_e/\mathfrak a_e.}
 \]
-is a pace observable. It is not by itself the canonical event-existence criterion because a positive kinetic activity can exist even when the transition signature \(q_e\) vanishes. The project therefore keeps:
+The NOW gate carries the event-support coordinate \(q_e\) and its positive atomic measure. The four typed observables entering the bifurcation layer are therefore
 
-- \(q_e\): gauge-invariant transition/event signature;
-- \(M_eq_e\): positive realization weight;
-- \(\mathfrak a_e\): positive kinetic activity/pace;
-- \(\mathfrak j_e\): signed directional current.
+```text
+dTheta_e = activity_e d_lambda : accumulated intrinsic duration
+chi_e = current_e/activity_e    : local temporal orientation
+q_e                              : gauge-invariant event signature
+M_e q_e                          : positive realization weight
+```
 
-This typing is the input contract for the bifurcation layer.
+This gives the dependency handoff
+\[
+\boxed{
+\text{TEMPORAL MEASURE + ORIENTATION}
+\to
+\text{REALIZED EVENT SUPPORT (NOW)}
+\to
+\text{BIFURCATION}.
+}
+\]
