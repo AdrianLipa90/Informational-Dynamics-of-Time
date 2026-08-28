@@ -19,6 +19,10 @@ def test_declared_chain_matches_project_order():
 def test_temporal_primitive_records_upstream_forcing_chain():
     status=_nodes()["TEMPORAL_PRIMITIVE"]["status"]
     for marker in ["RELATIONAL_TENSOR_SCALAR_FORCING_TARGETED_PASS","PHASE_CONNECTION_HOLONOMY_TARGETED_PASS","SHANNON_RELATIVE_INFORMATION_MONOTONICITY_TARGETED_PASS","SHANNON_ONSAGER_RESPONSE_TARGETED_PASS_CANDIDATE"]: assert marker in status
+def test_memory_and_orchorbital_admission_markers_are_recorded():
+    nodes=_nodes()
+    for marker in ["REFERENCE_GATE_ADMITTED","HOSTED_FULL_SUITE_PASS"]: assert marker in nodes["MEMORY"]["status"]
+    for marker in ["REFERENCE_GATE_ADMITTED","RESIDENCE_LEDGER_PASS","PNCS_HIERARCHY_PASS","TYPED_OBSERVABLES_PASS","HOSTED_FULL_SUITE_PASS"]: assert marker in nodes["ORCHORBITAL_ATTRACTORS"]["status"]
 def test_downstream_frontier_markers_are_preserved():
     status=_nodes()["RETRODICTION"]["status"]
-    for marker in ["SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND","ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS","GENERAL_GLOBAL_INJECTIVITY_OPEN","GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION"]: assert marker in status
+    for marker in ["SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND","ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS","GENERAL_GLOBAL_INJECTIVITY_OPEN","GATED_PENDING_ORCHORBITAL_ADMISSION"]: assert marker in status
