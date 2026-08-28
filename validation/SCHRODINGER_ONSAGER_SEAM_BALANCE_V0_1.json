@@ -1,0 +1,16 @@
+{
+  "schema": "IDT_SCHRODINGER_ONSAGER_SEAM_BALANCE_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "formalism": "formalism/02JH_schrodinger_onsager_seam_balance.md",
+  "implementation": "src/idt/schrodinger_onsager_seam_balance.py",
+  "tests": "tests/reference/test_schrodinger_onsager_seam_balance.py",
+  "core": {
+    "seam_energy": "V = psi^dagger K_phi psi",
+    "reversible_power": "P_H = i psi^dagger [H,K_phi] psi",
+    "dissipation": "D = grad(V)^T G_alpha grad(V)",
+    "balance": "dV/dTheta = P_H - D",
+    "norm": "d||psi||^2/dTheta = 0"
+  },
+  "next_gate": "CONTINUUM_SCHRODINGER_ONSAGER_HALF_FRAME_LIMIT",
+  "hosted_ci": {"status": "PENDING"}
+}
