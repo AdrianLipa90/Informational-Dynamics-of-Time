@@ -39,6 +39,26 @@ def test_symmetric_point_has_positive_activity_and_zero_orientation():
     assert k.orientation == 0.0
 
 
+def test_independent_channel_superposition_is_extensive():
+    left = directed_kinetics(1.3, 0.7)
+    right = directed_kinetics(0.8, -0.4)
+    combined_forward = left.forward + right.forward
+    combined_reverse = left.reverse + right.reverse
+    combined_density = combined_forward + combined_reverse
+    assert math.isclose(
+        combined_density,
+        left.activity + right.activity,
+        rel_tol=0.0,
+        abs_tol=1e-14,
+    )
+    assert math.isclose(
+        combined_forward + combined_reverse,
+        combined_reverse + combined_forward,
+        rel_tol=0.0,
+        abs_tol=0.0,
+    )
+
+
 def test_activity_measure_is_invariant_under_monotone_reparameterization():
     k = directed_kinetics(2.0, 0.6)
     d_lambda = 0.25
