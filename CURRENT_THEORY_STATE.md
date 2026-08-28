@@ -1,6 +1,6 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The proposed admitted frontier after merge of the current promotion branch is
 
@@ -136,45 +136,7 @@ X_k^K
 X_k^+.
 \]
 
-The event-aware bridge therefore carries the cell
-
-\[
-\mathcal B_k=
-\left(
- k,\tau_k^-,\mathcal E_k,H(X_k^-),\mathcal R_k^{\rm smooth},h_{k-1}
-\right),
-\]
-
-with chronological continuity
-
-\[
-H(X_{k-1}^+)=H(X_k^-)
-\]
-
-and event-to-smooth binding
-
-\[
-H(K_{\mathcal E_k}X_k^-)=H(X_{k,\rm smooth}^-).
-\]
-
-The exact finite-precision elapsed-time relation is
-
-\[
-\boxed{
-\Delta\tau_k^R
-=\operatorname{fl}\!\left(
-\operatorname{fl}(\tau_k^-+\Delta\tau_k^E)-\tau_k^-
-\right).
-}
-\]
-
-For the declared two-event global reflection pair, the final retained base observation remains equivalent at tolerance \(10^{-10}\), while the latent separation exceeds \(0.9\). The retained discrete residence coordinates satisfy
-
-\[
-(a_k)_k=(\widetilde a_k)_k
-\]
-
-and the next-attractor, switch and leak lineages also coincide. The pair therefore remains in the same discrete residence-label equivalence class.
+The event-aware bridge carries chronological event-to-smooth lineage and exact finite-precision elapsed-time binding. For the declared two-event reflection pair, the final retained base observation remains equivalent at tolerance \(10^{-10}\), while the latent separation exceeds \(0.9\). The active-attractor, next-attractor, switch and leak lineages also coincide.
 
 The earlier continuous ORCHORBITAL coordinate separates the pair,
 
@@ -201,23 +163,15 @@ The Retrodiction information channels remain distinctly typed as
 }
 \]
 
-The formal and evidence bindings are `formalism/07O_orchorbital_residence_conditioned_retrodiction.md` and `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`.
-
 ## Quotient/fiber finite-domain Retrodiction
 
-Let
-
-\[
-\mathcal C=\{z_1,\ldots,z_n\}
-\]
-
-be a finite candidate-history domain, let \(Y\) be the retained base observation, and let \(F_c\) denote separately typed retained fiber channels. Define
+For a finite candidate-history domain \(\mathcal C\), base observation \(Y\), and separately typed fiber channels \(F_c\), define
 
 \[
 \widetilde Y(z)=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr).
 \]
 
-On the finite domain the exact separation condition is
+07P establishes
 
 \[
 \boxed{
@@ -230,73 +184,137 @@ Y(z_i)=Y(z_j)
 }
 \]
 
-The 07P binding is `formalism/07P_quotient_fiber_finite_injectivity.md` with receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`. Hosted run `33200684482`, job `98949092398`, returned `495 passed in 10.14s`.
+The 07P binding is `formalism/07P_quotient_fiber_finite_injectivity.md` with receipt `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
 ## Oriented winding as a fiber coordinate
 
-07Q uses the already persisted signed residence winding as a concrete fiber candidate. For an \(N\)-event history,
+07Q uses the already persisted signed residence winding
 
 \[
 \boxed{
 \mathcal W(z)
-=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
 }
 \]
 
-The canonical storage is the exact binary64 `winding_increment_hex` carried by each residence receipt. Segment order is retained. Define
+as a concrete fiber candidate. The canonical storage is the exact binary64 `winding_increment_hex` carried by each residence receipt.
 
-\[
-\delta_W
-=\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2.
-\]
-
-For the exact 07G/07H reflection pair, the base projection remains equivalent and the active-attractor sequence remains equal, while hosted reference tests establish
+For the exact reflection pair, the base projection and active sequence remain equivalent while
 
 \[
 \boxed{
-\delta_W>10^{-12}.
+\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2>10^{-12}.
 }
 \]
 
-Hence this pair receives
+Feeding \(\mathcal W\) into 07P gives one base collision, one separated collision and zero unresolved collisions with the channel attributed to `oriented_winding`.
 
-```text
-BASE_NULL_SEPARATED_BY_ORIENTED_WINDING
-```
+The 07Q binding is `formalism/07Q_oriented_winding_fiber_separator.md` with receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
 
-without using provenance commitments as semantic coordinates.
+## Fiber-lift composition theorem
 
-Feeding \(\mathcal W\) directly into the 07P finite-domain gate gives, for the declared two-history candidate domain,
+07R introduces an injective reference carrier
+
+\[
+P:\mathcal Z\to\mathcal X
+\]
+
+and the augmented retained observation
+
+\[
+\boxed{A(z)=(Y(z),F(z)).}
+\]
+
+Assume a single-valued lift exists on the image of \(A\),
+
+\[
+L:A(\mathcal Z)\to\mathcal X,
+\qquad
+\boxed{P=L\circ A.}
+\]
+
+If \(P\) is injective, then \(A\) is injective. Indeed,
+
+\[
+A(z_1)=A(z_2)
+\Longrightarrow
+L(A(z_1))=L(A(z_2))
+\Longrightarrow
+P(z_1)=P(z_2)
+\Longrightarrow
+\boxed{z_1=z_2}.
+\]
+
+This is an exact composition theorem rather than an empirical extrapolation from finite tests.
+
+### 07K carrier binding
+
+The reference carrier is the ordered post-segment position lineage
 
 \[
 \boxed{
-N_{\rm collision}=1,
-\quad
-N_{\rm separated}=1,
-\quad
-N_{\rm unresolved}=0,
+P(z)=(r_1(z),\ldots,r_N(z)).
 }
 \]
 
-and status
+07K gives exact algebraic recovery of the event kick at each step,
+
+\[
+\boxed{
+u_n=
+\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}
+-v_{n-1},}
+\]
+
+followed by
+
+\[
+\boxed{
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
+\]
+
+Thus the active global closure problem is reduced to constructing
+
+\[
+\boxed{
+L:(Y,F)\mapsto(r_1,\ldots,r_N)
+}
+\]
+
+on the admitted Retrodiction domain.
+
+### Finite reference audit
+
+The executable 07R layer independently verifies the two theorem premises on finite candidate domains:
+
+1. distinct latent candidates must remain distinct under the carrier \(P\);
+2. an equal augmented observation cannot map to two distinct carrier values.
+
+For the exact reflection pair, with sparse base observation plus `oriented_winding` and the 07K position carrier, the audit returns
 
 ```text
-FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER
+FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS
 ```
 
-with the separating channel attributed to `oriented_winding`.
-
-This matches the repository's broader orientation-preservation pattern: the 01L temporal-holonomy carrier retains cycle orientation through the signed phase quadrature, while 07Q retains the signed segment-circulation lineage inside a Retrodiction collision fiber. GREMLIN treats that cross-layer relation as a structural candidate; repository evidence is governed by the explicit 07Q/07P tests.
-
-The 07Q binding is `formalism/07Q_oriented_winding_fiber_separator.md` with receipt `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`. Hosted run `33201861565`, job `98953023513`, tested branch head `1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363` and returned
+with zero carrier collisions, zero augmented collisions and zero lift conflicts. Replacing winding by an identical zero fiber returns
 
 ```text
-502 passed in 8.09s
+FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN
+```
+
+because the colliding augmented record maps to two distinct position carriers.
+
+The 07R binding is `formalism/07R_fiber_lift_composition_theorem.md` with receipt `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`. Hosted run `33202559485`, job `98955383447`, tested branch head `6abca4ad72c04cdca5d1128e690c17898b8650d7` and returned
+
+```text
+510 passed in 14.11s
 ```
 
 on Python 3.12.14 / Ubuntu 24.04.4.
 
-The active Retrodiction frontier is now the characterization of complete base-collision fibers and a domain-covering separator theorem or constructive lift using ordered winding together with retained continuous ORCHORBITAL and SOD coordinates. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status.
+The active Retrodiction frontier is now `POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE`: derive a domain-covering constructive lift from retained base observations and existing fiber channels to the ordered 07K position lineage. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status until that lift or an equivalent domain-covering fiber-separation argument is receipted.
 
 ## 01K temporal information curvature interface
 
