@@ -6,14 +6,17 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
+\hypersetup{hidelinks}
 \title{Informational Dynamics of Time}
 \author{Adrian Lipa}
 \date{2026}
 \begin{document}
+\frontmatter
 \maketitle
 \input{frontmatter/abstract}
 \input{frontmatter/methodology}
 \tableofcontents
+\mainmatter
 \include{chapters/01_information}
 \include{chapters/02_tir_entrypoint}
 \include{chapters/03_kahler_information_geometry}
@@ -39,6 +42,7 @@
 \include{chapters/08L_fiber_lift_composition}
 \include{chapters/08M_stratified_position_lift}
 \include{chapters/08N_per_stratum_position_decoder}
+\include{chapters/08O_winding_radius_position_decoder}
 \include{chapters/09_retrocausality}
 \include{chapters/10_experiments}
 \include{chapters/11_space_as_external_branch}
