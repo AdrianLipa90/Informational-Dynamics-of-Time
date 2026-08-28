@@ -16,11 +16,60 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | NOW | `STRUCTURAL_PASS / WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE` | structural signature carrier plus wave-active realization support |
 | Bifurcation | `FORMAL_CONTRACT_PASS / NOW_BRIDGE_TARGETED_PASS_CANDIDATE` | exact activity/current hyperbolic coordinates feed wave mobility and directional phase |
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
-| Memory | `INTEGRATION_PASS / TRANSPORT_BRIDGE_TARGETED_PASS_CANDIDATE` | transport/NOW-derived duration and event-gated memory receipts |
-| ORCHORBITAL Attractors | `PROVISIONAL_MEMORY_EXTENSION / LINEAGE_BRIDGE_TARGETED_PASS_CANDIDATE` | active-attractor snapshot persisted for exact recall |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / GATED_PENDING_MEMORY_ORCHORBITAL_ADMISSION` | 07F–07N observability, exact lineage, sparse completion, SOD witness and adaptive separator gates |
+| Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
+| ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | 07P upgrades pair witnesses into an all-collision finite-domain gate; 07Q binds ordered signed residence winding as a concrete fiber coordinate; 07R supplies the exact carrier/lift composition theorem; 07S uses the exact retained active-attractor sequence to partition the global domain into fixed-sequence strata. The active next task is construction of the per-stratum decoder from retained base/fiber coordinates into the exact 07K ordered position carrier. |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
+
+Promotion-branch admission receipts:
+
+- Memory: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
+- ORCHORBITAL: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+
+Current provisional Retrodiction evidence:
+
+- event-aware residence conditioning: `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`;
+- finite quotient/fiber injectivity: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`;
+- oriented winding fiber separator: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
+- fiber-lift composition theorem/audit: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
+- stratified fixed-sequence reduction: `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`;
+- hosted 07P reference run: `33200684482`, job `98949092398`, `495 passed in 10.14s`;
+- hosted 07Q reference run: `33201861565`, job `98953023513`, `502 passed in 8.09s`;
+- hosted 07R reference run: `33202559485`, job `98955383447`, `510 passed in 14.11s`;
+- hosted 07S reference run after corrected decoder/carrier control: `33203339457`, job `98958035895`, `518 passed in 12.06s`;
+- active next gate: `PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE`;
+- governing global status: `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
+
+The 07S reduction uses the exact retained active sequence
+
+\[
+\alpha(z)=(a_1(z),\ldots,a_N(z))
+\]
+
+to define strata
+
+\[
+\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
+\]
+
+Unequal stratum keys are separated directly by the retained record. Inside each fixed-sequence stratum, the exact 07K carrier is
+
+\[
+P_s(z)=(r_1(z),\ldots,r_N(z)).
+\]
+
+The remaining constructive gate is therefore
+
+\[
+\boxed{
+L_s:(Y,F)|_{\mathcal Z_s}\longrightarrow(r_1,\ldots,r_N),
+}
+\]
+
+with the carrier/lift composition governed by 07R.
+
+Canonical `main` adopts branch admission states through explicit merge.
 
 The Temporal Primitive keeps its Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
 

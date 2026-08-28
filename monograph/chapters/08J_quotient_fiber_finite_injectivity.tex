@@ -1,0 +1,186 @@
+\chapter{Finite-Domain Quotient/Fiber Injectivity}
+\label{chap:quotient-fiber-finite-injectivity}
+
+\section{Dependency position}
+
+The Retrodiction branch has accumulated several complementary observation channels: the terminal memory checkpoint, retained continuous ORCHORBITAL observables, spatial-offset/divergence coordinates, adaptive SOD separators, and event-aware residence lineage.  The present gate supplies the finite-domain rule that combines those channels without collapsing their types.
+
+Let
+\[
+\mathcal C=\{z_1,\ldots,z_n\}
+\]
+be a finite candidate-history set, let
+\[
+Y:\mathcal C\to\mathcal Y
+\]
+be the retained base observation, and let
+\[
+F_c:\mathcal C\to\mathcal F_c,
+\qquad c=1,\ldots,m,
+\]
+be declared auxiliary observation channels.  Define
+\[
+\widetilde Y(z)
+=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr).
+\]
+
+\section{Exact finite-set separation lemma}
+
+On the declared finite domain,
+\[
+\boxed{
+\widetilde Y\text{ is injective on }\mathcal C
+\iff
+\forall i\ne j:\
+Y(z_i)=Y(z_j)
+\Longrightarrow
+\exists c:\ F_c(z_i)\ne F_c(z_j).
+}
+\]
+
+The proof is a partition of distinct candidate pairs.  A pair is already distinguished by the base observation when its two images under $Y$ differ.  Every remaining distinct pair belongs to one base fiber.  The augmented map is injective exactly when every such pair is distinguished by at least one declared $F_c$ coordinate.
+
+The numerical reference implementation makes the finite-precision equivalence relation explicit.  A pair is treated as a base collision when
+\[
+\|z_i-z_j\|_2>\varepsilon_Z,
+\qquad
+\|Y(z_i)-Y(z_j)\|_2\le\varepsilon_B,
+\]
+and it is admitted as fiber-separated when
+\[
+\exists c:\
+\|F_c(z_i)-F_c(z_j)\|_2>\varepsilon_F.
+\]
+The status
+\texttt{FINITE\_DOMAIN\_INJECTIVE\_WITH\_DECLARED\_FIBER}
+is emitted only when every base-collision pair in the candidate set satisfies this condition.
+
+\section{Reference quotient structures}
+
+The GREMLIN candidate search exposed the same relational pattern in independently versioned source families.
+
+For the Relational Field Closure normalization map,
+\[
+\mathcal N(Q)=p,
+\qquad
+p_a=\frac{Q_a}{Q_\Sigma},
+\]
+and
+\[
+\mathcal N(\lambda Q)=\mathcal N(Q),
+\qquad \lambda>0.
+\]
+The normalized shape therefore retains the quotient coordinate while the positive extensive scale $Q_\Sigma$ supplies the exact lift
+\[
+\mathcal L_{Q_\Sigma}(p)=Q_\Sigma p.
+\]
+
+The Secret-of-a-Half source carries the exact two-sheet quotient
+\[
+q(s)=\left(s-\frac12\right)^2,
+\qquad
+q(1-s)=q(s),
+\]
+with nonzero fibers
+\[
+q^{-1}(w)
+=\left\{
+\frac12+\sqrt w,
+\frac12-\sqrt w
+\right\}.
+\]
+Its commuting relation
+\[
+q\circ N_s=J\circ q
+\]
+shows that the quotient dynamics and the lifted sheet structure can remain separately typed.
+
+The TIR source contributes a structurally related orientation/open-holonomy channel between non-identical sector bases.  In the present Retrodiction gate this remains a GREMLIN candidate for a transport-sensitive fiber coordinate until a direct commuting map into the IDT history state space is supplied.
+
+\section{Binding to the explicit reflection collision}
+
+The 07H reflection witness contains two distinct latent histories separated by
+\[
+\|\widetilde z-z\|_2
+=0.9233193011263697,
+\]
+while their terminal retained base checkpoint satisfies
+\[
+\delta_B
+=5.594315114139762\times10^{-17}.
+\]
+
+The earlier continuous ORCHORBITAL basin weight gives
+\[
+w_{A,1}(z)=0.5838364569736161,
+\qquad
+w_{A,1}(\widetilde z)=0.6030256253846112,
+\]
+and hence
+\[
+\boxed{
+|\Delta w_{A,1}|=0.01918916841099516.
+}
+\]
+The two-history candidate domain therefore passes the finite-domain gate when $w_{A,1}$ is declared as an auxiliary fiber channel.
+
+The earlier $r_x$ coordinate supplies the negative control,
+\[
+|\Delta r_{x,1}|
+=1.1102230246251565\times10^{-16},
+\]
+which remains within the declared equivalence tolerance and leaves the collision unresolved.  The test therefore distinguishes observation cardinality from separating information content.
+
+\section{Typed augmented observation}
+
+The current Retrodiction observation architecture is recorded as
+\[
+\boxed{
+Y_{\rm aug}
+=
+Y_B
+\oplus F_{\rm ORCH}^{\rm cont}
+\oplus F_{\rm SOD}
+\oplus F_{\rm residence}
+\oplus F_{\rm holonomy}.
+}
+\]
+Each channel preserves its source contract.  Content-addressed provenance commitments remain integrity coordinates unless a later observation contract admits a provenance quantity as a semantic observation coordinate.
+
+\section{Reference evidence}
+
+The dedicated reference suite contains nine controls: exact sheet separation, scale-fiber separation, an unresolved identical-fiber collision, an all-collision finite-domain requirement, a no-base-collision control, deterministic channel attribution, fail-closed malformed/non-finite inputs, the exact 07H $w_{A,1}$ positive separator, and the exact 07H $r_{x,1}$ negative control.
+
+The local targeted result was
+\begin{verbatim}
+9 passed in 0.04s
+\end{verbatim}
+
+The hosted repository gate was GitHub Actions run \texttt{33200684482}, job \texttt{98949092398}.  It tested branch head
+\begin{verbatim}
+17d3ba854e83f930194b8dd4c4b7089382578a35
+\end{verbatim}
+through PR merge commit
+\begin{verbatim}
+ee1985c96df734d32a8232c03ca078c993ef7318
+\end{verbatim}
+and returned
+\begin{verbatim}
+495 passed in 10.14s
+\end{verbatim}
+on Python 3.12.14 and Ubuntu 24.04.4.
+
+The executable implementation is
+\texttt{src/idt/retrodiction\_quotient\_fiber\_injectivity.py},
+with formal authority recorded in
+\texttt{formalism/07P\_quotient\_fiber\_finite\_injectivity.md}
+and evidence receipt
+\texttt{validation/RETRODICTION\_QUOTIENT\_FIBER\_FINITE\_INJECTIVITY\_V0\_1.json}.
+
+\section{Active frontier}
+
+The finite-domain gate converts isolated collision witnesses into an all-pair separation criterion on any declared finite candidate set.  The governing next status is
+\begin{verbatim}
+GENERAL_GLOBAL_INJECTIVITY_OPEN
+\end{verbatim}
+with the next admission target a domain-covering separation theorem, constructive inverse, or equivalent global injectivity argument over retained continuous ORCHORBITAL, SOD and holonomy channels.

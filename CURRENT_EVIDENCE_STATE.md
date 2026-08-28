@@ -1,68 +1,99 @@
 # CURRENT EVIDENCE STATE
 
-Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_INTEGRATION_REFERENCE_PASS_CANDIDATE / ORCHORBITAL_TARGETED_REFERENCE_PASS / RETRODICTION_TARGETED_REFERENCE_PASS / FULL_SUITE_NOT_OBTAINED`
+Status: `TRANSPORT_STRUCTURAL_GATE_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-## Temporal transport
+## Upstream admitted evidence
 
-Recorded structural evidence:
+Memory hosted admission: run `33193861826`, job `98925901636`, `431 passed in 7.08s`; receipt `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-- prior full reference suite: `83 passed in 0.12s`;
-- temporal-transport closure delta: `3/3 PASS` for spectral norm bound, algebraic invertibility/conditioning separation and exact cut factorization;
-- receipt: `validation/TEMPORAL_TRANSPORT_CLOSURE_V0_2.json`.
+ORCHORBITAL hosted admission is bound by `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json` and contains residence-ledger, strict-schema, PNCS hierarchy and typed-observable evidence. The synchronized ORCHORBITAL checkpoint run `33197346515`, job `98937750103`, returned `476 passed in 11.95s`.
 
-## Memory
+## Retrodiction evidence frontier
 
-Recorded targeted controls:
+### 07O — event-aware residence conditioning
 
-- Kepler--Newton memory: `11 passed in 0.46s`;
-- event-imprint memory kick: `7 passed in 0.08s`;
-- central-parameter identifiability: `6 targeted checks PASS`;
-- CP1 Kähler memory frame: `7 targeted checks PASS`;
-- persistence / ledger-assisted recall: `8 passed in 0.13s`;
-- integrated Memory path: `6/6 targeted integration checks PASS`.
+The declared reflection pair retains equivalent final sparse base observation and equivalent active/switch/leak residence class, while its latent histories remain separated by more than `0.9`. The earlier continuous `weight:A@1` coordinate separates the pair by `0.01918916841099516`.
 
-The integrated Memory path verifies `CP1 geometry -> event kick -> Kepler propagation -> persisted receipt -> recall`, including a tampered-receipt negative control and upstream global-phase invariance. The isolated integrated round-trip error in the recorded reference case is below `3.6e-16`.
+Hosted hardening: run `33198069462`, job `98940226102`, `486 passed in 8.89s`.
 
-## ORCHORBITAL attractor extension
+### 07P — quotient/fiber finite-domain injectivity
 
-Receipt: `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
+For every distinct-latent pair colliding under the base projection, the finite-domain gate requires at least one declared fiber channel to separate the pair. Hosted run `33200684482`, job `98949092398`, returned `495 passed in 10.14s`.
 
-Targeted exact-dependency reference result:
+Receipt: `validation/RETRODICTION_QUOTIENT_FIBER_FINITE_INJECTIVITY_V0_1.json`.
 
-- `11 passed in 0.07s`;
-- positive binding margins normalize to attractor weights;
-- deterministic maximum-binding active-attractor selection: PASS;
-- symmetric two-attractor state gives `H_A = 1 bit` and normalized attractor coherence `C_A = 0`: PASS;
-- zero total binding produces explicit `LEAK_MODE`: PASS;
-- active-centre Kepler propagation is translation-covariant: PASS;
-- quarter-turn winding increment equals `1/4`: PASS;
-- ORCHORBITAL smooth step advances `tau_internal` and records winding: PASS;
-- a constructed boundary-crossing case records `A -> B` as an attractor-switch candidate: PASS;
-- multi-segment propagation uses `A` on the completed segment and `B` on the following segment: PASS;
-- directed transition graph counts the reference `A -> B` transition exactly once: PASS;
-- residence summary accumulates segment count, dwell time in `tau_internal` and winding: PASS;
-- `LEAK_MODE` fails closed before orbital propagation: PASS;
-- phase-space closure defect is zero for identical states: PASS.
+### 07Q — oriented winding fiber
 
-Evidence class: `ORCHORBITAL_MEMORY_REFERENCE_DIAGNOSTIC`.
+The persisted ordered signed winding
 
-## Retrodiction downstream staging
+\[
+\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr)
+\]
 
-Recorded provisional evidence includes:
+separates the exact reflection null at fiber tolerance `1e-12`; direct 07P integration gives one base collision, one separated collision and zero unresolved collisions with channel `oriented_winding`.
 
-- single missing receipt: `8/8 targeted PASS`, including 1000 randomized single-cell retrodictions with maximum errors at floating-point scale;
-- multi-event observability: `7/7 targeted PASS`; the three-kick all-checkpoint reference Jacobian is `12 x 6` with rank 6;
-- exact gated estimation: three-kick reference converges in two iterations at round-off residual; 50/50 seeded exact cases converge;
-- uncertainty geometry: weighted condition number about `4.076`; seeded 500-case nonlinear audit gives empirical coordinate dispersions within about `4.4%` of local Fisher predictions;
-- partial-checkpoint selection: two checkpoints can be information-sufficient but poorly conditioned; all three give condition about `4.067--4.076` in the recorded reference range;
-- covariance-weighted permutation nulls: targeted file `5 passed`, final checkpoint-selection + weighted-null rerun `10 passed in 0.25s`; the retained chronology beats all five non-identity checkpoint permutations in E003 reference run 0002.
+Hosted run `33201861565`, job `98953023513`, returned `502 passed in 8.09s`.
 
-Retrodiction remains `PROVISIONAL_DOWNSTREAM` in the dependency graph.
+Receipt: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`.
 
-## Hosted full-suite status
+### 07R — fiber-lift composition theorem
 
-Observed GitHub Actions jobs for the integrated Memory/Retrodiction history terminate with conclusion `failure` but zero executed steps and unavailable logs. The recorded result class is therefore `CI_RESULT_NOT_OBTAINED / RUNNER_OR_PRESTEP_INFRASTRUCTURE_FAILURE`.
+For injective carrier \(P\), augmented record \(A=(Y,F)\), and a single-valued lift satisfying \(P=L\circ A\), 07R proves exactly that \(A\) is injective. The finite executable audit checks carrier injectivity and lift functionality separately.
 
-No repository-test PASS or code/test FAIL is inferred from those hosted runs.
+Hosted run `33202559485`, job `98955383447`, tested head `6abca4ad72c04cdca5d1128e690c17898b8650d7` and returned `510 passed in 14.11s`.
 
-The canonical admitted frontier remains at Memory pending a real full repository reference-suite result. ORCHORBITAL has targeted reference PASS as a Memory extension; Retrodiction remains downstream staging behind the Memory -> ORCHORBITAL admission path.
+Receipt: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`.
+
+### 07S — stratified global reduction
+
+07S uses `ResidenceLineageSignature.active_sequence` as an exact discrete stratum key
+
+\[
+\alpha(z)=(a_1,\ldots,a_N).
+\]
+
+Unequal active sequences are exactly separated by the retained record. Every collision candidate is therefore assigned to a fixed-sequence stratum \(\mathcal Z_s\). Inside each stratum, the 07K ordered position lineage is the exact constructive carrier, with \(2N\) position scalars for \(2N\) latent kick coordinates and a block-lower-triangular sensitivity with diagonal blocks \(\Delta\tau_nI_2\).
+
+The executable reference verifies:
+
+1. exact stratum-key normalization;
+2. exact cross-stratum separation;
+3. the \(2N\)-dimensional rank certificate;
+4. real two-event constructive composition from retained active sequence and replayed position lineage through 07K to the generating kicks;
+5. carrier/decoder separation: a perturbed dynamically admissible position lineage is mapped by 07K to a different latent history;
+6. mismatch, elapsed-time and label fail-closed controls.
+
+The first hosted control expected a perturbed admissible carrier to raise. Run `33203185181`, job `98957507517`, correctly returned `1 failed, 517 passed in 11.81s`. The failure identified a test-contract mismatch: the exact 07K inverse maps each admissible carrier to its corresponding latent history, while carrier selection belongs to the decoder \(L_s\). The test was corrected accordingly.
+
+Corrected hosted authority:
+
+- workflow: `Reference suite`;
+- run: `33203339457` / run number `637`;
+- job: `98958035895`;
+- tested branch head: `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051`;
+- tested PR merge commit: `3386f3e1a8fb63812095333955640e37040fa645`;
+- command: `python -m pytest -q tests/reference`;
+- result: `518 passed in 12.06s`;
+- Python `3.12.14`, Ubuntu `24.04.4`;
+- conclusion: `success`.
+
+Evidence files:
+
+- `src/idt/retrodiction_stratified_position_lift.py`;
+- `tests/reference/test_retrodiction_stratified_position_lift.py`;
+- `formalism/07S_stratified_position_lift_reduction.md`;
+- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+
+The active constructive gate is `PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE`:
+
+\[
+\boxed{
+L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
+}
+\]
+
+`GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
+
+## Canonical integration state
+
+The promotion branch carries Memory and ORCHORBITAL admission receipts plus provisional Retrodiction evidence through the 07S exact stratified reduction and hosted reference pass. Canonical `main` remains unchanged until explicit merge authorization.

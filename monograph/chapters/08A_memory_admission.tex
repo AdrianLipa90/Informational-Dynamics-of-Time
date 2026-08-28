@@ -87,4 +87,28 @@ The product \(q_n\epsilon_n^{(W)}\) remains a NOW realization/provenance weight.
 
 A deterministic 5,000-case bridge probe returned zero support-gate failures, reparameterization defect below \(1.8\times10^{-15}\), and forward/reverse lineage reconstruction defect below \(4.9\times10^{-13}\). GREMLIN evaluated the bridge in `CANDIDATE_ONLY` mode and all three declared hypotheses returned `SUPPORTED_BY_DECLARED_TESTS`.
 
-The active Memory status is therefore an integration-pass and transport-parent-bridge-pass candidate. Hosted repository CI remains infrastructure-blocked before execution of test steps; Retrodiction remains gated by the combined Memory/ORCHORBITAL admission path.
+\section{Hosted full reference suite}
+
+The previously outstanding repository-wide gate was executed on 28 August 2026 by the GitHub Actions \texttt{Reference suite} workflow. The exact PR merge of source commit
+\texttt{3ac1f53af5223d16f8818dba99a63a6af2ba9498}
+with the evidence-only branch was tested under Python 3.12.14 on Ubuntu 24.04 using
+\begin{verbatim}
+python -m pytest -q tests/reference
+\end{verbatim}
+The suite completed with
+\begin{verbatim}
+431 passed in 7.08s
+\end{verbatim}
+and the workflow, job, and test step all concluded successfully. The tested merge commit is
+\texttt{e0b1cdc491a1a501adce93b8d62ade063e167500}
+with tree
+\texttt{92302498f3c9131b163d5d0ccbbeab1db935d29f}.
+
+The append-only evidence binding is recorded in
+\texttt{validation/MEMORY\_ADMISSION\_HOSTED\_FULL\_SUITE\_2026\_08\_28.json}.
+
+This closes the declared full-suite blocker for the integrated Memory reference gate. The proposed post-merge status is therefore
+\[
+\boxed{\mathrm{Memory}:\ \mathrm{REFERENCE\ GATE\ ADMITTED}.}
+\]
+ORCHORBITAL remains the next separate dependency gate. Its tests are included in the successful full suite, while residence/switch provenance, hierarchical attractor families and typed-observable admission remain separate work. Retrodiction therefore remains downstream of ORCHORBITAL admission.

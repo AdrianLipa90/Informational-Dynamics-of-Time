@@ -1,0 +1,65 @@
+{
+  "schema": "IDT_ORCHORBITAL_RESIDENCE_LEDGER_V0_1",
+  "status": "PASS_TARGETED_REFERENCE_HOSTED_FULL_SUITE",
+  "canon_allowed": false,
+  "promotion_ready": false,
+  "created_utc": "2026-08-28T17:28:00Z",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "branch": "chore/memory-full-suite-refresh-20260828",
+  "implementation": "src/idt/orchorbital_residence_ledger.py",
+  "reference_tests": [
+    "tests/reference/test_orchorbital_residence_ledger.py",
+    "tests/reference/test_orchorbital_long_residence_profile.py"
+  ],
+  "source": {
+    "memory_parent_status": "REFERENCE_GATE_ADMISSION_PASS_ON_PROMOTION_BRANCH",
+    "ledger_source_commit": "36d855bce9ec0fcec30824256125f551fb9ea59d",
+    "long_profile_source_commit": "846ceafc902529340b2512126b96c12ceafa433b",
+    "tested_pr_merge_commit": "6aa59bfa4fd8acfc5675de608d29f6aaa6f5a835",
+    "tested_pr_merge_tree": "73f3d31020863b402a04f16b5a2ef562ed1b4e2a"
+  },
+  "ledger_controls": {
+    "content_addressed_receipts": "PASS",
+    "exact_binary64_hex_elapsed_and_winding": "PASS",
+    "state_sha256_lineage": "PASS",
+    "previous_receipt_hash_chain": "PASS",
+    "append_preserves_prior_bytes": "PASS",
+    "state_discontinuity_blocks_before_append": "PASS",
+    "existing_empty_ledger_integrity_gate": "PASS",
+    "residence_episode_partition": "PASS",
+    "dwell_statistics": "PASS",
+    "directed_transition_counts": "PASS",
+    "post_segment_leak_receipt": "PASS"
+  },
+  "long_dynamic_profile": {
+    "operator": "propagate_orchorbital",
+    "segments": 101,
+    "attractors": ["A", "B"],
+    "first_segment_active": "A",
+    "second_segment_active": "B",
+    "required_transition": "A->B",
+    "receipt_count": 101,
+    "hash_chain_verified": true,
+    "residence_statistics_finite": true,
+    "elapsed_accounting": "sum_episode_dwell == sum_segment_delta_tau within 2e-12"
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33194693525,
+    "run_number": 545,
+    "job_id": 98928738642,
+    "python": "3.12.14",
+    "runner_image": "ubuntu-24.04",
+    "command": "python -m pytest -q tests/reference",
+    "tests_passed": 440,
+    "tests_failed": 0,
+    "duration_seconds": 14.50,
+    "conclusion": "success"
+  },
+  "orchorbital_gate": {
+    "residence_ledger": "ADMITTED_REFERENCE_COMPONENT",
+    "dwell_profile": "ADMITTED_REFERENCE_COMPONENT",
+    "overall_orchorbital_status": "ACTIVE_NEXT_GATE_PROVISIONAL",
+    "next_dependency": "HIERARCHICAL_ATTRACTOR_FAMILY_TYPING"
+  }
+}

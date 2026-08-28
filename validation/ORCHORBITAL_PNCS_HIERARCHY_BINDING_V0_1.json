@@ -1,0 +1,58 @@
+{
+  "schema": "IDT_ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1",
+  "status": "PASS_SOURCE_PINNED_HIERARCHY_REFERENCE",
+  "canon_allowed": false,
+  "promotion_ready": false,
+  "created_utc": "2026-08-28T17:36:00Z",
+  "upstream": {
+    "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+    "commit": "7a54596c1794be29e0b85f5c363213cc81eb87d7",
+    "contract": "PNCS_ORCHORBITAL_HARVEST_HARDENING_V0_29",
+    "source_file": "src/phasenav_natural_code/orch_hardening_v29.py",
+    "source_test": "tests/test_orch_hardening_v29.py"
+  },
+  "idt": {
+    "binding_implementation": "src/idt/orchorbital_pncs_hierarchy_binding.py",
+    "hierarchy_engine": "src/idt/orchorbital_hierarchy.py",
+    "reference_tests": [
+      "tests/reference/test_orchorbital_hierarchy.py",
+      "tests/reference/test_orchorbital_pncs_hierarchy_binding.py"
+    ],
+    "binding_commit": "afa79ac7a37a405654576a4570998e07392cce5c",
+    "test_commit": "da9d6e14717e8bd046ed6adae7c40fc42804d957"
+  },
+  "controls": {
+    "exact_upstream_source_pin": "PASS",
+    "sphere_parent_graph": "PASS",
+    "dynamic_leaf_exact_coverage": "PASS",
+    "entity_projection_typed_id": "PASS",
+    "canonical_entity_typed_id": "PASS",
+    "hierarchy_lineage_typed_id": "PASS",
+    "semantic_mass_mass_binding_pair": "PASS",
+    "unique_orbit_slot_per_sphere": "PASS",
+    "replay_stable_orbital_order": "PASS",
+    "generated_idt_hierarchy_path": "PASS"
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33195337839,
+    "run_number": 553,
+    "job_id": 98930915664,
+    "python": "3.12.14",
+    "runner_image": "ubuntu-24.04",
+    "command": "python -m pytest -q tests/reference",
+    "tests_passed": 457,
+    "tests_failed": 0,
+    "duration_seconds": 13.90,
+    "conclusion": "success",
+    "tested_pr_merge_commit": "39bf430426bb70e1b4b9946d437833b12258dc78",
+    "tested_pr_merge_tree": "908512a33f37a0ba41f90c5778aacf1f3d2861f9"
+  },
+  "dependency_state": {
+    "memory": "REFERENCE_GATE_ADMISSION_PASS_ON_PROMOTION_BRANCH",
+    "orchorbital_residence": "REFERENCE_COMPONENT_PASS",
+    "orchorbital_hierarchy": "REFERENCE_COMPONENT_PASS",
+    "orchorbital_overall": "ACTIVE_NEXT_GATE_PROVISIONAL",
+    "next": "TYPED_ORCHORBITAL_OBSERVABLE_BINDING"
+  }
+}

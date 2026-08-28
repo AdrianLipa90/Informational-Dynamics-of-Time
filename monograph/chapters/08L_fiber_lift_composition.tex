@@ -1,0 +1,95 @@
+\chapter{Fiber-Lift Composition for Retrodiction}
+\label{chap:fiber-lift-composition}
+
+The quotient/fiber and oriented-winding layers identify how compressed Retrodiction records can distinguish histories inside a base-observation fiber.  The next step is to connect those retained coordinates to a carrier for which exact inverse reconstruction is already available.
+
+Let \(\mathcal Z\) denote an admitted latent-history domain and let
+\[
+P:\mathcal Z\to\mathcal X
+\]
+be an injective carrier.  Define the augmented retained observation
+\[
+\boxed{A(z)=(Y(z),F(z)),}
+\]
+where \(Y\) is the retained base observation and \(F\) collects retained fiber coordinates such as ordered winding, continuous ORCHORBITAL coordinates and spatial-offset/divergence coordinates.
+
+Assume that there exists a single-valued lift
+\[
+L:A(\mathcal Z)\to\mathcal X
+\]
+such that
+\[
+\boxed{P=L\circ A.}
+\]
+Then \(A\) is injective.  Indeed,
+\[
+A(z_1)=A(z_2)
+\Longrightarrow
+L(A(z_1))=L(A(z_2))
+\Longrightarrow
+P(z_1)=P(z_2),
+\]
+and injectivity of \(P\) gives
+\[
+\boxed{z_1=z_2.}
+\]
+This implication is exact and does not depend on a finite numerical probe.
+
+The reference carrier is supplied by the arbitrary-event position-lineage result.  For an admitted \(N\)-event lineage,
+\[
+\boxed{P(z)=(r_1(z),\ldots,r_N(z)).}
+\]
+With the active-attractor sequence and positive elapsed increments retained, each latent kick follows algebraically from
+\[
+\boxed{
+u_n=
+\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}
+-v_{n-1},}
+\]
+and the post-segment velocity is
+\[
+\boxed{
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
+\]
+Consequently the remaining constructive closure target is
+\[
+\boxed{
+L:(Y,F)\mapsto(r_1,\ldots,r_N).
+}
+\]
+
+The executable 07R audit checks the two theorem hypotheses separately on a declared finite candidate domain.  First, distinct latent candidates must remain separated by the carrier.  Second, no equal augmented record may map to two distinct carrier records.  The latter condition is the finite-domain form of single-valued lift consistency.
+
+For the exact reflection pair used by the preceding chapters, the retained sparse base observation together with the ordered oriented-winding vector is paired with the complete ordered post-segment position lineage.  The audit returns
+\begin{verbatim}
+FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS
+\end{verbatim}
+with zero carrier collisions, zero augmented collisions and zero lift conflicts.
+
+A matched negative control replaces oriented winding by an identical zero fiber while leaving the same base collision and position carriers.  The audit then returns
+\begin{verbatim}
+FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN
+\end{verbatim}
+because one augmented record would have to lift to two different position lineages.
+
+The reference implementation is
+\begin{verbatim}
+src/idt/retrodiction_fiber_lift.py
+\end{verbatim}
+and the validation receipt is
+\begin{verbatim}
+validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json
+\end{verbatim}
+The hosted Reference suite run 33202559485, job 98955383447, tested branch head
+\begin{verbatim}
+6abca4ad72c04cdca5d1128e690c17898b8650d7
+\end{verbatim}
+and returned
+\begin{verbatim}
+510 passed in 14.11s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction target is therefore \texttt{POSITION\_LINEAGE\_LIFT\_ACTIVE\_NEXT\_GATE}: construct a domain-covering lift from the retained base and fiber coordinates to the exact position-lineage carrier.  The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until that lift or an equivalent domain-covering fiber-separation argument is receipted.

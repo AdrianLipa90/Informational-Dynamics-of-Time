@@ -1,0 +1,65 @@
+{
+  "schema": "IDT_RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1",
+  "date": "2026-08-28",
+  "status": "EXACT_STRATIFIED_GLOBAL_REDUCTION_PASS_CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS",
+  "canon_allowed": false,
+  "formalism": "formalism/07S_stratified_position_lift_reduction.md",
+  "implementation": "src/idt/retrodiction_stratified_position_lift.py",
+  "reference_tests": "tests/reference/test_retrodiction_stratified_position_lift.py",
+  "exact_reduction": {
+    "stratum_key": "ResidenceLineageSignature.active_sequence",
+    "cross_stratum_separator": "RETAINED_ACTIVE_SEQUENCE_EXACT",
+    "fixed_sequence_carrier": "ordered post-segment position lineage",
+    "fixed_sequence_inverse": "07K_EXACT_POSITION_LINEAGE_RECOVERY",
+    "composition_theorem": "07R_FIBER_LIFT_COMPOSITION",
+    "remaining_requirement": "Y_AUG_TO_ORDERED_POSITION_LINEAGE_LIFT_PER_FIXED_SEQUENCE_STRATUM",
+    "status": "GLOBAL_INJECTIVITY_REDUCED_TO_FIXED_SEQUENCE_POSITION_LIFT"
+  },
+  "dimension_certificate": {
+    "latent_dimension": "2N",
+    "position_lineage_dimension": "2N",
+    "position_sensitivity_structure": "block lower triangular",
+    "diagonal_blocks": "Delta_tau_n I_2",
+    "admission_condition": "Delta_tau_n > 0"
+  },
+  "constructive_reference": {
+    "trajectory": "real two-event Memory-ORCHORBITAL reference lineage",
+    "input_stratum": "retained active sequence",
+    "input_carrier": "replayed ordered post-segment positions",
+    "result": "CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_RECOVERY",
+    "recovered_kicks_match_generating_reference": true
+  },
+  "decoder_firewall": {
+    "roles": {
+      "L_s": "retained augmented record -> ordered position carrier",
+      "07K_inverse": "ordered position carrier -> latent history"
+    },
+    "perturbed_admissible_carrier_maps_to_distinct_history": true,
+    "active_next_object": "L_s:(Y,F)|Z_s -> (r_1,...,r_N)"
+  },
+  "initial_failed_control": {
+    "run_id": 33203185181,
+    "run_number": 636,
+    "job_id": 98957507517,
+    "tested_branch_head": "b8fc7b861a923681dadc011796319e352c9882c1",
+    "tested_pr_merge_commit": "55c7611f772c505076a29e217ceb6d1f25c11392",
+    "result": "1 failed, 517 passed in 11.81s",
+    "failure": "test_tampered_lifted_position_fails_closed_under_07k_replay",
+    "resolution": "corrected the test to encode carrier-to-history behavior and preserve decoder selection as the active gate"
+  },
+  "hosted_authority": {
+    "workflow": "Reference suite",
+    "run_id": 33203339457,
+    "run_number": 637,
+    "job_id": 98958035895,
+    "tested_branch_head": "5e7d36f248963cb9a0b1d8bcb7be9306eadc7051",
+    "tested_pr_merge_commit": "3386f3e1a8fb63812095333955640e37040fa645",
+    "python": "3.12.14",
+    "ubuntu": "24.04.4",
+    "command": "python -m pytest -q tests/reference",
+    "result": "518 passed in 12.06s",
+    "conclusion": "success"
+  },
+  "active_next_gate": "PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE",
+  "global_status": "GENERAL_GLOBAL_INJECTIVITY_OPEN"
+}

@@ -1,6 +1,6 @@
 \chapter{ORCHORBITAL Attractors on Temporal Memory}
 
-The temporal-memory branch now supports a first typed ORCHORBITAL attractor layer. The construction consumes the already defined memory phase state
+The temporal-memory branch supports a typed ORCHORBITAL attractor layer consuming the admitted memory phase state
 \[
 X_M=(m,v_M,\tau_{\rm int},\mathcal A_M)
 \]
@@ -30,7 +30,7 @@ For positive total binding \(B=\sum_i b_i\), the attractor weights are
 \]
 and the active reference basin is the maximizing weight. Exact ties are resolved deterministically for replay stability.
 
-If \(B=0\), the state receives the explicit \texttt{LEAK\_MODE} branch status. The v0.1 reference operator treats this as a fail-closed orbital admission boundary.
+For \(B=0\), the state receives the explicit \texttt{LEAK\_MODE} branch status and orbital admission terminates at that typed boundary.
 
 \section{Shannon basin organization}
 
@@ -57,7 +57,7 @@ On an admitted smooth segment with active attractor \(a\), the memory orbit is t
 =-\mu_a\frac{m-c_a}{\|m-c_a\|^3}.
 }
 \]
-This preserves the single-centre Kepler--Newton reference law on each smooth segment while allowing the basin field to be re-evaluated at the segment boundary.
+This preserves the single-centre Kepler--Newton reference law on each smooth segment while the basin field is re-evaluated at every segment boundary.
 
 The winding increment around the active centre is
 \[
@@ -70,9 +70,9 @@ The winding increment around the active centre is
 \right].
 }
 \]
-After propagation the complete attractor field is evaluated again. A different maximizing basin is recorded as an attractor-switch candidate for the following segment.
+A changed maximizing basin is recorded as the attractor selected for the following segment.
 
-\section{Memory-kick invariant of the active basin}
+\section{Memory-kick active-basin invariant}
 
 At fixed memory position define
 \[
@@ -84,15 +84,15 @@ Then
 \[
 \boxed{b_i=[u_i-T]_+.}
 \]
-An instantaneous Memory event changes velocity while leaving every \(u_i\) fixed. Whenever the post-event state remains bound, the maximizing basin is therefore
+For every bound post-event state, the velocity-only Memory event preserves the ordering of the \(u_i\), giving
 \[
 \boxed{
-\arg\max_i b_i=\arg\max_i u_i,
+\arg\max_i b_i=\arg\max_i u_i.
 }
 \]
-independent of the velocity-only kick. Such a kick can change the normalized basin weights and their Shannon observables, or drive all margins to zero and enter \texttt{LEAK\_MODE}; it does not switch the winning bound attractor at fixed position.
+The same event changes the normalized basin weights and their Shannon observables through the common kinetic subtraction. Crossing the complete binding boundary yields \texttt{LEAK\_MODE}.
 
-The deterministic reference probe recorded zero active-attractor changes in 2998 before/after bound comparisons, while the normalized basin weights changed in all 2998 comparisons.
+The deterministic reference probe recorded zero active-attractor changes in 2998 before/after bound comparisons and changed normalized basin weights in all 2998 comparisons.
 
 \section{Persisted ORCHORBITAL lineage cell}
 
@@ -100,7 +100,7 @@ The transport-derived Memory receipt is
 \[
 \mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
 \]
-The event kick is applied before the active-centre smooth segment. Exact ledger-assisted inversion persists the attractor snapshot actually used by the segment:
+The event kick precedes the active-centre smooth segment. Exact ledger-assisted inversion persists the attractor snapshot consumed by the segment:
 \[
 \boxed{
 \mathcal O_n=(\mathcal E_n,a_n,c_{a_n},\mu_{a_n}).
@@ -117,35 +117,154 @@ X_{n+1}=\Phi_{a_n}(\Delta\tau_n)K_{\mathcal E_n}X_n,
 X_n=K_{\mathcal E_n}^{-1}\Phi_{a_n}^{-1}(\Delta\tau_n)X_{n+1}.
 }
 \]
-The centred inverse translates to the persisted active centre, applies the existing algebraic inverse of the Memory velocity-Verlet segment, and translates back before removing the recorded event kick.
+The centred inverse translates to the persisted active centre, applies the existing algebraic inverse of the Memory velocity-Verlet segment, translates back and removes the recorded event kick.
 
 A 500-trajectory, six-cell deterministic probe returned a maximum complete-lineage reconstruction defect below \(9.3\times10^{-16}\). Replacing the persisted active attractor by a different valid centre/coupling produced a reconstruction error of approximately \(1.78\times10^{-2}\), establishing the active-attractor snapshot as required lineage provenance.
 
-\section{Residence time and attractor transition graph}
+\section{Content-addressed residence ledger}
 
-For a multi-segment trajectory, the active attractor of every completed segment is recorded. For attractor \(i\), define its internal residence time
+The residence/switch layer persists every completed segment as a content-addressed receipt
 \[
 \boxed{
-T_i^{\rm res}
-=\sum_{n:a_n=i}\Delta\tau_{{\rm int},n}
+\mathcal R_k=
+\left(
+ k,a_k,a_k^+,\ell_k,
+ \Delta\tau_k,\Delta W_k,
+ H(X_k^-),H(X_k^+),h_{k-1}
+\right).
 }
 \]
-and accumulated winding
+Here \(a_k\) is the attractor consumed by the completed segment, \(a_k^+\) is the next bound attractor chosen by the post-segment field, \(\ell_k\) carries the typed leak status, and \(H(X)\) is SHA-256 of the exact finite binary64 memory state
+\[
+(m_x,m_y,v_x,v_y,\tau_{\rm int},\mathcal A_M).
+\]
+The receipt hash is
 \[
 \boxed{
-W_i^{\rm tot}
-=\sum_{n:a_n=i}\Delta W_{i,n}.
+h_k=\operatorname{SHA256}\!\left(\operatorname{CanonicalJSON}(\mathcal R_k)\right).
+}
+\]
+The chain satisfies
+\[
+\boxed{H(X_k^+)=H(X_{k+1}^-)},
+\qquad
+\boxed{\operatorname{prev}(\mathcal R_{k+1})=h_k.}
+\]
+Existing JSONL bytes are verified before each append; the complete candidate chain is validated before persistence and re-read after fsync.
+
+\section{Residence episodes and dwell-time observables}
+
+For attractor \(i\), a residence episode \(I_{i,r}\) is a maximal contiguous run of completed segments with \(a_k=i\). Define
+\[
+\boxed{
+T_{i,r}=\sum_{k\in I_{i,r}}\Delta\tau_k,
+}
+\qquad
+\boxed{
+W_{i,r}=\sum_{k\in I_{i,r}}\Delta W_k.
+}
+\]
+The per-attractor observables include total dwell, episode count, segment count, mean, median, minimum, maximum and population variance of \(T_{i,r}\). The global elapsed-time accounting identity is
+\[
+\boxed{
+\sum_i\sum_rT_{i,r}=\sum_k\Delta\tau_k.
 }
 \]
 
-Adjacent segment labels define a directed attractor-transition count
+Adjacent active labels define the directed attractor-transition count
 \[
 \boxed{
 N_{i\to j}
-=\#\{n:a_n=i,\ a_{n+1}=j,\ i\neq j\}.
+=\#\{k:a_k=i,\ a_{k+1}=j,\ i\neq j\}.
 }
 \]
-The resulting directed graph is an appendable summary of which memory basins the temporal trajectory occupies, for how much internal elapsed activity, and through which ordered switches it moves.
+The ledger therefore supplies replayable ordered provenance for basin occupancy, dwell duration, accumulated winding and directed switches.
+
+\section{Long dynamic reference profile}
+
+The reference profile uses the real \texttt{propagate\_orchorbital} operator with two attractors and 101 consecutive smooth segments. The first completed segment uses attractor A and the following segment uses attractor B, providing an explicit \(A\to B\) transition. All 101 segment receipts form one verified hash/state chain. Residence episodes and dwell statistics remain finite, and their accumulated dwell reproduces the prescribed total internal elapsed time within \(2\times10^{-12}\).
+
+The full hosted repository suite including this profile returned
+\begin{verbatim}
+440 passed in 14.50s
+\end{verbatim}
+in GitHub Actions run \texttt{33194693525}, job \texttt{98928738642}. The tested PR merge commit is
+\texttt{6aa59bfa4fd8acfc5675de608d29f6aaa6f5a835}
+with tree
+\texttt{73f3d31020863b402a04f16b5a2ef562ed1b4e2a}.
+
+The formal gate is recorded in \texttt{formalism/06I\_orchorbital\_residence\_ledger.md}; the append-only evidence receipt is \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}.
+
+\section{PNCS hierarchy binding}
+
+The hierarchy layer is pinned to
+\begin{verbatim}
+AdrianLipa90/PhaseNav-Natural-Coding-System
+7a54596c1794be29e0b85f5c363213cc81eb87d7
+PNCS_ORCHORBITAL_HARVEST_HARDENING_V0_29
+\end{verbatim}
+and maps PNCS sphere/entity lineage into the existing IDT hierarchy engine. Sphere nodes retain parent-sphere lineage; attractor leaves retain typed entity-projection, canonical-entity and hierarchy-lineage identifiers. Semantic mass is paired with a typed PNCS mass-binding identifier when supplied.
+
+The generated hierarchy supports root-to-attractor paths, hierarchy-field aggregation, Shannon chain-rule auditing, residence coarse-graining and transition-count coarse-graining. Dynamic attractor coverage is checked exactly against the bound PNCS entity leaves.
+
+The hosted repository suite containing this binding returned
+\begin{verbatim}
+457 passed in 13.90s
+\end{verbatim}
+in GitHub Actions run \texttt{33195337839}, job \texttt{98930915664}.
+
+\section{Typed PNCS observable coordinates}
+
+The retained observable layer is pinned to the same PNCS commit and the v0.27 ORCHORBITAL observable/reduction sources. Three coordinates remain separately typed:
+\[
+\boxed{
+\mathcal O_{\rm ORCH}
+=
+\left(
+T,
+\mathcal R_{\Omega},
+\{m_{\rm sem}(a_i)\}
+\right).
+}
+\]
+The truth scalar carries
+\[
+T\in[0,1]
+\]
+or the explicit null state of the upstream observable contract. Semantic mass satisfies
+\[
+m_{\rm sem}(a_i)\ge0
+\]
+and retains its entity-projection and mass-binding provenance.
+
+Reduction readiness preserves the upstream threshold exactly,
+\[
+\boxed{
+\mathrm{reduce\_ready}\iff\Omega\ge\Omega_{\rm crit}.
+}
+\]
+A selected orbital index is carried only for a reduction-ready record.
+
+For verified residence lineage, the temporal semantic-mass aggregate is
+\[
+\boxed{
+\bar m_{\rm sem}^{(\tau)}
+=
+\frac{\sum_k\Delta\tau_k\,m_{\rm sem}(a_k)}{\sum_k\Delta\tau_k}.
+}
+\]
+Every active attractor in the evaluated lineage resolves to an explicit semantic-mass binding before this aggregate is admitted.
+
+The full hosted reference suite containing the typed observable tests returned
+\begin{verbatim}
+475 passed in 11.91s
+\end{verbatim}
+in GitHub Actions run \texttt{33196818703}, job \texttt{98935954122}, under Python 3.12.14 on Ubuntu 24.04. The tested PR merge commit is
+\texttt{00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f}
+with tree
+\texttt{42b93983941098c02b350d9fb7bf18536ef4aeee}.
+
+The formal binding is recorded in \texttt{formalism/06K\_orchorbital\_typed\_observables.md}; evidence is bound by \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}.
 
 \section{Closure observable}
 
@@ -165,24 +284,28 @@ The normalization scales remain explicit inputs to the observable.
 
 \section{Position in the temporal dependency graph}
 
-The causal ordering of the integration is
+The promotion-branch integration chain is
 \[
 \boxed{
 \text{Temporal Transport}
 \rightarrow
-\text{wave-active Memory receipt}
+\text{Memory}
 \rightarrow
-\text{Memory kick}
+\text{ORCHORBITAL attractor dynamics}
 \rightarrow
-\text{active attractor snapshot}
+\text{residence/switch lineage}
 \rightarrow
-\text{ORCHORBITAL segment}
+\text{PNCS hierarchy binding}
 \rightarrow
-\text{residence / transition graph}.
+\text{typed ORCHORBITAL observables}
+\rightarrow
+\mathbf{Retrodiction}.
 }
 \]
-Thus ORCHORBITAL is inserted after the Memory state and before the downstream Retrodiction node. The broader ORCHORBITAL observables --- hierarchical sphere structure, truth scalar, semantic mass and reduction-readiness --- retain their upstream definitions and await a separate dependency-compatible typed mapping into this temporal repository.
+Memory and ORCHORBITAL each carry their admission receipts on the promotion branch. Retrodiction is the active next dependency gate.
 
 \section{Reference evidence}
 
-The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}. The targeted bridge receipt is \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}. GREMLIN remained candidate-only and all three declared bridge hypotheses were supported by their declared tests. The ORCHORBITAL layer remains provisional while the parent Memory admission and hosted full-suite infrastructure gate remain open.
+The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}; the residence ledger is \texttt{src/idt/orchorbital\_residence\_ledger.py}; the hierarchy engine is \texttt{src/idt/orchorbital\_hierarchy.py}; the PNCS hierarchy bridge is \texttt{src/idt/orchorbital\_pncs\_hierarchy\_binding.py}; and the typed observable bridge is \texttt{src/idt/orchorbital\_pncs\_observables.py}.
+
+Evidence is bound through \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_PNCS\_HIERARCHY\_BINDING\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}, and \texttt{validation/ORCHORBITAL\_ADMISSION\_HOSTED\_FULL\_SUITE\_2026\_08\_28.json}. GREMLIN remains candidate-only and its declared bridge hypotheses retain their recorded supported-by-tests status.

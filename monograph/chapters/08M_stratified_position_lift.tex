@@ -1,0 +1,75 @@
+\chapter{Stratified Retrodiction and the Fixed-Sequence Position Lift}
+\label{chap:stratified-position-lift}
+
+The Retrodiction closure can be sharpened by using a discrete coordinate already retained by the event-aware ORCHORBITAL residence lineage: the complete active-attractor sequence. For an admitted $N$-event history $z$, define
+\[
+\alpha(z)=\bigl(a_1(z),\ldots,a_N(z)\bigr).
+\]
+The residence signature stores this sequence exactly. Hence histories carrying unequal active sequences occupy different retained strata.
+
+For each realizable sequence $s$, define
+\[
+\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
+\]
+Because $\alpha$ is a retained component of the augmented record $A=(Y,F)$,
+\[
+\alpha(z_1)\neq\alpha(z_2)
+\Longrightarrow
+A(z_1)\neq A(z_2).
+\]
+Therefore every unresolved global collision lies inside one fixed-sequence stratum.
+
+Within $\mathcal Z_s$, the ordered post-segment position lineage
+\[
+P_s(z)=\bigl(r_1(z),\ldots,r_N(z)\bigr)
+\]
+provides the exact carrier used by the position-lineage inverse. For positive elapsed increments $\Delta\tau_n$, the event kick is recovered recursively from
+\[
+u_n=
+\frac{r_n-r_{n-1}-\tfrac12 A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}-v_{n-1},
+\]
+followed by
+\[
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.
+\]
+The corresponding local sensitivity has block-lower-triangular structure with diagonal blocks $\Delta\tau_n I_2$, so the ordered position carrier has $2N$ scalar coordinates for the $2N$ latent kick coordinates and is locally full-rank whenever every $\Delta\tau_n>0$.
+
+The 07R composition theorem now applies stratum by stratum. If for every admitted $s$ there exists a single-valued decoder
+\[
+L_s:A(\mathcal Z_s)\rightarrow P_s(\mathcal Z_s)
+\]
+satisfying
+\[
+P_s=L_s\circ A|_{\mathcal Z_s},
+\]
+then $A|_{\mathcal Z_s}$ is injective. Since different strata are already separated by the exact retained sequence $\alpha$, injectivity on all admitted strata implies injectivity on their union.
+
+The executable certificate records
+\begin{verbatim}
+RETAINED_ACTIVE_SEQUENCE_EXACT
+07K_EXACT_POSITION_LINEAGE_RECOVERY
+GLOBAL_INJECTIVITY_REDUCED_TO_FIXED_SEQUENCE_POSITION_LIFT
+\end{verbatim}
+and leaves the constructive requirement
+\begin{verbatim}
+Y_AUG_TO_ORDERED_POSITION_LINEAGE_LIFT_PER_FIXED_SEQUENCE_STRATUM
+\end{verbatim}
+explicit.
+
+A two-event reference trajectory composes the retained residence stratum and an already decoded ordered position lineage with the exact position-lineage inverse and recovers the generating kick pair within the declared numerical tolerance. A perturbed but dynamically admissible position carrier produces the distinct latent history assigned to that carrier. This separates the two roles cleanly: the exact inverse assigns a history to a supplied carrier, while $L_s$ identifies the carrier associated with the retained augmented record.
+
+Hosted reference validation after correction of the corresponding negative-control expectation used GitHub Actions run \texttt{33203339457}, job \texttt{98958035895}, on branch head \texttt{5e7d36f248963cb9a0b1d8bcb7be9306eadc7051}. The complete reference suite returned
+\begin{verbatim}
+518 passed in 12.06s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction gate is therefore the construction of the per-stratum decoder
+\[
+\boxed{
+L_s:(Y,F)|_{\mathcal Z_s}\longrightarrow(r_1,\ldots,r_N),
+}
+\]
+using retained base observations together with ordered winding, continuous ORCHORBITAL coordinates and spatial/SOD coordinates. The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until these decoders, or an equivalent domain-covering separation construction, are admitted.

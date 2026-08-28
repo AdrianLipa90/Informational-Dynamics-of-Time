@@ -1,28 +1,22 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_ACTIVE / ORCHORBITAL_ATTRACTOR_REFERENCE_CANDIDATE / RETRODICTION_PROVISIONAL_DOWNSTREAM`
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
-The canonical admitted frontier remains
-
-\[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
-\]
-
-The dependency path being developed downstream of the active Memory node is
+The proposed admitted frontier after merge of the current promotion branch is
 
 \[
-\boxed{
-\mathrm{Memory}
-\rightarrow
-\mathrm{ORCHORBITAL\ Attractors}
-\rightarrow
-\mathrm{Retrodiction}.
-}
+\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
 \]
 
-## Temporal-memory substrate
+The active downstream dependency path is
 
-The active Memory reference branch uses internal elapsed activity and event-driven Kepler dynamics,
+\[
+\boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
+\]
+
+## Temporal-memory and ORCHORBITAL substrate
+
+Memory evolves in internal elapsed activity with event-driven Kepler cells,
 
 \[
 \Delta\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\Delta\lambda,
@@ -32,145 +26,214 @@ The active Memory reference branch uses internal elapsed activity and event-driv
 \Delta v_{M,n}=q_n\delta m_n.
 \]
 
-For the pure-state \(\mathbb{CP}^1\) reference subclass,
+ORCHORBITAL organization selects an active attractor from positive binding margins and propagates each admitted smooth segment around that center. The residence layer persists exact segment chronology, active-attractor identity, elapsed time and signed winding increment
 
 \[
-|\delta m|=d_{FS}.
+\boxed{
+\Delta W_k=\frac{1}{2\pi}\operatorname{wrap}(\theta_{k+1}-\theta_k).
+}
 \]
 
-Memory persistence uses the append-only receipt
+Memory and ORCHORBITAL admission are bound by their hosted full-suite receipts.
+
+## Retrodiction quotient/fiber architecture
+
+07P defines a finite-domain augmented observation
 
 \[
-\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n)
+\widetilde Y(z)=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr)
 \]
 
-and the reversible reference cell
+and establishes the exact finite-set criterion
 
 \[
-\mathcal C_n=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n},
+\boxed{
+\widetilde Y\text{ injective on }\mathcal C
+\iff
+\forall i\ne j:\
+Y(z_i)=Y(z_j)
+\Longrightarrow
+\exists c:\ F_c(z_i)\ne F_c(z_j).
+}
+\]
+
+07Q supplies the persisted ordered signed winding fiber
+
+\[
+\boxed{
+\mathcal W(z)=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+}
+\]
+
+For the exact reflection pair, the sparse base projection and active sequence coincide while \(\mathcal W\) separates the two histories at the declared fiber tolerance.
+
+## 07R fiber-lift composition
+
+Let
+
+\[
+P:\mathcal Z\to\mathcal X
+\]
+
+be an injective carrier and
+
+\[
+A(z)=(Y(z),F(z)).
+\]
+
+If a single-valued lift satisfies
+
+\[
+\boxed{P=L\circ A,}
+\]
+
+then
+
+\[
+\boxed{A\text{ is injective}.}
+\]
+
+The carrier used by the Retrodiction program is the 07K ordered post-segment position lineage
+
+\[
+\boxed{P(z)=(r_1(z),\ldots,r_N(z)).}
+\]
+
+For a fixed active-attractor sequence and positive elapsed increments, 07K recovers each event kick algebraically:
+
+\[
+\boxed{
+u_n=
+\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}
+-v_{n-1},}
+\]
+
+\[
+\boxed{
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
+\]
+
+## 07S stratified global reduction
+
+The event-aware residence signature retains the complete active-attractor sequence
+
+\[
+\boxed{
+\alpha(z)=(a_1(z),\ldots,a_N(z)).
+}
+\]
+
+exactly. Define the fixed-sequence stratum
+
+\[
+\boxed{
+\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
+}
+\]
+
+Because \(\alpha\) is part of the retained record,
+
+\[
+\boxed{
+\alpha(z_1)\ne\alpha(z_2)
+\Longrightarrow
+A(z_1)\ne A(z_2).
+}
+\]
+
+Hence collision analysis is stratified by the exact retained sequence key.
+
+Within each \(\mathcal Z_s\), the ordered position lineage supplies the 07K carrier \(P_s\). If the retained base/fiber coordinates admit a single-valued per-stratum decoder
+
+\[
+\boxed{
+L_s:A(\mathcal Z_s)\to P_s(\mathcal Z_s),
 \qquad
-\mathcal C_n^{-1}=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
-\]
-
-## ORCHORBITAL attractor extension
-
-For attractor
-
-\[
-\mathfrak A_i=(c_i,\mu_i),
-\qquad \mu_i>0,
-\]
-
-the temporal-memory state is evaluated relative to every candidate centre by
-
-\[
-\boxed{
-E_i=\frac12\|v_M\|^2-\frac{\mu_i}{\|m-c_i\|}
+P_s=L_s\circ A|_{\mathcal Z_s},
 }
 \]
 
-and positive binding margin
-
-\[
-\boxed{b_i=[-E_i]_+.}
-\]
-
-When \(B=\sum_i b_i>0\), the ORCHORBITAL attractor weights are
-
-\[
-\boxed{w_i=\frac{b_i}{B}},
-\qquad
-\boxed{a=\arg\max_i w_i}.
-\]
-
-For \(B=0\), the field state is `LEAK_MODE`.
-
-The attractor-weight distribution carries Shannon organization,
-
-\[
-\boxed{H_A=-\sum_{i:w_i>0}w_i\log_2w_i},
-\]
-
-with normalized coherence for \(N>1\),
-
-\[
-\boxed{C_A=1-\frac{H_A}{\log_2N}}.
-\]
-
-During one admitted smooth segment the selected attractor defines the translated Kepler law
+then 07R gives injectivity on that stratum. Exact active-sequence separation then yields injectivity on the union of admitted strata:
 
 \[
 \boxed{
-\frac{d^2m}{d\tau_{\rm int}^2}
-=-\mu_a\frac{m-c_a}{\|m-c_a\|^3}.
+\left[\forall s:\ A|_{\mathcal Z_s}\text{ injective}\right]
+\land
+\left[\alpha\text{ retained exactly}\right]
+\Longrightarrow
+A\text{ injective on }\mathcal Z.
 }
 \]
 
-The orbital winding increment is
+The 07K position sensitivity carries \(2N\) output coordinates for \(2N\) latent kick coordinates and has a block-lower-triangular structure with diagonal blocks
+
+\[
+\boxed{\Delta\tau_n I_2.}
+\]
+
+For positive \(\Delta\tau_n\), the fixed-sequence carrier therefore has the required rank structure and exact constructive inverse.
+
+### Decoder/carrier role separation
+
+07S fixes the architectural composition as
 
 \[
 \boxed{
-\Delta W_a
-=\frac{1}{2\pi}\operatorname{wrap}(\theta_{n+1}-\theta_n),
-\qquad
-\theta_n=\arg(m_n-c_a).
+(Y,F)|_{\mathcal Z_s}
+\xrightarrow{L_s}
+(r_1,\ldots,r_N)
+\xrightarrow{07K^{-1}}
+(u_1,\ldots,u_N).
 }
 \]
 
-After every segment the attractor field is re-evaluated. A changed maximizing basin is recorded as the next attractor-switch candidate. Thus the first ORCHORBITAL temporal-memory chain is
+A perturbed but dynamically admissible position carrier maps through 07K to its corresponding distinct latent history. The carrier-to-history inverse and retained-record-to-carrier decoder are therefore separate typed transformations.
+
+The corrected hosted reference gate returned
+
+```text
+518 passed in 12.06s
+```
+
+in run `33203339457`, job `98958035895`, on tested head `5e7d36f248963cb9a0b1d8bcb7be9306eadc7051` after an earlier control expectation was corrected from run `33203185181` (`1 failed, 517 passed`).
+
+Bindings:
+
+- `formalism/07R_fiber_lift_composition_theorem.md`;
+- `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
+- `formalism/07S_stratified_position_lift_reduction.md`;
+- `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`.
+
+The active Retrodiction frontier is now
+
+```text
+PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE
+```
+
+with the constructive target
 
 \[
 \boxed{
-NOW
-\rightarrow
-\Delta M
-\rightarrow
-q\delta m
-\rightarrow
-X_M
-\rightarrow
-\{E_i,b_i,w_i\}
-\rightarrow
-\text{attractor}
-\rightarrow
-\text{orbit / winding}
-\rightarrow
-\text{re-evaluation}.
+L_s:(Y,F)|_{\mathcal Z_s}\to(r_1,\ldots,r_N).
 }
 \]
 
-## Retrodiction downstream staging
-
-The tested Retrodiction stack remains provisional downstream and includes withheld-lineage inversion, observability/rank admission, checkpoint selection, estimation, covariance/Fisher uncertainty geometry and covariance-preserving permutation nulls. It consumes the admitted Memory/ORCHORBITAL path and does not redefine the upstream temporal primitives.
-
-Parent Memory admission still requires a real full repository reference-suite result. The presence of tested ORCHORBITAL and Retrodiction implementations therefore does not by itself move the canonical admitted frontier beyond Memory.
+Candidate retained inputs are the already typed ordered winding, continuous ORCHORBITAL and SOD/spatial channels. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status through this decoder gate.
 
 ## 01K temporal information curvature interface
 
-A separate downstream Einstein-interface branch now starts from the exact 01C Shannon-relative-information scalar and the internal elapsed-time/clock structure:
+The separate Einstein-interface branch carries
 
 \[
 \mathcal J_\pi=(\ln2)\mathcal I_\pi,
 \qquad
-\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}}.
+\Xi_I=\frac{\mathcal J_\pi}{\mathcal A_{\rm rel}},
+\qquad
+[\Xi_I]=L^{-2},
 \]
 
-The TIR geometry layer supplies the positive relational area `A_rel` with physical type `L^2`. Once that interface is admitted,
+as a parallel downstream curvature-typed export while Retrodiction is the active sequential temporal gate.
 
-\[
-\boxed{[\Xi_I]=L^{-2}}.
-\]
-
-Temporal evolution is exact by the quotient rule,
-
-\[
-\boxed{
-\frac{d\Xi_I}{d\tau_{\rm int}}
-=\frac{1}{\mathcal A_{\rm rel}}
-\frac{d\mathcal J_\pi}{d\tau_{\rm int}}
--\frac{\Xi_I}{\mathcal A_{\rm rel}}
-\frac{d\mathcal A_{\rm rel}}{d\tau_{\rm int}}.
-}
-\]
-
-This interface exports a curvature-typed scalar and its temporal rate to RFC. The later dynamic `Lambda0` coupling remains a downstream RFC closure question, so the IDT canonical admitted frontier remains at Memory.
+Canonical `main` remains unchanged until explicit merge authorization.

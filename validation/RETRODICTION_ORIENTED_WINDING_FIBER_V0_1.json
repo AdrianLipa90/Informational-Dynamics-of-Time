@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_RETRODICTION_ORIENTED_WINDING_FIBER_V0_1",
+  "date": "2026-08-28",
+  "status": "ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS",
+  "canon_allowed": false,
+  "scope": "pair-scoped reflection-null separator with direct 07P finite-domain binding",
+  "implementation": "src/idt/retrodiction_oriented_winding_fiber.py",
+  "reference_tests": "tests/reference/test_retrodiction_oriented_winding_fiber.py",
+  "formalism": "formalism/07Q_oriented_winding_fiber_separator.md",
+  "fiber": {
+    "name": "ordered_oriented_winding",
+    "definition": "W(z)=(DeltaW_1,...,DeltaW_N)",
+    "canonical_storage": "residence_receipt.winding_increment_hex",
+    "separation_metric": "L2 distance of ordered decoded binary64 winding increments",
+    "provenance_hash_used_as_separator": false
+  },
+  "known_reflection_null": {
+    "base_tolerance": 1e-10,
+    "latent_tolerance": 1e-8,
+    "fiber_tolerance": 1e-12,
+    "base_collision_verified": true,
+    "latent_separation_gt_0_9": true,
+    "active_sequence_equal": true,
+    "ordered_winding_distance_gt_1e_12": true,
+    "status": "BASE_NULL_SEPARATED_BY_ORIENTED_WINDING"
+  },
+  "quotient_fiber_binding": {
+    "gate": "src/idt/retrodiction_quotient_fiber_injectivity.py",
+    "channel_name": "oriented_winding",
+    "candidate_domain_size": 2,
+    "base_collision_count": 1,
+    "separated_collision_count": 1,
+    "unresolved_collision_count": 0,
+    "status": "FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER"
+  },
+  "hosted_authority": {
+    "workflow": "Reference suite",
+    "run_id": 33201861565,
+    "run_number": 607,
+    "job_id": 98953023513,
+    "tested_branch_head": "1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363",
+    "tested_pr_merge_commit": "35b95bf5596014d76b8710047d036342a3b84e88",
+    "python": "3.12.14",
+    "ubuntu": "24.04.4",
+    "command": "python -m pytest -q tests/reference",
+    "result": "502 passed in 8.09s",
+    "conclusion": "success"
+  },
+  "global_status": "GENERAL_GLOBAL_INJECTIVITY_OPEN",
+  "next_gate": "domain-covering collision-fiber separator argument over ordered winding, continuous ORCHORBITAL and SOD channels"
+}

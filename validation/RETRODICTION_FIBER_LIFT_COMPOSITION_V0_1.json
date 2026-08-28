@@ -1,0 +1,58 @@
+{
+  "schema": "IDT_RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1",
+  "date": "2026-08-28",
+  "status": "EXACT_COMPOSITION_THEOREM_PASS_FINITE_DOMAIN_REFERENCE_PASS",
+  "canon_allowed": false,
+  "theorem": {
+    "carrier": "P: Z -> X",
+    "augmented_observation": "A=(Y,F): Z -> A",
+    "lift": "L: A(Z) -> X",
+    "premises": [
+      "P is injective on the admitted domain",
+      "P = L o A on the admitted domain"
+    ],
+    "conclusion": "A is injective on the admitted domain",
+    "proof_type": "exact composition argument"
+  },
+  "reference_carrier": {
+    "source": "formalism/07K_arbitrary_n_position_lineage_exact_retrodiction.md",
+    "carrier": "ordered post-segment position lineage",
+    "conditional_inputs": [
+      "persisted active-attractor sequence",
+      "positive declared internal elapsed increments",
+      "admitted non-LEAK lineage"
+    ]
+  },
+  "implementation": "src/idt/retrodiction_fiber_lift.py",
+  "reference_tests": "tests/reference/test_retrodiction_fiber_lift.py",
+  "formalism": "formalism/07R_fiber_lift_composition_theorem.md",
+  "finite_reference": {
+    "reflection_pair": true,
+    "base": "07Q sparse final observation",
+    "fiber": "ordered oriented winding",
+    "carrier": "07K ordered position lineage",
+    "carrier_collision_count": 0,
+    "augmented_collision_count": 0,
+    "lift_conflict_count": 0,
+    "status": "FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS",
+    "negative_control": {
+      "fiber": "identical zero fiber",
+      "status": "FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN"
+    }
+  },
+  "hosted_authority": {
+    "workflow": "Reference suite",
+    "run_id": 33202559485,
+    "run_number": 621,
+    "job_id": 98955383447,
+    "tested_branch_head": "6abca4ad72c04cdca5d1128e690c17898b8650d7",
+    "tested_pr_merge_commit": "a58b0c382727435f0e16231085181b60651f7f98",
+    "python": "3.12.14",
+    "ubuntu": "24.04.4",
+    "command": "python -m pytest -q tests/reference",
+    "result": "510 passed in 14.11s",
+    "conclusion": "success"
+  },
+  "global_status": "GENERAL_GLOBAL_INJECTIVITY_OPEN",
+  "next_gate": "POSITION_LINEAGE_LIFT_ACTIVE_NEXT_GATE"
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "IDT_ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1",
+  "status": "PASS_STRICT_JSON_SCHEMA_REFERENCE",
+  "canon_allowed": false,
+  "created_utc": "2026-08-28T17:31:00Z",
+  "implementation_commit": "ecb8d5bb7654ca1976b196efec0781d5ee8c72d2",
+  "adversarial_tests_commit": "86cedfc40ed8a061f6e2d2c53d30e825fb7c3165",
+  "controls": {
+    "exact_key_set": "PASS",
+    "integer_index_without_bool_float_string_coercion": "PASS",
+    "boolean_flags_without_string_coercion": "PASS",
+    "next_attractor_null_or_string": "PASS",
+    "hex_and_hash_fields_string_typed": "PASS",
+    "direct_dataclass_field_type_validation": "PASS",
+    "upstream_step_flag_type_validation": "PASS"
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33194962289,
+    "run_number": 550,
+    "job_id": 98929649073,
+    "python": "3.12.14",
+    "runner_image": "ubuntu-24.04",
+    "command": "python -m pytest -q tests/reference",
+    "tests_passed": 449,
+    "tests_failed": 0,
+    "duration_seconds": 9.19,
+    "conclusion": "success",
+    "tested_pr_merge_commit": "2cb448e803ee84e1db47ade286429129e17d1b10",
+    "tested_pr_merge_tree": "0042cf77347ec9cadd7ac4930a171d85dcce2486"
+  },
+  "dependency_state": "ORCHORBITAL_RESIDENCE_COMPONENT_HARDENED_REFERENCE_PASS"
+}
