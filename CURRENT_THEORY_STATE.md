@@ -1,6 +1,6 @@
 # CURRENT THEORY STATE
 
-Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE`.
+Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PASS / ORCHORBITAL_REFERENCE_GATE_ADMISSION_PASS / RETRODICTION_ACTIVE_NEXT_GATE / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The proposed admitted frontier after merge of the current promotion branch is
 
@@ -80,15 +80,11 @@ with winding increment
 \Delta W_a=\frac{1}{2\pi}\operatorname{wrap}(\theta_{n+1}-\theta_n).
 \]
 
-The residence layer persists exact segment lineage as a content-addressed chain. For each attractor \(i\), maximal contiguous residence episodes carry dwell
+The residence layer persists exact segment lineage. For each attractor \(i\), maximal contiguous residence episodes carry
 
 \[
-T_{i,r}=\sum_{k\in I_{i,r}}\Delta\tau_k
-\]
-
-and winding
-
-\[
+T_{i,r}=\sum_{k\in I_{i,r}}\Delta\tau_k,
+\qquad
 W_{i,r}=\sum_{k\in I_{i,r}}\Delta W_k,
 \]
 
@@ -98,14 +94,14 @@ with global elapsed-time accounting
 \sum_i\sum_rT_{i,r}=\sum_k\Delta\tau_k.
 \]
 
-The pinned PNCS v0.29 hierarchy binds sphere/entity structure onto nested temporal-memory attractor families. The pinned PNCS v0.27 observable layer retains three separately typed coordinates:
+The pinned PNCS hierarchy binds sphere/entity structure onto nested temporal-memory attractor families. The observable layer retains three separately typed coordinates,
 
 \[
-\mathcal O_{\rm ORCH}=
-\bigl(T,\mathcal R_\Omega,\{m_{\rm sem}(a_i)\}\bigr),
+\mathcal O_{\rm ORCH}
+=\bigl(T,\mathcal R_\Omega,\{m_{\rm sem}(a_i)\}\bigr),
 \]
 
-where
+with
 
 \[
 T\in[0,1],
@@ -115,7 +111,7 @@ T\in[0,1],
 m_{\rm sem}(a_i)\ge0.
 \]
 
-For a verified residence lineage, the temporal semantic-mass aggregate is
+For a verified residence lineage,
 
 \[
 \boxed{
@@ -124,25 +120,84 @@ For a verified residence lineage, the temporal semantic-mass aggregate is
 }
 \]
 
-The typed-observable completion suite returned `475 passed in 11.91s` in GitHub Actions run `33196818703`, job `98935954122`. The combined ORCHORBITAL admission binding is `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
+The combined ORCHORBITAL admission binding is `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-## Retrodiction active next gate
+## Event-aware residence-conditioned Retrodiction
 
-The Retrodiction stack already contains withheld-lineage inversion, local observability/rank gates, checkpoint selection, damped Gauss--Newton estimation, covariance/Fisher uncertainty geometry and covariance-preserving permutation nulls.
+A Memory lineage places an event kick before each smooth ORCHORBITAL segment,
 
-Its next dependency-compatible extension is
+\[
+X_k^-
+\xrightarrow{\mathcal E_k}
+X_k^K
+\xrightarrow{\Phi_{a_k}(\Delta\tau_k)}
+X_k^+.
+\]
+
+The event-aware bridge therefore carries the cell
+
+\[
+\mathcal B_k=
+\left(
+ k,\tau_k^-,\mathcal E_k,H(X_k^-),\mathcal R_k^{\rm smooth},h_{k-1}
+\right),
+\]
+
+with chronological continuity
+
+\[
+H(X_{k-1}^+)=H(X_k^-)
+\]
+
+and event-to-smooth binding
+
+\[
+H(K_{\mathcal E_k}X_k^-)=H(X_{k,\rm smooth}^-).
+\]
+
+The exact finite-precision elapsed-time relation is
 
 \[
 \boxed{
-\text{verified ORCHORBITAL residence/switch lineage}
-\rightarrow
-\text{Retrodiction conditioning}
-\rightarrow
-\text{identifiability comparison with retained basin labels}.
+\Delta\tau_k^R
+=\operatorname{fl}\!\left(
+\operatorname{fl}(\tau_k^-+\Delta\tau_k^E)-\tau_k^-
+\right).
 }
 \]
 
-This comparison remains inside the declared lineage firewall: estimator inputs and retained labels are committed before truth scoring.
+For the declared two-event global reflection pair, the final retained base observation remains equivalent at tolerance \(10^{-10}\), while the latent separation exceeds \(0.9\). The retained discrete residence coordinates satisfy
+
+\[
+(a_k)_k=(\widetilde a_k)_k
+\]
+
+and the next-attractor, switch and leak lineages also coincide. The pair therefore remains in the same discrete residence-label equivalence class.
+
+The earlier continuous ORCHORBITAL coordinate separates the pair,
+
+\[
+\boxed{
+|w_{A,1}(z)-w_{A,1}(\widetilde z)|
+=0.01918916841099516.
+}
+\]
+
+The current Retrodiction information channels are therefore kept distinctly typed as
+
+\[
+\boxed{
+\text{discrete residence lineage}
+\;\mid\;
+\text{continuous ORCH observables}
+\;\mid\;
+\text{provenance commitments}.
+}
+\]
+
+The formal and evidence bindings are `formalism/07O_orchorbital_residence_conditioned_retrodiction.md` and `validation/RETRODICTION_ORCHORBITAL_RESIDENCE_CONDITIONING_V0_1.json`. The hardened hosted suite returned `486 passed in 8.89s` in run `33198069462`, job `98940226102`.
+
+The active Retrodiction frontier is global branch separation using retained continuous ORCHORBITAL and spatial-offset/divergence channels. `GENERAL_GLOBAL_INJECTIVITY_OPEN` remains the governing global status.
 
 ## 01K temporal information curvature interface
 
