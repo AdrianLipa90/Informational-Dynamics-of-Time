@@ -1,0 +1,57 @@
+{
+  "schema": "IDT_ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_V0_1",
+  "status": "PASS_ORCHORBITAL_ADMISSION_EVIDENCE_PROMOTION_READY",
+  "canon_allowed": false,
+  "promotion_ready": true,
+  "created_utc": "2026-08-28T17:56:00Z",
+  "dependency": {
+    "parent": "MEMORY",
+    "node": "ORCHORBITAL_ATTRACTORS",
+    "next": "RETRODICTION"
+  },
+  "declared_admission_conditions": {
+    "residence_switch_provenance": {
+      "status": "PASS",
+      "formalism": "formalism/06I_orchorbital_residence_ledger.md",
+      "receipt": "validation/ORCHORBITAL_RESIDENCE_LEDGER_V0_1.json",
+      "schema_hardening_receipt": "validation/ORCHORBITAL_RESIDENCE_SCHEMA_HARDENING_V0_1.json"
+    },
+    "hierarchical_attractor_families": {
+      "status": "PASS",
+      "formalism": "formalism/06J_orchorbital_pncs_hierarchy_binding.md",
+      "receipt": "validation/ORCHORBITAL_PNCS_HIERARCHY_BINDING_V0_1.json",
+      "upstream_repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
+      "upstream_commit": "7a54596c1794be29e0b85f5c363213cc81eb87d7"
+    },
+    "typed_observables": {
+      "status": "PASS",
+      "formalism": "formalism/06K_orchorbital_typed_observables.md",
+      "receipt": "validation/ORCHORBITAL_TYPED_OBSERVABLES_V0_1.json",
+      "truth_scalar": "PASS",
+      "semantic_mass": "PASS",
+      "reduction_readiness": "PASS"
+    }
+  },
+  "hosted_full_repository_suite": {
+    "workflow": "Reference suite",
+    "run_id": 33196818703,
+    "run_number": 557,
+    "job_id": 98935954122,
+    "command": "python -m pytest -q tests/reference",
+    "python": "3.12.14",
+    "runner_image": "ubuntu-24.04",
+    "tests_passed": 475,
+    "tests_failed": 0,
+    "duration_seconds": 11.91,
+    "conclusion": "success",
+    "tested_branch_commit": "285a9dd853a6e6c187f5e1f193089b4c23bcf022",
+    "tested_pr_merge_commit": "00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f",
+    "tested_pr_merge_tree": "42b93983941098c02b350d9fb7bf18536ef4aeee"
+  },
+  "admission_result": {
+    "memory": "ADMITTED_ON_PROMOTION_BRANCH",
+    "orchorbital_attractors": "ADMITTED_ON_PROMOTION_BRANCH",
+    "active_next_gate": "RETRODICTION",
+    "canonical_main": "UNCHANGED_PENDING_EXPLICIT_MERGE"
+  }
+}
