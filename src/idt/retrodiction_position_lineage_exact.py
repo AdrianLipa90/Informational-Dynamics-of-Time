@@ -66,7 +66,7 @@ def _attractor_map(attractors: Sequence[AttractorSpec]) -> tuple[tuple[Attractor
 
 
 def _positions(values: Sequence[Sequence[float]]) -> tuple[np.ndarray, ...]:
-    if not values:
+    if len(values) == 0:
         raise PositionLineageRetrodictionError(
             "checkpoint_positions must be non-empty"
         )
