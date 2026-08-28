@@ -20,6 +20,18 @@
     "exact_reduction_identity": "common positive D_tau_chi => Delta_I_reduction=Delta_coefficient=Delta_Q_reduction=Delta_epsilon_reduction",
     "exact_inertia_binding_reduction": "I_A=I_phi => Q_theta=P_Phi^EB and epsilon_N^EB=P_Phi^EB/(2 I_phi)=(1/2)D_tau_chi",
     "collective_reduction_gate": "same field/rotor phase mode, covariant-rate ID, measure ID and ordered collective support",
+    "gauge_connection_transform": "A'=A-dlambda",
+    "gauge_phase_transform": "theta'=theta+lambda",
+    "gauge_invariant_phase_one_form": "Dtheta=dtheta+A_ABE",
+    "field_pullback_rate": "r_field=sum_a(partial_a theta+A_a^ABE)qdot^a",
+    "normal_projected_rate": "r_n=n_mu D^mu theta",
+    "rotor_covariant_rate": "r_rotor=D_tau chi",
+    "gauge_pullback_rate_defect": "Delta_rate=abs(r_field-r_rotor)/abs(r_rotor)",
+    "normal_projection_defect": "Delta_normal=abs(r_n-r_field)/abs(r_field)",
+    "moment_map_defect": "Delta_Q=abs(Q_theta-P_Phi)/abs(P_Phi)",
+    "moment_map_factorization": "Q_theta/P_Phi=(I_A/I_phi)(r_n/r_rotor)",
+    "gauge_pullback_exact_consequence": "common zero-defect U1 reduction => Q_theta=P_Phi and epsilon_N=(1/2)D_tau_chi",
+    "common_u1_gate": "same bundle_id, phase_patch_id, ABE_connection_id, measure_id and ordered collective support",
     "common_slice_gate": "same slice_id, normal orientation, measure_id and ordered cell_ids",
     "local_current_binding_defect": "Delta_J=sum_a V_Q,a*abs(j_Q,a-j_theta,a)/Q_theta",
     "measure_binding_defect": "Delta_V=sum_a abs(V_Q,a-V_theta,a)*abs(j_theta,a)/Q_theta",
@@ -30,20 +42,75 @@
     "current_binding_rule": "Delta_J=Delta_V=Delta_Sigma=Delta_F=0 => Q_Sigma=Q_theta conditional carrier closure",
     "normalized_profile_consequence": "exact local current/measure binding => p_Q=p_theta",
     "source_mass_coordinate": "M_N=epsilon_N^EB*Q_theta/c^2=H_Phi^EB/c^2",
-    "physical_cross_binding": "OPEN_COMMON_PHASE_RATE_MEASURE_CURRENT_PROMOTION"
+    "physical_cross_binding": "OPEN_PHYSICAL_COMMON_U1_NORMAL_CURRENT_PROMOTION"
   },
   "pncs": {
     "repository": "AdrianLipa90/PhaseNav-Natural-Coding-System",
     "branch": "feat/gremlin-pnv-authoring-v0.2",
-    "code_commit": "26fb4714a7d7e71f16024f2120f93099a9c62c01",
-    "contracts": ["PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2","PNCS_PNV_INFORMATION_HOLONOMY_V0_1","PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1","PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1","PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1","PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1"],
-    "loops": ["SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP","SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP","SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP","SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP","SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP","SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP","SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP"],
-    "native_ci": {"run_id":33125567602,"job_id":98702774903,"head_commit":"26fb4714a7d7e71f16024f2120f93099a9c62c01","code_snapshot":"26fb4714a7d7e71f16024f2120f93099a9c62c01","classification":"CI_EXECUTION_UNRESOLVED_PRE_TEST","steps":null,"code_test_failure_observed":false}
+    "code_commit": "b741460dba15d979a6387305daf93f476becb54e",
+    "contracts": [
+      "PNCS_GREMLIN_NATIVE_PNV_BRIDGE_V0_2",
+      "PNCS_PNV_INFORMATION_HOLONOMY_V0_1",
+      "PNCS_PNV_SOURCE_HOLONOMY_LOOPS_V0_1",
+      "PNCS_PNV_NOETHER_COLLECTIVE_CARRIER_V0_1",
+      "PNCS_PNV_NOETHER_RFC_CURRENT_BINDING_V0_1",
+      "PNCS_PNV_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION_V0_1",
+      "PNCS_PNV_GAUGE_COVARIANT_PHASE_PULLBACK_V0_1"
+    ],
+    "loops": [
+      "SOURCE.CARRIER.NORMALIZATION.ROUNDTRIP",
+      "SOURCE.CARRIER.Q0_OCCUPATION.ROUNDTRIP",
+      "SOURCE.CARRIER.EPSILON_MASS_DENSITY.ROUNDTRIP",
+      "SOURCE.PHASE_INTENTION.EULER_CHARGE_ENERGY.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.COLLECTIVE_CARRIER.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.RFC_CONSERVED_CURRENT.ROUNDTRIP",
+      "SOURCE.PHASE_NOETHER.ROTOR_INERTIA.REDUCTION.ROUNDTRIP",
+      "SOURCE.PHASE.NOETHER.GAUGE_COVARIANT_PULLBACK.ROUNDTRIP"
+    ],
+    "native_ci": {
+      "run_id": 33129045847,
+      "job_id": 98713992469,
+      "head_commit": "b741460dba15d979a6387305daf93f476becb54e",
+      "code_snapshot": "b741460dba15d979a6387305daf93f476becb54e",
+      "classification": "CI_EXECUTION_UNRESOLVED_PRE_TEST",
+      "steps": null,
+      "code_test_failure_observed": false
+    }
   },
-  "idt": {"repository":"AdrianLipa90/Informational-Dynamics-of-Time","branch":"feat/idt-rfc-normalized-shape-holonomy-v0.1","tested_commit":"ba9a63a0df97b5432594cd4a87f8490712c8ce57","workflow":"Reference suite","run_id":33126334707,"job_id":98705275335,"passed":373,"failed":0,"status":"PASS"},
-  "rfc": {"repository":"AdrianLipa90/Relational-Field-Closure","branch":"feat/rfc-gremlin-pnv-holonomy-v0.1","tested_commit":"98fe8c186a420ba8f59fc6b218de4ac86e7ef12c","workflow":"RFC reference suite","run_id":33126145853,"job_id":98704659073,"passed":65,"failed":0,"status":"PASS"},
-  "anti_false_positive_witness": {"V":[1.0,1.0],"j_theta":[1.0,3.0],"j_Q":[2.0,2.0],"Q_theta":4.0,"Q_Sigma":4.0,"Delta_Sigma":0.0,"Delta_J":0.5,"Delta_V":0.0,"binding_verdict":"FAIL_LOCAL_CURRENT"},
-  "pairing_rule": "IDT and RFC pin the same seven-loop PNCS source-law snapshot; the scalar-field/rotor coefficient theorem conditionally closes I_A=I_phi once the common phase-mode, covariant-rate, measure and collective-support gate is admitted, while physical current promotion remains measured.",
+  "idt": {
+    "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+    "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
+    "tested_commit": "ac3151933eba6960def114fd1548df70abab4a6d",
+    "workflow": "Reference suite",
+    "run_id": 33128706242,
+    "job_id": 98712901979,
+    "passed": 381,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "rfc": {
+    "repository": "AdrianLipa90/Relational-Field-Closure",
+    "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
+    "tested_commit": "a33967d93f6eeb5595575b39716120a67343e506",
+    "workflow": "RFC reference suite",
+    "run_id": 33128745489,
+    "job_id": 98713029820,
+    "passed": 73,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "anti_false_positive_witness": {
+    "V": [1.0, 1.0],
+    "j_theta": [1.0, 3.0],
+    "j_Q": [2.0, 2.0],
+    "Q_theta": 4.0,
+    "Q_Sigma": 4.0,
+    "Delta_Sigma": 0.0,
+    "Delta_J": 0.5,
+    "Delta_V": 0.0,
+    "binding_verdict": "FAIL_LOCAL_CURRENT"
+  },
+  "pairing_rule": "IDT and RFC pin the same eight-loop PNCS source-law snapshot; the gauge-covariant common-U1 pullback conditionally identifies the field and rotor generators after bundle/patch/connection/measure/support and normal-flow admission, while RFC current promotion remains measured.",
   "epistemic_state": "CHYBA",
   "main_mutated": false
 }
