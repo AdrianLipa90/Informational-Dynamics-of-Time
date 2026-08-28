@@ -1,0 +1,33 @@
+{
+  "schema": "IDT_TEMPORAL_PRIMITIVE_ACTIVITY_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/temporal-primitive-from-relational-activity-v0.1",
+  "formalism": "formalism/00E_activity_derived_temporal_primitive.md",
+  "implementation": "src/idt/temporal_primitive_activity.py",
+  "tests": "tests/reference/test_temporal_primitive_activity.py",
+  "derived_coordinates": {
+    "activity_measure": "dTheta = activity * d_lambda",
+    "orientation": "chi = current / activity = tanh(A/2)",
+    "shannon_drive": "A = ln(2) * sigma_bits",
+    "relational_lapse": "N_R(x|r) = activity_x / activity_r"
+  },
+  "declared_gates": [
+    "positive_activity_measure",
+    "path_additivity",
+    "monotone_reparameterization_invariance",
+    "orientation_reversal_parity",
+    "symmetric_drive_control",
+    "density_viscosity_mobility_contract",
+    "shannon_affinity_consistency",
+    "relational_lapse_composition",
+    "fail_closed_domain_validation"
+  ],
+  "gremlin": {
+    "authority": "CANDIDATE_ONLY",
+    "contract": "positive symmetric transition traffic -> additive path measure; antisymmetric traffic -> orientation; activity ratio -> lapse; calibration -> clock reading",
+    "live_execution": "UNRECORDED_IN_THIS_RECEIPT"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
