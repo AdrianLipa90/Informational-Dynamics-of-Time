@@ -6,64 +6,37 @@ The repository is maintained as three parallel spines:
 - **EVIDENCE** — tests, receipts, manifests and audits;
 - **MONOGRAPH** — a LaTeX view of admitted formalism and recorded evidence.
 
-Proposed admitted frontier after merge of the current evidence branch:
+Proposed admitted frontier after merge of the current promotion branch:
 
 \[
-\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\mathbf{Memory}}
+\boxed{\text{Temporal Primitive}\rightarrow\text{Temporal Wave}\rightarrow\text{NOW}\rightarrow\text{Bifurcation}\rightarrow\text{Temporal Transport}\rightarrow\text{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}}
 \]
 
-Temporal Transport has passed its declared structural reference gate. The Memory node contains the event-driven Kepler--Newton branch, the upstream event kick \(\Delta v_{M,n}=q_n\delta m_n\), conditional \(\mu_M\) identifiability, the \(\mathbb{CP}^1\) Kähler memory-frame reference subclass, append-only event receipts and ledger-assisted recall.
+Memory admission is bound by `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-The previously blocking hosted full repository suite has now executed successfully on the integrated tree through PR #21. GitHub Actions run `33193861826`, job `98925901636`, executed
+ORCHORBITAL now has all three declared admission components:
+
+1. append-only content-addressed residence/switch lineage with strict schema and long-trajectory dwell statistics — `formalism/06I_orchorbital_residence_ledger.md`;
+2. pinned PNCS v0.29 sphere/entity hierarchy mapped onto nested IDT attractor families — `formalism/06J_orchorbital_pncs_hierarchy_binding.md`;
+3. pinned PNCS v0.27 typed truth scalar, semantic mass and reduction-readiness bindings — `formalism/06K_orchorbital_typed_observables.md`.
+
+The typed-observable completion tree was executed by GitHub Actions run `33196818703`, job `98935954122`:
 
 ```text
 python -m pytest -q tests/reference
+475 passed in 11.91s
 ```
 
-under Python 3.12.14 on Ubuntu 24.04 and returned
+Environment: Python `3.12.14`, Ubuntu `24.04`. Tested PR merge commit: `00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f`; tested tree: `42b93983941098c02b350d9fb7bf18536ef4aeee`.
 
-```text
-431 passed in 7.08s
-```
+The combined promotion-branch receipt is `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
 
-The tested PR merge commit is `e0b1cdc491a1a501adce93b8d62ade063e167500`, tree `92302498f3c9131b163d5d0ccbbeab1db935d29f`. The append-only binding receipt is `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
-
-Accordingly the Memory gate is promotion-ready on this branch; canonical `main` remains unchanged until the pull request is merged.
-
-The next typed dependency node is ORCHORBITAL attractor organization:
+The active dependency path is therefore
 
 \[
-\boxed{
-X_M
-\rightarrow
-\{E_i,b_i,w_i\}
-\rightarrow
-\text{active attractor / LEAK\_MODE}
-\rightarrow
-\text{active-centre Kepler segment}
-\rightarrow
-\Delta W
-\rightarrow
-\text{field re-evaluation}
-\rightarrow
-\text{residence / transition graph}.
-}
+\boxed{\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathbf{Retrodiction}}.
 \]
 
-For attractor \(\mathfrak A_i=(c_i,\mu_i)\), the reference binding field uses
-\[
-E_i=\frac12\|v_M\|^2-\frac{\mu_i}{\|m-c_i\|},
-\qquad
-b_i=[-E_i]_+,
-\qquad
-w_i=\frac{b_i}{\sum_j b_j}.
-\]
-The same weights define a Shannon basin entropy and normalized attractor coherence. Smooth admitted segments preserve the single-centre Kepler law in the selected attractor frame. Multi-segment propagation accumulates attractor residence time in \(\tau_{\rm int}\), winding, and directed attractor-transition counts.
+Retrodiction remains the active next admission gate. Its first new task is to condition the existing withheld-lineage / observability / estimator stack on verified ORCHORBITAL residence and switch histories and measure the effect of basin labels under the declared lineage firewall.
 
-Targeted ORCHORBITAL reference evidence remains `11 passed in 0.07s`, and its tests are also contained in the successful 431-test repository suite. The receipt is `validation/ORCHORBITAL_ATTRACTOR_SYSTEM_V0_1.json`.
-
-ORCHORBITAL is not auto-promoted by the Memory gate. Its residence/switch provenance, hierarchical attractor families and typed-observable admission remain open. Retrodiction therefore remains downstream staging with the active dependency path
-
-\[
-\mathrm{Memory}\rightarrow\mathbf{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}.
-\]
+Canonical `main` remains unchanged until an explicit merge command is issued.
