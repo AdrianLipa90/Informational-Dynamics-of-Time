@@ -5,28 +5,14 @@
     "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
     "branch": "feat/idt-rfc-normalized-shape-holonomy-v0.1",
     "base_main": "647f1652edde59d9bfd7e075fb6ed5bf02aab2fc",
-    "interfaces": [
-      "formalism/01X_RFC_normalized_shape_extensive_scale_interface.md",
-      "formalism/01Y_phase_intention_energy_per_charge_interface.md",
-      "formalism/01Z_noether_collective_phase_carrier_interface.md",
-      "formalism/01AA_noether_rfc_conserved_current_binding.md",
-      "formalism/01AB_scalar_field_rotor_inertia_reduction.md",
-      "formalism/01AC_gauge_covariant_phase_pullback_noether_generator.md"
-    ],
+    "interfaces": ["formalism/01X_RFC_normalized_shape_extensive_scale_interface.md","formalism/01Y_phase_intention_energy_per_charge_interface.md","formalism/01Z_noether_collective_phase_carrier_interface.md","formalism/01AA_noether_rfc_conserved_current_binding.md","formalism/01AB_scalar_field_rotor_inertia_reduction.md","formalism/01AC_gauge_covariant_phase_pullback_noether_generator.md"],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json",
-    "paired_receipt_content_sha": "7b84ebf79d02e3683e170f29cffea8e270814095"
+    "paired_receipt_content_sha": "816a0330cd4fab79368d6c1581c95a1d3d46fa62"
   },
   "rfc": {
     "repository": "AdrianLipa90/Relational-Field-Closure",
     "branch": "feat/rfc-gremlin-pnv-holonomy-v0.1",
-    "gates": [
-      "formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md",
-      "formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md",
-      "formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md",
-      "formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md",
-      "formalism/RFN1B2L_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION.md",
-      "formalism/RFN1B2M_GAUGE_COVARIANT_PHASE_PULLBACK_NOETHER_GENERATOR.md"
-    ],
+    "gates": ["formalism/RFN1B2H_NORMALIZED_SHAPE_HOLONOMY.md","formalism/RFN1B2I_PHASE_INTENTION_ENERGY_PER_CHARGE.md","formalism/RFN1B2J_NOETHER_COLLECTIVE_PHASE_CARRIER.md","formalism/RFN1B2K_NOETHER_RFC_CONSERVED_CURRENT_BINDING.md","formalism/RFN1B2L_SCALAR_FIELD_ROTOR_INERTIA_REDUCTION.md","formalism/RFN1B2M_GAUGE_COVARIANT_PHASE_PULLBACK_NOETHER_GENERATOR.md"],
     "paired_receipt": "validation/IDT_RFC_PNCS_SOURCE_HOLONOMY_PAIR_V0_1.json"
   },
   "pncs": {
@@ -88,9 +74,6 @@
     "pncs_gauge_covariant_pullback_loop": "SOURCE.PHASE.NOETHER.GAUGE_COVARIANT_PULLBACK.ROUNDTRIP",
     "physical_cross_binding": "OPEN_PHYSICAL_COMMON_U1_NORMAL_CURRENT_PROMOTION"
   },
-  "executed_reference_gates": {
-    "idt": "381/381 PASS",
-    "rfc": "73/73 PASS"
-  },
+  "executed_reference_gates": {"idt":"382/382 PASS","rfc":"74/74 PASS"},
   "pinning_rule": "Both repositories pin the same eight-loop PNCS source-law snapshot; the gauge-covariant common-U1 pullback conditionally identifies field and rotor moment maps after the declared bundle/patch/connection/measure/support and normal-flow gates, while RFC current and state-space promotion remain measured."
 }
