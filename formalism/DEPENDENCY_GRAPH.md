@@ -18,11 +18,11 @@ A downstream layer may be explored as a candidate before its parent is admitted;
 | Temporal Transport | `STRUCTURAL_REFERENCE_GATE_PASS / WAVE_ENERGY_TARGETED_PASS_CANDIDATE` | Cayley smooth segments and common wave-energy contraction metric |
 | Memory | `REFERENCE_GATE_ADMITTED / HOSTED_FULL_SUITE_PASS` | transport/NOW-derived duration, event-gated memory receipts and hosted admission binding |
 | ORCHORBITAL Attractors | `REFERENCE_GATE_ADMITTED / RESIDENCE_LEDGER_PASS / PNCS_HIERARCHY_PASS / TYPED_OBSERVABLES_PASS / HOSTED_FULL_SUITE_PASS` | active-attractor dynamics, content-addressed residence lineage, pinned PNCS hierarchy and typed observable bindings |
-| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ORCHORBITAL_PARENT_ADMITTED_ON_PROMOTION_BRANCH` | 07P upgrades pair witnesses into an all-collision finite-domain gate; 07Q binds ordered signed residence winding as a concrete fiber coordinate; 07R supplies the exact carrier/lift composition theorem; 07S uses the exact retained active-attractor sequence to partition the global domain into fixed-sequence strata. The active next task is construction of the per-stratum decoder from retained base/fiber coordinates into the exact 07K ordered position carrier. |
+| Retrodiction | `PROVISIONAL_DOWNSTREAM / EVENT_AWARE_RESIDENCE_CONDITIONING_PASS / RESIDENCE_LABEL_KNOWN_NULL_PERSISTENCE_PASS / PROVENANCE_FIREWALL_PASS / SPATIAL_OFFSET_DIVERGENCE_WITNESS_FOUND / ADAPTIVE_SOD_SEPARATOR_TARGETED_PASS / QUOTIENT_FIBER_FINITE_DOMAIN_GATE_PASS / ORIENTED_WINDING_KNOWN_NULL_SEPARATOR_PASS / FIBER_LIFT_COMPOSITION_THEOREM_PASS / FINITE_DOMAIN_FIBER_LIFT_REFERENCE_PASS / STRATIFIED_GLOBAL_REDUCTION_PASS / CONSTRUCTIVE_FIXED_SEQUENCE_POSITION_LIFT_REFERENCE_PASS / EXACT_PER_STRATUM_POSITION_DECODER_BASELINE_PASS / FULL_POSITION_FIBER_PACKET_SUFFICIENCY_PASS / 07K_NDARRAY_CARRIER_INTERFACE_PASS / POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE / HOSTED_FULL_SUITE_PASS / GENERAL_GLOBAL_INJECTIVITY_OPEN / ORCHORBITAL_PARENT_ADMITTED` | 07P provides the finite-domain fiber gate; 07Q binds ordered signed winding; 07R supplies the exact carrier/lift theorem; 07S partitions the domain by exact retained active sequence; 07T constructs the first exact coordinate-complete per-stratum decoder and moves the frontier to position-fiber compression. |
 | Retrocausal Tests | `GATED` | depends on admitted Retrodiction and audits |
 | Einstein Closure | `DEFERRED_FINAL_GATE` | spatial closure enters at the declared final node |
 
-Promotion-branch admission receipts:
+Admission receipts on canonical `main`:
 
 - Memory: `validation/MEMORY_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`;
 - ORCHORBITAL: `validation/ORCHORBITAL_ADMISSION_HOSTED_FULL_SUITE_2026_08_28.json`.
@@ -34,11 +34,13 @@ Current provisional Retrodiction evidence:
 - oriented winding fiber separator: `validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json`;
 - fiber-lift composition theorem/audit: `validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json`;
 - stratified fixed-sequence reduction: `validation/RETRODICTION_STRATIFIED_POSITION_LIFT_V0_1.json`;
+- exact per-stratum decoder baseline: `validation/RETRODICTION_PER_STRATUM_POSITION_DECODER_V0_1.json`;
 - hosted 07P reference run: `33200684482`, job `98949092398`, `495 passed in 10.14s`;
 - hosted 07Q reference run: `33201861565`, job `98953023513`, `502 passed in 8.09s`;
 - hosted 07R reference run: `33202559485`, job `98955383447`, `510 passed in 14.11s`;
-- hosted 07S reference run after corrected decoder/carrier control: `33203339457`, job `98958035895`, `518 passed in 12.06s`;
-- active next gate: `PER_STRATUM_POSITION_DECODER_ACTIVE_NEXT_GATE`;
+- hosted 07S reference run: `33203339457`, job `98958035895`, `518 passed in 12.06s`;
+- hosted 07T corrected reference run: `33204551313`, job `98962152065`, `528 passed in 14.20s`;
+- active next gate: `POSITION_FIBER_COMPRESSION_ACTIVE_NEXT_GATE`;
 - governing global status: `GENERAL_GLOBAL_INJECTIVITY_OPEN`.
 
 The 07S reduction uses the exact retained active sequence
@@ -59,17 +61,31 @@ Unequal stratum keys are separated directly by the retained record. Inside each 
 P_s(z)=(r_1(z),\ldots,r_N(z)).
 \]
 
-The remaining constructive gate is therefore
+07T supplies a coordinate-complete decoder. With
+
+\[
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny}),
+\]
+
+and complete single-source coverage across the base record and explicit absolute position fibers,
 
 \[
 \boxed{
-L_s:(Y,F)|_{\mathcal Z_s}\longrightarrow(r_1,\ldots,r_N),
+L_s^{\rm pos}:(Y,F_{\rm pos})|_{\mathcal Z_s}\longrightarrow(r_1,\ldots,r_N).
 }
 \]
 
-with the carrier/lift composition governed by 07R.
+For the declared sparse schedule, final position is already retained and the exact additional baseline is
 
-Canonical `main` adopts branch admission states through explicit merge.
+\[
+\boxed{
+|F_{\rm pos}^{\rm baseline}|=2N-2.
+}
+\]
+
+The next gate compresses this packet while preserving the same single-valued carrier lift. The first candidate reuses ordered winding and active-attractor radii.
+
+Canonical `main` contains the stack through 07S. 07T remains on draft PR #23 until explicit merge authorization.
 
 The Temporal Primitive keeps its Shannon/Onsager and phase-connection admission chain. The following branch is a parallel cross-repository source audit.
 
