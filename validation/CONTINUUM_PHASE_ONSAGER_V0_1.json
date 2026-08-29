@@ -1,0 +1,41 @@
+{
+  "schema": "IDT_CONTINUUM_PHASE_ONSAGER_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/continuum-phase-gradient-onsager-v0.1",
+  "formalism": "formalism/02JM_continuum_phase_gradient_onsager_flow.md",
+  "implementation": "src/idt/continuum_phase_onsager.py",
+  "tests": "tests/reference/test_continuum_phase_onsager.py",
+  "continuum_functional": {
+    "covariant_gradient": "q = partial_x alpha - A",
+    "phase_energy": "E_phi = integral M rho q^2 dx",
+    "functional_derivative": "delta E_phi / delta alpha = -2 partial_x(M rho q)",
+    "onsager_flow": "partial_Theta alpha |_D = 2 mu partial_x(M rho q)",
+    "dissipation": "dE_phi/dTheta = -mu integral (delta E_phi/delta alpha)^2 dx <= 0",
+    "density_invariance": "partial_Theta |Psi|^2 |_D = 0"
+  },
+  "constant_coefficient_sector": {
+    "q_diffusion": "partial_Theta q = 2 mu c partial_x^2 q, c=M rho>0",
+    "current": "J = 2 c q",
+    "current_diffusion": "partial_Theta J = 2 mu c partial_x^2 J"
+  },
+  "periodic_reference": {
+    "energy": "E_h = h sum c_n q_n^2",
+    "vertex_derivative": "dE_h/dalpha_n = 2(c_(n-1)q_(n-1)-c_n q_n)",
+    "exact_descent": "dE_h/dTheta = -(mu/h) sum (dE_h/dalpha_n)^2 <= 0",
+    "constant_c_edge_diffusion": "q_dot = 2 mu c Delta_h q"
+  },
+  "declared_gates": [
+    "exact_periodic_energy_derivative",
+    "exact_nonpositive_onsager_energy_rate",
+    "discrete_gauge_invariance",
+    "phase_only_pointwise_density_invariance",
+    "constant_coefficient_exact_discrete_q_diffusion",
+    "constant_coefficient_exact_discrete_current_diffusion",
+    "second_order_continuum_functional_gradient_convergence",
+    "fail_closed_domain_validation"
+  ],
+  "hosted_ci": {
+    "status": "PENDING"
+  },
+  "next_gate": "CONTINUUM_MADELUNG_SCHRODINGER_ONSAGER_SPLIT"
+}
