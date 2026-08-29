@@ -42,23 +42,39 @@
   "hosted_ci": {
     "status": "PASS",
     "workflow": "Reference suite",
-    "run_number": 832,
-    "run_id": 33242263480,
-    "job_id": 99073490019,
-    "tested_head_sha": "fcefd6a6272fd6b454fc0e9523be1cc4ac0b7600",
-    "tested_pr_merge_sha": "ddd2a235b88f987eb1fefd34ebfb1d3fa34ceea4",
+    "run_number": 839,
+    "run_id": 33242419735,
+    "job_id": 99073899766,
+    "tested_head_sha": "0e477ec8c2e97c6bcfa1afc443136b0e5c9ac38b",
+    "tested_pr_merge_sha": "1ff442aa10bc7a9c5d663a852e91f04fb8c3808b",
     "python": "3.12.14",
     "os": "Ubuntu 24.04.4",
-    "tests_passed": 717,
-    "tests_total": 717,
-    "elapsed_seconds": 12.70,
-    "retained_previous_attempt": {
-      "run_number": 830,
-      "result": "TEST_HARNESS_FAIL",
-      "tests_passed": 711,
-      "failures": 6,
-      "cause": "missing SchrodingerOnsagerBalanceError import in fail-closed parametrized test",
-      "scientific_equation_failure": false
-    }
+    "tests_passed": 718,
+    "tests_total": 718,
+    "elapsed_seconds": 19.41,
+    "previous_hosted_pass": {
+      "run_number": 832,
+      "tests_passed": 717,
+      "tests_total": 717,
+      "elapsed_seconds": 12.70
+    },
+    "retained_failed_attempts": [
+      {
+        "run_number": 830,
+        "result": "TEST_HARNESS_FAIL",
+        "tests_passed": 711,
+        "failures": 6,
+        "cause": "missing SchrodingerOnsagerBalanceError import in fail-closed parametrized test",
+        "scientific_equation_failure": false
+      },
+      {
+        "run_number": 836,
+        "result": "CONFORMANCE_FAIL",
+        "tests_passed": 717,
+        "failures": 1,
+        "cause": "inherited marker test pinned dependency graph schema to V0_37 after append-only graph advanced to V0_38",
+        "scientific_equation_failure": false
+      }
+    ]
   }
 }
