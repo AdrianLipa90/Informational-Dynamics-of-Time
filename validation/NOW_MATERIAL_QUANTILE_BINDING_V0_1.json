@@ -1,0 +1,34 @@
+{
+  "schema": "IDT_NOW_MATERIAL_QUANTILE_BINDING_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/now-material-quantile-realization-binding-v0.1",
+  "formalism": "formalism/02JP_now_material_quantile_realization_binding.md",
+  "implementation": "src/idt/now_material_quantile_binding.py",
+  "tests": "tests/reference/test_now_material_quantile_binding.py",
+  "inputs": {
+    "wave_material_family": "X_q(Theta), q in (0,1)",
+    "logical_now": "N(D)=Max_<T(D_q)",
+    "tir_exchange": "R(q)=1-q"
+  },
+  "derived_coordinates": {
+    "unique_exchange_fixed_selector": "q_star=1/2",
+    "symmetric_material_marker": "B_NOW^(1/2)(nu)=X_1/2 on the branch associated with nu",
+    "serial_binding": "unique supported maximal occurrence -> one selected material marker",
+    "concurrent_binding": "NOW antichain -> branch-indexed selected material markers",
+    "mirror_quantile_identity": "X_(1-q)=2c-X_q for density symmetric about c"
+  },
+  "declared_gates": [
+    "exchange_involution_fixed_point",
+    "mirror_quantile_equivariance",
+    "serial_realized_event_material_binding",
+    "state_recurrence_occurrence_identity",
+    "wave_coordinate_event_identity_factorization",
+    "realization_selector_material_family_factorization",
+    "concurrent_branchwise_binding",
+    "fail_closed_binding_validation"
+  ],
+  "hosted_ci": {
+    "status": "PENDING"
+  },
+  "next_gate": "NOW_BINDING_DYNAMICAL_CONSISTENCY_WITH_BIFURCATION"
+}
