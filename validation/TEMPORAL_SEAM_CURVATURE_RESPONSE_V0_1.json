@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_SEAM_CURVATURE_RESPONSE_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/temporal-seam-curvature-response-v0.1",
   "formalism": "formalism/02JJ_temporal_seam_curvature_response.md",
   "implementation": "src/idt/temporal_seam_curvature_response.py",
@@ -43,6 +43,27 @@
     "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
   },
   "hosted_ci": {
-    "status": "PENDING"
-  }
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 846,
+    "run_id": 33245199472,
+    "job_id": 99081360162,
+    "tested_head_sha": "1d4d32ebcaae1524758587c569af8a4e10afb6bc",
+    "tested_pr_merge_sha": "6cf2c7d1d840225380a8e486bd47ea9760e412b2",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 734,
+    "tests_total": 734,
+    "elapsed_seconds": 15.27
+  },
+  "prior_hosted_attempts": [
+    {
+      "run_number": 845,
+      "run_id": 33245143188,
+      "status": "TEST_HARNESS_FAIL",
+      "tests_passed": 728,
+      "failures": 6,
+      "cause": "fail-closed parametrization referenced MovingSeamConnectionError before importing it; equations and non-harness tests passed"
+    }
+  ]
 }
