@@ -93,6 +93,104 @@ M_{\rm eff}=\frac{\rho_0}{\eta_0},
 \beta_{\rm eff}=\eta_0.
 \]
 
+\section{Half-frame micro-to-continuum bridge}
+
+The finite temporal-frame construction splits each frame into two half-supports and identifies adjacent right/left halves.  For mesh spacing $h$, sample a smooth temporal-wave carrier by
+\[
+\boxed{
+a_n^{(h)}=\sqrt h\,\Psi(x_n,\Theta)}
+\]
+and let the local seam phase be
+\[
+\boxed{
+\varphi_n^{(h)}
+=\int_{x_n}^{x_{n+1}}A(x,\Theta)\,dx.
+}
+\]
+The occupancy-sensitive fuzzy-interface mass is
+\[
+J_n
+=2|a_n||a_{n+1}|
+\cos^2\!\left(\frac{\delta_n}{2}\right),
+\]
+where
+\[
+\delta_n
+=\alpha_{n+1}-\alpha_n-\varphi_n.
+\]
+Its continuum edge density is
+\[
+\boxed{
+\rho_{F,n}^{(h)}
+=\frac{J_n}{2h}
+\longrightarrow
+|\Psi(x_{n+1/2},\Theta)|^2.
+}
+\]
+Thus the finite overlap pattern
+\[
+|1|\,|12|\,|23|\cdots|N|
+\]
+acquires a smooth density limit as the frame spacing tends to zero.
+
+The complementary phase-aware seam-defect amplitude is
+\[
+\boxed{
+d_n^{(h)}
+=\frac12\left(
+ e^{+i\varphi_n/2}a_n
+-e^{-i\varphi_n/2}a_{n+1}
+\right).
+}
+\]
+With
+\[
+D_A=\partial_x-iA,
+\]
+the rescaled defect density satisfies
+\[
+\boxed{
+\frac{4|d_n^{(h)}|^2}{h^3}
+\longrightarrow
+|D_A\Psi(x_{n+1/2},\Theta)|^2.
+}
+\]
+Consequently the two half-frame channels carry the continuum pair
+\[
+\boxed{
+\left(
+|\Psi|^2,
+|D_A\Psi|^2
+\right).
+}
+\]
+The integrated limits are
+\[
+\boxed{
+\sum_n h\rho_{F,n}^{(h)}
+\longrightarrow
+\int |\Psi|^2dx
+}
+\]
+and
+\[
+\boxed{
+\sum_n\frac{4M_n}{h^2}|d_n|^2
+\longrightarrow
+\int M(x)|D_A\Psi|^2dx.
+}
+\]
+The second expression is the continuum quadratic form corresponding to the same mobility-weighted covariant-gradient sector carried by $K_M$.  The effective propagation coefficients therefore remain those derived by the heterogeneous cell problem,
+\[
+\boxed{
+c_{\rm eff}^2=M_{\rm eff},
+\qquad
+\beta_{\rm eff}
+=M_{\rm eff}^2\left\langle\frac{\eta_e}{M_e^2}\right\rangle.
+}
+\]
+Reference convergence tests verify second-order midpoint convergence of both the glued density and the covariant-gradient density, together with exact discrete gauge invariance.
+
 \section{Holonomy shift}
 
 For total closed-cell phase $\phi$ and Bloch phase $\theta$, the tested heterogeneous branch depends on the shifted wave number
