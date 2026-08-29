@@ -1,0 +1,41 @@
+{
+  "schema": "IDT_BOUND_NOW_BIFURCATION_CONSISTENCY_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/bound-now-bifurcation-consistency-v0.1",
+  "formalism": "formalism/04B_bound_now_bifurcation_consistency.md",
+  "implementation": "src/idt/bound_now_bifurcation.py",
+  "tests": "tests/reference/test_bound_now_bifurcation.py",
+  "inputs": {
+    "bound_now": "(occurrence, X_1/2, U_1/2)",
+    "occurrence_time": "Theta_N",
+    "realization": "r_N^(W)=q_N epsilon_N^(W)",
+    "kinetic_pair": "(activity_N,current_N)",
+    "operator_family": "B_N=exp(-i beta_N G)"
+  },
+  "consistency_equalities": {
+    "temporal": "Theta_material = Theta_occurrence",
+    "realization": "terminal_event_weight = q_N epsilon_N^(W)",
+    "phase": "beta_N=(12 pi)^-1 artanh(current_N/activity_N)"
+  },
+  "factorization": {
+    "localization": "(occurrence,Theta,X_1/2,U_1/2)",
+    "wave_magnitude": "M=0.5 sqrt(activity^2-current^2)",
+    "orientation": "beta",
+    "action": "Psi_plus=B_N Psi_minus"
+  },
+  "declared_gates": [
+    "occurrence_realization_identity",
+    "material_occurrence_theta_identity",
+    "existing_04A_hyperbolic_coordinate_reuse",
+    "existing_wave_active_bifurcation_operator_reuse",
+    "material_translation_operator_invariance",
+    "current_reversal_operator_adjoint",
+    "state_recurrence_prefix_targeting",
+    "unitary_state_update",
+    "fail_closed_consistency_validation"
+  ],
+  "hosted_ci": {
+    "status": "PENDING"
+  },
+  "next_gate": "BOUND_BIFURCATION_TO_TEMPORAL_TRANSPORT_HANDOFF"
+}
