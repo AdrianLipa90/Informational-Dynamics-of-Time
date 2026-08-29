@@ -1,6 +1,6 @@
 {
   "schema": "IDT_SCHRODINGER_ONSAGER_SEAM_BALANCE_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/full-schrodinger-onsager-seam-balance-v0.1",
   "formalism": "formalism/02JH_full_schrodinger_onsager_seam_balance.md",
   "implementation": "src/idt/schrodinger_onsager_seam_balance.py",
@@ -46,6 +46,17 @@
     "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 817,
+    "run_id": 33241915106,
+    "job_id": 99072594191,
+    "tested_head_sha": "eb5101ab7c47afd547c8c98af136e05ca0e3d101",
+    "tested_pr_merge_sha": "d30c9177128311d6f4505980d6ff12c51bc5d627",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 701,
+    "tests_total": 701,
+    "elapsed_seconds": 14.89
   }
 }
