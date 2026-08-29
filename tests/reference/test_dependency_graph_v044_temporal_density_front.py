@@ -20,6 +20,8 @@ def test_temporal_density_front_is_admitted_as_parallel_material_coordinate():
         "DISCRETE_CUMULATIVE_FLUX_TELESCOPING_PASS",
         "BARYCENTER_VARIANCE_KINEMATICS_PASS",
         "HOSTED_REFERENCE_SUITE_794_OF_794",
+        "HOSTED_REFERENCE_SUITE_795_OF_795",
+        "FINAL_HEAD_CONFORMANCE_PASS",
         "NOW_MATERIAL_REALIZATION_BINDING_ACTIVE_NEXT_GATE",
     ]:
         assert marker in front["status"]
@@ -29,6 +31,7 @@ def test_temporal_density_front_is_admitted_as_parallel_material_coordinate():
         "HOSTED_REFERENCE_SUITE_764_OF_764",
         "HOSTED_REFERENCE_SUITE_778_OF_778",
         "HOSTED_REFERENCE_SUITE_794_OF_794",
+        "HOSTED_REFERENCE_SUITE_795_OF_795",
     ]:
         assert historical in half_status
 
