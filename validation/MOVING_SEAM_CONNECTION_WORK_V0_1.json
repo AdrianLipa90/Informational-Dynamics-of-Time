@@ -1,0 +1,80 @@
+{
+  "schema": "IDT_MOVING_SEAM_CONNECTION_WORK_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/moving-seam-connection-work-v0.1",
+  "formalism": "formalism/02JI_moving_seam_connection_work.md",
+  "implementation": "src/idt/moving_seam_connection_work.py",
+  "tests": "tests/reference/test_moving_seam_connection_work.py",
+  "inputs": [
+    "02JH_FULL_SCHRODINGER_ONSAGER_SEAM_BALANCE",
+    "02JD_PHASE_AWARE_HALF_SEAM",
+    "00E_ACTIVITY_DERIVED_INTRINSIC_THETA"
+  ],
+  "derived_relations": {
+    "connection_rate": "Omega_phi,e = D_Theta phi_e",
+    "connection_gradient": "q_conn,e = dV_seam/dphi_e = Im(exp(i phi_e) a_e a_(e+1)^*)/2",
+    "connection_work": "P_conn = q_conn^T Omega_phi = psi^dagger (D_Theta K_phi) psi",
+    "geometric_power": "P_geom = P_Sch + P_conn",
+    "moving_balance": "dV_seam/dTheta = P_geom - D_O",
+    "time_dependent_gauge_hamiltonian": "H' = U H U^dagger + i (D_Theta U) U^dagger",
+    "time_dependent_gauge_seam_rate": "Omega_phi' = Omega_phi + edge_gradient(D_Theta chi)",
+    "gauge_closed_power": "P_geom' = P_geom",
+    "phase_offset": "Delta phi_e = integral Omega_phi,e dTheta"
+  },
+  "declared_gates": [
+    "connection_gradient_finite_difference",
+    "connection_work_operator_identity",
+    "seam_stiffness_rate_finite_difference",
+    "combined_conservative_power_finite_difference",
+    "time_dependent_gauge_split_mixing",
+    "time_dependent_gauge_conservative_power_invariance",
+    "time_dependent_gauge_full_balance_invariance",
+    "zero_connection_rate_fixed_gate_reduction",
+    "bidirectional_connection_work",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "connection_rate_equation": "OPEN_NEXT_GATE",
+    "phase_offset_to_clock_offset": "SEPARATE_DOWNSTREAM_GATE",
+    "measured_connection_rate": "SEPARATE_EVIDENCE_GATE",
+    "spacetime_transport": "DOWNSTREAM"
+  },
+  "hosted_ci": {
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 839,
+    "run_id": 33242419735,
+    "job_id": 99073899766,
+    "tested_head_sha": "0e477ec8c2e97c6bcfa1afc443136b0e5c9ac38b",
+    "tested_pr_merge_sha": "1ff442aa10bc7a9c5d663a852e91f04fb8c3808b",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 718,
+    "tests_total": 718,
+    "elapsed_seconds": 19.41,
+    "previous_hosted_pass": {
+      "run_number": 832,
+      "tests_passed": 717,
+      "tests_total": 717,
+      "elapsed_seconds": 12.70
+    },
+    "retained_failed_attempts": [
+      {
+        "run_number": 830,
+        "result": "TEST_HARNESS_FAIL",
+        "tests_passed": 711,
+        "failures": 6,
+        "cause": "missing SchrodingerOnsagerBalanceError import in fail-closed parametrized test",
+        "scientific_equation_failure": false
+      },
+      {
+        "run_number": 836,
+        "result": "CONFORMANCE_FAIL",
+        "tests_passed": 717,
+        "failures": 1,
+        "cause": "inherited marker test pinned dependency graph schema to V0_37 after append-only graph advanced to V0_38",
+        "scientific_equation_failure": false
+      }
+    ]
+  }
+}
