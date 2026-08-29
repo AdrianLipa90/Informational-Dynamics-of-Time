@@ -213,7 +213,7 @@ def test_edge_gradient_matches_declared_orientation():
         lambda: temporal_seam_curvature([], [0.0, 1.0]),
         lambda: covariant_hamiltonian([[0.0, 1.0], [0.0, 0.0]], [0.0, 0.0]),
         lambda: curvature_response([1.0, 1.0], [0.0], -1.0),
-        lambda: curvature_response([1.0, 1.0], [0.0], [[1.0]]),
+        lambda: curvature_response([1.0, 1.0], [0.0], [[1.0, 0.0], [0.0, 1.0]]),
         lambda: accumulated_curvature_offset([[0.2], [0.3]], [0.1, -0.2]),
     ],
 )
