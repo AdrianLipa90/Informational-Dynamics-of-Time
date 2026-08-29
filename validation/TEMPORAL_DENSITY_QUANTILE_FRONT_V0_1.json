@@ -1,0 +1,43 @@
+{
+  "schema": "IDT_TEMPORAL_DENSITY_QUANTILE_FRONT_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/temporal-density-quantile-front-now-coupling-v0.1",
+  "formalism": "formalism/02JO_temporal_density_quantile_front_now_coupling.md",
+  "implementation": "src/idt/temporal_density_quantile_front.py",
+  "tests": "tests/reference/test_temporal_density_quantile_front.py",
+  "inputs": {
+    "continuity": "partial_Theta rho + partial_x J = 0",
+    "intrinsic_time": "Theta",
+    "logical_now": "Max_<T(D_q)"
+  },
+  "derived_coordinates": {
+    "cumulative_mass": "C(x,Theta)=M_T^-1 integral_xL^x rho dy",
+    "quantile_front": "C(X_q,Theta)=q",
+    "quantile_velocity": "dX_q/dTheta=(J(X_q)-J(x_L))/rho(X_q)",
+    "zero_left_flux_velocity": "dX_q/dTheta=J/rho=u at X_q",
+    "half_mass_marker": "C(X_1/2,Theta)=1/2",
+    "discrete_cumulative_rate": "dot C_m=j_left-j_(m+1/2)",
+    "barycenter_rate": "d xbar/dTheta=M_T^-1 integral J dx",
+    "variance_rate": "d sigma_x^2/dTheta=2 M_T^-1 integral (x-xbar) J dx"
+  },
+  "declared_gates": [
+    "cumulative_mass_normalization",
+    "mass_quantile_scale_invariance",
+    "half_mass_symmetric_control",
+    "quantile_local_velocity_identity",
+    "translating_density_control",
+    "discrete_cumulative_flux_telescoping",
+    "barycenter_rate_identity",
+    "variance_rate_identity",
+    "fail_closed_domain_validation"
+  ],
+  "now_binding": {
+    "status": "SEPARATELY_TYPED_DOWNSTREAM_GATE",
+    "candidate": "B_NOW: logical maximal realized-event frontier -> material mass-quantile marker",
+    "symmetric_candidate": "q_star=1/2",
+    "concurrent_case": "branch-indexed quantile markers for NOW antichain"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
