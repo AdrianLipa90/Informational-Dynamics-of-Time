@@ -41,17 +41,36 @@
     "second_order_continuum_current_convergence",
     "fail_closed_domain_validation"
   ],
-  "hosted_ci": {
-    "status": "PASS",
-    "workflow": "Reference suite",
-    "run_number": 792,
-    "run_id": 33222941834,
-    "job_id": 99020674478,
-    "tested_head_sha": "04bc5e7916fcc91674435bd241c6b2e2c615f0ad",
-    "tested_pr_merge_sha": "8e16ee5e3170c60d30bb9a316df3c54c85db6cb5",
-    "tests_passed": 752,
-    "tests_total": 752,
-    "elapsed_seconds": 13.59
+  "hosted_ci_lineage": [
+    {
+      "workflow": "Reference suite",
+      "run_number": 792,
+      "run_id": 33222941834,
+      "job_id": 99020674478,
+      "tested_head_sha": "04bc5e7916fcc91674435bd241c6b2e2c615f0ad",
+      "tests_passed": 752,
+      "tests_total": 752,
+      "elapsed_seconds": 13.59,
+      "status": "PASS"
+    },
+    {
+      "workflow": "Reference suite",
+      "run_number": 796,
+      "run_id": 33223110227,
+      "job_id": 99021184983,
+      "tested_head_sha": "4e2688f0d921b51ff125adde57363dad888c7b94",
+      "tested_pr_merge_sha": "f230bb8e21f725868bc4849b40287b8f0e415dcd",
+      "tests_passed": 753,
+      "tests_total": 753,
+      "elapsed_seconds": 15.03,
+      "status": "PASS"
+    }
+  ],
+  "monograph_pdf": {
+    "workflow_run_number": 36,
+    "run_id": 33223110300,
+    "tested_head_sha": "4e2688f0d921b51ff125adde57363dad888c7b94",
+    "status": "PASS"
   },
   "next_gate": "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW"
 }
