@@ -3,18 +3,22 @@ from types import SimpleNamespace
 from tools.run_reference_suite_with_fpdg_receipt import FpdgFailurePlugin, load_bindings
 
 
-def test_relative_entropy_failure_maps_to_exact_idt_claim_and_test_coordinate():
-    plugin = FpdgFailurePlugin(load_bindings())
-    path = "tests/reference/test_local_clock_relative_entropy.py"
-    report = SimpleNamespace(
+def _report(path, test_name, zero_line=10):
+    return SimpleNamespace(
         failed=True,
-        nodeid=f"{path}::test_exponential_kl_reduces_exactly_to_phi_of_lapse",
+        nodeid=f"{path}::{test_name}",
         when="call",
-        location=(path, 10, "test_exponential_kl_reduces_exactly_to_phi_of_lapse"),
+        location=(path, zero_line, test_name),
         longrepr=None,
     )
 
-    plugin.pytest_runtest_logreport(report)
+
+def test_relative_entropy_failure_maps_to_exact_idt_claim_and_test_coordinate():
+    plugin = FpdgFailurePlugin(load_bindings())
+    path = "tests/reference/test_local_clock_relative_entropy.py"
+    plugin.pytest_runtest_logreport(
+        _report(path, "test_exponential_kl_reduces_exactly_to_phi_of_lapse")
+    )
 
     assert len(plugin.failures) == 1
     failure = plugin.failures[0]
@@ -23,6 +27,34 @@ def test_relative_entropy_failure_maps_to_exact_idt_claim_and_test_coordinate():
     assert failure["source_locator"]["line_start"] == 11
     assert failure["source_locator"]["test_id"].endswith("::test_exponential_kl_reduces_exactly_to_phi_of_lapse")
     assert "claim-source:formalism/05D_local_clock_relative_entropy_potential.md" in failure["evidence_refs"]
+
+
+def test_material_temporal_offset_failure_maps_to_gamma_t_claim():
+    plugin = FpdgFailurePlugin(load_bindings())
+    path = "tests/reference/test_material_temporal_offset_binding.py"
+    plugin.pytest_runtest_logreport(
+        _report(path, "test_local_rate_collapses_to_calibration_times_local_activity", 20)
+    )
+
+    failure = plugin.failures[0]
+    assert failure["claim_id"] == "IDT.CLOCK.GAMMA_T"
+    assert failure["source_locator"]["path"] == path
+    assert "claim-source:CURRENT_STATUS.md" in failure["evidence_refs"]
+
+
+def test_noether_rfc_binding_failure_maps_to_interface_without_endpoint_claim_guess():
+    plugin = FpdgFailurePlugin(load_bindings())
+    path = "tests/reference/test_01AA_noether_rfc_conserved_current_binding.py"
+    plugin.pytest_runtest_logreport(_report(path, "test_noether_rfc_current_binding", 30))
+
+    failure = plugin.failures[0]
+    assert failure["kind"] == "CROSS_REPO_CONTRACT_FAILURE"
+    assert "claim_id" not in failure
+    assert (
+        failure["source_locator"]["interface_id"]
+        == "IFACE.IDT_TO_RFC.NOETHER_SOURCE"
+    )
+    assert "fpdg-interface:IFACE.IDT_TO_RFC.NOETHER_SOURCE" in failure["evidence_refs"]
 
 
 def test_unmapped_failure_keeps_exact_test_coordinate_without_claim_guess():
@@ -40,6 +72,7 @@ def test_unmapped_failure_keeps_exact_test_coordinate_without_claim_guess():
 
     failure = plugin.failures[0]
     assert "claim_id" not in failure
+    assert "interface_id" not in failure["source_locator"]
     assert failure["source_locator"]["path"] == path
     assert failure["source_locator"]["line_start"] == 8
 
