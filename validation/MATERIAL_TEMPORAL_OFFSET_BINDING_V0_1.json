@@ -1,0 +1,35 @@
+{
+  "schema": "IDT_MATERIAL_TEMPORAL_OFFSET_BINDING_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_CANDIDATE",
+  "parents": [
+    "02JL_TEMPORAL_OFFSET_REFERENCE_CLOCK_COCYCLE",
+    "05C_RELATIONAL_LAPSE_INTERFACE"
+  ],
+  "identities": {
+    "seam_ratio": "eta_e^[R] = F_Theta,e / Omega_R",
+    "intrinsic_offset": "dTheta_off^[R] = eta_e^[R] dTheta_r",
+    "coordinate_offset": "dt_off^[R] = T_r dTheta_off^[R]",
+    "material_offset": "dtau_hat_x,off^[R] = N_R T_r dTheta_off^[R]",
+    "fractional_offset": "dtau_hat_x,off^[R] / dtau_hat_x = F_Theta,e / Omega_R",
+    "reference_clock_slope": "Gamma_t,r = T_r a_r",
+    "local_material_slope": "Gamma_tau,x|r = N_R Gamma_t,r = T_r a_x",
+    "offset_slope": "Gamma_tau,off = Gamma_tau (F_Theta,e/Omega_R)"
+  },
+  "rfc_export": {
+    "RF_L5A_Gamma_t_source_pin": "Gamma_t = T_r a_r on the shared affine lambda calibration",
+    "local_proper_time_slope": "Gamma_tau = T_r a_x = N_R Gamma_t"
+  },
+  "controls": [
+    "positive Omega_R",
+    "positive N_R",
+    "positive T_r",
+    "N_R = a_x/a_r",
+    "zero curvature -> zero material offset",
+    "positive calibration preserves seam-offset sign"
+  ],
+  "downstream_gates": [
+    "laboratory clock-species realization",
+    "spatial Gamma_x binding",
+    "ADM transport and constraint closure"
+  ]
+}
