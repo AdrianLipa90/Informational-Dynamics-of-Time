@@ -2,7 +2,7 @@
 
 Status: `FORMAL_CANDIDATE / CONTINUUM_BRIDGE_GATE`
 
-02JJ derives the finite-path fuzzy-interface front. This layer asks what the half-frame overlap/defect decomposition becomes when the frame spacing tends to zero, while retaining the heterogeneous continuum operator already derived in 02C.
+02JJ derives the finite-path fuzzy-interface front. This layer derives the half-frame overlap/defect continuum limit while retaining the heterogeneous continuum operator already established in 02C.
 
 ## 1. Smooth continuum sampling
 
@@ -114,7 +114,7 @@ Hence the genuine interface-quality coordinate satisfies
 F_n\to1
 \]
 
-in a smooth occupied bulk, while the rescaled interface mass \(J_n/(2h)\) carries the nontrivial continuum density.
+in a smooth occupied bulk, while the rescaled interface mass \(J_n/(2h)\) carries the continuum density.
 
 ## 3. Seam defect becomes the covariant gradient
 
@@ -168,7 +168,7 @@ and therefore
 }
 \]
 
-The two half-seam channels thus have distinct continuum limits:
+The two half-seam channels therefore carry complementary continuum data:
 
 ```text
 glued/fuzzy channel : J_n/(2h)       -> |Psi|^2
@@ -254,15 +254,15 @@ The half-seam defect supplies the corresponding local covariant-gradient density
 }
 \]
 
-Therefore the half-frame quotient supplies a microscopic overlap/gradient decomposition whose gradient channel enters the same mobility-weighted quadratic form used by the 02C stiffness sector. The 02C homogenization result remains authoritative for the effective long-wave coefficient:
+Therefore the half-frame quotient supplies a microscopic overlap/gradient decomposition whose gradient channel enters the same mobility-weighted quadratic form used by the 02C stiffness sector. The 02C homogenization result retains coefficient authority:
 
 \[
 \boxed{c_{\rm eff}^2=M_{\rm eff}.}
 \]
 
-No new propagation coefficient is introduced by this bridge.
+The propagation coefficients of this continuum bridge are inherited from 02C as \(M_{\rm eff}\) and \(\beta_{\rm eff}\).
 
-## 7. Interpretation of the slice picture
+## 7. Continuum reading of the slice picture
 
 For finite spacing, the pattern
 
@@ -284,7 +284,7 @@ Reference tests require:
 - gauge invariance under a nontrivial smooth local rephasing;
 - convergence of the integrated glued measure to \(\int|\Psi|^2dx\);
 - convergence of the mobility-weighted seam-defect form to \(\int M|D_A\Psi|^2dx\);
-- preservation of the 02C coefficient authority: the bridge introduces no replacement for \(M_{\rm eff}\) or \(\beta_{\rm eff}\).
+- inheritance of the 02C coefficient authority through \(M_{\rm eff}\) and \(\beta_{\rm eff}\).
 
 Reference implementation: `src/idt/half_frame_continuum.py`.
 Reference tests: `tests/reference/test_half_frame_continuum.py`.
