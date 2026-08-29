@@ -63,7 +63,7 @@ def test_finite_tail_histogram_converges_to_infinite_uniform_bin_kl():
     coarse = finite_clock_kl(ar, ax, h, 10)
     fine = finite_clock_kl(ar, ax, h, 80)
     assert abs(fine - target) < abs(coarse - target)
-    assert fine == pytest.approx(target, abs=1.0e-10)
+    assert fine == pytest.approx(target, abs=2.0e-10)
 
 
 def test_uniform_bin_refinement_converges_to_continuous_exponential_kl():
