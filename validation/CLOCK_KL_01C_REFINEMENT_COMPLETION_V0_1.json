@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_CLOCK_KL_01C_REFINEMENT_COMPLETION_V0_1",
+  "status": "CANDIDATE_PENDING_HOSTED_REFERENCE_SUITE",
+  "parents": [
+    "01C Shannon relative-information monotonicity",
+    "01K temporal information curvature interface",
+    "05D local clock relative-entropy potential"
+  ],
+  "clock_domain": "LOCAL_MEMORYLESS_EXPONENTIAL_HOLDING_TIME_REALIZATION",
+  "finite_01c_embedding": {
+    "partition": "M uniform holding-time bins plus one infinite tail bin",
+    "p": "Exp(a_r) bin probabilities",
+    "pi": "Exp(a_x) bin probabilities",
+    "strict_positive_reference": true,
+    "stationary_kernel": "P_ij=pi_j",
+    "stationarity": "pi P=pi",
+    "one_step_contraction": "p P=pi"
+  },
+  "refinement": {
+    "order": "finite measurable partition refinement",
+    "monotonicity": "D_KL(coarse)<=D_KL(refined) by 01C data processing",
+    "completion": "supremum over finite holding-time partitions"
+  },
+  "exact_limit": {
+    "N_R": "a_x/a_r",
+    "J_clock": "N_R-1-ln(N_R)",
+    "reverse": "N_R^-1-1+ln(N_R)",
+    "jeffreys": "N_R+N_R^-1-2"
+  },
+  "01k_handoff": {
+    "bit_to_nat": "J=(ln2) I_bits",
+    "completed_numerator": "J_clock=J_01C^comp",
+    "Xi_clock": "J_clock/A_rel",
+    "area_selection": "DOWNSTREAM_GATE"
+  },
+  "promotion_boundary": {
+    "clock_kl_to_01c_refinement_completion": "PASS_CANDIDATE",
+    "clock_kl_to_01k_numerator_type": "PASS_CANDIDATE",
+    "memoryless_clock_physical_realization": "05D_CONDITIONAL_DOMAIN",
+    "physical_area_selection": "OPEN",
+    "rfc_action_coupling": "OPEN",
+    "mass_scale": "OPEN",
+    "observable_assignment": "OPEN"
+  }
+}
