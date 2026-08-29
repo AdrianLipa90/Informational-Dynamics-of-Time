@@ -1,6 +1,6 @@
 {
   "schema": "IDT_CONTINUUM_PHASE_ONSAGER_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/continuum-phase-gradient-onsager-v0.1",
   "formalism": "formalism/02JM_continuum_phase_gradient_onsager_flow.md",
   "implementation": "src/idt/continuum_phase_onsager.py",
@@ -35,7 +35,24 @@
     "fail_closed_domain_validation"
   ],
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 798,
+    "run_id": 33240736238,
+    "job_id": 99069537428,
+    "tested_head_sha": "a888f8194fe88817a335fe900dfc67c20b981c85",
+    "tested_pr_merge_sha": "053ed77c3ecb1e83f1aafac4d6c86a746b8e8418",
+    "tests_passed": 764,
+    "tests_total": 764,
+    "elapsed_seconds": 19.20
+  },
+  "parent_hosted_lineage": {
+    "temporal_density_current_final_head": "a6d4a71bca87629e9f94688abb0a836d8263df1f",
+    "reference_run_number": 797,
+    "reference_tests_passed": 753,
+    "reference_tests_total": 753,
+    "monograph_pdf_run_number": 37,
+    "status": "PASS"
   },
   "next_gate": "CONTINUUM_MADELUNG_SCHRODINGER_ONSAGER_SPLIT"
 }
