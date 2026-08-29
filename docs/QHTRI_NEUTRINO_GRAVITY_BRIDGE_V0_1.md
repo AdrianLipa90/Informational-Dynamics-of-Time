@@ -1,8 +1,8 @@
-# QHTRI–Neutrino–Gravity Bridge v0.1
+# QHTRI–Neutrino–Gravity Bridge v0.2
 
-**Status:** CANDIDATE_TT_SOURCE_CHAIN  
-**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`  
-**Scope:** typed source admissibility from flavour-Hilbert dynamics through TT projection to a SI-normalized leading far-zone linearized Einstein response.
+**Status:** PHYSICAL_TENSOR_KINEMATIC_CHAIN  
+**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`  
+**Scope:** typed source chain from flavour-Hilbert dynamics through physical ultrarelativistic stress normalization, TT projection, integrated conservation, and SI-normalized leading far-zone linearized Einstein response.
 
 ## Typed chain
 
@@ -11,7 +11,7 @@
 \rightarrow
 \mathrm{neutrino\ flavour/Hilbert\ evolution}
 \rightarrow
-\langle \hat T_{ij}^{(\nu)}\rangle
+T_{\mu\nu}^{(\nu)}
 \xrightarrow{\Pi_{\rm TT}}
 T_{ij}^{\rm TT}
 \rightarrow
@@ -30,7 +30,7 @@ T_{ij}^{\rm TT}
 
 ## 01AJ — TT source gate
 
-The executable gate enforces tracelessness, transversality, nonzero TT norm, projection idempotence, and fail-closed direction validation. For propagation along \(z\), the phase-labelled spin-2 carrier
+For propagation along \(z\), the phase-labelled spin-2 carrier
 
 \[
 Q(\phi)=A
@@ -49,6 +49,8 @@ h_+\propto\cos 2\phi,
 h_\times\propto\sin 2\phi.
 \]
 
+The executable gate enforces tracelessness, transversality, nonzero TT norm, projection idempotence, and fail-closed direction validation.
+
 ## 01AK — flavour-tensor commutator gate
 
 For a time-independent flavour-space tensor operator \(\hat T_{ij}\) and \(\hbar=1\),
@@ -65,8 +67,6 @@ A flavour-central source \(\hat T_{ij}=c_{ij}\mathbb I\) is invariant under inte
 [\hat H_\nu,\hat T_{ij}]\neq0.
 \]
 
-`01AK` verifies an explicit non-central quadrupole reaching the `01AJ` gate.
-
 ## 01AL — ultrarelativistic stream anisotropy gate
 
 The normalized spatial stress shape for positive ultrarelativistic streams is
@@ -81,13 +81,13 @@ Equal tetrahedral streams yield \(S_{ij}=\delta_{ij}/3\) and zero TT projection.
 
 ## 01AM — SI-normalized linearized Einstein response
 
-For a localized source evaluated at one retarded source time, define the integrated spatial stress
+For a localized source evaluated at one retarded source time,
 
 \[
-\mathcal T_{ij}(t_r)=\int T_{ij}(t_r,\mathbf x')\,d^3x'.
+\mathcal T_{ij}(t_r)=\int T_{ij}(t_r,\mathbf x')\,d^3x',
 \]
 
-The leading far-zone linearized response used by the executable gate is
+and the leading far-zone linearized response is
 
 \[
 \boxed{
@@ -98,16 +98,112 @@ h_{ij}^{\rm TT}(t,r)
 }.
 \]
 
-`01AM` checks the exact SI prefactor, dimensionless strain, linear energy scaling, inverse-distance scaling, isotropic/tetrahedral null controls, and a nonzero response for a transverse ultrarelativistic stream.
+`01AM` checks the SI prefactor, dimensionless strain, linear energy scaling, inverse-distance scaling, isotropic/tetrahedral null controls, and nonzero transverse response.
+
+## 01AN — physical ultrarelativistic neutrino stress-energy
+
+Using \(x^0=ct\), a massless directional packet with local energy density \(u_a\) and unit direction \(n_a\) carries
+
+\[
+k_a^\mu=(1,\mathbf n_a),
+\qquad
+T^{\mu\nu}_{(a)}=u_a k_a^\mu k_a^\nu.
+\]
+
+For a discrete source,
+
+\[
+T^{\mu\nu}_{\nu}(x,t)
+=
+\sum_a u_a(x,t)k_a^\mu k_a^\nu,
+\]
+
+and after volume integration,
+
+\[
+\mathcal T^{\mu\nu}_{\nu}
+=
+\sum_a E_a k_a^\mu k_a^\nu.
+\]
+
+Hence
+
+\[
+\mathcal T^{00}=\sum_aE_a,
+\qquad
+\mathcal T^{0i}=\sum_aE_a n_a^i,
+\qquad
+\mathcal T^{ij}=\sum_aE_a n_a^i n_a^j.
+\]
+
+The reference gate verifies the massless trace relation
+
+\[
+\mathcal T^{00}-\sum_i\mathcal T^{ii}=0,
+\]
+
+future-nonspacelike total four-momentum, tetrahedral isotropy, local energy-density normalization, and exact invariance under flavour redistribution that preserves every directional energy total.
+
+## 01AO — conserved phase-quadrupole family
+
+An explicit transverse eight-stream family provides a spin-2 phase carrier while preserving total energy and net momentum.  Define four opposite-pair energies
+
+\[
+W_x=\frac E4+A\cos2\phi,
+\qquad
+W_y=\frac E4-A\cos2\phi,
+\]
+
+\[
+W_{d+}=\frac E4+A\sin2\phi,
+\qquad
+W_{d-}=\frac E4-A\sin2\phi,
+\qquad
+0\le A\le\frac E4.
+\]
+
+Each pair is split equally between opposite directions. Therefore, for every \(\phi\),
+
+\[
+\sum_aE_a=E,
+\qquad
+\sum_aE_a\mathbf n_a=0,
+\]
+
+while the TT coordinates are exactly
+
+\[
+\frac{\mathcal T_{xx}-\mathcal T_{yy}}2=A\cos2\phi,
+\qquad
+\mathcal T_{xy}=A\sin2\phi,
+\]
+
+and
+
+\[
+\|\mathcal T^{\rm TT}\|_F=\sqrt2 A.
+\]
+
+A phase change within this family has
+
+\[
+\frac{dP^\mu}{dt}=0
+\]
+
+at the integrated source level while the quadrupolar stress changes. Thus integrated energy-momentum conservation is compatible with a time-dependent TT source.
 
 ## Current dependency frontier
 
-The Einstein-response normalization is now executable once a physical integrated stress history is supplied. The remaining source-side dependency is
+The next source-side theorem is the local transport law generating the directional redistribution:
 
 \[
 \boxed{
-\mathrm{DERIVE\_QHTRI\_NEUTRINO\_TIME\_DEPENDENT\_PHYSICAL\_}T_{\mu\nu}(x,t)
+\mathrm{QHTRI/Euler}
+\rightarrow
+u\text{-phase-space transport}
+\rightarrow
+\partial_\mu T^{\mu\nu}_{(\nu)}=J^\nu_{\rm exchange}
 }
 \]
 
-with explicit local energy density, flavour/momentum coupling, conservation/exchange current and Bianchi closure. After that binding, the retarded source history can be propagated through `01AM` without an additional gravitational normalization parameter.
+with the closed-sector limit \(J^\nu_{\rm exchange}=0\), causal propagation, and an explicit phase-to-directional-occupation operator. Once this local transport binding is closed, the resulting retarded stress history feeds directly through `01AM`.
