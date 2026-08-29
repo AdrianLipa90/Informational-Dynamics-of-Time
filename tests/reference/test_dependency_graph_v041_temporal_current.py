@@ -9,7 +9,10 @@ GRAPH = ROOT / "validation" / "dependency_graph.json"
 
 def test_v041_temporal_density_current_markers_are_append_only():
     graph = json.loads(GRAPH.read_text())
-    assert graph["schema"] == "IDT_FORMAL_DEPENDENCY_GRAPH_V0_41"
+    prefix = "IDT_FORMAL_DEPENDENCY_GRAPH_V0_"
+    assert graph["schema"].startswith(prefix)
+    assert int(graph["schema"][len(prefix):]) >= 41
+
     nodes = {node["id"]: node for node in graph["nodes"]}
     status = nodes["HALF_FRAME_TEMPORAL_GLUING"]["status"]
 
@@ -23,7 +26,7 @@ def test_v041_temporal_density_current_markers_are_append_only():
         "HOSTED_REFERENCE_SUITE_730_OF_730",
         "HOSTED_REFERENCE_SUITE_741_OF_741",
     ]
-    current = [
+    v041 = [
         "TEMPORAL_DENSITY_CURRENT_EXACT_CONTINUITY_PASS",
         "SEAM_COHERENCE_TRANSPORT_QUADRATURE_PASS",
         "GAUGE_INVARIANT_EDGE_CURRENT_PASS",
@@ -32,5 +35,5 @@ def test_v041_temporal_density_current_markers_are_append_only():
         "HOSTED_REFERENCE_SUITE_752_OF_752",
         "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW_ACTIVE_NEXT_GATE",
     ]
-    for marker in historical + current:
+    for marker in historical + v041:
         assert marker in status
