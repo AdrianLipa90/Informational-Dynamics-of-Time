@@ -1,8 +1,8 @@
-# QHTRI–Neutrino–Gravity Bridge v0.2
+# QHTRI–Neutrino–Gravity Bridge v0.3
 
-**Status:** PHYSICAL_TENSOR_KINEMATIC_CHAIN  
-**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`  
-**Scope:** typed source chain from flavour-Hilbert dynamics through physical ultrarelativistic stress normalization, TT projection, integrated conservation, and SI-normalized leading far-zone linearized Einstein response.
+**Status:** LOCAL_CONSERVATIVE_SOURCE_CHAIN  
+**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`, `01AP`  
+**Scope:** typed source chain from flavour-Hilbert dynamics through physical ultrarelativistic stress normalization, local conservative phase-space redistribution, TT projection, and SI-normalized leading far-zone linearized Einstein response.
 
 ## Typed chain
 
@@ -136,7 +136,7 @@ Hence
 \mathcal T^{ij}=\sum_aE_a n_a^i n_a^j.
 \]
 
-The reference gate verifies the massless trace relation
+The reference gate verifies
 
 \[
 \mathcal T^{00}-\sum_i\mathcal T^{ii}=0,
@@ -146,7 +146,7 @@ future-nonspacelike total four-momentum, tetrahedral isotropy, local energy-dens
 
 ## 01AO — conserved phase-quadrupole family
 
-An explicit transverse eight-stream family provides a spin-2 phase carrier while preserving total energy and net momentum.  Define four opposite-pair energies
+Define four opposite-pair energies
 
 \[
 W_x=\frac E4+A\cos2\phi,
@@ -162,7 +162,7 @@ W_{d-}=\frac E4-A\sin2\phi,
 0\le A\le\frac E4.
 \]
 
-Each pair is split equally between opposite directions. Therefore, for every \(\phi\),
+Each pair is split equally between opposite directions. Therefore
 
 \[
 \sum_aE_a=E,
@@ -170,17 +170,13 @@ Each pair is split equally between opposite directions. Therefore, for every \(\
 \sum_aE_a\mathbf n_a=0,
 \]
 
-while the TT coordinates are exactly
+while
 
 \[
 \frac{\mathcal T_{xx}-\mathcal T_{yy}}2=A\cos2\phi,
 \qquad
 \mathcal T_{xy}=A\sin2\phi,
-\]
-
-and
-
-\[
+\qquad
 \|\mathcal T^{\rm TT}\|_F=\sqrt2 A.
 \]
 
@@ -190,20 +186,76 @@ A phase change within this family has
 \frac{dP^\mu}{dt}=0
 \]
 
-at the integrated source level while the quadrupolar stress changes. Thus integrated energy-momentum conservation is compatible with a time-dependent TT source.
+at the integrated source level while the quadrupolar stress changes.
 
-## Current dependency frontier
+## 01AP — local conservative phase-space transport
 
-The next source-side theorem is the local transport law generating the directional redistribution:
+For fixed massless directions \(k_a^\mu=(1,\mathbf n_a)\), let the local stream energy densities obey
+
+\[
+(\partial_t+c\,\mathbf n_a\cdot\nabla)u_a=C_a.
+\]
+
+Then
+
+\[
+\partial_\mu T^{\mu\nu}
+=
+\frac1c\sum_a k_a^\nu C_a.
+\]
+
+A local redistribution is therefore closed under energy-momentum conservation whenever
 
 \[
 \boxed{
-\mathrm{QHTRI/Euler}
-\rightarrow
-u\text{-phase-space transport}
-\rightarrow
-\partial_\mu T^{\mu\nu}_{(\nu)}=J^\nu_{\rm exchange}
+\sum_a C_a=0,
+\qquad
+\sum_a C_a\mathbf n_a=0.
 }
 \]
 
-with the closed-sector limit \(J^\nu_{\rm exchange}=0\), causal propagation, and an explicit phase-to-directional-occupation operator. Once this local transport binding is closed, the resulting retarded stress history feeds directly through `01AM`.
+For the `01AO` phase family,
+
+\[
+\dot W_x=-2A\sin2\phi\,\dot\phi,
+\qquad
+\dot W_y=+2A\sin2\phi\,\dot\phi,
+\]
+
+\[
+\dot W_{d+}=+2A\cos2\phi\,\dot\phi,
+\qquad
+\dot W_{d-}=-2A\cos2\phi\,\dot\phi.
+\]
+
+Splitting each rate equally across its opposite pair gives, identically,
+
+\[
+\sum_a C_a=0,
+\qquad
+\sum_a C_a\mathbf n_a=0,
+\qquad
+\partial_\mu T^{\mu\nu}=0
+\]
+
+for the homogeneous local collision step. `01AP` also verifies free-streaming closure of the convective derivative and exposes any nonconserving collision as a nonzero exchange four-moment.
+
+## Current dependency frontier
+
+The remaining binding is the microscopic phase-to-redistribution operator that supplies \(A\), \(\phi\), and \(\dot\phi\) from the QHTRI/Euler state:
+
+\[
+\boxed{
+\mathrm{QHTRI/Euler\ state}
+\rightarrow
+(A,\phi,\dot\phi)
+\rightarrow
+C_a
+\rightarrow
+T_{\mu\nu}^{(\nu)}
+\rightarrow
+h_{ij}^{TT}
+}
+\]
+
+The repository may suggest controlled gravitational-wave emission from this completed source chain, yet does not state it as an established result until that microscopic binding is experimentally supported.
