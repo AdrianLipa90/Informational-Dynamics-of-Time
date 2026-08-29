@@ -1,6 +1,6 @@
 {
   "schema": "IDT_FUZZY_TEMPORAL_FRONT_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/fuzzy-temporal-front-propagation-v0.1",
   "formalism": "formalism/02JJ_fuzzy_temporal_front_propagation.md",
   "implementation": "src/idt/fuzzy_temporal_front.py",
@@ -29,6 +29,16 @@
     "spin_half_binding": "OPEN"
   },
   "hosted_ci": {
-    "status": "PENDING"
-  }
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 782,
+    "run_id": 33222191951,
+    "job_id": 99018401201,
+    "tested_head_sha": "866e59f80a64dd9590468e37c8e424b02e44c1d1",
+    "tested_pr_merge_sha": "5ea9e2d59baa72b092e0f8afaafde059c11e633d",
+    "tests_passed": 730,
+    "tests_total": 730,
+    "elapsed_seconds": 17.47
+  },
+  "next_gate": "HALF_FRAME_CONTINUUM_FRONT_LIMIT"
 }
