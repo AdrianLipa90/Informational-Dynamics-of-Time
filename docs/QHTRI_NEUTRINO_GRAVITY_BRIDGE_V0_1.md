@@ -1,15 +1,19 @@
-# QHTRI–Neutrino–Gravity Bridge v0.3
+# QHTRI–Neutrino–Gravity Bridge v0.4
 
-**Status:** LOCAL_CONSERVATIVE_SOURCE_CHAIN  
-**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`, `01AP`  
-**Scope:** typed source chain from flavour-Hilbert dynamics through physical ultrarelativistic stress normalization, local conservative phase-space redistribution, TT projection, and SI-normalized leading far-zone linearized Einstein response.
+**Status:** ROTOR_LAMBDA_LOCAL_CONSERVATIVE_SOURCE_CHAIN  
+**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`, `01AP`, `01AQ`  
+**Scope:** typed source chain from the QHTRI/Euler two-rotor state through Lambda-coupled relative neutrino oscillation phase, physical ultrarelativistic stress normalization, local conservative phase-space redistribution, TT projection, and SI-normalized leading far-zone linearized Einstein response.
 
 ## Typed chain
 
 \[
-\mathrm{QHTRI/Euler\ phase}
+(\theta_+,\theta_-)
 \rightarrow
-\mathrm{neutrino\ flavour/Hilbert\ evolution}
+(\tau,\chi)_{\rm Minkowski\ spin}
+\xrightarrow{\Lambda}
+\phi_\nu
+\rightarrow
+C_a
 \rightarrow
 T_{\mu\nu}^{(\nu)}
 \xrightarrow{\Pi_{\rm TT}}
@@ -204,7 +208,7 @@ Then
 \frac1c\sum_a k_a^\nu C_a.
 \]
 
-A local redistribution is therefore closed under energy-momentum conservation whenever
+A local redistribution is closed under energy-momentum conservation whenever
 
 \[
 \boxed{
@@ -240,22 +244,98 @@ Splitting each rate equally across its opposite pair gives, identically,
 
 for the homogeneous local collision step. `01AP` also verifies free-streaming closure of the convective derivative and exposes any nonconserving collision as a nonzero exchange four-moment.
 
-## Current dependency frontier
+## 01AQ — two rotors, Lambda board, neutrino metronomes
 
-The remaining binding is the microscopic phase-to-redistribution operator that supplies \(A\), \(\phi\), and \(\dot\phi\) from the QHTRI/Euler state:
+The two cylinder/rotor phases are represented by \(\theta_+\) and \(\theta_-\). Their common and differential coordinates are
 
 \[
 \boxed{
-\mathrm{QHTRI/Euler\ state}
+\tau=\frac{\theta_++\theta_-}{2},
+\qquad
+\chi=\frac{\theta_+-\theta_-}{2}
+}
+\]
+
+with the exact Minkowski-form identity
+
+\[
+\boxed{
+\tau^2-\chi^2=\theta_+\theta_-.
+}
+\]
+
+Counter-rotation \((\theta_+,\theta_-)\mapsto(\theta_++\delta,\theta_- -\delta)\) leaves \(\tau\) fixed and advances the spin coordinate \(\chi\mapsto\chi+\delta\).
+
+The Lambda board binds this rotor state to the neutrino carrier by
+
+\[
+\boxed{
+A=\Lambda\frac E4,
+\qquad
+0\le\Lambda\le1,
+}
+\]
+
+\[
+\boxed{
+\phi=\phi_0+g_\tau\tau+g_\chi\chi,
+\qquad
+\dot\phi=g_\tau\dot\tau+g_\chi\dot\chi.
+}
+\]
+
+The canonical pure-spin setting is \(g_\tau=0\), \(g_\chi=1\), hence \(\phi=\phi_0+\chi\). The three neutrino-metronome channels carry relative phase shifts
+
+\[
+\delta\varphi_f=q_f\phi,
+\qquad
+\sum_f q_f=0,
+\]
+
+so the drive lives in relative flavour phase rather than a common \(U(1)\) phase.
+
+Substituting \((A,\phi,\dot\phi)\) into `01AO` and `01AP` gives the directional occupation and collision rates exactly:
+
+\[
+(\theta_+,\theta_-)
 \rightarrow
+(\tau,\chi)
+\xrightarrow{\Lambda}
 (A,\phi,\dot\phi)
+\rightarrow
+C_a.
+\]
+
+`01AQ` verifies the rotor identity, pure counter-rotation, traceless relative flavour drive, positivity bound \(A\le E/4\), exact numerical equality with the `01AO` source tensor, exact equality with the `01AP` transport rates, zero collision four-moment, and the spin-2 coordinates
+
+\[
+T_+^{TT}=A\cos2\chi,
+\qquad
+T_\times^{TT}=A\sin2\chi
+\]
+
+for the canonical pure-spin Lambda board.
+
+## Current dependency frontier
+
+The model-level source chain is now executable as
+
+\[
+\boxed{
+(\theta_+,\theta_-)
+\rightarrow
+(\tau,\chi)_{\rm Minkowski\ spin}
+\xrightarrow{\Lambda}
+\delta\varphi_\nu
 \rightarrow
 C_a
 \rightarrow
 T_{\mu\nu}^{(\nu)}
 \rightarrow
-h_{ij}^{TT}
+h_{ij}^{TT}.
 }
 \]
 
-The repository may suggest controlled gravitational-wave emission from this completed source chain, yet does not state it as an established result until that microscopic binding is experimentally supported.
+The next gate is the physical calibration of the Lambda operator and rotor variables against an experimentally identifiable neutrino interaction/observable, fixing \(\Lambda\), \(g_\tau\), \(g_\chi\), and the relative flavour gains from data rather than convention.
+
+The repository may suggest controlled gravitational-wave emission from this source chain, yet does not state it as an established result until the Lambda/neutrino binding is experimentally supported.
