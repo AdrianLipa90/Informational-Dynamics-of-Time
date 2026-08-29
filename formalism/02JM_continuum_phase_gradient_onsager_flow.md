@@ -1,0 +1,276 @@
+# 02JM — Continuum Gauge-Covariant Phase-Gradient Onsager Flow
+
+Status: `FORMAL_CANDIDATE / CONTINUUM_PHASE_GRADIENT_DESCENT_GATE`
+
+This gate continues the finite half-seam locking architecture into the smooth half-frame continuum established by 02JK/02JL. The evolution parameter is the already-derived intrinsic temporal coordinate `Theta`.
+
+## 1. Continuum phase-gradient energy
+
+Let
+
+\[
+\Psi(x,\Theta)=R(x,\Theta)e^{i\alpha(x,\Theta)},
+\qquad
+\rho=R^2>0,
+\]
+
+and let the admitted one-dimensional connection be `A(x,Theta)`. Define the gauge-covariant phase gradient
+
+\[
+\boxed{
+q:=\partial_x\alpha-A.
+}
+\]
+
+02JK gives the continuum seam-gradient energy. Its phase-only sector is
+
+\[
+\boxed{
+\mathcal E_\phi[\alpha]
+=\int M(x)\rho(x)\,q(x)^2\,dx,
+}
+\]
+
+with `M>0` the inherited mobility/stiffness coefficient.
+
+Under
+
+\[
+\alpha\mapsto\alpha+\chi,
+\qquad
+A\mapsto A+\partial_x\chi,
+\]
+
+`q` and `E_phi` are gauge invariant.
+
+## 2. Functional derivative
+
+For periodic support or boundary conditions that remove the boundary flux term,
+
+\[
+\delta\mathcal E_\phi
+=2\int M\rho q\,\partial_x\delta\alpha\,dx
+=-2\int \partial_x(M\rho q)\,\delta\alpha\,dx.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{\delta\mathcal E_\phi}{\delta\alpha}
+=-2\partial_x\left(M\rho q\right).
+}
+\]
+
+## 3. Onsager phase flow on intrinsic time
+
+Admit a positive scalar phase mobility
+
+\[
+\boxed{\mu>0.}
+\]
+
+and apply the symmetric Onsager response to the phase coordinate,
+
+\[
+\boxed{
+\partial_\Theta\alpha\big|_D
+=-\mu\frac{\delta\mathcal E_\phi}{\delta\alpha}.
+}
+\]
+
+Hence
+
+\[
+\boxed{
+\partial_\Theta\alpha\big|_D
+=2\mu\,\partial_x\left[M\rho(\partial_x\alpha-A)\right].
+}
+\]
+
+This is the smooth phase-locking equation inherited from the half-seam defect sector.
+
+## 4. Exact dissipation identity
+
+Along the phase-only Onsager flow,
+
+\[
+\frac{d\mathcal E_\phi}{d\Theta}
+=\int\frac{\delta\mathcal E_\phi}{\delta\alpha}
+\partial_\Theta\alpha\,dx.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{d\mathcal E_\phi}{d\Theta}
+=-\mu\int
+\left(
+\frac{\delta\mathcal E_\phi}{\delta\alpha}
+\right)^2dx
+\le0.
+}
+\]
+
+The phase-gradient energy is a Lyapunov functional for this phase-only continuum subflow.
+
+## 5. Local density is unchanged by the dissipative phase tangent
+
+The phase-only tangent of the complex state is
+
+\[
+\boxed{
+\partial_\Theta\Psi\big|_D
+=i\left(\partial_\Theta\alpha\big|_D\right)\Psi.
+}
+\]
+
+Consequently
+
+\[
+\boxed{
+\partial_\Theta|\Psi|^2\big|_D
+=2\operatorname{Re}\left(
+\Psi^*\partial_\Theta\Psi\big|_D
+\right)=0.
+}
+\]
+
+Thus the Onsager phase flow rearranges phase gradients while leaving the instantaneous density profile unchanged. The vertex-density continuity law of 02JL remains carried by the Schrödinger current sector.
+
+## 6. Diffusion of the covariant phase gradient
+
+Assume the connection is stationary under the phase-only subflow,
+
+\[
+\partial_\Theta A\big|_D=0.
+\]
+
+Then
+
+\[
+\boxed{
+\partial_\Theta q\big|_D
+=2\mu\,\partial_x^2(M\rho q).
+}
+\]
+
+For constant positive `M rho = c`,
+
+\[
+\boxed{
+\partial_\Theta q
+=2\mu c\,\partial_x^2 q.
+}
+\]
+
+Hence long-wavelength seam mismatch diffuses on the derived intrinsic temporal coordinate.
+
+Using the 02JL continuum current
+
+\[
+\mathcal J=2M\rho q,
+\]
+
+the same constant-coefficient sector gives
+
+\[
+\boxed{
+\partial_\Theta\mathcal J\big|_D
+=2\mu c\,\partial_x^2\mathcal J.
+}
+\]
+
+## 7. Exact periodic finite-volume reference
+
+On a periodic grid with spacing `h`, define edge quantities
+
+\[
+q_n
+=\frac{\alpha_{n+1}-\alpha_n}{h}-A_{n+1/2},
+\qquad
+c_n=M_{n+1/2}\rho_{n+1/2}>0.
+\]
+
+Use
+
+\[
+\boxed{
+E_h
+=h\sum_n c_n q_n^2.
+}
+\]
+
+Its exact derivative with respect to the vertex phase is
+
+\[
+\boxed{
+\frac{\partial E_h}{\partial\alpha_n}
+=2\left(c_{n-1}q_{n-1}-c_nq_n\right).
+}
+\]
+
+The discrete `L2` functional gradient is
+
+\[
+\boxed{
+(\nabla_h E)_n
+=\frac1h\frac{\partial E_h}{\partial\alpha_n}.
+}
+\]
+
+With
+
+\[
+\dot\alpha_n=-\mu(\nabla_h E)_n,
+\]
+
+the discrete dissipation is exact,
+
+\[
+\boxed{
+\frac{dE_h}{d\Theta}
+=-\mu h\sum_n(\nabla_hE_n)^2
+=-\frac\mu h\sum_n
+\left(\frac{\partial E_h}{\partial\alpha_n}\right)^2
+\le0.
+}
+\]
+
+For constant `c`, the edge gradient satisfies the exact discrete diffusion equation
+
+\[
+\boxed{
+\dot q_n
+=2\mu c\,\Delta_hq_n.
+}
+\]
+
+## 8. Relation to finite half-seam locking
+
+For smooth fields the half-frame mismatch obeys
+
+\[
+\delta_n
+=\alpha_{n+1}-\alpha_n-\varphi_n
+=hq_{n+1/2}+O(h^3).
+\]
+
+The finite seam phase contribution
+
+\[
+r_nr_{n+1}\sin^2(\delta_n/2)
+\]
+
+therefore approaches a quadratic `rho q^2` energy density under the 02JK scaling. The present gradient flow is the continuum small-seam limit of the finite periodic locking architecture.
+
+## 9. Evidence boundary and next gate
+
+This gate tests the continuum phase-only Onsager subflow. The combined reversible/dissipative system retains the 02JH balance law rather than an unconditional total monotonicity statement.
+
+The next gate is the full continuum Madelung split: derive the coupled density and phase equations generated by the same gauge-covariant Schrödinger operator, then add the present Onsager phase term and test the resulting transport/locking balance without introducing a second temporal coordinate.
+
+Reference implementation: `src/idt/continuum_phase_onsager.py`.
+Reference tests: `tests/reference/test_continuum_phase_onsager.py`.
+Validation receipt: `validation/CONTINUUM_PHASE_ONSAGER_V0_1.json`.
