@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_SEAM_PHASE_OFFSET_INTRINSIC_DURATION_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/seam-phase-offset-intrinsic-duration-v0.1",
+  "formalism": "formalism/02JK_seam_phase_offset_intrinsic_duration.md",
+  "implementation": "src/idt/seam_phase_offset_intrinsic_duration.py",
+  "tests": "tests/reference/test_seam_phase_offset_intrinsic_duration.py",
+  "inputs": [
+    "02JJ_TEMPORAL_SEAM_CURVATURE_RESPONSE",
+    "02JF_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION",
+    "05C_RELATIONAL_LAPSE_INTERFACE"
+  ],
+  "derived_relations": {
+    "reference_phase_clock": "dPhi_R = Omega_R dTheta; Omega_R > 0",
+    "signed_offset_rate": "eta_e = F_Theta,e / Omega_R",
+    "intrinsic_offset_one_form": "dTheta_off,e = (F_Theta,e / Omega_R) dTheta",
+    "intrinsic_offset": "DeltaTheta_off,e = integral (F_Theta,e / Omega_R) dTheta",
+    "constant_reference_reduction": "DeltaTheta_off,e = DeltaPhi_curv,e / Omega_R",
+    "information_rate_form": "eta_e = kappa F_Theta,e / Gamma_I,R^(Theta)",
+    "coordinate_clock_offset": "Delta t_off,e = integral T_R F_Theta,e/Omega_R dTheta",
+    "proper_clock_offset": "Delta tau_hat_off = integral N_R T_R F_Theta,e/Omega_R dTheta",
+    "integer_winding_control": "DeltaPhi_curv=2pi m => DeltaTheta_off=m(2pi/Omega_R) for constant Omega_R"
+  },
+  "declared_gates": [
+    "signed_phase_rate_ratio",
+    "intrinsic_offset_normalization_control",
+    "gauge_invariant_offset_from_gauge_invariant_inputs",
+    "interval_additivity",
+    "constant_reference_phase_rate_reduction",
+    "information_rate_identity",
+    "clock_calibration_composition",
+    "relational_lapse_composition",
+    "integer_winding_period_control",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "reference_phase_clock": "EXPLICIT_COORDINATE_INPUT",
+    "frame_budget_to_curvature_winding_binding": "SEPARATE_TYPED_GATE",
+    "observational_clock_offset_protocol": "DOWNSTREAM_EVIDENCE_GATE",
+    "spacetime_transport_binding": "DOWNSTREAM_RELATIVISTIC_GATE"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
