@@ -1,0 +1,76 @@
+{
+  "schema": "IDT_TEMPORAL_DENSITY_CURRENT_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/continuum-temporal-density-current-v0.1",
+  "formalism": "formalism/02JL_temporal_density_current_continuity.md",
+  "implementation": "src/idt/temporal_density_current.py",
+  "tests": "tests/reference/test_temporal_density_current.py",
+  "discrete_identities": {
+    "hamiltonian": "H_h = h^-2 D_L^dagger diag(M) D_L + V_real_diagonal",
+    "edge_current": "j_(n+1/2) = 2 M_n h^-2 Im(a_n^* L_n^* a_(n+1))",
+    "continuity": "D_Theta |a_n|^2 = j_(n-1/2)-j_(n+1/2)",
+    "norm_conservation": "D_Theta sum_n |a_n|^2 = 0"
+  },
+  "seam_quadratures": {
+    "pair_scale": "C_n = r_n r_(n+1)",
+    "coherence": "Ccal_n = C_n cos(delta_n)",
+    "transport": "Qcal_n = C_n sin(delta_n)",
+    "circle": "Ccal_n^2 + Qcal_n^2 = C_n^2",
+    "fuzzy_mass": "J_n = C_n + Ccal_n",
+    "current": "j_(n+1/2) = 2 M_n Qcal_n / h^2"
+  },
+  "continuum_limit": {
+    "density": "|a_n|^2/h -> |Psi|^2",
+    "current": "j_(n+1/2) -> 2 M Im(Psi^* D_A Psi)",
+    "polar_current": "Jcal = 2 M R^2 (partial_x alpha - A)",
+    "continuity": "partial_Theta |Psi|^2 + partial_x Jcal = 0",
+    "current_convergence": "SECOND_ORDER_PASS"
+  },
+  "onsager_coupling": {
+    "phase_tangent": "D_Theta a_n|D = i alpha_dot_n^D a_n",
+    "vertex_density_derivative": "D_Theta |a_n|^2|D = 0",
+    "combined_density_balance": "inherited from Schrodinger edge-current continuity",
+    "seam_energy_balance": "D_Theta V_seam = P_H - D_alpha"
+  },
+  "declared_gates": [
+    "exact_finite_path_continuity",
+    "exact_boundary_telescope_norm_conservation",
+    "gauge_invariant_edge_current",
+    "seam_quadrature_circle_identity",
+    "phase_only_vertex_density_invariance",
+    "second_order_continuum_current_convergence",
+    "fail_closed_domain_validation"
+  ],
+  "hosted_ci_lineage": [
+    {
+      "workflow": "Reference suite",
+      "run_number": 792,
+      "run_id": 33222941834,
+      "job_id": 99020674478,
+      "tested_head_sha": "04bc5e7916fcc91674435bd241c6b2e2c615f0ad",
+      "tests_passed": 752,
+      "tests_total": 752,
+      "elapsed_seconds": 13.59,
+      "status": "PASS"
+    },
+    {
+      "workflow": "Reference suite",
+      "run_number": 796,
+      "run_id": 33223110227,
+      "job_id": 99021184983,
+      "tested_head_sha": "4e2688f0d921b51ff125adde57363dad888c7b94",
+      "tested_pr_merge_sha": "f230bb8e21f725868bc4849b40287b8f0e415dcd",
+      "tests_passed": 753,
+      "tests_total": 753,
+      "elapsed_seconds": 15.03,
+      "status": "PASS"
+    }
+  ],
+  "monograph_pdf": {
+    "workflow_run_number": 36,
+    "run_id": 33223110300,
+    "tested_head_sha": "4e2688f0d921b51ff125adde57363dad888c7b94",
+    "status": "PASS"
+  },
+  "next_gate": "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW"
+}
