@@ -1,6 +1,6 @@
 # 02JK — Seam Curvature Phase Offset to Intrinsic Duration
 
-Status: `FORMAL_CANDIDATE / REFERENCE_PHASE_CLOCK_NORMALIZATION_GATE`
+Status: `ALGEBRAIC_REFERENCE_PASS / REFERENCE_PHASE_CLOCK_NORMALIZATION_PASS`
 
 02JJ supplies the gauge-invariant temporal seam curvature
 
@@ -27,23 +27,19 @@ and its accumulated phase offset
 Let `R` denote an admitted reference phase clock on the interval. Its intrinsic phase one-form is
 
 \[
-\boxed{
-d\Phi_R=\Omega_R(\Theta)\,d\Theta,}
+\boxed{d\Phi_R=\Omega_R(\Theta)\,d\Theta,}
 \]
 
 with
 
 \[
-\boxed{
-\Omega_R(\Theta)>0.
-}
+\boxed{\Omega_R(\Theta)>0.}
 \]
 
 The reference-clock identity is part of the coordinate type. The TIR/IDT normalization bridge supplies the structural form
 
 \[
-\Omega_R
-=\frac{d\Phi_R}{d\Theta}.
+\Omega_R=\frac{d\Phi_R}{d\Theta}.
 \]
 
 ## 2. Signed intrinsic temporal-offset rate
@@ -52,19 +48,14 @@ Both `F_Theta,e` and `Omega_R` are phase rates with respect to the same intrinsi
 
 \[
 \boxed{
-\eta_e(\Theta)
-:=\frac{F_{\Theta e}}{\Omega_R(\Theta)}.
+\eta_e(\Theta):=\frac{F_{\Theta e}}{\Omega_R(\Theta)}.
 }
 \]
 
 The corresponding intrinsic temporal-offset one-form is
 
 \[
-\boxed{
-d\Theta_e^{\rm off}
-:=\eta_e\,d\Theta
-=\frac{F_{\Theta e}}{\Omega_R}\,d\Theta.
-}
+\boxed{d\Theta_e^{\rm off}:=\eta_e\,d\Theta=\frac{F_{\Theta e}}{\Omega_R}\,d\Theta.}
 \]
 
 Hence the accumulated intrinsic offset is
@@ -96,20 +87,13 @@ For an admitted gauge-invariant reference intrinsic phase clock,
 Therefore
 
 \[
-\boxed{
-\eta'_e=\eta_e,
-\qquad
-(d\Theta_e^{\rm off})'=d\Theta_e^{\rm off},
-}
+\boxed{\eta'_e=\eta_e,\qquad(d\Theta_e^{\rm off})'=d\Theta_e^{\rm off},}
 \]
 
 and
 
 \[
-\boxed{
-(\Delta\Theta_e^{\rm off})'
-=\Delta\Theta_e^{\rm off}.
-}
+\boxed{(\Delta\Theta_e^{\rm off})'=\Delta\Theta_e^{\rm off}.}
 \]
 
 The construction therefore inherits the time-dependent gauge closure of 02JJ.
@@ -125,8 +109,7 @@ F_{\Theta e}=\Omega_R,
 then
 
 \[
-\boxed{
-d\Theta_e^{\rm off}=d\Theta.}
+\boxed{d\Theta_e^{\rm off}=d\Theta.}
 \]
 
 More generally, if
@@ -138,9 +121,7 @@ F_{\Theta e}=c\,\Omega_R
 for constant signed ratio `c`, then
 
 \[
-\boxed{
-\Delta\Theta_e^{\rm off}=c\,\Delta\Theta.
-}
+\boxed{\Delta\Theta_e^{\rm off}=c\,\Delta\Theta.}
 \]
 
 This fixes the local conversion without an additional normalization coefficient.
@@ -156,19 +137,13 @@ For constant intrinsic reference phase rate
 02JJ's accumulated curvature phase gives
 
 \[
-\boxed{
-\Delta\Theta_e^{\rm off}
-=\frac{\Delta\Phi_e^{\rm curv}}{\Omega_R}.
-}
+\boxed{\Delta\Theta_e^{\rm off}=\frac{\Delta\Phi_e^{\rm curv}}{\Omega_R}.}
 \]
 
 Define the intrinsic reference phase period
 
 \[
-\boxed{
-P_R^{(\Theta)}
-:=\frac{2\pi}{\Omega_R}.
-}
+\boxed{P_R^{(\Theta)}:=\frac{2\pi}{\Omega_R}.}
 \]
 
 If an independently admitted closed curvature sector carries
@@ -181,10 +156,7 @@ If an independently admitted closed curvature sector carries
 then
 
 \[
-\boxed{
-\Delta\Theta_e^{\rm off}
-=mP_R^{(\Theta)}.
-}
+\boxed{\Delta\Theta_e^{\rm off}=mP_R^{(\Theta)}.}
 \]
 
 Thus a closed integer curvature winding corresponds to an integer number of periods of the explicitly selected intrinsic reference phase clock.
@@ -207,21 +179,13 @@ The TIR/IDT bridge gives
 Therefore
 
 \[
-\boxed{
-\eta_e
-=\frac{\kappa F_{\Theta e}}
-{\Gamma_{\mathcal I,R}^{(\Theta)}}.
-}
+\boxed{\eta_e=\frac{\kappa F_{\Theta e}}{\Gamma_{\mathcal I,R}^{(\Theta)}}.}
 \]
 
 Equivalently,
 
 \[
-\boxed{
-d\Theta_e^{\rm off}
-=\frac{\kappa F_{\Theta e}}
-{\Gamma_{\mathcal I,R}^{(\Theta)}}d\Theta.
-}
+\boxed{d\Theta_e^{\rm off}=\frac{\kappa F_{\Theta e}}{\Gamma_{\mathcal I,R}^{(\Theta)}}d\Theta.}
 \]
 
 This is exactly the same intrinsic offset coordinate written through the information-rate channel.
