@@ -18,6 +18,7 @@ def test_full_schrodinger_onsager_balance_markers_are_append_only():
         "HOSTED_REFERENCE_SUITE_667_OF_667",
         "HOSTED_REFERENCE_SUITE_668_OF_668",
         "HOSTED_REFERENCE_SUITE_686_OF_686",
+        "HOSTED_REFERENCE_SUITE_701_OF_701",
         "FULL_SCHRODINGER_ONSAGER_BALANCE_ACTIVE_NEXT_GATE",
     ]:
         assert historical in status
@@ -29,7 +30,7 @@ def test_full_schrodinger_onsager_balance_markers_are_append_only():
         "FULL_NORM_PRESERVATION_PASS",
         "COMMUTING_SECTOR_PURE_DESCENT_PASS",
         "ZETA_COLLATZ_SEAM_TRANSFER_DIAGNOSTIC_PASS",
-        "HOSTED_REFERENCE_SUITE_701_OF_701",
+        "HOSTED_REFERENCE_SUITE_702_OF_702",
         "MOVING_SEAM_CONNECTION_WORK_ACTIVE_NEXT_GATE",
     ]:
         assert admitted in status
