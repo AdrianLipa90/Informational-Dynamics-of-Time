@@ -191,6 +191,113 @@ c_{\rm eff}^2=M_{\rm eff},
 \]
 Reference convergence tests verify second-order midpoint convergence of both the glued density and the covariant-gradient density, together with exact discrete gauge invariance.
 
+\section{Temporal density current}
+
+On the same phase-aware frame path, define the finite-mesh Hamiltonian
+\[
+\boxed{
+H_h
+=\frac1{h^2}D_L^\dagger\operatorname{diag}(M_e)D_L+V,
+}
+\]
+where $V$ is real and diagonal, and evolve the frame state with intrinsic time,
+\[
+\boxed{
+i\frac{da}{d\Theta}=H_ha.}
+\]
+For vertex occupation $p_n=|a_n|^2$, the oriented seam current is
+\[
+\boxed{
+j_{n+1/2}^{(h)}
+=\frac{2M_n}{h^2}
+\operatorname{Im}\!\left(a_n^*L_n^*a_{n+1}\right).
+}
+\]
+The exact finite continuity identity is
+\[
+\boxed{
+\frac{dp_n}{d\Theta}
+=j_{n-1/2}^{(h)}-j_{n+1/2}^{(h)}.
+}
+\]
+Open boundary currents vanish, so summation over vertices gives exact conservation of the total frame norm.
+
+Writing
+\[
+a_n=r_ne^{i\alpha_n},
+\qquad
+\delta_n=\alpha_{n+1}-\alpha_n-\varphi_n,
+\]
+let
+\[
+C_n=r_nr_{n+1}.
+\]
+The seam phase resolves into the two quadratures
+\[
+\boxed{
+\mathcal C_n=C_n\cos\delta_n,
+\qquad
+\mathcal Q_n=C_n\sin\delta_n,
+}
+\]
+which satisfy
+\[
+\boxed{
+\mathcal C_n^2+\mathcal Q_n^2=C_n^2.
+}
+\]
+The fuzzy-interface mass and transport current are then
+\[
+\boxed{
+J_n=C_n+\mathcal C_n,
+\qquad
+j_{n+1/2}^{(h)}=\frac{2M_n}{h^2}\mathcal Q_n.
+}
+\]
+Thus the cosine quadrature carries constructive seam coherence while the sine quadrature carries directed transport through the same gauge-invariant phase mismatch.
+
+Under the smooth sampling $a_n=\sqrt h\,\Psi(x_n,\Theta)$ and the edge connection used above,
+\[
+\boxed{
+j_{n+1/2}^{(h)}
+\longrightarrow
+\mathcal J
+=2M\operatorname{Im}(\Psi^*D_A\Psi).
+}
+\]
+For $\Psi=Re^{i\alpha}$,
+\[
+\boxed{
+\mathcal J
+=2MR^2(\partial_x\alpha-A).
+}
+\]
+Together with $|a_n|^2/h\to|\Psi|^2$, the finite continuity identity gives the continuum law
+\[
+\boxed{
+\partial_\Theta|\Psi|^2+\partial_x\mathcal J=0.
+}
+\]
+
+The phase-only Onsager tangent has the form
+\[
+\left.\frac{da_n}{d\Theta}\right|_D
+=i\dot\alpha_n^{(D)}a_n,
+\]
+and therefore preserves every vertex occupation exactly.  The combined temporal-wave architecture consequently carries two complementary balance laws:
+\[
+\boxed{
+\partial_\Theta|\Psi|^2+\partial_x\mathcal J=0
+}
+\]
+for density transport, and
+\[
+\boxed{
+\frac{dV_{\rm seam}}{d\Theta}=P_H-D_\alpha
+}
+\]
+for seam coherence energy.  Reference tests verify exact finite-path continuity, gauge-invariant edge current, the seam-quadrature circle identity, phase-only density invariance and second-order convergence of the discrete current to its continuum form.
+
 \section{Holonomy shift}
 
 For total closed-cell phase $\phi$ and Bloch phase $\theta$, the tested heterogeneous branch depends on the shifted wave number
