@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_DENSITY_QUANTILE_FRONT_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/temporal-density-quantile-front-now-coupling-v0.1",
   "formalism": "formalism/02JO_temporal_density_quantile_front_now_coupling.md",
   "implementation": "src/idt/temporal_density_quantile_front.py",
@@ -38,6 +38,17 @@
     "concurrent_case": "branch-indexed quantile markers for NOW antichain"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 809,
+    "run_id": 33241633629,
+    "job_id": 99071869031,
+    "tested_head_sha": "65d71251ec922dbd5cb348a7514aa344af2d39f4",
+    "tested_merge_sha": "e91cc3a1225fd401e1eff11e40f8c9846f259d5b",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 794,
+    "tests_total": 794,
+    "elapsed_seconds": 20.14
   }
 }
