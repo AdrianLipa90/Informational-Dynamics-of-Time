@@ -48,15 +48,20 @@
   "hosted_ci": {
     "status": "PASS",
     "workflow": "Reference suite",
-    "run_number": 817,
-    "run_id": 33241915106,
-    "job_id": 99072594191,
-    "tested_head_sha": "eb5101ab7c47afd547c8c98af136e05ca0e3d101",
-    "tested_pr_merge_sha": "d30c9177128311d6f4505980d6ff12c51bc5d627",
+    "run_number": 821,
+    "run_id": 33241989857,
+    "job_id": 99072786032,
+    "tested_head_sha": "991c450ec31b76f289610b14c51388688ca55728",
+    "tested_pr_merge_sha": "b18615f88842fddf4dcd90c868a5fb2644772dd5",
     "python": "3.12.14",
     "os": "Ubuntu 24.04.4",
-    "tests_passed": 701,
-    "tests_total": 701,
-    "elapsed_seconds": 14.89
+    "tests_passed": 702,
+    "tests_total": 702,
+    "elapsed_seconds": 19.51,
+    "previous_hosted_pass": {
+      "run_number": 817,
+      "tests_passed": 701,
+      "tests_total": 701
+    }
   }
 }
