@@ -15,6 +15,7 @@ from idt.moving_seam_connection_work import (
     time_dependent_gauge_transform,
 )
 from idt.schrodinger_onsager_seam_balance import (
+    SchrodingerOnsagerBalanceError,
     onsager_dissipation,
     schrodinger_seam_power,
     seam_defect_energy,
