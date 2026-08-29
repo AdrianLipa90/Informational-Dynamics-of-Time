@@ -1,0 +1,16 @@
+{
+  "schema": "IDT_LOCAL_CLOCK_RELATIVE_ENTROPY_V0_1",
+  "status": "CANDIDATE_PENDING_HOSTED_CI",
+  "parent_surfaces": [
+    "formalism/00E_activity_derived_temporal_primitive.md",
+    "formalism/05C_relational_lapse_interface.md"
+  ],
+  "realization_gate": "LOCAL_CONSTANT_ACTIVITY_MEMORYLESS_CLOCK",
+  "exact_generator": "Phi(N)=N-1-ln(N)",
+  "reverse_generator": "Phi(1/N)=1/N-1+ln(N)",
+  "jeffreys": "N+1/N-2",
+  "fisher_metric": "1/N^2",
+  "reparameterization_invariance": "COMMON_POSITIVE_ACTIVITY_SCALE_EXACT",
+  "energy_binding": "DOWNSTREAM_OPEN",
+  "physical_memoryless_hazard_binding": "OPEN_MODEL_EMPIRICAL_GATE"
+}
