@@ -1,0 +1,47 @@
+{
+  "schema": "IDT_TEMPORAL_DENSITY_CURRENT_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/continuum-temporal-density-current-v0.1",
+  "formalism": "formalism/02JL_temporal_density_current_continuity.md",
+  "implementation": "src/idt/temporal_density_current.py",
+  "tests": "tests/reference/test_temporal_density_current.py",
+  "discrete_identities": {
+    "hamiltonian": "H_h = h^-2 D_L^dagger diag(M) D_L + V_real_diagonal",
+    "edge_current": "j_(n+1/2) = 2 M_n h^-2 Im(a_n^* L_n^* a_(n+1))",
+    "continuity": "D_Theta |a_n|^2 = j_(n-1/2)-j_(n+1/2)",
+    "norm_conservation": "D_Theta sum_n |a_n|^2 = 0"
+  },
+  "seam_quadratures": {
+    "pair_scale": "C_n = r_n r_(n+1)",
+    "coherence": "Ccal_n = C_n cos(delta_n)",
+    "transport": "Qcal_n = C_n sin(delta_n)",
+    "circle": "Ccal_n^2 + Qcal_n^2 = C_n^2",
+    "fuzzy_mass": "J_n = C_n + Ccal_n",
+    "current": "j_(n+1/2) = 2 M_n Qcal_n / h^2"
+  },
+  "continuum_limit": {
+    "density": "|a_n|^2/h -> |Psi|^2",
+    "current": "j_(n+1/2) -> 2 M Im(Psi^* D_A Psi)",
+    "polar_current": "Jcal = 2 M R^2 (partial_x alpha - A)",
+    "continuity": "partial_Theta |Psi|^2 + partial_x Jcal = 0"
+  },
+  "onsager_coupling": {
+    "phase_tangent": "D_Theta a_n|D = i alpha_dot_n^D a_n",
+    "vertex_density_derivative": "D_Theta |a_n|^2|D = 0",
+    "combined_density_balance": "inherited from Schrodinger edge-current continuity",
+    "seam_energy_balance": "D_Theta V_seam = P_H - D_alpha"
+  },
+  "declared_gates": [
+    "exact_finite_path_continuity",
+    "exact_boundary_telescope_norm_conservation",
+    "gauge_invariant_edge_current",
+    "seam_quadrature_circle_identity",
+    "phase_only_vertex_density_invariance",
+    "second_order_continuum_current_convergence",
+    "fail_closed_domain_validation"
+  ],
+  "hosted_ci": {
+    "status": "PENDING"
+  },
+  "next_gate": "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW"
+}
