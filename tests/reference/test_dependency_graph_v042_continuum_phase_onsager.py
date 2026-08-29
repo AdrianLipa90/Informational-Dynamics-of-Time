@@ -11,8 +11,17 @@ def _nodes():
     return {node["id"]: node for node in json.loads(GRAPH.read_text())["nodes"]}
 
 
-def test_continuum_phase_onsager_gate_is_not_prematurely_promoted():
+def test_continuum_phase_onsager_gate_is_admitted_after_hosted_pass():
     nodes = _nodes()
     half_status = nodes["HALF_FRAME_TEMPORAL_GLUING"]["status"]
-    # Before hosted admission, the new continuum Onsager gate remains receipt-local.
-    assert "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW_PASS" not in half_status
+    for marker in [
+        "HOSTED_REFERENCE_SUITE_752_OF_752",
+        "HOSTED_REFERENCE_SUITE_753_OF_753",
+        "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW_PASS",
+        "CONTINUUM_PHASE_ENERGY_LYAPUNOV_PASS",
+        "GAUGE_COVARIANT_PHASE_GRADIENT_DIFFUSION_PASS",
+        "PHASE_ONLY_POINTWISE_DENSITY_INVARIANCE_PASS",
+        "HOSTED_REFERENCE_SUITE_764_OF_764",
+        "CONTINUUM_MADELUNG_SCHRODINGER_ONSAGER_SPLIT_ACTIVE_NEXT_GATE",
+    ]:
+        assert marker in half_status
