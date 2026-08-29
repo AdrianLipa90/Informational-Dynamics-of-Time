@@ -1,0 +1,43 @@
+{
+  "schema": "IDT_CONTINUUM_MADELUNG_ONSAGER_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/continuum-madelung-schrodinger-onsager-v0.1",
+  "formalism": "formalism/02JN_continuum_madelung_schrodinger_onsager_split.md",
+  "implementation": "src/idt/continuum_madelung_onsager.py",
+  "tests": "tests/reference/test_continuum_madelung_onsager.py",
+  "reversible_split": {
+    "density": "rho_Theta|H = -2 partial_x(M rho q)",
+    "phase": "alpha_Theta|H = partial_x(M R_x)/R - M q^2 - V",
+    "current": "J = 2 M rho q"
+  },
+  "onsager_split": {
+    "density": "rho_Theta|D = 0",
+    "phase": "alpha_Theta|D = 2 mu partial_x(M rho q) = -mu rho_Theta"
+  },
+  "combined_identity": "alpha_Theta + mu rho_Theta = partial_x(M R_x)/R - M q^2 - V",
+  "constant_m_current_velocity": {
+    "velocity": "u = J/rho = 2 M q",
+    "continuity": "rho_Theta + partial_x(rho u) = 0",
+    "velocity_balance": "u_Theta + u u_x = 2 M^2 partial_x(R_xx/R) - 2 M V_x + 2 mu M partial_x^2(rho u)"
+  },
+  "linearized_uniform_background": {
+    "density_equation": "delta_rho_Theta + rho0 delta_u_x = 0",
+    "velocity_equation": "delta_u_Theta = (M^2/rho0) delta_rho_xxx + 2 mu M rho0 delta_u_xx",
+    "density_mode_equation": "delta_rho_ThetaTheta + M^2 delta_rho_xxxx - 2 mu M rho0 delta_rho_Theta_xx = 0",
+    "characteristic": "s^2 + 2 mu M rho0 k^2 s + M^2 k^4 = 0"
+  },
+  "declared_gates": [
+    "exact_density_flux_identity",
+    "exact_compact_phase_density_balance",
+    "spatial_gauge_reexpression_invariance",
+    "constant_m_current_velocity_crosswalk",
+    "quadratic_schrodinger_dispersion_recovery",
+    "nonpositive_linear_growth_under_positive_onsager_mobility",
+    "exact_linear_characteristic_polynomial",
+    "fail_closed_domain_validation"
+  ],
+  "hosted_ci": {
+    "status": "PENDING"
+  },
+  "next_gate": "TEMPORAL_WAVE_LINEAR_MODE_AND_NOW_FRONTIER_COUPLING"
+}
