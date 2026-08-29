@@ -1,0 +1,45 @@
+{
+  "schema": "IDT_MOVING_SEAM_CONNECTION_WORK_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/moving-seam-connection-work-v0.1",
+  "formalism": "formalism/02JI_moving_seam_connection_work.md",
+  "implementation": "src/idt/moving_seam_connection_work.py",
+  "tests": "tests/reference/test_moving_seam_connection_work.py",
+  "inputs": [
+    "02JH_FULL_SCHRODINGER_ONSAGER_SEAM_BALANCE",
+    "02JD_PHASE_AWARE_HALF_SEAM",
+    "00E_ACTIVITY_DERIVED_INTRINSIC_THETA"
+  ],
+  "derived_relations": {
+    "connection_rate": "Omega_phi,e = D_Theta phi_e",
+    "connection_gradient": "q_conn,e = dV_seam/dphi_e = Im(exp(i phi_e) a_e a_(e+1)^*)/2",
+    "connection_work": "P_conn = q_conn^T Omega_phi = psi^dagger (D_Theta K_phi) psi",
+    "geometric_power": "P_geom = P_Sch + P_conn",
+    "moving_balance": "dV_seam/dTheta = P_geom - D_O",
+    "time_dependent_gauge_hamiltonian": "H' = U H U^dagger + i (D_Theta U) U^dagger",
+    "time_dependent_gauge_seam_rate": "Omega_phi' = Omega_phi + edge_gradient(D_Theta chi)",
+    "gauge_closed_power": "P_geom' = P_geom",
+    "phase_offset": "Delta phi_e = integral Omega_phi,e dTheta"
+  },
+  "declared_gates": [
+    "connection_gradient_finite_difference",
+    "connection_work_operator_identity",
+    "seam_stiffness_rate_finite_difference",
+    "combined_conservative_power_finite_difference",
+    "time_dependent_gauge_split_mixing",
+    "time_dependent_gauge_conservative_power_invariance",
+    "time_dependent_gauge_full_balance_invariance",
+    "zero_connection_rate_fixed_gate_reduction",
+    "bidirectional_connection_work",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "connection_rate_equation": "OPEN_NEXT_GATE",
+    "phase_offset_to_clock_offset": "SEPARATE_DOWNSTREAM_GATE",
+    "measured_connection_rate": "SEPARATE_EVIDENCE_GATE",
+    "spacetime_transport": "DOWNSTREAM"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
