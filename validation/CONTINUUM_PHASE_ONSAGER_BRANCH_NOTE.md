@@ -1,0 +1,1 @@
+Branch scope: continuum gauge-covariant phase-gradient Onsager flow over the derived intrinsic temporal coordinate Theta. This note carries no additional scientific claim beyond 02JM and the JSON receipt.
