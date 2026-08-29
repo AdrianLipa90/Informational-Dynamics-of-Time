@@ -2,8 +2,8 @@
 """Run the IDT reference suite and emit an FPDG failure receipt on failure.
 
 The original pytest exit status is preserved. Coordinates come from pytest plus explicit
-IDT-owned test-to-claim bindings. Unmapped tests remain exact test coordinates and are
-never assigned a guessed FPDG claim.
+IDT-owned test-to-claim and/or test-to-interface bindings. Unmapped tests remain exact
+test coordinates and are never assigned a guessed FPDG claim or interface.
 """
 
 from __future__ import annotations
@@ -48,8 +48,17 @@ def load_bindings() -> dict[str, dict[str, Any]]:
         if not isinstance(path, str) or not path or not isinstance(row, dict):
             raise BindingError("invalid binding entry")
         claim_id = row.get("claim_id")
-        if not isinstance(claim_id, str) or not claim_id.startswith("IDT."):
+        interface_id = row.get("interface_id")
+        if claim_id is not None and (
+            not isinstance(claim_id, str) or not claim_id.startswith("IDT.")
+        ):
             raise BindingError(f"{path}: invalid IDT claim_id")
+        if interface_id is not None and (
+            not isinstance(interface_id, str) or not interface_id.startswith("IFACE.")
+        ):
+            raise BindingError(f"{path}: invalid interface_id")
+        if claim_id is None and interface_id is None:
+            raise BindingError(f"{path}: claim_id or interface_id required")
         out[path] = row
     return out
 
@@ -124,7 +133,15 @@ class FpdgFailurePlugin:
             "evidence_refs": refs,
         }
         if binding is not None:
-            row["claim_id"] = binding["claim_id"]
+            claim_id = binding.get("claim_id")
+            interface_id = binding.get("interface_id")
+            if isinstance(claim_id, str):
+                row["claim_id"] = claim_id
+            if isinstance(interface_id, str):
+                locator["interface_id"] = interface_id
+                refs.append(f"fpdg-interface:{interface_id}")
+                if not isinstance(claim_id, str):
+                    row["kind"] = "CROSS_REPO_CONTRACT_FAILURE"
             claim_source = binding.get("claim_source")
             if isinstance(claim_source, str) and claim_source:
                 refs.append(f"claim-source:{claim_source}")
@@ -158,7 +175,7 @@ class FpdgFailurePlugin:
             "binding_schema": "IDT_FPDG_FAILURE_BINDINGS_V0_1",
             "coordinate_semantics": (
                 "source_locator is the exact pytest-observed failure/test coordinate; "
-                "claim_id and claim-source refs provide the FPDG scientific graph anchor"
+                "claim_id and/or interface_id are explicit source-owned FPDG anchors"
             ),
         }
         RECEIPT_PATH.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
