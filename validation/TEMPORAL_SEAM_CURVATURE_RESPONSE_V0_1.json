@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_SEAM_CURVATURE_RESPONSE_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "status": "ALGEBRAIC_REFERENCE_PASS / FINAL_HEAD_CONFORMANCE_PASS",
   "branch": "feat/temporal-seam-curvature-response-v0.1",
   "formalism": "formalism/02JJ_temporal_seam_curvature_response.md",
   "implementation": "src/idt/temporal_seam_curvature_response.py",
@@ -45,16 +45,16 @@
   "hosted_ci": {
     "status": "PASS",
     "workflow": "Reference suite",
-    "run_number": 846,
-    "run_id": 33245199472,
-    "job_id": 99081360162,
-    "tested_head_sha": "1d4d32ebcaae1524758587c569af8a4e10afb6bc",
-    "tested_pr_merge_sha": "6cf2c7d1d840225380a8e486bd47ea9760e412b2",
+    "run_number": 849,
+    "run_id": 33245306095,
+    "job_id": 99081635532,
+    "tested_head_sha": "c449a55c6f3cf5f30e6a8e17dd855cf4c1f333e4",
+    "tested_pr_merge_sha": "fb8ebe666693cc5bbda67fe04325047b9c5c88e9",
     "python": "3.12.14",
     "os": "Ubuntu 24.04.4",
-    "tests_passed": 734,
-    "tests_total": 734,
-    "elapsed_seconds": 15.27
+    "tests_passed": 735,
+    "tests_total": 735,
+    "elapsed_seconds": 19.29
   },
   "prior_hosted_attempts": [
     {
@@ -64,6 +64,15 @@
       "tests_passed": 728,
       "failures": 6,
       "cause": "fail-closed parametrization referenced MovingSeamConnectionError before importing it; equations and non-harness tests passed"
+    },
+    {
+      "run_number": 846,
+      "run_id": 33245199472,
+      "status": "IMPLEMENTATION_PASS",
+      "tests_passed": 734,
+      "tests_total": 734,
+      "elapsed_seconds": 15.27,
+      "tested_head_sha": "1d4d32ebcaae1524758587c569af8a4e10afb6bc"
     }
   ]
 }
