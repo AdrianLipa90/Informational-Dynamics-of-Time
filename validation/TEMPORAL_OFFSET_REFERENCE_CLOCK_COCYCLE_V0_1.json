@@ -1,0 +1,44 @@
+{
+  "schema": "IDT_TEMPORAL_OFFSET_REFERENCE_CLOCK_COCYCLE_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/temporal-offset-reference-clock-cocycle-v0.1",
+  "formalism": "formalism/02JL_temporal_offset_reference_clock_cocycle.md",
+  "implementation": "src/idt/temporal_offset_reference_clock_cocycle.py",
+  "tests": "tests/reference/test_temporal_offset_reference_clock_cocycle.py",
+  "inputs": [
+    "02JK_SEAM_PHASE_OFFSET_INTRINSIC_DURATION",
+    "02JF_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION",
+    "02JG_ONSAGER_HALF_SEAM_PHASE_LOCKING"
+  ],
+  "derived_relations": {
+    "reference_change_factor": "C_R_to_S = Omega_R/Omega_S > 0",
+    "offset_reference_transform": "dTheta_off^[S] = C_R_to_S dTheta_off^[R]",
+    "identity": "C_R_to_R = 1",
+    "inverse": "C_S_to_R = 1/C_R_to_S",
+    "cocycle": "C_R_to_T = C_R_to_S C_S_to_T",
+    "reference_neutral_carrier": "dPhi_curv = Omega_R dTheta_off^[R] = Omega_S dTheta_off^[S] = F_Theta dTheta",
+    "information_rate_factor": "C_R_to_S = Gamma_I,R^(Theta)/Gamma_I,S^(Theta)",
+    "winding_locked_factor": "C_R_to_S = m_R/m_S when Omega_S/Omega_R = m_S/m_R pointwise",
+    "calibrated_factor": "dt_off^[S] = (T_S Omega_R)/(T_R Omega_S) dt_off^[R]"
+  },
+  "declared_gates": [
+    "reference_identity_inverse_cocycle",
+    "direct_vs_transformed_offset_rate",
+    "reference_neutral_curvature_carrier",
+    "variable_rate_pointwise_transform",
+    "information_phase_reference_factor_equivalence",
+    "winding_locked_arithmetic_reduction",
+    "calibrated_reference_factor",
+    "zero_curvature_control",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "pointwise_winding_ratio": "REQUIRES_ADMITTED_LOCKING_GATE",
+    "material_temporal_offset_binding": "DOWNSTREAM_TYPED_GATE",
+    "observational_relative_clock_protocol": "DOWNSTREAM_EVIDENCE_GATE",
+    "spacetime_transport": "DOWNSTREAM_RELATIVISTIC_GATE"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
