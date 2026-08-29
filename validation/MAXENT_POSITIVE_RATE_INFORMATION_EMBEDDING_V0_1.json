@@ -1,0 +1,41 @@
+{
+  "schema": "IDT_MAXENT_POSITIVE_RATE_INFORMATION_EMBEDDING_V0_1",
+  "status": "CANDIDATE_PENDING_HOSTED_REFERENCE_SUITE",
+  "parents": [
+    "01C Shannon relative-information monotonicity",
+    "01K temporal information curvature interface",
+    "05D local clock relative-entropy potential",
+    "05E clock-KL 01C refinement completion",
+    "RFC RF-E16 normal phase-rate directional carrier"
+  ],
+  "maxent_theorem": {
+    "coordinate": "r>0 with reciprocal mean 1/r",
+    "representative": "f_r(t)=r exp(-r t), t>=0",
+    "entropy_bound": "h[g]<=1-ln(r)",
+    "equality": "g=f_r almost everywhere",
+    "proof_carrier": "D_KL(g||f_r)>=0"
+  },
+  "rate_information": {
+    "J_rate_a_b": "ln(a/b)+b/a-1",
+    "phi_form": "Phi(b/a)=b/a-1-ln(b/a)",
+    "common_scale_invariant": true,
+    "01c_refinement_lineage": "05E"
+  },
+  "specializations": {
+    "activity_clock": "J_rate(a_r||a_x)=Phi(N_R), N_R=a_x/a_r",
+    "phase_rate": "J_rate(r_n^s||r_0)=Phi(r_0/r_n^s)=Phi(x_s)"
+  },
+  "01k_handoff": {
+    "J_phase_numerator_type": "COMPLETED_01C_NATURAL_LOG_SCALAR",
+    "Xi_phase": "J_phase/A_rel",
+    "dimension": "L^-2"
+  },
+  "evidence_boundary": {
+    "physical_exponential_dwell_law_required_for_embedding": false,
+    "physical_exponential_dwell_law_if_claimed": "SEPARATE_REALIZATION_GATE",
+    "physical_area_selection": "OPEN",
+    "rfc_action_coupling": "DOWNSTREAM",
+    "mass_scale": "DOWNSTREAM",
+    "observable_assignment": "DOWNSTREAM"
+  }
+}
