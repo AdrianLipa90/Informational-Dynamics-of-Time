@@ -1,17 +1,21 @@
-# QHTRI–Neutrino–Gravity Bridge v0.1
+# QHTRI–Neutrino–Gravity Bridge v0.4
 
-**Status:** CANDIDATE_TT_SOURCE_CHAIN  
-**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`  
-**Scope:** typed source admissibility from flavour-Hilbert dynamics through TT projection to a SI-normalized leading far-zone linearized Einstein response.
+**Status:** ROTOR_LAMBDA_LOCAL_CONSERVATIVE_SOURCE_CHAIN  
+**Reference gates:** `01AJ`, `01AK`, `01AL`, `01AM`, `01AN`, `01AO`, `01AP`, `01AQ`  
+**Scope:** typed source chain from the QHTRI/Euler two-rotor state through Lambda-coupled relative neutrino oscillation phase, physical ultrarelativistic stress normalization, local conservative phase-space redistribution, TT projection, and SI-normalized leading far-zone linearized Einstein response.
 
 ## Typed chain
 
 \[
-\mathrm{QHTRI/Euler\ phase}
+(\theta_+,\theta_-)
 \rightarrow
-\mathrm{neutrino\ flavour/Hilbert\ evolution}
+(\tau,\chi)_{\rm Minkowski\ spin}
+\xrightarrow{\Lambda}
+\phi_\nu
 \rightarrow
-\langle \hat T_{ij}^{(\nu)}\rangle
+C_a
+\rightarrow
+T_{\mu\nu}^{(\nu)}
 \xrightarrow{\Pi_{\rm TT}}
 T_{ij}^{\rm TT}
 \rightarrow
@@ -30,7 +34,7 @@ T_{ij}^{\rm TT}
 
 ## 01AJ — TT source gate
 
-The executable gate enforces tracelessness, transversality, nonzero TT norm, projection idempotence, and fail-closed direction validation. For propagation along \(z\), the phase-labelled spin-2 carrier
+For propagation along \(z\), the phase-labelled spin-2 carrier
 
 \[
 Q(\phi)=A
@@ -49,6 +53,8 @@ h_+\propto\cos 2\phi,
 h_\times\propto\sin 2\phi.
 \]
 
+The executable gate enforces tracelessness, transversality, nonzero TT norm, projection idempotence, and fail-closed direction validation.
+
 ## 01AK — flavour-tensor commutator gate
 
 For a time-independent flavour-space tensor operator \(\hat T_{ij}\) and \(\hbar=1\),
@@ -65,8 +71,6 @@ A flavour-central source \(\hat T_{ij}=c_{ij}\mathbb I\) is invariant under inte
 [\hat H_\nu,\hat T_{ij}]\neq0.
 \]
 
-`01AK` verifies an explicit non-central quadrupole reaching the `01AJ` gate.
-
 ## 01AL — ultrarelativistic stream anisotropy gate
 
 The normalized spatial stress shape for positive ultrarelativistic streams is
@@ -81,13 +85,13 @@ Equal tetrahedral streams yield \(S_{ij}=\delta_{ij}/3\) and zero TT projection.
 
 ## 01AM — SI-normalized linearized Einstein response
 
-For a localized source evaluated at one retarded source time, define the integrated spatial stress
+For a localized source evaluated at one retarded source time,
 
 \[
-\mathcal T_{ij}(t_r)=\int T_{ij}(t_r,\mathbf x')\,d^3x'.
+\mathcal T_{ij}(t_r)=\int T_{ij}(t_r,\mathbf x')\,d^3x',
 \]
 
-The leading far-zone linearized response used by the executable gate is
+and the leading far-zone linearized response is
 
 \[
 \boxed{
@@ -98,16 +102,240 @@ h_{ij}^{\rm TT}(t,r)
 }.
 \]
 
-`01AM` checks the exact SI prefactor, dimensionless strain, linear energy scaling, inverse-distance scaling, isotropic/tetrahedral null controls, and a nonzero response for a transverse ultrarelativistic stream.
+`01AM` checks the SI prefactor, dimensionless strain, linear energy scaling, inverse-distance scaling, isotropic/tetrahedral null controls, and nonzero transverse response.
 
-## Current dependency frontier
+## 01AN — physical ultrarelativistic neutrino stress-energy
 
-The Einstein-response normalization is now executable once a physical integrated stress history is supplied. The remaining source-side dependency is
+Using \(x^0=ct\), a massless directional packet with local energy density \(u_a\) and unit direction \(n_a\) carries
+
+\[
+k_a^\mu=(1,\mathbf n_a),
+\qquad
+T^{\mu\nu}_{(a)}=u_a k_a^\mu k_a^\nu.
+\]
+
+For a discrete source,
+
+\[
+T^{\mu\nu}_{\nu}(x,t)
+=
+\sum_a u_a(x,t)k_a^\mu k_a^\nu,
+\]
+
+and after volume integration,
+
+\[
+\mathcal T^{\mu\nu}_{\nu}
+=
+\sum_a E_a k_a^\mu k_a^\nu.
+\]
+
+Hence
+
+\[
+\mathcal T^{00}=\sum_aE_a,
+\qquad
+\mathcal T^{0i}=\sum_aE_a n_a^i,
+\qquad
+\mathcal T^{ij}=\sum_aE_a n_a^i n_a^j.
+\]
+
+The reference gate verifies
+
+\[
+\mathcal T^{00}-\sum_i\mathcal T^{ii}=0,
+\]
+
+future-nonspacelike total four-momentum, tetrahedral isotropy, local energy-density normalization, and exact invariance under flavour redistribution that preserves every directional energy total.
+
+## 01AO — conserved phase-quadrupole family
+
+Define four opposite-pair energies
+
+\[
+W_x=\frac E4+A\cos2\phi,
+\qquad
+W_y=\frac E4-A\cos2\phi,
+\]
+
+\[
+W_{d+}=\frac E4+A\sin2\phi,
+\qquad
+W_{d-}=\frac E4-A\sin2\phi,
+\qquad
+0\le A\le\frac E4.
+\]
+
+Each pair is split equally between opposite directions. Therefore
+
+\[
+\sum_aE_a=E,
+\qquad
+\sum_aE_a\mathbf n_a=0,
+\]
+
+while
+
+\[
+\frac{\mathcal T_{xx}-\mathcal T_{yy}}2=A\cos2\phi,
+\qquad
+\mathcal T_{xy}=A\sin2\phi,
+\qquad
+\|\mathcal T^{\rm TT}\|_F=\sqrt2 A.
+\]
+
+A phase change within this family has
+
+\[
+\frac{dP^\mu}{dt}=0
+\]
+
+at the integrated source level while the quadrupolar stress changes.
+
+## 01AP — local conservative phase-space transport
+
+For fixed massless directions \(k_a^\mu=(1,\mathbf n_a)\), let the local stream energy densities obey
+
+\[
+(\partial_t+c\,\mathbf n_a\cdot\nabla)u_a=C_a.
+\]
+
+Then
+
+\[
+\partial_\mu T^{\mu\nu}
+=
+\frac1c\sum_a k_a^\nu C_a.
+\]
+
+A local redistribution is closed under energy-momentum conservation whenever
 
 \[
 \boxed{
-\mathrm{DERIVE\_QHTRI\_NEUTRINO\_TIME\_DEPENDENT\_PHYSICAL\_}T_{\mu\nu}(x,t)
+\sum_a C_a=0,
+\qquad
+\sum_a C_a\mathbf n_a=0.
 }
 \]
 
-with explicit local energy density, flavour/momentum coupling, conservation/exchange current and Bianchi closure. After that binding, the retarded source history can be propagated through `01AM` without an additional gravitational normalization parameter.
+For the `01AO` phase family,
+
+\[
+\dot W_x=-2A\sin2\phi\,\dot\phi,
+\qquad
+\dot W_y=+2A\sin2\phi\,\dot\phi,
+\]
+
+\[
+\dot W_{d+}=+2A\cos2\phi\,\dot\phi,
+\qquad
+\dot W_{d-}=-2A\cos2\phi\,\dot\phi.
+\]
+
+Splitting each rate equally across its opposite pair gives, identically,
+
+\[
+\sum_a C_a=0,
+\qquad
+\sum_a C_a\mathbf n_a=0,
+\qquad
+\partial_\mu T^{\mu\nu}=0
+\]
+
+for the homogeneous local collision step. `01AP` also verifies free-streaming closure of the convective derivative and exposes any nonconserving collision as a nonzero exchange four-moment.
+
+## 01AQ — two rotors, Lambda board, neutrino metronomes
+
+The two cylinder/rotor phases are represented by \(\theta_+\) and \(\theta_-\). Their common and differential coordinates are
+
+\[
+\boxed{
+\tau=\frac{\theta_++\theta_-}{2},
+\qquad
+\chi=\frac{\theta_+-\theta_-}{2}
+}
+\]
+
+with the exact Minkowski-form identity
+
+\[
+\boxed{
+\tau^2-\chi^2=\theta_+\theta_-.
+}
+\]
+
+Counter-rotation \((\theta_+,\theta_-)\mapsto(\theta_++\delta,\theta_- -\delta)\) leaves \(\tau\) fixed and advances the spin coordinate \(\chi\mapsto\chi+\delta\).
+
+The Lambda board binds this rotor state to the neutrino carrier by
+
+\[
+\boxed{
+A=\Lambda\frac E4,
+\qquad
+0\le\Lambda\le1,
+}
+\]
+
+\[
+\boxed{
+\phi=\phi_0+g_\tau\tau+g_\chi\chi,
+\qquad
+\dot\phi=g_\tau\dot\tau+g_\chi\dot\chi.
+}
+\]
+
+The canonical pure-spin setting is \(g_\tau=0\), \(g_\chi=1\), hence \(\phi=\phi_0+\chi\). The three neutrino-metronome channels carry relative phase shifts
+
+\[
+\delta\varphi_f=q_f\phi,
+\qquad
+\sum_f q_f=0,
+\]
+
+so the drive lives in relative flavour phase rather than a common \(U(1)\) phase.
+
+Substituting \((A,\phi,\dot\phi)\) into `01AO` and `01AP` gives the directional occupation and collision rates exactly:
+
+\[
+(\theta_+,\theta_-)
+\rightarrow
+(\tau,\chi)
+\xrightarrow{\Lambda}
+(A,\phi,\dot\phi)
+\rightarrow
+C_a.
+\]
+
+`01AQ` verifies the rotor identity, pure counter-rotation, traceless relative flavour drive, positivity bound \(A\le E/4\), exact numerical equality with the `01AO` source tensor, exact equality with the `01AP` transport rates, zero collision four-moment, and the spin-2 coordinates
+
+\[
+T_+^{TT}=A\cos2\chi,
+\qquad
+T_\times^{TT}=A\sin2\chi
+\]
+
+for the canonical pure-spin Lambda board.
+
+## Current dependency frontier
+
+The model-level source chain is now executable as
+
+\[
+\boxed{
+(\theta_+,\theta_-)
+\rightarrow
+(\tau,\chi)_{\rm Minkowski\ spin}
+\xrightarrow{\Lambda}
+\delta\varphi_\nu
+\rightarrow
+C_a
+\rightarrow
+T_{\mu\nu}^{(\nu)}
+\rightarrow
+h_{ij}^{TT}.
+}
+\]
+
+The next gate is the physical calibration of the Lambda operator and rotor variables against an experimentally identifiable neutrino interaction/observable, fixing \(\Lambda\), \(g_\tau\), \(g_\chi\), and the relative flavour gains from data rather than convention.
+
+The repository may suggest controlled gravitational-wave emission from this source chain, yet does not state it as an established result until the Lambda/neutrino binding is experimentally supported.
