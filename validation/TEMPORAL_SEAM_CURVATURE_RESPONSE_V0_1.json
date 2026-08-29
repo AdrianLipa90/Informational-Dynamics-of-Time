@@ -1,0 +1,48 @@
+{
+  "schema": "IDT_TEMPORAL_SEAM_CURVATURE_RESPONSE_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/temporal-seam-curvature-response-v0.1",
+  "formalism": "formalism/02JJ_temporal_seam_curvature_response.md",
+  "implementation": "src/idt/temporal_seam_curvature_response.py",
+  "tests": "tests/reference/test_temporal_seam_curvature_response.py",
+  "inputs": [
+    "02JI_MOVING_SEAM_CONNECTION_WORK",
+    "02JH_FULL_SCHRODINGER_ONSAGER_SEAM_BALANCE",
+    "02JG_ONSAGER_HALF_SEAM_PHASE_LOCKING",
+    "02JF_TIR_HALF_FIBER_TEMPORAL_NORMALIZATION"
+  ],
+  "derived_relations": {
+    "temporal_vertex_connection_transform": "A_Theta' = A_Theta - D_Theta chi",
+    "temporal_seam_curvature": "F_Theta = D_Theta varphi + B A_Theta",
+    "curvature_gauge_invariance": "F_Theta' = F_Theta",
+    "covariant_hamiltonian": "H_bar = H - diag(A_Theta)",
+    "geometric_power_decomposition": "P_geom = P_cov + q_conn^T F_Theta",
+    "positive_curvature_response": "F_Theta = -G_varphi q_conn",
+    "selected_seam_rate": "D_Theta varphi = -B A_Theta - G_varphi q_conn",
+    "curvature_dissipation": "D_varphi = q_conn^T G_varphi q_conn >= 0",
+    "gauge_native_balance": "dV_seam/dTheta = P_cov - D_varphi - D_alpha",
+    "gauge_invariant_temporal_offset": "DeltaPhi_curv = integral F_Theta dTheta"
+  },
+  "declared_gates": [
+    "time_dependent_gauge_invariant_curvature",
+    "covariant_hamiltonian_similarity_transform",
+    "moving_power_curvature_decomposition",
+    "temporal_connection_diagonal_commutator_identity",
+    "positive_curvature_response",
+    "gauge_covariant_seam_rate_selection",
+    "curvature_dissipation_nonnegative",
+    "curvature_native_balance_exact",
+    "full_response_time_dependent_gauge_invariance",
+    "accumulated_curvature_offset_additivity",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "phase_offset_to_clock_duration": "DOWNSTREAM_PHASE_RATE_MAP_GATE",
+    "physical_response_coefficients": "SEPARATE_EVIDENCE_GATE",
+    "measured_connection_curvature": "SEPARATE_EVIDENCE_GATE",
+    "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
