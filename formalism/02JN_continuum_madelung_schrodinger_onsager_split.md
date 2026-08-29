@@ -190,8 +190,7 @@ The density equation and every `q`-dependent term remain invariant. For a time-i
 For constant `M>0` define
 
 \[
-\boxed{
-u:=\frac{\mathcal J}{\rho}=2Mq.}
+\boxed{u:=\frac{\mathcal J}{\rho}=2Mq.}
 \]
 
 Then the continuity equation becomes
@@ -221,8 +220,7 @@ Let
 
 \[
 \rho=\rho_0+\delta\rho,
-\qquad
-u=\delta u,
+\qquad u=\delta u,
 \qquad
 \rho_0>0,
 \]
