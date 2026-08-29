@@ -1,6 +1,6 @@
 {
   "schema": "IDT_BOUND_NOW_BIFURCATION_CONSISTENCY_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/bound-now-bifurcation-consistency-v0.1",
   "formalism": "formalism/04B_bound_now_bifurcation_consistency.md",
   "implementation": "src/idt/bound_now_bifurcation.py",
@@ -35,7 +35,18 @@
     "fail_closed_consistency_validation"
   ],
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 833,
+    "run_id": 33242275441,
+    "job_id": 99073524666,
+    "tested_head_sha": "4b240c7619733f5879b9bc04cf961a2ab76f4347",
+    "tested_merge_sha": "a5752a74122269de0ea0be1cf0185702d2017a37",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 816,
+    "tests_total": 816,
+    "elapsed_seconds": 17.69
   },
   "next_gate": "BOUND_BIFURCATION_TO_TEMPORAL_TRANSPORT_HANDOFF"
 }
