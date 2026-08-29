@@ -55,7 +55,8 @@ The Schrödinger sector is
 
 \[
 \boxed{
-i\partial_\Theta\Psi=H\Psi.}
+i\partial_\Theta\Psi=H\Psi.
+}
 \]
 
 Using
