@@ -3,7 +3,7 @@
   "repository_id": "IDT",
   "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
   "source_commit": "ed902458b6e0ad338ca4ba637d8d8228bc7c549b",
-  "generated_at": "2026-08-29T18:34:00+01:00",
+  "generated_at": "2026-08-29T18:58:00+01:00",
   "claims": [
     {"claim_id":"IDT.TEMPORAL.PRIMITIVE","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
     {"claim_id":"IDT.TEMPORAL.WAVE","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
@@ -18,6 +18,7 @@
     {"claim_id":"IDT.RELATIVISTIC.FIELD_BRIDGE","status":"CROSS_REPO_PREREQUISITE","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
     {"claim_id":"IDT.EINSTEIN.CLOSURE","status":"JOINT_TARGET","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
     {"claim_id":"IDT.CLOCK.GAMMA_T","status":"CROSS_REPO_PASS","source_path":"formalism/DEPENDENCY_GRAPH.md","evidence_class":"cross_repo_validated","exact_head":"d5d5def488776c1310d83e33c639b5e3078befec","validation":"REFERENCE_SUITE_868_SUCCESS"},
+    {"claim_id":"IDT.CLOCK.RELATIVE_ENTROPY_05D","status":"EXACT_CONDITIONAL_MEMORYLESS_CLOCK_REALIZATION / SHANNON_KL_GATE / NON_ENERGY_CARRIER","source_path":"formalism/05D_local_clock_relative_entropy_potential.md","evidence_class":"source_formalism_validation","validation":"LOCAL_CLOCK_RELATIVE_ENTROPY_V0_1"},
     {"claim_id":"IDT.HALF_SEAM.DOUBLE_COVER_SIGNATURE","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"},
     {"claim_id":"IDT.HALF_SEAM.RELATIONAL_ZERO","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"},
     {"claim_id":"IDT.NOW.HYPERBOLIC_CHART","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"}
@@ -34,6 +35,7 @@
     {"from":"IDT.RETROCAUSAL_TESTS","to":"IDT.EINSTEIN.CLOSURE","authority":"CANONICAL"},
     {"from":"IDT.TEMPORAL.PRIMITIVE","to":"IDT.NOETHER.GAUGE_COVARIANT_SOURCE","authority":"CANONICAL"},
     {"from":"IDT.TEMPORAL.WAVE","to":"IDT.CLOCK.GAMMA_T","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.PRIMITIVE","to":"IDT.CLOCK.RELATIVE_ENTROPY_05D","authority":"CANONICAL"},
     {"from":"IDT.RELATIVISTIC.FIELD_BRIDGE","to":"IDT.EINSTEIN.CLOSURE","authority":"CANONICAL"}
   ]
 }
