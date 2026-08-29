@@ -1,40 +1,32 @@
 # QHTRI–Neutrino–Gravity Bridge v0.1
 
-**Status:** CANDIDATE_TT_SOURCE_GATE  
-**Reference gate:** `01AJ`  
-**Scope:** algebraic source admissibility for the gravitational transverse-traceless sector.
+**Status:** CANDIDATE_TT_SOURCE_CHAIN  
+**Reference gates:** `01AJ`, `01AK`, `01AL`  
+**Scope:** typed source admissibility from flavour-Hilbert dynamics to a transverse-traceless spatial stress shape.
 
 ## Typed chain
-
-The bridge is represented as
 
 \[
 \mathrm{QHTRI/Euler\ phase}
 \rightarrow
 \mathrm{neutrino\ flavour/Hilbert\ evolution}
 \rightarrow
-T_{ij}^{(\nu,\,candidate)}
+\langle \hat T_{ij}^{(\nu)}\rangle
 \xrightarrow{\Pi_{\rm TT}}
 T_{ij}^{\rm TT}.
 \]
-
-The repository already carries the neutrino flavour/AUX superposition and subsequent flavour-Hamiltonian gates. This module adds the next typed operation: projection of a supplied symmetric spatial tensor into the radiative TT sector.
 
 For a unit propagation direction \(n_i\),
 
 \[
 P_{ij}=\delta_{ij}-n_i n_j,
-\]
-
-and
-
-\[
+\qquad
 T_{ij}^{\rm TT}
 =
 \left(P_i{}^k P_j{}^l-\frac12 P_{ij}P^{kl}\right)T_{kl}.
 \]
 
-The executable gate requires
+The executable TT gate requires
 
 \[
 \operatorname{tr}T^{\rm TT}=0,
@@ -44,9 +36,9 @@ T_{ij}^{\rm TT}n^j=0,
 \lVert T^{\rm TT}\rVert_F>0.
 \]
 
-## Spin-2 phase carrier
+## 01AJ — TT source gate
 
-For propagation along \(z\), the minimal phase-labelled quadrupole is
+For propagation along \(z\), the minimal phase-labelled spin-2 quadrupole
 
 \[
 Q(\phi)=A
@@ -54,44 +46,74 @@ Q(\phi)=A
 \cos 2\phi & \sin 2\phi & 0\\
 \sin 2\phi & -\cos 2\phi & 0\\
 0&0&0
-\end{pmatrix}.
+\end{pmatrix}
 \]
 
-It is already transverse and traceless, therefore
+satisfies
 
 \[
 \Pi_{\rm TT}Q(\phi)=Q(\phi),
+\qquad
+h_+\propto\cos 2\phi,
+\qquad
+h_\times\propto\sin 2\phi.
 \]
 
-with polarization coordinates
+`01AJ` checks isotropic and longitudinal rejection, plus/cross admission, exact \(2\phi\) mapping, transversality, tracelessness, idempotence, and fail-closed zero-direction handling.
+
+## 01AK — flavour-tensor commutator gate
+
+For a time-independent flavour-space tensor operator \(\hat T_{ij}\) and \(\hbar=1\),
 
 \[
-h_+\propto \cos 2\phi,
-\qquad
-h_\times\propto \sin 2\phi.
+\frac{d}{dt}\langle \hat T_{ij}\rangle
+=
+i\langle[\hat H_\nu,\hat T_{ij}]\rangle.
 \]
 
-## Reference tests
+Therefore a flavour-central source,
 
-`tests/reference/test_01AJ_qhtri_neutrino_tt_source_gate.py` checks:
+\[
+\hat T_{ij}=c_{ij}\,\mathbb I_{\rm flavour},
+\]
 
-1. isotropic source rejection;
-2. longitudinal source rejection;
-3. plus-polarized TT admission with norm \(\sqrt2\);
-4. cross-polarized TT admission with norm \(\sqrt2\);
-5. exact \(2\phi\) phase-to-polarization map;
-6. transversality and tracelessness for a generic symmetric source;
-7. idempotence of \(\Pi_{\rm TT}\);
-8. fail-closed behavior for a zero propagation direction.
+has zero commutator and is invariant under internal flavour rotation. A dynamically modulated tensor expectation requires at least one non-central Hermitian component with
 
-## Next binding gate
+\[
+[\hat H_\nu,\hat T_{ij}]\neq0.
+\]
 
-The next unresolved dependency is
+`01AK` supplies this executable firewall and verifies that an explicit non-central quadrupole reaches the `01AJ` TT gate.
+
+## 01AL — ultrarelativistic stream anisotropy gate
+
+The normalized spatial stress shape for positive ultrarelativistic streams is
+
+\[
+S_{ij}
+=
+\frac{\sum_a w_a n_i^{(a)}n_j^{(a)}}{\sum_a w_a}.
+\]
+
+Equal tetrahedral streams give
+
+\[
+S_{ij}=\frac13\delta_{ij}
+\]
+
+and hence zero TT projection. A collinear stream is longitudinal for a wave vector parallel to that stream. A transverse anisotropic stream has a nonzero TT component.
+
+The flavour-resolved version first sums flavour weights within each momentum direction. Thus pure internal flavour redistribution that preserves the total weight of every direction leaves \(S_{ij}\) unchanged. TT modulation requires flavour dynamics to couple to directional/anisotropic stress or to a non-central tensor operator.
+
+## Current dependency frontier
+
+The remaining physical binding is
 
 \[
 \boxed{
-\mathrm{BIND\_NEUTRINO\_HILBERT\_SOURCE\_TO\_PHYSICAL\_}T_{\mu\nu}
+\mathrm{DERIVE\_PHYSICAL\_NEUTRINO\_}T_{\mu\nu}
+\mathrm{\_NORMALIZATION\_AND\_EINSTEIN\_RESPONSE}
 }
 \]
 
-including normalization, dimensions, conserved exchange current/Bianchi closure, and the linearized Einstein response. Until that binding is promoted, `01AJ` carries the status `CANDIDATE_TT_SOURCE_GATE`.
+with explicit dimensions, energy-density normalization, conserved exchange/Bianchi closure, retarded source dynamics, and the linearized Einstein response. The repository may suggest gravitational-wave emission from the completed chain, yet does not state it as an established result until this binding is closed.
