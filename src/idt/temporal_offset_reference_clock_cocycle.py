@@ -32,8 +32,8 @@ def _positive_rate(value: float, *, name: str) -> float:
 
 def _finite_vector(values: Sequence[float], *, name: str) -> np.ndarray:
     x = np.asarray(values, dtype=float)
-    if x.ndim != 1 or not np.all(np.isfinite(x)):
-        raise TemporalOffsetReferenceClockError(f"{name} must be a finite vector")
+    if x.ndim != 1 or x.size == 0 or not np.all(np.isfinite(x)):
+        raise TemporalOffsetReferenceClockError(f"{name} must be a finite non-empty vector")
     return x
 
 
@@ -160,6 +160,6 @@ def audit_reference_clock_change(
         transformed_target_rate=eta_target_transformed,
         neutral_curvature_from_source=neutral_source,
         neutral_curvature_from_target=neutral_target,
-        max_rate_residual=float(np.max(np.abs(eta_target_direct - eta_target_transformed))) if curvature.size else 0.0,
-        max_neutral_residual=float(np.max(np.abs(neutral_source - neutral_target))) if curvature.size else 0.0,
+        max_rate_residual=float(np.max(np.abs(eta_target_direct - eta_target_transformed))),
+        max_neutral_residual=float(np.max(np.abs(neutral_source - neutral_target))),
     )
