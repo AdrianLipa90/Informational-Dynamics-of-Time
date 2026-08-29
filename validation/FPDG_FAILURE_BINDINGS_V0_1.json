@@ -1,0 +1,68 @@
+{
+  "schema": "IDT_FPDG_FAILURE_BINDINGS_V0_1",
+  "repository_id": "IDT",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "purpose": "Explicit IDT-owned test-to-claim and test-to-interface bindings for exact FPDG failure localization",
+  "bindings": {
+    "tests/reference/test_temporal_primitive_activity.py": {
+      "claim_id": "IDT.TEMPORAL.PRIMITIVE",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_temporal_wave_gauge_laplacian.py": {
+      "claim_id": "IDT.TEMPORAL.WAVE",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_now_wave_activation.py": {
+      "claim_id": "IDT.NOW",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_now_bifurcation_bridge.py": {
+      "claim_id": "IDT.BIFURCATION",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_temporal_transport.py": {
+      "claim_id": "IDT.TEMPORAL.TRANSPORT",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_memory_dynamics.py": {
+      "claim_id": "IDT.MEMORY",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_orchorbital.py": {
+      "claim_id": "IDT.ORCHORBITAL",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_retrodiction.py": {
+      "claim_id": "IDT.RETRODICTION",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_retrocausal_preregistration_contract.py": {
+      "claim_id": "IDT.RETROCAUSAL_TESTS",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_01AC_gauge_covariant_phase_pullback_noether_generator.py": {
+      "claim_id": "IDT.NOETHER.GAUGE_COVARIANT_SOURCE",
+      "claim_source": "CURRENT_STATUS.md"
+    },
+    "tests/reference/test_01AA_noether_rfc_conserved_current_binding.py": {
+      "interface_id": "IFACE.IDT_TO_RFC.NOETHER_SOURCE",
+      "binding_evidence": "test module explicitly validates the IDT Noether to RFC conserved-current/measure binding; interface failure is not projected onto either endpoint claim"
+    },
+    "tests/reference/test_material_temporal_offset_binding.py": {
+      "claim_id": "IDT.CLOCK.GAMMA_T",
+      "claim_source": "CURRENT_STATUS.md",
+      "binding_evidence": "test_local_rate_collapses_to_calibration_times_local_activity explicitly asserts state.gamma_t and gamma_tau/gamma_t relation"
+    },
+    "tests/reference/test_local_clock_relative_entropy.py": {
+      "claim_id": "IDT.CLOCK.RELATIVE_ENTROPY_05D",
+      "claim_source": "formalism/05D_local_clock_relative_entropy_potential.md"
+    }
+  },
+  "unmapped_failure_policy": "EMIT_EXACT_TEST_COORDINATE_WITHOUT_INVENTED_CLAIM_OR_INTERFACE_BINDING",
+  "authority": {
+    "binding_owner": "Informational-Dynamics-of-Time",
+    "fpdg_consumes_as_evidence": true,
+    "claim_promotion_authority": false,
+    "candidate_generation_authority": false
+  }
+}
