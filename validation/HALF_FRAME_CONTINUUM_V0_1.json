@@ -25,7 +25,7 @@
     "stiffness_operator": "K = D^dagger diag(M_e) D",
     "effective_mobility": "M_eff = harmonic_mean(M_e)",
     "wave_coefficient": "c_eff^2 = M_eff",
-    "new_propagation_coefficient": "NONE"
+    "propagation_coefficient_authority": "INHERITED_FROM_02C_M_EFF_AND_BETA_EFF"
   },
   "boundaries": {
     "02C_effective_coefficient_authority": "PRESERVED",
