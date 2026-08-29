@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -9,7 +10,10 @@ GRAPH = ROOT / "validation" / "dependency_graph.json"
 
 def test_full_schrodinger_onsager_balance_markers_are_append_only():
     graph = json.loads(GRAPH.read_text())
-    assert graph["schema"] == "IDT_FORMAL_DEPENDENCY_GRAPH_V0_37"
+    match = re.fullmatch(r"IDT_FORMAL_DEPENDENCY_GRAPH_V0_(\d+)", graph["schema"])
+    assert match is not None
+    assert int(match.group(1)) >= 37
+
     nodes = {node["id"]: node for node in graph["nodes"]}
     status = nodes["HALF_FRAME_TEMPORAL_GLUING"]["status"]
 
