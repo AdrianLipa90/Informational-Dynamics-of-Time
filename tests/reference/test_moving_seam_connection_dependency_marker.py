@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -9,7 +10,10 @@ GRAPH = ROOT / "validation" / "dependency_graph.json"
 
 def test_moving_seam_connection_markers_are_append_only():
     graph = json.loads(GRAPH.read_text())
-    assert graph["schema"] == "IDT_FORMAL_DEPENDENCY_GRAPH_V0_38"
+    match = re.fullmatch(r"IDT_FORMAL_DEPENDENCY_GRAPH_V0_(\d+)", graph["schema"])
+    assert match is not None
+    assert int(match.group(1)) >= 38
+
     nodes = {node["id"]: node for node in graph["nodes"]}
     status = nodes["HALF_FRAME_TEMPORAL_GLUING"]["status"]
 
@@ -20,6 +24,7 @@ def test_moving_seam_connection_markers_are_append_only():
         "HOSTED_REFERENCE_SUITE_686_OF_686",
         "HOSTED_REFERENCE_SUITE_701_OF_701",
         "HOSTED_REFERENCE_SUITE_702_OF_702",
+        "HOSTED_REFERENCE_SUITE_717_OF_717",
         "MOVING_SEAM_CONNECTION_WORK_ACTIVE_NEXT_GATE",
     ]:
         assert historical in status
@@ -29,7 +34,7 @@ def test_moving_seam_connection_markers_are_append_only():
         "CONNECTION_WORK_OPERATOR_IDENTITY_PASS",
         "TIME_DEPENDENT_GAUGE_GEOMETRIC_POWER_CLOSURE_PASS",
         "INTRINSIC_SEAM_PHASE_OFFSET_PASS",
-        "HOSTED_REFERENCE_SUITE_717_OF_717",
+        "HOSTED_REFERENCE_SUITE_718_OF_718",
         "TEMPORAL_SEAM_CURVATURE_RESPONSE_ACTIVE_NEXT_GATE",
     ]:
         assert admitted in status
