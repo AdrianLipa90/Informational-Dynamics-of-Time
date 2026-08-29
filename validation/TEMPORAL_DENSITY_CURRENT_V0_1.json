@@ -1,6 +1,6 @@
 {
   "schema": "IDT_TEMPORAL_DENSITY_CURRENT_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/continuum-temporal-density-current-v0.1",
   "formalism": "formalism/02JL_temporal_density_current_continuity.md",
   "implementation": "src/idt/temporal_density_current.py",
@@ -23,7 +23,8 @@
     "density": "|a_n|^2/h -> |Psi|^2",
     "current": "j_(n+1/2) -> 2 M Im(Psi^* D_A Psi)",
     "polar_current": "Jcal = 2 M R^2 (partial_x alpha - A)",
-    "continuity": "partial_Theta |Psi|^2 + partial_x Jcal = 0"
+    "continuity": "partial_Theta |Psi|^2 + partial_x Jcal = 0",
+    "current_convergence": "SECOND_ORDER_PASS"
   },
   "onsager_coupling": {
     "phase_tangent": "D_Theta a_n|D = i alpha_dot_n^D a_n",
@@ -41,7 +42,16 @@
     "fail_closed_domain_validation"
   ],
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 792,
+    "run_id": 33222941834,
+    "job_id": 99020674478,
+    "tested_head_sha": "04bc5e7916fcc91674435bd241c6b2e2c615f0ad",
+    "tested_pr_merge_sha": "8e16ee5e3170c60d30bb9a316df3c54c85db6cb5",
+    "tests_passed": 752,
+    "tests_total": 752,
+    "elapsed_seconds": 13.59
   },
   "next_gate": "CONTINUUM_PHASE_GRADIENT_ONSAGER_FLOW"
 }
