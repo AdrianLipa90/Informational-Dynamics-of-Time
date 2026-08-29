@@ -1,0 +1,51 @@
+{
+  "schema": "IDT_SCHRODINGER_ONSAGER_SEAM_BALANCE_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "branch": "feat/full-schrodinger-onsager-seam-balance-v0.1",
+  "formalism": "formalism/02JH_full_schrodinger_onsager_seam_balance.md",
+  "implementation": "src/idt/schrodinger_onsager_seam_balance.py",
+  "tests": "tests/reference/test_schrodinger_onsager_seam_balance.py",
+  "inputs": [
+    "02E_ZETA_COLLATZ_SCHRODINGER_FRAME_FLOW",
+    "02JD_PHASE_AWARE_HALF_SEAM",
+    "02JG_ONSAGER_HALF_SEAM_LOCKING",
+    "00E_ACTIVITY_DERIVED_INTRINSIC_THETA"
+  ],
+  "derived_relations": {
+    "seam_incidence": "d = (1/2) C_phi psi",
+    "seam_stiffness": "K_phi = (1/4) C_phi^dagger C_phi >= 0",
+    "seam_energy": "V_seam = psi^dagger K_phi psi",
+    "schrodinger_power": "P_Sch = i psi^dagger [H,K_phi] psi",
+    "onsager_phase_gradient": "g_alpha = grad_alpha V_seam",
+    "onsager_dissipation": "D_O = g_alpha^T G_alpha g_alpha >= 0",
+    "full_balance": "dV_seam/dTheta = P_Sch - D_O",
+    "norm_balance": "d||psi||^2/dTheta = 0",
+    "commuting_sector": "[H,K_phi]=0 => P_Sch=0 => dV_seam/dTheta=-D_O <= 0",
+    "stationary_balance": "P_Sch = D_O",
+    "zeta_collatz_transfer": "P_zetaC->seam = i psi^dagger [H_zetaC,K_phi] psi"
+  },
+  "declared_gates": [
+    "covariant_seam_stiffness_psd",
+    "direct_seam_defect_energy_equivalence",
+    "vertex_phase_gradient_finite_difference",
+    "schrodinger_commutator_power_exact",
+    "onsager_norm_preservation",
+    "onsager_dissipation_identity",
+    "full_balance_identity",
+    "full_norm_preservation",
+    "commuting_hamiltonian_pure_descent",
+    "noncommuting_bidirectional_schrodinger_transfer",
+    "static_gauge_covariance",
+    "zeta_collatz_hamiltonian_integration",
+    "fail_closed_domain_validation"
+  ],
+  "boundaries": {
+    "moving_seam_connection": "EXPLICIT_CONNECTION_WORK_TERM_NEXT_EXTENSION",
+    "physical_dissipation_coefficients": "SEPARATE_EVIDENCE_GATE",
+    "physical_oscillator_identification": "SEPARATE_EVIDENCE_GATE",
+    "spin_half_physical_binding": "SEPARATE_DOWNSTREAM_GATE"
+  },
+  "hosted_ci": {
+    "status": "PENDING"
+  }
+}
