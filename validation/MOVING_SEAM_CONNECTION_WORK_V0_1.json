@@ -1,6 +1,6 @@
 {
   "schema": "IDT_MOVING_SEAM_CONNECTION_WORK_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/moving-seam-connection-work-v0.1",
   "formalism": "formalism/02JI_moving_seam_connection_work.md",
   "implementation": "src/idt/moving_seam_connection_work.py",
@@ -40,6 +40,25 @@
     "spacetime_transport": "DOWNSTREAM"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 832,
+    "run_id": 33242263480,
+    "job_id": 99073490019,
+    "tested_head_sha": "fcefd6a6272fd6b454fc0e9523be1cc4ac0b7600",
+    "tested_pr_merge_sha": "ddd2a235b88f987eb1fefd34ebfb1d3fa34ceea4",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 717,
+    "tests_total": 717,
+    "elapsed_seconds": 12.70,
+    "retained_previous_attempt": {
+      "run_number": 830,
+      "result": "TEST_HARNESS_FAIL",
+      "tests_passed": 711,
+      "failures": 6,
+      "cause": "missing SchrodingerOnsagerBalanceError import in fail-closed parametrized test",
+      "scientific_equation_failure": false
+    }
   }
 }
