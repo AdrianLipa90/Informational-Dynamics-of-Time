@@ -1,6 +1,6 @@
 {
   "schema": "IDT_CONTINUUM_MADELUNG_ONSAGER_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/continuum-madelung-schrodinger-onsager-v0.1",
   "formalism": "formalism/02JN_continuum_madelung_schrodinger_onsager_split.md",
   "implementation": "src/idt/continuum_madelung_onsager.py",
@@ -36,8 +36,29 @@
     "exact_linear_characteristic_polynomial",
     "fail_closed_domain_validation"
   ],
-  "hosted_ci": {
-    "status": "PENDING"
-  },
+  "hosted_ci_lineage": [
+    {
+      "workflow": "Reference suite",
+      "run_number": 804,
+      "run_id": 33241137707,
+      "tested_head_sha": "b67a877a27ae0b83217784960ee259ca07f3a05e",
+      "tests_passed": 778,
+      "tests_total": 778,
+      "elapsed_seconds": 19.90,
+      "status": "PASS"
+    },
+    {
+      "workflow": "Reference suite",
+      "run_number": 805,
+      "run_id": 33241200673,
+      "job_id": 99070733645,
+      "tested_head_sha": "6e966d790c7a58fe39a82663f4fba3a1cb2a2c7e",
+      "tested_pr_merge_sha": "da36ec59ebd7c7fb39a69d4a7bf028a84317fc43",
+      "tests_passed": 778,
+      "tests_total": 778,
+      "elapsed_seconds": 20.14,
+      "status": "PASS"
+    }
+  ],
   "next_gate": "TEMPORAL_WAVE_LINEAR_MODE_AND_NOW_FRONTIER_COUPLING"
 }
