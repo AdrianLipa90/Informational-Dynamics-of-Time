@@ -1,6 +1,6 @@
 {
   "schema": "IDT_SEAM_PHASE_OFFSET_INTRINSIC_DURATION_V0_1",
-  "status": "ALGEBRAIC_REFERENCE_IMPLEMENTED_HOSTED_CI_PENDING",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
   "branch": "feat/seam-phase-offset-intrinsic-duration-v0.1",
   "formalism": "formalism/02JK_seam_phase_offset_intrinsic_duration.md",
   "implementation": "src/idt/seam_phase_offset_intrinsic_duration.py",
@@ -40,6 +40,17 @@
     "spacetime_transport_binding": "DOWNSTREAM_RELATIVISTIC_GATE"
   },
   "hosted_ci": {
-    "status": "PENDING"
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 855,
+    "run_id": 33245530139,
+    "job_id": 99082212999,
+    "tested_head_sha": "b19e9076093e4cecd3f45c6cbf096e2ff203c7b0",
+    "tested_pr_merge_sha": "b395fc0ba25ad7f7c4091ec6c4a5c1c6d7e8c34f",
+    "python": "3.12.14",
+    "os": "Ubuntu 24.04.4",
+    "tests_passed": 753,
+    "tests_total": 753,
+    "elapsed_seconds": 19.49
   }
 }
