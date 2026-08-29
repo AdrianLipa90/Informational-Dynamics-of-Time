@@ -4,10 +4,14 @@ import numpy as np
 import pytest
 
 from idt.moving_seam_connection_work import (
+    MovingSeamConnectionError,
     connection_phase_gradient,
     conservative_seam_power,
 )
-from idt.schrodinger_onsager_seam_balance import onsager_dissipation
+from idt.schrodinger_onsager_seam_balance import (
+    SchrodingerOnsagerBalanceError,
+    onsager_dissipation,
+)
 from idt.temporal_seam_curvature_response import (
     TemporalSeamCurvatureError,
     accumulated_curvature_offset,
