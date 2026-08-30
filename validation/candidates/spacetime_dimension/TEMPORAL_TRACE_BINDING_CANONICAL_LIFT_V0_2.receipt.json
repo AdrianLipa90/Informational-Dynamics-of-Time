@@ -1,0 +1,26 @@
+{
+  "schema": "TEMPORAL_TRACE_BINDING_CANONICAL_LIFT_V0_2",
+  "status": "CANDIDATE_ONLY",
+  "canon_promotion": false,
+  "symbolic_validation": {
+    "trace_recovery_pass": true,
+    "normalization_recovery_pass": true,
+    "traceless_spatial_component_pass": true,
+    "determinant_identity_pass": true,
+    "trace_expression": "ell",
+    "determinant_expression": "-ell**2*(rx**2 + ry**2 + rz**2 - 1)/4"
+  },
+  "numeric_validation": {
+    "spectral_positive_minus_negative_reconstruction_samples": 1000,
+    "psd_decomposition_pass": true,
+    "max_reconstruction_error": 4.440893143897063e-15
+  },
+  "result": {
+    "canonical_lift": "X = ell * rho",
+    "temporal_component": "X_T = (ell/2) I",
+    "spatial_component": "X_S = (ell/2) r.sigma",
+    "local_carrier": "Herm(2)",
+    "real_dimension": 4,
+    "remaining_gate": "IDT_ELAPSED_SCALAR_AS_EVENT_TRACE_SCALE"
+  }
+}
