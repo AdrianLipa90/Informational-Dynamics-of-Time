@@ -1,0 +1,38 @@
+{
+  "schema": "GLOBAL_EVENT_CLOCK_EXACTNESS_V0_1",
+  "status": "PASS_REFERENCE_CERTIFIER_WITH_PRODUCTION_INPUT_OPEN",
+  "date": "2026-08-30",
+  "formalism": "formalism/05H_global_event_clock_exactness.md",
+  "implementation": "src/idt/global_event_clock_exactness.py",
+  "tests": "tests/reference/test_global_event_clock_exactness.py",
+  "theorem": {
+    "statement": "A connected event-edge elapsed one-cochain admits a scalar clock potential iff every closed cycle has zero signed elapsed period.",
+    "potential_equation": "t(v)-t(u)=theta(u->v)",
+    "uniqueness": "up to one additive constant per connected component"
+  },
+  "reference_controls": [
+    "serial chain exactness",
+    "equal-path diamond exactness",
+    "unequal-path diamond temporal-holonomy rejection",
+    "positive directed-cycle rejection",
+    "connected-domain rejection for disconnected input",
+    "explicit multi-component mode",
+    "isolated-vertex connectivity rejection",
+    "non-positive/non-finite elapsed weight rejection",
+    "positive self-loop rejection",
+    "strict time orientation on exact positive edges",
+    "single-vertex trivial exactness"
+  ],
+  "parent_claims": [
+    "00E positive elapsed activity",
+    "00F prefix-tree cumulative scalar",
+    "05G Frobenius foliation conditional on a regular scalar clock"
+  ],
+  "promotion_boundary": {
+    "production_event_complex": "OPEN_INPUT",
+    "smooth_regular_spacetime_extension": "OPEN_INTERFACE",
+    "global_hyperbolicity": "SEPARATE_GATE",
+    "cauchy_leaf": "SEPARATE_GATE"
+  },
+  "verdict": "PASS_IDT_EVENT_CLOCK_EXACTNESS_CERTIFIER_WITH_PRODUCTION_INPUT_OPEN"
+}
