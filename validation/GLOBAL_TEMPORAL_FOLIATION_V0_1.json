@@ -1,0 +1,29 @@
+{
+  "schema": "IDT_GLOBAL_TEMPORAL_FOLIATION_V0_1",
+  "date": "2026-08-30",
+  "status": "PASS_IDT_LOCAL_FROBENIUS_WITH_GLOBAL_CLOCK_INPUT_OPEN",
+  "formalism": "formalism/05G_global_temporal_foliation.md",
+  "reference_implementation": "src/idt/global_temporal_foliation.py",
+  "reference_tests": "tests/reference/test_global_temporal_foliation.py",
+  "parent_claims": {
+    "activity_duration": "00E",
+    "derived_precedence": "00F",
+    "elapsed_clock_calibration": "05A",
+    "positive_relational_lapse": "05C"
+  },
+  "promoted": {
+    "theta_equals_positive_lapse_times_clock_differential": "PASS_PARENT",
+    "frobenius_three_form_zero": "PASS_EXACT",
+    "kernel_preserved_under_positive_lapse": "PASS_EXACT",
+    "local_integrable_spatial_distribution": "PASS_STANDARD_THEOREM",
+    "regular_level_set_foliation_given_global_regular_clock": "PASS_CONDITIONAL"
+  },
+  "open_inputs": {
+    "domain_wide_smooth_scalar_clock_with_nonzero_differential": "OPEN_INPUT",
+    "cauchy_leaf_property": "OPEN",
+    "global_hyperbolicity": "OPEN",
+    "global_product_splitting_hypotheses": "OPEN"
+  },
+  "cross_repo_handoff": "TIR spatial manifold + IDT regular temporal foliation -> RFC global Einstein-manifold promotion candidate",
+  "main_promotion": "FORBIDDEN_WITHOUT_EXPLICIT_USER_ORDER"
+}
