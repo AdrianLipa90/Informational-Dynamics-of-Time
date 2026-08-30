@@ -67,6 +67,26 @@ def _onsager(values: Sequence[Sequence[float]], frame_count: int) -> np.ndarray:
     return matrix
 
 
+def _mobility_matrix(
+    values: float | Sequence[Sequence[float]],
+    frame_count: int,
+) -> np.ndarray:
+    """Normalize scalar or matrix mobility to the Onsager PSD matrix contract.
+
+    A scalar mobility m represents the isotropic Onsager operator m I.  The
+    same non-negative/PSD firewall therefore applies to scalar and matrix
+    inputs before either velocity or dissipation is evaluated.
+    """
+    if isinstance(values, (bool, np.bool_)):
+        raise SchrodingerOnsagerBalanceError("scalar mobility must be a finite non-negative real")
+    if np.isscalar(values):
+        mobility = float(values)
+        if not math.isfinite(mobility) or mobility < 0.0:
+            raise SchrodingerOnsagerBalanceError("scalar mobility must be finite and non-negative")
+        return mobility * np.eye(frame_count, dtype=float)
+    return _onsager(values, frame_count)
+
+
 def seam_difference_operator(seam_phases: Sequence[float], frame_count: int) -> np.ndarray:
     if not isinstance(frame_count, int) or isinstance(frame_count, bool) or frame_count < 2:
         raise SchrodingerOnsagerBalanceError("frame_count must be an integer >= 2")
@@ -139,13 +159,30 @@ def schrodinger_seam_power(
     return float(np.real(value))
 
 
+def onsager_dissipation(
+    state: Sequence[complex],
+    seam_phases: Sequence[float],
+    mobility: float | Sequence[Sequence[float]],
+) -> float:
+    """Return the non-negative Onsager quadratic dissipation.
+
+    For scalar mobility m this is m ||grad V||^2.  For matrix mobility G it is
+    grad(V)^T G grad(V), with the same symmetric-PSD validation used by the
+    phase-flow implementation.
+    """
+    psi = _state(state)
+    gradient = node_phase_gradient(psi, seam_phases)
+    g = _mobility_matrix(mobility, psi.size)
+    return float(gradient @ g @ gradient)
+
+
 def onsager_phase_velocity(
     state: Sequence[complex],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
 ) -> tuple[np.ndarray, np.ndarray, float]:
     psi = _state(state)
-    g = _onsager(onsager_matrix, psi.size)
+    g = _mobility_matrix(onsager_matrix, psi.size)
     gradient = node_phase_gradient(psi, seam_phases)
     alpha_dot = -(g @ gradient)
     state_dot = 1j * alpha_dot * psi

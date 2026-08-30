@@ -177,7 +177,7 @@ def audit_moving_connection(
 ) -> MovingConnectionAudit:
     psi = _state(amplitudes)
     h = _hermitian(hamiltonian, int(psi.size))
-    k = seam_stiffness(int(psi.size), seam_phases)
+    k = seam_stiffness(seam_phases, int(psi.size))
     seam_energy = float(np.real(np.vdot(psi, k @ psi)))
     p_sch, p_conn, diss, balance = moving_seam_balance_rate(
         psi, h, seam_phases, seam_rates, mobility

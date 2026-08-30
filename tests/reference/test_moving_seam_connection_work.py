@@ -58,7 +58,7 @@ def test_stiffness_rate_matches_finite_difference_of_K():
     rates = np.array([0.3, 0.2, -0.5])
     analytic = seam_stiffness_rate(4, seam, rates)
     eps = 1e-7
-    numerical = (seam_stiffness(4, seam + eps * rates) - seam_stiffness(4, seam - eps * rates)) / (2.0 * eps)
+    numerical = (seam_stiffness(seam + eps * rates, 4) - seam_stiffness(seam - eps * rates, 4)) / (2.0 * eps)
     np.testing.assert_allclose(analytic, numerical, atol=2e-9, rtol=0.0)
     np.testing.assert_allclose(analytic, analytic.conj().T, atol=1e-15)
 
