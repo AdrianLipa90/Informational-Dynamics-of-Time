@@ -23,7 +23,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install 05I reference dependency
-        run: python -m pip install pytest
+      - name: Install 05I reference dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt pytest
       - name: Run IDT 05I regular smooth-clock witness controls
         run: python -m pytest -q tests/reference/test_regular_smooth_clock_extension.py
