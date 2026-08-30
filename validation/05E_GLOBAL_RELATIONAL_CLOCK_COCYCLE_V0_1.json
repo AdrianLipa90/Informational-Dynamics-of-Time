@@ -1,0 +1,28 @@
+{
+  "schema": "IDT_05E_GLOBAL_RELATIONAL_CLOCK_COCYCLE_VALIDATION_V0_1",
+  "technical_status": "PASS_LOCAL_REFERENCE_TESTS",
+  "verdict_target": "PASS_IDT_05E_GLOBAL_RELATIONAL_CLOCK_COCYCLE",
+  "parent": {
+    "idt_main_head": "84ce1886175af872ae4a56ba36f7e106d8e23635",
+    "source": "formalism/05C_relational_lapse_interface.md",
+    "local_ratio": "N_x|y = a_x/a_y > 0",
+    "composition": "N_x|z = N_x|y N_y|z"
+  },
+  "closure": {
+    "cycle_condition": "product_C N_e = 1",
+    "global_potential": "N_x|y = a_x/a_y",
+    "uniqueness": "a_x unique up to one common positive scale",
+    "log_form": "log N_x|y = phi_x - phi_y",
+    "common_reparameterization": "pairwise ratios invariant"
+  },
+  "negative_witnesses": [
+    "nonpositive ratio",
+    "disconnected network for one reference scale",
+    "nonunit multiplicative cycle holonomy"
+  ],
+  "status_boundaries": {
+    "finite_connected_clock_graph": "PASS_LOCAL_REFERENCE_TESTS",
+    "smooth_continuum_lapse_potential": "REFINEMENT_TARGET",
+    "global_causal_time_function_Cauchy_foliation": "NEXT_CROSS_REPOSITORY_GATE"
+  }
+}
