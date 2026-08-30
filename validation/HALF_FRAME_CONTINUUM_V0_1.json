@@ -1,0 +1,49 @@
+{
+  "schema": "IDT_HALF_FRAME_CONTINUUM_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS",
+  "branch": "feat/half-frame-continuum-front-limit-v0.1",
+  "formalism": "formalism/02JK_half_frame_continuum_front_limit.md",
+  "implementation": "src/idt/half_frame_continuum.py",
+  "tests": "tests/reference/test_half_frame_continuum.py",
+  "sampling": {
+    "frame_amplitude": "a_n^(h) = sqrt(h) Psi(x_n,Theta)",
+    "seam_phase": "varphi_n^(h) = integral_[x_n,x_(n+1)] A(x,Theta) dx"
+  },
+  "continuum_limits": {
+    "glued_density": "rho_F,n^(h) = J_n/(2h) -> |Psi(x_(n+1/2),Theta)|^2",
+    "defect_density": "epsilon_D,n^(h) = 4 |d_n|^2/h^3 -> |(partial_x-iA)Psi|^2",
+    "integrated_glued_measure": "sum h rho_F -> integral |Psi|^2 dx",
+    "weighted_defect_form": "sum h M_n epsilon_D,n -> integral M |D_A Psi|^2 dx"
+  },
+  "convergence": {
+    "smooth_midpoint_glued_density": "SECOND_ORDER_PASS",
+    "smooth_midpoint_defect_density": "SECOND_ORDER_PASS",
+    "smooth_bulk_fuzzy_quality": "F_n -> 1 PASS",
+    "gauge_invariance": "EXACT_DISCRETE_PASS"
+  },
+  "02C_bridge": {
+    "stiffness_operator": "K = D^dagger diag(M_e) D",
+    "effective_mobility": "M_eff = harmonic_mean(M_e)",
+    "wave_coefficient": "c_eff^2 = M_eff",
+    "propagation_coefficient_authority": "INHERITED_FROM_02C_M_EFF_AND_BETA_EFF"
+  },
+  "boundaries": {
+    "02C_effective_coefficient_authority": "PRESERVED",
+    "metric_time_calibration": "DOWNSTREAM",
+    "prime_specific_physical_privilege": "OPEN_UNDER_EXISTING_NULL_CONTROLS",
+    "spin_half_binding": "OPEN"
+  },
+  "hosted_ci": {
+    "status": "PASS",
+    "workflow": "Reference suite",
+    "run_number": 785,
+    "run_id": 33222576195,
+    "job_id": 99019557988,
+    "tested_head_sha": "671ccf81e25d9ae0285f5b189bbb7068d57e6c8c",
+    "tested_pr_merge_sha": "5d15b56288453022fa1f7fd1c3897768c444108f",
+    "tests_passed": 741,
+    "tests_total": 741,
+    "elapsed_seconds": 13.64
+  },
+  "next_gate": "CONTINUUM_SCHRODINGER_ONSAGER_BALANCE"
+}

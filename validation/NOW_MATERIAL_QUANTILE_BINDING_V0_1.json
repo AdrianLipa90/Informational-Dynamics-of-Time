@@ -1,0 +1,59 @@
+{
+  "schema": "IDT_NOW_MATERIAL_QUANTILE_BINDING_V0_1",
+  "status": "ALGEBRAIC_REFERENCE_PASS / FINAL_HEAD_CONFORMANCE_PASS",
+  "branch": "feat/now-material-quantile-realization-binding-v0.1",
+  "formalism": "formalism/02JP_now_material_quantile_realization_binding.md",
+  "implementation": "src/idt/now_material_quantile_binding.py",
+  "tests": "tests/reference/test_now_material_quantile_binding.py",
+  "inputs": {
+    "wave_material_family": "X_q(Theta), q in (0,1)",
+    "logical_now": "N(D)=Max_<T(D_q)",
+    "tir_exchange": "R(q)=1-q"
+  },
+  "derived_coordinates": {
+    "unique_exchange_fixed_selector": "q_star=1/2",
+    "symmetric_material_marker": "B_NOW^(1/2)(nu)=X_1/2 on the branch associated with nu",
+    "serial_binding": "unique supported maximal occurrence -> one selected material marker",
+    "concurrent_binding": "NOW antichain -> branch-indexed selected material markers",
+    "mirror_quantile_identity": "X_(1-q)=2c-X_q for density symmetric about c"
+  },
+  "declared_gates": [
+    "exchange_involution_fixed_point",
+    "mirror_quantile_equivariance",
+    "serial_realized_event_material_binding",
+    "state_recurrence_occurrence_identity",
+    "wave_coordinate_event_identity_factorization",
+    "realization_selector_material_family_factorization",
+    "concurrent_branchwise_binding",
+    "fail_closed_binding_validation"
+  ],
+  "hosted_ci": {
+    "implementation_run": {
+      "status": "PASS",
+      "workflow": "Reference suite",
+      "run_number": 816,
+      "run_id": 33241909183,
+      "job_id": 99072577591,
+      "tested_head_sha": "c31a2e107b945e50844fe21ac45ce4b7b21b0a21",
+      "tested_merge_sha": "6d2b9a1ac275e8af5949b2193a180281a7e6af6b",
+      "tests_passed": 805,
+      "tests_total": 805,
+      "elapsed_seconds": 19.79
+    },
+    "conformance_run": {
+      "status": "PASS",
+      "workflow": "Reference suite",
+      "run_number": 829,
+      "run_id": 33242177572,
+      "job_id": 99073269144,
+      "tested_head_sha": "93d698082be59d0ad364903e68a39a840c8f7e59",
+      "tested_merge_sha": "aebf6e86f7f09c0e60b95e1f6b112d944f19fbb5",
+      "python": "3.12.14",
+      "os": "Ubuntu 24.04.4",
+      "tests_passed": 806,
+      "tests_total": 806,
+      "elapsed_seconds": 15.38
+    }
+  },
+  "next_gate": "NOW_BINDING_DYNAMICAL_CONSISTENCY_WITH_BIFURCATION"
+}
