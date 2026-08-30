@@ -1,0 +1,41 @@
+{
+  "schema": "FPDG_DEPENDENCY_EXPORT_V0_1",
+  "repository_id": "IDT",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "source_commit": "ed902458b6e0ad338ca4ba637d8d8228bc7c549b",
+  "generated_at": "2026-08-29T18:58:00+01:00",
+  "claims": [
+    {"claim_id":"IDT.TEMPORAL.PRIMITIVE","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.TEMPORAL.WAVE","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.NOW","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.BIFURCATION","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.TEMPORAL.TRANSPORT","status":"CANONICAL","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.MEMORY","status":"HOSTED_FULL_SUITE_PASS","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.ORCHORBITAL","status":"HOSTED_FULL_SUITE_PASS","source_path":"CURRENT_STATUS.md","evidence_class":"hosted_full_suite_status"},
+    {"claim_id":"IDT.RETRODICTION","status":"ACTIVE_CONSTRUCTIVE_LAYER","source_path":"CURRENT_STATUS.md","evidence_class":"hosted_constructive_status","validation":"07U_RUN_33205507810_551_OF_551","merge":"f6ccb49cecbe9da9beb91f29b1c7bbc9e15283f3"},
+    {"claim_id":"IDT.RETROCAUSAL_TESTS","status":"DOWNSTREAM_TARGET","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.NOETHER.GAUGE_COVARIANT_SOURCE","status":"CANONICAL_RELATIVISTIC_PREREQUISITE","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.RELATIVISTIC.FIELD_BRIDGE","status":"CROSS_REPO_PREREQUISITE","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.EINSTEIN.CLOSURE","status":"JOINT_TARGET","source_path":"CURRENT_STATUS.md","evidence_class":"source_repository_status"},
+    {"claim_id":"IDT.CLOCK.GAMMA_T","status":"CROSS_REPO_PASS","source_path":"formalism/DEPENDENCY_GRAPH.md","evidence_class":"cross_repo_validated","exact_head":"d5d5def488776c1310d83e33c639b5e3078befec","validation":"REFERENCE_SUITE_868_SUCCESS"},
+    {"claim_id":"IDT.CLOCK.RELATIVE_ENTROPY_05D","status":"EXACT_CONDITIONAL_MEMORYLESS_CLOCK_REALIZATION / SHANNON_KL_GATE / NON_ENERGY_CARRIER","source_path":"formalism/05D_local_clock_relative_entropy_potential.md","evidence_class":"source_formalism_validation","validation":"LOCAL_CLOCK_RELATIVE_ENTROPY_V0_1"},
+    {"claim_id":"IDT.HALF_SEAM.DOUBLE_COVER_SIGNATURE","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"},
+    {"claim_id":"IDT.HALF_SEAM.RELATIONAL_ZERO","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"},
+    {"claim_id":"IDT.NOW.HYPERBOLIC_CHART","status":"CANDIDATE_TARGET","source_path":"research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json","evidence_class":"gremlin_candidate_target","canon_authority":false,"evidence_repository":"SOH"}
+  ],
+  "local_edges": [
+    {"from":"IDT.TEMPORAL.PRIMITIVE","to":"IDT.TEMPORAL.WAVE","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.WAVE","to":"IDT.NOW","authority":"CANONICAL"},
+    {"from":"IDT.NOW","to":"IDT.BIFURCATION","authority":"CANONICAL"},
+    {"from":"IDT.BIFURCATION","to":"IDT.TEMPORAL.TRANSPORT","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.TRANSPORT","to":"IDT.MEMORY","authority":"CANONICAL"},
+    {"from":"IDT.MEMORY","to":"IDT.ORCHORBITAL","authority":"CANONICAL"},
+    {"from":"IDT.ORCHORBITAL","to":"IDT.RETRODICTION","authority":"CANONICAL"},
+    {"from":"IDT.RETRODICTION","to":"IDT.RETROCAUSAL_TESTS","authority":"CANONICAL"},
+    {"from":"IDT.RETROCAUSAL_TESTS","to":"IDT.EINSTEIN.CLOSURE","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.PRIMITIVE","to":"IDT.NOETHER.GAUGE_COVARIANT_SOURCE","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.WAVE","to":"IDT.CLOCK.GAMMA_T","authority":"CANONICAL"},
+    {"from":"IDT.TEMPORAL.PRIMITIVE","to":"IDT.CLOCK.RELATIVE_ENTROPY_05D","authority":"CANONICAL"},
+    {"from":"IDT.RELATIVISTIC.FIELD_BRIDGE","to":"IDT.EINSTEIN.CLOSURE","authority":"CANONICAL"}
+  ]
+}
