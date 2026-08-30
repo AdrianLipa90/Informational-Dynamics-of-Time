@@ -1,0 +1,38 @@
+{
+  "schema": "IDT_REGULAR_SMOOTH_CLOCK_EXTENSION_V0_1",
+  "date": "2026-08-30",
+  "status": "REFERENCE_CERTIFIER_TARGET_WITH_PRODUCTION_INPUT_OPEN",
+  "formalism": "formalism/05I_regular_smooth_clock_extension.md",
+  "implementation": "src/idt/regular_smooth_clock_extension.py",
+  "tests": "tests/reference/test_regular_smooth_clock_extension.py",
+  "parents": {
+    "05H": "exact discrete event-clock scalar unique up to additive constant",
+    "05G": "regular smooth scalar plus positive lapse implies temporal foliation"
+  },
+  "witness_class": {
+    "dimension": 4,
+    "local_clock": "t_p(x)=a_p.x+b_p",
+    "regularity": "a_p != 0",
+    "smoothness": "C_INFINITY_AFFINE_CHART_WITNESS",
+    "overlap": "x_q=A_{q<-p}x_p+s_{q<-p}",
+    "overlap_invertibility": "det(A_{q<-p}) != 0",
+    "scalar_gluing": [
+      "a_q A_{q<-p}=a_p",
+      "a_q.s_{q<-p}+b_q=b_p"
+    ],
+    "event_alignment": "t_p(X_{p,v})=t_V(v)+C for one global additive C",
+    "coordinate_cocycle": [
+      "A_{r<-p}=A_{r<-q}A_{q<-p}",
+      "s_{r<-p}=A_{r<-q}s_{q<-p}+s_{r<-q}"
+    ]
+  },
+  "fpdg_coordinate": "GSC-3",
+  "promotion_firewall": {
+    "graph_exactness_implies_smooth_extension": false,
+    "production_event_complex": "OPEN_INPUT",
+    "production_regular_clock_witness": "OPEN_INPUT",
+    "production_domain_coverage_witness": "OPEN_INPUT",
+    "global_hyperbolicity": "OPEN_SEPARATE_GATE"
+  },
+  "target_verdict": "PASS_IDT_REGULAR_SMOOTH_CLOCK_EXTENSION_CERTIFIER_WITH_PRODUCTION_INPUT_OPEN"
+}
