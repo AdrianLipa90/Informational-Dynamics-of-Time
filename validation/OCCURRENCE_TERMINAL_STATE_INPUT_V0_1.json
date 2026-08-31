@@ -1,0 +1,48 @@
+{
+  "schema": "IDT_OCCURRENCE_TERMINAL_STATE_INPUT_RECEIPT_V0_1",
+  "status": "PASS_INPUT_CONTRACT_WITH_PRODUCTION_STATE_TABLE_OPEN",
+  "source_head_sha": "740e03a4fc2c20eae3bb8eb0cf11dbe7d94ae160",
+  "stacked_base": {
+    "pr": 87,
+    "branch": "feat/idt-gsc2-gsc3-holonomy-clean-v0.1",
+    "head_sha": "5a2ddc1cba572011a517657aca0174667cf1da08"
+  },
+  "validation": {
+    "isolated_reference_tests": "6_OF_6_PASS",
+    "hosted_00g": {
+      "workflow": "IDT 00G occurrence-terminal-state input",
+      "run_number": 2,
+      "run_id": 33349947166,
+      "conclusion": "SUCCESS"
+    },
+    "hosted_05j_parent": {
+      "workflow": "IDT 05J production event-complex input",
+      "run_number": 5,
+      "run_id": 33349947158,
+      "conclusion": "SUCCESS"
+    },
+    "hosted_reference_suite": {
+      "workflow": "Reference suite",
+      "run_number": 950,
+      "run_id": 33349947161,
+      "conclusion": "SUCCESS"
+    }
+  },
+  "exact_contract_results": [
+    "occurrence identifiers are unique",
+    "prefix identities are unique",
+    "terminal-state labels may recur across distinct prefix occurrences",
+    "00G occurrence set equals the bound 05J occurrence set",
+    "00G table is bound to the exact 05J event-complex incidence digest",
+    "table digest tampering fails closed"
+  ],
+  "production_open": [
+    "PRODUCTION_OCCURRENCE_TERMINAL_STATE_TABLE",
+    "CROSS_REPO_TERMINAL_STATE_TO_TIR_VERTEX_BINDING"
+  ],
+  "epistemic": {
+    "promotion_review_eligible_only_on_production_input": true,
+    "canon_allowed": false
+  },
+  "verdict": "PASS_IDT_00G_OCCURRENCE_TERMINAL_STATE_INPUT_WITH_PRODUCTION_TABLE_OPEN"
+}
