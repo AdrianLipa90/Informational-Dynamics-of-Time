@@ -1,0 +1,31 @@
+name: IDT 05I regular smooth clock extension
+
+on:
+  pull_request:
+    paths:
+      - 'formalism/05I_regular_smooth_clock_extension.md'
+      - 'src/idt/regular_smooth_clock_extension.py'
+      - 'tests/reference/test_regular_smooth_clock_extension.py'
+      - 'validation/REGULAR_SMOOTH_CLOCK_EXTENSION_V0_1.json'
+      - '.github/workflows/idt-05i-regular-smooth-clock-extension.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  idt-05i:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install 05I reference dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt pytest
+      - name: Run IDT 05I regular smooth-clock witness controls
+        run: python -m pytest -q tests/reference/test_regular_smooth_clock_extension.py
