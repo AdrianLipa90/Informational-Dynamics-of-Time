@@ -1,0 +1,32 @@
+{
+  "schema": "IDT_GSC2_PRODUCTION_EVENT_COMPLEX_INPUT_VALIDATION_RECEIPT_V0_1",
+  "date": "2026-08-31",
+  "technical_status": "PASS",
+  "verdict": "PASS_IDT_GSC2_EVENT_COMPLEX_INPUT_CONTRACT_WITH_PRODUCTION_INPUT_OPEN",
+  "tested_head": "6f657bc7594cc868457aa1a602a8655d3e95b35e",
+  "hosted_validation": {
+    "workflow": "Reference suite",
+    "run_number": 942,
+    "run_id": 33345909657,
+    "conclusion": "success"
+  },
+  "contract": {
+    "schema": "IDT_GLOBAL_EVENT_COMPLEX_INPUT_V0_1",
+    "integrity_and_exactness_separated": true,
+    "canonical_incidence_digest": "SHA256",
+    "positive_elapsed_edges_required": true,
+    "production_flag_required_for_promotion": true
+  },
+  "minimal_nontrivial_exactness_control": {
+    "event_count": 3,
+    "edge_count": 3,
+    "orientation": ["a->b", "b->c", "a->c"],
+    "exactness_identity": "theta_ab + theta_bc = theta_ac",
+    "positive_control": [1.0, 2.0, 3.0],
+    "negative_direct_edge": 4.0,
+    "authority": "REFERENCE_CONTROL_ONLY"
+  },
+  "production_event_complex": "OPEN_INPUT",
+  "canon_promotion": false,
+  "next_gate": "SOURCE_OWNED_PRODUCTION_EVENT_INCIDENCE_AND_ELAPSED_EDGE_WITNESS"
+}

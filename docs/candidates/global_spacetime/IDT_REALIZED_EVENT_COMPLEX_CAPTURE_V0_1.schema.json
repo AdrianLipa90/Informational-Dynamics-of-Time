@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IDT_REALIZED_EVENT_COMPLEX_CAPTURE_V0_1",
+  "title": "IDT Realized Event Complex Capture",
+  "type": "object",
+  "required": ["schema", "capture_id", "source", "events", "elapsed_edges"],
+  "properties": {
+    "schema": {"const": "IDT_REALIZED_EVENT_COMPLEX_CAPTURE_V0_1"},
+    "capture_id": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["source_id", "source_class", "immutable_ref", "clock_id"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_class": {
+          "enum": ["PRODUCTION_SOURCE", "REFERENCE_CONTROL", "CANDIDATE_SOURCE"]
+        },
+        "immutable_ref": {"type": "string", "minLength": 1},
+        "clock_id": {"type": "string", "minLength": 1},
+        "capture_receipt_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"source_class": {"const": "PRODUCTION_SOURCE"}}},
+          "then": {"required": ["capture_receipt_sha256"]}
+        }
+      ],
+      "additionalProperties": true
+    },
+    "events": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["event_id"],
+        "properties": {"event_id": {"type": "string", "minLength": 1}},
+        "additionalProperties": true
+      }
+    },
+    "elapsed_edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["edge_id", "source", "target", "dtheta"],
+        "properties": {
+          "edge_id": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1},
+          "dtheta": {"type": "number", "exclusiveMinimum": 0}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
