@@ -1,0 +1,15 @@
+{
+  "schema": "IDT_PRODUCTION_EVENT_COMPLEX_INPUT_CONTRACT_V0_1",
+  "status": "REFERENCE_CONTRACT_DEFINED",
+  "upstream_certifier": "GLOBAL_EVENT_CLOCK_EXACTNESS_V0_1",
+  "input_schema": "IDT_PRODUCTION_EVENT_COMPLEX_INPUT_V0_1",
+  "production_event_complex": "OPEN_INPUT",
+  "quotient": "EXPLICIT_OCCURRENCE_TO_EVENT_PARTITION",
+  "promotion_rule": "production=true AND input_valid AND integrity_valid AND quotient_valid AND exact_clock_certified",
+  "reference_control": {
+    "dataset": "exact diamond with explicit merger class",
+    "production": false,
+    "promotion_eligible": false
+  },
+  "hosted_verdict_target": "PASS_IDT_PRODUCTION_EVENT_COMPLEX_INPUT_CONTRACT_WITH_PRODUCTION_INPUT_OPEN"
+}
