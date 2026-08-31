@@ -1,0 +1,21 @@
+name: IDT 00G occurrence-terminal-state input
+
+on:
+  pull_request:
+    paths:
+      - "formalism/00G_occurrence_terminal_state_input_contract.md"
+      - "src/idt/occurrence_terminal_state_input.py"
+      - "tests/reference/test_occurrence_terminal_state_input.py"
+      - ".github/workflows/idt-00g-occurrence-terminal-state-input.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q tests/reference/test_occurrence_terminal_state_input.py
