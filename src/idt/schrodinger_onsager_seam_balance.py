@@ -78,8 +78,20 @@ def seam_difference_operator(seam_phases: Sequence[float], frame_count: int) -> 
     return b
 
 
-def seam_stiffness(seam_phases: Sequence[float], frame_count: int) -> np.ndarray:
-    b = seam_difference_operator(seam_phases, frame_count)
+def seam_stiffness(
+    seam_phases: Sequence[float] | int,
+    frame_count: int | Sequence[float],
+) -> np.ndarray:
+    """Return B^dagger B with compatibility for both historical argument orders.
+
+    The canonical API is ``seam_stiffness(seam_phases, frame_count)``. A merged
+    moving-connection branch used ``seam_stiffness(frame_count, seam_phases)``;
+    accepting that order here restores source compatibility while preserving the
+    same operator and fail-closed validation in ``seam_difference_operator``.
+    """
+    if isinstance(seam_phases, int) and not isinstance(seam_phases, bool):
+        seam_phases, frame_count = frame_count, seam_phases
+    b = seam_difference_operator(seam_phases, frame_count)  # type: ignore[arg-type]
     k = b.conj().T @ b
     return 0.5 * (k + k.conj().T)
 
@@ -115,6 +127,30 @@ def node_phase_gradient(state: Sequence[complex], seam_phases: Sequence[float]) 
     psi = _state(state)
     edge_gradient = edge_mismatch_gradients(psi, seam_phases)
     return path_incidence(psi.size).T @ edge_gradient
+
+
+def onsager_dissipation(
+    state: Sequence[complex],
+    seam_phases: Sequence[float],
+    mobility: float | Sequence[Sequence[float]],
+) -> float:
+    """Return the non-negative Onsager quadratic form g^T G g.
+
+    A scalar mobility is the isotropic specialization ``G = mobility * I``.
+    Matrix input is validated by the same symmetric positive-semidefinite gate used
+    by ``onsager_phase_velocity``.
+    """
+    psi = _state(state)
+    gradient = node_phase_gradient(psi, seam_phases)
+    if isinstance(mobility, (bool, np.bool_)):
+        raise SchrodingerOnsagerBalanceError("scalar mobility must be finite and non-negative")
+    if np.isscalar(mobility):
+        value = float(mobility)
+        if not math.isfinite(value) or value < 0.0:
+            raise SchrodingerOnsagerBalanceError("scalar mobility must be finite and non-negative")
+        return float(value * (gradient @ gradient))
+    matrix = _onsager(mobility, psi.size)
+    return float(gradient @ matrix @ gradient)
 
 
 def schrodinger_velocity(
