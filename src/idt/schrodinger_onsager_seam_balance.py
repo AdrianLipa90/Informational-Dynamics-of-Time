@@ -60,13 +60,13 @@ def _onsager(
     """Normalize scalar or matrix Onsager mobility to one PSD matrix.
 
     The scalar form is retained for compatibility with the previously hosted-PASS
-    seam API, where ``mu`` denoted the isotropic matrix ``mu I``.  Matrix input is
+    seam API, where ``mu`` denoted the isotropic matrix ``mu I``. Matrix input is
     the current native representation.
     """
 
     if np.isscalar(values):
         mobility = float(values)
-        if not isfinite(mobility) or mobility < 0.0:
+        if not math.isfinite(mobility) or mobility < 0.0:
             raise SchrodingerOnsagerBalanceError(
                 "scalar Onsager mobility must be finite and non-negative"
             )
@@ -196,7 +196,7 @@ def onsager_dissipation(
     """Return the exact Onsager quadratic dissipation ``grad^T G grad``.
 
     This restores the hosted-PASS public seam API while delegating to the current
-    node-phase gradient and mobility normalization.  Scalar ``mobility`` means
+    node-phase gradient and mobility normalization. Scalar ``mobility`` means
     the isotropic matrix ``mobility * I``.
     """
 
