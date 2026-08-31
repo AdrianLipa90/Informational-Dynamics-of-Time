@@ -53,7 +53,25 @@ def _hermitian(values: Sequence[Sequence[complex]], frame_count: int, *, name: s
     return matrix
 
 
-def _onsager(values: Sequence[Sequence[float]], frame_count: int) -> np.ndarray:
+def _onsager(
+    values: float | Sequence[Sequence[float]],
+    frame_count: int,
+) -> np.ndarray:
+    """Normalize scalar or matrix Onsager mobility to one PSD matrix.
+
+    The scalar form is retained for compatibility with the previously hosted-PASS
+    seam API, where ``mu`` denoted the isotropic matrix ``mu I``.  Matrix input is
+    the current native representation.
+    """
+
+    if np.isscalar(values):
+        mobility = float(values)
+        if not isfinite(mobility) or mobility < 0.0:
+            raise SchrodingerOnsagerBalanceError(
+                "scalar Onsager mobility must be finite and non-negative"
+            )
+        return mobility * np.eye(frame_count, dtype=float)
+
     matrix = np.asarray(values, dtype=float)
     if matrix.shape != (frame_count, frame_count):
         raise SchrodingerOnsagerBalanceError("Onsager matrix must have shape (N,N)")
@@ -78,7 +96,38 @@ def seam_difference_operator(seam_phases: Sequence[float], frame_count: int) -> 
     return b
 
 
-def seam_stiffness(seam_phases: Sequence[float], frame_count: int) -> np.ndarray:
+def seam_stiffness(
+    seam_phases_or_frame_count: Sequence[float] | int,
+    frame_count_or_seam_phases: int | Sequence[float],
+) -> np.ndarray:
+    """Return the phase-aware seam stiffness with dual API compatibility.
+
+    Current API::
+
+        seam_stiffness(seam_phases, frame_count)
+
+    Hosted-PASS legacy seam consumers use::
+
+        seam_stiffness(frame_count, seam_phases)
+
+    Both normalize to the same ``B^* B`` operator; no mathematical branch is
+    introduced by the compatibility surface.
+    """
+
+    if isinstance(seam_phases_or_frame_count, int) and not isinstance(
+        seam_phases_or_frame_count, bool
+    ):
+        frame_count = seam_phases_or_frame_count
+        seam_phases = frame_count_or_seam_phases
+    else:
+        seam_phases = seam_phases_or_frame_count
+        frame_count = frame_count_or_seam_phases
+
+    if not isinstance(frame_count, int) or isinstance(frame_count, bool):
+        raise SchrodingerOnsagerBalanceError("frame_count must be an integer >= 2")
+    if isinstance(seam_phases, (int, float, complex)):
+        raise SchrodingerOnsagerBalanceError("seam phases must be a sequence")
+
     b = seam_difference_operator(seam_phases, frame_count)
     k = b.conj().T @ b
     return 0.5 * (k + k.conj().T)
@@ -139,10 +188,33 @@ def schrodinger_seam_power(
     return float(np.real(value))
 
 
+def onsager_dissipation(
+    state: Sequence[complex],
+    seam_phases: Sequence[float],
+    mobility: float | Sequence[Sequence[float]],
+) -> float:
+    """Return the exact Onsager quadratic dissipation ``grad^T G grad``.
+
+    This restores the hosted-PASS public seam API while delegating to the current
+    node-phase gradient and mobility normalization.  Scalar ``mobility`` means
+    the isotropic matrix ``mobility * I``.
+    """
+
+    psi = _state(state)
+    gradient = node_phase_gradient(psi, seam_phases)
+    g = _onsager(mobility, psi.size)
+    value = float(gradient @ g @ gradient)
+    if value < -1e-12:
+        raise SchrodingerOnsagerBalanceError(
+            "Onsager dissipation became negative outside numerical tolerance"
+        )
+    return max(0.0, value)
+
+
 def onsager_phase_velocity(
     state: Sequence[complex],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
 ) -> tuple[np.ndarray, np.ndarray, float]:
     psi = _state(state)
     g = _onsager(onsager_matrix, psi.size)
@@ -157,7 +229,7 @@ def full_balance_velocity(
     state: Sequence[complex],
     hamiltonian: Sequence[Sequence[complex]],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
 ) -> np.ndarray:
     psi = _state(state)
     reversible = schrodinger_velocity(psi, hamiltonian)
@@ -169,7 +241,7 @@ def audit_instantaneous_balance(
     state: Sequence[complex],
     hamiltonian: Sequence[Sequence[complex]],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
 ) -> SeamBalanceAudit:
     psi = _state(state)
     h = _hermitian(hamiltonian, psi.size, name="Hamiltonian")
@@ -212,7 +284,7 @@ def exact_unitary_step(
 def phase_only_onsager_step(
     state: Sequence[complex],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
     delta_theta: float,
 ) -> np.ndarray:
     psi = _state(state)
@@ -227,7 +299,7 @@ def strang_balance_step(
     state: Sequence[complex],
     hamiltonian: Sequence[Sequence[complex]],
     seam_phases: Sequence[float],
-    onsager_matrix: Sequence[Sequence[float]],
+    onsager_matrix: float | Sequence[Sequence[float]],
     delta_theta: float,
 ) -> np.ndarray:
     dt = float(delta_theta)
