@@ -16,6 +16,77 @@ The admitted frontier currently remains at `Memory`. Tested ORCHORBITAL and Retr
 
 The current reference stack includes Shannon/phase transition primitives, positive temporal activity and NOW support, bifurcation and ordered temporal transport, internal elapsed activity, Kepler--Newton memory dynamics, CP1 Kähler memory geometry, append-only memory receipts and ledger-assisted recall.
 
+## Collatz--Fubini--Study temporal phase interface
+
+An additive temporal-phase branch now records the exact parity-itinerary map
+
+\[
+b_k(x)=C^k(x)\bmod2,
+\qquad
+q_C(x)=\sum_{k\ge0}\frac{b_k(x)}{2^{k+1}},
+\]
+
+with the exact shift identity
+
+\[
+\boxed{q_C(Cx)=2q_C(x)\pmod1}
+\]
+
+and the unit-circle phase carrier
+
+\[
+\boxed{\zeta_C(x)=e^{2\pi i q_C(x)}},
+\qquad
+\boxed{\zeta_C(Cx)=\zeta_C(x)^2}.
+\]
+
+For the terminal `4 -> 2 -> 1 -> 4` cycle,
+
+\[
+q_C(4)=\frac17,
+\qquad
+q_C(2)=\frac27,
+\qquad
+q_C(1)=\frac47.
+\]
+
+If an orbit reaches `1` after `L_x` steps, the resulting phase is conditionally root-of-unity quantized,
+
+\[
+\boxed{\zeta_C(x)^{7\,2^{L_x}}=1}.
+\]
+
+The phase is embedded on the equator of `CP1` as
+
+\[
+|\psi_C(x)\rangle
+=\frac{|0\rangle+\zeta_C(x)|1\rangle}{\sqrt2},
+\qquad \theta=\frac\pi2.
+\]
+
+This branch is additive to, not a replacement for, the monotone internal elapsed-activity coordinate. The candidate composite temporal state is therefore tracked as
+
+\[
+\boxed{\tau_{\rm IDT}=(\tau_{\rm int},\phi_C)},
+\qquad \phi_C=\arg\zeta_C,
+\]
+
+with the physical coupling between elapsed activity and projective phase still OPEN.
+
+Canonical supplement:
+
+`docs/IDT_COLLATZ_FS_PHASE_REGISTRY_SUPPLEMENT_V0_1.md`
+
+Formal interface:
+
+`docs/IDT_COLLATZ_FS_TEMPORAL_PHASE_V0_1.md`
+
+Deterministic validator:
+
+`validation/collatz_fs_temporal_phase_v0_1.py`
+
+Reference run on 2026-09-04 over `x=1..10000` recorded zero arithmetic exceptions, `10000/10000` passes for the doubling identity, and `10000/10000` passes for the conditional denominator/root-of-unity condition. This finite test is not a proof of the Collatz conjecture.
+
 The ORCHORBITAL temporal-memory extension adds:
 
 - attractor-relative Kepler energy and positive binding margins;
