@@ -101,7 +101,7 @@ Targeted ORCHORBITAL reference evidence is `11 passed in 0.07s`; receipt: `valid
 
 The provisional Retrodiction layer contains single-withheld-receipt inversion, multi-event observability, checkpoint selection, damped Gauss--Newton estimation, information-firewall commitment, covariance/Fisher uncertainty geometry and covariance-preserving checkpoint-permutation null ensembles.
 
-Hosted full-suite status remains `CI_RESULT_NOT_OBTAINED` because the observed workflow jobs terminate before executing test steps. Targeted reference evidence and hosted full-suite evidence are recorded separately.
+Hosted reference-suite evidence is now available for the Collatz--Fubini--Study integration head `ae3024cfe971b507d584b3a01d70b06d83211875`: GitHub Actions `Reference suite` run `33907162635` completed `SUCCESS`, including the full reference-suite step `python tools/run_reference_suite_with_fpdg_receipt.py`; the failure-receipt upload step was skipped because the suite passed. The independent `IDT 05J production event-complex input` run `33907162634` on the same head also completed `SUCCESS`. Targeted reference evidence and hosted full-suite evidence remain recorded separately.
 
 Reference figures are generated from code. Raster outputs and compiled PDFs are local QA artifacts and are not committed; repository monograph source is LaTeX.
 
