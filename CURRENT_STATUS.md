@@ -6,7 +6,7 @@ The repository is maintained as three synchronized spines:
 - **EVIDENCE** — tests, receipts, manifests and hosted audits;
 - **MONOGRAPH** — LaTeX projection of admitted formalism and evidence.
 
-Canonical `main` contains the merged Memory/ORCHORBITAL/Retrodiction stack together with the phase-clock/lapse work and the IDT side of the relativistic bridge.
+Canonical `main` contains the merged Memory/ORCHORBITAL/Retrodiction stack together with the phase-clock/lapse work, the IDT side of the relativistic bridge, and the additive Collatz–Fubini–Study temporal-phase interface merged on 2026-09-04. The Collatz–FS branch is mathematical/interface-level; physical time, energy and Einstein binding remain open.
 
 ## Canonical temporal spine
 
@@ -15,6 +15,42 @@ Canonical `main` contains the merged Memory/ORCHORBITAL/Retrodiction stack toget
 \]
 
 Memory and ORCHORBITAL are admitted by hosted full-suite receipts. Retrodiction remains the active constructive layer.
+
+## Additive Collatz–Fubini–Study temporal-phase branch
+
+The current additive mathematical phase branch is
+
+\[
+\boxed{\mathrm{TIR}\to\mathrm{Parity\ Itinerary}\to q_C\to\zeta_C\to S^1\subset\mathbb{CP}^1\to\mathrm{Temporal\ Phase\ Interface}}.
+\]
+
+For the full Collatz map on an admitted itinerary,
+
+\[
+q_C(Cx)=2q_C(x)\pmod1,
+\qquad
+\boxed{\zeta_C(x)=e^{2\pi i q_C(x)}},
+\qquad
+\boxed{\zeta_C(Cx)=\zeta_C(x)^2}.
+\]
+
+For trajectories reaching the terminal cycle, the root-of-unity statement remains conditional on that reachability. The phase is carried as an additive coordinate alongside the monotone internal elapsed-activity coordinate,
+
+\[
+\boxed{\tau_{\rm IDT}=(\tau_{\rm int},\phi_C)},
+\]
+
+without identifying `phi_C` with elapsed SI time, energy, lapse, stress-energy or a gravitational source.
+
+Canonical sources:
+
+- `docs/IDT_COLLATZ_FS_TEMPORAL_PHASE_V0_1.md`;
+- `docs/IDT_COLLATZ_FS_PHASE_REGISTRY_SUPPLEMENT_V0_1.md`;
+- `CURRENT_THEORY_STATE_PHASE_SUPPLEMENT_V0_1.md`.
+
+Status:
+
+`COLLATZ_FS_PHASE_MAP_STRUCTURAL_PASS / CP1_EQUATORIAL_EMBEDDING_PASS / CONDITIONAL_ROOT_OF_UNITY_QUANTIZATION_PASS / PHYSICAL_TIME_COUPLING_OPEN / EINSTEIN_BINDING_OPEN`.
 
 ## Parallel relativistic prerequisite
 
@@ -25,6 +61,8 @@ The Einstein node also carries the explicit side prerequisite
 \]
 
 The executable source interface is IDT 01AC/01AG. The cross-repository bridge is RFC RF-M1/RF-E0. The dependency graph therefore requires both the temporal/retrodiction spine and the relativistic field bridge at Einstein closure.
+
+The Collatz–FS phase interface is additive to this structure and does not itself satisfy or replace the relativistic prerequisite.
 
 ## Retrodiction frontier through 07U
 
