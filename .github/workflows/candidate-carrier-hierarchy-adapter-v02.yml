@@ -1,0 +1,34 @@
+name: Candidate carrier hierarchy adapter v0.2
+
+on:
+  push:
+    branches:
+      - candidate/600cell-working-layer-v0.1-20260911-v02
+    paths:
+      - 'PHASENAV_CARRIER_HIERARCHY_ADAPTER_V0_2.md'
+      - '.github/workflows/candidate-carrier-hierarchy-adapter-v02.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  idt-adapter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate IDT non-mutation boundary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('PHASENAV_CARRIER_HIERARCHY_ADAPTER_V0_2.md').read_text()
+          for required in (
+              'CANDIDATE_ONLY', 'TEMPORAL_CORE_MUTATED_FALSE',
+              'CANON_WRITE_AUTHORITY_FALSE', 'PHYSICAL_ION_BINDING_OPEN',
+              'CP^1', 'CP^3', 'CP^7', 'CP^15',
+              '5Q-or-higher carrier through this adapter is unsupported',
+              'temporal_core_mutated=false',
+          ):
+              assert required in text, required
+          assert 'They are not physical ion counts.' in text
+          PY
