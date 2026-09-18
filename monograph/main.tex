@@ -8,7 +8,14 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{tikz}
-\hypersetup{hidelinks}
+\usepackage{booktabs,longtable,array}
+\hypersetup{
+  hidelinks,
+  pdftitle={Informational Dynamics of Time},
+  pdfauthor={Adrian Lipa},
+  pdfsubject={Relational informational dynamics of temporal structure and spacetime closure},
+  pdfkeywords={informational dynamics, time, information geometry, retrodiction, Einstein closure}
+}
 \title{Informational Dynamics of Time}
 \author{Adrian Lipa}
 \date{\today}
@@ -17,8 +24,11 @@
 \maketitle
 \input{frontmatter/abstract}
 \input{frontmatter/methodology}
+\input{frontmatter/research_positioning}
+\input{frontmatter/symbols}
 \tableofcontents
 \mainmatter
+\part{Foundations and Temporal Construction}
 \include{chapters/01_information}
 \include{chapters/02_tir_entrypoint}
 \include{chapters/03_kahler_information_geometry}
@@ -29,6 +39,7 @@
 \include{chapters/05_now}
 \include{chapters/06_causal_bifurcation}
 \include{chapters/07_temporal_transport}
+\part{Memory and Reconstruction}
 \include{chapters/08_memory_and_retrodiction}
 \include{chapters/08A_memory_admission}
 \include{chapters/08B_retrodiction_contract}
@@ -45,12 +56,16 @@
 \include{chapters/08M_stratified_position_lift}
 \include{chapters/08N_per_stratum_position_decoder}
 \include{chapters/08O_winding_radius_position_decoder}
+\part{Experimental Programme}
 \include{chapters/09_retrocausality}
 \include{chapters/10_experiments}
+\part{Spacetime Closure}
 \include{chapters/11_space_as_external_branch}
 \include{chapters/12_einstein_closure}
 \include{chapters/13_predictions}
 \include{chapters/14_discussion}
 \appendix
 \include{appendices/A_harmonic_admission_scheduler}
+\backmatter
+\input{frontmatter/references}
 \end{document}
