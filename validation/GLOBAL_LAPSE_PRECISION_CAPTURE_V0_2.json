@@ -1,7 +1,10 @@
 {
   "schema": "IDT_GLOBAL_LAPSE_PRECISION_CAPTURE_V0_2",
-  "status": "PENDING_CURRENT_MAIN_HOSTED_VALIDATION",
+  "status": "PASS_HOSTED_REFERENCE_SUITE",
   "evidence_class": "PRECISION_SAFE_SOURCE_CONTRACT",
+  "hosted_reference_run_id": 35346788545,
+  "hosted_reference_head_sha": "e4fba00aa3ef2b96ed0a7de580e0ec2fd136ec28",
+  "hosted_reference_result": "1183 passed in 11.90s",
   "physical_production_claim": false,
   "canon_allowed": false,
   "formalism": "formalism/05K_global_lapse_precision_capture.md",
