@@ -73,3 +73,16 @@ GENERAL_GLOBAL_INJECTIVITY_OPEN
 The next implementation coordinate is direct append-only binding of the radial packet to the persisted ORCHORBITAL residence lineage, preserving one provenance path from residence observation to compressed position carrier.
 
 The Einstein chapter remains downstream of both the temporal/retrodiction spine and the parallel IDT 01AG -> RFC RF-M1/RF-E0 relativistic field prerequisite recorded in the executable dependency graph.
+
+
+## Scientific closure layer — 2026-09-18
+
+The canonical build now includes front-matter files for research positioning, notation, and verified primary references. Claims are explicitly typed as definitions/primitives, proved identities, reference-model/software results, calibrated physical correspondences, or replicated measured results.
+
+Standard-physics relations are recovery benchmarks rather than IDT discoveries unless an independently generated IDT predictor can disagree with a declared baseline on a held-out observable. Chapter 13 separates model-internal consequences from recovery targets and defines three discriminating physical-test contracts.
+
+Hosted test totals recorded above are historical software-assurance receipts attached to particular commits/runs. They are not counts of independent physical observations and do not change the physical claim status.
+
+The Einstein layer is now explicitly an interface/closure chapter: Bianchi, Einstein, Maxwell, linearised TT, and horizon thermodynamic relations are imported standard structures; the open IDT question is the independent binding of temporal/source variables to those structures.
+
+Empirical gates remain open where measurements or independent replication have not occurred.
