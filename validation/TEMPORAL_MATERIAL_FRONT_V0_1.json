@@ -1,0 +1,14 @@
+{
+  "schema": "IDT_TEMPORAL_MATERIAL_FRONT_V0_1",
+  "status": "PASS_HOSTED_REFERENCE_SUITE",
+  "evidence_class": "FORMAL_CANDIDATE_REFERENCE_GATE",
+  "hosted_reference_run_id": 35346788545,
+  "hosted_reference_head_sha": "e4fba00aa3ef2b96ed0a7de580e0ec2fd136ec28",
+  "hosted_reference_result": "1183 passed in 11.90s",
+  "formalism": "formalism/02JO_temporal_density_material_front_now_crosswalk.md",
+  "implementation": "src/idt/temporal_material_front.py",
+  "tests": [
+    "tests/reference/test_temporal_material_front.py"
+  ],
+  "promotion_authority": false
+}

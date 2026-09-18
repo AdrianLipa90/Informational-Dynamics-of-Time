@@ -147,3 +147,12 @@ The all-branch consolidation PR #24 passed the full Reference suite at `534/534`
 The final 07T consolidation also passed `534/534`. 07U then passed `551/551` on run `33205507810` before merge.
 
 RFC relativistic hardening is on RFC `main` at merge commit `786a872efa0dc75cad7c2b1591a8cb8a1dc45858`; its post-merge workflow run `33203930064` concluded `success`.
+
+
+## Repository-surface consolidation — 2026-09-18
+
+The branch-burden audit was resolved by porting only content absent from current `main`, rather than merging stale histories. 05I and 05J source/validation surfaces were already byte-identical to their validated branches and were not overwritten. The executable dependency graph now exposes the 05H -> 05I -> 05G clock-extension route explicitly.
+
+Integrated status-preserving surfaces include 05K precision-safe log-lapse capture, GSC2 source freeze, 02JO temporal material-front/NOW crosswalk, and the 600-cell/S3 ORCHORBITAL candidate adapter. Their candidate/source-contract/physical-open boundaries remain unchanged. Chapters 10--14 of the monograph are populated and subject to the independent Monograph PDF gate.
+
+Canonical path map: `docs/CANONICAL_SURFACE_INDEX.md`.

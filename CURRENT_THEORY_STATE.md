@@ -184,3 +184,10 @@ The next layer binds each \(\rho_k\) directly to the append-only ORCHORBITAL res
 \]
 
 01AG supplies the charge-projected variation-level Maxwell source interface. RFC RF-M1/RF-E0 supplies the AB-normalized Maxwell and Einstein-Bianchi stress-energy bridge. Their remaining promotion coordinates are tracked independently of the active Retrodiction radial-lineage binding gate.
+
+
+## Consolidated typed surfaces — 2026-09-18
+
+Repository placement and theory admission remain separate. The consolidated tree contains the 05H/05I/05J clock/event interfaces, 05K precision-safe log-lapse source contract, GSC2 source-freeze tooling, 02JO material-front/NOW crosswalk, and a candidate-only 600-cell/S3 ORCHORBITAL adapter. None of these placements bypasses its recorded evidence boundary.
+
+The machine-readable dependency graph is `validation/dependency_graph.json`; the human path map is `docs/CANONICAL_SURFACE_INDEX.md`. The previously declared active scientific frontier is not promoted merely by this repository consolidation.

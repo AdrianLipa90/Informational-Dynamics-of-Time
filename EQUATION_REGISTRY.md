@@ -406,6 +406,43 @@ X_N=\mathcal C_{N-1}\cdots\mathcal C_1\mathcal C_0X_0,
 \]
 within the declared reversible reference class and complete persisted lineage.
 
+**EQ-T040 — temporal material-front velocity**
+\[
+\dot X_p=\frac{\mathcal J(X_p)-(1-p)\mathcal J(a)-p\mathcal J(b)+\mathcal M\dot p}{\rho(X_p)}.
+\]
+
+**EQ-T041 — exact event-clock edge equation**
+\[
+t(v)-t(u)=\vartheta_{uv}=\theta(u\to v)>0,
+\qquad \oint_C\vartheta=0.
+\]
+
+**EQ-T042 — regular affine local clock witness**
+\[
+t_p(x)=a_p\cdot x+b_p,
+\qquad a_p\neq0.
+\]
+
+**EQ-T043 — precision-safe log-lapse coordinate**
+\[
+\ell_{x|y}=\ln N_{x|y}=\ln(1+\delta_{x|y}),
+\qquad L_x-L_y=\ell_{x|y}.
+\]
+
+**EQ-T044 — Onsager seam dissipation**
+\[
+D=\nabla V^T G\nabla V\ge0,
+\qquad G=mI\ \text{for scalar }m\ge0.
+\]
+
+**EQ-C600-01 — S3 candidate-sector multiplicity**
+\[
+d_\ell=(\ell+1)^2,
+\qquad \lambda_\ell=\ell(\ell+2),
+\qquad \ell=0,\ldots,5.
+\]
+Candidate only; no physical-time or canonical-carrier binding is implied.
+
 **EQ-T050 — energy/clock calibration**
 \[
 \Delta\phi_t=-\frac{E\Delta t}{\hbar}.
