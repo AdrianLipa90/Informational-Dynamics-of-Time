@@ -413,3 +413,21 @@ Q_\Sigma\leftrightarrow Q_\vartheta
 The formal gauge sign, pullback identity, scalar-field/rotor coefficient reduction and finite-generator identity are represented as conditional exact gates. Physical current and state-space promotion remain measured gates.
 
 The canonical Temporal Primitive → Temporal Wave admission order remains the authoritative sequential path. The 01X–01AC branch is the parallel physical-source connection and holonomy audit.
+
+
+## Consolidated clock/material/candidate surfaces — 2026-09-18
+
+The executable graph `validation/dependency_graph.json` is raised to `IDT_FORMAL_DEPENDENCY_GRAPH_V0_46` and explicitly records:
+
+```text
+TEMPORAL_PRIMITIVE -> RELATIONAL_LAPSE
+RELATIONAL_PRECEDENCE -> GLOBAL_EVENT_CLOCK_EXACTNESS
+GLOBAL_EVENT_CLOCK_EXACTNESS -> REGULAR_SMOOTH_CLOCK_EXTENSION
+RELATIONAL_LAPSE + REGULAR_SMOOTH_CLOCK_EXTENSION -> GLOBAL_TEMPORAL_FOLIATION
+TEMPORAL_DENSITY_FRONT + NOW -> TEMPORAL_MATERIAL_FRONT_CROSSWALK
+RELATIONAL_LAPSE + GLOBAL_TEMPORAL_FOLIATION -> GLOBAL_LAPSE_PRECISION_CAPTURE
+GLOBAL_EVENT_CLOCK_EXACTNESS -> GSC2_SOURCE_FREEZE
+ORCHORBITAL_ATTRACTORS -> ORCHORBITAL_600CELL_CANDIDATE
+```
+
+The last four nodes retain their recorded candidate/source-contract boundaries. Graph presence is not canon promotion.

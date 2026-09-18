@@ -1,0 +1,54 @@
+name: Candidate promotion geometry adapter v0.1
+
+on:
+  push:
+    branches:
+      - candidate/600cell-working-layer-v0.1-20260911
+    paths:
+      - 'PHASENAV_PROMOTION_GEOMETRY_ADAPTER_V0_1.md'
+      - '.github/workflows/candidate-promotion-geometry-v01.yml'
+  pull_request:
+    paths:
+      - 'PHASENAV_PROMOTION_GEOMETRY_ADAPTER_V0_1.md'
+      - '.github/workflows/candidate-promotion-geometry-v01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  adapter-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate IDT non-mutation boundary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('PHASENAV_PROMOTION_GEOMETRY_ADAPTER_V0_1.md')
+          text = p.read_text(encoding='utf-8')
+          required = (
+              'CANDIDATE_ONLY',
+              'TEMPORAL_CORE_MUTATED_FALSE',
+              'CANON_WRITE_AUTHORITY_FALSE',
+              'EPISTEMIC_CHYBA',
+              'Invariant: `temporal_core_mutated=false`.',
+              'Delta_G',
+              'Upsilon',
+              'Xi',
+              'Delta_F',
+              'QGT_{mu,nu}',
+          )
+          missing = [item for item in required if item not in text]
+          if missing:
+              raise SystemExit(f'IDT adapter contract missing: {missing}')
+          forbidden = ('CANONICAL_PHYSICAL_BINDING', 'RUNTIME_DEFAULT_ON')
+          present = [item for item in forbidden if item in text]
+          if present:
+              raise SystemExit(f'IDT adapter boundary violation: {present}')
+          print('PASS: IDT promotion adapter is candidate-only and temporal core remains unmutated')
+          PY

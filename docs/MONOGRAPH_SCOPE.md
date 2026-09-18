@@ -76,3 +76,10 @@ Potential retrocausal or quantum implications are treated through explicit discr
 ## Repository rule
 
 The monograph is a first-class artifact of this repository. Changes to the core formalism should be reflected in the monograph rather than leaving it as a retrospective summary.
+
+
+## Canonical compilation status — 2026-09-18
+
+The canonical LaTeX tree now carries substantive chapters 10--14 for experiments/falsification, the external spatial branch, Einstein closure, predictions, and discussion. Their text preserves the repository evidence hierarchy: formal identities, reference-model results, physical calibration targets, preregistered hypotheses, and measured claims remain distinct.
+
+Build authority: `.github/workflows/monograph-pdf.yml`.

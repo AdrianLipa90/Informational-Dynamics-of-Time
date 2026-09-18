@@ -166,3 +166,12 @@ Every result should be labeled by one of the following evidence classes:
 - `MEASURED_PHYSICAL_RESULT`
 
 This separation is normative for the repository.
+
+
+## 8. Current modular formalism map
+
+The initial overview above is not the complete module inventory. Current detailed formal surfaces are indexed in `docs/CANONICAL_SURFACE_INDEX.md` and include the 05H event-clock exactness gate, 05I regular smooth-clock extension, 05J production event-complex input contract, 05K precision-safe global-lapse capture, and 02JO temporal-density material-front/NOW crosswalk.
+
+Candidate external carriers, including the 600-cell/S3 ORCHORBITAL adapter, remain under `docs/candidates/` and do not mutate the canonical temporal core.
+
+Machine-readable dependency authority: `validation/dependency_graph.json`.

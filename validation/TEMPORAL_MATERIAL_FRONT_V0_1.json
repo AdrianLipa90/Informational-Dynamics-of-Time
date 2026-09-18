@@ -1,0 +1,11 @@
+{
+  "schema": "IDT_TEMPORAL_MATERIAL_FRONT_V0_1",
+  "status": "PENDING_CURRENT_MAIN_HOSTED_VALIDATION",
+  "evidence_class": "FORMAL_CANDIDATE_REFERENCE_GATE",
+  "formalism": "formalism/02JO_temporal_density_material_front_now_crosswalk.md",
+  "implementation": "src/idt/temporal_material_front.py",
+  "tests": [
+    "tests/reference/test_temporal_material_front.py"
+  ],
+  "promotion_authority": false
+}

@@ -115,3 +115,17 @@ Next relativistic promotion coordinates:
 - RF-N1C determination of `G` and `kappa_E`;
 - action-level dynamic `Lambda0`;
 - full Einstein closure audit.
+
+
+## Consolidated integration surfaces — 2026-09-18
+
+The branch-burden consolidation places previously distributed but still explicitly typed surfaces on one current-main path. This does **not** promote candidate/source-contract evidence classes.
+
+- 02JO temporal-density material-front/NOW crosswalk: integrate implementation and reference tests, then require hosted full-suite PASS.
+- 05H -> 05I -> 05G clock-extension chain: represented explicitly in the executable dependency graph.
+- 05K precision-safe log-lapse capture: integrate Decimal source contract and fail-closed reference tests; physical production evidence remains separate.
+- GSC2 source freeze: integrate source-owned capture/freeze tooling with promotion authority false.
+- 600-cell/S3 ORCHORBITAL adapter: retain candidate-only semantics and external-carrier provenance.
+- Monograph chapters 10--14: maintain as compiled LaTeX projections of the evidence-typed repository state.
+
+Canonical file map: `docs/CANONICAL_SURFACE_INDEX.md`.

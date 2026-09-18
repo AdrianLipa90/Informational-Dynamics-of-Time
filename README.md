@@ -136,3 +136,10 @@ d\Xi_I
 \]
 
 The physical relational-area calibration is supplied by the TIR geometry interface; RFC owns the later `Xi_I -> Lambda0` field binding. Targeted 01K evidence: `6 passed`; receipt: `validation/01K_TEMPORAL_INFORMATION_CURVATURE_V0_1.json`.
+
+
+## Consolidated surface map — 2026-09-18
+
+The canonical location map for the clock-extension, precision-lapse, event-source-freeze, temporal-material-front, 600-cell candidate, Onsager regression and monograph surfaces is `docs/CANONICAL_SURFACE_INDEX.md`.
+
+This consolidation is status-preserving: a file being present on `main` does not promote a candidate, source contract, physical binding or empirical claim. The machine-readable dependency authority is `validation/dependency_graph.json`.

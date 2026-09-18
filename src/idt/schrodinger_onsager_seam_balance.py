@@ -64,6 +64,9 @@ def _onsager(
     the current native representation.
     """
 
+    if isinstance(values, (bool, np.bool_)):
+        raise SchrodingerOnsagerBalanceError("scalar Onsager mobility must be numeric, not boolean")
+
     if np.isscalar(values):
         mobility = float(values)
         if not math.isfinite(mobility) or mobility < 0.0:
