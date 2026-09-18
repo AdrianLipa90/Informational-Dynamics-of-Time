@@ -10,7 +10,7 @@
 
 ## Core research question
 
-Can temporal dynamics be derived as an informational-phase process before time is recombined with spatial geometry into spacetime?
+Given the explicitly declared relational primitives, which temporal structures follow by exact identity, model closure, or independently testable bridge before the temporal branch is recombined with spatial geometry into spacetime?
 
 ## Development order
 
@@ -27,7 +27,7 @@ The monograph follows this order:
 9. Retrocausal hypotheses and discrimination tests.
 10. Spatial-offset divergence as an external closure variable.
 11. Relativistic recombination into \((x,t)\).
-12. Einstein/Minkowski phase closure and experimental consequences.
+12. Einstein/Minkowski recovery benchmarks, conditional closure, and discriminating physical tests.
 
 ## Canonical hypotheses
 
@@ -66,9 +66,9 @@ The monograph will keep separate:
 
 - definitions introduced by the formalism,
 - algebraic consequences,
-- computational demonstrations,
-- standard-physics identities used as closure tests,
-- experimentally testable hypotheses,
+- computational demonstrations and software-assurance receipts,
+- standard-physics identities used as recovery/closure benchmarks,
+- independently specified experimentally testable hypotheses,
 - physical claims supported by measurement.
 
 Potential retrocausal or quantum implications are treated through explicit discrimination protocols rather than inferred from correlation alone.
@@ -83,3 +83,18 @@ The monograph is a first-class artifact of this repository. Changes to the core 
 The canonical LaTeX tree now carries substantive chapters 10--14 for experiments/falsification, the external spatial branch, Einstein closure, predictions, and discussion. Their text preserves the repository evidence hierarchy: formal identities, reference-model results, physical calibration targets, preregistered hypotheses, and measured claims remain distinct.
 
 Build authority: `.github/workflows/monograph-pdf.yml`.
+
+
+## Scientific-positioning closure — 2026-09-18
+
+The canonical monograph now explicitly records:
+
+- the primitive inputs from which IDT temporal structures are conditionally derived;
+- a literature boundary separating established Shannon/KL, Pancharatnam--Berry, Fubini--Study, Onsager/Markov, Noether, Einstein, Bell/CHSH, and horizon-thermodynamic results from IDT-specific constructions;
+- a notation table and high-level theory map;
+- a three-way separation between model-internal consequences, standard-physics recovery benchmarks, and genuinely discriminating physical tests;
+- three explicit discriminator classes: held-out activity-to-clock prediction, independently calibrated half-interface (4\pi) structure, and the preregistered future-conditioned committed-record protocol;
+- the rule that hosted test counts are software assurance, not independent physical evidence;
+- PDF title/author/subject/keyword metadata.
+
+Physical execution and independent replication remain empirical gates and are not replaced by document-level closure.
