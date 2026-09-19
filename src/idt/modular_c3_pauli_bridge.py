@@ -5,6 +5,12 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from idt.half_frame_temporal_gluing import (
+    glued_support_labels,
+    modular_phase_budget,
+    temporal_path_incidence,
+)
+
 
 TOL = 1.0e-12
 
@@ -26,11 +32,7 @@ class ModularC3PauliAudit:
 
 def path3_incidence() -> np.ndarray:
     """Incidence of the 3-edge open temporal path P4 from IDT 02J/02JB."""
-    d = np.zeros((4, 3), dtype=float)
-    for e in range(3):
-        d[e, e] = -1.0
-        d[e + 1, e] = 1.0
-    return d
+    return temporal_path_incidence(3)
 
 
 def periodic_endpoint_quotient() -> np.ndarray:
@@ -118,6 +120,10 @@ def audit_mod6pi_c3_pauli_bridge() -> ModularC3PauliAudit:
     )
 
     checks = {
+        "parent_02j_modular_sector_is_exact_6pi": (
+            abs(modular_phase_budget(3) - 6.0 * math.pi) < TOL
+            and glued_support_labels(3) == ("1", "12", "23", "3")
+        ),
         "periodic_P4_quotient_is_three_vertex_cycle": (
             b.shape == (3, 3)
             and np.linalg.matrix_rank(b, TOL) == 2
