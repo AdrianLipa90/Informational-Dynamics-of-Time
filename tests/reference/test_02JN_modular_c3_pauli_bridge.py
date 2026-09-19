@@ -34,7 +34,7 @@ def test_pauli_triplet_is_c3_equivariant_under_su2_lift():
     u = su2_cyclic_lift()
 
     assert np.allclose(u.conj().T @ u, np.eye(2))
-    assert np.linalg.det(u) == np.testing.assert_allclose(np.linalg.det(u), 1.0, atol=1e-12)
+    np.testing.assert_allclose(np.linalg.det(u), 1.0, atol=1e-12)
 
     for j, sigma in enumerate(pauli):
         assert np.allclose(u @ sigma @ u.conj().T, pauli[(j + 1) % 3])
