@@ -30,6 +30,15 @@ The freeze step has no repository-promotion authority.
 
 Status remains `FORMAL_CANDIDATE / MATERIAL_FRONT_KINEMATICS_AND_NOW_SELECTOR_GATE`.
 
+## EB/BEC nonlinear Madelung / orbital / acoustic candidate
+
+- `formalism/02JP_eb_bec_orbital_bogoliubov_acoustic_bridge.md`;
+- `src/idt/eb_bec_madelung_bridge.py`;
+- `tests/reference/test_eb_bec_madelung_bridge.py`;
+- `validation/EB_BEC_MADELUNG_BRIDGE_V0_1.json`.
+
+Status remains `FORMAL_CANDIDATE / CONDITIONAL_SPATIAL_LIFT / NO_SPACETIME_PROMOTION`. The hosted reference suite validates the algebra and fail-closed contract but does not bind the one-dimensional IDT continuum to physical space, identify GREMLIN source roles with a condensate experiment, calibrate the RFC information-potential coupling, or identify the analogue acoustic metric with spacetime geometry.
+
 ## 600-cell / S3 candidate carrier
 
 The two PhaseNav adapter contracts remain at repository root because their existing candidate workflows validate those exact locations:
