@@ -1,0 +1,40 @@
+name: IDT temporal trace clock calibration closure v0.1
+
+on:
+  pull_request:
+    paths:
+      - "docs/candidates/spacetime_dimension/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.md"
+      - "validation/idt_temporal_trace_clock_calibration_closure_v0_1.py"
+      - ".github/workflows/idt-temporal-trace-clock-calibration.yml"
+  push:
+    paths:
+      - "docs/candidates/spacetime_dimension/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.md"
+      - "validation/idt_temporal_trace_clock_calibration_closure_v0_1.py"
+      - ".github/workflows/idt-temporal-trace-clock-calibration.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest
+      - name: Validate existing trace uniqueness and clock cocycle parents
+        run: |
+          pytest -q tests/reference/test_temporal_trace_uniqueness.py
+          pytest -q tests/reference/test_05E_global_relational_clock_cocycle.py
+      - name: Validate trace / physical clock calibration closure
+        run: |
+          mkdir -p build
+          python validation/idt_temporal_trace_clock_calibration_closure_v0_1.py | tee build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+          grep -Fq '"status": "PASS"' build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+          grep -Fq '"single_reference_calibration_sets_trace_equal_c_d_tau_hat": true' build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+          grep -Fq '"one_reference_normalization_fixes_common_scale": true' build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+          grep -Fq '"trace_additivity_matches_calibrated_elapsed_length_additivity": true' build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+          grep -Fq '"universal_physical_clock_claim": false' build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: idt-temporal-trace-clock-calibration-v0-1
+          path: build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
