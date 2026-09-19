@@ -52,6 +52,47 @@ Status:
 
 `COLLATZ_FS_PHASE_MAP_STRUCTURAL_PASS / CP1_EQUATORIAL_EMBEDDING_PASS / CONDITIONAL_ROOT_OF_UNITY_QUANTIZATION_PASS / PHYSICAL_TIME_COUPLING_OPEN / EINSTEIN_BINDING_OPEN`.
 
+## Periodic 6pi triad representation bridge
+
+The open-cut half-frame sector
+
+\[
+|1|12|23|3|
+\]
+
+remains the canonical (N=3) path representation.  Under the additional periodic phase condition
+
+\[
+\Theta\sim\Theta+6\pi,
+\qquad
+v_0\sim v_3,
+\]
+
+the quotient closes exactly to
+
+\[
+\boxed{P_4/(v_0\sim v_3)\cong C_3.}
+\]
+
+The resulting regular (C_3) shift is diagonalized by the unitary (F_3) character basis, and it has an exact (SU(2))-adjoint realization that cycles the Pauli triplet
+
+\[
+\sigma_x\to\sigma_y\to\sigma_z\to\sigma_x.
+\]
+
+Canonical branch sources:
+
+- `formalism/02JN_modular_cyclic_c3_pauli_bridge.md`;
+- `src/idt/modular_c3_pauli_bridge.py`;
+- `tests/reference/test_02JN_modular_c3_pauli_bridge.py`;
+- `validation/02JN_MODULAR_C3_PAULI_BRIDGE_V0_1.json`.
+
+Status:
+
+`PERIODIC_QUOTIENT_C3_EXACT / F3_CHARACTER_BASIS_EXACT / PAULI_EQUIVARIANT_REPRESENTATION_EXACT / TEMPORAL_SPATIAL_PHYSICAL_BINDING_OPEN / TEMPORAL_FLAVOUR_PHYSICAL_BINDING_OPEN`.
+
+The representation bridge does not identify the temporal carrier with physical three-space or flavour and does not replace the independent relativistic/Einstein binding gates.
+
 ## Parallel relativistic prerequisite
 
 The Einstein node also carries the explicit side prerequisite
