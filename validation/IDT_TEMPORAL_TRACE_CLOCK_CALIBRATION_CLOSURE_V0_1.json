@@ -1,0 +1,61 @@
+{
+  "schema": "IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_VALIDATION_V0_1",
+  "date": "2026-09-19",
+  "status": "PASS",
+  "authority": "CANDIDATE_ONLY",
+  "canon_allowed": false,
+  "physical_production_claim": false,
+  "universal_physical_clock_claim": false,
+  "closure_class": "EXACT_AFTER_DECLARED_REFERENCE_CLOCK_CALIBRATION",
+  "tested_head_sha": "2085fa39297d2786ada097e6e5938680434f3ced",
+  "binding": {
+    "reference_calibration": "dt=T_r dTheta_r",
+    "local_elapsed": "d_tau_hat=N_R dt",
+    "length_export": "dell=c d_tau_hat=N_R c dt",
+    "hermitian_trace": "Tr(X)=dell after one positive reference calibration",
+    "remaining_freedom": "one common positive units/reference normalization only"
+  },
+  "checks": {
+    "parent_trace_uniqueness_vector_coefficients_zero": true,
+    "parent_trace_uniqueness_additive": true,
+    "parent_trace_uniqueness_rotation_invariant": true,
+    "parent_trace_uniqueness_positive_on_positive_examples": true,
+    "source_formulas_bound_to_existing_IDT_documents": true,
+    "05E_clock_network_reconstruction_positive": true,
+    "05E_clock_network_cycle_residual_below_tolerance": true,
+    "single_reference_calibration_sets_trace_equal_c_d_tau_hat": true,
+    "local_lapse_identity_dell_equals_NRc_dt": true,
+    "common_positive_clock_rescaling_preserves_all_ratios": true,
+    "one_reference_normalization_fixes_common_scale": true,
+    "trace_additivity_matches_calibrated_elapsed_length_additivity": true,
+    "no_state_dependent_calibration_function_introduced": true,
+    "universal_physical_adequacy_not_claimed": true
+  },
+  "metrics": {
+    "clock_network_max_relative_residual": 0,
+    "max_trace_binding_residual_m": 0,
+    "max_local_elapsed_identity_residual_m": 1.1102230246251565e-16,
+    "max_ratio_residual_after_common_rescale": 1.1102230246251565e-16
+  },
+  "executable_receipt_sha256": "a6b832d6a39799d2736c5e791849c046f5edad5b3cc0bce86da840ea8b42bb6e",
+  "ci": {
+    "dedicated": {
+      "workflow": "IDT temporal trace clock calibration closure v0.1",
+      "run_id": 35474609036,
+      "job_id": 105981578127,
+      "conclusion": "success"
+    },
+    "reference_suite": {
+      "run_id": 35474609052,
+      "conclusion": "success"
+    },
+    "production_event_complex_input": {
+      "run_id": 35474609043,
+      "conclusion": "success"
+    }
+  },
+  "remaining_physical_gate": [
+    "empirical adequacy of the selected physical reference clock in the target regime",
+    "downstream global spacetime/Einstein identification"
+  ]
+}
