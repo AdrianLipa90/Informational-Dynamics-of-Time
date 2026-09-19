@@ -8,9 +8,9 @@
   "mathematical_status": "EXACT_PERIODIC_QUOTIENT_THEOREM / C3_CHARACTER_BASIS_EXACT / PAULI_EQUIVARIANT_REPRESENTATION_EXACT",
   "local_reference_reproduction": {
     "status": "PASS",
-    "command_equivalent": "python -m pytest -q test_reference.py",
-    "result": "1 passed",
-    "scope": "independent local reproduction of the new algebraic bridge"
+    "result": "4/4 reference test blocks reproduced successfully",
+    "scope": "independent local reproduction of the exact assertions in tests/reference/test_02JN_modular_c3_pauli_bridge.py",
+    "date": "2026-09-19"
   },
   "github_ci_status": "PENDING",
   "checks": [
