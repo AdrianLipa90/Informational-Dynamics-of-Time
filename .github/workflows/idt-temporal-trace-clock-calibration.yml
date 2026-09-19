@@ -22,10 +22,14 @@ jobs:
           python-version: "3.12"
       - run: pip install pytest
       - name: Validate existing trace uniqueness and clock cocycle parents
+        env:
+          PYTHONPATH: .:src
         run: |
           pytest -q tests/reference/test_temporal_trace_uniqueness.py
           pytest -q tests/reference/test_05E_global_relational_clock_cocycle.py
       - name: Validate trace / physical clock calibration closure
+        env:
+          PYTHONPATH: .:src
         run: |
           mkdir -p build
           python validation/idt_temporal_trace_clock_calibration_closure_v0_1.py | tee build/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json
