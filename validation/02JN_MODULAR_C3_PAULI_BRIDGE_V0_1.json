@@ -1,0 +1,34 @@
+{
+  "schema": "IDT_02JN_MODULAR_C3_PAULI_BRIDGE_V0_1",
+  "date": "2026-09-19",
+  "branch": "feat/mod6pi-c3-pauli-bridge-v0.1",
+  "formalism": "formalism/02JN_modular_cyclic_c3_pauli_bridge.md",
+  "implementation": "src/idt/modular_c3_pauli_bridge.py",
+  "tests": "tests/reference/test_02JN_modular_c3_pauli_bridge.py",
+  "mathematical_status": "EXACT_PERIODIC_QUOTIENT_THEOREM / C3_CHARACTER_BASIS_EXACT / PAULI_EQUIVARIANT_REPRESENTATION_EXACT",
+  "local_reference_reproduction": {
+    "status": "PASS",
+    "command_equivalent": "python -m pytest -q test_reference.py",
+    "result": "1 passed",
+    "scope": "independent local reproduction of the new algebraic bridge"
+  },
+  "github_ci_status": "PENDING",
+  "checks": [
+    "P4 endpoint quotient gives C3 incidence",
+    "P3^3 = I3",
+    "F3 unitary",
+    "F3 diagonalizes P3",
+    "Pauli triplet orthonormal in Herm_0(2)",
+    "U3 in SU(2)",
+    "Ad_U3 cycles sigma_x -> sigma_y -> sigma_z -> sigma_x",
+    "U3^3 = -I2",
+    "Ad_U3 has order three"
+  ],
+  "firewall": {
+    "periodic_endpoint_identification": "EXPLICIT_CONDITION",
+    "temporal_to_physical_space_identification": "OPEN",
+    "temporal_to_flavour_sector_identification": "OPEN",
+    "metric_source_gravity_binding": "OPEN",
+    "CKM_PMNS_parameter_forcing": "OPEN"
+  }
+}
