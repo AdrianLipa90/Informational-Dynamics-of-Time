@@ -111,4 +111,20 @@ theorem transitionFromPotential_cocycle
   rw [hOneMul]
 
 
+
+/--
+FSI.03 IDT-side denominator-cleared positive-ray invariant. For a normalized
+shape coordinate q_i / q_sum, common positive scaling multiplies numerator and
+denominator by the same factor. ratioEquivalent records equality of ratios by
+cross multiplication, without introducing division into this core theorem.
+-/
+def ratioEquivalent (a b c d : Nat) : Prop :=
+  a * d = c * b
+
+theorem commonScale_preserves_ratio
+    (lambda qi qsum : Nat) :
+    ratioEquivalent (lambda * qi) (lambda * qsum) qi qsum := by
+  unfold ratioEquivalent
+  simp [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+
 end Formal
