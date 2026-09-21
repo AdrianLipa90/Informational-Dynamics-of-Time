@@ -337,6 +337,18 @@
       "from": "IDT.CLOCK.FOLIATION_05G",
       "to": "IDT.CLOCK.GLOBAL_LAPSE_PRECISION_05K",
       "authority": "CANONICAL"
+    },
+    {
+      "from": "IDT.CLOCK.PRODUCTION_EVENT_COMPLEX_INPUT_05J",
+      "to": "IDT.CLOCK.EVENT_EXACTNESS_05H",
+      "authority": "CANONICAL_FRONTIER"
+    },
+    {
+      "from": "IDT.TEMPORAL.PRIMITIVE",
+      "to": "IDT.REPRESENTATION.MOD6PI_C3_PAULI_02JN",
+      "authority": "CANDIDATE_ONLY",
+      "promotion_required": true,
+      "promotion_gate": "PERIODIC_6PI_ENDPOINT_IDENTIFICATION_REQUIRED"
     }
   ]
 }
