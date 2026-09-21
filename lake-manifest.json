@@ -2,6 +2,6 @@
   "version": "1.1.0",
   "packagesDir": ".lake/packages",
   "packages": [],
-  "name": "idt-formal",
+  "name": "idt_formal",
   "lakeDir": ".lake"
 }
