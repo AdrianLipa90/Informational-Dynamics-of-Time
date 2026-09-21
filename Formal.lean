@@ -71,8 +71,8 @@ theorem doubleModIter_eq_pow_two_mod (k m q : Nat) :
   | zero =>
       simp [doubleModIter]
   | succ k ih =>
-      simp [doubleModIter, doubleModStep, ih, Nat.pow_succ,
-        Nat.mul_mod, Nat.mod_mod, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+      rw [doubleModIter, ih]
+      simp [doubleModStep, Nat.mul_mod_mod, Nat.pow_succ, Nat.mul_assoc]
 
 /--
 An accelerated odd block with a halving exponent a corresponds to a+1
