@@ -1,5 +1,4 @@
 import Std
-import Std.Tactic.Omega
 
 namespace Formal
 
@@ -24,8 +23,11 @@ theorem initialHistoryIndex_not_in_shiftedRange
     (k i : Nat) (h : i < k) :
     ¬ ∃ n : Nat, historySuccessor k n = i := by
   rintro ⟨n, hn⟩
-  simp [historySuccessor] at hn
-  omega
+  have hk : k ≤ historySuccessor k n := by
+    simpa [historySuccessor, Nat.add_comm] using (Nat.le_add_left k n)
+  have hlt : i < historySuccessor k n := Nat.lt_of_lt_of_le h hk
+  rw [hn] at hlt
+  exact Nat.lt_irrefl i hlt
 
 /-- Append-only persistence preserves the complete earlier finite lineage. -/
 def appendHistory {α : Type} (history suffix : List α) : List α :=
