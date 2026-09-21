@@ -2,8 +2,8 @@
   "schema": "FPDG_DEPENDENCY_EXPORT_V0_1",
   "repository_id": "IDT",
   "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
-  "source_commit": "58f453a4725bf0304417a5d07730f2dc1765dea5",
-  "generated_at": "2026-09-19T20:09:00+01:00",
+  "source_commit": "2960a936e3f74b07a4bf30ebc5cb78b6c1811b4c",
+  "generated_at": "2026-09-21T13:37:00+01:00",
   "claims": [
     {
       "claim_id": "IDT.TEMPORAL.PRIMITIVE",
@@ -184,6 +184,18 @@
       "status": "05K_SOURCE_CONTRACT_DECIMAL_LOG_N_PRECISION_SAFE / FAIL_CLOSED_REFERENCE_TESTS_PRESENT / PHYSICAL_PRODUCTION_CLAIM_FALSE / CANON_ALLOWED_FALSE / HOSTED_REFERENCE_SUITE_1183_OF_1183",
       "source_path": "validation/dependency_graph.json",
       "evidence_class": "source_dependency_graph_status"
+    },
+    {
+      "claim_id": "IDT.CLOCK.PRODUCTION_EVENT_COMPLEX_INPUT_05J",
+      "status": "INPUT_CONTRACT_DEFINED / 05H_HANDOFF_FAIL_CLOSED / PRODUCTION_EVENT_COMPLEX_OPEN",
+      "source_path": "formalism/05J_production_event_complex_input_contract.md",
+      "evidence_class": "source_executable_contract_status"
+    },
+    {
+      "claim_id": "IDT.REPRESENTATION.MOD6PI_C3_PAULI_02JN",
+      "status": "EXACT_PERIODIC_QUOTIENT_THEOREM / C3_CHARACTER_BASIS_EXACT / PAULI_EQUIVARIANT_REPRESENTATION_EXACT / PHYSICAL_SECTOR_IDENTIFICATION_OPEN",
+      "source_path": "formalism/02JN_modular_cyclic_c3_pauli_bridge.md",
+      "evidence_class": "source_formalism_validation"
     }
   ],
   "local_edges": [
