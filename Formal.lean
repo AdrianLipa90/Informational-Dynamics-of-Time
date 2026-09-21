@@ -67,4 +67,28 @@ theorem acceleratedBlock_phase_exponent (a q : Nat) :
     doubleIter (a + 1) q = (2 ^ (a + 1)) * q := by
   exact doubleIter_eq_pow_two (a + 1) q
 
+
+/--
+FSI.02 local-to-global cocycle direction. A globally potentialized transition
+field has exact identity loops and satisfies the ordered triple-overlap
+composition law. This theorem is group-generic; the source repository keeps
+the physical/type interpretation of the group.
+-/
+def transitionFromPotential {G X : Type} [Group G]
+    (p : X → G) (a b : X) : G :=
+  p b * (p a)⁻¹
+
+theorem transitionFromPotential_refl
+    {G X : Type} [Group G]
+    (p : X → G) (a : X) :
+    transitionFromPotential p a a = 1 := by
+  simp [transitionFromPotential]
+
+theorem transitionFromPotential_cocycle
+    {G X : Type} [Group G]
+    (p : X → G) (a b c : X) :
+    transitionFromPotential p b c * transitionFromPotential p a b =
+      transitionFromPotential p a c := by
+  simp [transitionFromPotential, mul_assoc]
+
 end Formal
