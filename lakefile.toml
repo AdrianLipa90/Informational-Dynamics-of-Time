@@ -1,4 +1,4 @@
-name = "idt-formal"
+name = "idt_formal"
 version = "0.1.0"
 defaultTargets = ["Formal"]
 
