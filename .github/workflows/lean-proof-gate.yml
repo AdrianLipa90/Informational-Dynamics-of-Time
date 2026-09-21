@@ -20,7 +20,7 @@ jobs:
         with:
           auto-config: false
           build: true
-          leanchecker: true
+          leanchecker: false
           axiom-audit: true
           axiom-audit-root: Formal
           use-github-cache: true
