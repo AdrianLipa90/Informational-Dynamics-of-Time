@@ -14,9 +14,9 @@ theorem historySuccessor_injective (k : Nat) :
   intro a b h
   exact Nat.add_right_cancel h
 
-theorem historySuccessor_strictMono (k : Nat) :
-    StrictMono (historySuccessor k) := by
-  intro a b h
+theorem historySuccessor_preserves_lt
+    (k a b : Nat) (h : a < b) :
+    historySuccessor k a < historySuccessor k b := by
   exact Nat.add_lt_add_right h k
 
 theorem initialHistoryIndex_not_in_shiftedRange
