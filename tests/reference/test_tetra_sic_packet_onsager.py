@@ -55,3 +55,28 @@ def test_elapsed_packet_velocity_product_rule():
     v=elapsed_bloch_packet_velocity(ell,r,dell,dr)
     expected=np.concatenate(((0.5*dell,),0.5*(dell*r+ell*dr)))
     assert np.allclose(v,expected,rtol=0.0,atol=1e-12)
+
+
+def test_uniform_relational_fields_recover_rate_rho_over_eta():
+    from idt.tetra_sic_packet_onsager import tetra_relational_bloch_velocity
+    r=np.array((0.2,-0.3,0.4))
+    rho0=2.5
+    eta0=5.0
+    expected=-4.0*(rho0/eta0)*r
+    actual=tetra_relational_bloch_velocity(
+        r,
+        (rho0,)*4,
+        (eta0,)*4,
+    )
+    assert np.allclose(actual,expected,rtol=0.0,atol=1e-12)
+
+
+def test_heterogeneous_relational_flow_conserves_probability():
+    from idt.tetra_sic_packet_onsager import tetra_relational_probability_velocity
+    dp=tetra_relational_probability_velocity(
+        (0.2,-0.3,0.4),
+        (1.0,2.0,3.0,4.0),
+        (2.0,1.5,3.5,2.5),
+    )
+    assert abs(float(dp.sum())) < 1e-12
+    assert np.all(np.isfinite(dp))
