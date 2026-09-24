@@ -1,0 +1,58 @@
+{
+  "schema": "IDT_EB_BEC_MADELUNG_BRIDGE_VALIDATION_V0_1",
+  "status": "HOSTED_REFERENCE_SUITE_PASS_CANDIDATE_ONLY",
+  "authority": {
+    "candidate_only": true,
+    "canon_write_authority": false,
+    "spacetime_promotion": false,
+    "physical_bec_binding": false
+  },
+  "source": {
+    "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+    "base_sha": "2960a936e3f74b07a4bf30ebc5cb78b6c1811b4c",
+    "validated_head_sha": "8784394bc778e4c6b54ee656467da7d53d418bd1",
+    "branch": "candidate/idt-eb-bec-orbital-acoustic-v0.1",
+    "pull_request": 101
+  },
+  "hosted_validation": {
+    "reference_suite": {
+      "workflow_run_id": 35472950039,
+      "run_number": 991,
+      "conclusion": "success",
+      "pytest_summary": "1207 passed in 11.88s",
+      "python": "3.12.14"
+    },
+    "independent_05j_gate": {
+      "workflow_run_id": 35472950020,
+      "run_number": 26,
+      "conclusion": "success"
+    }
+  },
+  "validated_surfaces": [
+    "formalism/02JP_eb_bec_orbital_bogoliubov_acoustic_bridge.md",
+    "src/idt/eb_bec_madelung_bridge.py",
+    "tests/reference/test_eb_bec_madelung_bridge.py"
+  ],
+  "validated_claim_classes": [
+    "lambda=0 exact recovery of the 02JN characteristic polynomial",
+    "nonlinear EOS characteristic polynomial with 2*M*lambda*rho0*k^2",
+    "intrinsic-to-physical conservative Bogoliubov coefficient roundtrip under explicit time/space/density calibration",
+    "GREMLIN central orbital-kernel recovery and additive radial-source decomposition",
+    "holonomy-shifted one-over-r shell closure",
+    "Thomas-Fermi density/sound-speed information-potential shift relation",
+    "symmetric Lorentzian-signature analogue acoustic metric construction",
+    "fail-closed parameter validation"
+  ],
+  "active_firewalls": [
+    "IDT one-dimensional continuum to d>=2 spatial carrier remains a conditional lift",
+    "rho_BEC = Z_rho * rho_IDT remains a typed calibration",
+    "GREMLIN inertial/source roles are not automatically physical BEC roles",
+    "RFC information-potential coupling calibration remains inherited/open",
+    "nonzero IDT Onsager mobility is not identified with a measured BEC damping mechanism",
+    "acoustic metric is not spacetime metric without an independent H_g binding"
+  ],
+  "notes": [
+    "GitHub Actions emitted a Node.js 20 deprecation warning for actions/checkout@v4 and actions/setup-python@v5 running under Node 24; the workflow and tests completed successfully.",
+    "No merge to main is authorized by this receipt."
+  ]
+}
