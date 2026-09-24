@@ -132,3 +132,46 @@ def audit_tetra_sic_onsager(
         onsager_factorization_defect=onsager.factorization_defect,
         onsager_dissipation_rate_bits=onsager.dissipation_rate_bits,
     )
+
+
+def tetra_relational_mobility_generator(
+    rho_relational: Sequence[float],
+    eta_relational: Sequence[float],
+) -> np.ndarray:
+    """Use the existing 00C/02B zero-drive pair mobility on the tetra K4 graph."""
+    from .temporal_wave_dissipation import zero_drive_rate_generator
+
+    rho = np.asarray(rho_relational, dtype=float)
+    eta = np.asarray(eta_relational, dtype=float)
+    if rho.shape != (4,) or eta.shape != (4,):
+        raise TetraSICPacketFlowError("rho_relational and eta_relational must have four entries")
+    if not np.all(np.isfinite(rho)) or not np.all(np.isfinite(eta)):
+        raise TetraSICPacketFlowError("relational fields must be finite")
+    if np.any(rho <= 0.0) or np.any(eta <= 0.0):
+        raise TetraSICPacketFlowError("relational density and viscosity must be positive")
+
+    edges=((0,1),(0,2),(0,3),(1,2),(1,3),(2,3))
+    return zero_drive_rate_generator(4,edges,rho,eta)
+
+
+def tetra_relational_probability_velocity(
+    bloch3: Sequence[float],
+    rho_relational: Sequence[float],
+    eta_relational: Sequence[float],
+) -> np.ndarray:
+    p=tetra_sic_probabilities(bloch3)
+    q=tetra_relational_mobility_generator(rho_relational,eta_relational)
+    return master_velocity(p,q)
+
+
+def tetra_relational_bloch_velocity(
+    bloch3: Sequence[float],
+    rho_relational: Sequence[float],
+    eta_relational: Sequence[float],
+) -> np.ndarray:
+    dp=tetra_relational_probability_velocity(
+        bloch3,
+        rho_relational,
+        eta_relational,
+    )
+    return 3.0*(_TETRA.T@dp)
