@@ -1,0 +1,18 @@
+{
+  "schema": "LOSSLESS_BRANCH_MERGE_MANIFEST_V1",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "target_branch": "main",
+  "source_branch": "candidate/trace-clock-calibration-closure-v0.1",
+  "source_head_sha": "b066a980b91c6ec181983af3d449a6a502b01470",
+  "merge_base_sha": "2960a936e3f74b07a4bf30ebc5cb78b6c1811b4c",
+  "target_parent_sha": "87874cccb904cf7e626976c5f59ea083496666b0",
+  "policy": "APPLY_BRANCH_ONLY_CHANGES_KEEP_TARGET_ON_TRUE_CONFLICT_ARCHIVE_BRANCH_BLOB_NEVER_DELETE_TARGET",
+  "applied_paths": [
+    ".github/workflows/idt-temporal-trace-clock-calibration.yml",
+    "docs/candidates/spacetime_dimension/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.md",
+    "validation/IDT_TEMPORAL_TRACE_CLOCK_CALIBRATION_CLOSURE_V0_1.json",
+    "validation/idt_temporal_trace_clock_calibration_closure_v0_1.py"
+  ],
+  "conflicts": [],
+  "deletion_intents_preserved_without_deletion": []
+}
