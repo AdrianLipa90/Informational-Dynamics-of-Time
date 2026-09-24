@@ -226,3 +226,84 @@ Reference implementation:
 Reference tests:
 
 `tests/reference/test_tetra_sic_packet_onsager.py`
+
+
+## 7. 00C/02B mobility binding
+
+The overall tetra transition rate need not be an independent parameter.
+
+00C already defines the symmetric pair mobility
+
+\[
+\boxed{
+M_{ab}
+=
+\frac{
+\sqrt{\rho_R(a)\rho_R(b)}
+}{
+\tfrac12[\eta_R(a)+\eta_R(b)]
+}.
+}
+\]
+
+On the tetrahedral complete graph, the zero-drive generator is therefore obtained by assigning the six edge rates \(M_{ab}\).
+
+The general symmetric packet flow becomes
+
+\[
+\boxed{
+\dot p=pQ[\rho_R,\eta_R],
+}
+\]
+
+followed exactly by
+
+\[
+\boxed{
+\dot{\mathbf r}
+=
+3\sum_a\dot p_a\mathbf n_a.
+}
+\]
+
+For uniform relational fields
+
+\[
+\rho_R(a)=\rho_0,
+\qquad
+\eta_R(a)=\eta_0,
+\]
+
+all six mobilities coincide:
+
+\[
+\boxed{
+M=\frac{\rho_0}{\eta_0}.
+}
+\]
+
+Therefore the S4-symmetric radial control law is no longer written with a free rate:
+
+\[
+\boxed{
+\dot{\mathbf r}
+=
+-4\frac{\rho_0}{\eta_0}\mathbf r.
+}
+\]
+
+and
+
+\[
+q(\Theta)
+=
+\exp\left[
+-4\frac{\rho_0}{\eta_0}\Theta
+\right]
+\]
+
+when the uniform fields are constant in intrinsic time.
+
+This closes the symmetric mobility source **within the declared 00C zero-drive sector**. It does not derive the physical relational density/viscosity fields themselves.
+
+For heterogeneous positive \(\rho_R,\eta_R\), the six edge mobilities remain explicit and the implementation preserves probability normalization rather than collapsing them to one scalar.
