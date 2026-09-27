@@ -447,3 +447,46 @@ Candidate only; no physical-time or canonical-carrier binding is implied.
 \[
 \Delta\phi_t=-\frac{E\Delta t}{\hbar}.
 \]
+
+**EQ-T071 — spatial-only transport and temporal holonomy**
+\[
+\boxed{
+\mathcal S_\Gamma:(x_A,\tau_0)\mapsto(x_B,\tau_0),
+\qquad
+\Delta\tau_{\rm transport}=0,
+}
+\]
+\[
+\boxed{
+\Delta\tau_H[\Gamma]
+=
+\int_\Gamma\mathcal A_\tau.
+}
+\]
+
+**EQ-T072 — closed-loop temporal-holonomy / ping gate**
+\[
+\boxed{
+\Delta\tau_{\rm ping}
+=
+\oint_C\mathcal A_\tau,
+}
+\qquad
+\mathcal F_\tau=d\mathcal A_\tau,
+\]
+and, when the Abelian Stokes representation is valid,
+\[
+\boxed{
+\Delta\tau_{\rm ping}
+=
+\int_S\mathcal F_\tau.
+}
+\]
+If \(\mathcal A_\tau=dT\) is globally exact on the admitted simply connected chart,
+\[
+\boxed{
+\oint_C\mathcal A_\tau=0.
+}
+\]
+A negative value is a model temporal-offset coordinate until the independent retrocausal evidence gate is satisfied.
+

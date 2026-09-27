@@ -1,0 +1,33 @@
+{
+  "branch": "candidate/spatial-only-temporal-holonomy-v0.1-20260927",
+  "date": "2026-09-27",
+  "formalism": "formalism/09B_spatial_only_transport_temporal_holonomy.md",
+  "gremlin_live": {
+    "authority": "CANDIDATE_ONLY",
+    "canon_allowed": false,
+    "internal_audit_event_id": "gremlin:whisper:sha256:80ee42d214638ea954fae9d810f1996dc89e8a0ed002d57ca595a1a997d389dc",
+    "phase36d_fused_event_id": "gremlin:whisper:sha256:0ca659c71d916d15bc800893e3e029a85e30f4899c96a8c50d8812a5781118c0",
+    "route_species": [
+      "OWL",
+      "SPIDER",
+      "HOUND"
+    ],
+    "user_task_event_id": "gremlin:whisper:sha256:0b9e424e9dd1e62f21ed69dbdd9a440361b6a32c4d4dadba1a06b23f0db13638"
+  },
+  "implementation": "src/idt/spatial_only_temporal_holonomy.py",
+  "local_isolated_pytest": {
+    "duration_s": 0.08,
+    "failed": 0,
+    "passed": 10
+  },
+  "parent_main_commit": "e474f64a079e0d90a039e0abd19d2b482f7e53d2",
+  "promotion_firewall": {
+    "local_relativistic_recovery_established": false,
+    "moire_hilbert_physical_binding_established": false,
+    "physical_nonlocal_channel_established": false,
+    "physical_retrocausality_established": false
+  },
+  "schema": "IDT_SPATIAL_ONLY_TEMPORAL_HOLONOMY_V0_1",
+  "status": "LOCAL_ISOLATED_REFERENCE_PASS / PHYSICAL_CHANNEL_OPEN / RETROCAUSAL_PROMOTION_OPEN",
+  "tests": "tests/reference/test_spatial_only_temporal_holonomy.py"
+}

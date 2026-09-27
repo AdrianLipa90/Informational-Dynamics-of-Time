@@ -431,3 +431,58 @@ ORCHORBITAL_ATTRACTORS -> ORCHORBITAL_600CELL_CANDIDATE
 ```
 
 The last four nodes retain their recorded candidate/source-contract boundaries. Graph presence is not canon promotion.
+
+## Candidate split-kinematic branch: 05G + 07M + 09A -> 09B
+
+09B is additive and does not alter the canonical temporal-spine admission order.
+
+\[
+\boxed{
+\mathrm{GLOBAL\ TEMPORAL\ FOLIATION}
++
+\mathrm{SPATIAL\ OFFSET\ DIVERGENCE}
++
+\mathrm{HOLONOMIC\ OFFSET}
+\longrightarrow
+\mathrm{SPATIAL\!\!\text{-}\!ONLY\ TRANSPORT\ /\ TEMPORAL\ HOLONOMY}.
+}
+\]
+
+The optional external geometric input is the candidate Fractal Moire-Hilbert / PhaseNav operator stack. That input is representation-level and physical-binding-open.
+
+09B preserves the following firewall:
+
+\[
+\boxed{
+\text{spatial address change}
+\neq
+\text{temporal offset}
+}
+\]
+
+unless an explicit temporal connection \(\mathcal A_\tau\) is supplied, in which case
+
+\[
+\boxed{
+\Delta\tau_H[\Gamma]=\int_\Gamma\mathcal A_\tau.
+}
+\]
+
+The downstream promotion path is
+
+\[
+\boxed{
+09B
+\to
+\text{source-owned nonlocal channel}
+\to
+\text{local relativistic recovery}
+\to
+\text{sealed-record causal test}
+\to
+\text{Retrocausal Tests}.
+}
+\]
+
+A negative \(\oint\mathcal A_\tau\) before those gates is a model coordinate, not a physical retrocausal verdict.
+
