@@ -74,6 +74,9 @@
 | T050 | \(\Delta\phi_t=-E\Delta t/\hbar\) calibrates phase order to metric clock time | T011 | later physical bridge | `DEFERRED` | Ch. 11–12 |
 | T070 | Independently derived temporal and spatial branches admit spacetime closure | T050 | final closure | `DEFERRED` | Ch. 12 |
 
+| T071 | Under the 05G temporal foliation and the declared 09B spatial-only channel, address transport preserves the temporal-leaf label; any transport-induced temporal offset is reconstructed from the declared geometric path functional \(\Delta\tau_H[\Gamma]=\int_\Gamma\mathcal A_\tau\) | 05G + 07M + 09A + declared 09B connection | conditional derivation + local isolated reference tests | `CANDIDATE_WITH_REFERENCE_IDENTITIES / PHYSICAL_CHANNEL_OPEN` | candidate appendix/interface |
+| T072 | Spatial separation alone does not imply a temporal shift \(\pm L/c\) in the 09B channel; a negative round-trip temporal holonomy is first a model coordinate and requires the independent sealed-record retrocausal gate for physical promotion | T071 + Retrocausal Tests firewall | exact zero-connection/exact-loop controls + reference tests | `CANDIDATE_FIREWALL / RETROCAUSAL_PROMOTION_OPEN` | candidate appendix/interface |
+
 ## Admission rule
 
 A row may move from `CANDIDATE` or `PROVISIONAL_DOWNSTREAM_*` to a stronger status only through a recorded validation artifact and receipt consistent with the dependency graph.
