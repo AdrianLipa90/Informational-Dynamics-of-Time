@@ -191,3 +191,64 @@ The next layer binds each \(\rho_k\) directly to the append-only ORCHORBITAL res
 Repository placement and theory admission remain separate. The consolidated tree contains the 05H/05I/05J clock/event interfaces, 05K precision-safe log-lapse source contract, GSC2 source-freeze tooling, 02JO material-front/NOW crosswalk, and a candidate-only 600-cell/S3 ORCHORBITAL adapter. None of these placements bypasses its recorded evidence boundary.
 
 The machine-readable dependency graph is `validation/dependency_graph.json`; the human path map is `docs/CANONICAL_SURFACE_INDEX.md`. The previously declared active scientific frontier is not promoted merely by this repository consolidation.
+
+## Additive 09B split-kinematic candidate — 2026-09-27
+
+The candidate branch `09B_spatial_only_transport_temporal_holonomy` separates leaf-preserving spatial address transport from temporal holonomy response.
+
+Its parent chain is
+
+\[
+\boxed{
+05G\;\text{temporal foliation}
++
+07M\;\text{Spatial Offset Divergence}
++
+09A\;\text{holonomic offset}
+\to
+09B\;\text{spatial-only / temporal-holonomy split}.
+}
+\]
+
+The channel layer is
+
+\[
+\boxed{
+\mathcal S_\Gamma:(x_A,\tau_0)\mapsto(x_B,\tau_0),
+\qquad
+\Delta\tau_{\rm transport}=0,
+}
+\]
+
+while a nonzero temporal response requires an explicit path functional
+
+\[
+\boxed{
+\Delta\tau_H[\Gamma]=\int_\Gamma\mathcal A_\tau.
+}
+\]
+
+Hence spatial separation by itself does not generate a \(\pm L/c\) temporal shift. For a round-trip loop,
+
+\[
+\Delta\tau_{\rm ping}=\oint_C\mathcal A_\tau.
+\]
+
+A negative loop value is retained only as a model temporal-offset coordinate until the physical nonlocal channel, local relativistic recovery and sealed-record retrocausal gates are independently satisfied.
+
+The 2026-09-26 GREMLIN Fractal Moire-Hilbert operator stack may enter only as a candidate geometric carrier; its physical binding remains open and a finite 36D representation is not identified with the full Hilbert carrier.
+
+Reference implementation and tests:
+
+- `src/idt/spatial_only_temporal_holonomy.py`;
+- `tests/reference/test_spatial_only_temporal_holonomy.py`;
+- `validation/SPATIAL_ONLY_TEMPORAL_HOLONOMY_V0_1.json`.
+
+Local isolated reference replay: `10 passed in 0.08s`.
+
+Status:
+
+`SPATIAL_ONLY_TRANSPORT_REFERENCE_PASS / TEMPORAL_HOLONOMY_REFERENCE_PASS / DISTANCE_TIME_LEAKAGE_GUARD_PASS / PHYSICAL_NONLOCAL_CHANNEL_OPEN / LOCAL_RELATIVISTIC_RECOVERY_OPEN / RETROCAUSAL_PROMOTION_OPEN`.
+
+This branch is additive and candidate-only; it does not modify the canonical admission order or self-promote a physical time-travel claim.
+
