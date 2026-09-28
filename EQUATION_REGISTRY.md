@@ -2,6 +2,44 @@
 
 Canonical equation IDs are stable across monograph revisions.
 
+**EQ-T000A — pretemporal half-step and full successor**
+\[
+\mathsf H(n,0)=(n,1),
+\qquad
+\mathsf H(n,1)=(n+1,0),
+\qquad
+\mathsf S(n,\sigma)=(n+1,\sigma),
+\]
+\[
+\boxed{\mathsf H^2=\mathsf S.}
+\]
+
+**EQ-T000B — normalized pretemporal half grading**
+\[
+\boxed{
+g(n,\sigma)=n+\frac{\sigma}{2},
+\qquad
+g(\mathsf Hx)-g(x)=\frac12,
+\qquad
+g(\mathsf Sx)-g(x)=1.
+}
+\]
+The numerical half is a grading after full-successor normalization, not an assumed physical duration.
+
+**EQ-T000C — relational overlap and Hilbert unilateral shift**
+\[
+E_n=\{n,n+1\},
+\qquad
+\boxed{E_n\cap E_{n+1}=\{n+1\}},
+\]
+\[
+\boxed{
+\mathsf S_{\mathbb N}(n)=n+1,
+\qquad
+\mathsf S_{\mathbb N}(E_n)=E_{n+1}.
+}
+\]
+
 **EQ-T001 — informational normalization**
 \[
 \kappa=\frac{\ln2}{24\pi}.
