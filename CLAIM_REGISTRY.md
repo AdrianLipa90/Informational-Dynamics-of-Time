@@ -77,3 +77,37 @@
 ## Admission rule
 
 A row may move from `CANDIDATE` or `PROVISIONAL_DOWNSTREAM_*` to a stronger status only through a recorded validation artifact and receipt consistent with the dependency graph.
+
+
+## IDT-PRETIME-HALF-SUCCESSOR-001 — Stella half-successor factorization
+
+Status: EXACT_COMBINATORIAL
+
+Source: formalism/00H_tetrahedral_half_successor_pretime.md
+
+\[
+H(n,+)=(n,-),\qquad
+H(n,-)=(n+1,+),
+\qquad
+S(n,\epsilon)=(n+1,\epsilon).
+\]
+
+Therefore
+
+\[
+\boxed{H^2=S.}
+\]
+
+With \(\nu(n,+)=n\) and \(\nu(n,-)=n+1/2\),
+
+\[
+\boxed{\nu(HX)=\nu(X)+1/2.}
+\]
+
+The claim is pretemporal: it derives a half-step ordering skeleton and does not claim a calibrated physical duration.
+
+## IDT-PRETIME-HILBERT-002 — one-sided successor is a unilateral Hilbert shift
+
+Status: STANDARD_EXACT
+
+The successor \(n\mapsto n+1\) induces \(\mathcal Ue_n=e_{n+1}\) on \(\ell^2(\mathbb N_0)\). It is injective and isometric but not surjective. The non-surjectivity is the correct Hilbert-hotel reindexing structure; an automorphism requires a bilateral \(\mathbb Z\) extension.
