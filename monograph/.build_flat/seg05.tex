@@ -1,0 +1,1079 @@
+% ---- BEGIN monograph/chapters/08N_per_stratum_position_decoder.tex ----
+\chapter{Exact Per-Stratum Position Decoder Baseline}
+\label{chap:per-stratum-position-decoder}
+
+The stratified Retrodiction construction reduces every remaining collision problem to a fixed active-attractor sequence. For one such stratum $\mathcal Z_s$, the exact carrier is the ordered post-segment position lineage
+\[
+P_s(z)=(r_1(z),\ldots,r_N(z)).
+\]
+The present layer supplies a direct constructive decoder by retaining enough absolute position coordinates to assemble this carrier exactly.
+
+Let
+\[
+\Lambda_P=(r_{1x},r_{1y},\ldots,r_{Nx},r_{Ny})
+\]
+be the complete scalar carrier label set. Position coordinates may originate either in the base observation $Y$ or in an explicitly retained position-fiber packet $F_{\rm pos}$. When every label in $\Lambda_P$ occurs exactly once across these two sources, define
+\[
+\boxed{
+L_s^{\rm pos}(Y,F_{\rm pos})
+=\bigl((r_{1x},r_{1y}),\ldots,(r_{Nx},r_{Ny})\bigr).
+}
+\]
+By construction,
+\[
+\boxed{
+P_s=L_s^{\rm pos}\circ(Y,F_{\rm pos})|_{\mathcal Z_s}.
+}
+\]
+This supplies the lift required by the earlier carrier-composition theorem.
+
+For the declared sparse checkpoint schedule, the final position is retained directly in the base record,
+\[
+(r_{Nx},r_{Ny})\subset Y.
+\]
+The coordinate-complete baseline packet therefore consists of all earlier Cartesian position scalars,
+\[
+\boxed{
+F_{\rm pos}^{\rm baseline}=\{r_{kx},r_{ky}:1\le k<N\},
+\qquad
+|F_{\rm pos}^{\rm baseline}|=2N-2.
+}
+\]
+This exact carrier budget is recorded separately from the local rank-completion budget. For the saturated sparse schedule,
+\[
+N_{\rm add}^{\rm local}=N-3,
+\qquad
+N_{\rm add}^{\rm exact\ carrier}=2N-2.
+\]
+
+The executable decoder enforces finite values, valid checkpoint indices and axes, unique coordinate sources, no base/fiber overlap and complete carrier coverage. A successful decode returns \texttt{EXACT\_PER\_STRATUM\_POSITION\_DECODER} and a finite $N\times2$ ordered position array.
+
+A real three-event reference uses the final base position together with four earlier position-fiber scalars, assembles $(r_1,r_2,r_3)$, and passes that carrier into the exact position-lineage inverse. The generating three-event kick vector is recovered within the declared tolerance.
+
+This integration also hardened the existing carrier interface. The decoder naturally emits a NumPy $(N,2)$ array; the earlier generic position parser used a boolean truth-value check that is ambiguous for multi-element NumPy arrays. The zero-length test was made explicit, preserving the declared generic sequence contract.
+
+The initial hosted run \texttt{33204395192}, job \texttt{98961625586}, exposed that interface defect and returned
+\begin{verbatim}
+1 failed, 527 passed in 14.36s
+\end{verbatim}
+The corrected run \texttt{33204551313}, job \texttt{98962152065}, on branch head \texttt{8d0964f1d6d343193bb72966f4443780d2edafe0} returned
+\begin{verbatim}
+528 passed in 14.20s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The next Retrodiction problem is compression of the explicit baseline packet. The first exact candidate reuses the ordered signed winding and the active-attractor radial coordinate
+\[
+\rho_k=\|r_k-c_{a_k}\|.
+\]
+Given $r_{k-1}$, the active center $c_{a_k}$ and winding increment $\Delta W_k$, the direction of $r_k-c_{a_k}$ is fixed modulo $2\pi$, so
+\[
+\boxed{
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}+2\pi\Delta W_k)
+\end{pmatrix}.
+}
+\]
+For the declared schedule with final position already retained, this provides the analytic target of $N-1$ new radial scalars while reusing the existing winding lineage. The active status is \texttt{POSITION\_FIBER\_COMPRESSION\_ACTIVE\_NEXT\_GATE}; the governing compressed-architecture status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN}.
+
+% ---- END monograph/chapters/08N_per_stratum_position_decoder.tex ----
+
+% ---- BEGIN monograph/chapters/08O_winding_radius_position_decoder.tex ----
+\chapter{Winding--Radius Exact Position Decoder}
+\label{chap:winding-radius-position-decoder}
+
+The Cartesian baseline of Chapter~\ref{chap:per-stratum-position-decoder} retains $2N-2$ pre-final position scalars when the final position is already present in the base record. The ORCHORBITAL residence lineage also retains the ordered signed winding
+\[
+\mathcal W=(\Delta W_1,\ldots,\Delta W_N),
+\]
+with each increment evaluated relative to the active attractor center of its segment. The present layer combines that existing angular coordinate with one active-attractor radius per pre-final checkpoint.
+
+For checkpoint $k$, let
+\[
+\rho_k=\|r_k-c_{a_k}\|>0,
+\]
+where $c_{a_k}$ is the center selected by the retained active-attractor sequence. Given the preceding position $r_{k-1}$, define
+\[
+\theta_{k-1}^{(a_k)}
+=\operatorname{atan2}\!\left(
+(r_{k-1}-c_{a_k})_y,
+(r_{k-1}-c_{a_k})_x
+\right).
+\]
+The persisted winding increment determines the next relative direction and the retained radius determines its magnitude. Hence, for $1\le k<N$,
+\[
+\boxed{
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos\!\left(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k\right)\\
+\sin\!\left(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k\right)
+\end{pmatrix}.
+}
+\]
+The final position $r_N$ is read from the declared base record. Its signed winding increment $\Delta W_N$ is retained as an independent consistency condition on the final segment.
+
+The resulting decoder is the deterministic map
+\[
+\boxed{
+L_s^{\rho W}:
+\bigl(r_0,\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N\bigr)
+\longmapsto
+(r_1,\ldots,r_N),
+}
+\]
+where $\alpha=(a_1,\ldots,a_N)$ is the exact retained active-attractor sequence. The typed implementation admits finite two-component positions, unique finite attractor centers, positive radial coordinates, wrapped winding increments in $[-1/2,1/2]$, and a finite final winding consistency tolerance.
+
+For $N>1$, the explicit Cartesian baseline requires
+\[
+N_{\rm Cartesian}=2N-2
+\]
+new scalar coordinates. The winding--radius packet requires
+\[
+N_{\rm radial}=N-1
+\]
+new scalar coordinates while reusing the $N$ winding scalars already carried by the augmented ORCHORBITAL record. Therefore
+\[
+\boxed{
+\frac{N_{\rm radial}}{N_{\rm Cartesian}}
+=\frac{N-1}{2N-2}
+=\frac12.
+}
+\]
+For $N=1$, the final position already supplies the complete position carrier and no pre-final radial coordinate is required.
+
+The executable reference reconstructs a real three-event ordered position lineage and composes it with the exact 07K position-lineage inverse, recovering the generating kick history within the declared tolerance. A separate A$\to$B switching trajectory verifies that the reconstruction uses the retained segment-wise active center rather than a single fixed orbital center.
+
+Hosted Reference-suite run \texttt{33205507810}, job \texttt{98965399355}, checked the pull-request merge of the 07U implementation and returned
+\begin{verbatim}
+551 passed in 12.09s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4. The merge commit is \texttt{f6ccb49cecbe9da9beb91f29b1c7bbc9e15283f3}.
+
+Combining the exact active-sequence stratification, the winding--radius decoder, the injective ordered position carrier and the 07K inverse gives the conditional reconstruction chain
+\[
+\boxed{
+(\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N)
+\xrightarrow{\ L_s^{\rho W}\ }
+(r_1,\ldots,r_N)
+\xrightarrow{\ 07K^{-1}\ }
+(u_1,\ldots,u_N).
+}
+\]
+On the declared domain of positive radii and nonsingular active-center geometry, this chain supplies an exact augmented Retrodiction coordinate system. The next engineering task is to bind the radial packet directly to the persisted ORCHORBITAL residence lineage so that the complete compressed carrier has one append-only provenance path.
+
+% ---- END monograph/chapters/08O_winding_radius_position_decoder.tex ----
+
+% ---- BEGIN monograph/chapters/09_retrocausality.tex ----
+\chapter{Retrocausality}
+
+Status: \texttt{PREREGISTRATION\_READY / EXECUTION\_GATED\_BY\_RETRODICTION\_ADMISSION}.
+
+This chapter records the experimental architecture for the downstream Retrocausal Tests node. The protocol is fixed before confirmatory acquisition so that statistical choices, temporal ordering, exclusion rules and classical-channel audits remain independent of the eventual result.
+
+\section{Ordered trial structure}
+
+For trial $i$, define
+\[
+\boxed{t_{0,i}<t_{S,i}<t_{F,i}<t_{R,i}.}
+\]
+Here $t_0$ initializes the trial, $t_S$ seals the early observation, $t_F$ generates the future condition, and $t_R$ reveals that condition to the analysis layer.
+
+Let the sealed early record be $X_i$ with commitment
+\[
+\boxed{C_i=H(\operatorname{canonical}(X_i)).}
+\]
+The binary reference future condition is
+\[
+F_i\in\{0,1\},
+\]
+and is generated independently after the early-record commitment has been persisted.
+
+\section{Frozen early-data score}
+
+A deterministic feature map and score map are frozen before acquisition,
+\[
+Z_i=g(X_i),
+\qquad
+s_i=h(Z_i).
+\]
+Both maps use the sealed early record as their input. The primary confirmatory statistic is the standardized difference
+\[
+\boxed{
+T_{\rm obs}
+=\frac{\bar s_{F=1}-\bar s_{F=0}}
+{\sqrt{s_1^2/n_1+s_0^2/n_0}}.
+}
+\]
+The V0.1 reference protocol fixes a two-sided alternative, $10^5$ block-respecting permutations and
+\[
+\boxed{\alpha=0.005.}
+\]
+
+The permutation p-value is
+\[
+\boxed{
+p_{\rm perm}
+=\frac{1+\#\{b:|T_b|\ge |T_{\rm obs}|\}}
+{B+1}.
+}
+\]
+
+\section{Acquisition and stopping contract}
+
+The preregistered confirmatory target is
+\[
+\boxed{N_{\rm valid}=4096}
+\]
+with an attempted-trial ceiling of $4608$. Acquisition ends when the valid-trial target or operational ceiling is reached. Statistical outcomes are excluded from the stopping rule.
+
+Machine-checkable exclusions cover failed serialization/hash commitment, ordering violations, malformed future-RNG records, duplicate trial identifiers, declared acquisition failures, non-finite frozen scores and trial-specific classical availability of the future condition before $t_F$.
+
+All excluded trials remain in the append-only raw ledger with an exclusion code.
+
+\section{Classical-channel audit}
+
+A statistical effect advances through a dedicated classical-channel audit covering process/thread memory, environment and configuration, filesystem/cache state, databases and shared memory, network paths, RNG-state sharing, timestamps, future-condition precomputation, metadata leakage, post-seal mutation, pre-reveal label access and label-conditioned preprocessing.
+
+The evidence sequence is fixed as
+\[
+\boxed{
+\mathrm{RAW\ OBSERVATION}
+\to
+\mathrm{STATISTICAL\ EFFECT}
+\to
+\mathrm{CLASSICAL\ CHANNEL\ AUDIT}
+\to
+\mathrm{PHYSICAL\ CLAIM\ STATUS}.
+}
+\]
+
+A discovered classical channel terminates the confirmatory path at the channel-audit stage. A statistical effect that passes the channel audit becomes eligible for the downstream physical-claim review once the Retrodiction dependency gate is admitted.
+
+\section{Controls}
+
+Three controls are preregistered:
+
+\begin{enumerate}
+\item block-permuted future labels as the statistical null ensemble;
+\item a separate engineering dataset in which the later label is deliberately available before the seal, verifying that the leakage audit identifies an ordinary classical channel;
+\item a separate positive-control dataset with a known low-amplitude classical marker in the early record, verifying sensitivity of the frozen score/audit stack.
+\end{enumerate}
+
+Control data are stored separately from the confirmatory dataset.
+
+\section{Retrodiction dependency}
+
+The protocol inherits the Retrodiction collision/fiber audits. The residence-bound winding--radius architecture provides an authenticated route from retained event-residence lineage to the exact position carrier and then to reconstructed event kicks on its declared domain. The active dependency coordinate is the augmented global-domain coverage audit.
+
+The machine-readable preregistration is stored at
+\begin{center}
+\texttt{experiments/E004\_retrocausal\_preregistration/preregistration\_v0\_1.json}
+\end{center}
+and the complete protocol at
+\begin{center}
+\texttt{experiments/E004\_retrocausal\_preregistration/PROTOCOL\_V0\_1.md}.
+\end{center}
+
+Any protocol change creates a new version while preserving this preregistration unchanged.
+
+% ---- END monograph/chapters/09_retrocausality.tex ----
+
+% ---- BEGIN monograph/chapters/10_experiments.tex ----
+\chapter{Experiments and Falsification}
+
+\noindent\textbf{Status:} \texttt{REFERENCE-MODEL TESTS ACTIVE / PHYSICAL TESTS PREREGISTERED / EVIDENCE-CLASS SEPARATION REQUIRED}.
+
+The experimental programme of Informational Dynamics of Time is organised as a sequence of increasingly demanding tests. The purpose of the sequence is to preserve a strict distinction between an algebraic identity, a deterministic reference-model reconstruction, a statistical anomaly, and a measured physical result. The temporal formalism therefore reaches experiment through explicit interfaces rather than through a single omnibus claim.
+
+The canonical progression is
+\[
+\boxed{
+\begin{gathered}
+\text{formal identity}
+\longrightarrow
+\text{reference implementation}
+\longrightarrow
+\text{withheld-variable test}
+\\
+{}\longrightarrow
+\text{preregistered physical test}
+\longrightarrow
+\text{independent replication}
+\end{gathered}
+}.
+\]
+Each promotion requires its own evidence receipt.
+
+\section{Experimental observables of the temporal branch}
+
+The temporal primitive supplies a positive activity measure
+\[
+d\Theta=\mathfrak a\,d\lambda,
+\qquad \mathfrak a>0,
+\]
+and the local/reference comparison supplies the relational lapse
+\[
+N_R(x|r)=\frac{d\Theta_x}{d\Theta_r}
+=\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+\]
+Once a reference clock is physically calibrated by
+\[
+dt=T_r\,d\Theta_r,
+\]
+the local calibrated elapsed interval is
+\[
+d\widehat\tau_x=N_R(x|r)\,dt.
+\]
+This identifies the first experimental class: measurements of relative clock rate under independently characterised relational conditions. The primary observable is a dimensionless clock ratio, while conversion to seconds belongs to the calibration layer.
+
+A second class concerns phase transport. On an admitted physical-clock calibration domain, the temporal branch is tested against the phase relation
+\[
+\Delta\phi_t=-\frac{E\Delta t}{\hbar}.
+\]
+The associated failure coordinate is direct: the temporal transport construction must recover the physical phase relation from its admitted bridge assumptions rather than by redefining the measured phase after the fact.
+
+A third class concerns memory and retrodiction. Here the observable data are ordered checkpoints, event receipts, residence cells, winding increments, radial coordinates, and final retained states. These tests are especially useful because they permit exact withheld-lineage experiments before any physical retrocausal interpretation is considered.
+
+\section{E003: withheld-lineage retrodiction}
+
+The E003 protocol tests whether deliberately hidden lineage variables can be reconstructed from permitted checkpoints and declared model parameters. Its reference dynamics are
+\[
+X_{k+1}
+=
+\Phi_K(\Delta\tau_k;\mu_M)
+\circ K_{u_k}(X_k),
+\qquad
+u_k=q_k\,\delta m_k,
+\]
+where the smooth Kepler-memory segment and the event kick are independently typed operations. The sealed truth variables are excluded from the estimator input.
+
+The protocol contains several distinct identifiability regimes. If one factor of the event product is independently known, the complementary factor can be reconstructed from the inferred kick. If both \(q_k\) and \(\delta m_k\) are hidden, the event product remains the identifiable coordinate and factorisation is treated as a separate ambiguity class. Multi-event reconstruction is audited through the observation Jacobian
+\[
+J_R=\frac{\partial Y_C}{\partial z}.
+\]
+For a latent coordinate of dimension \(2N\), local observability requires
+\[
+\operatorname{rank}J_R=2N.
+\]
+A final-only multi-kick configuration supplies a mandatory underdetermined control.
+
+The covariance-weighted residual is
+\[
+Q(z)=r(z)^T\Sigma_Y^{-1}r(z),
+\]
+and chronology controls are generated by checkpoint-block permutations with the same nominal information capacity. This separates reconstruction driven by ordered lineage from reconstruction achievable after chronology is destroyed.
+
+The first reference run used three kicks, a six-dimensional latent coordinate, and a twelve-dimensional observation coordinate. The observability rank was six. The estimator converged in two iterations, with residual of order \(10^{-14}\) and maximum kick error of order \(10^{-14}\). Fifty randomised reference cases retained full rank and converged within the same numerical scale. The zero-kick and shuffled-chronology controls produced residuals many orders of magnitude larger than the exact reference solution.
+
+The weighted diagnostic run again obtained rank six, with a modest condition number, while all tested nonidentity chronology permutations generated very large weighted residuals. The permutation ensemble in this diagnostic is an observability stress test rather than a sampling-based physical significance calculation.
+
+The experimental meaning of E003 is therefore precise. It establishes that the admitted memory dynamics and observation map support exact reconstruction in the declared reference class, with controls for hidden-truth leakage, product ambiguity, rank deficiency, and chronology destruction. Its evidence class is \texttt{PASS\_MODEL\_INTERNAL} when the stated gates pass.
+
+\section{Residence-bound compressed reconstruction}
+
+The retrodiction carrier has been reduced from a full Cartesian packet to a winding--radius packet on each admitted active-attractor stratum. With
+\[
+\rho_k=\|r_k-c_{a_k}\|>0,
+\]
+and ordered winding increments \(\Delta W_k\), the pre-final positions are reconstructed by
+\[
+r_k=c_{a_k}+\rho_k
+\begin{pmatrix}
+\cos(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k)\\
+\sin(\theta_{k-1}^{(a_k)}+2\pi\Delta W_k)
+\end{pmatrix}.
+\]
+The radial packet contains \(N-1\) new scalar coordinates in place of the \(2N-2\) Cartesian coordinates of the baseline carrier. Thus
+\[
+\boxed{
+\frac{N_{\rm radial}}{N_{\rm Cartesian}}=\frac12
+}
+\]
+for \(N>1\).
+
+The 07V residence binding attaches every retained radius to the checkpoint index, active attractor, exact binary64 radius, source residence cell, post-segment state commitment, and preceding radial commitment. The content-addressed chain therefore supplies provenance for the compressed coordinate used by the decoder. The hosted reference suite for this gate is used as a software-assurance and regression receipt. Its test count is not treated as a multiplicity of physical observations or as independent evidence for the underlying physical theory. The broader global injectivity coordinate remains a separate frontier beyond the declared positive-radius stratified domain.
+
+\section{E004: prospective retrocausal discrimination}
+
+Chapter~9 defines the preregistration boundary for a genuinely retrocausal candidate. The primary statistical target is
+\[
+P(X_{\mathrm{past}}\mid Y_{\mathrm{future}})
+\stackrel{?}{\neq}
+P(X_{\mathrm{past}}),
+\]
+with the future condition selected after the earlier measurement event and with the complete analysis contract committed beforehand.
+
+Admission of a physical candidate requires, at minimum, cryptographic timestamp commitments, blinded future-condition assignment, a classical-channel audit, shared-clock and scheduler controls, sham/null trials, a fixed exclusion policy, and replication. The raw earlier record is immutable. Analysis proceeds from committed data products and an analysis plan whose hash predates condition unblinding.
+
+The result ladder used throughout this programme is
+\[
+\texttt{RAW\_OBSERVATION}
+\rightarrow
+\texttt{STATISTICAL\_EFFECT}
+\rightarrow
+\texttt{CLASSICAL\_CHANNEL\_AUDIT}
+\rightarrow
+\texttt{PHYSICAL\_CLAIM\_STATUS}.
+\]
+A statistical deviation is therefore only one coordinate of the experimental conclusion.
+
+\section{Falsification matrix}
+
+The experimental programme contains five principal falsification families.
+
+\begin{enumerate}
+\item \textbf{Temporal phase transport.} Test recovery of \(\Delta\phi_t=-E\Delta t/\hbar\) on the declared calibration domain.
+\item \textbf{Spacetime closure.} Combine the independently developed temporal and spatial branches and test the reconstructed phase against
+\[
+\Delta\phi=\frac{1}{\hbar}
+\left(\mathbf p\cdot\Delta\mathbf x-E\Delta t\right).
+\]
+\item \textbf{NOW and bifurcation.} Test branch integrity, realised-lineage uniqueness, reconstructive reversibility where specified, and repeated-state re-entry consistency.
+\item \textbf{Retrodiction and retrocausal discrimination.} Use E003 for model-internal reconstruction and E004 for the preregistered physical candidate test.
+\item \textbf{Bell/CHSH discrimination where the experimental topology requires it.} This is a standard nonclassical-correlation benchmark \cite{Bell1964,CHSH1969}, not an IDT-specific prediction by itself. For independently selected settings \(a,a',b,b'\), evaluate
+\[
+S=E(a,b)+E(a,b')+E(a',b)-E(a',b'),
+\]
+with explicit timing, selection, detection, and communication controls.
+\end{enumerate}
+
+\section{Evidence classes and provenance}
+
+The canonical verdict classes are
+\[
+\begin{gathered}
+\texttt{PASS\_MODEL\_INTERNAL},\quad
+\texttt{FAIL\_MODEL\_INTERNAL},\quad
+\texttt{CLASSICAL\_COMPATIBLE},\\
+\texttt{ANOMALY\_CANDIDATE},\quad
+\texttt{RETROCAUSAL\_CANDIDATE},\quad
+\texttt{NONCLASSICAL\_CORRELATION\_CANDIDATE},\\
+\texttt{MEASURED\_PHYSICAL\_RESULT}.
+\end{gathered}
+\]
+Every promoted result retains the raw-data identity, source commit, parameter manifest, test coordinate, uncertainty model, and failure receipt. This provenance rule is part of the scientific content of the programme: a temporal claim is evaluated together with the chronology by which its evidence was produced.
+
+The resulting experimental architecture mirrors the theory itself. Temporal order generates an observable lineage; memory makes that lineage addressable; retrodiction tests whether the retained structure is sufficient to reconstruct hidden causes; preregistration then supplies the boundary at which a future-conditioned physical effect can be distinguished from reconstruction, leakage, scheduling, and ordinary forward causation.
+
+% ---- END monograph/chapters/10_experiments.tex ----
+
+% ---- BEGIN monograph/chapters/11_space_as_external_branch.tex ----
+\chapter{Space as an External Branch}
+
+\noindent\textbf{Status:} \texttt{TIR BRANCH SEPARATION PRESERVED / TEMPORAL COFRAME EXPORT DEFINED / SPACETIME RECOMBINATION DOWNSTREAM}.
+
+The construction of time in this monograph is deliberately completed before spacetime is formed. The parent Theory of Informational Relations supplies a common relational substrate, but its temporal and spatial developments are separate branches of the dependency graph:
+\[
+\boxed{
+\mathrm{TIR}
+\longrightarrow
+\begin{cases}
+\text{temporal dynamics},\\
+\text{spatial/relational geometry}.
+\end{cases}}
+\]
+The temporal branch is the subject of the preceding chapters. The spatial branch enters this monograph as an external closure input only after the temporal measure, local clock comparison, transport, memory, and retrodiction structures have been constructed.
+
+\section{Parent relational Hamiltonian}
+
+At the TIR entry point a relational state may be organised by
+\[
+H_s(\tau,k)=H_{\mathrm{phase},s}+H_{\mathrm{rel},s},
+\]
+with a phase-information component
+\[
+H_{\mathrm{phase},s}
+=
+\frac{\hbar}{\Delta\tau_k}\rho_s(k)
+\left[\kappa W_s+\delta I_0(\tau)\right],
+\qquad
+\kappa=\frac{\ln2}{24\pi},
+\]
+and a relational-geometric component
+\[
+H_{\mathrm{rel},s}
+=
+\frac12 g_{FS}^{ab}\Pi_a\Pi_b+V_s.
+\]
+The split provides the correct starting topology for the monograph. Temporal order and temporal phase can be developed from the first branch while relational geometry supplies the independent spatial carrier needed at closure.
+
+\section{The temporal output is a measure, not a spatial coordinate}
+
+The primitive elapsed coordinate is generated by positive activity,
+\[
+d\Theta=\mathfrak a\,d\lambda,
+\qquad \mathfrak a>0.
+\]
+For a local subsystem \(x\) and a reference subsystem \(r\),
+\[
+N_R(x|r)
+=
+\frac{d\Theta_x}{d\Theta_r}
+=
+\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+\]
+The ratio is invariant under every increasing reparameterisation of the common ordering coordinate. It also composes exactly,
+\[
+N_{x|s}=N_{x|r}N_{r|s},
+\]
+so that its logarithm
+\[
+\nu_{x|r}=\ln N_{x|r}
+\]
+is additive under changes of clock reference.
+
+After a physical reference calibration
+\[
+dt=T_r\,d\Theta_r,
+\]
+the temporal branch exports
+\[
+d\widehat\tau_x=N_R(x|r)\,dt
+\]
+and the length-valued temporal one-form
+\[
+\boxed{
+\Theta_R=N_Rc\,dt.
+}
+\]
+This one-form is the temporal object handed to the relativistic bridge. The spatial branch supplies its own coordinate/coframe data independently.
+
+\section{Information geometry of relative clock rate}
+
+A useful scalar on the temporal side is obtained from a local memoryless positive-rate realisation. For exponential holding densities, using the standard Kullback--Leibler divergence as the information measure \cite{KullbackLeibler1951},
+\[
+p_{\mathfrak a}(s)=\mathfrak a e^{-\mathfrak a s},
+\]
+the reference-to-local Kullback--Leibler divergence reduces exactly to
+\[
+\boxed{
+\Phi(N_R)=N_R-1-\ln N_R.
+}
+\]
+It satisfies
+\[
+\Phi(1)=0,
+\qquad
+\Phi''(N_R)=\frac{1}{N_R^2}>0,
+\]
+and near the reference clock
+\[
+\Phi(1+\epsilon)
+=
+\frac12\epsilon^2-\frac13\epsilon^3+O(\epsilon^4).
+\]
+Thus the temporal branch already carries a one-dimensional Fisher geometry for clock comparison. The relativistic bridge may use the weak relational-lapse coordinate
+\[
+\Phi_N=c^2\ln N_R
+\]
+as an energy-per-mass interface, with physical gravitational calibration tested downstream.
+
+\section{Typed spatial interface}
+
+Let the spatial branch export a position/coframe coordinate schematically denoted by
+\[
+\mathbf x
+\quad\text{or}\quad
+e^{\hat i}.
+\]
+Let the temporal branch export \(\Theta_R\). Their first legitimate joint object is then a spacetime coframe of the form
+\[
+\boxed{
+\mathcal E
+=
+\left(\Theta_R,e^{\hat1},e^{\hat2},e^{\hat3}\right).
+}
+\]
+Equivalently, at the coordinate level,
+\[
+\boxed{
+\mathbf x\oplus t
+\longrightarrow
+(\mathbf x,t).
+}
+\]
+The direct sum notation is important: each branch arrives at the recombination interface with its own provenance and dimensional contract.
+
+The associated phase closure target is the Lorentz-covariant one-particle relation
+\[
+\boxed{
+\Delta\phi
+=
+\frac{1}{\hbar}
+\left(\mathbf p\cdot\Delta\mathbf x-E\Delta t\right).
+}
+\]
+This equation is used as a downstream closure test. The temporal contribution is supplied by the independently calibrated temporal branch and the spatial contribution by the independently admitted spatial branch.
+
+\section{Lapse as the temporal-to-geometric handshake}
+
+The relational lapse supplies a particularly economical handshake between the two branches. In weak form,
+\[
+N_R=1+\epsilon_N,
+\qquad
+|\epsilon_N|\ll1,
+\]
+and
+\[
+\ln N_R=\epsilon_N+O(\epsilon_N^2).
+\]
+Therefore the scalar
+\[
+\Phi_N=c^2\ln N_R
+\]
+can be compared with a spatially varying gravitational clock potential once both branches are admitted on the same physical patch. A successful weak-field binding must simultaneously preserve the activity-derived origin of \(N_R\), the reference-clock composition law, the spatial source equations, and the measured clock-rate relation.
+
+The stronger geometric object is the coframe itself. Given \(\Theta_R\) and an admitted spatial triad, a metric may be assembled through the declared signature convention. Curvature then belongs to the spacetime closure layer rather than to the primitive definition of elapsed activity.
+
+\section{Why branch separation matters for inference}
+
+The separation gives every later empirical comparison a clear dependency structure. A mismatch in a clock-rate experiment can be assigned to temporal calibration or to the local activity model. A mismatch in a spatial-force or curvature experiment can be assigned to the spatial/source branch. A mismatch that appears only after recombination belongs to the interface or closure map.
+
+This decomposition is equally important for retrodiction. The memory programme uses explicit two-dimensional orbit coordinates as a model carrier, but those coordinates are operational variables of the memory reference class. Their use in reconstruction therefore carries its own declared geometry and does not by itself identify the fundamental spatial branch. At the Einstein interface, physical spatial coordinates enter with an independent source and calibration contract.
+
+\section{Spacetime closure contract}
+
+The branch-recombination gate can be stated compactly:
+\[
+\boxed{
+\begin{array}{c}
+\text{temporal activity and phase}
+\longrightarrow
+\Theta_R=N_Rc\,dt\\[2mm]
+\text{spatial/relational geometry}
+\longrightarrow
+e^{\hat i}\\[2mm]
+(\Theta_R,e^{\hat i})
+\longrightarrow
+\text{spacetime coframe}
+\longrightarrow
+\text{Lorentz-covariant phase and field tests}.
+\end{array}}
+\]
+The current monograph therefore reaches relativity with a completed temporal branch and a typed spatial input. This is the point at which the two constructions may legitimately be compared, coupled, and tested as one spacetime description.
+
+% ---- END monograph/chapters/11_space_as_external_branch.tex ----
+
+% ---- BEGIN monograph/chapters/12_einstein_closure.tex ----
+\chapter{Einstein Interface and Closure Tests}
+
+\noindent\textbf{Status:} \texttt{STANDARD GR IDENTITIES RECOVERED / IDT-TO-GR BINDING CONDITIONAL / CONSERVATION GATES EXPLICIT / CROSS-SYSTEM UNIVERSALITY ACTIVE}.
+
+This chapter is a downstream interface chapter. It does \emph{not} claim to derive general relativity, the Einstein tensor, the Einstein coupling, Maxwell theory, or Hawking thermodynamics from the IDT primitives. Those are established physical structures used here as recovery benchmarks and closure constraints. The IDT-specific question is narrower and testable: whether the independently constructed temporal outputs and source interfaces can be bound to those structures without circularly defining the quantities that are later used for confirmation.
+
+\section{Standard geometric benchmark}
+
+For a metric-compatible spacetime connection, define
+\[
+G_{\mu\nu}=R_{\mu\nu}-\frac12Rg_{\mu\nu}.
+\]
+The contracted Bianchi identity gives
+\[
+\boxed{\nabla^\mu G_{\mu\nu}=0.}
+\]
+Together with the standard Einstein field equation \cite{Einstein1916},
+\[
+\boxed{
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=
+\kappa_E T^{\rm total}_{\mu\nu},
+\qquad
+\kappa_E=\frac{8\pi G}{c^4},
+}
+\]
+this requires a conserved total source on the admitted equations. The value of \(\kappa_E\) is imported from standard gravitational physics; it is not newly derived by the present temporal formalism.
+
+The conservation role of continuous symmetries belongs to the standard Noether framework \cite{Noether1971}. In this monograph, the novelty test is therefore not whether the Bianchi identity or Noether theorem holds, but whether the IDT source and temporal interfaces enter a conservation-compatible ledger without hidden source terms or post-hoc normalization.
+
+\section{Electromagnetic source bridge}
+
+The phase connection can be compared with the standard Aharonov--Bohm phase normalization \cite{AharonovBohm1959},
+\[
+a_{AB}=\frac{q}{\hbar}A,
+\qquad
+F=dA.
+\]
+The repository-level source convention binds
+\[
+\boxed{
+J_{\rm EM}^{\mu}=\frac{1}{\hbar}\,\mathcal J_Q^{\mu},
+}
+\]
+and, for a single carrier satisfying the declared identification gate,
+\[
+J_{\rm EM}^{\mu}=\frac{q}{\hbar}J_{\vartheta}^{\mu}.
+\]
+
+The standard electromagnetic stress tensor is
+\[
+\boxed{
+T^{\rm EM}_{\mu\nu}
+=
+\frac{1}{\mu_*}
+\left(
+F_{\mu\alpha}F_{\nu}{}^{\alpha}
+-\frac14g_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}
+\right).
+}
+\]
+The unit ledger takes \(\mu_*=1\) in Heaviside--Lorentz natural units and \(\mu_*=\mu_0\) in SI. These equations serve as a recovery and normalization benchmark for the source adapter, not as a new electromagnetic derivation.
+
+\section{Matter exchange and total conservation}
+
+On the admitted Maxwell--matter equations,
+\[
+\nabla^\mu T^{\rm EM}_{\mu\nu}
+=-F_{\nu\lambda}J_{\rm EM}^{\lambda},
+\qquad
+\nabla^\mu T^{\rm matter}_{\mu\nu}
+=+F_{\nu\lambda}J_{\rm EM}^{\lambda},
+\]
+so that
+\[
+\boxed{
+T^{\rm total}_{\mu\nu}
+=T^{\rm EM}_{\mu\nu}+T^{\rm matter}_{\mu\nu}
+}
+\]
+obeys
+\[
+\boxed{\nabla^\mu T^{\rm total}_{\mu\nu}=0.}
+\]
+This is the conservation gate required by the standard geometric side. The IDT closure task is to show that every promoted additional source contributes to the same ledger and that no source is silently omitted.
+
+\section{Temporal lapse as the independent IDT input}
+
+The temporal branch exports
+\[
+\Theta_R=N_Rc\,dt,
+\qquad
+N_R=\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+\]
+Together with an independently admitted spatial triad \(e^{\hat i}\), this gives the candidate spacetime coframe
+\[
+\mathcal E=(\Theta_R,e^{\hat1},e^{\hat2},e^{\hat3}).
+\]
+The weak temporal scalar
+\[
+\Phi_N=c^2\ln N_R
+\]
+is a comparison coordinate for clock-redshift tests.
+
+The physically discriminating closure condition is not the algebraic equality obtained by defining one side from the other. It is the held-out comparison
+\[
+\boxed{
+\widehat N_R^{\,\rm IDT}(x|r)
+\stackrel{\rm test}{=}
+N_R^{\rm geometric}(x|r),
+}
+\]
+where \(\widehat N_R^{\,\rm IDT}\) must be computed from independently measured or preregistered relational observables and frozen parameters that exclude the target clock ratio. If the observed clock ratio, the geometric lapse, or a fitted equivalent is used to define \(\mathfrak a_x/\mathfrak a_r\), the result is a calibration or consistency check rather than an independent prediction.
+
+\section{Dynamic vacuum bookkeeping}
+
+A spacetime-dependent scalar vacuum term may be written as \(\Lambda_0(x)\). If
+\[
+G_{\mu\nu}+\Lambda_0g_{\mu\nu}
+=
+\kappa_E T^{\rm total}_{\mu\nu},
+\]
+then Bianchi compatibility requires
+\[
+\boxed{
+\kappa_E\nabla^\mu T^{\rm total}_{\mu\nu}
+=
+\nabla_\nu\Lambda_0.
+}
+\]
+Equivalently,
+\[
+T^\Lambda_{\mu\nu}
+=-\frac{\Lambda_0}{\kappa_E}g_{\mu\nu}
+\]
+must be included in the total conserved bookkeeping. This is a consistency condition only. A first-principles dynamical action and independently testable source model for any promoted \(\Lambda_0(x)\) remain open.
+
+\section{Directional-stress recovery channel}
+
+For an admitted ultrarelativistic directional source,
+\[
+T_\nu^{\mu\nu}
+=
+\sum_a u_a k_a^\mu k_a^\nu.
+\]
+The transverse-traceless components
+\[
+T_+=\frac12(T_{xx}-T_{yy}),
+\qquad
+T_\times=T_{xy},
+\]
+and the linearized far-zone relation
+\[
+\boxed{
+h_{ij}^{TT}
+=
+\frac{4G}{c^4r}\,\mathcal T_{ij}^{TT}
+}
+\]
+belong to the standard linearized-gravity benchmark. The IDT programme contributes a proposed source adapter and provenance/calibration contract. A physical result requires response-corrected data, uncertainty propagation, and a source model frozen independently of the measured gravitational response. Isotropic directional ensembles provide a built-in null.
+
+\section{Horizon recovery benchmark}
+
+The Euclidean non-extremal horizon relations
+\[
+\beta_H=\frac{2\pi}{\kappa_H},
+\qquad
+\oint\kappa_Hd\tau_E=2\pi,
+\]
+and
+\[
+\boxed{
+T_H=\frac{\hbar\kappa_H}{2\pi c k_B}
+}
+\]
+are standard black-hole thermodynamic results associated with Hawking radiation and Euclidean regularity \cite{Hawking1975,GibbonsHawking1977}. Likewise, the periodic/antiperiodic thermal boundary conditions for integer- and half-integer-spin fields are recovery constraints on any compatible microscopic model. Reproducing these relations is scientifically necessary but is not, by itself, a novel prediction of IDT.
+
+\section{Closure verdict semantics}
+
+The present chapter establishes a typed \emph{interface}, not a completed empirical derivation of gravity from information. A successful closure claim requires all of the following:
+\begin{enumerate}
+\item the temporal predictor is generated independently of the target clock/geometric measurement;
+\item every promoted source is included in a conservation-compatible stress ledger;
+\item standard GR and field-theory limits are recovered without parameter definitions that encode the target result;
+\item at least one held-out observable can distinguish the IDT bridge from the declared baseline;
+\item the result survives uncertainty propagation and, for a physical promotion, independent replication.
+\end{enumerate}
+
+The current mathematical result is therefore a conservation-compatible path from declared temporal/source variables to the Einstein--Bianchi interface. The remaining physical question is whether nature realizes that path with independently measurable IDT variables.
+
+% ---- END monograph/chapters/12_einstein_closure.tex ----
+
+% ---- BEGIN monograph/chapters/13_predictions.tex ----
+\chapter{Predictions, Recovery Benchmarks, and Discriminators}
+
+\noindent\textbf{Status:} \texttt{MODEL-INTERNAL CONSEQUENCES / STANDARD-PHYSICS RECOVERY / DISCRIMINATING TESTS EXPLICITLY SEPARATED}.
+
+This chapter uses the word \emph{prediction} only for a quantity that is fixed before the target observation is inspected. Three classes are kept separate:
+\begin{enumerate}
+\item \textbf{model-internal consequences}: exact or numerical consequences of the declared IDT model on a stated domain;
+\item \textbf{recovery benchmarks}: established physical relations that a viable interface must reproduce;
+\item \textbf{discriminating physical tests}: held-out observables for which the IDT construction supplies an independently determined prediction that can differ from an explicit baseline.
+\end{enumerate}
+Passing a recovery benchmark is necessary compatibility evidence; it is not a new discovery of the recovered relation.
+
+\section{Model-internal and conditional consequences}
+
+\subsection{Positive relational clock ratio}
+
+For any two admitted clocks on the same ordered patch,
+\[
+\boxed{
+N_R(x|r)=\frac{\mathfrak a_x}{\mathfrak a_r}>0.
+}
+\]
+The ratio composes as
+\[
+N_{x|s}=N_{x|r}N_{r|s}
+\]
+and is invariant under increasing reparameterisation of the common ordering variable. These are exact consequences of the declared activity measure.
+
+A physical clock claim begins only when the activities can be estimated independently of the target elapsed-time ratio. After a separately established reference calibration,
+\[
+d\widehat\tau_x=N_R(x|r)\,dt.
+\]
+
+\subsection{Relative-information clock potential}
+
+For the admitted local memoryless exponential-rate realization, the standard Kullback--Leibler divergence \cite{KullbackLeibler1951} reduces to
+\[
+\boxed{
+\Phi(N_R)=N_R-1-\ln N_R.
+}
+\]
+It obeys
+\[
+\Phi(1)=0,
+\qquad
+\Phi''(N_R)=\frac{1}{N_R^2}>0,
+\]
+with near-reference expansion
+\[
+\Phi(1+\epsilon)=\frac12\epsilon^2-\frac13\epsilon^3+O(\epsilon^4).
+\]
+This is an exact model-class consequence, not yet a physical gravitational prediction.
+
+\subsection{Constructive retrodiction}
+
+On the declared stratified positive-radius decoder domain,
+\[
+(\alpha,\mathcal W,\rho_1,\ldots,\rho_{N-1},r_N)
+\longrightarrow
+(r_1,\ldots,r_N)
+\longrightarrow
+(u_1,\ldots,u_N)
+\]
+is a constructive inverse chain. The retained radial packet satisfies
+\[
+\boxed{
+N_{\rm radial}=N-1
+=\frac12N_{\rm Cartesian}.
+}
+\]
+The associated software tests verify the implementation of this stated map and its rejection conditions. They do not supply independent physical evidence.
+
+\subsection{Chronology-sensitive reference reconstruction}
+
+For E003, a full-rank sensitivity matrix on the admitted reference class permits reconstruction of the hidden kick coordinate, while chronology-destroyed checkpoint controls are required to produce a substantially worse weighted residual
+\[
+Q=r^T\Sigma_Y^{-1}r.
+\]
+This is a model-internal observability and reconstruction claim. It is deliberately separated from retrocausal interpretation.
+
+\section{Standard-physics recovery benchmarks}
+
+\subsection{Quantum relative-phase and spectral benchmark}
+
+Once a temporal coordinate is bound to ordinary physical clock time, a stationary discrete quantum system obeys the standard phase-frequency relation
+\[
+\boxed{
+\omega_{mn}=\frac{E_m-E_n}{\hbar}.
+}
+\]
+Recovering this spectrum is a compatibility target, not a novel IDT prediction. The IDT interface fails if its calibrated phase carrier cannot reproduce the independently measured standard relation.
+
+\subsection{Spacetime phase benchmark}
+
+The recombined temporal and spatial branches must recover
+\[
+\boxed{
+\Delta\phi
+=
+\frac{1}{\hbar}
+\left(\mathbf p\cdot\Delta\mathbf x-E\Delta t\right).
+}
+\]
+This Lorentz-covariant phase structure is used as a downstream closure benchmark. Agreement constrains the interface; disagreement falsifies at least one branch or its binding.
+
+\subsection{Einstein and spin-2 benchmark}
+
+The spacetime/source layer must remain compatible with the standard Einstein equation \cite{Einstein1916} and with the linearized transverse-traceless response of a conserved directional source. In particular,
+\[
+h_{ij}^{TT}
+=
+\frac{4G}{c^4r}\mathcal T_{ij}^{TT}
+\]
+is treated as a recovery relation. The novel content, if any, must reside in an independently specified IDT source predictor rather than in this standard propagation equation.
+
+\subsection{Horizon thermodynamic benchmark}
+
+For a non-extremal Euclidean horizon,
+\[
+\beta_H=\frac{2\pi}{\kappa_H},
+\qquad
+\boxed{
+T_H=\frac{\hbar\kappa_H}{2\pi c k_B}.
+}
+\]
+These Hawking/Gibbons--Hawking relations are standard \cite{Hawking1975,GibbonsHawking1977}. Integer-spin periodicity and half-integer-spin antiperiodicity are likewise boundary-condition recovery targets. Their reproduction is a consistency requirement, not a new IDT prediction.
+
+\section{Discriminating physical test D1: independent activity-to-clock prediction}
+
+Let \(Z_x,Z_r\) denote independently measured relational observables that do not include the target clock-rate result. Before the held-out clock comparison is inspected, freeze
+\[
+\boxed{
+\widehat N_R^{\,\rm IDT}
+=
+f_{\theta}(Z_x,Z_r),
+}
+\]
+including the parameter vector \(\theta\), preprocessing, exclusions, and uncertainty model. The target measurement is
+\[
+R_{\rm clock}
+=
+\frac{d\tau_x}{d\tau_r}.
+\]
+The primary residual is
+\[
+\boxed{
+\Delta_N
+=
+R_{\rm clock}
+-
+\widehat N_R^{\,\rm IDT}.
+}
+\]
+
+The preregistered baseline \(N_R^{(0)}\) may be the standard geometric prediction or another declared physical model. Discrimination requires held-out comparison of the predictive residuals or likelihoods,
+\[
+\mathcal L_{\rm IDT}(R_{\rm clock})
+\quad\text{versus}\quad
+\mathcal L_{0}(R_{\rm clock}),
+\]
+with all shared nuisance parameters fitted only on a disjoint calibration set.
+
+The test is \emph{not} discriminating if \(R_{\rm clock}\), \(N_R^{(0)}\), or an algebraically equivalent target quantity is used to define \(Z\), \(\theta\), or \(\mathfrak a_x/\mathfrak a_r\). In that case the result is classified as calibration/consistency. If the independently generated IDT predictor is mathematically identical to the baseline on the tested domain, the outcome is a recovery result rather than evidence favoring either description.
+
+\section{Discriminating physical test D2: half-interface \(4\pi\) structure}
+
+The IDT half-interface kernel is
+\[
+\boxed{
+\mathcal D_{1/2}(p,\Delta\tau)
+=
+1+2\sqrt{p(1-p)}\cos(\Delta\tau/2).
+}
+\]
+At equal weights it has the exact model null
+\[
+p=\frac12,
+\qquad
+\Delta\tau\equiv2\pi\pmod{4\pi}.
+\]
+
+A physical test must freeze the map from laboratory control variables to \(\Delta\tau\) before the target scan. The confirmatory acquisition spans a full \(4\pi\) interval and includes:
+\begin{enumerate}
+\item an equal-weight condition \(p=1/2\);
+\item weight-detuned controls \(p\neq1/2\);
+\item phase-detuned controls around \(2\pi\);
+\item the appropriate conventional-interference baseline expressed in the same laboratory control coordinate;
+\item blinded analysis of the null location and periodicity.
+\end{enumerate}
+
+A \(4\pi\) pattern is discriminating only if \(\Delta\tau\) has an independently established physical calibration. Redefining an ordinary \(2\pi\) phase by an arbitrary factor of two would merely relabel the coordinate and is explicitly excluded as evidence.
+
+\section{Discriminating physical test D3: future-conditioned committed record}
+
+The prospective E004 protocol targets
+\[
+\boxed{
+P(X_{\mathrm{past}}\mid Y_{\mathrm{future}})
+\stackrel{?}{=}
+P(X_{\mathrm{past}})
+}
+\]
+as the null hypothesis. The alternative is a dependence that remains after the future condition is generated strictly after the earlier record has been irreversibly committed.
+
+The preregistration in Chapter~9 fixes the temporal order, valid-trial target, stopping rule, frozen score, permutation analysis, channel audit, and control datasets before confirmatory acquisition. A candidate effect is not promoted by statistical significance alone. It must survive:
+\begin{enumerate}
+\item commitment and chronology verification;
+\item classical information-channel and shared-state audits;
+\item sham, leakage-positive, and scheduler/shared-clock controls;
+\item frozen exclusions and analysis rules;
+\item independent replication using the same causal-order contract.
+\end{enumerate}
+This is the strongest causal discriminator in the current programme because its null and chronology are defined without using the observed effect.
+
+\section{Prediction and promotion discipline}
+
+A physical prediction is considered genuinely discriminating only when all four conditions hold:
+\begin{enumerate}
+\item \textbf{independence}: the predictor is fixed without access to the target outcome;
+\item \textbf{contrast}: an explicit competing/null model makes a distinct prediction on the same observable;
+\item \textbf{uncertainty}: calibration, nuisance parameters, and measurement uncertainty are propagated into the comparison;
+\item \textbf{replicability}: the analysis contract can be rerun on held-out or independently acquired data.
+\end{enumerate}
+
+Exact identities and recovery benchmarks remain scientifically useful even when they are not discriminators. This classification prevents compatibility with established physics, successful software tests, and genuinely new empirical content from being counted as the same kind of evidence.
+
+% ---- END monograph/chapters/13_predictions.tex ----
