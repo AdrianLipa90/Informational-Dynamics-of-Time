@@ -293,3 +293,19 @@ Promotion requires explicit tests for composability, prefix antisymmetry/transit
 Reference implementation: `src/idt/relational_precedence.py`.
 Reference tests: `tests/reference/test_relational_precedence.py`.
 Validation receipt: `validation/RELATIONAL_PRECEDENCE_NOW_V0_1.json`.
+
+## 00A compatibility note
+
+The exact 00A two-sector orbit is a canonical serial instance of the more general composable occurrence structure used here. On that instance,
+
+\[
+\mathsf H^2=\mathsf S
+\]
+
+generates the alternating fine order, while the coarse relations satisfy
+
+\[
+E_n\cap E_{n+1}=\{n+1\}.
+\]
+
+00F remains the general theorem: precedence is defined on realized prefix occurrences and does not require every relational history to have a Stella or two-sector realization.
