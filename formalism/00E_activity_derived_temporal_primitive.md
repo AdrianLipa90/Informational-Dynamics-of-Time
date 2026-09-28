@@ -388,3 +388,13 @@ Promotion requires algebraic tests for positivity, channel extensivity, reparame
 Reference implementation: `src/idt/temporal_primitive_activity.py`.
 Reference tests: `tests/reference/test_temporal_primitive_activity.py`.
 Validation receipt: `validation/TEMPORAL_PRIMITIVE_ACTIVITY_V0_1.json`.
+
+## 10. 00A pretemporal handoff
+
+00A supplies an additive canonical two-sector ordering skeleton before duration:
+
+\[
+\mathsf H^2=\mathsf S.
+\]
+
+This does not change the general 00E theorem: 00E still derives the unique continuous local extensive orientation-even duration density from admitted positive directed traffic. The 00A half grading is therefore order structure, while \(\theta(e)\) is the later positive duration measure. No equality between grade \(1/2\) and a physical duration is assumed.
