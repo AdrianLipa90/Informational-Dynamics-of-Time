@@ -191,3 +191,50 @@ The next layer binds each \(\rho_k\) directly to the append-only ORCHORBITAL res
 Repository placement and theory admission remain separate. The consolidated tree contains the 05H/05I/05J clock/event interfaces, 05K precision-safe log-lapse source contract, GSC2 source-freeze tooling, 02JO material-front/NOW crosswalk, and a candidate-only 600-cell/S3 ORCHORBITAL adapter. None of these placements bypasses its recorded evidence boundary.
 
 The machine-readable dependency graph is `validation/dependency_graph.json`; the human path map is `docs/CANONICAL_SURFACE_INDEX.md`. The previously declared active scientific frontier is not promoted merely by this repository consolidation.
+
+
+### 2026-09-28 pretime Stella half-successor factorization
+
+Canonical branch-local source:
+
+formalism/00H_tetrahedral_half_successor_pretime.md
+
+The upstream temporal spine is refined before 00E/00F by an occurrence-preserving dual-sector alternation
+
+\[
+H(n,+)=(n,-),\qquad H(n,-)=(n+1,+),
+\]
+
+with full successor
+
+\[
+S(n,\epsilon)=(n+1,\epsilon)
+\]
+
+and exact factorization
+
+\[
+\boxed{H^2=S.}
+\]
+
+The structural half-index
+
+\[
+\nu(n,+)=n,\qquad \nu(n,-)=n+\frac12
+\]
+
+satisfies \(\nu(HX)-\nu(X)=1/2\). This is a pretemporal combinatorial coordinate, not yet calibrated elapsed duration.
+
+The successor skeleton is the Hilbert unilateral shift: injective/isometric and non-surjective on the one-sided countable carrier. The corrected temporal dependency is
+
+\[
+\boxed{
+\mathrm{TIR\ Stella}
+\to H
+\to H^2=S
+\to \mathrm{00E\ activity}
+\to \mathrm{00F\ precedence}.
+}
+\]
+
+Physical time and physical space are not primitive premises of this gate.
