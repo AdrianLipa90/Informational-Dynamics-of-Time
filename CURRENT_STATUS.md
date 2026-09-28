@@ -11,10 +11,55 @@ Canonical `main` contains the merged Memory/ORCHORBITAL/Retrodiction stack toget
 ## Canonical temporal spine
 
 \[
-\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
+\boxed{\mathrm{TIR}\rightarrow\mathrm{Pretemporal\ Alternation/Successor}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
 \]
 
 Memory and ORCHORBITAL are admitted by hosted full-suite receipts. Retrodiction remains the active constructive layer.
+
+
+## Pre-spacetime half-step successor layer
+
+The new upstream layer does not assume time or space. It starts from a two-sector relational carrier
+
+\[
+\mathcal X=\mathbb N_0\times\mathbb Z_2
+\]
+
+with elementary alternation \(\mathsf H\) and full successor \(\mathsf S\),
+
+\[
+\boxed{\mathsf H^2=\mathsf S.}
+\]
+
+After normalizing one full successor to one coarse unit,
+
+\[
+g(n,\sigma)=n+\frac{\sigma}{2}
+\]
+
+gives exact increments
+
+\[
+\Delta_{\mathsf H}g=\frac12,
+\qquad
+\Delta_{\mathsf S}g=1.
+\]
+
+The corresponding incidence chain
+
+\[
+1\,|\,12\,|\,23\,|\,34\,|\,45\,|\cdots
+\]
+
+is encoded by \(E_n=\{n,n+1\}\) with \(E_n\cap E_{n+1}=\{n+1\}\). The Hilbert-hotel map \(n\mapsto n+1\) is correctly typed as an injective, non-surjective unilateral shift on \(\mathbb N\), and it preserves the incidence rule.
+
+This layer supplies order structure only. 00E still supplies positive duration, 00F still supplies the general prefix precedence construction, and physical/calibrated time remains downstream.
+
+Canonical source: formalism/00A_pretemporal_stella_halfstep_successor.md.
+
+Status:
+
+PRETEMPORAL_HALFSTEP_SUCCESSOR_EXACT / HALF_GRADING_EXACT_AFTER_NORMALIZATION / TIR_STELLA_BINDING_CONDITIONAL / PHYSICAL_TIME_NOT_ASSUMED / PHYSICAL_SPACE_NOT_ASSUMED.
 
 ## Additive Collatz–Fubini–Study temporal-phase branch
 
