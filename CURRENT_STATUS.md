@@ -8,10 +8,36 @@ The repository is maintained as three synchronized spines:
 
 Canonical `main` contains the merged Memory/ORCHORBITAL/Retrodiction stack together with the phase-clock/lapse work, the IDT side of the relativistic bridge, and the additive Collatz–Fubini–Study temporal-phase interface merged on 2026-09-04. The Collatz–FS branch is mathematical/interface-level; physical time, energy and Einstein binding remain open.
 
+
+## TIR relational-zero entrypoint — synchronized branch 2026-09-28
+
+IDT now makes the upstream TIR root explicit before the Temporal Primitive:
+
+\[
+\boxed{
+\mathfrak Z_{\rm rel}=(\varnothing,\varnothing)
+\to
+\mathcal P
+\to
+\{N,S\}
+\to
+\frac12
+\to
+\ln2
+\to
+\mathbb C^2
+\to
+\mathrm{Temporal\ Primitive}.
+}
+\]
+
+The zero layer is TIR-owned and pre-temporal. It is not \(t=0\), not \(\tau_{\rm int}=0\), not a vacuum state, and not an initial event. IDT imports this packet through formalism/00A_tir_relational_zero_entrypoint.md and does not rederive or physically promote it.
+
+
 ## Canonical temporal spine
 
 \[
-\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
+\boxed{\mathrm{TIR\ Relational\ Root}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
 \]
 
 Memory and ORCHORBITAL are admitted by hosted full-suite receipts. Retrodiction remains the active constructive layer.
