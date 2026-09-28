@@ -7,7 +7,7 @@ Status: `TEMPORAL_TRANSPORT_STRUCTURAL_PASS / MEMORY_REFERENCE_GATE_ADMISSION_PA
 The temporal spine is
 
 \[
-\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}.
+\boxed{\mathrm{TIR}\rightarrow\mathrm{Pretemporal\ Alternation/Successor}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}.
 \]
 
 Einstein closure also carries the parallel relativistic prerequisite
@@ -17,6 +17,39 @@ Einstein closure also carries the parallel relativistic prerequisite
 \]
 
 The source branch is IDT 01AC/01AG and the field bridge is RFC RF-M1/RF-E0.
+
+
+## Pretemporal predecessor
+
+00A inserts an exact algebraic predecessor before any duration or calibrated clock:
+
+\[
+\mathsf H(n,0)=(n,1),
+\qquad
+\mathsf H(n,1)=(n+1,0),
+\qquad
+\boxed{\mathsf H^2=\mathsf S}.
+\]
+
+With the coarse successor normalized to one unit,
+
+\[
+g(n,\sigma)=n+\frac{\sigma}{2}
+\]
+
+gives the half-integer grading. This is an order grade, not pre-existing physical time.
+
+The relational path carrier
+
+\[
+E_n=\{n,n+1\},
+\qquad
+E_n\cap E_{n+1}=\{n+1\}
+\]
+
+provides the exact \(1|12|23|34|\cdots\) gluing law. The TIR Stella \(T_4^+/T_4^-\) identification is a conditional structural interface; the abstract algebra is exact independently of that binding.
+
+00E and 00F remain the gates that turn relational transition structure into positive duration and temporal precedence.
 
 ## Temporal-memory and ORCHORBITAL substrate
 
