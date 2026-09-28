@@ -1,0 +1,22 @@
+{
+  "schema": "IDT_PRETEMPORAL_ALTERNATING_STELLA_INFERENCE_V0_1",
+  "date": "2026-09-28",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "branch": "formalize/pretemporal-stella-halfstep-hilbert-v0.1-20260928",
+  "status": "PASS_DECORATED_HALFSTEP_AND_TIR_SIGNATURE_INTERFACE",
+  "theorem": "formalism/00B_pretemporal_alternating_stella_inference.md",
+  "implementation": "src/idt/pretemporal_alternating_stella_inference.py",
+  "tests": "tests/reference/test_pretemporal_alternating_stella_inference.py",
+  "exact_claims": [
+    "decorated half-step squares to decorated successor",
+    "projection preserves H^2=S",
+    "tetrahedral relabeling leaves unordered overlap signature invariant"
+  ],
+  "type_firewall": {
+    "background_time": false,
+    "physical_space": false,
+    "angular_velocity": false,
+    "physical_supersymmetry": false
+  },
+  "canon_allowed": false
+}
