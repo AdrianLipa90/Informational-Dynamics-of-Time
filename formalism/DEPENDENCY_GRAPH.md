@@ -3,14 +3,37 @@
 Canonical admission order:
 
 \[
-\boxed{\mathrm{TIR}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
+\boxed{\mathrm{TIR\ Relational\ Root}\rightarrow\mathrm{Temporal\ Primitive}\rightarrow\mathrm{Temporal\ Wave}\rightarrow\mathrm{NOW}\rightarrow\mathrm{Bifurcation}\rightarrow\mathrm{Temporal\ Transport}\rightarrow\mathrm{Memory}\rightarrow\mathrm{ORCHORBITAL\ Attractors}\rightarrow\mathrm{Retrodiction}\rightarrow\mathrm{Retrocausal\ Tests}\rightarrow\mathrm{Einstein\ Closure}}
 \]
 
 A downstream layer may be explored as a candidate before its parent is admitted; its status remains provisional until the parent gate and its own admission receipt are satisfied.
 
+
+Upstream root contract:
+
+\[
+\boxed{
+\mathfrak Z_{\rm rel}=(\varnothing,\varnothing)
+\to
+\mathcal P
+\to
+\{N,S\}
+\to
+\frac12
+\to
+\ln2
+\to
+\mathbb C^2
+\to
+\mathrm{Temporal\ Primitive}.
+}
+\]
+
+The first six nodes are TIR-owned. IDT imports them through formalism/00A_tir_relational_zero_entrypoint.md. Relational zero is neither \(t=0\) nor \(\tau_{\rm int}=0\) and carries no physical-time promotion authority.
+
 | Node | Status | Notes |
 |---|---|---|
-| TIR entry point | `AVAILABLE` | inherited source layer |
+| TIR relational entry point | `AVAILABLE / RELATIONAL_ZERO_TYPED` | imports relational zero -> point support -> minimal binary distinction -> 1/2 -> ln2 -> C^2; relational zero is not a temporal coordinate |
 | Temporal Primitive | `ACTIVE / RELATIONAL_TENSOR_SCALAR_FORCING_TARGETED_PASS / PHASE_CONNECTION_HOLONOMY_TARGETED_PASS / SHANNON_RELATIVE_INFORMATION_MONOTONICITY_TARGETED_PASS / SHANNON_ONSAGER_RESPONSE_TARGETED_PASS_CANDIDATE` | 01A–01D supply scalar pace, connection/holonomy typing, Shannon relative information and detailed-balance Onsager response |
 | Temporal Wave | `TARGETED_DERIVATION_CONTINUUM_HOLONOMY_PASS_CANDIDATE` | gauge-covariant stiffness, relational mobility, viscosity damping, heterogeneous continuum and holonomy-shift gates recorded in 02A–02D |
 | NOW | `STRUCTURAL_PASS / WAVE_ACTIVATION_TARGETED_PASS_CANDIDATE` | structural signature carrier plus wave-active realization support |
