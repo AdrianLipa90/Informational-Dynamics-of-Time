@@ -40,6 +40,22 @@ E_n=\{n,n+1\},
 }
 \]
 
+**EQ-T000D — decorated alternating Stella inference**
+\[
+\widetilde H(n,0,A,B)=(n,1,R_+A,B),
+\qquad
+\widetilde H(n,1,A,B)=(n+1,0,A,R_-B),
+\]
+\[
+\boxed{
+\widetilde H^2=\widetilde S,
+\qquad
+\mathcal I(Aa,Bb)=\mathcal I(A,B)
+\quad(a,b\in A_4).
+}
+\]
+Here \(\mathcal I\) is the unordered cross-sector overlap signature. This is pretemporal transformation algebra, not motion in assumed physical time.
+
 **EQ-T001 — informational normalization**
 \[
 \kappa=\frac{\ln2}{24\pi}.
