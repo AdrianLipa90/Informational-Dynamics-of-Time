@@ -22,5 +22,12 @@
     "downstream_duration": "00E",
     "downstream_precedence": "00F"
   },
-  "canon_allowed": false
+  "canon_allowed": false,
+  "executed_validation": {
+    "environment": "local isolated Python reference harness",
+    "result": "PASS",
+    "tests_passed": 98,
+    "tests_failed": 0,
+    "exit_code": 0
+  }
 }
