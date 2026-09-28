@@ -4,7 +4,7 @@
     {
       "id": "TIR",
       "depends_on": [],
-      "status": "AVAILABLE"
+      "status": "AVAILABLE_RELATIONAL_ZERO_ROOT_SYNC_BRANCH / 00A_CROSSLINK_PRESENT / TEMPORAL_PROMOTION_FALSE"
     },
     {
       "id": "TEMPORAL_PRIMITIVE",
