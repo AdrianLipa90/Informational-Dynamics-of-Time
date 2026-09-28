@@ -1,0 +1,1221 @@
+% ---- BEGIN monograph/chapters/08_memory_and_retrodiction.tex ----
+\chapter{Memory and Retrodiction}
+
+The memory layer is developed downstream of Temporal Transport. The current executable branch combines an event-imprinted memory coordinate with a Kepler--Newton evolution law parameterized by the internal elapsed activity variable.
+
+\section{Oriented memory coordinate}
+
+Assign a complex memory coordinate
+\[
+m(s)=x_M(s)+iy_M(s)=r_M(s)e^{i\theta_M(s)}.
+\]
+The oriented edge functional is
+\[
+\boxed{
+A^{(M)}_{ab}
+=\lambda_M\operatorname{Im}[m(a)^*m(b)]
+=\lambda_M r_a r_b\sin(\theta_b-\theta_a).
+}
+\]
+For a closed polygonal orbit,
+\[
+\sum_C A^{(M)}_e
+=2\lambda_M\mathcal A_M(C),
+\]
+where \(\mathcal A_M(C)\) is the signed enclosed area.
+
+\section{Event-imprinted memory coordinate}
+
+For the states immediately before and after an admitted event, define
+\[
+R_n^\pm=\Psi_n^\pm(\Psi_n^\pm)^\dagger,
+\qquad
+\bar\rho_n^\pm=\frac{R_n^\pm}{\operatorname{tr}R_n^\pm}.
+\]
+The projective memory imprint is
+\[
+\boxed{\Delta M_n=\bar\rho_n^+-\bar\rho_n^-}.
+\]
+With declared Hermitian memory observables \(Q_M,P_M\),
+\[
+m=\operatorname{tr}(\rho Q_M)+i\operatorname{tr}(\rho P_M),
+\]
+and the event displacement in the memory plane is
+\[
+\boxed{
+\delta m_n
+=\operatorname{tr}(\Delta M_nQ_M)
++i\operatorname{tr}(\Delta M_nP_M).
+}
+\]
+Independent global phase changes of the pre/post states leave this projective imprint invariant.
+
+\section{CP1 K\"ahler-derived memory frame}
+
+The broad Hermitian-observable projection remains the general family. For the pure-qubit \(\mathbb{CP}^1\) reference subclass, the local memory frame is built from the standard Fubini--Study geometry of quantum-state space \cite{ProvostVallee1980}; the IDT-specific content is its use as a typed memory carrier and reconstruction frame.
+
+Let \(\mathbf n_a,\mathbf n_b\in S^2\) be the Bloch vectors of two non-antipodal pure states and
+\[
+\theta_{ab}=\arccos(\mathbf n_a\cdot\mathbf n_b).
+\]
+Then
+\[
+d_{FS}(a,b)=\frac{\theta_{ab}}{2}
+\]
+and the half-angle tangent logarithm at \(a\) is
+\[
+\boxed{
+\xi^{FS}_{a\to b}
+=\frac12\frac{\theta_{ab}}{\sin\theta_{ab}}
+\left(\mathbf n_b-\cos\theta_{ab}\,\mathbf n_a\right),
+\qquad
+\|\xi^{FS}_{a\to b}\|=d_{FS}(a,b).
+}
+\]
+For the first admitted nonzero local displacement define
+\[
+\mathbf e_Q=\frac{\xi^{FS}}{\|\xi^{FS}\|},
+\qquad
+\boxed{\mathbf e_P=\mathbf n\times\mathbf e_Q}.
+\]
+The resulting K\"ahler-conjugate tangent dyad gives
+\[
+\boxed{
+\delta m
+=\xi^{FS}\cdot\mathbf e_Q
++i\,\xi^{FS}\cdot\mathbf e_P,
+\qquad
+|\delta m|=d_{FS}.
+}
+\]
+Between non-antipodal anchors, let \(R_{b\leftarrow a}\in SO(3)\) be the minimal rotation along the selected Bloch great-circle geodesic. The frame propagates by
+\[
+\boxed{
+\mathbf e_Q^{(b)}=R_{b\leftarrow a}\mathbf e_Q^{(a)},
+\qquad
+\mathbf e_P^{(b)}=R_{b\leftarrow a}\mathbf e_P^{(a)}.
+}
+\]
+This preserves tangency, orthonormality and orientation,
+\[
+\mathbf e_P^{(b)}=\mathbf n_b\times\mathbf e_Q^{(b)}.
+\]
+In the \(\mathbb{CP}^1\) reference subclass this is the discrete Levi--Civita/K\"ahler parallel transport along the selected geodesic. Antipodal points are treated as a geodesic ambiguity and fail closed.
+
+\section{Internal-time Newton dynamics}
+
+The internal evolution increment inherited from temporal activity is
+\[
+d\tau_{\rm int}=\frac{\mathfrak a}{\mathfrak a_\star}\,d\lambda.
+\]
+On the memory plane we introduce the effective central parameter \(\mu_M>0\) and
+\[
+V_M(r_M)=-\frac{\mu_M}{r_M}.
+\]
+The smooth memory trajectory obeys
+\[
+\boxed{
+\frac{d^2m}{d\tau_{\rm int}^2}
+=-\mu_M\frac{m}{|m|^3}.
+}
+\]
+
+\section{Kepler structure}
+
+Define
+\[
+\varepsilon_M
+=\frac12\left|\frac{dm}{d\tau_{\rm int}}\right|^2
+-\frac{\mu_M}{r_M},
+\qquad
+h_M
+=\operatorname{Im}\!\left[m^*\frac{dm}{d\tau_{\rm int}}\right].
+\]
+The central-force law gives the areal relation
+\[
+\boxed{
+\frac{d\mathcal A_M}{d\tau_{\rm int}}
+=\frac{h_M}{2}.
+}
+\]
+The corresponding conic is
+\[
+r_M(\nu)
+=\frac{p_M}{1+e_M\cos\nu},
+\qquad
+p_M=\frac{h_M^2}{\mu_M}.
+\]
+For a bound nondegenerate orbit,
+\[
+a_M=-\frac{\mu_M}{2\varepsilon_M},
+\qquad
+T_M^2=\frac{4\pi^2}{\mu_M}a_M^3.
+\]
+Combining the areal law with the earlier memory circulation yields
+\[
+\boxed{
+\frac{d}{d\tau_{\rm int}}
+\left(\sum_C A_e^{(M)}\right)
+=\lambda_M h_M.
+}
+\]
+
+\section{Event action and orbital bifurcation}
+
+The NOW layer supplies a non-negative gauge-invariant event magnitude \(q_n\). Using that amplitude and the projected event imprint, define the normalized localized memory action
+\[
+\boxed{
+S_n^{(M)}(m)
+=q_n\operatorname{Re}(\delta m_n^*m).
+}
+\]
+The event-augmented memory Lagrangian is
+\[
+L_M
+=\frac12|\dot m|^2+\frac{\mu_M}{|m|}
++\sum_n\delta(\tau_{\rm int}-\tau_n)S_n^{(M)}(m).
+\]
+Integrating the Euler--Lagrange equation through one event gives
+\[
+\boxed{
+\Delta v_{M,n}=q_n\delta m_n,
+\qquad
+v_{M,n}^+=v_{M,n}^-+q_n\delta m_n.
+}
+\]
+At fixed event position the orbital invariants change by
+\[
+\boxed{
+\Delta E_M
+=q_n\operatorname{Re}(v_M^*\delta m_n)
++\frac12q_n^2|\delta m_n|^2,
+}
+\]
+\[
+\boxed{
+\Delta h_M=q_n\operatorname{Im}(m^*\delta m_n).
+}
+\]
+The post-event pair \((E_M^+,h_M^+)\) determines the next smooth Kepler-class orbit.
+
+\section{Identifying the central memory parameter}
+
+Within the Kepler reference class, \(\mu_M\) can be inferred from the orbit itself. From
+\[
+p_M=\frac{h_M^2}{\mu_M}
+\]
+one obtains
+\[
+\boxed{\mu_M=\frac{h_M^2}{p_M}}.
+\]
+For a bound ellipse with periapsis \(r_p\) and apoapsis \(r_a\),
+\[
+a_M=\frac{r_p+r_a}{2},
+\qquad
+p_M=\frac{2r_pr_a}{r_p+r_a}.
+\]
+The third law gives an independent estimator,
+\[
+\boxed{\mu_M=\frac{4\pi^2a_M^3}{T_M^2}}.
+\]
+Finally, using the circulation identity
+\[
+\frac{d\Gamma_M}{d\tau_{\rm int}}=\lambda_M h_M,
+\]
+we obtain
+\[
+\boxed{
+\mu_M
+=\frac{1}{p_M}
+\left(
+\frac{1}{\lambda_M}
+\frac{d\Gamma_M}{d\tau_{\rm int}}
+\right)^2.
+}
+\]
+Thus the central parameter is conditionally identifiable from memory-orbit observables inside the declared reference class. A deeper origin law predicting \(\mu_M\) from earlier relational primitives is retained as a later derivation target.
+
+\section{Persistence and ledger-assisted recall}
+
+Each admitted event persists an append-only receipt
+\[
+\boxed{
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+}
+\]
+The receipt determines the event kick
+\[
+K_{\mathcal E_n}:v_M\mapsto v_M+q_n\delta m_n
+\]
+and the following smooth segment. Define the forward memory-lineage cell
+\[
+\boxed{
+\mathcal C_n
+=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n}.
+}
+\]
+For the velocity--Verlet reference map, the inverse smooth step is explicit:
+\[
+\boxed{
+r_0=r_1-v_1\Delta\tau+\frac12a_1\Delta\tau^2,
+}
+\]
+\[
+\boxed{
+v_0=v_1-\frac12(a_0+a_1)\Delta\tau.
+}
+\]
+The full inverse cell is therefore
+\[
+\boxed{
+\mathcal C_n^{-1}
+=K_{\mathcal E_n}^{-1}\circ\Phi_K^{-1}(\Delta\tau_n;\mu_M).
+}
+\]
+For a persisted lineage
+\[
+X_N=\mathcal C_{N-1}\cdots\mathcal C_1\mathcal C_0X_0,
+\]
+define
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+}
+\]
+Within the declared reversible reference class and with the complete ordered ledger,
+\[
+\boxed{
+\operatorname{RECALL}_{N\to0}(X_N;\{\mathcal E_n\},\mu_M)=X_0.
+}
+\]
+The chronological receipt order is structural. Reversing the ledger itself before the reverse traversal is used as a negative control and fails to reconstruct the initial state in the reference tests.
+
+This establishes recall as reconstruction of a persisted lineage. Retrodiction is kept as the next, distinct problem: inference of a prior state when part of the lineage is unobserved or withheld.
+
+The numerical reference records the Kepler--Newton controls in \texttt{validation/KEPLER\_MEMORY\_DYNAMICS\_V0\_1.json}, event-action jump controls in \texttt{validation/EVENT\_MEMORY\_KICK\_V0\_1.json}, central-parameter identifiability controls in \texttt{validation/MEMORY\_MU\_IDENTIFIABILITY\_V0\_1.json}, CP1 frame controls in \texttt{validation/KAHLER\_MEMORY\_FRAME\_CP1\_V0\_1.json}, and persistence/recall controls in \texttt{validation/MEMORY\_PERSISTENCE\_RECALL\_V0\_1.json}. Physical-unit calibration is assigned to the later metric-time calibration stage. The next dependency target is Retrodiction, with higher-dimensional K\"ahler-frame extension and a deeper upstream origin law for \(\mu_M\) retained as parallel formal targets.
+
+% ---- END monograph/chapters/08_memory_and_retrodiction.tex ----
+
+% ---- BEGIN monograph/chapters/08A_memory_admission.tex ----
+\chapter{Memory Integration Gate}
+
+The Memory node is assembled from components derived and validated in the preceding layers. The structural reference path used by the current integration gate is
+\[
+\boxed{
+\mathbb{CP}^1\ \text{state geometry}
+\longrightarrow
+\delta m_n
+\longrightarrow
+q_n\delta m_n
+\longrightarrow
+\mathcal C_n
+\longrightarrow
+\mathcal E_n
+\longrightarrow
+\operatorname{RECALL}.
+}
+\]
+
+For the \(\mathbb{CP}^1\) K\"ahler-frame reference subclass,
+\[
+|\delta m_n|=d_{FS}(a,b).
+\]
+Together with the upstream-derived event kick,
+\[
+\Delta v_{M,n}=q_n\delta m_n,
+\]
+this gives the integrated magnitude identity
+\[
+\boxed{
+|\Delta v_{M,n}|=q_n d_{FS}(a,b).
+}
+\]
+The subsequent memory lineage cell is
+\[
+\mathcal C_n
+=\Phi_K(\Delta\tau_n;\mu_M)\circ K_{\mathcal E_n},
+\qquad
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+\]
+The append-only ledger therefore carries the quantities required by the declared inverse reference cell and ledger-assisted reconstruction.
+
+\section{Integrated controls}
+
+The dedicated integration test composes two non-collinear CP1 events with event weighting, Kepler propagation and recall. The targeted reference checks verify Fubini--Study normalization, event-kick scaling, complete multi-event reconstruction, recovery of intermediate checkpoints, upstream global-phase invariance and a tampered-receipt negative control. A zero-weight event also preserves reversible smooth propagation.
+
+These controls are recorded in
+\texttt{validation/MEMORY\_ADMISSION\_V0\_1.json}.
+The isolated integration harness passed all six test functions represented by
+\texttt{tests/reference/test\_memory\_admission.py}.
+
+\section{Temporal Transport parent bridge}
+
+The smooth Temporal Transport segment already carries an ordered increment \(\Delta\lambda_n>0\). Together with the positive transition activity it supplies the Memory duration
+\[
+\boxed{
+\Delta\tau_n
+=\frac{\mathfrak a_n}{\mathfrak a_\star}\Delta\lambda_n.
+}
+\]
+The declared one-density transformation of \(\mathfrak a\) makes this increment invariant under increasing reparameterization of \(\lambda\).
+
+The wave-active NOW layer supplies the non-negative realization weight
+\[
+r_n^{(W)}=q_n\epsilon_n^{(W)}
+\]
+and the exact support gate
+\[
+g_n=\mathbf 1[r_n^{(W)}>0].
+\]
+The transport-derived Memory receipt is therefore
+\[
+\boxed{
+\mathcal E_n^{T\to M}
+=(\Delta\tau_n,g_nq_n,\delta m_n).
+}
+\]
+Thus Temporal Wave activation controls whether the localized transition writes a kick, while the already derived structural event signature remains the normalized kick amplitude:
+\[
+\boxed{
+\Delta v_{M,n}=g_nq_n\delta m_n.
+}
+\]
+A wave-inactive event has zero kick and still advances the smooth Memory segment through its positive \(\Delta\tau_n\).
+
+The product \(q_n\epsilon_n^{(W)}\) remains a NOW realization/provenance weight. The admitted Memory kick continues to use \(g_nq_n\delta m_n\), because \(\epsilon_n^{(W)}\) rescales as \(|c|^2\) under \(\Phi\mapsto c\Phi\), whereas its positive support is invariant for \(c\neq0\). Identification of the wave-amplitude factor with a kick amplitude therefore belongs to a separate upstream normalization gate.
+
+A deterministic 5,000-case bridge probe returned zero support-gate failures, reparameterization defect below \(1.8\times10^{-15}\), and forward/reverse lineage reconstruction defect below \(4.9\times10^{-13}\). GREMLIN evaluated the bridge in \texttt{CANDIDATE\_ONLY} mode and all three declared hypotheses returned \texttt{SUPPORTED\_BY\_DECLARED\_TESTS}.
+
+\section{Hosted full reference suite}
+
+The previously outstanding repository-wide gate was executed on 28 August 2026 by the GitHub Actions \texttt{Reference suite} workflow. The exact PR merge of source commit
+\texttt{3ac1f53af5223d16f8818dba99a63a6af2ba9498}
+with the evidence-only branch was tested under Python 3.12.14 on Ubuntu 24.04 using
+\begin{verbatim}
+python -m pytest -q tests/reference
+\end{verbatim}
+The suite completed with
+\begin{verbatim}
+431 passed in 7.08s
+\end{verbatim}
+and the workflow, job, and test step all concluded successfully. The tested merge commit is
+\texttt{e0b1cdc491a1a501adce93b8d62ade063e167500}
+with tree
+\texttt{92302498f3c9131b163d5d0ccbbeab1db935d29f}.
+
+The append-only evidence binding is recorded in
+\texttt{validation/MEMORY\_ADMISSION\_HOSTED\_FULL\_SUITE\_2026\_08\_28.json}.
+
+This closes the declared full-suite blocker for the integrated Memory reference gate. The proposed post-merge status at this recorded checkpoint is therefore
+\[
+\boxed{\mathrm{Memory}:\ \mathrm{REFERENCE\ GATE\ ADMITTED}.}
+\]
+At this checkpoint ORCHORBITAL was the next separate dependency gate. The later ORCHORBITAL chapters record its residence/switch provenance, hierarchical attractor families, typed-observable admission and hosted admission receipt before Retrodiction advances downstream.
+
+% ---- END monograph/chapters/08A_memory_admission.tex ----
+
+% ---- BEGIN monograph/chapters/08B_retrodiction_contract.tex ----
+\chapter{Retrodiction as a Withheld-Lineage Inverse Problem}
+
+This chapter records the first downstream Retrodiction reference candidate. At the checkpoint represented here, the integrated Memory tree was the active parent admission gate; the later chapters record the subsequent Memory and ORCHORBITAL admissions and the resulting Retrodiction extensions. The purpose of this chapter is to define the inverse problem and its first observability contract.
+
+\section{Recall versus retrodiction}
+
+For a complete persisted event ledger, recall applies the known inverse cells
+\[
+\operatorname{RECALL}_{N\to0}
+=\mathcal C_0^{-1}\mathcal C_1^{-1}\cdots\mathcal C_{N-1}^{-1}.
+\]
+Retrodiction begins when part of the lineage is withheld and must be inferred from the remaining constraints.
+
+Consider one memory cell
+\[
+X_{n+1}
+=\Phi_K(\Delta\tau_n;\mu_M)
+\circ K(q_n,\delta m_n)
+\,X_n,
+\]
+where
+\[
+K(q_n,\delta m_n):
+\quad v_M\mapsto v_M+q_n\delta m_n.
+\]
+The reference problem retains the checkpoints \(X_n\) and \(X_{n+1}\), the smooth-step duration \(\Delta\tau_n\) and \(\mu_M\), while withholding one factor of the event receipt.
+
+\section{Missing-kick reconstruction}
+
+Reverse only the known smooth Kepler segment:
+\[
+\widetilde X_n
+=\Phi_K^{-1}(\Delta\tau_n;\mu_M)X_{n+1}.
+\]
+The reconstructed kick is
+\[
+\boxed{
+\Delta v_{M,n}
+=\widetilde v_{M,n}-v_{M,n}.
+}
+\]
+The reference implementation requires the recovered position, internal elapsed activity and swept area to agree with the retained pre-event checkpoint within the declared tolerance. A checkpoint mismatch fails closed.
+
+\section{Conditional identifiability of the event weight}
+
+If a nonzero memory imprint \(\delta m_n\) is independently supplied by the upstream state-geometry layer, then
+\[
+\boxed{
+\widehat q_n
+=
+\frac{\operatorname{Re}(\Delta v_{M,n}\delta m_n^*)}
+{|\delta m_n|^2}.
+}
+\]
+The factorization residual is
+\[
+\boxed{
+r_n
+=\Delta v_{M,n}-\widehat q_n\delta m_n.
+}
+\]
+The reference contract requires \(\widehat q_n\ge0\) and a residual below the declared tolerance. Thus a wrong imprint direction is rejected rather than silently absorbed into the scalar estimate.
+
+For the \(\mathbb{CP}^1\) memory-frame reference subclass, the upstream normalization
+\[
+|\delta m_n|=d_{FS}
+\]
+provides an independently defined imprint scale.
+
+\section{Conditional identifiability of the memory imprint}
+
+If \(q_n>0\) is independently known while the imprint is withheld, then
+\[
+\boxed{
+\widehat{\delta m}_n
+=\frac{\Delta v_{M,n}}{q_n}.
+}
+\]
+For \(q_n=0\), consistency requires a zero kick in the reference cell.
+
+\section{Product-only ambiguity}
+
+If both factors are withheld, the checkpoints determine only the product. For every positive scalar \(c\),
+\[
+\boxed{
+(q_n,\delta m_n)
+\mapsto
+(cq_n,\delta m_n/c)
+}
+\]
+leaves
+\[
+q_n\delta m_n
+\]
+unchanged. Therefore the factorization is non-identifiable from the memory checkpoints alone. The implementation reports this ambiguity explicitly and does not choose an arbitrary decomposition.
+
+\section{Multi-event observability before estimation}
+
+For \(N\) latent event kicks, collect
+\[
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N},
+\]
+where each \(u_k\) is the two-component memory-velocity jump. Retained post-event checkpoints define a measurement map \(Y(z)\). At a nominal lineage \(z_0\), define
+\[
+\boxed{
+J_R(z_0)=\left.\frac{\partial Y}{\partial z}\right|_{z_0}.
+}
+\]
+The first-order local-identifiability gate is
+\[
+\boxed{\operatorname{rank}J_R=2N.}
+\]
+The singular spectrum is retained separately to distinguish full rank from poor conditioning.
+
+One final memory phase-state checkpoint carries four real coordinates,
+\[
+Y_f=(r_x,r_y,v_x,v_y)\in\mathbb R^4,
+\]
+so
+\[
+J_R^{\rm final}\in\mathbb R^{4\times2N},
+\qquad
+\boxed{\operatorname{rank}J_R^{\rm final}\le4.}
+\]
+Consequently,
+\[
+\boxed{
+N>2
+\Longrightarrow
+4<2N
+\Longrightarrow
+\text{final-only reconstruction is dimensionally underdetermined}.
+}
+\]
+This obstruction is established before fitting or optimization.
+
+If a checkpoint set \(\mathcal C\) is retained, then
+\[
+Y_{\mathcal C}\in\mathbb R^{4|\mathcal C|},
+\]
+and a necessary dimensional condition becomes
+\[
+\boxed{4|\mathcal C|\ge2N.}
+\]
+The actual full-column-rank condition must still be checked. In the targeted three-kick reference case, one final checkpoint gives a \(4\times6\) underdetermined matrix, whereas retaining all three post-event checkpoints gives a \(12\times6\) sensitivity matrix with rank six.
+
+\section{Gated latent-lineage estimation}
+
+Once the observability gate passes, the provisional reference estimator solves
+\[
+\boxed{
+\widehat z
+=\arg\min_z\frac12\|Y_{\rm obs}-Y(z)\|_2^2.
+}
+\]
+Writing
+\[
+r_k=Y_{\rm obs}-Y(z_k),
+\qquad
+J_k=J_R(z_k),
+\]
+the damped Gauss--Newton proposal is defined by
+\[
+\boxed{
+(J_k^T J_k+\lambda I)\delta z_k
+=J_k^T r_k,
+\qquad \lambda\ge0.
+}
+\]
+The reference line search accepts only \(\alpha=2^{-j}\) satisfying
+\[
+\|Y_{\rm obs}-Y(z_k+\alpha\delta z_k)\|_2
+<\|r_k\|_2.
+\]
+Loss of full column rank, singular normal equations or absence of an admitted descent step terminates the reference estimate explicitly.
+
+\section{Estimate commitment and reference nulls}
+
+The estimator interface contains the retained observations and public forward-model quantities. The estimate is frozen before sealed truth enters scoring through
+\[
+\boxed{
+C_{\rm est}
+=\operatorname{SHA256}(\widehat z\,\|\,\widehat Y\,\|\,r\,\|\,\mathrm{metadata}).
+}
+\]
+The scorer verifies this commitment before reconstruction error is evaluated.
+
+Two dynamical reference nulls are carried with the same experiment. The zero-kick null fixes
+\[
+z=0
+\]
+and records residual \(r_0\). The checkpoint-order null reverses the complete four-component checkpoint blocks and applies the same estimator capacity, giving fitted residual \(r_{\rm shuf}\). Their reference reductions are
+\[
+\boxed{
+R_0=1-\frac{r_{\rm est}}{r_0},
+\qquad
+R_{\rm shuf}=1-\frac{r_{\rm est}}{r_{\rm shuf}}.
+}
+\]
+Their registered evidence class is \texttt{COMPUTATIONAL\_REFERENCE\_DIAGNOSTIC}; physical significance evaluation remains a later evidence gate.
+
+In the first exact three-event reference run, the \(12\times6\) observability matrix has rank six. The estimator converges in two iterations with residual approximately \(1.04\times10^{-14}\). The zero-kick residual is approximately \(9.20\times10^{-2}\), while the reversed-checkpoint fit stalls at approximately \(9.57\times10^{-2}\). Fifty seeded exact-reference cases all retain full rank and converge, with maximum recorded kick-coordinate error approximately \(1.65\times10^{-14}\).
+
+\section{Reference controls and evidence boundary}
+
+Single-missing-receipt controls are recorded in
+\texttt{validation/RETRODICTION\_SINGLE\_MISSING\_RECEIPT\_V0\_1.json},
+the multi-event rank audit in
+\texttt{validation/RETRODICTION\_OBSERVABILITY\_V0\_1.json},
+and the gated estimator/null controls in
+\texttt{validation/RETRODICTION\_ESTIMATION\_NULLS\_V0\_1.json}.
+The isolated reference harnesses cover missing-kick reconstruction, conditional factor identification, product-only ambiguity, collinearity rejection, checkpoint tampering, dimensional underdetermination, checkpoint-augmented rank recovery, gated multi-kick estimation, estimate commitment and the declared reference nulls. The observability layer reports \texttt{UNDERDETERMINED\_DIMENSION}, \texttt{RANK\_DEFICIENT}, or \texttt{LOCALLY\_IDENTIFIABLE\_REFERENCE} according to the measured sensitivity structure.
+
+This evidence records the initial downstream formal reference class. The later Memory admission, ORCHORBITAL admission and 07P--07U chapters extend the same inverse-problem architecture through finite-domain separation, stratification and constructive compressed position decoding. Retrocausal tests remain a later dependency node with their own statistical, leakage and classical-channel audits.
+
+% ---- END monograph/chapters/08B_retrodiction_contract.tex ----
+
+% ---- BEGIN monograph/chapters/08C_retrodiction_uncertainty.tex ----
+\chapter{Noise Geometry and Uncertainty in Retrodiction}
+
+This chapter records the provisional local uncertainty layer downstream of the Retrodiction observability and estimation contracts. The canonical admitted frontier remains at Memory pending its full repository reference-suite admission result.
+
+\section{Checkpoint covariance}
+
+Let the retained checkpoint vector satisfy the local observation model
+\[
+Y_{\rm obs}=Y(z_\star)+\varepsilon,
+\qquad
+\mathbb E[\varepsilon]=0,
+\qquad
+\operatorname{Cov}(\varepsilon)=\Sigma_Y.
+\]
+The reference contract takes \(\Sigma_Y\) finite, symmetric and positive definite, with
+\[
+\boxed{\Sigma_Y=LL^T}
+\]
+from a Cholesky factorization.
+
+\section{Whitened sensitivity}
+
+For the Retrodiction sensitivity matrix \(J_R=\partial Y/\partial z\), define
+\[
+\boxed{J_W=L^{-1}J_R.}
+\]
+Weighted local identifiability requires
+\[
+\boxed{\operatorname{rank}J_W=\dim z.}
+\]
+The singular spectrum gives the local weighted condition number
+\[
+\boxed{
+\kappa_W=\frac{s_{\max}(J_W)}{s_{\min}(J_W)}.
+}
+\]
+The implementation can apply an explicitly supplied maximum admitted condition number and records \texttt{WEIGHTED\_ILL\_CONDITIONED} when that gate is crossed.
+
+\section{Fisher geometry of the latent lineage}
+
+Within the local Gaussian reference approximation,
+\[
+\boxed{
+F_z
+=J_R^T\Sigma_Y^{-1}J_R
+=J_W^TJ_W.
+}
+\]
+For full weighted column rank,
+\[
+\boxed{
+C_z\approx F_z^{-1},
+\qquad
+\sigma_{z_i}=\sqrt{(C_z)_{ii}}.
+}
+\]
+Thus the same Retrodiction geometry that determines observability also determines the local uncertainty ellipsoid once a checkpoint covariance has been declared.
+
+For isotropic checkpoint noise,
+\[
+\Sigma_Y=\sigma_Y^2 I,
+\]
+the latent covariance obeys
+\[
+\boxed{
+C_z=\sigma_Y^2(J_R^TJ_R)^{-1}.
+}
+\]
+The reference scaling control therefore requires a factor-four increase in \(C_z\) and a factor-two increase in each local standard error when \(\sigma_Y\) is doubled.
+
+\section{Weighted residual}
+
+For a committed estimate \(\widehat z\) with residual
+\[
+r=Y_{\rm obs}-Y(\widehat z),
+\]
+define
+\[
+\boxed{
+Q_W=r^T\Sigma_Y^{-1}r.
+}
+\]
+For observation dimension \(m\) and latent dimension \(p\), when \(m>p\), the reference diagnostic also records
+\[
+\boxed{
+\bar Q_W=\frac{Q_W}{m-p}.
+}
+\]
+Its registered evidence class is \texttt{NOISE\_MODEL\_REFERENCE\_DIAGNOSTIC}; experiment-specific statistical calibration remains downstream.
+
+\section{Reference audit}
+
+The first recorded uncertainty reference uses three latent 2D kicks, three retained 4D checkpoints and isotropic checkpoint standard deviation \(10^{-5}\). The weighted sensitivity has rank six and condition number approximately \(4.076\). The six local kick-coordinate standard errors lie between approximately \(9.98\times10^{-6}\) and \(1.42\times10^{-5}\).
+
+A seeded 500-case nonlinear reference audit with the same isotropic checkpoint scale produced empirical coordinate standard deviations within approximately \(4.4\%\) of the corresponding local Fisher predictions. This result is registered as a noise-model reference diagnostic.
+
+The executable contract is recorded in \texttt{src/idt/retrodiction\_uncertainty.py}, with validation receipt \texttt{validation/RETRODICTION\_UNCERTAINTY\_V0\_1.json}.
+
+% ---- END monograph/chapters/08C_retrodiction_uncertainty.tex ----
+
+% ---- BEGIN monograph/chapters/08D_partial_checkpoint_selection.tex ----
+\chapter{Partial Observation and Checkpoint Selection}
+
+This chapter records the provisional checkpoint-selection layer downstream of Retrodiction observability and uncertainty geometry. The canonical admitted frontier remains at Memory pending its full repository reference-suite admission result.
+
+\section{Dimensional lower bound}
+
+For \(N\) latent two-component event kicks,
+\[
+\dim z=2N.
+\]
+A retained memory phase-state checkpoint contributes four real coordinates. Therefore every candidate retained set \(\mathcal C\) obeys the necessary dimensional condition
+\[
+4|\mathcal C|\ge2N,
+\]
+which gives
+\[
+\boxed{
+|\mathcal C|\ge\left\lceil\frac{N}{2}\right\rceil.
+}
+\]
+The rank of the actual sensitivity matrix remains the admission test.
+
+\section{Subset observability}
+
+For candidate checkpoint set \(\mathcal C\), define
+\[
+J_R(\mathcal C)
+=\frac{\partial Y_{\mathcal C}}{\partial z}.
+\]
+Local observability requires
+\[
+\boxed{
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+The provisional minimal-information selector is
+\[
+\boxed{
+\mathcal C_*
+=\arg\min_{\mathcal C\subseteq\mathcal C_{\rm avail}}
+|\mathcal C|
+\quad\text{subject to}\quad
+\operatorname{rank}J_R(\mathcal C)=2N.
+}
+\]
+When several subsets have the same minimum cardinality, the reference selector minimizes condition number and then applies lexicographic order as a deterministic tie-break.
+
+\section{Conditioning as a separate gate}
+
+A protocol may additionally require
+\[
+\boxed{
+\kappa\!\left(J_R(\mathcal C)\right)\le\kappa_{\max}.
+}
+\]
+This separates information sufficiency from numerical stability. In the three-kick reference case the lower bound is two checkpoints. The subsets \(\{1,3\}\) and \(\{2,3\}\) both have rank six, with condition numbers approximately \(66.3\) and \(72.2\), respectively. The minimum-cardinality selector therefore chooses \(\{1,3\}\).
+
+Retaining all three checkpoints gives condition number approximately
+\[
+\boxed{\kappa_{123}\simeq4.076.}
+\]
+With an explicit reference gate \(\kappa_{\max}=10\), the selected set becomes \(\{1,2,3\}\).
+
+\section{Causal placement of retained information}
+
+For the same three-event reference lineage, the candidate set \(\{1,2\}\) has rank four for six latent coordinates. The measured forward sensitivity therefore rejects this retained set. This illustrates that the dimensional cardinality bound alone does not determine which checkpoints carry the required lineage information.
+
+\section{Reference audit}
+
+The executable selector is \texttt{src/idt/retrodiction\_checkpoint\_selection.py}; its validation receipt is \texttt{validation/RETRODICTION\_CHECKPOINT\_SELECTION\_V0\_1.json}. In a seeded 200-case three-event reference audit, every sampled lineage admitted a full-rank two-checkpoint subset. The best-conditioned two-checkpoint subset had median condition number approximately \(59.42\), whereas retaining all three checkpoints gave median condition number approximately \(4.067\).
+
+The registered evidence class is \texttt{PARTIAL\_OBSERVATION\_REFERENCE\_DIAGNOSTIC}. The later experimental layer will use the same rank and conditioning gates with declared observation covariance and preregistered missing-data patterns.
+
+% ---- END monograph/chapters/08D_partial_checkpoint_selection.tex ----
+
+% ---- BEGIN monograph/chapters/08E_weighted_retrodiction_nulls.tex ----
+\chapter{Covariance-Weighted Retrodiction and Permutation Nulls}
+
+This chapter records a provisional downstream computational reference layer. The canonical admitted dependency frontier remains at Memory. The purpose of the present construction is to make the Retrodiction estimator sensitive to declared checkpoint uncertainty and to compare it against explicit same-capacity chronology nulls.
+
+\section{Weighted inverse problem}
+
+For retained checkpoint vector $Y_{\rm obs}$ and declared symmetric positive-definite covariance $\Sigma_Y$, define
+\[
+r(z)=Y_{\rm obs}-Y(z)
+\]
+and the weighted objective
+\[
+\boxed{
+Q(z)=r(z)^T\Sigma_Y^{-1}r(z).
+}
+\]
+With
+\[
+\Sigma_Y=LL^T,
+\]
+the whitened residual and sensitivity are
+\[
+r_W=L^{-1}r,
+\qquad
+J_W=L^{-1}J_R.
+\]
+The estimator is admitted only when
+\[
+\boxed{\operatorname{rank}J_W=\dim z.}
+\]
+
+The damped weighted Gauss--Newton proposal obeys
+\[
+\boxed{
+(J_W^TJ_W+\lambda I)\delta z=J_W^Tr_W,
+\qquad \lambda\ge0.
+}
+\]
+Only a step that strictly decreases $Q$ is accepted.
+
+\section{Checkpoint-permutation ensemble}
+
+Let $P_\pi$ permute complete four-component checkpoint blocks. Each chronology-null member jointly transforms the observation and its declared covariance,
+\[
+\boxed{
+Y_\pi=P_\pi Y_{\rm obs},
+\qquad
+\Sigma_\pi=P_\pi\Sigma_YP_\pi^T.
+}
+\]
+The forward model, latent dimension, rank gate, damping rule and estimator capacity are otherwise unchanged. Thus a null member is not made easier or harder merely by assigning it a different uncertainty model.
+
+For the finite non-identity ensemble define
+\[
+Q_{\rm null,min}=\min_{\pi\ne id}Q_\pi
+\]
+and
+\[
+\boxed{
+\Delta Q_{\rm null}=Q_{\rm null,min}-Q_{\rm obs}.
+}
+\]
+The finite reference rank diagnostic is
+\[
+\boxed{
+f_{\rm null}=\frac{\#\{\pi:Q_\pi\le Q_{\rm obs}\}}{N_{\rm null}}.
+}
+\]
+This quantity is retained as a computational reference diagnostic; statistical calibration belongs to a later evidence layer.
+
+\section{Recorded reference control}
+
+For the three-event exact reference lineage with checkpoints $\{1,2,3\}$, the weighted sensitivity has rank six and condition number approximately $4.070$. The targeted weighted estimator reconstructs the exact latent kicks in two iterations at numerical precision. With all five non-identity checkpoint permutations fitted by the same model, the recorded reference values are
+\[
+Q_{\rm obs}\approx2.49\times10^{-24},
+\]
+\[
+Q_{\rm null,min}\approx1.80\times10^5,
+\qquad
+Q_{\rm null,med}\approx6.13\times10^5,
+\qquad
+Q_{\rm null,max}\approx8.19\times10^5.
+\]
+No null member in this finite reference ensemble reaches a residual at or below the retained chronology.
+
+The targeted test suite for this layer records five passing checks. The evidence receipt is
+\texttt{validation/RETRODICTION\_WEIGHTED\_NULLS\_V0\_1.json},
+and the append-only reference run is
+\texttt{experiments/E003\_retrodiction/runs/E003\_REFERENCE\_0002.json}.
+
+These values characterize the declared computational reference problem. Statistical-effect admission and physical-claim evaluation remain later gates.
+
+% ---- END monograph/chapters/08E_weighted_retrodiction_nulls.tex ----
+
+% ---- BEGIN monograph/chapters/08F_orchorbital_attractors.tex ----
+\chapter{ORCHORBITAL Attractors on Temporal Memory}
+
+The temporal-memory branch supports a typed ORCHORBITAL attractor layer consuming the admitted memory phase state
+\[
+X_M=(m,v_M,\tau_{\rm int},\mathcal A_M)
+\]
+and a finite family of attractors
+\[
+\mathfrak A_i=(c_i,\mu_i),
+\qquad \mu_i>0.
+\]
+
+\section{Binding field}
+
+Relative to attractor \(i\), define
+\[
+\boxed{
+E_i=\frac12\|v_M\|^2-\frac{\mu_i}{\|m-c_i\|}
+}
+\]
+and positive binding margin
+\[
+\boxed{b_i=[-E_i]_+.}
+\]
+For positive total binding \(B=\sum_i b_i\), the attractor weights are
+\[
+\boxed{w_i=\frac{b_i}{B}},
+\qquad
+\sum_iw_i=1,
+\]
+and the active reference basin is the maximizing weight. Exact ties are resolved deterministically for replay stability.
+
+For \(B=0\), the state receives the explicit \texttt{LEAK\_MODE} branch status and orbital admission terminates at that typed boundary.
+
+\section{Shannon basin organization}
+
+The normalized weights form an instantaneous relational distribution over the bound basins. Their Shannon entropy is
+\[
+\boxed{
+H_A=-\sum_{i:w_i>0}w_i\log_2w_i.
+}
+\]
+For \(N>1\), the associated normalized attractor coherence is
+\[
+\boxed{
+C_A=1-\frac{H_A}{\log_2N}.
+}
+\]
+A symmetric two-attractor reference state therefore has \(H_A=1\) bit and \(C_A=0\), while concentration into one basin drives the coherence toward unity.
+
+\section{Active-centre orbital dynamics}
+
+On an admitted smooth segment with active attractor \(a\), the memory orbit is translated to the active centre and obeys
+\[
+\boxed{
+\frac{d^2m}{d\tau_{\rm int}^2}
+=-\mu_a\frac{m-c_a}{\|m-c_a\|^3}.
+}
+\]
+This preserves the single-centre Kepler--Newton reference law on each smooth segment while the basin field is re-evaluated at every segment boundary.
+
+The winding increment around the active centre is
+\[
+\boxed{
+\Delta W_a
+=\frac{1}{2\pi}
+\operatorname{wrap}_{(-\pi,\pi]}
+\left[
+\arg(m_{n+1}-c_a)-\arg(m_n-c_a)
+\right].
+}
+\]
+A changed maximizing basin is recorded as the attractor selected for the following segment.
+
+\section{Memory-kick active-basin invariant}
+
+At fixed memory position define
+\[
+u_i=\frac{\mu_i}{\|m-c_i\|},
+\qquad
+T=\frac12\|v_M\|^2.
+\]
+Then
+\[
+\boxed{b_i=[u_i-T]_+.}
+\]
+For every bound post-event state, the velocity-only Memory event preserves the ordering of the \(u_i\), giving
+\[
+\boxed{
+\arg\max_i b_i=\arg\max_i u_i.
+}
+\]
+The same event changes the normalized basin weights and their Shannon observables through the common kinetic subtraction. Crossing the complete binding boundary yields \texttt{LEAK\_MODE}.
+
+The deterministic reference probe recorded zero active-attractor changes in 2998 before/after bound comparisons and changed normalized basin weights in all 2998 comparisons.
+
+\section{Persisted ORCHORBITAL lineage cell}
+
+The transport-derived Memory receipt is
+\[
+\mathcal E_n=(\Delta\tau_n,q_n,\delta m_n).
+\]
+The event kick precedes the active-centre smooth segment. Exact ledger-assisted inversion persists the attractor snapshot consumed by the segment:
+\[
+\boxed{
+\mathcal O_n=(\mathcal E_n,a_n,c_{a_n},\mu_{a_n}).
+}
+\]
+The forward and inverse cells are
+\[
+\boxed{
+X_{n+1}=\Phi_{a_n}(\Delta\tau_n)K_{\mathcal E_n}X_n,
+}
+\]
+\[
+\boxed{
+X_n=K_{\mathcal E_n}^{-1}\Phi_{a_n}^{-1}(\Delta\tau_n)X_{n+1}.
+}
+\]
+The centred inverse translates to the persisted active centre, applies the existing algebraic inverse of the Memory velocity-Verlet segment, translates back and removes the recorded event kick.
+
+A 500-trajectory, six-cell deterministic probe returned a maximum complete-lineage reconstruction defect below \(9.3\times10^{-16}\). Replacing the persisted active attractor by a different valid centre/coupling produced a reconstruction error of approximately \(1.78\times10^{-2}\), establishing the active-attractor snapshot as required lineage provenance.
+
+\section{Content-addressed residence ledger}
+
+The residence/switch layer persists every completed segment as a content-addressed receipt
+\[
+\boxed{
+\mathcal R_k=
+\left(
+ k,a_k,a_k^+,\ell_k,
+ \Delta\tau_k,\Delta W_k,
+ H(X_k^-),H(X_k^+),h_{k-1}
+\right).
+}
+\]
+Here \(a_k\) is the attractor consumed by the completed segment, \(a_k^+\) is the next bound attractor chosen by the post-segment field, \(\ell_k\) carries the typed leak status, and \(H(X)\) is SHA-256 of the exact finite binary64 memory state
+\[
+(m_x,m_y,v_x,v_y,\tau_{\rm int},\mathcal A_M).
+\]
+The receipt hash is
+\[
+\boxed{
+h_k=\operatorname{SHA256}\!\left(\operatorname{CanonicalJSON}(\mathcal R_k)\right).
+}
+\]
+The chain satisfies
+\[
+\boxed{H(X_k^+)=H(X_{k+1}^-)},
+\qquad
+\boxed{\operatorname{prev}(\mathcal R_{k+1})=h_k.}
+\]
+Existing JSONL bytes are verified before each append; the complete candidate chain is validated before persistence and re-read after fsync.
+
+\section{Residence episodes and dwell-time observables}
+
+For attractor \(i\), a residence episode \(I_{i,r}\) is a maximal contiguous run of completed segments with \(a_k=i\). Define
+\[
+\boxed{
+T_{i,r}=\sum_{k\in I_{i,r}}\Delta\tau_k,
+}
+\qquad
+\boxed{
+W_{i,r}=\sum_{k\in I_{i,r}}\Delta W_k.
+}
+\]
+The per-attractor observables include total dwell, episode count, segment count, mean, median, minimum, maximum and population variance of \(T_{i,r}\). The global elapsed-time accounting identity is
+\[
+\boxed{
+\sum_i\sum_rT_{i,r}=\sum_k\Delta\tau_k.
+}
+\]
+
+Adjacent active labels define the directed attractor-transition count
+\[
+\boxed{
+N_{i\to j}
+=\#\{k:a_k=i,\ a_{k+1}=j,\ i\neq j\}.
+}
+\]
+The ledger therefore supplies replayable ordered provenance for basin occupancy, dwell duration, accumulated winding and directed switches.
+
+\section{Long dynamic reference profile}
+
+The reference profile uses the real \texttt{propagate\_orchorbital} operator with two attractors and 101 consecutive smooth segments. The first completed segment uses attractor A and the following segment uses attractor B, providing an explicit \(A\to B\) transition. All 101 segment receipts form one verified hash/state chain. Residence episodes and dwell statistics remain finite, and their accumulated dwell reproduces the prescribed total internal elapsed time within \(2\times10^{-12}\).
+
+The full hosted repository suite including this profile returned
+\begin{verbatim}
+440 passed in 14.50s
+\end{verbatim}
+in GitHub Actions run \texttt{33194693525}, job \texttt{98928738642}. The tested PR merge commit is
+\texttt{6aa59bfa4fd8acfc5675de608d29f6aaa6f5a835}
+with tree
+\texttt{73f3d31020863b402a04f16b5a2ef562ed1b4e2a}.
+
+The formal gate is recorded in \texttt{formalism/06I\_orchorbital\_residence\_ledger.md}; the append-only evidence receipt is \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}.
+
+\section{PNCS hierarchy binding}
+
+The hierarchy layer is pinned to
+\begin{verbatim}
+AdrianLipa90/PhaseNav-Natural-Coding-System
+7a54596c1794be29e0b85f5c363213cc81eb87d7
+PNCS_ORCHORBITAL_HARVEST_HARDENING_V0_29
+\end{verbatim}
+and maps PNCS sphere/entity lineage into the existing IDT hierarchy engine. Sphere nodes retain parent-sphere lineage; attractor leaves retain typed entity-projection, canonical-entity and hierarchy-lineage identifiers. Semantic mass is paired with a typed PNCS mass-binding identifier when supplied.
+
+The generated hierarchy supports root-to-attractor paths, hierarchy-field aggregation, Shannon chain-rule auditing, residence coarse-graining and transition-count coarse-graining. Dynamic attractor coverage is checked exactly against the bound PNCS entity leaves.
+
+The hosted repository suite containing this binding returned
+\begin{verbatim}
+457 passed in 13.90s
+\end{verbatim}
+in GitHub Actions run \texttt{33195337839}, job \texttt{98930915664}.
+
+\section{Typed PNCS observable coordinates}
+
+The retained observable layer is pinned to the same PNCS commit and the v0.27 ORCHORBITAL observable/reduction sources. Three coordinates remain separately typed:
+\[
+\boxed{
+\mathcal O_{\rm ORCH}
+=
+\left(
+T,
+\mathcal R_{\Omega},
+\{m_{\rm sem}(a_i)\}
+\right).
+}
+\]
+The truth scalar carries
+\[
+T\in[0,1]
+\]
+or the explicit null state of the upstream observable contract. Semantic mass satisfies
+\[
+m_{\rm sem}(a_i)\ge0
+\]
+and retains its entity-projection and mass-binding provenance.
+
+Reduction readiness preserves the upstream threshold exactly,
+\[
+\boxed{
+\mathrm{reduce\_ready}\iff\Omega\ge\Omega_{\rm crit}.
+}
+\]
+A selected orbital index is carried only for a reduction-ready record.
+
+For verified residence lineage, the temporal semantic-mass aggregate is
+\[
+\boxed{
+\bar m_{\rm sem}^{(\tau)}
+=
+\frac{\sum_k\Delta\tau_k\,m_{\rm sem}(a_k)}{\sum_k\Delta\tau_k}.
+}
+\]
+Every active attractor in the evaluated lineage resolves to an explicit semantic-mass binding before this aggregate is admitted.
+
+The full hosted reference suite containing the typed observable tests returned
+\begin{verbatim}
+475 passed in 11.91s
+\end{verbatim}
+in GitHub Actions run \texttt{33196818703}, job \texttt{98935954122}, under Python 3.12.14 on Ubuntu 24.04. The tested PR merge commit is
+\texttt{00057b9a7acb9874bc8cae3a47bd9bcf6877fe7f}
+with tree
+\texttt{42b93983941098c02b350d9fb7bf18536ef4aeee}.
+
+The formal binding is recorded in \texttt{formalism/06K\_orchorbital\_typed\_observables.md}; evidence is bound by \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}.
+
+\section{Closure observable}
+
+With declared position and velocity scales \(r_*>0\) and \(v_*>0\), the reference phase-space closure defect is
+\[
+\boxed{
+D_{\rm cl}
+=
+\sqrt{
+\left(\frac{\|m_f-m_i\|}{r_*}\right)^2
++
+\left(\frac{\|v_f-v_i\|}{v_*}\right)^2
+}.
+}
+\]
+The normalization scales remain explicit inputs to the observable.
+
+\section{Position in the temporal dependency graph}
+
+The promotion-branch integration chain is
+\[
+\boxed{
+\text{Temporal Transport}
+\rightarrow
+\text{Memory}
+\rightarrow
+\text{ORCHORBITAL attractor dynamics}
+\rightarrow
+\text{residence/switch lineage}
+\rightarrow
+\text{PNCS hierarchy binding}
+\rightarrow
+\text{typed ORCHORBITAL observables}
+\rightarrow
+\mathbf{Retrodiction}.
+}
+\]
+Memory and ORCHORBITAL each carry their admission receipts on the promotion branch. Retrodiction is the active next dependency gate.
+
+\section{Reference evidence}
+
+The base implementation is \texttt{src/idt/orchorbital.py}; the Memory-lineage bridge is \texttt{src/idt/memory\_orchorbital\_bridge.py}; the residence ledger is \texttt{src/idt/orchorbital\_residence\_ledger.py}; the hierarchy engine is \texttt{src/idt/orchorbital\_hierarchy.py}; the PNCS hierarchy bridge is \texttt{src/idt/orchorbital\_pncs\_hierarchy\_binding.py}; and the typed observable bridge is \texttt{src/idt/orchorbital\_pncs\_observables.py}.
+
+Evidence is bound through \texttt{validation/MEMORY\_ORCHORBITAL\_LINEAGE\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_ATTRACTOR\_SYSTEM\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_RESIDENCE\_LEDGER\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_PNCS\_HIERARCHY\_BINDING\_V0\_1.json}, \texttt{validation/ORCHORBITAL\_TYPED\_OBSERVABLES\_V0\_1.json}, and \texttt{validation/ORCHORBITAL\_ADMISSION\_HOSTED\_FULL\_SUITE\_2026\_08\_28.json}. GREMLIN remains candidate-only and its declared bridge hypotheses retain their recorded supported-by-tests status.
+
+% ---- END monograph/chapters/08F_orchorbital_attractors.tex ----
