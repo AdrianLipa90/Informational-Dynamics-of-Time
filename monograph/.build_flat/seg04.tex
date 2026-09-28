@@ -1,0 +1,779 @@
+% ---- BEGIN monograph/chapters/08G_spatial_offset_divergence.tex ----
+\chapter{Spatial Offset Divergence and Sparse Global Injectivity}
+
+The preceding Retrodiction layers establish two complementary checkpoint results. The complete ordered position lineage supplies an exact arbitrary-event reconstruction reference, while the rank-minimal sparse completion closes the local Jacobian deficit with the smallest number of additional position scalars admitted by the declared rank test. This chapter asks the next question: whether a locally sufficient sparse record identifies one global history.
+
+\section{Definition}
+
+Let
+\[
+\mathcal F_S:z\mapsto Y_S
+\]
+be the sparse observation map, where the latent event history is
+\[
+z=(u_1,\ldots,u_N)\in\mathbb R^{2N}.
+\]
+At this layer, the spatial coordinate is the two-component Memory/ORCHORBITAL position carried by each retained lineage state.
+
+For two candidate histories define
+\[
+\boxed{
+\Delta_n^{\rm SOD}(z,z')=r_n(z')-r_n(z)
+}
+\]
+and
+\[
+\boxed{
+D_{\rm SOD}(z,z')
+=
+\left[
+\sum_{n=1}^{N}
+\|\Delta_n^{\rm SOD}(z,z')\|^2
+\right]^{1/2}.
+}
+\]
+The pair is a Spatial Offset Divergence witness when its sparse observation records agree within the declared measurement tolerance, its latent histories remain distinct, and $D_{\rm SOD}$ exceeds the spatial tolerance.
+
+The distinction is important because a full local Jacobian rank answers a neighborhood question. Spatial Offset Divergence audits the global preimage structure of the same checkpoint map.
+
+\section{Four-event reference witness}
+
+A bounded deterministic multistart search was performed in the same fixed-support three-attractor reference regime used by the preceding ORCHORBITAL Retrodiction gates. For four events with
+\[
+\Delta\tau=(0.004,0.003,0.005,0.0025),
+\]
+60 initializations produced 44 converged solutions grouped into two latent clusters.
+
+The second cluster reproduces the retained 07L sparse record with
+\[
+\|\Delta Y_S\|_2
+\approx2.2581\times10^{-13},
+\]
+while remaining separated from the reference latent history by
+\[
+\|\Delta z\|_2
+\approx1.94398\times10^{-3}.
+\]
+Both histories retain the same active-attractor sequence $(A,A,A,A)$.
+
+Their position histories differ at the second checkpoint by
+\[
+\Delta_2^{\rm SOD}
+\approx
+(2.89728\times10^{-6},-5.30856\times10^{-7}),
+\]
+which gives
+\[
+\boxed{
+D_{\rm SOD}\approx2.94551\times10^{-6}.
+}
+\]
+The remaining retained position checkpoints coincide at numerical precision in this reference witness.
+
+Thus the rank-minimal sparse schedule receives a global-injectivity FAIL for the declared four-event reference: a concrete distinct preimage pair survives while carrying nonzero Spatial Offset Divergence.
+
+\section{Adaptive spatial separation}
+
+The SOD vector also identifies a direct separator. For the recorded witness,
+\[
+|\Delta r_{2x}|\approx2.89728\times10^{-6},
+\qquad
+|\Delta r_{2y}|\approx5.30856\times10^{-7}.
+\]
+Promoting either component into the sparse checkpoint record separates this known pair. This motivates the iterative checkpoint rule
+\[
+\boxed{
+\text{global-null witness}
+\rightarrow
+\Delta^{\rm SOD}
+\rightarrow
+\text{promote a separating coordinate}
+\rightarrow
+\text{repeat the global search}.
+}
+\]
+The known-witness separator is therefore constructive: a detected global ambiguity returns the position coordinate at which the hidden histories first separate.
+
+\section{Connection to the exact position lineage}
+
+The complete position-lineage schedule of the preceding exact reconstruction layer carries every $r_n\in\mathbb R^2$. Its recursion recovers each event kick sequentially for positive finite segment duration and a retained active-attractor sequence. Consequently every SOD witness is distinguished by that complete positional record.
+
+The sparse design can therefore be viewed as a compression of the exact position lineage, while $D_{\rm SOD}$ measures the spatial history hidden by a particular observation-equivalent branch pair.
+
+\section{Reference status}
+
+The targeted SOD implementation and parent integration tests pass locally. The four-event witness establishes a FAIL for global injectivity of the declared minimal sparse schedule and a PASS for separation of that recorded witness by an additional second-checkpoint spatial coordinate. General sparse global injectivity remains the next search frontier after adaptive SOD separation.
+
+The evidence receipt is
+\texttt{validation/RETRODICTION\_SPATIAL\_OFFSET\_DIVERGENCE\_V0\_1.json},
+and the append-only reference run is
+\texttt{experiments/E003\_retrodiction/runs/E003\_SOD\_0001.json}.
+
+% ---- END monograph/chapters/08G_spatial_offset_divergence.tex ----
+
+% ---- BEGIN monograph/chapters/08H_adaptive_sod_separation.tex ----
+\chapter{Adaptive SOD Separation}
+
+Spatial Offset Divergence converts a global-null witness into a geometric difference along the retained Memory/ORCHORBITAL position lineage. The present layer uses that difference constructively to refine the sparse checkpoint record.
+
+\section{Deterministic separator}
+
+For a recorded SOD pair, define
+\[
+(k_\star,a_\star)=\arg\max_{k,a\in\{x,y\}}|\Delta^{\rm SOD}_{k,a}|.
+\]
+The promoted scalar checkpoint is
+\[
+\boxed{s_{\rm SOD}=r_{k_\star,a_\star}.}
+\]
+Ties are resolved deterministically by earliest checkpoint and then by the $x$ coordinate before $y$.
+
+For the four-event SOD witness of the preceding chapter this selects
+\[
+\boxed{s_{\rm SOD}=r_{2x}},
+\]
+with witness separation
+\[
+|\Delta r_{2x}|\approx2.89728\times10^{-6}.
+\]
+The known ambiguous pair is therefore directly separated after the coordinate is added to the observation record.
+
+\section{Reference observability after refinement}
+
+The augmented four-event schedule contains eleven scalar observations for eight latent kick coordinates. Its finite-difference Jacobian remains full rank,
+\[
+\operatorname{rank}J=8,
+\]
+with smallest singular value
+\[
+\sigma_{\min}\approx1.04834\times10^{-3}
+\]
+and condition number
+\[
+\kappa(J)\approx1.90843\times10^3.
+\]
+Thus the separator closes the recorded SOD pair while preserving the local observability gate.
+
+\section{Bounded global-search audit}
+
+A deterministic fixed-regime search used forty declared starts, including the known SOD witness, the reference history, reference-near perturbations and bounded random initializations. Thirty-two starts converged. All converged solutions belonged to a single latent cluster at the reference history.
+
+The result is recorded as
+\[
+\boxed{\text{KNOWN SOD ADAPTIVE SEPARATOR PASS}}
+\]
+and
+\[
+\boxed{\text{BOUNDED REFERENCE SEARCH: SINGLE CLUSTER}}.
+\]
+General global injectivity remains an open downstream gate; the bounded search does not enumerate arbitrary preimages or all attractor/support regimes.
+
+\section{Adaptive Retrodiction loop}
+
+The checkpoint-design workflow is therefore
+\[
+\boxed{
+\mathcal F_S
+\rightarrow \text{global-null search}
+\rightarrow \Delta^{\rm SOD}
+\rightarrow s_{\rm SOD}
+\rightarrow \mathcal F_{S+}
+\rightarrow \text{repeat search}.
+}
+\]
+This creates a fail-closed refinement loop in which each discovered spatially divergent branch returns an explicit coordinate capable of separating that particular witness.
+
+% ---- END monograph/chapters/08H_adaptive_sod_separation.tex ----
+
+% ---- BEGIN monograph/chapters/08I_orchorbital_residence_conditioning.tex ----
+\chapter{Residence-Conditioned ORCHORBITAL Retrodiction}
+
+The admitted Memory and ORCHORBITAL layers provide a new conditioning channel for the Retrodiction program: persisted attractor residence and switch lineage. The relevant dynamical cell contains a Memory event before every smooth ORCHORBITAL segment,
+\[
+X_k^-
+\xrightarrow{\mathcal E_k}
+X_k^{K}
+\xrightarrow{\Phi_{a_k}(\Delta\tau_k)}
+X_k^+.
+\]
+The residence bridge therefore carries an outer event-aware chain rather than joining the smooth-segment receipts directly across the kick boundary.
+
+\section{Event-aware bridge cell}
+
+The versioned bridge cell is
+\[
+\boxed{
+\mathcal B_k=
+\left(
+ k,
+ \tau_k^-,
+ \mathcal E_k,
+ H(X_k^-),
+ \mathcal R_k^{\rm smooth},
+ h_{k-1}
+\right),
+}
+\]
+where \(\mathcal R_k^{\rm smooth}\) is a verified one-segment ORCHORBITAL residence receipt. The outer chain enforces
+\[
+\boxed{H(X_{k-1}^+)=H(X_k^-)},
+\]
+and the replayed Memory event enforces
+\[
+\boxed{
+H(K_{\mathcal E_k}X_k^-)
+=H(X_{k,\rm smooth}^-).
+}
+\]
+Thus the event discontinuity in velocity is represented explicitly while the chronological lineage remains content-addressed.
+
+\section{Binary64 elapsed-time closure}
+
+The Memory receipt carries a scheduled binary64 increment \(\Delta\tau_k^E\), while the smooth residence receipt measures the increment through the state carrier. Their exact finite-precision relation is
+\[
+\boxed{
+\Delta\tau_k^R
+=
+\operatorname{fl}
+\left(
+\operatorname{fl}(\tau_k^-+\Delta\tau_k^E)-\tau_k^-
+\right).
+}
+\]
+A hardening reference at \(\tau_k^-=36\) and \(\Delta\tau_k^E=10^{-8}\) has distinct exact hexadecimal encodings for the schedule and observed difference, while the operation-level binding remains exact.
+
+\section{Residence signature and information classes}
+
+The retained residence signature is
+\[
+\Sigma_R=
+\left(
+(a_k)_k,
+(a_k^+)_k,
+I_{\rm switch},
+I_{\rm leak},
+(\Delta W_k)_k
+\right).
+\]
+Active labels, next-attractor labels, switches and leak states form the discrete conditioning coordinates. Winding is retained as an independent continuous observable. Content hashes remain integrity/provenance coordinates.
+
+The Retrodiction pair-separation audit uses the semantic residence coordinates for its pair status. The cryptographic head remains outside that semantic comparison.
+
+\section{Declared global reflection pair}
+
+For the two-event pair already recorded in the ORCHORBITAL Retrodiction program,
+\[
+\begin{aligned}
+u_1&=(0.034,-0.023), &
+\nu_2&=(-0.008,0.028),\\
+\widetilde u_1&=(0.03399999999998063,0.34071654937113033), &
+\widetilde u_2&=(-0.00802729491823317,-0.8206629500579328),
+\end{aligned}
+\]
+the latent histories remain separated by more than \(0.9\), while the retained final base observation
+\[
+Y_B=(r_x,r_y,v_x,w_A,w_B,w_C)_2
+\]
+remains equivalent at the declared tolerance.
+
+The new event-aware residence audit gives identical active-attractor sequences and identical next-attractor/switch/leak lineage for the two histories. Its pair-scoped result is therefore
+\begin{verbatim}
+KNOWN_NULL_PERSISTS_UNDER_RESIDENCE_LABELS
+\end{verbatim}
+while the two provenance heads differ. This establishes the intended firewall between semantic conditioning and content-addressed integrity.
+
+The earlier continuous ORCHORBITAL scalar from the preceding global-null audit remains separating for the same pair,
+\[
+\boxed{
+|w_{A,1}(z)-w_{A,1}(\widetilde z)|
+=0.01918916841099516.
+}
+\]
+The current evidence therefore distinguishes
+\[
+\boxed{
+\text{discrete residence lineage}
+\;\mid\;
+\text{continuous ORCH observables}
+\;\mid\;
+\text{provenance commitments}.
+}
+\]
+
+\section{Evidence and frontier}
+
+The implementation is \texttt{src/idt/retrodiction\_orchorbital\_residence\_conditioning.py}. The formal contract is \texttt{formalism/07O\_orchorbital\_residence\_conditioned\_retrodiction.md}, and the evidence receipt is \texttt{validation/RETRODICTION\_ORCHORBITAL\_RESIDENCE\_CONDITIONING\_V0\_1.json}.
+
+The hosted full repository reference suite returned
+\begin{verbatim}
+486 passed in 8.89s
+\end{verbatim}
+in GitHub Actions run \texttt{33198069462}, job \texttt{98940226102}, under Python 3.12.14 on Ubuntu 24.04.4. The tested branch commit is \texttt{7537322cbf9df4c4270d79619ed1dc6f2ae028b9}, the tested PR merge commit is \texttt{adbf31231033ab602455a75393b65816857f6afd}, and the tested tree is \texttt{d6064dbb6092a976c376a1c4a14cf53225bcb263}.
+
+The Retrodiction node remains the active dependency gate with \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN}. The next branch-separation work therefore focuses on retained continuous and spatial-offset/divergence channels that can distinguish global alternatives beyond the discrete residence-label equivalence class.
+
+% ---- END monograph/chapters/08I_orchorbital_residence_conditioning.tex ----
+
+% ---- BEGIN monograph/chapters/08J_quotient_fiber_finite_injectivity.tex ----
+\chapter{Finite-Domain Quotient/Fiber Injectivity}
+\label{chap:quotient-fiber-finite-injectivity}
+
+\section{Dependency position}
+
+The Retrodiction branch has accumulated several complementary observation channels: the terminal memory checkpoint, retained continuous ORCHORBITAL observables, spatial-offset/divergence coordinates, adaptive SOD separators, and event-aware residence lineage.  The present gate supplies the finite-domain rule that combines those channels without collapsing their types.
+
+Let
+\[
+\mathcal C=\{z_1,\ldots,z_n\}
+\]
+be a finite candidate-history set, let
+\[
+Y:\mathcal C\to\mathcal Y
+\]
+be the retained base observation, and let
+\[
+F_c:\mathcal C\to\mathcal F_c,
+\qquad c=1,\ldots,m,
+\]
+be declared auxiliary observation channels.  Define
+\[
+\widetilde Y(z)
+=\bigl(Y(z),F_1(z),\ldots,F_m(z)\bigr).
+\]
+
+\section{Exact finite-set separation lemma}
+
+On the declared finite domain,
+\[
+\boxed{
+\widetilde Y\text{ is injective on }\mathcal C
+\iff
+\forall i\ne j:\
+Y(z_i)=Y(z_j)
+\Longrightarrow
+\exists c:\ F_c(z_i)\ne F_c(z_j).
+}
+\]
+
+The proof is a partition of distinct candidate pairs.  A pair is already distinguished by the base observation when its two images under $Y$ differ.  Every remaining distinct pair belongs to one base fiber.  The augmented map is injective exactly when every such pair is distinguished by at least one declared $F_c$ coordinate.
+
+The numerical reference implementation makes the finite-precision equivalence relation explicit.  A pair is treated as a base collision when
+\[
+\|z_i-z_j\|_2>\varepsilon_Z,
+\qquad
+\|Y(z_i)-Y(z_j)\|_2\le\varepsilon_B,
+\]
+and it is admitted as fiber-separated when
+\[
+\exists c:\
+\|F_c(z_i)-F_c(z_j)\|_2>\varepsilon_F.
+\]
+The status
+\texttt{FINITE\_DOMAIN\_INJECTIVE\_WITH\_DECLARED\_FIBER}
+is emitted only when every base-collision pair in the candidate set satisfies this condition.
+
+\section{Reference quotient structures}
+
+The GREMLIN candidate search exposed the same relational pattern in independently versioned source families.
+
+For the Relational Field Closure normalization map,
+\[
+\mathcal N(Q)=p,
+\qquad
+p_a=\frac{Q_a}{Q_\Sigma},
+\]
+and
+\[
+\mathcal N(\lambda Q)=\mathcal N(Q),
+\qquad \lambda>0.
+\]
+The normalized shape therefore retains the quotient coordinate while the positive extensive scale $Q_\Sigma$ supplies the exact lift
+\[
+\mathcal L_{Q_\Sigma}(p)=Q_\Sigma p.
+\]
+
+The Secret-of-a-Half source carries the exact two-sheet quotient
+\[
+q(s)=\left(s-\frac12\right)^2,
+\qquad
+q(1-s)=q(s),
+\]
+with nonzero fibers
+\[
+q^{-1}(w)
+=\left\{
+\frac12+\sqrt w,
+\frac12-\sqrt w
+\right\}.
+\]
+Its commuting relation
+\[
+q\circ N_s=J\circ q
+\]
+shows that the quotient dynamics and the lifted sheet structure can remain separately typed.
+
+The TIR source contributes a structurally related orientation/open-holonomy channel between non-identical sector bases.  In the present Retrodiction gate this remains a GREMLIN candidate for a transport-sensitive fiber coordinate until a direct commuting map into the IDT history state space is supplied.
+
+\section{Binding to the explicit reflection collision}
+
+The 07H reflection witness contains two distinct latent histories separated by
+\[
+\|\widetilde z-z\|_2
+=0.9233193011263697,
+\]
+while their terminal retained base checkpoint satisfies
+\[
+\delta_B
+=5.594315114139762\times10^{-17}.
+\]
+
+The earlier continuous ORCHORBITAL basin weight gives
+\[
+w_{A,1}(z)=0.5838364569736161,
+\qquad
+w_{A,1}(\widetilde z)=0.6030256253846112,
+\]
+and hence
+\[
+\boxed{
+|\Delta w_{A,1}|=0.01918916841099516.
+}
+\]
+The two-history candidate domain therefore passes the finite-domain gate when $w_{A,1}$ is declared as an auxiliary fiber channel.
+
+The earlier $r_x$ coordinate supplies the negative control,
+\[
+|\Delta r_{x,1}|
+=1.1102230246251565\times10^{-16},
+\]
+which remains within the declared equivalence tolerance and leaves the collision unresolved.  The test therefore distinguishes observation cardinality from separating information content.
+
+\section{Typed augmented observation}
+
+The current Retrodiction observation architecture is recorded as
+\[
+\boxed{
+Y_{\rm aug}
+=
+Y_B
+\oplus F_{\rm ORCH}^{\rm cont}
+\oplus F_{\rm SOD}
+\oplus F_{\rm residence}
+\oplus F_{\rm holonomy}.
+}
+\]
+Each channel preserves its source contract.  Content-addressed provenance commitments remain integrity coordinates unless a later observation contract admits a provenance quantity as a semantic observation coordinate.
+
+\section{Reference evidence}
+
+The dedicated reference suite contains nine controls: exact sheet separation, scale-fiber separation, an unresolved identical-fiber collision, an all-collision finite-domain requirement, a no-base-collision control, deterministic channel attribution, fail-closed malformed/non-finite inputs, the exact 07H $w_{A,1}$ positive separator, and the exact 07H $r_{x,1}$ negative control.
+
+The local targeted result was
+\begin{verbatim}
+9 passed in 0.04s
+\end{verbatim}
+
+The hosted repository gate was GitHub Actions run \texttt{33200684482}, job \texttt{98949092398}.  It tested branch head
+\begin{verbatim}
+17d3ba854e83f930194b8dd4c4b7089382578a35
+\end{verbatim}
+through PR merge commit
+\begin{verbatim}
+ee1985c96df734d32a8232c03ca078c993ef7318
+\end{verbatim}
+and returned
+\begin{verbatim}
+495 passed in 10.14s
+\end{verbatim}
+on Python 3.12.14 and Ubuntu 24.04.4.
+
+The executable implementation is
+\texttt{src/idt/retrodiction\_quotient\_fiber\_injectivity.py},
+with formal authority recorded in
+\texttt{formalism/07P\_quotient\_fiber\_finite\_injectivity.md}
+and evidence receipt
+\texttt{validation/RETRODICTION\_QUOTIENT\_FIBER\_FINITE\_INJECTIVITY\_V0\_1.json}.
+
+\section{Active frontier}
+
+The finite-domain gate converts isolated collision witnesses into an all-pair separation criterion on any declared finite candidate set.  The governing next status is
+\begin{verbatim}
+GENERAL_GLOBAL_INJECTIVITY_OPEN
+\end{verbatim}
+with the next admission target a domain-covering separation theorem, constructive inverse, or equivalent global injectivity argument over retained continuous ORCHORBITAL, SOD and holonomy channels.
+
+% ---- END monograph/chapters/08J_quotient_fiber_finite_injectivity.tex ----
+
+% ---- BEGIN monograph/chapters/08K_oriented_winding_fiber.tex ----
+\chapter{Oriented Winding as a Retrodiction Fiber Coordinate}
+\label{chap:oriented-winding-fiber}
+
+The finite-domain quotient/fiber gate of the previous chapter turns Retrodiction ambiguity into a precise separation problem.  Whenever two distinct latent histories share the same retained base observation, at least one additional retained coordinate must distinguish the corresponding points inside that base fiber.
+
+The ORCHORBITAL residence layer already carries such an orientation-sensitive coordinate.  For every completed smooth segment around the active attractor, define the signed winding increment
+\[
+\Delta W_k
+=\frac{1}{2\pi}\operatorname{wrap}(\theta_{k+1}-\theta_k).
+\]
+The residence receipt persists this quantity in exact binary64 hexadecimal form.  For an $N$-event history $z$, retain the ordered vector
+\[
+\boxed{
+\mathcal W(z)
+=\bigl(\Delta W_1(z),\ldots,\Delta W_N(z)\bigr).
+}
+\]
+The segment ordering is part of the coordinate.  Its cumulative value
+\[
+W_{\Sigma}(z)=\sum_{k=1}^{N}\Delta W_k(z)
+\]
+is a derived diagnostic, whereas the Retrodiction separator uses the complete ordered vector.
+
+Let $Y(z)$ denote the declared sparse base observation.  For two latent histories $z$ and $\widetilde z$, define
+\[
+\delta_B=\|Y(\widetilde z)-Y(z)\|_2,
+\qquad
+\delta_Z=\|\widetilde z-z\|_2,
+\]
+and
+\[
+\boxed{
+\delta_W
+=\|\mathcal W(\widetilde z)-\mathcal W(z)\|_2.
+}
+\]
+At positive tolerances $\varepsilon_B$, $\varepsilon_Z$ and $\varepsilon_W$, an admitted pairwise winding separator satisfies
+\[
+\delta_B\le\varepsilon_B,
+\qquad
+\delta_Z>\varepsilon_Z,
+\qquad
+\delta_W>\varepsilon_W.
+\]
+
+The reference test uses the same two-event reflection-null pair employed by the earlier global-null and residence-conditioning audits.  Its final retained base vector is
+\[
+(r_{x,2},r_{y,2},v_{x,2},w_{A,2},w_{B,2},w_{C,2}).
+\]
+The two histories remain equivalent in that base projection at tolerance $10^{-10}$, their latent separation remains greater than $0.9$, and their active-attractor sequence remains identical.  The ordered winding coordinate nevertheless satisfies
+\[
+\boxed{
+\delta_W>10^{-12}.
+}
+\]
+The pair therefore receives the executable status
+\begin{verbatim}
+BASE_NULL_SEPARATED_BY_ORIENTED_WINDING
+\end{verbatim}
+without using provenance hashes as semantic separation coordinates.
+
+The same winding vector is then passed directly into the generic quotient/fiber gate as the channel \texttt{oriented\_winding}.  For the declared two-history candidate domain, the audit records one base collision, one separated collision and zero unresolved collisions, yielding
+\begin{verbatim}
+FINITE_DOMAIN_INJECTIVE_WITH_DECLARED_FIBER
+\end{verbatim}
+for that finite domain.
+
+This construction also preserves a structural relation already present in the temporal-holonomy layer.  There, the full phase carrier
+\[
+h_R=e^{i\tau_R}
+\]
+retains transport orientation through the signed quadrature.  Here, the ordered signed circulation increments retain orientation inside a Retrodiction collision fiber.  The cross-layer relation is used as a candidate-generating guide, while the Retrodiction status is governed by the executable winding and quotient/fiber tests.
+
+The reference implementation is
+\begin{verbatim}
+src/idt/retrodiction_oriented_winding_fiber.py
+\end{verbatim}
+and the validation receipt is
+\begin{verbatim}
+validation/RETRODICTION_ORIENTED_WINDING_FIBER_V0_1.json
+\end{verbatim}
+The hosted Reference suite run 33201861565, job 98953023513, tested branch head
+\begin{verbatim}
+1c124b7cb37a00ea9ce3e5e96cb3e66c5d7e0363
+\end{verbatim}
+and returned
+\begin{verbatim}
+502 passed in 8.09s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction frontier is now the characterization of complete base-collision fibers and a domain-covering separator construction using ordered winding together with retained continuous ORCHORBITAL and spatial/SOD coordinates.  The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until that domain-covering gate is receipted.
+
+% ---- END monograph/chapters/08K_oriented_winding_fiber.tex ----
+
+% ---- BEGIN monograph/chapters/08L_fiber_lift_composition.tex ----
+\chapter{Fiber-Lift Composition for Retrodiction}
+\label{chap:fiber-lift-composition}
+
+The quotient/fiber and oriented-winding layers identify how compressed Retrodiction records can distinguish histories inside a base-observation fiber.  The next step is to connect those retained coordinates to a carrier for which exact inverse reconstruction is already available.
+
+Let \(\mathcal Z\) denote an admitted latent-history domain and let
+\[
+P:\mathcal Z\to\mathcal X
+\]
+be an injective carrier.  Define the augmented retained observation
+\[
+\boxed{A(z)=(Y(z),F(z)),}
+\]
+where \(Y\) is the retained base observation and \(F\) collects retained fiber coordinates such as ordered winding, continuous ORCHORBITAL coordinates and spatial-offset/divergence coordinates.
+
+Assume that there exists a single-valued lift
+\[
+L:A(\mathcal Z)\to\mathcal X
+\]
+such that
+\[
+\boxed{P=L\circ A.}
+\]
+Then \(A\) is injective.  Indeed,
+\[
+A(z_1)=A(z_2)
+\Longrightarrow
+L(A(z_1))=L(A(z_2))
+\Longrightarrow
+P(z_1)=P(z_2),
+\]
+and injectivity of \(P\) gives
+\[
+\boxed{z_1=z_2.}
+\]
+This implication is exact and does not depend on a finite numerical probe.
+
+The reference carrier is supplied by the arbitrary-event position-lineage result.  For an admitted \(N\)-event lineage,
+\[
+\boxed{P(z)=(r_1(z),\ldots,r_N(z)).}
+\]
+With the active-attractor sequence and positive elapsed increments retained, each latent kick follows algebraically from
+\[
+\boxed{
+u_n=
+\frac{r_n-r_{n-1}-\frac12A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}
+-v_{n-1},}
+\]
+and the post-segment velocity is
+\[
+\boxed{
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.}
+\]
+Consequently the remaining constructive closure target is
+\[
+\boxed{
+L:(Y,F)\mapsto(r_1,\ldots,r_N).
+}
+\]
+
+The executable 07R audit checks the two theorem hypotheses separately on a declared finite candidate domain.  First, distinct latent candidates must remain separated by the carrier.  Second, no equal augmented record may map to two distinct carrier records.  The latter condition is the finite-domain form of single-valued lift consistency.
+
+For the exact reflection pair used by the preceding chapters, the retained sparse base observation together with the ordered oriented-winding vector is paired with the complete ordered post-segment position lineage.  The audit returns
+\begin{verbatim}
+FINITE_DOMAIN_FIBER_LIFT_COMPOSITION_PASS
+\end{verbatim}
+with zero carrier collisions, zero augmented collisions and zero lift conflicts.
+
+A matched negative control replaces oriented winding by an identical zero fiber while leaving the same base collision and position carriers.  The audit then returns
+\begin{verbatim}
+FUNCTIONAL_LIFT_FAIL_ON_FINITE_DOMAIN
+\end{verbatim}
+because one augmented record would have to lift to two different position lineages.
+
+The reference implementation is
+\begin{verbatim}
+src/idt/retrodiction_fiber_lift.py
+\end{verbatim}
+and the validation receipt is
+\begin{verbatim}
+validation/RETRODICTION_FIBER_LIFT_COMPOSITION_V0_1.json
+\end{verbatim}
+The hosted Reference suite run 33202559485, job 98955383447, tested branch head
+\begin{verbatim}
+6abca4ad72c04cdca5d1128e690c17898b8650d7
+\end{verbatim}
+and returned
+\begin{verbatim}
+510 passed in 14.11s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction target is therefore \texttt{POSITION\_LINEAGE\_LIFT\_ACTIVE\_NEXT\_GATE}: construct a domain-covering lift from the retained base and fiber coordinates to the exact position-lineage carrier.  The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until that lift or an equivalent domain-covering fiber-separation argument is receipted.
+
+% ---- END monograph/chapters/08L_fiber_lift_composition.tex ----
+
+% ---- BEGIN monograph/chapters/08M_stratified_position_lift.tex ----
+\chapter{Stratified Retrodiction and the Fixed-Sequence Position Lift}
+\label{chap:stratified-position-lift}
+
+The Retrodiction closure can be sharpened by using a discrete coordinate already retained by the event-aware ORCHORBITAL residence lineage: the complete active-attractor sequence. For an admitted $N$-event history $z$, define
+\[
+\alpha(z)=\bigl(a_1(z),\ldots,a_N(z)\bigr).
+\]
+The residence signature stores this sequence exactly. Hence histories carrying unequal active sequences occupy different retained strata.
+
+For each realizable sequence $s$, define
+\[
+\mathcal Z_s=\{z\in\mathcal Z:\alpha(z)=s\}.
+\]
+Because $\alpha$ is a retained component of the augmented record $A=(Y,F)$,
+\[
+\alpha(z_1)\neq\alpha(z_2)
+\Longrightarrow
+A(z_1)\neq A(z_2).
+\]
+Therefore every unresolved global collision lies inside one fixed-sequence stratum.
+
+Within $\mathcal Z_s$, the ordered post-segment position lineage
+\[
+P_s(z)=\bigl(r_1(z),\ldots,r_N(z)\bigr)
+\]
+provides the exact carrier used by the position-lineage inverse. For positive elapsed increments $\Delta\tau_n$, the event kick is recovered recursively from
+\[
+u_n=
+\frac{r_n-r_{n-1}-\tfrac12 A_n(r_{n-1})\Delta\tau_n^2}
+{\Delta\tau_n}-v_{n-1},
+\]
+followed by
+\[
+v_n=v_{n-1}+u_n+
+\frac12\left[A_n(r_{n-1})+A_n(r_n)\right]\Delta\tau_n.
+\]
+The corresponding local sensitivity has block-lower-triangular structure with diagonal blocks $\Delta\tau_n I_2$, so the ordered position carrier has $2N$ scalar coordinates for the $2N$ latent kick coordinates and is locally full-rank whenever every $\Delta\tau_n>0$.
+
+The 07R composition theorem now applies stratum by stratum. If for every admitted $s$ there exists a single-valued decoder
+\[
+L_s:A(\mathcal Z_s)\rightarrow P_s(\mathcal Z_s)
+\]
+satisfying
+\[
+P_s=L_s\circ A|_{\mathcal Z_s},
+\]
+then $A|_{\mathcal Z_s}$ is injective. Since different strata are already separated by the exact retained sequence $\alpha$, injectivity on all admitted strata implies injectivity on their union.
+
+The executable certificate records
+\begin{verbatim}
+RETAINED_ACTIVE_SEQUENCE_EXACT
+07K_EXACT_POSITION_LINEAGE_RECOVERY
+GLOBAL_INJECTIVITY_REDUCED_TO_FIXED_SEQUENCE_POSITION_LIFT
+\end{verbatim}
+and leaves the constructive requirement
+\begin{verbatim}
+Y_AUG_TO_ORDERED_POSITION_LINEAGE_LIFT_PER_FIXED_SEQUENCE_STRATUM
+\end{verbatim}
+explicit.
+
+A two-event reference trajectory composes the retained residence stratum and an already decoded ordered position lineage with the exact position-lineage inverse and recovers the generating kick pair within the declared numerical tolerance. A perturbed but dynamically admissible position carrier produces the distinct latent history assigned to that carrier. This separates the two roles cleanly: the exact inverse assigns a history to a supplied carrier, while $L_s$ identifies the carrier associated with the retained augmented record.
+
+Hosted reference validation after correction of the corresponding negative-control expectation used GitHub Actions run \texttt{33203339457}, job \texttt{98958035895}, on branch head \texttt{5e7d36f248963cb9a0b1d8bcb7be9306eadc7051}. The complete reference suite returned
+\begin{verbatim}
+518 passed in 12.06s
+\end{verbatim}
+on Python 3.12.14 / Ubuntu 24.04.4.
+
+The active Retrodiction gate is therefore the construction of the per-stratum decoder
+\[
+\boxed{
+L_s:(Y,F)|_{\mathcal Z_s}\longrightarrow(r_1,\ldots,r_N),
+}
+\]
+using retained base observations together with ordered winding, continuous ORCHORBITAL coordinates and spatial/SOD coordinates. The governing global status remains \texttt{GENERAL\_GLOBAL\_INJECTIVITY\_OPEN} until these decoders, or an equivalent domain-covering separation construction, are admitted.
+
+% ---- END monograph/chapters/08M_stratified_position_lift.tex ----
