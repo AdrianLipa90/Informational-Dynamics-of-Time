@@ -1,0 +1,34 @@
+{
+  "schema": "PRETIME_STELLA_HALF_SUCCESSOR_V0_1",
+  "date": "2026-09-28",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "branch": "feat/pretime-stella-half-successor-20260928",
+  "status": "PASS_EXACT_COMBINATORIAL_PRETIME_FACTORIZATION",
+  "theorem": {
+    "carrier": "N_0 x {+,-}",
+    "half_successor": "H(n,+)=(n,-); H(n,-)=(n+1,+)",
+    "full_successor": "S(n,eps)=(n+1,eps)",
+    "identity": "H^2=S",
+    "half_index": "nu(n,+)=n; nu(n,-)=n+1/2",
+    "incidence": "E_n={n,n+1}; E_n intersection E_{n+1}={n+1}",
+    "hilbert_shift": "unilateral injective isometry; not surjective"
+  },
+  "validation": {
+    "H2_equals_S": true,
+    "H_increment_half": true,
+    "S_increment_one": true,
+    "H_flips_sector": true,
+    "S_preserves_sector": true,
+    "adjacent_edge_overlap": true,
+    "Hilbert_shift_edge_covariance": true,
+    "S4_gram_invariance": true,
+    "local_equivalent_run": "8/8 PASS"
+  },
+  "boundaries": {
+    "physical_time_claimed": false,
+    "physical_space_claimed": false,
+    "equal_metric_half_duration_claimed": false,
+    "supersymmetry_claimed": false
+  },
+  "canon_allowed": false
+}
