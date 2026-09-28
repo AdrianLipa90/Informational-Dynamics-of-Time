@@ -242,3 +242,28 @@ The branch-burden audit was resolved by porting only content absent from current
 Integrated status-preserving surfaces include 05K precision-safe log-lapse capture, GSC2 source freeze, 02JO temporal material-front/NOW crosswalk, and the 600-cell/S3 ORCHORBITAL candidate adapter. Their candidate/source-contract/physical-open boundaries remain unchanged. Chapters 10--14 of the monograph are populated and subject to the independent Monograph PDF gate.
 
 Canonical path map: `docs/CANONICAL_SURFACE_INDEX.md`.
+
+
+## Pretemporal alternating Stella inference layer
+
+00B decorates the exact 00A half-step with a TIR-owned, label-free Stella inference payload. For orientation lifts \(A,B\in SO(3)\),
+
+\[
+\mathcal I(A,B)=\{\!\{-n_i^TA^TBn_j\}\!\}_{i,j=1}^{4}
+\]
+
+is invariant under independent tetrahedral relabelings \(A\mapsto Aa\), \(B\mapsto Bb\), \(a,b\in A_4\).
+
+The alternating lifted operator transforms one tetrahedral sector per half-step and obeys
+
+\[
+\boxed{\widetilde H^2=\widetilde S},
+\]
+
+while projection to the sector/successor carrier recovers \(H^2=S\). The inference-bearing object is therefore the orbit \(\mathcal I_0\to\mathcal I_1\to\cdots\), not a static vertex name.
+
+This is an optional decorated pretemporal interface, not a new premise required by generic 00E duration. No background time, physical three-space, angular velocity, or particle-physics supersymmetry is assumed.
+
+Canonical source: formalism/00B_pretemporal_alternating_stella_inference.md.
+
+Status: PRETEMPORAL_STELLA_INFERENCE_EXACT / A4_RELABELING_INVARIANCE_PASS / DECORATED_HALFSTEP_SQUARE_ROOT_PASS / PHYSICAL_SPACETIME_NOT_ASSUMED.
