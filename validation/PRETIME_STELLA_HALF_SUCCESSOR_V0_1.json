@@ -22,7 +22,11 @@
     "adjacent_edge_overlap": true,
     "Hilbert_shift_edge_covariance": true,
     "S4_gram_invariance": true,
-    "local_equivalent_run": "8/8 PASS"
+    "local_equivalent_run": "8/8 PASS",
+    "exact_head_execution": "PASS_8_OF_8",
+    "executed_head": "86c7d3d4ece68451c44b546da66e258bf6990d6b",
+    "validator_blob_sha": "e210c4cb61a712fccb1ceab111844ec6cfe26d3d",
+    "execution_scope": "local Python execution of exact fetched validator content"
   },
   "boundaries": {
     "physical_time_claimed": false,
