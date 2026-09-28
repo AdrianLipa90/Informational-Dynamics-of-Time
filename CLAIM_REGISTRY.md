@@ -2,6 +2,10 @@
 
 | ID | Statement | Depends on | Evidence class | Status | Monograph |
 |---|---|---|---|---|---|
+| T000A | The doubled pretemporal carrier \(\mathcal X=\mathbb N_0\times\mathbb Z_2\) with \(\mathsf H(n,0)=(n,1)\), \(\mathsf H(n,1)=(n+1,0)\) and \(\mathsf S(n,\sigma)=(n+1,\sigma)\) satisfies \(\mathsf H^2=\mathsf S\) | relational two-sector carrier | exact algebra + reference tests | \`PROVED_STRUCTURAL_IDENTITY / NO_CLOCK_ASSUMED\` | Foundational pretime |
+| T000B | After normalizing one full successor to one coarse unit, \(g(n,\sigma)=n+\sigma/2\) satisfies \(g(\mathsf Hx)-g(x)=1/2\) and \(g(\mathsf Sx)-g(x)=1\) | T000A | exact rational grading + reference tests | \`PROVED_STRUCTURAL_IDENTITY_AFTER_UNIT_NORMALIZATION\` | Foundational pretime |
+| T000C | The relation chain \(E_n=\{n,n+1\}\) obeys \(E_n\cap E_{n+1}=\{n+1\}\); the Hilbert unilateral shift \(n\mapsto n+1\) is injective, non-surjective on \(\mathbb N\), and preserves this incidence law | T000A | exact set identity + reference tests | \`PROVED_STRUCTURAL_IDENTITY\` | Foundational pretime |
+| T000D | The TIR Stella pair \(T_4^+\cup T_4^-\) may instantiate the two abstract sectors while its independent tetrahedral \(q_3=1/2\) holonomy remains a compatibility crosswalk rather than an identity with the successor operator | T000A + TIR Stella theorem | typed cross-repository interface | \`CONDITIONAL_CROSS_REPO_INTERFACE / PHYSICAL_TIME_NOT_ASSUMED\` | Foundational pretime |
 | T001 | \(\kappa=\ln2/(24\pi)\) | TIR | inherited structural definition | `INHERITED_MODEL_POSTULATE` | Ch. 2 |
 | T002 | Relational state entropy is \(H_S(s)=-\sum_i p_i(s)\log_2 p_i(s)\) | relational probability state | definition | `FORMAL_DEFINITION` | Ch. 1 |
 | T003 | Exact Shannon differences telescope on every closed directed cycle: \(\sum_C \Delta H_e=0\) | T002 | algebraic theorem + reference tests | `PROVED_STRUCTURAL_IDENTITY` | Ch. 1 |
