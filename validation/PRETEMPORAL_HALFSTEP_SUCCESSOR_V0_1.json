@@ -1,0 +1,26 @@
+{
+  "schema": "PRETEMPORAL_HALFSTEP_SUCCESSOR_V0_1",
+  "date": "2026-09-28",
+  "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
+  "branch": "formalize/pretemporal-stella-halfstep-hilbert-v0.1-20260928",
+  "status": "PASS_EXACT_REFERENCE_ALGEBRA",
+  "theorem": "formalism/00A_pretemporal_stella_halfstep_successor.md",
+  "implementation": "src/idt/pretemporal_halfstep_successor.py",
+  "tests": "tests/reference/test_pretemporal_halfstep_successor.py",
+  "exact_claims": [
+    "half_step(half_step(x)) == successor(x)",
+    "normalized grade increments by 1/2 per half-step",
+    "normalized grade increments by 1 per full successor",
+    "adjacent relational edges overlap in exactly one endpoint",
+    "Hilbert unilateral shift preserves path incidence",
+    "Hilbert unilateral shift on positive integers is injective and non-surjective"
+  ],
+  "interface": {
+    "TIR_stella_two_sector": "CONDITIONAL",
+    "physical_time_assumed": false,
+    "physical_space_assumed": false,
+    "downstream_duration": "00E",
+    "downstream_precedence": "00F"
+  },
+  "canon_allowed": false
+}
