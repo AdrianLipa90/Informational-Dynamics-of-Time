@@ -2,9 +2,17 @@
   "schema": "FPDG_DEPENDENCY_EXPORT_V0_1",
   "repository_id": "IDT",
   "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
-  "source_commit": "2960a936e3f74b07a4bf30ebc5cb78b6c1811b4c",
-  "generated_at": "2026-09-21T13:37:00+01:00",
+  "source_commit": "afac2d345a619502a5f191b22955c445c8642821",
+  "generated_at": "2026-09-28T23:28:19+01:00",
   "claims": [
+    {
+      "claim_id": "IDT.TIR.RELATIONAL_ZERO_ENTRYPOINT",
+      "status": "SYNC_BRANCH / UPSTREAM_TIR_RELATIONAL_ZERO_TYPED / IDT_TEMPORAL_PROMOTION_FALSE",
+      "source_path": "formalism/00A_tir_relational_zero_entrypoint.md",
+      "evidence_class": "cross_repo_foundational_import",
+      "upstream_repository": "AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations",
+      "upstream_exact_head": "20d6ae074be9ed77e4c36f5e3575b8b2dad1ce02"
+    },
     {
       "claim_id": "IDT.TEMPORAL.PRIMITIVE",
       "status": "CANONICAL",
@@ -104,7 +112,7 @@
     },
     {
       "claim_id": "IDT.HALF_SEAM.RELATIONAL_ZERO",
-      "status": "CANDIDATE_TARGET",
+      "status": "SOH_CROSSCHECK_CANDIDATE / ROOT_SEMANTICS_SUPERSEDED_BY_IDT.TIR.RELATIONAL_ZERO_ENTRYPOINT",
       "source_path": "research/GREMLIN_DEPENDENCY_PROMOTION_MANIFEST_V0_1.json",
       "evidence_class": "gremlin_candidate_target",
       "canon_authority": false,
@@ -199,6 +207,13 @@
     }
   ],
   "local_edges": [
+    {
+      "from": "IDT.TIR.RELATIONAL_ZERO_ENTRYPOINT",
+      "to": "IDT.TEMPORAL.PRIMITIVE",
+      "authority": "CANDIDATE_ONLY",
+      "promotion_required": true,
+      "promotion_gate": "TIR_RELATIONAL_ZERO_BRANCH_MERGE_AND_CROSS_REPO_PIN"
+    },
     {
       "from": "IDT.TEMPORAL.PRIMITIVE",
       "to": "IDT.TEMPORAL.WAVE",
