@@ -2,8 +2,8 @@
   "schema": "FPDG_DEPENDENCY_EXPORT_V0_1",
   "repository_id": "IDT",
   "repository": "AdrianLipa90/Informational-Dynamics-of-Time",
-  "source_commit": "afac2d345a619502a5f191b22955c445c8642821",
-  "generated_at": "2026-09-28T23:28:19+01:00",
+  "source_commit": "7d21ec141c4c3efcc6c2451c3d754680dd17a2c2",
+  "generated_at": "2026-09-29T02:06:00+01:00",
   "claims": [
     {
       "claim_id": "IDT.TIR.RELATIONAL_ZERO_ENTRYPOINT",
