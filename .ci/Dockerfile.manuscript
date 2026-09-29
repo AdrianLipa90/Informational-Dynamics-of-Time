@@ -1,0 +1,29 @@
+FROM debian:bookworm-slim
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 ca-certificates latexmk lmodern texlive-latex-base \
+    texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended \
+    poppler-utils qpdf \
+ && rm -rf /var/lib/apt/lists/*
+WORKDIR /repo
+COPY . .
+RUN set -eux; \
+    python3 .ci/manuscript_release_gate.py | tee /tmp/idt-release-gate.json; \
+    cd monograph; \
+    latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex 2>&1 | tee /tmp/idt-compile-console.log; \
+    test -s main.pdf; test -s main.log; \
+    ! grep -E "LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|Undefined control sequence|LaTeX Error|multiply-defined labels|multiply defined|Package hyperref Warning: Token not allowed in a PDF string|Overfull \\\\hbox" main.log; \
+    qpdf --check main.pdf; \
+    pdfinfo main.pdf > /tmp/idt-pdfinfo.txt; \
+    pdffonts main.pdf > /tmp/idt-pdffonts.txt; \
+    ! awk 'NR>2 && $5 == "Type 3" {bad=1} END {exit bad ? 0 : 1}' /tmp/idt-pdffonts.txt; \
+    pdftotext main.pdf /tmp/idt.txt; test -s /tmp/idt.txt; grep -Fq "Informational Dynamics of Time" /tmp/idt.txt; \
+    mkdir -p /artifacts; \
+    cp main.pdf /artifacts/IDT-Informational-Dynamics-of-Time-Relational-Zero-Sync.pdf; \
+    cp main.log /artifacts/IDT.log; \
+    cp /tmp/idt-release-gate.json /artifacts/IDT-release-gate.json; \
+    cp /tmp/idt-pdfinfo.txt /artifacts/IDT-pdfinfo.txt; \
+    cp /tmp/idt-pdffonts.txt /artifacts/IDT-pdffonts.txt; \
+    cp /tmp/idt-compile-console.log /artifacts/IDT-compile-console.log
+EXPOSE 8080
+CMD ["sh","-c","python3 -m http.server ${PORT:-8080} --directory /artifacts"]
