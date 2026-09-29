@@ -11,7 +11,7 @@
       "source_path": "formalism/00A_tir_relational_zero_entrypoint.md",
       "evidence_class": "cross_repo_foundational_import",
       "upstream_repository": "AdrianLipa90/The-Fundamental-Theory-of-Informational-Relations",
-      "upstream_exact_head": "0784e2aad74132a4ba9ebeeaa0fd639d415f6d13"
+      "upstream_exact_head": "7c468d83f1c0c6b4972ed0d9396b96333d24a623"
     },
     {
       "claim_id": "IDT.TEMPORAL.PRIMITIVE",
